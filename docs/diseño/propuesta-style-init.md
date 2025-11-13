@@ -1,11 +1,11 @@
 ### 1\. 🎵 La Nueva Paleta (Basada en su Identidad)
 
-[cite\_start]Su marca busca ser **"Técnica", "Seria", "Confiable" y "Moderna"** [cite: 69][cite\_start], con "fondos oscuros" [cite: 63] [cite\_start]y un acento de **"Energía"** (`#FF6F00`)[cite: 65].
+Su marca busca ser **"Técnica", "Seria", "Confiable" y "Moderna"**, con "fondos oscuros" y un acento de **"Energía"** (`#FF6F00`).
 
 Basado en esto y en los colores de su CSS, he definido esta paleta de 4 escalas:
 
 1.  **Neutral (Pizarra/Slate):** Será nuestra base para la "Seriedad" y "Modernidad". Perfecto para sus fondos oscuros y texto.
-2.  [cite\_start]**Primary (Naranja):** Su color de "Energía" (`#FF6F00`)[cite: 65]. Será el centro de la acción.
+2.  **Primary (Naranja):** Su color de "Energía" (`#FF6F00`). Será el centro de la acción.
 3.  **Secondary (Índigo):** Su CSS menciona `indigo` (`#6366f1`). Es un color "Técnico" y "Confiable" perfecto para complementar al naranja.
 4.  **Accent (Verde Azulado/Teal):** Su CSS menciona `teal` (`#14b8a6`). Lo usaremos para acentos especiales (ej. mensajes de éxito, etiquetas).
 
@@ -23,7 +23,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        [cite_start]// Su tipografía de marca [cite: 65]
+        [cite_start]// Su tipografía de marca 
         sans: ['Montserrat', 'sans-serif'],
       },
       
@@ -33,7 +33,7 @@ export default {
         neutral: colors.slate,
         
         // PRIMARY (Energía, Acción)
-        [cite_start]// Basado en su naranja #FF6F00 [cite: 65]
+        [cite_start]// Basado en su naranja #FF6F00 
         primary: {
           50: '#FFF7ED',
           100: '#FFEDD5',

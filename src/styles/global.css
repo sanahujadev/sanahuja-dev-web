@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import "vanilla-cookieconsent/dist/cookieconsent.css";
+
+/* ================================================================
+  ESTILOS GLOBALES
+  ================================================================
+*/
+
+html {
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  /* Aplicamos la fuente base aquí si es necesario */
+  /* font-family: 'Montserrat', sans-serif; (Tailwind ya lo hace con font-sans) */
+}
+
+/* ================================================================
+  ESTILOS DE TERCEROS (Ej. Cookie Consent)
+  ================================================================
+*/
+
+/* Aquí aplicamos nuestro NUEVO sistema de tokens al plugin
+  de cookies. ¡Mucho más fácil de leer!
+*/
+#cc-main {
+  --cc-bg: theme(colors.neutral.50);
+  --cc-text-color: theme(colors.neutral.800);
+  --cc-border-color: theme(colors.neutral.200);
+  --cc-link-color: theme(colors.primary.600);
+
+  --cc-btn-primary-bg: theme(colors.primary.600);
+  --cc-btn-primary-border-color: theme(colors.primary.600);
+  --cc-btn-primary-hover-bg: theme(colors.primary.700);
+
+  --cc-btn-secondary-bg: theme(colors.neutral.100);
+  --cc-btn-secondary-border-color: theme(colors.neutral.200);
+  --cc-btn-secondary-text-color: theme(colors.neutral.700);
+  --cc-btn-secondary-hover-bg: theme(colors.neutral.200);
+
+  --cc-toggle-on-bg: theme(colors.primary.600);
+  --cc-btn-border-radius: 9999px; /* Pill shape */
+}
+
+.cc--darkmode #cc-main {
+  --cc-bg: theme(colors.neutral.800);
+  --cc-text-color: theme(colors.neutral.100);
+  --cc-border-color: theme(colors.neutral.700);
+  --cc-link-color: theme(colors.primary.400);
+
+  --cc-btn-secondary-bg: theme(colors.neutral.700);
+  --cc-btn-secondary-border-color: theme(colors.neutral.700);
+  --cc-btn-secondary-text-color: theme(colors.neutral.100);
+  --cc-btn-secondary-hover-bg: theme(colors.neutral.600);
+}
+
+/* ... (Otros estilos globales como #form-status) ... */
