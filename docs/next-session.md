@@ -1,18 +1,31 @@
-### 1\. ✅ Checklist de Configuración (El Setup)
+# `docs/next-session.md`: Próximos Pasos
 
-Antes de escribir un solo test, necesitamos configurar las armas.
+## 🎯 Misión Actual
 
-1.  **Astro (`astro.config.mjs`):**
-      * Configurar la integración `i18n` (Internacionalización) para `es` (default) y `en`.
-      * Configurar `output: 'static'` (asumiendo que vamos 100% estáticos).
-      * Añadir integraciones: `@astrojs/sitemap` (¡Batman te vigila\!) y `@astrojs/mdx` (para el blog).
-2.  **TypeScript (`tsconfig.json`):**
-      * Configurar los `paths` (alias) para que `~/components/*` apunte a `src/components/*`. Limpieza ante todo.
-3.  **Playwright (`playwright.config.ts`):**
-      * Configurar la `baseURL` para que apunte a nuestro servidor de desarrollo.
-      * Configurar los *projects* para que corra los tests en Chrome, Firefox y WebKit (¡Máxima cobertura\!).
-4.  **Vitest + Testing Library (`vitest.config.ts`):**
-      * Configurar el entorno (probablemente `jsdom`) para testear componentes de UI en aislamiento.
-5.  **Accesibilidad (`axe-core`):**
-      * Lo instalaremos como dependencia. Crearé un *helper* en Playwright para inyectar `axe` en cada página y reventar la build si no cumple la WCAG.
+Estamos en plena **Fase 3 (COMPOSICIÓN)** del ciclo TDD-VFD para la página "Punta de Lanza": `/es/servicios/diseno-web-tenerife`.
 
+La Fase VERDE (funcional) está completada, pero estamos **bloqueados** en la fase de estilos de BrandStyler (Brook).
+
+## 🛑 Bloqueo Crítico: Configuración de Tailwind
+
+* **Problema:** Los estilos de Tailwind CSS (como `p-4`, `rounded-lg`) se están aplicando correctamente, pero los **colores personalizados** (ej. `bg-neutral-800`, `text-primary-600`) no funcionan.
+* **Hipótesis:** El archivo `tailwind.config.mjs` está incompleto. Es probable que la sección `theme.extend.colors` no esté bien definida o no esté siendo leída por el motor de Tailwind.
+
+## ✅ Checklist Siguiente Sesión
+
+1.  **[Brook]  investigar `tailwind.config.mjs`:**
+    * [ ] Revisar la documentación oficial de Astro + Tailwind.
+    * [ ] Asegurarse de que `tailwind.config.mjs` esté siendo importado correctamente en `astro.config.mjs`.
+    * [ ] Validar que la paleta de colores (`#FF6F00`, etc.) esté definida bajo `theme: { extend: { colors: { ... } } }`.
+    * [ ] Purgar cualquier caché (`rm -rf node_modules/.vite/`) después de arreglar la config.
+
+2.  **[Brook] Terminar Fase 3 (COMPOSICIÓN):**
+    * [ ] Una vez arreglada la config, aplicar los estilos de Brook a `diseno-web-tenerife.astro`.
+    * [ ] Obtener la aprobación visual del Director (SanahujaDev).
+
+3.  **[Deadpool] Iniciar Fase 4 (VERIFICACIÓN):**
+    * [ ] Cuando Brook dé luz verde, ejecutar los tests de Accesibilidad (`pnpm run test:a11y`).
+    * [ ] Ejecutar el Refactor Lógico (conectar `BaseLayout.astro` y añadir `hreflang`).
+
+4.  **[Deadpool] Cerrar Página:**
+    * [ ] Conseguir el **VERDE COMPLETO** (E2E + A11y) y marcar el `TODO.md` como ✅.

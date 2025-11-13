@@ -1,5 +1,7 @@
-@import "tailwindcss";
 @import "vanilla-cookieconsent/dist/cookieconsent.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* ================================================================
   ESTILOS GLOBALES
@@ -26,34 +28,65 @@ body {
   de cookies. ¡Mucho más fácil de leer!
 */
 #cc-main {
-  --cc-bg: theme(colors.neutral.50);
-  --cc-text-color: theme(colors.neutral.800);
-  --cc-border-color: theme(colors.neutral.200);
-  --cc-link-color: theme(colors.primary.600);
+  /* --cc-bg: theme(colors.slate.50); */
+  --cc-bg: #f8fafc;
+  
+  /* --cc-text-color: theme(colors.slate.800); */
+  --cc-text-color: #1e293b;
+  
+  /* --cc-border-color: theme(colors.slate.200); */
+  --cc-border-color: #e2e8f0;
 
-  --cc-btn-primary-bg: theme(colors.primary.600);
-  --cc-btn-primary-border-color: theme(colors.primary.600);
-  --cc-btn-primary-hover-bg: theme(colors.primary.700);
+  /* --cc-link-color: theme(colors.primary.600); */
+  --cc-link-color: #FF6F00;
 
-  --cc-btn-secondary-bg: theme(colors.neutral.100);
-  --cc-btn-secondary-border-color: theme(colors.neutral.200);
-  --cc-btn-secondary-text-color: theme(colors.neutral.700);
-  --cc-btn-secondary-hover-bg: theme(colors.neutral.200);
+  /* --cc-btn-primary-bg: theme(colors.primary.600); */
+  --cc-btn-primary-bg: #FF6F00;
+  
+  /* --cc-btn-primary-border-color: theme(colors.primary.600); */
+  --cc-btn-primary-border-color: #FF6F00;
+  
+  /* --cc-btn-primary-hover-bg: theme(colors.primary.700); */
+  --cc-btn-primary-hover-bg: #C2410C;
 
-  --cc-toggle-on-bg: theme(colors.primary.600);
+  /* --cc-btn-secondary-bg: theme(colors.slate.100); */
+  --cc-btn-secondary-bg: #f1f5f9;
+  
+  /* --cc-btn-secondary-border-color: theme(colors.slate.200); */
+  --cc-btn-secondary-border-color: #e2e8f0;
+  
+  /* --cc-btn-secondary-text-color: theme(colors.slate.700); */
+  --cc-btn-secondary-text-color: #334155;
+  
+  /* --cc-btn-secondary-hover-bg: theme(colors.slate.200); */
+  --cc-btn-secondary-hover-bg: #e2e8f0;
+
+  --cc-toggle-on-bg: #FF6F00; /* (Primary 600) */
   --cc-btn-border-radius: 9999px; /* Pill shape */
 }
 
 .cc--darkmode #cc-main {
-  --cc-bg: theme(colors.neutral.800);
-  --cc-text-color: theme(colors.neutral.100);
-  --cc-border-color: theme(colors.neutral.700);
-  --cc-link-color: theme(colors.primary.400);
+  /* --cc-bg: theme(colors.slate.800); */
+  --cc-bg: #1e293b;
 
-  --cc-btn-secondary-bg: theme(colors.neutral.700);
-  --cc-btn-secondary-border-color: theme(colors.neutral.700);
-  --cc-btn-secondary-text-color: theme(colors.neutral.100);
-  --cc-btn-secondary-hover-bg: theme(colors.neutral.600);
+  /* --cc-text-color: theme(colors.slate.100); */
+  --cc-text-color: #f1f5f9;
+
+  /* --cc-border-color: theme(colors.slate.700); */
+  --cc-border-color: #334155;
+
+  /* --cc-link-color: theme(colors.primary.400); */
+  --cc-link-color: #FB923C;
+
+  /* --cc-btn-secondary-bg: theme(colors.slate.700); */
+  --cc-btn-secondary-bg: #334155;
+
+  /* --cc-btn-secondary-border-color: theme(colors.slate.700); */
+  --cc-btn-secondary-border-color: #334155;
+
+  /* --cc-btn-secondary-text-color: theme(colors.slate.100); */
+  --cc-btn-secondary-text-color: #f1f5f9;
+
+  /* --cc-btn-secondary-hover-bg: theme(colors.slate.600); */
+  --cc-btn-secondary-hover-bg: #475569;
 }
-
-/* ... (Otros estilos globales como #form-status) ... */

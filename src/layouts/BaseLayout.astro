@@ -1,0 +1,67 @@
+---
+// src/layouts/BaseLayout.astro
+// NOTA: Este es nuestro layout OBJETIVO.
+// Los componentes <AppHeader> y <AppFooter> y los scripts se crearán en pasos posteriores.
+import { AstroFont } from 'astro-font';
+import { ClientRouter } from "astro:transitions";
+// import AppFooter from "../components/AppFooter.astro"; // <-- Aún no existe
+// import AppHeader from "../components/AppHeader.astro"; // <-- Aún no existe
+import "./../styles/global.css"; // <-- Brook creará este
+// import type { CookieConsentType } from '../i18n/utils'; // <-- Aún no existe
+
+// const { t, lang } = Astro.props; // <-- Lo usaremos en Refactor
+// const common = t.common;
+// const cookieTranslations = t.cookieConsent as CookieConsentType;
+const GTM_ID = import.meta.env.PUBLIC_GTM_ID;
+
+// if (!GTM_ID) {
+//     console.warn("[Gambito] ADVERTENCIA: PUBLIC_GTM_ID no está definido.");
+// }
+
+// const consentConfig = {
+//   lang: lang,
+//   translations: cookieTranslations
+// };
+---
+
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        
+        <slot name="head" />
+
+        <link rel="canonical" href={Astro.url.href} />
+
+        <slot name="json-ld" />
+
+        <ClientRouter />
+        <AstroFont
+            config={[{
+                // 1. La tipografía de nuestra marca (Runbook)
+                name: "Montserrat", 
+                
+                // 2. Pesos que usaremos (Regular, Semibold, Bold, ExtraBold)
+                // (Ajustados desde mi propuesta anterior para incluir 500 y 800)
+                googleFontsURL: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap',
+                
+                // 3. Dejamos 'src: []' para que los obtenga de Google
+                src: [],
+                
+                // 4. Optimizaciones
+                preload: true,
+                display: "swap",
+                
+                // 5. Aplicación global (¡Correcto!)
+                selector: "html",
+                fallback: "sans-serif",
+            }]}
+        />
+    </head>
+    
+    <body class="font-sans bg-neutral-900 text-neutral-200 antialiased">
+        <slot />
+    </body>
+</html>

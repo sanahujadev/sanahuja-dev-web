@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import copy from '../../../i18n/es/services/diseno-web-tenerife.json' with { type: 'json' };
+
+const { title, meta_description } = copy;
+
+// --- Motivos Reutilizables (Clases de Botones) ---
+const btnPrimary = "inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-primary-600 rounded-lg shadow-md transition-transform duration-200 ease-in-out hover:bg-primary-700 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-opacity-75";
+
+const btnSecondary = "inline-flex items-center justify-center px-6 py-3 text-base font-medium text-neutral-100 bg-neutral-800 rounded-lg border border-neutral-700 transition-colors duration-200 hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-neutral-600";
+---
+<BaseLayout>
+  <Fragment slot="head">
+    <title>{title}</title>
+    <meta name="description" content={meta_description} />
+  </Fragment>
+
+  <main>
+    
+    <section id="hero-diseno-web" class="py-24 sm:py-32 text-center">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <h1 class="font-bold text-4xl tracking-tight text-white sm:text-5xl lg:text-6xl">
+          {copy.h1}
+        </h1>
+        <p class="mt-6 text-lg leading-8 text-neutral-300">
+          Para el autónomo 'aislado' y la pyme 'frustrada'. Creo tu web profesional, ultra-rápida (WPO 99) y me quedo a tu lado para que consigas tus metas. Porque 
+          <strong class="font-semibold text-primary-500">tu éxito es mi éxito</strong>.
+        </p>
+        
+        <div class="mt-10 flex items-center justify-center gap-x-6">
+          <a href={copy.ctas[0].url} class={btnPrimary}>{copy.ctas[0].text}</a>
+          <a href={copy.ctas[1].url} class={btnSecondary}>{copy.ctas[1].text}</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="problema-web-canarias" class="py-20 bg-neutral-950">
+      <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          {copy.h2s[0]}
+        </h2>
+        <p class="mt-6 text-lg leading-8 text-neutral-300">
+          Seguro que te suena: ves ingenieros que piden 3.000€ por una web sencilla o freelancers en 'la selva' que cobran poquísimo, te entregan algo que parece funcionar y desaparecen. El resultado es el mismo: te quedas solo, con una 
+          <strong class="font-semibold text-primary-500">'web abandonada'</strong>, 
+          lenta (WPO 40-50) y que no te trae ni un cliente. 
+          <strong class="font-semibold text-primary-500">Yo no quiero eso, eso no me representa</strong>.
+        </p>
+      </div>
+    </section>
+
+    <section id="gancho-oferta" class="py-20">
+      <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          {copy.h2s[1]}
+        </h2>
+        <p class="mt-6 text-lg leading-8 text-neutral-300">
+          Quiero que los autónomos y pymes de Tenerife tengan acceso a servicios profesionales asequibles. Mi estrategia es transparente: te ofrezco un 
+          <strong class="font-semibold text-primary-500">90% de descuento</strong> 
+          en la creación o migración de tu sitio web. ¿La única condición? Que te comprometas con tu éxito contratando el servicio de 'Mantenimiento Web Esencial' por 12 meses. Sin trampa.
+        </p>
+      </div>
+    </section>
+
+    <section id="diferenciador-wpo" class="py-20 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-x-12 gap-y-10 lg:grid-cols-2 items-center">
+          
+          <div>
+            <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+              {copy.h2s[2]}
+            </h2>
+            <p class="mt-6 text-lg leading-8 text-neutral-300">
+              Tu web no solo será moderna, seria y transmitirá confianza; será técnicamente superior. Mi sitio tiene una puntuación de velocidad (WPO) de 99. Nuestros competidores locales (como chosqueb.com o kingseo.es) se mueven entre 41 y 53. Una web rápida no es un lujo; es la base para que Google te respete y tus clientes no se marchen antes de conocerte.
+            </p>
+          </div>
+          
+          <div class="flex items-center justify-center h-80 bg-neutral-800 border border-neutral-700 rounded-2xl shadow-lg">
+            <p class="text-neutral-500 text-lg font-medium">[Placeholder: Visual WPO 99 vs 53]</p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <section id="promesa-socio-digital" class="py-20 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-x-12 gap-y-10 lg:grid-cols-2 items-center">
+          
+          <div class="flex items-center justify-center h-80 bg-neutral-800 border border-neutral-700 rounded-2xl shadow-lg lg:order-1">
+            <p class="text-neutral-500 text-lg font-medium">[Placeholder: Icono 'Socio Digital']</p>
+          </div>
+
+          <div class="lg:order-2">
+            <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+              {copy.h2s[3]}
+            </h2>
+            <p class="mt-6 text-lg leading-8 text-neutral-300">
+              Yo no vendo un producto, 
+              <strong class="font-semibold text-primary-500">doy un servicio</strong>. 
+              No te entrego la web y me olvido de tu negocio. Mi promesa es ser tu 'acompañante digital'. Aunque todo funcione bien, yo estaré 'por detrás' analizando proactivamente si la web cumple tus objetivos reales (captar clientes, recibir formularios, etc.), no solo si 'está online'.
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <section id="audiencia" class="py-20 bg-neutral-950">
+      <div class="max-w-3xl mx-auto px-6 lg:px-8">
+        <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl text-center">
+          {copy.h2s[4]}
+        </h2>
+        <p class="mt-6 text-lg leading-8 text-neutral-300">
+          Este servicio de 'desarrollo web en Tenerife' es para ti si:
+        </p>
+        <ul class="mt-6 space-y-4 text-lg text-neutral-300 list-disc list-outside pl-6">
+          <li>
+            <strong class="font-semibold text-neutral-100">Eres el 'Propietario Aislado':</strong> 
+            Un negocio local (en La Laguna, San Isidro, donde sea) sin presencia digital.
+          </li>
+          <li>
+            <strong class="font-semibold text-neutral-100">Eres el 'Propietario Frustrado':</strong> 
+            Tienes una web lenta, que da errores o no trae clientes.
+          </li>
+          <li>
+            <strong class="font-semibold text-neutral-100">Buscas un 'Rediseño Web en Tenerife':</strong> 
+            Quieres modernizar tu imagen y que, esta vez sí, funcione de verdad.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="precio-transparencia" class="py-20">
+      <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          {copy.h2s[5]}
+        </h2>
+        <p class="mt-6 text-lg leading-8 text-neutral-300">
+          El precio lo marca el mercado. Has visto webs de 1.500€ a 3.000€ y otras de 300€. Mi 'Valor Real de Mercado' en Canarias por un proyecto profesional es de 5.445€. Pero con el 
+          <strong class="font-semibold text-primary-500">'Precio Estratégico Gancho'</strong>, 
+          el coste de desarrollo se queda en 
+          <strong class="font-semibold text-primary-500">544,50€</strong>, 
+          siempre que contrates el mantenimiento. Así de claro.
+        </p>
+      </div>
+    </section>
+
+    <section id="cta-final" class="py-24 sm:py-32 text-center bg-neutral-800">
+      <div class="max-w-3xl mx-auto px-6 lg:px-8">
+        <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          {copy.h2s[6]}
+        </h2>
+        <p class="mt-6 text-lg leading-8 text-neutral-300">
+          ¿Hablamos? Rellena el formulario inicial y definamos juntos qué es el éxito para ti. Sin rodeos.
+        </p>
+        <div class="mt-10">
+          <a href={copy.ctas[0].url} class={btnPrimary}>{copy.ctas[0].text}</a>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+</BaseLayout>
