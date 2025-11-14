@@ -9,23 +9,31 @@ import { ClientRouter } from "astro:transitions";
 import "./../styles/global.css"; // <-- Brook creará este
 // import type { CookieConsentType } from '../i18n/utils'; // <-- Aún no existe
 
-// const { t, lang } = Astro.props; // <-- Lo usaremos en Refactor
-// const common = t.common;
-// const cookieTranslations = t.cookieConsent as CookieConsentType;
+const { lang = 'es' } = Astro.props;
 const GTM_ID = import.meta.env.PUBLIC_GTM_ID;
 
-// if (!GTM_ID) {
-//     console.warn("[Gambito] ADVERTENCIA: PUBLIC_GTM_ID no está definido.");
-// }
+// ¡LÓGICA DE REFACTOR CORREGIDA!
+const siteURL = Astro.site; // <-- ¡Esto SÍ es https://sanahuja.dev!
+const pathName = Astro.url.pathname; // <-- Esto SÍ es /es/servicios/diseno-web-tenerife
 
-// const consentConfig = {
-//   lang: lang,
-//   translations: cookieTranslations
-// };
+// ¡Construimos la URL canónica de PRODUCCIÓN!
+const canonicalURL = new URL(pathName, siteURL).href;
+
+let alternateUrl = null;
+let alternateLang = null;
+
+// (Lógica simple. Si estamos en 'es', la alterna es 'en'. Si no, 'es')
+if (lang === 'es') {
+  alternateUrl = new URL(pathName.replace('/es/', '/en/'), siteURL).href;
+  alternateLang = 'en';
+} else if (lang === 'en') {
+  alternateUrl = new URL(pathName.replace('/en/', '/es/'), siteURL).href;
+  alternateLang = 'es';
+}
 ---
 
 <!DOCTYPE html>
-<html lang="es" class="dark scroll-smooth">
+<html lang={lang} class="dark scroll-smooth">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
@@ -33,7 +41,8 @@ const GTM_ID = import.meta.env.PUBLIC_GTM_ID;
         
         <slot name="head" />
 
-        <link rel="canonical" href={Astro.url.href} />
+        <link rel="canonical" href={canonicalURL} />
+        {alternateUrl && <link rel="alternate" hreflang={alternateLang} href={alternateUrl} />}
 
         <slot name="json-ld" />
 

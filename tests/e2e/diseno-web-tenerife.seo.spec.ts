@@ -34,7 +34,14 @@ test.describe('E2E/SEO: Landing Page "Diseño Web Tenerife" (/es/)', () => {
     await expect(secondaryCTA).toHaveAttribute('href', copy.ctas[1].url);
     
     // El CTA primario del Final
-    const finalCTA = page.locator('#cta-final').getByRole('link', { name: copy.ctas[0].text });
-    await expect(finalCTA).toHaveAttribute('href', copy.ctas[0].url);
+    const finalCTA = page.locator('#cta-final').getByRole('link', { name: copy.ctaFinal.buttonText });
+    await expect(finalCTA).toHaveAttribute('href', copy.ctaFinal.buttonUrl);
+
+    // ¡¡NUEVA VALIDACIÓN DE REFACTOR!!
+    // 5. Validar Hreflang (SEO Bilingüe)
+    const hreflangEn = page.locator('link[rel="alternate"][hreflang="en"]');
+    // Asumimos que la URL en inglés será la misma pero con /en/
+    const enUrl = 'https://sanahuja.dev' + copy.endpoint.replace('/es/', '/en/');
+    await expect(hreflangEn).toHaveAttribute('href', enUrl);
   });
 });

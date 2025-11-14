@@ -1,15 +1,38 @@
----
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+---import BaseLayout from '../../../layouts/BaseLayout.astro';
 import copy from '../../../i18n/es/services/diseno-web-tenerife.json' with { type: 'json' };
+import Button from '../../../components/ui/Button.astro';
+import Badge from '../../../components/ui/Badge.astro';
+import OptimizedImage from '../../../components/ui/OptimizedImage.astro';
+import Zap from '../../../components/ui/icons/Zap.astro';
+import TrendingUp from '../../../components/ui/icons/TrendingUp.astro';
+import CheckCircle2 from '../../../components/ui/icons/CheckCircle2.astro';
+import Shield from '../../../components/ui/icons/Shield.astro';
 
-const { title, meta_description } = copy;
+const { 
+  title, 
+  meta_description, 
+  lang, 
+  body_sections, 
+  badge, 
+  audienceCards,
+  heroStats,
+  ganchoBadge,
+  wpoSection,
+  socioDigitalSection,
+  precioSection,
+  ctaFinal
+} = copy;
 
-// --- Motivos Reutilizables (Clases de Botones) ---
-const btnPrimary = "inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-primary-600 rounded-lg shadow-md transition-transform duration-200 ease-in-out hover:bg-primary-700 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-opacity-75";
+const processContent = (content: string, strongClass: string = 'font-semibold text-primary-500'): string => {
+  return content
+    .replace(/\ \[cite:.*?\ \]/g, '')
+    .replace(/\*\*([^*]+)\*\*/g, `<strong class="${strongClass}">$1</strong>`);
+};
 
-const btnSecondary = "inline-flex items-center justify-center px-6 py-3 text-base font-medium text-neutral-100 bg-neutral-800 rounded-lg border border-neutral-700 transition-colors duration-200 hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-neutral-600";
+const [audienceIntro] = body_sections[5].content.split('\n* ');
+
 ---
-<BaseLayout>
+<BaseLayout lang={lang}>
   <Fragment slot="head">
     <title>{title}</title>
     <meta name="description" content={meta_description} />
@@ -17,145 +40,344 @@ const btnSecondary = "inline-flex items-center justify-center px-6 py-3 text-bas
 
   <main>
     
-    <section id="hero-diseno-web" class="py-24 sm:py-32 text-center">
-      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+    <section id="hero-diseno-web" class="relative py-24 sm:py-32 overflow-hidden text-center">
+      
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--color-primary-950)_0%,_transparent_50%)]" aria-hidden="true"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--color-secondary-950)_0%,_transparent_50%)]" aria-hidden="true"></div>
+
+      <div class="relative max-w-5xl mx-auto px-6 lg:px-8">
+        
+        <Badge variant="v0_accent" class="mb-6">
+          {badge}
+        </Badge>
+        
         <h1 class="font-bold text-4xl tracking-tight text-white sm:text-5xl lg:text-6xl">
           {copy.h1}
         </h1>
-        <p class="mt-6 text-lg leading-8 text-neutral-300">
-          Para el autónomo 'aislado' y la pyme 'frustrada'. Creo tu web profesional, ultra-rápida (WPO 99) y me quedo a tu lado para que consigas tus metas. Porque 
-          <strong class="font-semibold text-primary-500">tu éxito es mi éxito</strong>.
-        </p>
         
-        <div class="mt-10 flex items-center justify-center gap-x-6">
-          <a href={copy.ctas[0].url} class={btnPrimary}>{copy.ctas[0].text}</a>
-          <a href={copy.ctas[1].url} class={btnSecondary}>{copy.ctas[1].text}</a>
+        <p class="mt-6 text-lg leading-8 text-neutral-300" set:html={processContent(body_sections[0].content)} />
+        
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Button href={copy.ctas[0].url} variant="default" size="lg">
+            {copy.ctas[0].text}
+          </Button>
+          <Button href={copy.ctas[1].url} variant="outline" size="lg">
+            {copy.ctas[1].text}
+          </Button>
         </div>
+
+        <div class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <div class="bg-neutral-900/50 border border-border rounded-lg p-6 backdrop-blur-sm">
+            <div class="text-3xl font-bold text-primary-400">{heroStats.wpo.value}</div>
+            <div class="text-sm text-neutral-400 mt-1">{heroStats.wpo.label}</div>
+          </div>
+          <div class="bg-neutral-900/50 border border-border rounded-lg p-6 backdrop-blur-sm">
+            <div class="text-3xl font-bold text-primary-400">{heroStats.discount.value}</div>
+            <div class="text-sm text-neutral-400 mt-1">{heroStats.discount.label}</div>
+          </div>
+          <div class="bg-neutral-900/50 border border-border rounded-lg p-6 backdrop-blur-sm">
+            <div class="text-3xl font-bold text-primary-400">{heroStats.support.value}</div>
+            <div class="text-sm text-neutral-400 mt-1">{heroStats.support.label}</div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <section id="problema-web-canarias" class="py-20 bg-neutral-950">
-      <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-        <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-          {copy.h2s[0]}
-        </h2>
-        <p class="mt-6 text-lg leading-8 text-neutral-300">
-          Seguro que te suena: ves ingenieros que piden 3.000€ por una web sencilla o freelancers en 'la selva' que cobran poquísimo, te entregan algo que parece funcionar y desaparecen. El resultado es el mismo: te quedas solo, con una 
-          <strong class="font-semibold text-primary-500">'web abandonada'</strong>, 
-          lenta (WPO 40-50) y que no te trae ni un cliente. 
-          <strong class="font-semibold text-primary-500">Yo no quiero eso, eso no me representa</strong>.
-        </p>
+    <section 
+      id="problema-web-canarias" 
+      class="py-20 bg-neutral-900/30 border-y border-border"
+    >
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
+            {copy.h2s[0]}
+          </h2>
+        </div>
+
+        <OptimizedImage
+          imageName={copy.body_sections[1].imageName || 'default-image'}
+          basePath={copy.body_sections[1].basePath || 'sanahujadev'}
+          alt={copy.body_sections[1].imageAlt || 'Imagen relacionada con el problema del diseño web en Canarias.'}
+          width={1920}
+          height={1080}
+          sizes="(max-width: 1024px) calc(100vw - 2.5rem), 976px"
+          class="w-full h-[300px] object-cover sm:h-[400px] lg:h-[450px] mb-8 rounded-lg shadow-lg"
+        />
+
+        <div class="bg-card border border-border rounded-2xl p-8 sm:p-10">
+          <p 
+            class="text-lg leading-relaxed text-neutral-300 text-pretty" 
+            set:html={processContent(copy.body_sections[1].content)} 
+          />
+        </div>
       </div>
     </section>
 
     <section id="gancho-oferta" class="py-20">
-      <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-        <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-          {copy.h2s[1]}
-        </h2>
-        <p class="mt-6 text-lg leading-8 text-neutral-300">
-          Quiero que los autónomos y pymes de Tenerife tengan acceso a servicios profesionales asequibles. Mi estrategia es transparente: te ofrezco un 
-          <strong class="font-semibold text-primary-500">90% de descuento</strong> 
-          en la creación o migración de tu sitio web. ¿La única condición? Que te comprometas con tu éxito contratando el servicio de 'Mantenimiento Web Esencial' por 12 meses. Sin trampa.
-        </p>
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        
+        <div class="text-center mb-10">
+          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white sm:text-4xl">
+            {copy.h2s[1]}
+          </h2>
+        </div>
+
+        <div class="relative">
+          <div class="absolute inset-0 bg-primary-500/5 blur-3xl" aria-hidden="true"></div>
+          
+          <div class="relative bg-gradient-to-br from-neutral-900 to-neutral-900/50 border border-primary-500/20 rounded-2xl p-8 sm:p-10">
+            
+            <div class="flex items-start gap-4 mb-6">
+              <div class="bg-primary-500/10 rounded-lg p-3">
+                <Zap class="w-6 h-6 text-primary-400" />
+              </div>
+              <div>
+                <Badge variant="v0_primary" class="mb-3">
+                  {ganchoBadge}
+                </Badge>
+              </div>
+            </div>
+
+            <p 
+              class="text-lg leading-relaxed text-neutral-300 text-pretty"
+              set:html={processContent(copy.body_sections[2].content, 'font-semibold text-primary-400 text-xl')}
+            />
+          </div>
+        </div>
+        
       </div>
     </section>
 
-    <section id="diferenciador-wpo" class="py-20 overflow-hidden">
+    <section id="diferenciador-wpo" class="py-20 bg-neutral-900/30">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="grid grid-cols-1 gap-x-12 gap-y-10 lg:grid-cols-2 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           <div>
-            <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            <Badge variant="v0_secondary" class="mb-6">
+              <TrendingUp class="w-3 h-3 mr-1.5" />
+              {wpoSection.badge}
+            </Badge>
+
+            <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white sm:text-4xl mb-6">
               {copy.h2s[2]}
             </h2>
-            <p class="mt-6 text-lg leading-8 text-neutral-300">
-              Tu web no solo será moderna, seria y transmitirá confianza; será técnicamente superior. Mi sitio tiene una puntuación de velocidad (WPO) de 99. Nuestros competidores locales (como chosqueb.com o kingseo.es) se mueven entre 41 y 53. Una web rápida no es un lujo; es la base para que Google te respete y tus clientes no se marchen antes de conocerte.
-            </p>
+
+            <p 
+              class="text-lg leading-relaxed text-neutral-300 text-pretty mb-8"
+              set:html={processContent(copy.body_sections[3].content, 'font-semibold text-secondary-400')}
+            />
+
+            <div class="space-y-4">
+              {wpoSection.features.map(feature => (
+                <div class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-accent-400 mt-0.5 flex-shrink-0" />
+                  <p class="text-neutral-300">{feature}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          
-          <div class="flex items-center justify-center h-80 bg-neutral-800 border border-neutral-700 rounded-2xl shadow-lg">
-            <p class="text-neutral-500 text-lg font-medium">[Placeholder: Visual WPO 99 vs 53]</p>
+
+          <div class="relative">
+            <div class="bg-card border border-border rounded-2xl p-8 shadow-2xl">
+              <div class="text-center mb-8">
+                <p class="text-sm text-muted-foreground uppercase tracking-wider font-medium mb-4">
+                  {wpoSection.chart.title}
+                </p>
+              </div>
+
+              <div class="space-y-6">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-neutral-200 font-medium">{wpoSection.chart.main.label}</span>
+                    <span class="text-2xl font-bold text-accent-400">{wpoSection.chart.main.value}</span>
+                  </div>
+                  <div class="h-3 bg-neutral-800 rounded-full overflow-hidden">
+                    <div
+                      class="h-full bg-gradient-to-r from-accent-500 to-accent-400 rounded-full"
+                      style={`width: ${wpoSection.chart.main.value}%`}
+                    ></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-muted-foreground text-sm">{wpoSection.chart.competitorA.label}</span>
+                    <span class="text-lg font-medium text-neutral-500">{wpoSection.chart.competitorA.value}</span>
+                  </div>
+                  <div class="h-2 bg-neutral-800 rounded-full overflow-hidden">
+                    <div class="h-full bg-neutral-700 rounded-full" style={`width: ${wpoSection.chart.competitorA.value}%`}></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-muted-foreground text-sm">{wpoSection.chart.competitorB.label}</span>
+                    <span class="text-lg font-medium text-neutral-500">{wpoSection.chart.competitorB.value}</span>
+                  </div>
+                  <div class="h-2 bg-neutral-800 rounded-full overflow-hidden">
+                    <div class="h-full bg-neutral-700 rounded-full" style={`width: ${wpoSection.chart.competitorB.value}%`}></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8 pt-6 border-t border-border">
+                <p class="text-sm text-muted-foreground text-center" set:html={wpoSection.chart.summary} />
+              </div>
+            </div>
           </div>
           
         </div>
       </div>
     </section>
 
-    <section id="promesa-socio-digital" class="py-20 overflow-hidden">
+    <section id="promesa-socio-digital" class="py-20">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="grid grid-cols-1 gap-x-12 gap-y-10 lg:grid-cols-2 items-center">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
-          <div class="flex items-center justify-center h-80 bg-neutral-800 border border-neutral-700 rounded-2xl shadow-lg lg:order-1">
-            <p class="text-neutral-500 text-lg font-medium">[Placeholder: Icono 'Socio Digital']</p>
+          <div class="order-2 lg:order-1">
+            <div class="relative">
+              <div class="absolute inset-0 bg-secondary-500/10 blur-3xl" aria-hidden="true"></div>
+              
+              <div class="relative bg-gradient-to-br from-neutral-900 to-neutral-900/50 border border-secondary-500/20 rounded-2xl p-12 flex items-center justify-center 
+                          h-[274px] sm:h-[270px] lg:h-[420px]">
+                <div class="text-center">
+                  <div class="w-24 h-24 mx-auto bg-secondary-500/10 rounded-2xl flex items-center justify-center mb-6">
+                    <Shield class="w-12 h-12 text-secondary-400" />
+                  </div>
+                  <p class="text-lg font-semibold text-neutral-200">{socioDigitalSection.slogan1}</p>
+                  <p class="text-sm text-neutral-400 mt-2">{socioDigitalSection.slogan2}</p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="lg:order-2">
-            <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          <div class="order-1 lg:order-2">
+            
+            <Badge variant="v0_secondary" class="mb-6">
+              {socioDigitalSection.badge}
+            </Badge>
+
+            <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white sm:text-4xl mb-6">
               {copy.h2s[3]}
             </h2>
-            <p class="mt-6 text-lg leading-8 text-neutral-300">
-              Yo no vendo un producto, 
-              <strong class="font-semibold text-primary-500">doy un servicio</strong>. 
-              No te entrego la web y me olvido de tu negocio. Mi promesa es ser tu 'acompañante digital'. Aunque todo funcione bien, yo estaré 'por detrás' analizando proactivamente si la web cumple tus objetivos reales (captar clientes, recibir formularios, etc.), no solo si 'está online'.
-            </p>
+
+            <p 
+              class="text-lg leading-relaxed text-neutral-300 text-pretty mb-8"
+              set:html={processContent(copy.body_sections[4].content, 'font-semibold text-secondary-400')}
+            />
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="bg-card border border-border rounded-lg p-5">
+                <div class="text-secondary-400 font-semibold mb-1">{socioDigitalSection.features.proactive.title}</div>
+                <div class="text-sm text-muted-foreground">{socioDigitalSection.features.proactive.description}</div>
+              </div>
+              <div class="bg-card border border-border rounded-lg p-5">
+                <div class="text-secondary-400 font-semibold mb-1">{socioDigitalSection.features.support.title}</div>
+                <div class="text-sm text-muted-foreground">{socioDigitalSection.features.support.description}</div>
+              </div>
+            </div>
           </div>
           
         </div>
       </div>
     </section>
 
-    <section id="audiencia" class="py-20 bg-neutral-950">
-      <div class="max-w-3xl mx-auto px-6 lg:px-8">
-        <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl text-center">
-          {copy.h2s[4]}
-        </h2>
-        <p class="mt-6 text-lg leading-8 text-neutral-300">
-          Este servicio de 'desarrollo web en Tenerife' es para ti si:
+    <section id="audiencia" class="py-20 bg-neutral-950 border-y border-border">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white sm:text-4xl">
+            {copy.h2s[4]}
+          </h2>
+        </div>
+
+        <p class="text-lg text-neutral-300 mb-8">
+          {audienceIntro}
         </p>
-        <ul class="mt-6 space-y-4 text-lg text-neutral-300 list-disc list-outside pl-6">
-          <li>
-            <strong class="font-semibold text-neutral-100">Eres el 'Propietario Aislado':</strong> 
-            Un negocio local (en La Laguna, San Isidro, donde sea) sin presencia digital.
-          </li>
-          <li>
-            <strong class="font-semibold text-neutral-100">Eres el 'Propietario Frustrado':</strong> 
-            Tienes una web lenta, que da errores o no trae clientes.
-          </li>
-          <li>
-            <strong class="font-semibold text-neutral-100">Buscas un 'Rediseño Web en Tenerife':</strong> 
-            Quieres modernizar tu imagen y que, esta vez sí, funcione de verdad.
-          </li>
-        </ul>
+
+        <div class="space-y-6">
+          
+          {audienceCards.map(card => (
+            <div class="bg-card border border-border rounded-xl p-6 hover:border-neutral-700 transition-colors">
+              <div class="flex items-start gap-4">
+                <div class="bg-primary-500/10 rounded-lg p-2 mt-1">
+                  <div class="w-2 h-2 bg-primary-400 rounded-full"></div>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-neutral-100 mb-2">
+                    {card.title}
+                  </h3>
+                  <p class="text-muted-foreground leading-relaxed">
+                    {card.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+
+        </div>
       </div>
     </section>
 
     <section id="precio-transparencia" class="py-20">
-      <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-        <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-          {copy.h2s[5]}
-        </h2>
-        <p class="mt-6 text-lg leading-8 text-neutral-300">
-          El precio lo marca el mercado. Has visto webs de 1.500€ a 3.000€ y otras de 300€. Mi 'Valor Real de Mercado' en Canarias por un proyecto profesional es de 5.445€. Pero con el 
-          <strong class="font-semibold text-primary-500">'Precio Estratégico Gancho'</strong>, 
-          el coste de desarrollo se queda en 
-          <strong class="font-semibold text-primary-500">544,50€</strong>, 
-          siempre que contrates el mantenimiento. Así de claro.
-        </p>
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white sm:text-4xl">
+            {copy.h2s[5]}
+          </h2>
+        </div>
+
+        <div class="bg-gradient-to-br from-neutral-900 to-neutral-900/50 border border-border rounded-2xl p-8 sm:p-10">
+          
+          <p class="text-lg leading-relaxed text-neutral-300 text-pretty mb-8" set:html={precioSection.contexto} />
+
+          <div class="bg-neutral-950 border border-primary-500/30 rounded-xl p-8 text-center">
+            
+            <Badge variant="v0_primary" class="mb-4">
+              {precioSection.badge}
+            </Badge>
+
+            <div class="text-5xl sm:text-6xl font-bold text-white mb-2">
+              {precioSection.gancho.precio}
+            </div>
+
+            <p class="text-muted-foreground mb-6">
+              {precioSection.gancho.subtitulo}
+            </p>
+
+            <div class="inline-flex items-center gap-2 text-accent-400 text-sm font-medium">
+              <CheckCircle2 class="w-4 h-4" />
+              {precioSection.gancho.ahorro}
+            </div>
+          </div>
+
+          <p class="text-center text-muted-foreground mt-6 text-sm">
+            {precioSection.cierre}
+          </p>
+        </div>
       </div>
     </section>
 
-    <section id="cta-final" class="py-24 sm:py-32 text-center bg-neutral-800">
-      <div class="max-w-3xl mx-auto px-6 lg:px-8">
-        <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-          {copy.h2s[6]}
+    <section id="cta-final" class="py-24 sm:py-32 bg-gradient-to-b from-neutral-900/30 to-neutral-900 text-center">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white sm:text-4xl mb-6">
+          {ctaFinal.h2}
         </h2>
-        <p class="mt-6 text-lg leading-8 text-neutral-300">
-          ¿Hablamos? Rellena el formulario inicial y definamos juntos qué es el éxito para ti. Sin rodeos.
+
+        <p class="text-lg sm:text-xl leading-relaxed text-neutral-300 max-w-2xl mx-auto mb-10 text-pretty">
+          {ctaFinal.content}
         </p>
-        <div class="mt-10">
-          <a href={copy.ctas[0].url} class={btnPrimary}>{copy.ctas[0].text}</a>
-        </div>
+
+        <Button href={ctaFinal.buttonUrl} variant="default" size="lg">
+          {ctaFinal.buttonText}
+          </Button>
+
+        <p class="mt-8 text-sm text-muted-foreground">
+          {ctaFinal.subtext}
+        </p>
       </div>
     </section>
     
