@@ -1,92 +1,288 @@
+@import "tailwindcss";
 @import "vanilla-cookieconsent/dist/cookieconsent.css";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* @import "tw-animate-css"; (Lo añadiremos si es necesario) */
 
-/* ================================================================
-  ESTILOS GLOBALES
-  ================================================================
-*/
+ @custom-variant dark (&:is(.dark *));
 
-html {
-  scrollbar-gutter: stable;
-  scroll-behavior: smooth;
+/* Nueva Paleta de 4 Escalas según Doctrina de Estilo */
+:root {
+  /* Neutral (Pizarra/Slate) - Base para Seriedad y Modernidad (90% de la UI) */
+  --neutral-50: oklch(0.985 0.002 264);
+  --neutral-100: oklch(0.967 0.003 264);
+  --neutral-200: oklch(0.921 0.005 264);
+  --neutral-300: oklch(0.808 0.008 264);
+  --neutral-400: oklch(0.646 0.011 264);
+  --neutral-500: oklch(0.525 0.013 264);
+  --neutral-600: oklch(0.431 0.013 264);
+  --neutral-700: oklch(0.362 0.011 264);
+  --neutral-800: oklch(0.267 0.009 264);
+  --neutral-900: oklch(0.208 0.007 264);
+  --neutral-950: oklch(0.134 0.004 264);
+
+  /* Primary (Naranja #FF6F00) - Solo para Acción y Energía */
+  --primary-50: oklch(0.969 0.042 56);
+  --primary-100: oklch(0.933 0.084 56);
+  --primary-200: oklch(0.873 0.143 56);
+  --primary-300: oklch(0.805 0.19 56);
+  --primary-400: oklch(0.723 0.22 56);
+  --primary-500: oklch(0.656 0.231 43); /* #FF6F00 */
+  --primary-600: oklch(0.59 0.213 43);
+  --primary-700: oklch(0.488 0.174 43);
+  --primary-800: oklch(0.407 0.139 43);
+  --primary-900: oklch(0.345 0.109 43);
+  --primary-950: oklch(0.217 0.064 43);
+
+  /* Secondary (Índigo #6366f1) - Para Acentos Técnicos */
+  --secondary-50: oklch(0.969 0.022 276);
+  --secondary-100: oklch(0.941 0.047 276);
+  --secondary-200: oklch(0.893 0.088 276);
+  --secondary-300: oklch(0.823 0.139 276);
+  --secondary-400: oklch(0.731 0.184 276);
+  --secondary-500: oklch(0.65 0.204 276); /* #6366f1 */
+  --secondary-600: oklch(0.564 0.199 276);
+  --secondary-700: oklch(0.492 0.168 276);
+  --secondary-800: oklch(0.419 0.132 276);
+  --secondary-900: oklch(0.363 0.1 276);
+  --secondary-950: oklch(0.246 0.061 276);
+
+  /* Accent (Teal #14b8a6) - Para Alertas y Estado */
+  --accent-50: oklch(0.969 0.026 180);
+  --accent-100: oklch(0.933 0.06 180);
+  --accent-200: oklch(0.881 0.108 180);
+  --accent-300: oklch(0.805 0.141 180);
+  --accent-400: oklch(0.705 0.152 180);
+  --accent-500: oklch(0.649 0.138 180); /* #14b8a6 */
+  --accent-600: oklch(0.558 0.12 180);
+  --accent-700: oklch(0.471 0.098 180);
+  --accent-800: oklch(0.398 0.078 180);
+  --accent-900: oklch(0.346 0.062 180);
+  --accent-950: oklch(0.23 0.041 180);
+
+  /* Semantic Design Tokens */
+  --background: var(--neutral-950);
+  --foreground: var(--neutral-50);
+  --card: var(--neutral-900);
+  --card-foreground: var(--neutral-50);
+  --popover: var(--neutral-900);
+  --popover-foreground: var(--neutral-50);
+  --primary: var(--primary-500);
+  --primary-foreground: var(--neutral-950);
+  --secondary: var(--secondary-500);
+  --secondary-foreground: var(--neutral-50);
+  --muted: var(--neutral-800);
+  --muted-foreground: var(--neutral-400);
+  --accent: var(--accent-500);
+  --accent-foreground: var(--neutral-950);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: var(--neutral-50);
+  --border: var(--neutral-800);
+  --input: var(--neutral-800);
+  --ring: var(--primary-500);
+  --radius: 0.75rem;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
 }
 
-body {
-  overflow-x: hidden;
-  /* Aplicamos la fuente base aquí si es necesario */
-  /* font-family: 'Montserrat', sans-serif; (Tailwind ya lo hace con font-sans) */
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+ @theme inline {
+  /* ¡AQUÍ ESTÁ NUESTRA AFINACIÓN DE MARCA! */
+  /* No usamos Geist. Usamos NUESTRA voz. */
+  --font-sans: "Montserrat", sans-serif; 
+  --font-mono: "Geist Mono", "Geist Mono Fallback"; /* (Podemos mantener su mono) */
+
+  /* Neutral Scale */
+  --color-neutral-50: var(--neutral-50);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-400: var(--neutral-400);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-900: var(--neutral-900);
+  --color-neutral-950: var(--neutral-950);
+
+  /* Primary Scale (Naranja) */
+  --color-primary-50: var(--primary-50);
+  --color-primary-100: var(--primary-100);
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-primary-400: var(--primary-400);
+  --color-primary-500: var(--primary-500);
+  --color-primary-600: var(--primary-600);
+  --color-primary-700: var(--primary-700);
+  --color-primary-800: var(--primary-800);
+  --color-primary-900: var(--primary-900);
+  --color-primary-950: var(--primary-950);
+
+  /* Secondary Scale (Índigo) */
+  --color-secondary-50: var(--secondary-50);
+  --color-secondary-100: var(--secondary-100);
+  --color-secondary-200: var(--secondary-200);
+  --color-secondary-300: var(--secondary-300);
+  --color-secondary-400: var(--secondary-400);
+  --color-secondary-500: var(--secondary-500);
+  --color-secondary-600: var(--secondary-600);
+  --color-secondary-700: var(--secondary-700);
+  --color-secondary-800: var(--secondary-800);
+  --color-secondary-900: var(--secondary-900);
+  --color-secondary-950: var(--secondary-950);
+
+  /* Accent Scale (Teal) */
+  --color-accent-50: var(--accent-50);
+  --color-accent-100: var(--accent-100);
+  --color-accent-200: var(--accent-200);
+  --color-accent-300: var(--accent-300);
+  --color-accent-400: var(--accent-400);
+  --color-accent-500: var(--accent-500);
+  --color-accent-600: var(--accent-600);
+  --color-accent-700: var(--accent-700);
+  --color-accent-800: var(--accent-800);
+  --color-accent-900: var(--accent-900);
+  --color-accent-950: var(--accent-950);
+
+  /* Semantic Tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+ @layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+  }
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
 }
 
 /* ================================================================
   ESTILOS DE TERCEROS (Ej. Cookie Consent)
+  ¡AHORA 100% SEMÁNTICO USANDO NUESTROS TOKENS DE V0!
   ================================================================
 */
-
-/* Aquí aplicamos nuestro NUEVO sistema de tokens al plugin
-  de cookies. ¡Mucho más fácil de leer!
-*/
 #cc-main {
-  /* --cc-bg: theme(colors.slate.50); */
-  --cc-bg: #f8fafc;
-  
-  /* --cc-text-color: theme(colors.slate.800); */
-  --cc-text-color: #1e293b;
-  
-  /* --cc-border-color: theme(colors.slate.200); */
-  --cc-border-color: #e2e8f0;
+  /* ¡Note la elegancia! Ya no usamos valores hex.
+    Usamos los mismos tokens que V0 usa para las tarjetas (cards).
+    ¡Pero para el modo claro, debemos usar los tokens del :root!
+  */
+  --cc-bg: var(--neutral-50); /* (Equivalente al --card del modo claro) */
+  --cc-text-color: var(--neutral-800);
+  --cc-border-color: var(--neutral-200);
+  --cc-link-color: var(--primary); /* Token semántico --primary */
 
-  /* --cc-link-color: theme(colors.primary.600); */
-  --cc-link-color: #FF6F00;
+  --cc-btn-primary-bg: var(--primary);
+  --cc-btn-primary-border-color: var(--primary);
+  --cc-btn-primary-hover-bg: var(--primary-600); /* Un tono más oscuro */
 
-  /* --cc-btn-primary-bg: theme(colors.primary.600); */
-  --cc-btn-primary-bg: #FF6F00;
-  
-  /* --cc-btn-primary-border-color: theme(colors.primary.600); */
-  --cc-btn-primary-border-color: #FF6F00;
-  
-  /* --cc-btn-primary-hover-bg: theme(colors.primary.700); */
-  --cc-btn-primary-hover-bg: #C2410C;
+  --cc-btn-secondary-bg: var(--neutral-100);
+  --cc-btn-secondary-border-color: var(--neutral-200);
+  --cc-btn-secondary-text-color: var(--neutral-700);
+  --cc-btn-secondary-hover-bg: var(--neutral-200);
 
-  /* --cc-btn-secondary-bg: theme(colors.slate.100); */
-  --cc-btn-secondary-bg: #f1f5f9;
-  
-  /* --cc-btn-secondary-border-color: theme(colors.slate.200); */
-  --cc-btn-secondary-border-color: #e2e8f0;
-  
-  /* --cc-btn-secondary-text-color: theme(colors.slate.700); */
-  --cc-btn-secondary-text-color: #334155;
-  
-  /* --cc-btn-secondary-hover-bg: theme(colors.slate.200); */
-  --cc-btn-secondary-hover-bg: #e2e8f0;
-
-  --cc-toggle-on-bg: #FF6F00; /* (Primary 600) */
+  --cc-toggle-on-bg: var(--primary);
   --cc-btn-border-radius: 9999px; /* Pill shape */
 }
 
 .cc--darkmode #cc-main {
-  /* --cc-bg: theme(colors.slate.800); */
-  --cc-bg: #1e293b;
+  /* ¡Aquí usamos los tokens semánticos del .dark! */
+  --cc-bg: var(--card); /* <-- ¡Semántico! */
+  --cc-text-color: var(--foreground); /* <-- ¡Semántico! */
+  --cc-border-color: var(--border); /* <-- ¡Semántico! */
+  --cc-link-color: var(--primary-400); /* (Un naranja más brillante para dark) */
 
-  /* --cc-text-color: theme(colors.slate.100); */
-  --cc-text-color: #f1f5f9;
+  --cc-btn-primary-bg: var(--primary); /* (El primary del modo oscuro) */
+  --cc-btn-primary-border-color: var(--primary);
+  --cc-btn-primary-hover-bg: var(--primary-100); /* (Un tono más brillante) */
 
-  /* --cc-border-color: theme(colors.slate.700); */
-  --cc-border-color: #334155;
+  --cc-btn-secondary-bg: var(--muted);
+  --cc-btn-secondary-border-color: var(--border);
+  --cc-btn-secondary-text-color: var(--foreground);
+  --cc-btn-secondary-hover-bg: var(--border);
 
-  /* --cc-link-color: theme(colors.primary.400); */
-  --cc-link-color: #FB923C;
-
-  /* --cc-btn-secondary-bg: theme(colors.slate.700); */
-  --cc-btn-secondary-bg: #334155;
-
-  /* --cc-btn-secondary-border-color: theme(colors.slate.700); */
-  --cc-btn-secondary-border-color: #334155;
-
-  /* --cc-btn-secondary-text-color: theme(colors.slate.100); */
-  --cc-btn-secondary-text-color: #f1f5f9;
-
-  /* --cc-btn-secondary-hover-bg: theme(colors.slate.600); */
-  --cc-btn-secondary-hover-bg: #475569;
+  --cc-toggle-on-bg: var(--primary);
 }

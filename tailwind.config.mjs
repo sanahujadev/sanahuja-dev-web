@@ -1,89 +1,98 @@
 // tailwind.config.mjs
 /** @type {import('tailwindcss').Config} */
-import colors from 'tailwindcss/colors';
 
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   darkMode: 'class',
-  
-  // ¡EL GRAN CAMBIO ESTÁ AQUÍ!
-  // Ya no usamos "extend" para las claves principales.
   theme: {
-    // ----------------------------------------------------
-    // 1. FUENTE (Reemplaza la fuente por defecto)
+    // 1. Definimos la fuente (¡Esto es correcto!)
     fontFamily: {
       sans: ['Montserrat', 'sans-serif'],
+      // Mantenemos el mono de V0 por si acaso
+      mono: ['"Geist Mono"', '"Geist Mono Fallback"'],
     },
-    // ----------------------------------------------------
     
-    // 2. COLORES (Reemplaza los colores por defecto)
-    colors: {
-      // --- Incluimos los colores base para que sigan funcionando ---
-      transparent: 'transparent',
-      current: 'currentColor',
-      black: colors.black,
-      white: colors.white,
-      
-      // --- Y AHORA, NUESTRA PALETA PERSONALIZADA ---
-      
-      // NEUTRAL (Seriedad, Fondos, Texto)
-      neutral: colors.slate,
-      
-      // PRIMARY (Energía, Acción)
-      primary: {
-        50: '#FFF7ED',
-        100: '#FFEDD5',
-        200: '#FED7AA',
-        300: '#FDBA74',
-        400: '#FB923C',
-        500: '#F97316',
-        600: '#FF6F00', // <-- SU COLOR DE MARCA
-        700: '#C2410C',
-        800: '#9A3412',
-        900: '#7C2D12',
-        905: '#431407', // Corrección: 950
-      },
-      
-      // SECONDARY (Confianza, Técnico)
-      secondary: {
-        50: '#EEF2FF',
-        100: '#E0E7FF',
-        200: '#C7D2FE',
-        300: '#A5B4FC',
-        400: '#818CF8',
-        500: '#6366F1', // <-- SU COLOR SECUNDARIO
-        600: '#4F46E5',
-        700: '#4338CA',
-        800: '#3730A3',
-        900: '#312E81',
-        950: '#1E1B4B',
-      },
-      
-      // ACCENT (Para etiquetas, éxito, etc.)
-      accent: {
-        50: '#F0FDFA',
-        100: '#CCFBF1',
-        200: '#99F6E4',
-        300: '#5EEAD4',
-        400: '#2DD4BF',
-        500: '#14B8A6', // <-- SU COLOR DE ACENTO
-        600: '#0D9488',
-        700: '#0F766E',
-        800: '#115E59',
-        900: '#134E4A',
-        950: '#042f2e',
-      },
-    },
-    // ----------------------------------------------------
-    
-    // 3. EXTEND (Opcional, para otras cosas)
-    // Dejamos "extend" por si en el futuro queremos AÑADIR
-    // algo a la paleta de espaciado, por ejemplo, pero
-    // colors y fontFamily están FUERA.
+    // 2. ¡EL CONECTOR!
+    // Mapeamos las clases de Tailwind a las Variables CSS
+    // definidas en global.css
     extend: {
-      // (Aquí podríamos añadir cosas como 'spacing', etc.)
-    }
+      colors: {
+        primary: {
+          50: 'var(--color-primary-50)',
+          100: 'var(--color-primary-100)',
+          200: 'var(--color-primary-200)',
+          300: 'var(--color-primary-300)',
+          400: 'var(--color-primary-400)',
+          500: 'var(--color-primary-500)',
+          600: 'var(--color-primary-600)',
+          700: 'var(--color-primary-700)',
+          800: 'var(--color-primary-800)',
+          900: 'var(--color-primary-900)',
+          950: 'var(--color-primary-950)',
+        },
+        neutral: {
+          50: 'var(--color-neutral-50)',
+          100: 'var(--color-neutral-100)',
+          200: 'var(--color-neutral-200)',
+          300: 'var(--color-neutral-300)',
+          400: 'var(--color-neutral-400)',
+          500: 'var(--color-neutral-500)',
+          600: 'var(--color-neutral-600)',
+          700: 'var(--color-neutral-700)',
+          800: 'var(--color-neutral-800)',
+          900: 'var(--color-neutral-900)',
+          950: 'var(--color-neutral-950)',
+        },
+        secondary: {
+          50: 'var(--color-secondary-50)',
+          100: 'var(--color-secondary-100)',
+          200: 'var(--color-secondary-200)',
+          300: 'var(--color-secondary-300)',
+          400: 'var(--color-secondary-400)',
+          500: 'var(--color-secondary-500)',
+          600: 'var(--color-secondary-600)',
+          700: 'var(--color-secondary-700)',
+          800: 'var(--color-secondary-800)',
+          900: 'var(--color-secondary-900)',
+          950: 'var(--color-secondary-950)',
+        },
+        accent: {
+          50: 'var(--color-accent-50)',
+          100: 'var(--color-accent-100)',
+          200: 'var(--color-accent-200)',
+          300: 'var(--color-accent-300)',
+          400: 'var(--color-accent-400)',
+          500: 'var(--color-accent-500)',
+          600: 'var(--color-accent-600)',
+          700: 'var(--color-accent-700)',
+          800: 'var(--color-accent-800)',
+          900: 'var(--color-accent-900)',
+          950: 'var(--color-accent-950)',
+        },
+        
+        // ¡TAMBIÉN CONECTAMOS LOS TOKENS SEMÁNTICOS!
+        background: 'var(--color-background)',
+        foreground: 'var(--color-foreground)',
+        card: 'var(--color-card)',
+        'card-foreground': 'var(--color-card-foreground)',
+        popover: 'var(--color-popover)',
+        'popover-foreground': 'var(--color-popover-foreground)',
+        muted: 'var(--color-muted)',
+        'muted-foreground': 'var(--color-muted-foreground)',
+        destructive: 'var(--color-destructive)',
+        'destructive-foreground': 'var(--color-destructive-foreground)',
+        border: 'var(--color-border)',
+        input: 'var(--color-input)',
+        ring: 'var(--color-ring)',
+      },
+      // También mapeamos el radio de V0
+      borderRadius: {
+        lg: 'var(--radius-lg)',
+        md: 'var(--radius-md)',
+        sm: 'var(--radius-sm)',
+        xl: 'var(--radius-xl)',
+      }
+    },
   },
-  
   plugins: [],
 };
