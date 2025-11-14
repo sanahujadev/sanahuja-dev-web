@@ -1,0 +1,60 @@
+{
+  "endpoint": "/es/blog/por-que-mi-web-es-lenta",
+  "lang": "es",
+  "title": "¿Por qué mi web va lenta? La Guía WPO (Y cómo lo arreglamos)",
+  "meta_description": "¿Tu web tarda en cargar? 😩 Te explico por qué (Imágenes, WordPress, Hosting) y cómo optimizar la velocidad (WPO) para mejorar en PageSpeed.",
+  "h1": "¿Por qué mi web va lenta? (Y por qué la mía tiene un 99 en PageSpeed)",
+  "h2s": [
+    "El Dolor de la \"Web Lenta\" (Y por qué Google te odia por ello)",
+    "Los 3 Culpables Habituales de una 'web lenta en WordPress'",
+    "Prueba de Autoridad: Mi WPO 99 vs. el 41 de la Competencia en Tenerife",
+    "Cómo Optimizar la Velocidad de tu Web (Los Quick Wins)",
+    "La Solución Real: Mi Servicio de Mantenimiento WPO en Tenerife"
+  ],
+  "body_sections": [
+    {
+      "heading": "h1_lead",
+      "content": "Das F5... y nada. El 'spinner' da vueltas... y nada. Tu cliente se ha ido a la competencia. Si estás buscando 'por qué mi web va lenta'[cite: 1353], estás en el sitio correcto. Soy Javi, y mi web tiene un WPO (nota de velocidad) de 99. Te explico por qué la tuya no[cite: 1356]."
+    },
+    {
+      "heading": "El Dolor de la \"Web Lenta\" (Y por qué Google te odia por ello)",
+      "content": "Una 'web que tarda en cargar' [cite: 1354] no es solo molesta. Es un veneno. Cada segundo extra de carga dispara tu tasa de rebote (la gente que huye). Y peor: Google lo ve. Si tu web es lenta, Google piensa que das una mala experiencia y te hunde en los resultados. Adiós, clientes."
+    },
+    {
+      "heading": "Los 3 Culpables Habituales de una 'web lenta en WordPress'",
+      "content": "Como 'Propietario Frustrado', seguro que tu web usa WordPress. Es genial, pero se ensucia fácil. Los culpables suelen ser:\n1. **Imágenes Gigantes:** Subiste las fotos tal cual salieron de la cámara. ¡Error! Pesan demasiado.\n2. **Plugins, Plugins y más Plugins:** Tienes 40 plugins 'por si acaso'. Cada uno es un pequeño lastre.\n3. **Un Hosting Barato:** Pagaste 2€ al mes por un hosting compartido con 500 webs más. Vas en un autobús atascado."
+    },
+    {
+      "heading": "Prueba de Autoridad: Mi WPO 99 vs. el 41 de la Competencia en Tenerife",
+      "content": "Muchos te darán consejos, pero... ¿su web es rápida? ¡La mía sí! **Mi WPO es 99**. Hemos medido a competidores locales en Tenerife (como chosqueweb.com o kingseo.es) y sus notas son 53 y 41 [cite: 1358-1360]. ¡Somos la prueba viviente de que sabemos de lo que hablamos! [cite: 1361] No pueden escribir este post con la misma autoridad."
+    },
+    {
+      "heading": "Cómo Optimizar la Velocidad de tu Web (Los Quick Wins)",
+      "content": "Vale, Javi, ¡pero ayúdame! Aquí tienes 3 cosas que puedes hacer YA para 'mejorar pagespeed insights'[cite: 1354]:\n* **Comprime tus imágenes:** Usa herramientas online (¡gratis!) como TinyPNG antes de subirlas.\n* **Activa la Caché:** Instala un plugin de caché (W3 Total Cache, WP Rocket). Guardará una 'foto' de tu web para servirla más rápido.\n* **Limpia plugins:** Si no lo usas, ¡bórralo!"
+    },
+    {
+      "heading": "La Solución Real: Mi Servicio de Mantenimiento WPO en Tenerife",
+      "content": "Los 'Quick Wins' ayudan, pero la optimización real es un trabajo técnico. Es la 'Solución' que te doy a tu 'Por qué'[cite: 1356]. Si estás cansado de pelear con una 'web lenta' [cite: 1354] y quieres un WPO de 99, mi Servicio de Mantenimiento Web es para ti. Nosotros nos encargamos de todo."
+    }
+  ],
+  "ctas": [
+    {
+      "text": "¿Cansado de una web lenta? ¡Hablemos!",
+      "url": "/es/servicios/mantenimiento-web",
+      "type": "primary",
+      "justification": "CTA principal del Brief[cite: 1368], enlazando al servicio que resuelve el problema."
+    },
+    {
+      "text": "Rellenar Formulario de Proyecto",
+      "url": "/es/formulario-inicial/",
+      "type": "secondary",
+      "justification": "CTA secundario directo a la macro-conversión, por si el usuario ya está convencido."
+    }
+  ],
+  "justification_notes": {
+    "title": "KW principal + Valor (Guía) + Solución.",
+    "meta_description": "Ataca el dolor , da causas (Keywords semánticas [cite: 1354]) y la solución (WPO, PageSpeed).",
+    "h1": "KW principal + El 'hook' de autoridad (PUV) [cite: 1366] que nos diferencia.",
+    "body_sections": "Sigue el brief: Tono técnico pero comprensible[cite: 1356]. Se ataca el dolor de la Audiencia 2. Se usan las keywords semánticas ('web lenta wordpress', 'optimizar velocidad web', 'mejorar pagespeed insights', 'WPO tenerife')[cite: 1354]. Y lo más importante: se usa la PUV (WPO 99 vs 41/53) como argumento de autoridad irrefutable [cite: 1358-1361]. Se da valor real (Quick Wins) antes de presentar la solución (Mantenimiento)."
+  }
+}

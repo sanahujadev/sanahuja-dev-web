@@ -1,0 +1,66 @@
+{
+  "endpoint": "/es/servicios/mantenimiento-web",
+  "lang": "es",
+  "title": "Mantenimiento Web Tenerife | Evita tu \"Web Abandonada\" (WPO 99)",
+  "meta_description": "¿Tu web está abandonada? 🚀 Ofrezco Mantenimiento Web en Tenerife con soporte real (WPO 99). No solo 'funciona', cumple tus objetivos.",
+  "h1": "Mantenimiento Web Tenerife: El Fin de la \"Web Abandonada\"",
+  "h2s": [
+    "¿Te entregaron la web y desaparecieron?",
+    "La Diferencia: Un \"Socio Digital\" vs. un \"Vendedor\"",
+    "Prueba de Velocidad: Mi Mantenimiento SÍ Funciona (WPO 99)",
+    "Mi Promesa: Enfoque en Objetivos, no solo en \"Estar Online\"",
+    "¿Qué incluye este Soporte Web Profesional en Tenerife?",
+    "Precio Mantenimiento Web: Transparencia Total",
+    "Elige tu Nivel de Tranquilidad (Nuestros Packs)"
+  ],
+  "body_sections": [
+    {
+      "heading": "h1_lead",
+      "content": "Esto es para ti, propietario \"frustrado\". Si te sientes solo y tu web actual es un 'producto roto', has llegado al lugar correcto. Yo no te abandono. Mi trabajo empieza donde el de otros acaba."
+    },
+    {
+      "heading": "¿Te entregaron la web y desaparecieron?",
+      "content": "Lo conocemos. Te costó un dineral, te dieron las llaves y ¡Puf! El desarrollador desapareció. Ahora tienes una 'web abandonada': lenta, desactualizada, con errores y no te atreves ni a tocarla. Y lo peor: no te trae ni un cliente. Mi marca NO representa eso."
+    },
+    {
+      "heading": "La Diferencia: Un \"Socio Digital\" vs. un \"Vendedor\"",
+      "content": "Un vendedor te da un producto. Yo te doy un servicio. Mi modelo de negocio se basa en que tu web funcione perfectamente, siempre. Me convierto en tu socio IT, tu 'acompañante digital'. Porque, como siempre digo: **Tu éxito es mi éxito**."
+    },
+    {
+      "heading": "Prueba de Velocidad: Mi Mantenimiento SÍ Funciona (WPO 99)",
+      "content": "¡Palabras baratas! ¡Pues no! Mi propia web tiene una nota de WPO (velocidad) de 99. ¿Sabes cuál tiene la competencia? Un 53 y un 41. Esa es la prueba. Un mantenimiento profesional no es 'actualizar plugins'; es mantener tu web ultra-rápida y segura, como una fortaleza."
+    },
+    {
+      "heading": "Mi Promesa: Enfoque en Objetivos, no solo en \"Estar Online\"",
+      "content": "A la mayoría le pagas para que la web 'funcione'. A mí me pagas para que 'cumpla objetivos'. Yo estaré 'por detrás' analizando si la gente rellena el formulario, si te llaman, si la estrategia funciona... y si no, la cambiamos. Soy 'terco' para conseguir resultados."
+    },
+    {
+      "heading": "¿Qué incluye este Soporte Web Profesional en Tenerife?",
+      "content": "Esto no es solo 'actualizar mi página web'. El Mantenimiento Web Esencial (nuestra base por 20€/mes) incluye:\n* Gestión de dominio y certificados SSL.\n* Soporte de hosting y copias de seguridad.\n* Monitorización de disponibilidad (¡que nunca se caiga!).\n* Y lo más importante: la tranquilidad de tener un 'socio' vigilando."
+    },
+    {
+      "heading": "Elige tu Nivel de Tranquilidad (Nuestros Packs)",
+      "content": "El mantenimiento básico es la base. Pero si quieres que además gestionemos tu reputación, escribamos tu blog o te pasemos informes de analítica, tenemos los Packs. Soluciones integrales a un precio reducido."
+    }
+  ],
+  "ctas": [
+    {
+      "text": "¡Contrata tu Tranquilidad!",
+      "url": "/es/formulario-inicial/",
+      "type": "primary",
+      "justification": "CTA principal del Brief, enfocado en el beneficio emocional ('Tranquilidad') de la Audiencia 2."
+    },
+    {
+      "text": "Ver todos los Packs",
+      "url": "/packs/",
+      "type": "secondary",
+      "justification": "Upsell directo a la página 'Pilar' de Packs, como se menciona en la sección H2."
+    }
+  ],
+  "justification_notes": {
+    "title": "Keyword principal + Pain point ('Web Abandonada') + PUV (WPO 99).",
+    "meta_description": "Ataca el dolor, ofrece la solución local (KW) y el diferenciador técnico (WPO) y de marca (objetivos).",
+    "h1": "KW principal + La solución directa al 'dolor' principal de la Audiencia 2.",
+    "body_sections": "He usado la PUV y el tono 'Socio Digital' en todo el texto. Se ataca a los competidores con la prueba del WPO 99 y se usan las keywords secundarias ('soporte web profesional tenerife', 'precio mantenimiento web', 'actualizar mi página web') de forma natural. El contenido sigue la filosofía de marca de 'acompañamiento' y 'enfoque en objetivos'."
+  }
+}

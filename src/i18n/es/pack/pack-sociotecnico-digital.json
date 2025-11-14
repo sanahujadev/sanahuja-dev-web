@@ -1,0 +1,56 @@
+{
+  "endpoint": "/es/packs/pack-sociotecnico-digital",
+  "lang": "es",
+  "title": "Pack Sociotécnico Digital | Paquete SEO y WPO en Tenerife",
+  "meta_description": "Consigue el Pack Sociotécnico Digital de SanahujaDev. La solución de analítica y contenido en Tenerife. Ahorra 25€/mes. [cite: 1387]",
+  "h1": "Pack Sociotécnico Digital: Análisis y Autoridad (Ahorras 25€/mes)",
+  "h2s": [
+    "La Estrategia Completa: Más Allá del Mantenimiento",
+    "¿Qué Incluye EXACTAMENTE este Paquete Técnico?",
+    "El Valor Real: 130€ por separado, 105€ en Pack",
+    "Ideal para el Propietario que quiere \"Ir en Serio\"",
+    "Contrata el Pack y déjame ser tu Socio Técnico"
+  ],
+  "body_sections": [
+    {
+      "heading": "h1_lead",
+      "content": "Ya tienes tu web rápida. Ahora, vamos a hacerla inteligente. Este pack no es para 'estar', es para 'ganar'. Es la solución técnica 'Todo en Uno' [cite: 1387] para el análisis y la autoridad, diseñada para quienes se toman en serio sus objetivos."
+    },
+    {
+      "heading": "La Estrategia Completa: Más Allá del Mantenimiento",
+      "content": "El Mantenimiento Esencial (20€) es la base. Pero este pack añade la 'artillería pesada'. Es el 'paquete de mantenimiento web y analítica' [cite: 1378] que te permite entender qué funciona y crear 'autoridad' para atraer más clientes. Es el combo perfecto de 'servicios seo y wpo'[cite: 1378]."
+    },
+    {
+      "heading": "¿Qué Incluye EXACTAMENTE este Paquete Técnico?",
+      "content": "Este pack agrupa 5 servicios clave [cite: 988] para tu estrategia:\n1. **Mantenimiento Web Esencial:** (Valor 20€) La base de WPO y seguridad.\n2. **Informe de Visibilidad Web:** (Valor 25€) Tu informe mensual de GA4. ¿Cuántos visitan? ¿De dónde vienen? ¿Convierten? [cite: 938-943]\n3. **Gestión Banner de Cookies:** (Valor 10€) La tranquilidad de cumplir la ley (GDPR)[cite: 946].\n4. **Plan de Autoridad Mensual:** (Valor 75€) Un artículo de blog al mes, optimizado para SEO, para construir tu autoridad [cite: 948-951].\n5. **Snapshot Mensual de Analítica:** (Valor 5€) El informe rápido de GSC y GMB. Tus 4 métricas clave en un vistazo[cite: 1584]."
+    },
+    {
+      "heading": "El Valor Real: 130€ por separado, 105€ en Pack",
+      "content": "¡Hagamos números! Si contratas estos 5 servicios por separado, el coste total es de 130€ al mes. Al contratar el Pack Sociotécnico Digital, el precio es de **105€ al mes**. **Te ahorras 25€ cada mes**[cite: 988, 1387]. ¡Transparente y directo al grano!"
+    },
+    {
+      "heading": "Ideal para el Propietario que quiere \"Ir en Serio\"",
+      "content": "Este pack es para la Audiencia 1 y 2 que ya está en nuestro funnel [cite: 1379] y ha decidido que no quiere solo 'una web'. Quiere un motor digital que genere resultados. Quiere análisis, contenido y estrategia."
+    }
+  ],
+  "ctas": [
+    {
+      "text": "¡Quiero el Pack Socio-Técnico!",
+      "url": "/es/formulario-inicial/",
+      "type": "primary",
+      "justification": "CTA principal del Brief[cite: 1389], directo a la conversión."
+    },
+    {
+      "text": "Ver el Pack \"Todo en Uno\" (Más grande)",
+      "url": "/packs/todo-en-uno",
+      "type": "secondary",
+      "justification": "Upsell al siguiente nivel de pack (el 'Todo en Uno' real [cite: 991]), para el cliente que quiera aún más."
+    }
+  ],
+  "justification_notes": {
+    "title": "KW de Marca/Pack + Beneficio (SEO y WPO) + Localización.",
+    "meta_description": "KW de Marca, PUV (ahorro 25€)[cite: 1387], y keywords semánticas ('analítica y contenido').",
+    "h1": "KW de Marca + Beneficios claros + el 'gancho' del AHORRO.",
+    "body_sections": "Página de conversión pura. El tono es directo y enfocado en el VALOR. Se usa la data del Runbook SanahujaDev [cite: 988, 938-951, 1584] para detallar EXACTAMENTE qué incluye y justificar el ahorro de 25€/mes. Se corrige la confusión del brief [cite: 1387] que lo llamaba 'Todo en Uno', aclarando que este es el 'Sociotécnico' y haciendo upsell al 'Todo en Uno' real."
+  }
+}

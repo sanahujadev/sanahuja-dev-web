@@ -1,0 +1,72 @@
+---
+// src/components/ui/Badge.astro
+// Nuestro segundo instrumento, inspirado en V0
+import type { HTMLAttributes } from 'astro/types';
+import { twMerge } from 'tailwind-merge';
+import { clsx, type ClassValue } from 'clsx';
+
+function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
+// --- Definición de Variantes de Estilo ---
+// V0 usa 'accent' para sus badges, ¡así que nosotros también!
+const badgeVariants = {
+  // El estilo 'default' usará los tokens de acento
+  default: 
+    'border-transparent bg-accent text-accent-foreground hover:bg-accent/80',
+    
+  // Un estilo secundario (sutil)
+  secondary: 
+    'border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80',
+    
+  // Un estilo de borde (como en la maqueta de V0)
+  // ej. <Badge className="bg-accent-500/10 text-accent-400 border-accent-500/20 ...">
+  // ¡Esto es más complejo! V0 usa colores directos (no semánticos) para sus badges.
+  // ¡Vamos a imitar ESE estilo!
+  
+  // --- RE-AFINACIÓN ---
+  // V0 no usa los tokens semánticos para los Badges, usa la paleta de colores
+  // directa para crear ese efecto de "brillo". ¡Toquemos esa melodía!
+
+  v0_accent: 
+    'border-accent-500/20 bg-accent-500/10 text-accent-400',
+  
+  v0_secondary:
+    'border-secondary-500/20 bg-secondary-500/10 text-secondary-400',
+    
+  v0_primary:
+    'border-primary-500/20 bg-primary-500/10 text-primary-400',
+};
+
+// --- Props del Componente ---
+type Variant = keyof typeof badgeVariants;
+
+interface Props extends HTMLAttributes<'div'> {
+  variant?: Variant;
+  class?: ClassValue;
+}
+
+const { 
+  variant = 'v0_accent', // ¡Usamos el estilo de V0 por defecto!
+  class: className, 
+  ...props 
+} = Astro.props;
+
+// --- ¡LA FUSIÓN! ---
+const classes = twMerge(
+  // Clases Base (para TODOS los badges)
+  'inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold',
+  'transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
+  'rounded-[var(--radius-lg)]', // ¡Nuestro radio V0!
+
+  // Clase de Variante
+  badgeVariants[variant],
+
+  // Clases Externas
+  className
+);
+---
+
+<div class={classes} {...props}>
+  <slot /> </div>

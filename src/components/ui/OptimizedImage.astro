@@ -1,0 +1,69 @@
+---
+// src/components/ui/OptimizedImage.astro
+// Nuestro instrumento de optimización de imagen,
+// basado en su partitura de CDN.
+// (Validado por Brook)
+
+interface Props {
+  imageName: string;
+  alt: string;
+  sizes: string;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  decoding?: 'async' | 'sync' | 'auto';
+  width: number;
+  height: number;
+  basePath: string; // ej. 'web/servicios'
+  fallbackFormat?: 'jpeg' | 'png'; // Permitimos jpeg o png como fallback
+  transitionName?: string;
+  fetchpriority?: 'high' | 'low' | 'auto';
+}
+
+const {
+  imageName,
+  alt,
+  sizes,
+  class: className,
+  loading = 'lazy',
+  decoding = 'async',
+  width,
+  height,
+  basePath,
+  fallbackFormat = 'jpeg',
+  transitionName = '',
+  fetchpriority = 'auto'
+} = Astro.props;
+
+const widths = [360, 720, 1280, 1920];
+const formats: Array<'avif' | 'webp'> = ['avif', 'webp']; // Dejamos que el fallback se maneje por separado
+
+// ¡Usamos el CDN de la marca!
+const cdnBaseUrl = 'https://cdn.sanahuja.dev/'; 
+
+const generateSrcset = (format: 'avif' | 'webp' | 'jpeg' | 'png') => {
+  return widths
+    .map(w => `${cdnBaseUrl}${basePath}/${imageName}/${format}/${imageName}-${w}w.${format} ${w}w`)
+    .join(', ');
+};
+---
+<picture transition:name={transitionName}>
+  {formats.map(format => (
+    <source
+      type={`image/${format}`}
+      srcset={generateSrcset(format)}
+      sizes={sizes}
+    />
+  ))}
+  <img
+    src={`${cdnBaseUrl}${basePath}/${imageName}/${fallbackFormat}/${imageName}-${widths[1]}w.${fallbackFormat}`}
+    srcset={generateSrcset(fallbackFormat)}
+    sizes={sizes}
+    alt={alt}
+    loading={loading}
+    decoding={decoding}
+    width={width}
+    height={height}
+    fetchpriority={fetchpriority}
+    class={className}
+  />
+</picture>
