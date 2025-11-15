@@ -1,0 +1,8 @@
+---
+// src/pages/en/services/web-design-tenerife.astro
+import LandingDiseñoWeb from '../../../components/pages/LandingDiseñoWeb.astro';
+import copy_en from '../../../i18n/en/services/diseno-web-tenerife.json' with { type: 'json' };
+
+const alternateUrl = new URL(copy_en.alternateUrl, Astro.site).href;
+---
+<LandingDiseñoWeb copy={copy_en} alternateUrl={alternateUrl} />

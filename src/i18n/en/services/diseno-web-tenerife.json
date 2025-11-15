@@ -1,0 +1,160 @@
+{
+  "endpoint": "/en/services/web-design-tenerife",
+  "lang": "en",
+  "alternateUrl": "/es/servicios/diseno-web-tenerife",
+  "title": "Web Design Tenerife | Professional Websites for SMEs (WPO 99)",
+  "meta_description": "Looking for Web Design in Tenerife? 🚀 Get your professional website (WPO 99) with a 90% discount when you sign up for maintenance. We are your Digital Partner!",
+  "h1": "Web Design in Tenerife That ACTUALLY Achieves Goals",
+  "badge": "WPO 99 Guaranteed",
+  "h2s": [
+    "Fed up with Web Design in the Canary Islands?",
+    "My \"Hook\": Your Professional Web with a 90% Discount",
+    "Twice as Fast as Your Competition (WPO 99)",
+    "More than a Developer: Your Digital Partner in Tenerife",
+    "Who is this Web Design solution for?",
+    "How much does a website cost in the Canary Islands?",
+    "Let's start building your digital future"
+  ],
+  "heroStats": {
+    "wpo": {
+      "value": "99",
+      "label": "WPO Score"
+    },
+    "discount": {
+      "value": "90%",
+      "label": "Initial Discount"
+    },
+    "support": {
+      "value": "12",
+      "label": "Months of Support"
+    }
+  },
+  "ganchoBadge": "Strategic Offer",
+  "wpoSection": {
+    "badge": "Technical Advantage",
+    "features": [
+      "Google respects you and ranks you better",
+      "Your customers won't leave before they meet you",
+      "Instant loading on mobile"
+    ],
+    "chart": {
+      "title": "WPO Comparison",
+      "main": {
+        "label": "Your New Website",
+        "value": "99"
+      },
+      "competitorA": {
+        "label": "Competitor A",
+        "value": "53"
+      },
+      "competitorB": {
+        "label": "Competitor B",
+        "value": "41"
+      },
+      "summary": "<span class=\"text-accent-400 font-semibold\">+87% faster</span> than local competition"
+    }
+  },
+  "socioDigitalSection": {
+    "badge": "Real Commitment",
+    "features": {
+      "proactive": {
+        "title": "Proactive Analysis",
+        "description": "We monitor real business goals"
+      },
+      "support": {
+        "title": "Continuous Support",
+        "description": "12 months by your side"
+      }
+    },
+    "slogan1": "Your Digital Partner",
+    "slogan2": "Always with you."
+  },
+  "body_sections": [
+    {
+      "heading": "h1_lead",
+      "content": "For the 'isolated' freelancer and the 'frustrated' SME. I create your professional, ultra-fast website (WPO 99) and I stay by your side to help you achieve your goals. Because **your success is my success**."
+    },
+    {
+      "heading": "Fed up with Web Design in the Canary Islands?",
+      "content": "It probably sounds familiar: you see engineers asking for €3,000 for a simple site, or freelancers in 'the jungle' charging very little, handing you something that *seems* to work, and then disappearing. The result is the same: you're left alone with an **'abandoned website'**—slow (WPO 40-50) and not bringing in a single customer. **I don't want that. That doesn't represent me**.",
+      "imageName": "frustrado-web-lenta",
+      "imageAlt": "Frustrated man looking at his computer screen with a slow and outdated website.",
+      "basePath": "sanahujadev"
+    },
+    {
+      "heading": "My \"Hook\": Your Professional Web with a 90% Discount",
+      "content": "I want freelancers and SMEs in Tenerife to have access to affordable professional services. My strategy is transparent: I offer you a **90% discount** on the creation or migration of your website. The only condition? That you commit to your own success by hiring the 'Essential Web Maintenance' service for 12 months. No tricks."
+    },
+    {
+      "heading": "Twice as Fast as Your Competition (WPO 99)",
+      "content": "Your website won't just be modern, serious, and trustworthy; it will be technically superior. My own site has a speed score (WPO) of 99. Our local competitors (like other agencies in Tenerife) are hovering between 41 and 53. A fast website isn't a luxury; it's the foundation for Google to respect you and for your customers not to leave."
+    },
+    {
+      "heading": "More than a Developer: Your Digital Partner in Tenerife",
+      "content": "I don't sell a product; **I provide a service**. I don't hand over the website and forget about your business. My promise is to be your 'digital companion'. Even if everything is working fine, I'll be 'behind the scenes,' proactively analyzing whether the website is meeting your real goals (capturing leads, getting forms filled, etc.), not just if it's 'online'."
+    },
+    {
+      "heading": "Who is this Web Design solution for?",
+      "content": "This 'web development in Tenerife' service is for you if:\n* **You are the 'Isolated Owner':** A local business (in La Laguna, San Isidro, wherever) with no digital presence.\n* **You are the 'Frustrated Owner':** You have a website that's slow, has errors, or doesn't bring in customers.\n* **You're looking for a 'Web Redesign in Tenerife':** You want to modernize your image and have it actually work this time."
+    },
+    {
+      "heading": "How much does a website cost in the Canary Islands?",
+      "content": "The market sets the price. Have you seen basic websites from local engineers for €1,500 to €3,000? Have you seen cheap €300 websites from engineers so far away you'll never meet them?\nMy 'Real Market Value' in the Canary Islands for a simulated professional project of €5,445 is reduced with the 'Strategic Hook Price' to a cost of **€544.50**, provided you hire the maintenance service for one year (**€300 extra**).\nIt's that clear."
+    },
+    {
+      "heading": "Let's start building your digital future",
+      "content": "Shall we talk? Fill out the initial form and let's define what success means for you. No beating around the bush."
+    }
+  ],
+  "ctas": [
+    {
+      "text": "Start Your Project!",
+      "url": "/en/formulario-inicial/",
+      "type": "primary",
+      "justification": "Main CTA from the Brief, directs to the macro-conversion."
+    },
+    {
+      "text": "View Maintenance Plans",
+      "url": "/en/servicios/mantenimiento-web",
+      "type": "secondary",
+      "justification": "Directs the user to the 'condition' of the discount, reinforcing transparency."
+    }
+  ],
+  "audienceCards": [
+    {
+      "title": "You are the 'Isolated Owner'",
+      "description": "A local business (in La Laguna, San Isidro, wherever) with no digital presence."
+    },
+    {
+      "title": "You are the 'Frustrated Owner'",
+      "description": "You have a website that's slow, has errors, or doesn't bring in customers."
+    },
+    {
+      "title": "You're looking for a 'Web Redesign in Tenerife'",
+      "description": "You want to modernize your image and have it actually work this time."
+    }
+  ],
+  "precioSection": {
+    "badge": "Strategic Hook Price",
+    "contexto": "The market sets the price. Have you seen basic websites from local engineers for €1,500 to €3,000? Have you seen cheap €300 websites from engineers so far away you'll never meet them? My 'Real Market Value' in the Canary Islands for a <b>simulated</b> professional project (with advanced SEO strategy) is <span class=\"text-neutral-100 font-semibold line-through decoration-neutral-600\">€5,445</span>.",
+    "gancho": {
+      "precio": "€544.50",
+      "subtitulo": "Project Cost (When hiring 1 year of support for €300 extra)",
+      "ahorro": "90% savings on Real Value"
+    },
+    "cierre": "It's that clear. No beating around the bush."
+  },
+  "ctaFinal": {
+    "h2": "Let's start building your digital future",
+    "content": "Shall we talk? Fill out the initial form and let's define what success means for you. No beating around the bush.",
+    "buttonText": "Start Your Project!",
+    "buttonUrl": "/en/formulario-inicial/",
+    "subtext": "Your success is my success. Let's start today."
+  },
+  "justification_notes": {
+    "title": "Main keyword + Audience (SMEs) + Key differentiator (WPO 99).",
+    "meta_description": "Main keyword + PUV (90% discount hook) + Differentiator (WPO 99) + Tone (🚀) + Brand (Digital Partner).",
+    "h1": "Main keyword + Focus on the brand's key differentiator: 'achieving goals', which targets the pain point of Audience 2 ('Frustrated').",
+    "body_sections": "Follows the brief's structure: attacks the pain points of both audiences, presents the 'Hook', exploits the WPO 99 advantage against competitors, and reinforces the 'Digital Partner' promise of not abandoning the client. Secondary keywords ('web development tenerife', 'web redesign tenerife') are used, and 'how much does it cost' is answered with full transparency, using the Runbook prices. The tone is accessible yet professional."
+  }
+}

@@ -1,10 +1,7 @@
 ---
 // src/layouts/BaseLayout.astro
-// NOTA: Este es nuestro layout OBJETIVO.
-// Los componentes <AppHeader> y <AppFooter> y los scripts se crearán en pasos posteriores.
 import { AstroFont } from 'astro-font';
 import { ClientRouter } from "astro:transitions";
-// import AppFooter from "../components/AppFooter.astro"; // <-- Aún no existe
 import AppHeader from "../components/AppHeader.astro"; // <-- Aún no existe
 import "./../styles/global.css"; // <-- Brook creará este
 import t_header_es from '../i18n/es/componentes/header.json' with { type: 'json' };
@@ -14,7 +11,7 @@ import t_footer_en from '../i18n/en/componentes/footer.json' with { type: 'json'
 import AppFooter from '../components/AppFooter.astro';
 
 // import type { CookieConsentType } from '../i18n/utils'; // <-- Aún no existe
-const { lang = 'es' } = Astro.props;
+const { lang = 'es', alternateUrl } = Astro.props;
 const GTM_ID = import.meta.env.PUBLIC_GTM_ID;
 
 // ¡LÓGICA DE REFACTOR CORREGIDA!
@@ -24,22 +21,16 @@ const pathName = Astro.url.pathname; // <-- Esto SÍ es /es/servicios/diseno-web
 // ¡Construimos la URL canónica de PRODUCCIÓN!
 const canonicalURL = new URL(pathName, siteURL).href;
 
-let alternateUrl = null;
-let alternateLang = null;
+const alternateLang = pathName.substring(1, 3) === 'es' ? 'en' : 'es';
 
 const t_header = lang === 'es' ? t_header_es : t_header_en;
 const t_footer = lang === 'es' ? t_footer_es : t_footer_en;
 
-// (Lógica simple. Si estamos en 'es', la alterna es 'en'. Si no, 'es')
-if (lang === 'es') {
-  alternateUrl = new URL(pathName.replace('/es/', '/en/'), siteURL).href;
-  alternateLang = 'en';
-} else if (lang === 'en') {
-  alternateUrl = new URL(pathName.replace('/en/', '/es/'), siteURL).href;
-  alternateLang = 'es';
-}
-
-export type FooterType = typeof t_footer;
+console.log("desde baselayout lang", lang);
+console.log("desde baselayout el otro lang ", alternateLang);
+console.log("desde baselayout pathname", pathName);
+console.log("desde baselayout canonical", canonicalURL);
+console.log("desde baselayout alternateUrl", alternateUrl);
 
 ---
 
@@ -82,7 +73,7 @@ export type FooterType = typeof t_footer;
     </head>
     
     <body class="font-sans bg-neutral-900 text-neutral-200 antialiased">
-        <AppHeader t={t_header} lang={lang} />
+        <AppHeader t={t_header} lang={lang} alternateUrl={alternateUrl} />
         <slot />
         <AppFooter t={t_footer} lang={lang} />
     </body>
