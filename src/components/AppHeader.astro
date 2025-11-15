@@ -1,0 +1,179 @@
+---
+// Importamos nuestros instrumentos de UI
+import Button from './ui/Button.astro';
+import Badge from './ui/Badge.astro';
+import Menu from './ui/icons/Menu.astro';
+import X from './ui/icons/X.astro';
+
+// Asumimos que 't' y 'lang' vienen de BaseLayout
+// ¡Y note que he usado "Packs Estratégicos" como sugirió!
+const { t, lang } = Astro.props;
+
+// La lógica del Switcher (de la demo original)
+const pathname = Astro.url.pathname;
+const langSwitchUrl = (() => {
+  if (pathname.startsWith('/en')) return '/es' + pathname.substring(3);
+  if (pathname.startsWith('/es')) return '/en' + pathname.substring(3);
+  return '/es';
+})();
+
+// ¡La lógica de "La Mascara" + V0!
+const links = [
+  {
+    href: `/${lang}`,
+    label: t.nav.home,
+  },
+  {
+    href: `/${lang}/sobre-mi`,
+    label: t.nav.about,
+  },
+  {
+    href: `/${lang}/servicios/diseno-web-tenerife`,
+    label: t.nav.gancho.label,
+    badge: t.nav.gancho.badge,
+    isPrimary: true, // ¡La clave de V0!
+  },
+  {
+    href: `/${lang}/packs`,
+    label: t.nav.packs, // ¡"Packs Estratégicos"!
+  },
+  {
+    href: `/${lang}/blog`,
+    label: t.nav.blog,
+  },
+  {
+    href: langSwitchUrl,
+    label: t.nav.language.label,
+    badge: t.nav.language.badge,
+    isLanguage: true,
+  },
+];
+---
+<header id="nav" class="group sticky top-0 z-50 w-full bg-neutral-950/80 backdrop-blur-lg border-b border-border">
+  <nav class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      
+      <a href={`/${lang}`} aria-label={t.aria.logo} class="flex items-baseline gap-0.5 group">
+        <span class="text-lg font-semibold text-neutral-50 hover:text-primary-400 transition-colors">
+          Sanahuja
+        </span>
+        <span class="text-lg font-semibold text-primary-500">Dev/&gt;</span>
+      </a>
+
+      <div class="hidden xl:flex items-center gap-1">
+        {links.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-2',
+              link.isPrimary
+                ? 'text-primary-400 hover:text-primary-300 hover:bg-primary-500/10'
+                : 'text-neutral-400 hover:text-neutral-50 hover:bg-neutral-800/50'
+            ]}
+          >
+            <span>{link.label}</span>
+            {link.badge && (
+              <Badge
+                variant={link.isPrimary ? 'v0_primary' : 'v0_secondary'}
+                class="text-xs px-2 py-0.5 font-semibold"
+              >
+                {link.badge}
+              </Badge>
+            )}
+          </a>
+        ))}
+      </div>
+
+      <div class="hidden xl:block">
+        <Button 
+          href={`/${lang}/formulario-inicial/`} 
+          variant="default" 
+          size="sm"
+          class="shadow-lg shadow-primary-500/20"
+        >
+          {t.cta.getStarted}
+        </Button>
+      </div>
+
+      <div class="xl:hidden">
+        <button
+          id="hamburger"
+          aria-label={t.aria.menuToggle}
+          class="p-2 rounded-md text-neutral-400 hover:text-neutral-50 hover:bg-neutral-800 transition-colors"
+        >
+          <Menu class="w-6 h-6 group-data-[state=active]:hidden" />
+          <X class="w-6 h-6 hidden group-data-[state=active]:block" />
+        </button>
+      </div>
+    </div>
+
+    <div class="xl:hidden py-4 border-t border-border
+                hidden group-data-[state=active]:block"
+    >
+      <div class="flex flex-col gap-2 xl:hidden">
+        {links.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'px-4 py-3 rounded-lg text-sm font-medium transition-colors flex items-center gap-x-2',
+              link.isPrimary
+                ? 'text-primary-400 bg-primary-500/10 hover:bg-primary-500/20'
+                : 'text-neutral-300 hover:text-neutral-50 hover:bg-neutral-800'
+            ]}
+          >
+            <span>{link.label}</span>
+            {link.badge && (
+              <Badge
+                variant={link.isPrimary ? 'v0_primary' : 'v0_secondary'}
+                class="text-xs px-2 py-0.5 font-semibold"
+              >
+                {link.badge}
+              </Badge>
+            )}
+          </a>
+        ))}
+
+        <div class="mt-4 px-4">
+          <Button 
+            href={`/${lang}/formulario-inicial/`} 
+            variant="default"
+            class="w-full shadow-lg shadow-primary-500/20"
+          >
+            {t.cta.getStarted}
+          </Button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  function initNavbar() {
+    let isToggled = false;
+    const navbar = document.querySelector("#nav") as HTMLElement;
+    const menuBtn = document.querySelector("#hamburger") as HTMLButtonElement;
+    
+    if (!navbar || !menuBtn) return;
+    
+    function toggleNavlinks() {
+      isToggled = !isToggled;
+      navbar.dataset.state = isToggled ? "active" : "";
+    }
+    
+    menuBtn.addEventListener("click", () => toggleNavlinks());
+
+    // Opcional: Cerrar al hacer clic en un enlace
+    const links = navbar.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        if (isToggled) {
+          isToggled = false;
+          navbar.dataset.state = "";
+        }
+      });
+    });
+  }
+  
+  initNavbar();
+  document.addEventListener('astro:page-load', initNavbar);
+</script>

@@ -1,0 +1,24 @@
+{
+  "aria": {
+    "logo": "Go to SanahujaDev homepage",
+    "menuToggle": "Open or close navigation menu"
+  },
+  "logoText": "SanahujaDev/&gt;",
+  "nav": {
+    "home": "Home",
+    "about": "About Me",
+    "gancho": {
+      "label": "Web Design",
+      "badge": "-90% OFF"
+    },
+    "packs": "Strategic Packs",
+    "blog": "Blog",
+    "language": {
+      "label": "Español",
+      "badge": "ES"
+    }
+  },
+  "cta": {
+    "getStarted": "Start Project"
+  }
+}

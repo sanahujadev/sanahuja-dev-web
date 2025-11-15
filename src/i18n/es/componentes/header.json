@@ -1,0 +1,24 @@
+{
+  "aria": {
+    "logo": "Ir a la página de inicio de SanahujaDev",
+    "menuToggle": "Abrir o cerrar el menú de navegación"
+  },
+  "logoText": "SanahujaDev/&gt;",
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "gancho": {
+      "label": "Diseño Web",
+      "badge": "-90% DTO"
+    },
+    "packs": "Packs Estratégicos",
+    "blog": "Blog",
+    "language": {
+      "label": "English",
+      "badge": "EN"
+    }
+  },
+  "cta": {
+    "getStarted": "Empezar Proyecto"
+  }
+}

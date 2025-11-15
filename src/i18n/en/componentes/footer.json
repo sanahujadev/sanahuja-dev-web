@@ -1,0 +1,43 @@
+{
+    "brand": {
+      "tagline": "I don't just build websites: I join you on your digital journey, because your success is my success."
+    },
+    "localizacion": {
+      "titulo": "Digital Partner in the Canary Islands",
+      "ciudad": "Tenerife, Santa Cruz de Tenerife",
+      "gmb_link_label": "View Google Business Profile",
+      "gmb_url": "YOUR-GOOGLE-BUSINESS-PROFILE-URL-HERE"
+    },
+    "navegacion": {
+      "titulo": "Strategic Services",
+      "links": {
+        "mantenimiento": "Web Maintenance",
+        "reputacion": "Reputation Management",
+        "blog": "Authority Plan (Blog)",
+        "informe": "Visibility Report",
+        "bolsa": "Hour Packs"
+      }
+    },
+    "social": {
+      "titulo": "Connect",
+      "links": {
+        "linkedin": "LinkedIn",
+        "linkedin_url": "https://www.linkedin.com/in/josejsanahuja/",
+        "github": "Github",
+        "github_url": "https://github.com/sanahujadev/sanahujadev",
+        "freelancer": "Fiverr (5★)",
+        "freelancer_url": "https://www.fiverr.com/josejsanahuja/create-a-full-stack-application"
+      }
+    },
+    "help": {
+      "text": "Shall we start your project?",
+      "contact": "Fill Out Form"
+    },
+    "legal": {
+      "terminos": "Terms and Conditions",
+      "privacidad": "Privacy Policy",
+      "cookies": "Cookie Policy"
+    },
+    "cookieSettings": "Manage cookies",
+    "copyright": "SanahujaDev/> ©"
+  }
