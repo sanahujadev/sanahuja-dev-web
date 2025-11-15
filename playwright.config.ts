@@ -35,8 +35,25 @@ export default defineConfig({
 
   // Configuración de navegadores
   projects: [
-    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
-    { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
-    // { name: 'webkit', use: { ...devices['Desktop Safari'] } }, // <-- ¡A la nevera!
+    // --- PROYECTOS E2E / INTEGRACIÓN ---
+    // (Corren en ambos navegadores)
+    { 
+      name: 'chromium-e2e', 
+      use: { ...devices['Desktop Chrome'] },
+      testMatch: /tests\/(e2e|integration)\/.*\.spec\.ts/
+    },
+    { 
+      name: 'firefox-e2e', 
+      use: { ...devices['Desktop Firefox'] },
+      testMatch: /tests\/(e2e|integration)\/.*\.spec\.ts/ 
+    },
+
+    // --- PROYECTO A11Y ---
+    // (¡Solo corre en Chromium, que SÍ funciona!)
+    {
+      name: 'chromium-a11y',
+      use: { ...devices['Desktop Chrome'] },
+      testMatch: /tests\/a11y\/.*\.spec\.ts/
+    }
   ],
 });

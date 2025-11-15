@@ -1,0 +1,15 @@
+---
+// ¡PÁGINA TONTA (ESPAÑOL)!
+import LandingMantenimientoWeb from '../../../components/pages/LandingMantenimientoWeb.astro';
+
+// 1. Importa el JSON de la PÁGINA
+import t_page from '../../../i18n/en/services/mantenimiento-web.json' with { type: 'json' };
+// 2. Importa el JSON del HEADER (solo en baseLayout)
+
+// 3. ¡Calcula la URL Alterna (¡la buena!)!
+const alternateUrl = new URL(t_page.alternateUrl, Astro.site).href;
+---
+<LandingMantenimientoWeb 
+  copy={t_page}
+  alternateUrl={alternateUrl}
+/>

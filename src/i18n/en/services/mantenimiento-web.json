@@ -1,0 +1,114 @@
+{
+  "endpoint": "/en/services/web-maintenance",
+  "lang": "en",
+  "alternateUrl": "/es/servicios/mantenimiento-web",
+  "metadata": {
+    "title": "Web Maintenance Tenerife | End Your \"Abandoned Website\" (WPO 99)",
+    "description": "Is your website abandoned? 🚀 I offer Web Maintenance in Tenerife with real support (WPO 99). It doesn't just 'work'; it achieves your goals."
+  },
+  "copy": {
+    "h1_part1": "Web Maintenance Tenerife:",
+    "h1_part2": "The End of the \"Abandoned Website\"",
+    "h1_lead": "This is for you, the \"frustrated\" owner. If you feel alone and your current site is a 'broken product,' you've come to the right place. I don't abandon you. My work begins where others' ends.",
+    "heroBadge": "For the Frustrated Owner",
+    "heroVisual": {
+      "title": "Your Digital Partner",
+      "subtitle": "Always watching out for your success",
+      "stats": [
+        { "label": "Monitoring", "value": "24/7" },
+        { "label": "WPO Score", "value": "99" },
+        { "label": "From/month", "value": "€20" },
+        { "label": "Abandonments", "value": "0" }
+      ]
+    },
+    "sections": {
+      "problema": {
+        "title": "Did they deliver the web and disappear?",
+        "content": "We know the story. It cost you a fortune, they gave you the keys, and Poof! The developer vanished. Now you have an 'abandoned website': slow, outdated, full of errors, and you're afraid to even touch it. And the worst part: it doesn't bring you a single customer. My brand does NOT represent that."
+      },
+      "diferencia": {
+        "title": "The Difference: A \"Digital Partner\" vs. a \"Vendor\"",
+        "vendedor": {
+          "title": "A Vendor",
+          "features": [
+            "Delivers a product",
+            "Gets paid and disappears",
+            "Your website becomes obsolete",
+            "Doesn't analyze results"
+          ]
+        },
+        "socio": {
+          "title": "Your Digital Partner",
+          "features": [
+            "Provides continuous service",
+            "Stays by your side, always",
+            "Your website is always up-to-date",
+            "Proactive goal analysis"
+          ]
+        },
+        "slogan": "Your success is my success"
+      },
+      "wpo": {
+        "badge": "Real Technical Proof",
+        "title": "Speed Proof: My Maintenance REALLY Works (WPO 99)",
+        "content": "Cheap talk! Not at all. My own website has a WPO (speed) score of 99. That's the proof. Professional maintenance isn't just 'updating plugins'; it's keeping your website ultra-fast and secure, like a fortress.",
+        "features": [
+          { "title": "Ultra-Fast", "description": "Instant loading on any device", "icon": "Zap" },
+          { "title": "Secure", "description": "SSL, backups, and 24/7 monitoring", "icon": "Shield" },
+          { "title": "SEO Optimized", "description": "Google ranks you better", "icon": "Target" }
+        ],
+        "chart": {
+          "title": "Real Comparison",
+          "main": { "label": "SanahujaDev (My Site)", "value": 99 },
+          "competitorA": { "label": "Tenerife Competitor A", "value": 53 },
+          "competitorB": { "label": "Tenerife Competitor B", "value": 41 },
+          "summary": "<span class=\"text-accent-400 font-semibold\">+87% faster</span> than local competition"
+        }
+      },
+      "promesa": {
+        "badge": "My Commitment to You",
+        "title": "My Promise: Focus on Goals, not just \"Being Online\"",
+        "content": "You pay most people to keep the site 'running'. You pay me to 'achieve goals'. I'll be 'behind the scenes' analyzing if people are filling out forms, if they're calling, if the strategy is working... and if not, we change it. I'm 'stubborn' about getting results.",
+        "featureCards": [
+          { "title": "Continuous Analysis", "description": "I proactively review your metrics", "icon": "Clock" },
+          { "title": "Focus on Results", "description": "If it's not working, we change it", "icon": "Target" }
+        ]
+      },
+      "incluye": {
+        "title": "What does this Professional Web Support in Tenerife include?",
+        "content": "This isn't just 'updating my website'. The Essential Web Maintenance (our base at €20/month) includes:",
+        "featureCards": [
+          { "title": "Domain & SSL Management", "description": "We handle renewals and security so you don't have to." },
+          { "title": "Hosting Support & Backups", "description": "Your site on a fast server with daily backups. Total peace of mind." },
+          { "title": "Uptime Monitoring", "description": "We watch 24/7 to ensure your site never goes down. If something happens, I'm the first to know." },
+          { "title": "Your Digital Partner", "description": "The peace of mind of having a 'stubborn' expert by your side, focused on your goals." }
+        ]
+      },
+      "precio": {
+        "basePrice": "€20/month",
+        "commitment": "Minimum 12-month commitment",
+        "subtitle": "Essential Web Maintenance"
+      },
+      "packs": {
+        "title": "Choose Your Level of Peace of Mind (Our Packs)",
+        "content": "Basic maintenance is the foundation. But if you also want us to manage your reputation, write your blog, or send you analytics reports, we have the Packs. Comprehensive solutions at a reduced price.",
+        "buttonText": "Explore Strategic Packs"
+      },
+      "ctaFinal": {
+        "title": "Ready to forget the \"Abandoned Website\"?",
+        "content": "Let's talk. Tell me what frustrates you about your current site, and let's design the solution together. No beating around the bush. No abandonments.",
+        "subtext": "<strong class=\"text-neutral-400\">Your success is my success.</strong> I don't abandon you."
+      }
+    },
+    "ctas": {
+      "primary": {
+        "text": "Hire Your Peace of Mind!",
+        "url": "/en/formulario-inicial/"
+      },
+      "secondary": {
+        "text": "See All Packs",
+        "url": "/en/packs/"
+      }
+    }
+  }
+}

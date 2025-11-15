@@ -1,0 +1,337 @@
+---
+// --- 1. Instrumentos (Componentes) ---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/ui/Button.astro';
+import Badge from '../../components/ui/Badge.astro';
+import ArrowRight from '../../components/ui/icons/ArrowRight.astro';
+import Shield from '../../components/ui/icons/Shield.astro';
+import AlertTriangle from '../../components/ui/icons/AlertTriangle.astro';
+import CheckCircle2 from '../../components/ui/icons/CheckCircle2.astro';
+import Zap from '../../components/ui/icons/Zap.astro';
+import Target from '../../components/ui/icons/Target.astro';
+import Heart from '../../components/ui/icons/Heart.astro';
+import TrendingUp from '../../components/ui/icons/TrendingUp.astro';
+import Clock from '../../components/ui/icons/Clock.astro';
+import type { LandingMantenimientoWebCopy } from '../../i18n/utils';
+import WPOChart from '../shared/WPOChart.astro';
+
+// Recibe las props de la "Página Tonta"
+const { copy, alternateUrl } = Astro.props;
+
+const {
+  lang,
+  copy: t,
+  endpoint,
+  metadata
+} = copy as LandingMantenimientoWebCopy;
+
+const iconMap :Record<string, any>= {
+  Zap,
+  Shield,
+  Target,
+  Clock,
+  Heart,
+  AlertTriangle,
+  CheckCircle2,
+  TrendingUp,
+  ArrowRight
+};
+
+// ¡La función mágica de Burro/Brook!
+const processContent = (content: string, strongClass: string = 'font-semibold text-primary-400'): string => {
+  return content
+    .replace(/\*\*([^*]+)\*\*/g, `<strong class="${strongClass}">$1</strong>`);
+};
+---
+<BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>
+  <Fragment slot="head">
+    <title>{metadata.title}</title>
+    <meta name="description" content={metadata.description} />
+  </Fragment>
+
+  <main class="bg-background">
+    <section id="hero-mantenimiento" class="relative py-32 sm:py-40 overflow-hidden">
+      <div class="absolute inset-0">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl" aria-hidden="true"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary-500/10 rounded-full blur-3xl" aria-hidden="true"></div>
+      </div>
+
+      <div class="relative max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          <div>
+            <Badge variant="v0_primary" class="mb-6">
+              <AlertTriangle class="w-3 h-3 mr-1.5" />
+              {t.heroBadge}
+            </Badge>
+
+            <h1 class="font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-balance mb-6">
+              <span class="text-foreground">{t.h1_part1}</span>
+              <br />
+              <span class="text-primary-400">{t.h1_part2}</span>
+            </h1>
+
+            <p class="text-xl leading-relaxed text-neutral-300 mb-8 text-pretty">
+              {t.h1_lead}
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <Button href={t.ctas.primary.url} variant="primary" size="lg" class="group shadow-lg shadow-primary-500/20">
+                {t.ctas.primary.text}
+                <ArrowRight class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <Button href={t.ctas.secondary.url} variant="outline" size="lg">
+                {t.ctas.secondary.text}
+              </Button>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div class="relative bg-gradient-to-br from-card to-card/50 border border-border rounded-3xl p-12">
+              <div class="text-center mb-8">
+                <div class="inline-flex items-center justify-center w-24 h-24 bg-primary-500/10 rounded-2xl mb-6">
+                  <Shield class="w-12 h-12 text-primary-400" />
+                </div>
+                <h2 class="text-2xl font-bold text-foreground mb-2">{t.heroVisual.title}</h2>
+                <p class="text-muted-foreground">{t.heroVisual.subtitle}</p>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4">
+                {t.heroVisual.stats.map(stat => (
+                  <div class="bg-background/50 border border-border rounded-xl p-4 text-center">
+                    <div class="text-2xl font-bold text-primary-400 mb-1">{stat.value}</div>
+                    <div class="text-xs text-muted-foreground">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="problema" class="py-20 bg-neutral-900/30 border-y border-border">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground text-balance">
+            {t.sections.problema.title}
+          </h2>
+        </div>
+        <div class="relative">
+          <div class="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-500 to-transparent rounded-full" aria-hidden="true"></div>
+          <div class="bg-card border border-border rounded-2xl p-8 sm:p-10">
+            <p class="text-lg leading-relaxed text-neutral-300 text-pretty" set:html={processContent(t.sections.problema.content)} />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="socio-digital" class="py-20">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground text-balance mb-6">
+            {t.sections.diferencia.title}
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-card border border-border rounded-2xl p-8 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-neutral-800/30 rounded-full blur-3xl" aria-hidden="true"></div>
+            <div class="relative">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-neutral-800 rounded-xl mb-6">
+                <AlertTriangle class="w-8 h-8 text-neutral-500" />
+              </div>
+              <h3 class="text-2xl font-bold text-neutral-400 mb-4">{t.sections.diferencia.vendedor.title}</h3>
+              <ul class="space-y-3 text-muted-foreground">
+                {t.sections.diferencia.vendedor.features.map(feature => (
+                  <li class="flex items-start gap-3">
+                    <span class="text-neutral-600 mt-1">✗</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-card to-card/50 border-2 border-primary-500/30 rounded-2xl p-8 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-primary-500/20 rounded-full blur-3xl" aria-hidden="true"></div>
+            <div class="relative">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-500/10 rounded-xl mb-6">
+                <Heart class="w-8 h-8 text-primary-400" />
+              </div>
+              <h3 class="text-2xl font-bold text-primary-400 mb-4">{t.sections.diferencia.socio.title}</h3>
+              <ul class="space-y-3 text-neutral-300">
+                {t.sections.diferencia.socio.features.map(feature => (
+                  <li class="flex items-start gap-3">
+                    <CheckCircle2 class="w-5 h-5 text-accent-400 mt-0.5 flex-shrink-0" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <p class="text-xl text-neutral-300">
+            <strong class="font-semibold text-primary-400">{t.sections.diferencia.slogan}</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="wpo-proof" class="py-20 bg-neutral-900/30">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <Badge variant="v0_secondary" class="mb-6">
+              <TrendingUp class="w-3 h-3 mr-1.5" />
+              {t.sections.wpo.badge}
+            </Badge>
+            <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground text-balance mb-6">
+              {t.sections.wpo.title}
+            </h2>
+            <p class="text-lg leading-relaxed text-neutral-300 text-pretty mb-8">
+              {t.sections.wpo.content}
+            </p>
+            <div class="space-y-4">
+              {t.sections.wpo.features.map(feature => {
+                const Icon = iconMap[feature.icon];
+                return (
+                  <div class="flex items-start gap-3">
+                    <Icon class="w-5 h-5 text-accent-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p class="text-foreground font-medium">{feature.title}</p>
+                      <p class="text-muted-foreground text-sm">{feature.description}</p>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+
+          <WPOChart t={t.sections.wpo.chart} />
+        </div>
+      </div>
+    </section>
+    <section id="promesa-objetivos" class="py-20 border-y border-border">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <Badge variant="v0_secondary" class="mb-6">
+            <Target class="w-3 h-3 mr-1.5" />
+            {t.sections.promesa.badge}
+          </Badge>
+          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground text-balance">
+            {t.sections.promesa.title}
+          </h2>
+        </div>
+
+        <div class="bg-gradient-to-br from-secondary-500/5 to-transparent border border-secondary-500/20 rounded-2xl p-8 sm:p-10">
+          <p class="text-lg leading-relaxed text-neutral-300 text-pretty mb-8">
+            {t.sections.promesa.content}
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {t.sections.promesa.featureCards.map(feature => {
+              const Icon = iconMap[feature.icon];
+              return (
+                <div class="bg-card/50 border border-border rounded-xl p-5">
+                  <div class="flex items-center gap-3 mb-2">
+                    <Icon class="w-5 h-5 text-secondary-400" />
+                    <div class="text-secondary-400 font-semibold">{feature.title}</div>
+                  </div>
+                  <div class="text-sm text-muted-foreground">{feature.description}</div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="que-incluye" class="py-20 bg-neutral-900/30">
+      <div class="max-w-5xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground text-balance">
+            {t.sections.incluye.title}
+          </h2>
+          <p class="text-lg text-muted-foreground mt-4">{t.sections.incluye.content}</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {t.sections.incluye.featureCards.map((item) => (
+            <div class="bg-card border border-border rounded-xl p-6 hover:border-neutral-700 transition-colors">
+              <div class="flex items-start gap-4">
+                <div class="bg-primary-500/10 rounded-lg p-2 mt-1">
+                  <CheckCircle2 class="w-5 h-5 text-primary-400" />
+                </div>
+                <div>
+                  <h3 class="font-semibold text-foreground mb-1">{item.title}</h3>
+                  <p class="text-muted-foreground leading-relaxed text-sm">{item.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-12 bg-gradient-to-br from-card to-card/50 border border-primary-500/30 rounded-2xl p-8 text-center">
+          <div class="inline-block bg-primary-500/10 text-primary-400 text-sm font-medium px-4 py-2 rounded-full mb-4 border border-primary-500/20">
+            {t.sections.precio.commitment}
+          </div>
+          <div class="text-5xl sm:text-6xl font-bold text-foreground mb-2">
+            {t.sections.precio.basePrice}
+          </div>
+          <p class="text-muted-foreground">{t.sections.precio.subtitle}</p>
+        </div>
+      </div>
+    </section>
+    <section id="packs" class="py-20">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground text-balance">
+            {t.sections.packs.title}
+          </h2>
+        </div>
+        <div class="bg-card border border-border rounded-2xl p-8 sm:p-10">
+          <p class="text-lg leading-relaxed text-neutral-300 text-pretty mb-8">
+            {t.sections.packs.content}
+          </p>
+          <div class="text-center">
+            <Button
+              href={t.ctas.secondary.url}
+              size="lg"
+              variant="outline"
+              class="border-secondary-500/30 bg-secondary-500/5 hover:bg-secondary-500/10 text-secondary-400 group"
+            >
+              {t.sections.packs.buttonText}
+              <ArrowRight class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta-final" class="py-24 sm:py-32 bg-gradient-to-b from-neutral-900/30 to-background">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <div class="mb-8">
+          <div class="inline-flex items-center justify-center w-20 h-20 bg-primary-500/10 rounded-2xl mb-6">
+            <Shield class="w-10 h-10 text-primary-400" />
+          </div>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground text-balance mb-6">
+          {t.sections.ctaFinal.title}
+        </h2>
+        <p class="text-lg sm:text-xl leading-relaxed text-neutral-300 max-w-2xl mx-auto mb-10 text-pretty">
+          {t.sections.ctaFinal.content}
+        </p>
+        <Button
+          href={t.ctas.primary.url}
+          size="lg"
+          variant="default"
+          class="shadow-lg shadow-primary-500/20 group"
+        >
+          {t.ctas.primary.text}
+          <ArrowRight class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </Button>
+        <p class="mt-8 text-sm text-muted-foreground" set:html={t.sections.ctaFinal.subtext} />
+      </div>
+    </section>
+    </main>
+</BaseLayout>

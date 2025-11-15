@@ -10,6 +10,12 @@ import t_footer_es from '../i18n/es/componentes/footer.json' with { type: 'json'
 import t_footer_en from '../i18n/en/componentes/footer.json' with { type: 'json' };
 import AppFooter from '../components/AppFooter.astro';
 
+type Props = {
+  lang?: 'es' | 'en';
+  alternateUrl?: string;
+  // cookieConsent?: CookieConsentType; // <-- Aún no existe
+};
+
 // import type { CookieConsentType } from '../i18n/utils'; // <-- Aún no existe
 const { lang = 'es', alternateUrl } = Astro.props;
 const GTM_ID = import.meta.env.PUBLIC_GTM_ID;
@@ -25,12 +31,6 @@ const alternateLang = pathName.substring(1, 3) === 'es' ? 'en' : 'es';
 
 const t_header = lang === 'es' ? t_header_es : t_header_en;
 const t_footer = lang === 'es' ? t_footer_es : t_footer_en;
-
-console.log("desde baselayout lang", lang);
-console.log("desde baselayout el otro lang ", alternateLang);
-console.log("desde baselayout pathname", pathName);
-console.log("desde baselayout canonical", canonicalURL);
-console.log("desde baselayout alternateUrl", alternateUrl);
 
 ---
 

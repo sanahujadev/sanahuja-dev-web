@@ -1,0 +1,73 @@
+---
+
+const { t } = Astro.props;
+
+type Props = {
+  t: {
+    title: string;
+    main: {
+      label: string;
+      value: number | string;
+    };
+    competitorA: {
+      label: string;
+      value: number | string;
+    };
+    competitorB: {
+      label: string;
+      value: number | string;
+    };
+    summary: string;
+  };
+};
+//t.sections.wpo.chart
+const {
+  title,
+  main,
+  competitorA,
+  competitorB,
+  summary,
+} = t as Props['t'];
+
+---
+<div class="relative">
+            <div class="bg-card border border-border rounded-2xl p-8 shadow-2xl">
+              <div class="text-center mb-8">
+                <p class="text-sm text-muted-foreground uppercase tracking-wider font-medium mb-4">
+                  {title}
+                </p>
+              </div>
+              <div class="space-y-6">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-foreground font-medium">{main.label}</span>
+                    <span class="text-3xl font-bold text-accent-400">{main.value}</span>
+                  </div>
+                  <div class="h-4 bg-neutral-800 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-accent-500 to-accent-400 rounded-full" style={`width: ${main.value}%`}></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-muted-foreground text-sm">{competitorA.label}</span>
+                    <span class="text-lg font-medium text-muted-foreground">{competitorA.value}</span>
+                  </div>
+                  <div class="h-3 bg-neutral-800 rounded-full overflow-hidden">
+                    <div class="h-full bg-neutral-700 rounded-full" style={`width: ${competitorA.value}%`}></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-muted-foreground text-sm">{competitorB.label}</span>
+                    <span class="text-lg font-medium text-muted-foreground">{competitorB.value}</span>
+                  </div>
+                  <div class="h-3 bg-neutral-800 rounded-full overflow-hidden">
+                    <div class="h-full bg-neutral-700 rounded-full" style={`width: ${competitorB.value}%`}></div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-8 pt-6 border-t border-border">
+                <p class="text-sm text-muted-foreground text-center" set:html={summary} />
+              </div>
+            </div>
+          </div>

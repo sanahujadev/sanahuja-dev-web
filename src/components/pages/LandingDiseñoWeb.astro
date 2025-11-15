@@ -8,6 +8,7 @@ import TrendingUp from '../../components/ui/icons/TrendingUp.astro';
 import CheckCircle2 from '../../components/ui/icons/CheckCircle2.astro';
 import Shield from '../../components/ui/icons/Shield.astro';
 import type { LandingDiseñoWebCopy } from '../../i18n/utils';
+import WPOChart from '../shared/WPOChart.astro';
 
 const {copy, alternateUrl} = Astro.props;
 
@@ -40,7 +41,7 @@ const processContent = (content: string, strongClass: string = 'font-semibold te
 const [audienceIntro] = body_sections[5].content.split('\n* ');
 
 ---
-<BaseLayout lang={lang} alternateUrl={alternateUrl}>
+<BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>
   <Fragment slot="head">
     <title>{title}</title>
     <meta name="description" content={meta_description} />
@@ -66,7 +67,7 @@ const [audienceIntro] = body_sections[5].content.split('\n* ');
         <p class="mt-6 text-lg leading-8 text-neutral-300" set:html={processContent(body_sections[0].content)} />
         
         <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button href={ctas[0].url} variant="default" size="lg">
+          <Button href={ctas[0].url} variant="primary" size="lg">
             {ctas[0].text}
           </Button>
           <Button href={ctas[1].url} variant="outline" size="lg">
@@ -187,55 +188,7 @@ const [audienceIntro] = body_sections[5].content.split('\n* ');
             </div>
           </div>
 
-          <div class="relative">
-            <div class="bg-card border border-border rounded-2xl p-8 shadow-2xl">
-              <div class="text-center mb-8">
-                <p class="text-sm text-muted-foreground uppercase tracking-wider font-medium mb-4">
-                  {wpoSection.chart.title}
-                </p>
-              </div>
-
-              <div class="space-y-6">
-                <div>
-                  <div class="flex items-center justify-between mb-2">
-                    <span class="text-neutral-200 font-medium">{wpoSection.chart.main.label}</span>
-                    <span class="text-2xl font-bold text-accent-400">{wpoSection.chart.main.value}</span>
-                  </div>
-                  <div class="h-3 bg-neutral-800 rounded-full overflow-hidden">
-                    <div
-                      class="h-full bg-gradient-to-r from-accent-500 to-accent-400 rounded-full"
-                      style={`width: ${wpoSection.chart.main.value}%`}
-                    ></div>
-                  </div>
-                </div>
-
-                <div>
-                  <div class="flex items-center justify-between mb-2">
-                    <span class="text-muted-foreground text-sm">{wpoSection.chart.competitorA.label}</span>
-                    <span class="text-lg font-medium text-neutral-500">{wpoSection.chart.competitorA.value}</span>
-                  </div>
-                  <div class="h-2 bg-neutral-800 rounded-full overflow-hidden">
-                    <div class="h-full bg-neutral-700 rounded-full" style={`width: ${wpoSection.chart.competitorA.value}%`}></div>
-                  </div>
-                </div>
-
-                <div>
-                  <div class="flex items-center justify-between mb-2">
-                    <span class="text-muted-foreground text-sm">{wpoSection.chart.competitorB.label}</span>
-                    <span class="text-lg font-medium text-neutral-500">{wpoSection.chart.competitorB.value}</span>
-                  </div>
-                  <div class="h-2 bg-neutral-800 rounded-full overflow-hidden">
-                    <div class="h-full bg-neutral-700 rounded-full" style={`width: ${wpoSection.chart.competitorB.value}%`}></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mt-8 pt-6 border-t border-border">
-                <p class="text-sm text-muted-foreground text-center" set:html={wpoSection.chart.summary} />
-              </div>
-            </div>
-          </div>
-          
+          <WPOChart t={wpoSection.chart} />
         </div>
       </div>
     </section>
