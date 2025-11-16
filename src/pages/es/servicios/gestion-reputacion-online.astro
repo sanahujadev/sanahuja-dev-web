@@ -1,11 +1,16 @@
 ---
+// src/pages/es/servicios/gestion-reputacion-online.astro
 // ¡PÁGINA TONTA (ESPAÑOL)!
-import LandingMantenimientoWeb from '../../../components/pages/LandingMantenimientoWeb.astro';
+import LandingGestionReputacionOnline from '../../../components/pages/LandingGestionReputacionOnline.astro';
 
 // 1. Importa el JSON de la PÁGINA
-import t_page from '../../../i18n/es/services/mantenimiento-web.json' with { type: 'json' };
+import t_page from '../../../i18n/es/services/gestion-reputacion-online.json' with { type: 'json' };
 // 2. Importa el JSON del HEADER (solo en baseLayout)
-// Después de `const alternateUrl = ...` y antes del `<Landing...>`
+
+// 3. ¡Calcula la URL Alterna (¡la buena!)!
+const alternateUrl = new URL(t_page.alternateUrl, Astro.site).href;
+
+// Schema.org Service
 const schema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -17,10 +22,8 @@ const schema = {
     "areaServed": "Tenerife, Canarias, España"
   }
 };
-// 3. ¡Calcula la URL Alterna (¡la buena!)!
-const alternateUrl = new URL(t_page.alternateUrl, Astro.site).href;
 ---
-<LandingMantenimientoWeb 
+<LandingGestionReputacionOnline 
   copy={t_page}
   alternateUrl={alternateUrl}
   schema={schema}

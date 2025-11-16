@@ -10,7 +10,7 @@ import Shield from '../../components/ui/icons/Shield.astro';
 import type { LandingDiseñoWebCopy } from '../../i18n/utils';
 import WPOChart from '../shared/WPOChart.astro';
 
-const {copy, alternateUrl} = Astro.props;
+const {copy, alternateUrl, schema} = Astro.props;
 
 const { 
   title, 
@@ -28,8 +28,6 @@ const {
   h1,
   ctas,
   h2s,
-  endpoint,
-  justification_notes
 } = copy as LandingDiseñoWebCopy;
 
 const processContent = (content: string, strongClass: string = 'font-semibold text-primary-500'): string => {
@@ -46,7 +44,7 @@ const [audienceIntro] = body_sections[5].content.split('\n* ');
     <title>{title}</title>
     <meta name="description" content={meta_description} />
   </Fragment>
-
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} slot="json-ld"/>
   <main>
     
     <section id="hero-diseno-web" class="relative py-24 sm:py-32 overflow-hidden text-center">

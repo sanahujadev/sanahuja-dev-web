@@ -10,7 +10,7 @@ import X from './ui/icons/X.astro';
 const { t, lang, alternateUrl } = Astro.props;
 
 // La lógica del Switcher (de la demo original)
-const langSwitchUrl = alternateUrl || '/es';
+const langSwitchUrl = alternateUrl ? new URL(alternateUrl).pathname : `/${lang === 'es' ? 'en' : 'es'}`;
 
 // ¡La lógica de "La Mascara" + V0!
 const links = [

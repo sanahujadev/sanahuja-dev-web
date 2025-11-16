@@ -42,6 +42,9 @@ test.describe('E2E/SEO: Landing Page "Mantenimiento Web" (/es/)', () => {
     const enUrl = 'https://sanahuja.dev' + t_es.alternateUrl;
     await expect(hreflangEn).toHaveAttribute('href', enUrl);
 
+    const scriptContent = await page.locator('script[type="application/ld+json"]').textContent();
+    expect(scriptContent).toContain('"@type":"Service"');
+
     // 6. VERIFICACIÓN DE CONTENIDO (¡Un H2 para estar seguros!)
     await expect(page.getByRole('heading', { name: t_es.copy.sections.problema.title, level: 2 })).toBeVisible();
   });
@@ -80,5 +83,8 @@ test.describe('E2E/SEO: Landing Page "Mantenimiento Web" (/es/)', () => {
     // ¡Usamos el JSON de Español para la URL correcta!
     const esUrl = 'https://sanahuja.dev' + t_en.alternateUrl;
     await expect(hreflangEs).toHaveAttribute('href', esUrl);
+
+    const scriptContent = await page.locator('script[type="application/ld+json"]').textContent();
+    expect(scriptContent).toContain('"@type":"Service"');
   });
 });

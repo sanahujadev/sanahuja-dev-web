@@ -44,6 +44,9 @@ test.describe('E2E/SEO: "Diseño Web Tenerife" (/es/ y /en/)', () => {
     // Asumimos que la URL en inglés será la misma pero con /en/
     const enUrl = 'https://sanahuja.dev' + copy_en.endpoint;
     await expect(hreflangEn).toHaveAttribute('href', enUrl);
+
+    const scriptContent = await page.locator('script[type="application/ld+json"]').textContent();
+    expect(scriptContent).toContain('"@type":"Service"');
   });
 
   test('Debe cumplir el contrato SEO de Burro en Ingles', async ({ page }) => {
@@ -82,5 +85,8 @@ test.describe('E2E/SEO: "Diseño Web Tenerife" (/es/ y /en/)', () => {
     const hreflangEs = page.locator('link[rel="alternate"][hreflang="es"]');    // Asumimos que la URL en inglés será la misma pero con /en/
     const enUrl = 'https://sanahuja.dev' + copy_es.endpoint;
     await expect(hreflangEs).toHaveAttribute('href', enUrl);
+
+    const scriptContent = await page.locator('script[type="application/ld+json"]').textContent();
+    expect(scriptContent).toContain('"@type":"Service"');
   });
 });

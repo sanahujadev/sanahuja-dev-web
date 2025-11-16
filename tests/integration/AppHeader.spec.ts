@@ -40,6 +40,6 @@ test.describe('Fase 1 (ROJO): Test de Integración para AppHeader', () => {
     const langSwitchLink = header.getByRole('link', { name: t.nav.language.label });
     await expect(langSwitchLink).toBeVisible();
     // Verificamos que el link apunte a la versión en inglés de la home.
-    await expect(langSwitchLink).toHaveAttribute('href', '/en/servicios/diseno-web-tenerife');
+    await expect(langSwitchLink).toHaveAttribute('href', '/en/services/web-design-tenerife');
   });
 });

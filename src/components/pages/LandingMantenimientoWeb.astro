@@ -16,7 +16,7 @@ import type { LandingMantenimientoWebCopy } from '../../i18n/utils';
 import WPOChart from '../shared/WPOChart.astro';
 
 // Recibe las props de la "Página Tonta"
-const { copy, alternateUrl } = Astro.props;
+const { copy, alternateUrl, schema } = Astro.props;
 
 const {
   lang,
@@ -48,7 +48,7 @@ const processContent = (content: string, strongClass: string = 'font-semibold te
     <title>{metadata.title}</title>
     <meta name="description" content={metadata.description} />
   </Fragment>
-
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} slot="json-ld"/>
   <main class="bg-background">
     <section id="hero-mantenimiento" class="relative py-32 sm:py-40 overflow-hidden">
       <div class="absolute inset-0">

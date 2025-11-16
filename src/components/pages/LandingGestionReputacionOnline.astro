@@ -1,0 +1,325 @@
+---
+// src/components/pages/LandingGestionReputacionOnline.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/ui/Button.astro';
+import Badge from '../../components/ui/Badge.astro';
+import ArrowRight from '../../components/ui/icons/ArrowRight.astro';
+import Shield from '../../components/ui/icons/Shield.astro';
+import AlertTriangle from '../../components/ui/icons/AlertTriangle.astro';
+import CheckCircle2 from '../../components/ui/icons/CheckCircle2.astro'; // (El contorno, de Mantenimiento)
+import Zap from '../../components/ui/icons/Zap.astro';
+import Target from '../../components/ui/icons/Target.astro';
+import TrendingUp from '../../components/ui/icons/TrendingUp.astro';
+import Clock from '../../components/ui/icons/Clock.astro';
+import Heart from '../../components/ui/icons/Heart.astro';
+// (¡Nuevos instrumentos para esta pieza!)
+import XCircle from '../../components/ui/icons/XCircle.astro';
+import CheckCircle from '../../components/ui/icons/CheckCircle.astro';
+import ChatAlt2 from '../../components/ui/icons/ChatAlt2.astro';
+import Eye from '../../components/ui/icons/Eye.astro';
+import ThumbsUp from '../../components/ui/icons/ThumbsUp.astro';
+import Send from '../../components/ui/icons/Send.astro';
+import Ban from '../../components/ui/icons/Ban.astro';
+import type { LandingGestionReputacionOnlineCopy } from '../../i18n/utils';
+
+const { copy, alternateUrl, schema } = Astro.props;
+
+const {
+  lang,
+  copy: t,
+  endpoint,
+  metadata,
+} = copy as LandingGestionReputacionOnlineCopy;
+
+// --- 3. Lógica de Iconos (¡El Mapeo Dinámico!) ---
+const iconMap: Record<string, any> = {
+  Eye,
+  ThumbsUp,
+  Shield,
+  Send,
+  Zap,
+  Target,
+  Clock,
+  Heart,
+  AlertTriangle,
+  CheckCircle2,
+  TrendingUp,
+  ArrowRight
+};
+const featureCardColors = [
+  { blur: 'from-secondary-500/10 to-secondary-600/10', ring: 'bg-secondary-500/10 border-secondary-500/20', text: 'text-secondary-400' },
+  { blur: 'from-accent-500/10 to-accent-600/10', ring: 'bg-accent-500/10 border-accent-500/20', text: 'text-accent-400' },
+  { blur: 'from-primary-500/10 to-primary-600/10', ring: 'bg-primary-500/10 border-primary-500/20', text: 'text-primary-400' },
+  { blur: 'from-secondary-500/10 to-secondary-600/10', ring: 'bg-secondary-500/10 border-secondary-500/20', text: 'text-secondary-400' },
+];
+
+const protocolStepColors = [
+  'from-primary-500 to-primary-600 shadow-primary-500/25',
+  'from-secondary-500 to-secondary-600 shadow-secondary-500/25',
+  'from-accent-500 to-accent-600 shadow-accent-500/25',
+  'from-primary-500 to-accent-500 shadow-primary-500/25', // ¡El combo V0!
+];
+// --- 4. Función de Procesamiento (Para <strong>) ---
+const processContent = (content: string, strongClass: string = 'font-semibold text-primary-500'): string => {
+  return content
+    .replace(/\*\*([^*]+)\*\*/g, `<strong class="${strongClass}">$1</strong>`);
+};
+---
+<BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>
+  <Fragment slot="head">
+    <title>{metadata.title}</title>
+    <meta name="description" content={metadata.description} />
+  </Fragment>
+  
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} slot="json-ld"/>
+  <main class="bg-background">
+    
+    <section id="hero" class="relative overflow-hidden bg-gradient-to-b from-neutral-900 via-background to-background bg-background pt-24 pb-16">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,111,0,0.1),transparent_50%)]" aria-hidden="true"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(99,102,241,0.08),transparent_50%)]" aria-hidden="true"></div>
+      
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+        <div class="flex justify-center mb-8">
+          <Badge variant="v0_primary">
+            <AlertTriangle class="w-4 h-4 mr-1.5" />
+            {t.heroBadge}
+          </Badge>
+        </div>
+
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-center text-balance mb-6">
+          <span class="text-foreground">{t.h1_part1} </span>
+          <span class="bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">
+            {t.h1_part2}
+          </span>
+        </h1>
+
+        <p class="text-lg md:text-xl text-neutral-300 text-center text-balance max-w-3xl mx-auto mb-12">
+          {t.h1_lead}
+        </p>
+
+        <div class="max-w-6xl mx-auto mb-12">
+          <div class="grid md:grid-cols-2 gap-6">
+            
+            <div class="relative group">
+              <div class="absolute inset-0 bg-gradient-to-br from-neutral-800/50 to-neutral-900/50 rounded-2xl blur-xl group-hover:blur-2xl transition-all" aria-hidden="true"></div>
+              <div class="relative bg-card/80 backdrop-blur-sm border border-border rounded-2xl p-6 hover:border-neutral-700 transition-all h-full">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="text-xs font-semibold text-muted-foreground uppercase tracking-wider">{t.heroVisual.abandonado.span}</span>
+                  <span class="px-3 py-1 rounded-full bg-neutral-800 text-neutral-400 text-xs font-medium flex items-center gap-1">
+                    <Ban class="w-3 h-3" />
+                    {t.heroVisual.abandonado.badge}
+                  </span>
+                </div>
+                
+                <h2 class="text-2xl font-bold text-neutral-300 mb-4">{t.heroVisual.abandonado.title}</h2>
+                
+                <div class="grid grid-cols-2 gap-3 mb-4">
+                  {t.heroVisual.abandonado.stats.map(stat => (
+                    <div class="bg-neutral-800/50 rounded-lg p-3 text-center">
+                      <div class="text-2xl font-bold text-neutral-500">{stat.value}</div>
+                      <div class="text-xs text-neutral-600">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+                
+                <ul class="space-y-2">
+                  {t.heroVisual.abandonado.features.map(feature => (
+                    <li class="flex items-start gap-2 text-sm text-neutral-500">
+                      <XCircle class="w-4 h-4 mt-0.5 shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div class="relative group">
+              <div class="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-secondary-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all" aria-hidden="true"></div>
+              <div class="relative bg-gradient-to-br from-card to-background backdrop-blur-sm border border-primary-500/30 rounded-2xl p-6 hover:border-primary-500/50 transition-all h-full">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="text-xs font-semibold text-primary-400 uppercase tracking-wider">{t.heroVisual.activo.span}</span>
+                  <span class="px-3 py-1 rounded-full bg-accent-500/20 text-accent-400 text-xs font-medium flex items-center gap-1">
+                    <CheckCircle class="w-3 h-3" />
+                    {t.heroVisual.activo.badge}
+                  </span>
+                </div>
+                
+                <h3 class="text-2xl font-bold text-foreground mb-4">{t.heroVisual.activo.title}</h3>
+                
+                <div class="grid grid-cols-2 gap-3 mb-4">
+                  {t.heroVisual.activo.stats.map(stat => (
+                    <div class="bg-gradient-to-br from-accent-500/20 to-accent-600/20 rounded-lg p-3 text-center border border-accent-500/30">
+                      <div class="text-2xl font-bold text-accent-400">{stat.value}</div>
+                      <div class="text-xs text-accent-300">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+                
+                <ul class="space-y-2">
+                  {t.heroVisual.activo.features.map(feature => (
+                    <li class="flex items-start gap-2 text-sm text-neutral-300">
+                      <CheckCircle class="w-4 h-4 mt-0.5 shrink-0 text-accent-400" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="text-center mt-8">
+            <p class="text-2xl md:text-3xl font-bold text-foreground text-balance">
+              {t.heroVisual.slogan_1}<span class="text-primary-400">{t.heroVisual.slogan_2}</span>
+            </p>
+          </div>
+        </div>
+
+        <div id="hero-stats" class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
+  
+          <div class="stat-item text-center">
+            <div class="text-3xl font-bold text-accent-400 mb-1">{t.statsBar[0].value}</div>
+            <div class="text-sm text-muted-foreground">{t.statsBar[0].label}</div>
+          </div>
+          
+          <div class="stat-item text-center">
+            <div class="text-3xl font-bold text-primary-400 mb-1">{t.statsBar[1].value}</div>
+            <div class="text-sm text-muted-foreground">{t.statsBar[1].label}</div>
+          </div>
+          
+          <div class="stat-item text-center">
+            <div class="text-3xl font-bold text-secondary-400 mb-1">{t.statsBar[2].value}</div>
+            <div class="text-sm text-muted-foreground">{t.statsBar[2].label}</div>
+          </div>
+          
+          <div class="stat-item text-center">
+            <div class="text-3xl font-bold text-neutral-500 mb-1">{t.statsBar[3].value}</div>
+            <div class="text-sm text-muted-foreground">{t.statsBar[3].label}</div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <Button href={t.ctas.primary.url} variant="primary" size="lg" class="group shadow-lg shadow-primary-500/20">
+            {t.ctas.primary.text}
+            <ArrowRight class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+          </Button>
+          <Button href={t.ctas.secondary.url} variant="outline" size="lg">
+            {t.ctas.secondary.text}
+          </Button>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-background">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <Badge variant="v0_secondary" class="mb-6">
+          <ChatAlt2 class="w-4 h-4 mr-1.5" />
+          {t.sections.importancia.badge}
+        </Badge>
+        
+        <h2 class="text-3xl md:text-5xl font-bold text-foreground mb-6 text-balance">
+          {t.sections.importancia.title}
+        </h2>
+        
+        <div class="prose prose-invert prose-xl max-w-none text-neutral-300 leading-relaxed">
+          <p set:html={processContent(t.sections.importancia.content, 'font-semibold text-primary-400')} />
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-neutral-900/30">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-5xl font-bold text-foreground mb-6 text-balance">
+            {t.sections.incluye.title}
+          </h2>
+          <p class="text-xl text-muted-foreground max-w-3xl mx-auto text-balance" set:html={processContent(t.sections.incluye.content)} />
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {t.sections.incluye.featureCards.map((card, index) => {
+            const Icon = iconMap[card.icon];
+            // ¡Seleccionamos la armonía correcta!
+            const colors = featureCardColors[index % featureCardColors.length]; 
+            return (
+              <div class="group relative">
+                <div class={`absolute inset-0 bg-gradient-to-br ${colors.blur} rounded-2xl blur-xl group-hover:blur-2xl transition-all`} aria-hidden="true"></div>
+                
+                <div class="relative bg-card/60 backdrop-blur-sm border border-border rounded-2xl p-8 hover:border-neutral-700 transition-all h-full">
+                  
+                  <div class={`w-12 h-12 rounded-xl ${colors.ring} flex items-center justify-center mb-6`}>
+                    <Icon class={`w-6 h-6 ${colors.text}`} />
+                  </div>
+                  <h3 class="text-2xl font-bold text-foreground mb-4">{card.title}</h3>
+                  <p class="text-muted-foreground leading-relaxed">{card.description}</p>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-background">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <Badge variant="v0_primary" class="mb-6">
+            <Shield class="w-4 h-4 mr-1.5" />
+            {t.sections.protocolo.badge}
+          </Badge>
+          
+          <h2 class="text-3xl md:text-5xl font-bold text-foreground mb-6 text-balance">
+            {t.sections.protocolo.title}
+          </h2>
+          
+          <p class="text-xl text-muted-foreground max-w-3xl mx-auto text-balance">
+            {t.sections.protocolo.content}
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          {t.sections.protocolo.steps.map((step, index) => (
+            <div class="relative">
+              <div class="flex items-start gap-4">
+                
+                <div class={`shrink-0 w-12 h-12 rounded-full bg-gradient-to-br ${protocolStepColors[index]} flex items-center justify-center text-white font-bold text-lg shadow-lg`}>
+                  {step.step}
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-foreground mb-3">{step.title}</h3>
+                  <p class="text-muted-foreground leading-relaxed">{step.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-gradient-to-b from-background to-neutral-900/30">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <div class="relative group">
+          <div class="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-secondary-500/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all" aria-hidden="true"></div>
+          <div class="relative bg-gradient-to-br from-card/60 to-background/60 backdrop-blur-sm border border-primary-500/20 rounded-3xl p-12 text-center">            
+            <h2 class="text-3xl md:text-5xl font-bold text-foreground mb-6 text-balance">
+              {t.sections.ctaFinal.title}
+            </h2>
+            <p class="text-xl text-neutral-300 mb-8 text-balance" set:html={processContent(t.sections.ctaFinal.content)} />
+            <p class="text-lg text-muted-foreground mb-8" set:html={t.sections.ctaFinal.subtext} />
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button href={t.ctas.primary.url} variant="primary" size="lg" class="group shadow-lg shadow-primary-500/20">
+                {t.ctas.primary.text}
+                <ArrowRight class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <Button href={t.ctas.secondary.url} variant="outline" size="lg">
+                {t.ctas.secondary.text}
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

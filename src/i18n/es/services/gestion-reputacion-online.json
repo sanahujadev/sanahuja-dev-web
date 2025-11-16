@@ -1,56 +1,130 @@
 {
   "endpoint": "/es/servicios/gestion-reputacion-online",
   "lang": "es",
-  "title": "Gestión Reputación Online Tenerife | Domina tu SEO Local (GMB)",
-  "meta_description": "¿Reseñas sin contestar? 🥑 Gestionamos tu Reputación Online en Tenerife (Google Maps). Mientras tu competencia duerme, nosotros trabajamos.",
-  "h1": "Gestión de Reputación Online en Tenerife: Sé el Rey de Google Maps",
-  "h2s": [
-    "Tu Competencia en Tenerife Está Dormida (¡Y lo sabemos!)",
-    "¿Por qué gestionar las reseñas de Google Maps lo es TODO?",
-    "Nuestro Servicio: De \"Propietario Aislado\" a Referente Local",
-    "¿Cómo respondemos a las reseñas negativas? (El Protocolo)",
-    "Tu Perfil de Negocio (GMB) será tu mejor comercial"
-  ],
-  "body_sections": [
-    {
-      "heading": "h1_lead",
-      "content": "No importa si eres la Audiencia 1 ('Aislado') o la 2 ('Frustrado'). Si tienes un negocio local en Tenerife, necesitas que te encuentren. Y hoy, eso significa dominar Google Maps. Nosotros lo convertimos en tu mejor comercial."
+  "alternateUrl": "/en/services/online-reputation-management",
+  "metadata": {
+    "title": "Gestión Reputación Online Tenerife | Mejora tu SEO Local",
+    "description": "¿Reseñas sin contestar? 🚀 Gestionamos tu Ficha de Negocio en Google Maps. Mientras otros descuidan su imagen, nosotros la convertimos en tu mejor comercial."
+  },
+  "copy": {
+    "heroBadge": "Brecha de Competencia Detectada",
+    "h1_part1": "Gestión Reputación Online Tenerife:",
+    "h1_part2": "Tu Competencia (Digital) Duerme",
+    "h1_lead": "En Tenerife, la confianza lo es todo. Si tu negocio tiene reseñas sin contestar, estás perdiendo clientes. Convertimos tu presencia en Google en una máquina de captación, mientras tu competencia local descuida la suya.",
+    "heroVisual": {
+      "abandonado": {
+        "badge": "Inactivo",
+        "span": "Tu Competencia",
+        "title": "Presencia Online Abandonada",
+        "stats": [
+          { "value": "+6", "label": "Meses Inactiva" },
+          { "value": "0", "label": "Confianza" }
+        ],
+        "features": [
+          "Reseñas antiguas sin ninguna respuesta",
+          "Preguntas de clientes ignoradas",
+          "Información obsoleta (horarios, fotos)",
+          "Google interpreta 'abandono' y te penaliza"
+        ]
+      },
+      "activo": {
+        "badge": "Activo",
+        "span": "Tu Socio Digital",
+        "title": "Presencia Online Gestionada",
+        "stats": [
+          { "value": "<48h", "label": "Respuesta" },
+          { "value": "100%", "label": "Cobertura" }
+        ],
+        "features": [
+          "Respondemos reseñas (positivas y negativas) en <48h",
+          "Protocolo profesional para reseñas negativas",
+          "Publicaciones de 'Frescura' y Novedades",
+          "Google te premia con mejor SEO Local"
+        ]
+      },
+      "slogan_1": "Mientras ellos duermen,",
+      "slogan_2": " nosotros te posicionamos."
     },
-    {
-      "heading": "Tu Competencia en Tenerife Está Dormida (¡Y lo sabemos!)",
-      "content": "¡Esto es real! Hemos analizado a los competidores (como chosqueweb.com o kingseo.es) y tienen sus perfiles de Google Business Profile (GMB) abandonados. ¡Tienen reseñas sin contestar desde hace 2, 3 o incluso 5 años! Están dejando que su reputación se la coman las moscas. ¡Esa es nuestra oportunidad!"
+    "statsBar": [
+      { "value": "100%", "label": "Cobertura de Reseñas" },
+      { "value": "Visible", "label": "Mejora SEO Local" },
+      { "value": "25€", "label": "Desde/mes" },
+      { "value": "Alta", "label": "Confianza de Clientes" }
+    ],
+    "sections": {
+      "importancia": {
+        "badge": "El Nuevo 'Boca a Boca'",
+        "title": "¿Por qué tu Ficha de Negocio en Google lo es TODO?",
+        "content": "Porque es tu <strong class=\"text-neutral-100\">tarjeta de visita digital</strong>. Es la primera impresión. Una reseña negativa sin contestar grita <em class=\"text-neutral-400\">\"No me importa\"</em>. Una reseña positiva sin agradecer es una oportunidad perdida. Una gestión <strong class=\"text-primary-400\">ACTIVA</strong> le dice a Google y a los clientes: <em class=\"text-accent-400\">\"Estoy aquí, estoy vivo y me importas\"</em>. Así es como se consigue 'aparecer en Google Maps' y 'mejorar el SEO local en Tenerife'."
+      },
+      "incluye": {
+        "title": "¿Qué incluye nuestro Plan de Reputación?",
+        "content": "Con nuestro plan (solo <strong class=\"text-primary-400\">25€/mes</strong>), nos convertimos en la voz de tu marca. Damos 'Frescura' y 'Actividad', las dos cosas que tu competencia olvidó. Esto es lo que hacemos:",
+        "featureCards": [
+          {
+            "title": "Monitorización de tu Ficha de Google",
+            "description": "Vigilamos tu ficha de negocio y te avisamos de cada nueva reseña o pregunta.",
+            "icon": "Eye"
+          },
+          {
+            "title": "Respuesta a Positivas (4-5★)",
+            "description": "Agradecemos cada reseña positiva, reforzando la lealtad del cliente y mostrando actividad.",
+            "icon": "ThumbsUp"
+          },
+          {
+            "title": "Protocolo de Negativas (1-3★)",
+            "description": "Aplicamos nuestro protocolo para 'gestionar reseñas negativas' contigo. (Lo detallamos abajo)",
+            "icon": "Shield"
+          },
+          {
+            "title": "Publicaciones de 'Frescura'",
+            "description": "Mantenemos tu perfil 'fresco' con publicaciones y novedades, lo que Google adora para el SEO Local.",
+            "icon": "Send"
+          }
+        ]
+      },
+      "protocolo": {
+        "badge": "Nuestro Método Anti-Crisis",
+        "title": "El Protocolo: 'Cómo Responder Reseñas Negativas'",
+        "content": "Una mala reseña no es el fin del mundo, es una oportunidad de oro para demostrar tu profesionalidad. Nunca respondemos en caliente, aplicamos un protocolo claro:",
+        "steps": [
+          {
+            "step": "1",
+            "title": "Notificación Inmediata",
+            "description": "Detectamos la reseña y te avisamos. Analizamos el caso: ¿es un cliente real o un troll?"
+          },
+          {
+            "step": "2",
+            "title": "Borrador Profesional",
+            "description": "Preparamos un borrador de respuesta enfocado en calmar al cliente y ofrecer soluciones."
+          },
+          {
+            "step": "3",
+            "title": "Tu Aprobación",
+            "description": "Nunca publicamos nada sin tu visto bueno. Definimos la respuesta contigo."
+          },
+          {
+            "step": "4",
+            "title": "Publicación y Cierre",
+            "description": "Publicamos la respuesta, convirtiendo una queja pública en una demostración de servicio al cliente."
+          }
+        ]
+      },
+      "ctaFinal": {
+        "title": "¿Listo para Dominar tu Reputación Local?",
+        "content": "Deja que tu competencia siga durmiendo. Es hora de que tu <strong class=\"text-primary-400\">ficha de negocio</strong> se convierta en tu mejor comercial, uno que trabaja 24/7. Hablemos.",
+        "subtext": "<strong class=\"text-neutral-400\">Tu éxito es mi éxito.</strong> Empecemos a ganar esos clientes locales."
+      }
     },
-    {
-      "heading": "¿Por qué gestionar las reseñas de Google Maps lo es TODO?",
-      "content": "Porque Google Maps es el nuevo 'boca a boca'. Una reseña negativa sin contestar grita '¡No me importa!'. Una reseña positiva sin agradecer es una oportunidad perdida. Una gestión ACTIVA de las reseñas le dice a Google y a los clientes: 'Estoy aquí, estoy vivo y me importas'. Eso es vital para 'mejorar el SEO local en Tenerife'."
-    },
-    {
-      "heading": "Nuestro Servicio: De \"Propietario Aislado\" a Referente Local",
-      "content": "Con nuestro 'Plan de Gestión de Reputación Online' (solo 25€/mes), hacemos el trabajo pesado:\n* Monitorizamos activamente nuevas reseñas (en hasta 2 plataformas).\n* Respondemos a las reseñas positivas (4-5 estrellas).\n* Aplicamos un protocolo para 'gestionar las reseñas negativas' (1-3 estrellas), siempre con tu feedback.\n* Damos 'Frescura' y 'Actividad', las dos cosas que tu competencia ha olvidado."
-    },
-    {
-      "heading": "¿Cómo respondemos a las reseñas negativas? (El Protocolo)",
-      "content": "Nunca en caliente. Siempre con profesionalidad. Te avisamos, definimos la respuesta contigo y la publicamos. Convertimos una queja en una demostración pública de buen servicio al cliente. Eso vale oro."
+    "ctas": {
+      "primary": {
+        "text": "¡Domina tu Reputación Local!",
+        "url": "/es/formulario-inicial/"
+      },
+      "secondary": {
+        "text": "Ver Mantenimiento Web",
+        "url": "/es/servicios/mantenimiento-web"
+      }
     }
-  ],
-  "ctas": [
-    {
-      "text": "¡Domina tu Reputación Local!",
-      "url": "/es/formulario-inicial/",
-      "type": "primary",
-      "justification": "CTA principal del Brief, ágil y enfocado en el resultado."
-    },
-    {
-      "text": "¿Y qué hay del Mantenimiento?",
-      "url": "/servicios/mantenimiento-web",
-      "type": "secondary",
-      "justification": "Cross-selling al servicio clave, ya que GMB y Mantenimiento son pilares del SEO Local."
-    }
-  ],
-  "justification_notes": {
-    "title": "Keyword principal + Beneficio clave (SEO Local) + Plataforma (GMB).",
-    "meta_description": "Ataca el dolor (reseñas sin contestar), KW principal, y la PUV/Ataque ('competencia duerme').",
-    "h1": "KW principal + Promesa de valor local y directa.",
-    "body_sections": "El texto se centra 100% en la PUV del brief: atacar la 'brecha de competencia' demostrable (GMB inactivos). Se usa un tono ágil y local y se incluyen las keywords secundarias ('gestionar reseñas google maps', 'cómo responder reseñas negativas', 'mejorar seo local tenerife'). Se explica el servicio usando los detalles del Runbook (precio, plataformas, protocolo)."
   }
 }

@@ -1,0 +1,130 @@
+{
+  "endpoint": "/en/services/online-reputation-management",
+  "lang": "en",
+  "alternateUrl": "/es/servicios/gestion-reputacion-online",
+  "metadata": {
+    "title": "Online Reputation Management Tenerife | Boost Your Local SEO",
+    "description": "Unanswered reviews? 🚀 We manage your Google Business Profile. While others neglect their image, we turn yours into your best salesperson."
+  },
+  "copy": {
+    "heroBadge": "Competitor Gap Detected",
+    "h1_part1": "Online Reputation Management Tenerife:",
+    "h1_part2": "Your (Digital) Competition is Asleep",
+    "h1_lead": "In Tenerife, trust is everything. If your business has unanswered reviews, you're losing customers. We turn your Google presence into a lead-generation machine, while your local competition neglects theirs.",
+    "heroVisual": {
+      "abandonado": {
+        "badge": "Inactive",
+        "span": "Your Competition",
+        "title": "Abandoned Online Presence",
+        "stats": [
+          { "value": "+6", "label": "Months Inactive" },
+          { "value": "0", "label": "Trust" }
+        ],
+        "features": [
+          "Old reviews with no response",
+          "Customer questions ignored",
+          "Outdated information (hours, photos)",
+          "Google sees 'abandonment' and penalizes you"
+        ]
+      },
+      "activo": {
+        "badge": "Active",
+        "span": "Your Digital Partner",
+        "title": "Managed Online Presence",
+        "stats": [
+          { "value": "<48h", "label": "Response" },
+          { "value": "100%", "label": "Coverage" }
+        ],
+        "features": [
+          "We answer reviews (positive and negative) in <48h",
+          "Professional protocol for negative reviews",
+          "'Freshness' posts and updates",
+          "Google rewards you with better Local SEO"
+        ]
+      },
+      "slogan_1": "While they sleep,",
+      "slogan_2": " we get you ranked."
+    },
+    "statsBar": [
+      { "value": "100%", "label": "Review Coverage" },
+      { "value": "Visible", "label": "Local SEO Boost" },
+      { "value": "€25", "label": "From/month" },
+      { "value": "High", "label": "Customer Trust" }
+    ],
+    "sections": {
+      "importancia": {
+        "badge": "The New 'Word of Mouth'",
+        "title": "Why is Your Google Business Profile EVERYTHING?",
+        "content": "Because it's your <strong class=\"text-neutral-100\">digital business card</strong>. It's the first impression. An unanswered negative review screams <em class=\"text-neutral-400\">\"I don't care\"</em>. An unthanked positive review is a missed opportunity. <strong class=\"text-primary-400\">ACTIVE</strong> management tells Google and customers: <em class=\"text-accent-400\">\"I'm here, I'm active, and I care\"</em>. This is how you 'get on Google Maps' and 'improve local SEO in Tenerife'."
+      },
+      "incluye": {
+        "title": "What does our Reputation Plan include?",
+        "content": "With our plan (only <strong class=\"text-primary-400\">€25/month</strong>), we become the voice of your brand. We provide 'Freshness' and 'Activity,' the two things your competition forgot. Here's what we do:",
+        "featureCards": [
+          {
+            "title": "Google Business Profile Monitoring",
+            "description": "We monitor your business profile and alert you to every new review or question.",
+            "icon": "Eye"
+          },
+          {
+            "title": "Response to Positives (4-5★)",
+            "description": "We thank every positive review, reinforcing customer loyalty and showing activity.",
+            "icon": "ThumbsUp"
+          },
+          {
+            "title": "Protocol for Negatives (1-3★)",
+            "description": "We apply our protocol to 'manage negative reviews' with you. (Detailed below)",
+            "icon": "Shield"
+          },
+          {
+            "title": "'Freshness' Posts",
+            "description": "We keep your profile 'fresh' with posts and updates, which Google loves for Local SEO.",
+            "icon": "Send"
+          }
+        ]
+      },
+      "protocolo": {
+        "badge": "Our Anti-Crisis Method",
+        "title": "The Protocol: 'How to Respond to Negative Reviews'",
+        "content": "A bad review isn't the end of the world; it's a golden opportunity to show your professionalism. We never respond heatedly; we apply a clear protocol:",
+        "steps": [
+          {
+            "step": "1",
+            "title": "Immediate Notification",
+            "description": "We detect the review and notify you. We analyze the case: is it a real customer or a troll?"
+          },
+          {
+            "step": "2",
+            "title": "Professional Draft",
+            "description": "We prepare a draft response focused on calming the customer and offering solutions."
+          },
+          {
+            "step": "3",
+            "title": "Your Approval",
+            "description": "We never publish anything without your approval. We define the response with you."
+          },
+          {
+            "step": "4",
+            "title": "Publication and Closure",
+            "description": "We publish the response, turning a public complaint into a demonstration of customer service."
+          }
+        ]
+      },
+      "ctaFinal": {
+        "title": "Ready to Master Your Local Reputation?",
+        "content": "Let your competition keep sleeping. It's time for your <strong class=\"text-primary-400\">business profile</strong> to become your best salesperson, one that works 24/7. Let's talk.",
+        "subtext": "<strong class=\"text-neutral-400\">Your success is my success.</strong> Let's start winning those local customers."
+      }
+    },
+    "ctas": {
+      "primary": {
+        "text": "Master Your Local Reputation!",
+        "url": "/en/formulario-inicial/"
+      },
+      "secondary": {
+        "text": "View Web Maintenance",
+        "url": "/en/services/web-maintenance"
+      }
+    }
+  }
+}
