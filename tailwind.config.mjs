@@ -3,6 +3,7 @@
 
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  safelist: [],
   darkMode: 'class',
   theme: {
     // 1. Definimos la fuente (¡Esto es correcto!)
@@ -95,4 +96,7 @@ export default {
     },
   },
   plugins: [],
+  corePlugins: {
+    preflight: true,
+  },
 };

@@ -53,5 +53,14 @@ export default defineConfig({
     },
 
     plugins: [tailwindcss()],
+    build: {
+      cssCodeSplit: true,
+    },
+    css: {
+      transformer: 'lightningcss',
+    },
   },
+  build: {
+    inlineStylesheets: 'auto',
+  }
 });
