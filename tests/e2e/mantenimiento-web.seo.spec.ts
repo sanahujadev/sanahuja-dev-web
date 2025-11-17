@@ -10,6 +10,7 @@ test.describe('E2E/SEO: Landing Page "Mantenimiento Web" (/es/)', () => {
   test('Debe cumplir el NUEVO contrato SEO y de contenido de Burro en ES', async ({ page }) => {
     // 1. NAVEGACIÓN
     await page.goto(URL);
+    await page.waitForLoadState('networkidle');
 
     // 2. VERIFICACIÓN SEO (¡NUEVA RUTA DE JSON!)
     await expect(page).toHaveTitle(t_es.metadata.title);

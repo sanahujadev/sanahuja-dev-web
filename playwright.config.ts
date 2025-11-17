@@ -45,6 +45,7 @@ export default defineConfig({
     { 
       name: 'firefox-e2e', 
       use: { ...devices['Desktop Firefox'] },
+      timeout: 12000,
       testMatch: /tests\/(e2e|integration)\/.*\.spec\.ts/ 
     },
 
@@ -53,7 +54,8 @@ export default defineConfig({
     {
       name: 'chromium-a11y',
       use: { ...devices['Desktop Chrome'] },
-      testMatch: /tests\/a11y\/.*\.spec\.ts/
+      testMatch: /tests\/a11y\/.*\.spec\.ts/,
+      timeout: 12000,
     }
   ],
 });

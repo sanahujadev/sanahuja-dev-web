@@ -5,7 +5,7 @@ import type { HTMLAttributes } from 'astro/types';
 interface Props extends HTMLAttributes<'svg'> { class?: string; }
 const { class: className, ...props } = Astro.props;
 ---
-<svg 
+<svg aria-hidden="true" 
   class={className} 
   fill="none" 
   viewBox="0 0 24 24" 

@@ -48,16 +48,16 @@ const links = [
   <nav class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       
-      <a href={`/${lang}`} aria-label={t.aria.logo} class="flex items-baseline gap-0.5 group">
+      <Button href={`/${lang}`} aria-label={t.aria.logo} class="flex items-baseline gap-0.5 group">
         <span class="text-lg font-semibold text-neutral-50 hover:text-primary-400 transition-colors">
           Sanahuja
         </span>
         <span class="text-lg font-semibold text-primary-500">Dev/&gt;</span>
-      </a>
+      </Button>
 
       <div class="hidden xl:flex items-center gap-1">
         {links.map((link) => (
-          <a
+          <Button
             href={link.href}
             class:list={[
               'px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-2',
@@ -75,7 +75,7 @@ const links = [
                 {link.badge}
               </Badge>
             )}
-          </a>
+          </Button>
         ))}
       </div>
 
@@ -91,14 +91,14 @@ const links = [
       </div>
 
       <div class="xl:hidden">
-        <button
+        <Button
           id="hamburger"
           aria-label={t.aria.menuToggle}
           class="p-2 rounded-md text-neutral-400 hover:text-neutral-50 hover:bg-neutral-800 transition-colors"
         >
           <Menu class="w-6 h-6 group-data-[state=active]:hidden" />
           <X class="w-6 h-6 hidden group-data-[state=active]:block" />
-        </button>
+        </Button>
       </div>
     </div>
 
@@ -107,7 +107,7 @@ const links = [
     >
       <div class="flex flex-col gap-2 xl:hidden">
         {links.map((link) => (
-          <a
+          <Button
             href={link.href}
             class:list={[
               'px-4 py-3 rounded-lg text-sm font-medium transition-colors flex items-center gap-x-2',
@@ -125,7 +125,7 @@ const links = [
                 {link.badge}
               </Badge>
             )}
-          </a>
+          </Button>
         ))}
 
         <div class="mt-4 px-4">

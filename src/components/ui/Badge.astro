@@ -2,7 +2,7 @@
 // src/components/ui/Badge.astro
 // Nuestro segundo instrumento, inspirado en V0
 import type { HTMLAttributes } from 'astro/types';
-import { twMerge } from 'tailwind-merge';
+import { twMerge, type ClassNameValue } from 'tailwind-merge';
 import { clsx, type ClassValue } from 'clsx';
 
 function cn(...inputs: ClassValue[]) {
@@ -42,7 +42,7 @@ const badgeVariants = {
 // --- Props del Componente ---
 type Variant = keyof typeof badgeVariants;
 
-interface Props extends HTMLAttributes<'div'> {
+interface Props extends Omit<HTMLAttributes<'div'>, 'class'> {
   variant?: Variant;
   class?: ClassValue;
 }
@@ -64,7 +64,7 @@ const classes = twMerge(
   badgeVariants[variant],
 
   // Clases Externas
-  className
+  className as ClassNameValue
 );
 ---
 

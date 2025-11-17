@@ -1,0 +1,9 @@
+---
+// src/components/ui/icons/Check.astro
+import type { HTMLAttributes } from 'astro/types';
+interface Props extends HTMLAttributes<'svg'> { class?: string; }
+const { class: className, ...props } = Astro.props;
+---
+<svg aria-hidden="true" class="w-6 h-6 text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" {...props}>
+  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+</svg>
