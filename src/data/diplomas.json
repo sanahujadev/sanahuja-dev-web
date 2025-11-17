@@ -1,0 +1,650 @@
+[
+  {
+    "title": "Become A React Native Developer",
+    "category": "react",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/certificado-de-finalizacion-become-a-react-native-developer/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/certificado-de-finalizacion-become-a-react-native-developer"
+  },
+  {
+    "title": "Nodejs Avanzado",
+    "category": "node",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/certificado-de-finalizacion-nodejs-avanzado/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/certificado-de-finalizacion-nodejs-avanzado"
+  },
+  {
+    "title": "Nodejs Securing Restful Apis",
+    "category": "node",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/certificado-de-finalizacion-nodejs-securing-restful-apis/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/certificado-de-finalizacion-nodejs-securing-restful-apis"
+  },
+  {
+    "title": "Nodejs Security",
+    "category": "node",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/certificado-de-finalizacion-nodejs-security/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/certificado-de-finalizacion-nodejs-security"
+  },
+  {
+    "title": "Nodejs Trucos",
+    "category": "node",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/certificado-de-finalizacion-nodejs-trucos/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/certificado-de-finalizacion-nodejs-trucos"
+  },
+  {
+    "title": "Certificate Of Completion Git And Github Essentials",
+    "category": "devops",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/certificate-of-completion-for-git-and-github-essentials/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/certificate-of-completion-for-git-and-github-essentials"
+  },
+  {
+    "title": "Certificate Of Completion Intellij Idea Developer Guide",
+    "category": "fundamentals",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/certificate-of-completion-for-intellij-idea-developer-guide/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/certificate-of-completion-for-intellij-idea-developer-guide"
+  },
+  {
+    "title": "Certificate Of Completion Relational Database And Sql Essentials",
+    "category": "db",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/certificate-of-completion-for-relational-database-and-sql-essentials/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/certificate-of-completion-for-relational-database-and-sql-essentials"
+  },
+  {
+    "title": "Certificate Of Completion Terminal Bash Vim Essentials",
+    "category": "devops",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/certificate-of-completion-for-terminal-bash-vim-essentials/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/certificate-of-completion-for-terminal-bash-vim-essentials"
+  },
+  {
+    "title": "Almacenamiento Azure",
+    "category": "cloud",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-almacenamiento-azure/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-almacenamiento-azure"
+  },
+  {
+    "title": "Almacenamiento Gcp",
+    "category": "cloud",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-almacenamiento-gcp/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-almacenamiento-gcp"
+  },
+  {
+    "title": "Aprender Data Ia",
+    "category": "fundamentals",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-aprender-data-ia/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-aprender-data-ia"
+  },
+  {
+    "title": "Aprovechamiento Programacion Java",
+    "category": "java_python",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-aprovechamiento-programacion-java/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-aprovechamiento-programacion-java"
+  },
+  {
+    "title": "Arquitectura Alta Concurrencia",
+    "category": "backend",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-arquitectura-alta-concurrencia/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-arquitectura-alta-concurrencia"
+  },
+  {
+    "title": "Arquitectura Software",
+    "category": "backend",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-arquitectura-software/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-arquitectura-software"
+  },
+  {
+    "title": "Aws Cloud Computing",
+    "category": "cloud",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-aws-cloud-computing/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-aws-cloud-computing"
+  },
+  {
+    "title": "Aws Cloud Practico",
+    "category": "cloud",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-aws-cloud-practico/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-aws-cloud-practico"
+  },
+  {
+    "title": "Aws Cloud Practitioner",
+    "category": "cloud",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-aws-cloud-practitioner/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-aws-cloud-practitioner"
+  },
+  {
+    "title": "Aws Ec2",
+    "category": "cloud",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-aws-ec2/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-aws-ec2"
+  },
+  {
+    "title": "Aws Fundamentos",
+    "category": "cloud",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-aws-fundamentos/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-aws-fundamentos"
+  },
+  {
+    "title": "Aws Iam",
+    "category": "cloud",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-aws-iam/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-aws-iam"
+  },
+  {
+    "title": "Aws Redes",
+    "category": "cloud",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-aws-redes/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-aws-redes"
+  },
+  {
+    "title": "Azure Bases Datos",
+    "category": "cloud",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-azure-bases-datos/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-azure-bases-datos"
+  },
+  {
+    "title": "Backend",
+    "category": "backend",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-backend/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-backend"
+  },
+  {
+    "title": "Backend Nodejs",
+    "category": "node",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-backend-nodejs/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-backend-nodejs"
+  },
+  {
+    "title": "Backend Nodejs Postgres",
+    "category": "node",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-backend-nodejs-postgres/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-backend-nodejs-postgres"
+  },
+  {
+    "title": "Base De Datos",
+    "category": "fundamentals",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-base-de-datos/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-base-de-datos"
+  },
+  {
+    "title": "Basico Javascript",
+    "category": "java_python",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-basico-javascript/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-basico-javascript"
+  },
+  {
+    "title": "Bd",
+    "category": "fundamentals",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-bd/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-bd"
+  },
+  {
+    "title": "Big Data",
+    "category": "fundamentals",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-big-data/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-big-data"
+  },
+  {
+    "title": "Chatgpt",
+    "category": "fundamentals",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-chatgpt/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-chatgpt"
+  },
+  {
+    "title": "Db Aws",
+    "category": "db",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-db-aws/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-db-aws"
+  },
+  {
+    "title": "E2E Testing Nodejs",
+    "category": "node",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-e2e-testing-nodejs/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-e2e-testing-nodejs"
+  },
+  {
+    "title": "Expresiones Regulares",
+    "category": "fundamentals",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-expresiones-regulares/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-expresiones-regulares"
+  },
+  {
+    "title": "Firebase",
+    "category": "cloud",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-firebase/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-firebase"
+  },
+  {
+    "title": "Firebase Cloud",
+    "category": "cloud",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-firebase-cloud/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-firebase-cloud"
+  },
+  {
+    "title": "Firebase Web",
+    "category": "cloud",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-firebase-web/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-firebase-web"
+  },
+  {
+    "title": "Frontend Developer",
+    "category": "fundamentals",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-frontend-developer/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-frontend-developer"
+  },
+  {
+    "title": "Frontend Developer Practico",
+    "category": "fundamentals",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-frontend-developer-practico/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-frontend-developer-practico"
+  },
+  {
+    "title": "Fundamentos Google",
+    "category": "fundamentals",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-fundamentos-google/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-fundamentos-google"
+  },
+  {
+    "title": "Fundamentos Matematicas",
+    "category": "fundamentals",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-fundamentos-matematicas/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-fundamentos-matematicas"
+  },
+  {
+    "title": "Fundamentos Node",
+    "category": "node",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-fundamentos-node/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-fundamentos-node"
+  },
+  {
+    "title": "Git Github",
+    "category": "devops",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-git-github/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-git-github"
+  },
+  {
+    "title": "Google Suite",
+    "category": "fundamentals",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-google-suite/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-google-suite"
+  },
+  {
+    "title": "Intro Elasticsearch",
+    "category": "devops",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-intro-elasticsearch/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-intro-elasticsearch"
+  },
+  {
+    "title": "Introduccion Azure",
+    "category": "cloud",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-introduccion-azure/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-introduccion-azure"
+  },
+  {
+    "title": "Introduccion Backend",
+    "category": "backend",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-introduccion-backend/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-introduccion-backend"
+  },
+  {
+    "title": "Java Basico",
+    "category": "java_python",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-java-basico/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-java-basico"
+  },
+  {
+    "title": "Java Oop",
+    "category": "java_python",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-java-oop/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-java-oop"
+  },
+  {
+    "title": "Javascript Full Stack",
+    "category": "java_python",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-javascript-full-stack/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-javascript-full-stack"
+  },
+  {
+    "title": "Javascript Practico",
+    "category": "java_python",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-javascript-practico/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-javascript-practico"
+  },
+  {
+    "title": "Javascript Profesional",
+    "category": "java_python",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-javascript-profesional/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-javascript-profesional"
+  },
+  {
+    "title": "Javascript Testing",
+    "category": "java_python",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-javascript-testing/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-javascript-testing"
+  },
+  {
+    "title": "Kotlin",
+    "category": "java_python",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-kotlin/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-kotlin"
+  },
+  {
+    "title": "Mongodb",
+    "category": "db",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-mongodb/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-mongodb"
+  },
+  {
+    "title": "Mongodb Modelamiento",
+    "category": "db",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-mongodb-modelamiento/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-mongodb-modelamiento"
+  },
+  {
+    "title": "Mongodb2",
+    "category": "db",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-mongodb2/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-mongodb2"
+  },
+  {
+    "title": "Mysql Mariadb",
+    "category": "db",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-mysql-mariadb/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-mysql-mariadb"
+  },
+  {
+    "title": "Negocios Data Science",
+    "category": "fundamentals",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-negocios-data-science/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-negocios-data-science"
+  },
+  {
+    "title": "Nestjs",
+    "category": "node",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-nestjs/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-nestjs"
+  },
+  {
+    "title": "Nestjs Modular",
+    "category": "node",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-nestjs-modular/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-nestjs-modular"
+  },
+  {
+    "title": "Networking Content",
+    "category": "fundamentals",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-networking-content/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-networking-content"
+  },
+  {
+    "title": "Nextjs Auth",
+    "category": "react",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-nextjs-auth/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-nextjs-auth"
+  },
+  {
+    "title": "Nextjs Deploy",
+    "category": "react",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-nextjs-deploy/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-nextjs-deploy"
+  },
+  {
+    "title": "Nextjs Grandes Datasets",
+    "category": "react",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-nextjs-grandes-datasets/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-nextjs-grandes-datasets"
+  },
+  {
+    "title": "Nextjs Internacionalizacion",
+    "category": "react",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-nextjs-internacionalizacion/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-nextjs-internacionalizacion"
+  },
+  {
+    "title": "Nextjs Jamstack",
+    "category": "react",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-nextjs-jamstack/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-nextjs-jamstack"
+  },
+  {
+    "title": "Nextjs Owasp",
+    "category": "react",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-nextjs-owasp/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-nextjs-owasp"
+  },
+  {
+    "title": "Nodejs Microservicios",
+    "category": "node",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-nodejs-microservicios/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-nodejs-microservicios"
+  },
+  {
+    "title": "Nodejs Mongo Websockets",
+    "category": "node",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-nodejs-mongo-websockets/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-nodejs-mongo-websockets"
+  },
+  {
+    "title": "Npm",
+    "category": "devops",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-npm/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-npm"
+  },
+  {
+    "title": "Npm 1",
+    "category": "devops",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-npm 1/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-npm 1"
+  },
+  {
+    "title": "Oauth",
+    "category": "fundamentals",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-oauth/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-oauth"
+  },
+  {
+    "title": "Oop",
+    "category": "backend",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-oop/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-oop"
+  },
+  {
+    "title": "Optimizacion Sql Server",
+    "category": "db",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-optimizacion-sql-server/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-optimizacion-sql-server"
+  },
+  {
+    "title": "Postgresql",
+    "category": "db",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-postgresql/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-postgresql"
+  },
+  {
+    "title": "Postgresql Datos",
+    "category": "db",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-postgresql-datos/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-postgresql-datos"
+  },
+  {
+    "title": "Practico Backend",
+    "category": "backend",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-practico-backend/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-practico-backend"
+  },
+  {
+    "title": "Pro Arquitectura",
+    "category": "backend",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-pro-arquitectura/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-pro-arquitectura"
+  },
+  {
+    "title": "Profesional Nextjs",
+    "category": "react",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-profesional-nextjs/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-profesional-nextjs"
+  },
+  {
+    "title": "Python Funciones",
+    "category": "java_python",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-python-funciones/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-python-funciones"
+  },
+  {
+    "title": "Python Pip",
+    "category": "java_python",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-python-pip/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-python-pip"
+  },
+  {
+    "title": "React",
+    "category": "react",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react"
+  },
+  {
+    "title": "React 1",
+    "category": "react",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react 1/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react 1"
+  },
+  {
+    "title": "React Avanzado",
+    "category": "react",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react-avanzado/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react-avanzado"
+  },
+  {
+    "title": "React Estado",
+    "category": "react",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react-estado/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react-estado"
+  },
+  {
+    "title": "React Hooks",
+    "category": "react",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react-hooks/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react-hooks"
+  },
+  {
+    "title": "React Native",
+    "category": "react",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react-native/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react-native"
+  },
+  {
+    "title": "React Native Cli",
+    "category": "react",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react-native-cli/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react-native-cli"
+  },
+  {
+    "title": "React Native Formularios Almacenamiento",
+    "category": "react",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react-native-formularios-almacenamiento/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react-native-formularios-almacenamiento"
+  },
+  {
+    "title": "React Native Introduccion",
+    "category": "react",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react-native-introduccion/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react-native-introduccion"
+  },
+  {
+    "title": "React Native Listas Apis",
+    "category": "react",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react-native-listas-apis/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react-native-listas-apis"
+  },
+  {
+    "title": "React Patrones Render",
+    "category": "react",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react-patrones-render/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react-patrones-render"
+  },
+  {
+    "title": "React Practico",
+    "category": "react",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react-practico/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react-practico"
+  },
+  {
+    "title": "React Router",
+    "category": "react",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react-router/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react-router"
+  },
+  {
+    "title": "React Vite Tailwindcss",
+    "category": "react",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react-vite-tailwindcss/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-react-vite-tailwindcss"
+  },
+  {
+    "title": "Redshift Big Data",
+    "category": "db",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-redshift-big-data/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-redshift-big-data"
+  },
+  {
+    "title": "Salidas Profesionales Mobile Devs",
+    "category": "fundamentals",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-salidas-profesionales-mobile-devs/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-salidas-profesionales-mobile-devs"
+  },
+  {
+    "title": "Sql Azure",
+    "category": "db",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-sql-azure/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-sql-azure"
+  },
+  {
+    "title": "Sql Mysql",
+    "category": "db",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-sql-mysql/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-sql-mysql"
+  },
+  {
+    "title": "Storage Aws",
+    "category": "cloud",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-storage-aws/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-storage-aws"
+  },
+  {
+    "title": "Terminal",
+    "category": "devops",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-terminal/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-terminal"
+  },
+  {
+    "title": "Typescript Poo",
+    "category": "fundamentals",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-typescript-poo/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-typescript-poo"
+  },
+  {
+    "title": "Typescript Tipos Avanzados",
+    "category": "fundamentals",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-typescript-tipos-avanzados/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-typescript-tipos-avanzados"
+  },
+  {
+    "title": "Web Backend",
+    "category": "backend",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-web-backend/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-web-backend"
+  },
+  {
+    "title": "Web Next",
+    "category": "fundamentals",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-web-next/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-web-next"
+  },
+  {
+    "title": "Webpack",
+    "category": "devops",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-webpack/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/diploma-webpack"
+  },
+  {
+    "title": "Nodejs Master Class",
+    "category": "node",
+    "pdfUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/nodejs-master-class/pdf/original.pdf",
+    "thumbnailBaseUrl": "https://cdn.sanahuja.dev/sanahujadev/diplomas/nodejs-master-class"
+  }
+]
