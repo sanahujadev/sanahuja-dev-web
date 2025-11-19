@@ -20,6 +20,8 @@ import Eye from '../../components/ui/icons/Eye.astro';
 import ThumbsUp from '../../components/ui/icons/ThumbsUp.astro';
 import Send from '../../components/ui/icons/Send.astro';
 import Ban from '../../components/ui/icons/Ban.astro';
+import SectionHeader from '../../components/ui/SectionHeader.astro';
+import ServiceFeatureCard from '../../components/ui/cards/ServiceFeatureCard.astro';
 import type { LandingGestionReputacionOnlineCopy } from '../../i18n/utils';
 
 const { copy, alternateUrl, schema } = Astro.props;
@@ -239,21 +241,13 @@ const processContent = (content: string, strongClass: string = 'font-semibold te
         <div class="grid md:grid-cols-2 gap-6">
           {t.sections.incluye.featureCards.map((card, index) => {
             const Icon = iconMap[card.icon];
-            // ¡Seleccionamos la armonía correcta!
             const colors = featureCardColors[index % featureCardColors.length]; 
             return (
-              <div class="group relative">
-                <div class={`absolute inset-0 bg-gradient-to-br ${colors.blur} rounded-2xl blur-xl group-hover:blur-2xl transition-all`} aria-hidden="true"></div>
-                
-                <div class="relative bg-card/60 backdrop-blur-sm border border-border rounded-2xl p-8 hover:border-neutral-700 transition-all h-full">
-                  
-                  <div class={`w-12 h-12 rounded-xl ${colors.ring} flex items-center justify-center mb-6`}>
-                    <Icon class={`w-6 h-6 ${colors.text}`} />
-                  </div>
-                  <h3 class="text-2xl font-bold text-foreground mb-4">{card.title}</h3>
-                  <p class="text-muted-foreground leading-relaxed">{card.description}</p>
-                </div>
-              </div>
+              <ServiceFeatureCard
+                card={card}
+                Icon={Icon}
+                colors={colors}
+              />
             )
           })}
         </div>
@@ -262,20 +256,17 @@ const processContent = (content: string, strongClass: string = 'font-semibold te
 
     <section class="py-20 bg-background">
       <div class="max-w-6xl mx-auto px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <Badge variant="v0_primary" class="mb-6">
-            <Shield class="w-4 h-4 mr-1.5" />
-            {t.sections.protocolo.badge}
-          </Badge>
-          
-          <h2 class="text-3xl md:text-5xl font-bold text-foreground mb-6 text-balance">
-            {t.sections.protocolo.title}
-          </h2>
-          
-          <p class="text-xl text-muted-foreground max-w-3xl mx-auto text-balance">
-            {t.sections.protocolo.content}
-          </p>
-        </div>
+        <SectionHeader
+            badgeVariant="v0_primary"
+            badgeIcon={Shield}
+            badgeIconClass=""
+            badgeText={t.sections.protocolo.badge}
+            title={t.sections.protocolo.title}
+            content={t.sections.protocolo.content}
+            class="mb-16"
+            titleClass="md:text-5xl"
+            contentClass="text-xl"
+        />
 
         <div class="grid md:grid-cols-2 gap-8">
           {t.sections.protocolo.steps.map((step, index) => (

@@ -1,0 +1,17 @@
+---
+// src/components/ui/cards/ObjectiveFeatureCard.astro
+interface Props {
+    Icon: Astro.Component;
+    title: string;
+    description: string;
+}
+
+const { Icon, title, description } = Astro.props;
+---
+<div class="bg-card/50 border border-border rounded-xl p-5">
+    <div class="flex items-center gap-3 mb-2">
+        <Icon class="w-5 h-5 text-secondary-400" />
+        <div class="text-secondary-400 font-semibold">{title}</div>
+    </div>
+    <div class="text-sm text-muted-foreground">{description}</div>
+</div>

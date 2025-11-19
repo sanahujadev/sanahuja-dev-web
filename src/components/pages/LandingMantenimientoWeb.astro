@@ -14,6 +14,10 @@ import TrendingUp from '../../components/ui/icons/TrendingUp.astro';
 import Clock from '../../components/ui/icons/Clock.astro';
 import type { LandingMantenimientoWebCopy } from '../../i18n/utils';
 import WPOChart from '../shared/WPOChart.astro';
+import SectionHeader from '../../components/ui/SectionHeader.astro';
+import FeatureListItem from '../../components/ui/FeatureListItem.astro';
+import ObjectiveFeatureCard from '../../components/ui/cards/ObjectiveFeatureCard.astro';
+import IncludedFeatureCard from '../../components/ui/cards/IncludedFeatureCard.astro';
 
 // Recibe las props de la "Página Tonta"
 const { copy, alternateUrl, schema } = Astro.props;
@@ -196,13 +200,11 @@ const processContent = (content: string, strongClass: string = 'font-semibold te
               {t.sections.wpo.features.map(feature => {
                 const Icon = iconMap[feature.icon];
                 return (
-                  <div class="flex items-start gap-3">
-                    <Icon class="w-5 h-5 text-accent-400 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p class="text-foreground font-medium">{feature.title}</p>
-                      <p class="text-muted-foreground text-sm">{feature.description}</p>
-                    </div>
-                  </div>
+                  <FeatureListItem
+                    Icon={Icon}
+                    title={feature.title}
+                    description={feature.description}
+                  />
                 )
               })}
             </div>
@@ -214,15 +216,15 @@ const processContent = (content: string, strongClass: string = 'font-semibold te
     </section>
     <section id="promesa-objetivos" class="py-20 border-y border-border">
       <div class="max-w-4xl mx-auto px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <Badge variant="v0_secondary" class="mb-6">
-            <Target class="w-3 h-3 mr-1.5" />
-            {t.sections.promesa.badge}
-          </Badge>
-          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground text-balance">
-            {t.sections.promesa.title}
-          </h2>
-        </div>
+        <SectionHeader
+            badgeVariant="v0_secondary"
+            badgeIcon={Target}
+            badgeIconClass="text-secondary-400"
+            badgeText={t.sections.promesa.badge}
+            title={t.sections.promesa.title}
+            class="mb-12"
+            titleClass="sm:text-4xl font-semibold"
+        />
 
         <div class="bg-gradient-to-br from-secondary-500/5 to-transparent border border-secondary-500/20 rounded-2xl p-8 sm:p-10">
           <p class="text-lg leading-relaxed text-neutral-300 text-pretty mb-8">
@@ -232,13 +234,11 @@ const processContent = (content: string, strongClass: string = 'font-semibold te
             {t.sections.promesa.featureCards.map(feature => {
               const Icon = iconMap[feature.icon];
               return (
-                <div class="bg-card/50 border border-border rounded-xl p-5">
-                  <div class="flex items-center gap-3 mb-2">
-                    <Icon class="w-5 h-5 text-secondary-400" />
-                    <div class="text-secondary-400 font-semibold">{feature.title}</div>
-                  </div>
-                  <div class="text-sm text-muted-foreground">{feature.description}</div>
-                </div>
+                <ObjectiveFeatureCard
+                  Icon={Icon}
+                  title={feature.title}
+                  description={feature.description}
+                />
               )
             })}
           </div>
@@ -257,17 +257,10 @@ const processContent = (content: string, strongClass: string = 'font-semibold te
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           {t.sections.incluye.featureCards.map((item) => (
-            <div class="bg-card border border-border rounded-xl p-6 hover:border-neutral-700 transition-colors">
-              <div class="flex items-start gap-4">
-                <div class="bg-primary-500/10 rounded-lg p-2 mt-1">
-                  <CheckCircle2 class="w-5 h-5 text-primary-400" />
-                </div>
-                <div>
-                  <h3 class="font-semibold text-foreground mb-1">{item.title}</h3>
-                  <p class="text-muted-foreground leading-relaxed text-sm">{item.description}</p>
-                </div>
-              </div>
-            </div>
+            <IncludedFeatureCard
+              title={item.title}
+              description={item.description}
+            />
           ))}
         </div>
 

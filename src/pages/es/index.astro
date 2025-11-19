@@ -1,0 +1,25 @@
+---
+// src/pages/es/index.astro
+import LandingHome from '../../components/pages/LandingHome.astro';
+import t from '../../i18n/es/home.json';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "SanahujaDev",
+  "description": t.copy.hero.h1_lead + t.copy.hero.h1_part2,
+  "provider": {
+    "@type": "Person",
+    "name": "José Javier Sanahuja"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Tenerife, Islas Canarias, España"
+  },
+  "url": "https://www.sanahuja.dev",
+};
+
+const alternateUrl = new URL(t.alternateUrl, Astro.site).href;
+---
+
+<LandingHome copy={t} alternateUrl={alternateUrl} schema={schema} />

@@ -1,0 +1,136 @@
+{
+  "endpoint": "/es",  
+  "lang": "es",
+  "alternateUrl": "/en",
+  "metadata": {
+    "title": "SanahujaDev | Tu Socio Digital en Tenerife (WPO 99)",
+    "description": "Deja atrás la 'web abandonada'. Como tu Socio Digital en Tenerife, creo tu web (WPO 99) y me quedo a tu lado para que logres tus objetivos."
+  },
+  "copy": {
+    "hero": {
+      "h1_part1": "El Socio Digital",
+      "h1_part2": "que SÍ te Acompaña en Tenerife.",
+      "h1_lead": "No importa en donde estés estancado. Creo tu web profesional (WPO 99), ultra-rápida, y me quedo a tu lado para que consigas tus metas. Porque <b>tu éxito es mi éxito</b>.",
+      "ctas": {
+        "primary": {
+          "text": "Diseño Web 90% de Descuento",
+          "url": "/es/servicios/diseno-web-tenerife"
+        },
+        "secondary": {
+          "text": "Conóceme más",
+          "url": "/es/sobre-mi"
+        }
+      },
+      "heroVisual": {
+        "title": "Confianza Técnica",
+        "subtitle": "Resultados, no palabras.",
+        "stats": [
+          { "label": "Puntuación WPO", "value": "99" },
+          { "label": "Descuento Inicial", "value": "90%" },
+          { "label": "Meses de Soporte", "value": "12" }
+        ]
+      }
+    },
+    "sections": {
+      "problema": {
+        "badge": "El Problema Real",
+        "title": "¿Harto de la 'Web Abandonada'?",
+        "content": "Seguro que te suena: desarrolladores que desaparecen, webs lentas (WPO 40-50) que no traen clientes, y tú, solo en medio de la 'selva digital'. Mi marca se construyó para ser la respuesta a ese problema.",
+        "vendedor": {
+          "title": "Un Vendedor",
+          "features": [
+            "Te entrega un producto",
+            "Cobra y desaparece",
+            "Enfoque en la 'entrega'",
+            "WPO Lento (40-50)"
+          ],
+          "advice": "Evita esto"
+        },
+        "socio": {
+          "title": "Tu Socio Digital",
+          "features": [
+            "Te da un servicio continuo",
+            "Se queda 12 meses a tu lado",
+            "Enfoque en 'tus objetivos'",
+            "WPO Rápido (99)"
+          ],
+          "advice":"Elige esto"
+        }
+      },
+      "hub": {
+        "badge": "Ecosistema Digital",
+        "title": "Todo lo que tu Negocio Necesita",
+        "content": "No importa en qué punto estés. Desde crear tu primera web profesional hasta escalar tu autoridad en el mercado. Tengo una solución diseñada para cada etapa de tu crecimiento.",
+        "teaser": "Explorar servicio",
+        "featureCards": [
+          {
+            "badge": "El Comienzo",
+            "title": "Diseño Web Estratégico",
+            "description": "Tu base digital. Una web ultra-rápida (WPO 99) y profesional. Accede a la oferta exclusiva de bienvenida con un 90% de descuento.",
+            "url": "/es/servicios/diseno-web-tenerife",
+            "icon": "Gift"
+          },
+          {
+            "badge": "La Estabilidad",
+            "title": "Packs Estratégicos",
+            "description": "Soluciones 'Todo en Uno'. Unificamos mantenimiento, analítica y estrategia para que tú solo te preocupes en producir.",
+            "url": "/es/packs/",
+            "icon": "Package"
+          },
+          {
+            "badge": "El Compromiso",
+            "title": "Tu Socio Digital",
+            "description": "Sin intermediarios. Soy José Javier Sanahuja. Mira mis certificaciones y una promesa de acompañamiento real.",
+            "url": "/es/sobre-mi",
+            "icon": "User"
+          },
+          {
+            "badge": "El Conocimiento",
+            "title": "Blog y Estrategia",
+            "description": "Recursos, guías y tácticas sobre SEO Local y WPO. Aprendizaje continuo para dominar tu mercado en Canarias.",
+            "url": "/es/blog",
+            "icon": "FileText"
+          }
+        ]
+      },
+      "trust": {
+        "badge": "Reputación Verificada",
+        "title": "Confianza Ganada, No Regalada",
+        "content": "Mi reputación se basa en resultados. Con más de 108 certificaciones y una puntuación perfecta en plataformas globales, mi compromiso es real.",
+        "proofCard": {
+          "type": "Plataforma Global",
+          "reviewsLabel": "Reseñas",
+          "platform": "Fiverr",
+          "rating": "5.0 ★",
+          "reviews": "(+13 Reseñas)",
+          "quote": "«José es un profesional increíble. No solo es técnicamente brillante (WPO 99), sino que se convierte en parte de tu equipo. Es un verdadero socio.»",
+          "url": "https://www.fiverr.com/josejsanahuja/create-a-full-stack-application",
+          "cta": "Ver perfil completo en Fiverr"
+        },
+        "testimonials": [
+          { "name": "Joaco B.", "type": "Cliente Valorado", "content": "Fue muy atento y estuvo muy pendiente a las dudas y revisiones que tuve del pedido. Altamente recomendado.", "img": "fiverr-client-joaco" },
+          { "name": "Alerco", "type": "Cliente Valorado", "content": "La relación con José Javier y su trabajo son extraordinarios.", "initial": "A", "color": "secondary" },
+          { "name": "ihatemyclass", "type": "Cliente Valorado", "content": "Trabajo fantástico! Aunque no expresé mi disponibilidad al principio, hicieron un trabajo excelente.", "initial": "I", "color": "accent" },
+          { "name": "Antoine R.", "type": "Cliente Valorado", "content": "Excelente trabajo, como siempre.", "img": "fiverr-client-antoine" },
+          { "name": "Fengjason", "type": "Cliente Valorado", "content": "Este es mi segundo pedido con el Señor José, una experiencia realmente genial.", "initial": "F", "color": "primary" },
+          { "name": "Thomas 8.", "type": "Cliente Valorado", "content": "Excelente proveedor de servicios. Muy contento con la comunicación y el conocimiento general.", "initial": "T", "color": "secondary" }
+        ]
+      },
+      "ctaFinal": {
+        "title": "Empecemos a Construir tu Futuro Digital",
+        "content": "¿Hablamos? Rellena el formulario inicial y definamos juntos qué es el éxito para ti. Sin rodeos, sin abandonos.",
+        "subtext": "<strong class=\"text-neutral-400\">Tu éxito es mi éxito.</strong> Empecemos hoy."
+      }
+    },
+    "ctas": {
+      "primary": {
+        "text": "¡Empieza tu Proyecto!",
+        "url": "/es/formulario-inicial/"
+      },
+      "secondary": {
+        "text": "Ver Packs Estratégicos",
+        "url": "/es/packs/"
+      }
+    }
+  }
+}

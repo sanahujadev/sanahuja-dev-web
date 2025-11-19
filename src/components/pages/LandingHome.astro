@@ -1,0 +1,314 @@
+---
+// src/components/pages/LandingHome.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/ui/Button.astro';
+import Badge from '../../components/ui/Badge.astro';
+import OptimizedLazyImage from '../ui/OptimizedLazyImage.astro';
+import TestimonialCard from '../ui/cards/TestimonialCard.astro';
+import HubFeatureCard from '../ui/cards/HubFeatureCard.astro';
+import ComparisonCard from '../ui/cards/ComparisonCard.astro';
+import SectionHeader from '../ui/SectionHeader.astro';
+
+// --- Instrumentos de la Orquesta (Iconos) ---
+import Shield from '../../components/ui/icons/Shield.astro';
+import AlertTriangle from '../../components/ui/icons/AlertTriangle.astro'; // Para "Problema"
+import Target from '../../components/ui/icons/Target.astro'; // Para "Pensamiento Piramidal"
+import Star from '../../components/ui/icons/Star.astro';
+import ExternalLink from '../../components/ui/icons/ExternalLink.astro';
+
+import type { HomeCopy } from '../../i18n/utils';
+import OptimizedImage from '../ui/OptimizedImage.astro';
+
+interface Props {
+  copy: HomeCopy;
+  alternateUrl: string;
+  schema: Record<string, any>;
+}
+
+const { copy, alternateUrl, schema } = Astro.props;
+
+const {
+    copy: t,
+    lang,
+    metadata
+} = copy;
+
+// Fallback por si el JSON no tiene testimonios aún (aunque asumimos que sí)
+const testimonials = t.sections.trust.testimonials || [];
+---
+
+<BaseLayout 
+  lang={lang as "es" | "en"}
+  alternateUrl={alternateUrl}
+>
+  <Fragment slot="head">
+    <title>{metadata.title}</title>
+    <meta name="description" content={metadata.description} />
+  </Fragment>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} slot="json-ld" />
+  
+  <main class="min-h-screen bg-background">
+    
+    <section id="hero" class="relative overflow-hidden bg-gradient-to-b from-neutral-900 via-background to-background pt-24 pb-16">
+      <div class="absolute inset-0 opacity-10 pointer-events-none" aria-hidden="true">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, rgb(148 163 184) 1px, transparent 0); background-size: 40px 40px;"></div>
+      </div>
+
+      <div class="container relative mx-auto px-4">
+        <div class="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+          
+          <div class="space-y-8">
+            
+            <div class="relative w-full h-24 md:h-32 rounded-xl overflow-hidden border border-border/50 shadow-sm bg-neutral-900/50">
+               <OptimizedImage
+                  imageName="Logo-banner" 
+                  basePath="sanahujadev"
+                  alt="SanahujaDev Logo"
+                  width={1792} 
+                  height={400} 
+                  sizes="(max-width: 768px) 90vw, 450px"
+                  loading="eager"       
+                  fetchpriority="high"
+                  class="w-full h-full object-cover object-center scale-110" 
+               />
+            </div>
+            <div class="space-y-4">
+              <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-balance">
+                <span class="text-primary-500">{t.hero.h1_part1}</span>
+                <br />
+                <span class="text-foreground">{t.hero.h1_part2}</span>
+              </h1>
+              
+              <div class="text-lg md:text-xl text-muted-foreground leading-relaxed text-pretty max-w-2xl">
+                 <p set:html={t.hero.h1_lead} />
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <Button 
+                href={t.hero.ctas.primary.url} 
+                data-cta="primary"
+                variant="primary"
+                size="lg"
+                class="shadow-lg shadow-primary-900/50 hover:shadow-xl hover:shadow-primary-900/60 hover:scale-105"
+              >
+                {t.hero.ctas.primary.text}
+              </Button>
+              
+              <Button 
+                href={t.hero.ctas.secondary.url} 
+                data-cta="secondary"
+                variant="outline"
+                size="lg"
+                class="bg-neutral-800 border-neutral-700 text-neutral-100 hover:bg-neutral-700"
+              >
+                {t.hero.ctas.secondary.text}
+              </Button>
+            </div>
+          </div>
+
+          <div class="relative">
+            
+            <div class="bg-gradient-to-br from-neutral-900 to-neutral-800 border border-border rounded-2xl p-8 shadow-2xl">
+              <div class="text-center space-y-6">
+                <Badge variant="v0_secondary">
+                  <Shield class="w-5 h-5 text-secondary-400 mr-1.5" aria-hidden="true" focusable="false" />
+                  {t.hero.heroVisual.title}
+                </Badge>
+
+                <h2 class="text-2xl font-bold text-foreground">{t.hero.heroVisual.subtitle}</h2>
+
+                <div class="grid grid-cols-3 gap-4 pt-4">
+                  {t.hero.heroVisual.stats.map((stat, index) => {
+                    const colors = [
+                        "text-accent-400 border-accent-500/30", 
+                        "text-primary-400 border-primary-500/30", 
+                        "text-secondary-400 border-secondary-500/30"
+                    ];
+                    const activeColor = colors[index % colors.length];
+                    
+                    return (
+                        <div class={`bg-neutral-950 border rounded-xl p-4 ${activeColor.split(' ')[1]}`}>
+                            <div class={`text-4xl font-bold mb-1 ${activeColor.split(' ')[0]}`}>{stat.value}</div>
+                            <div class="text-xs text-muted-foreground leading-tight">{stat.label}</div>
+                        </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+
+            <div class="absolute -top-4 -right-4 inline-flex items-center gap-2 px-4 py-2 bg-primary-500/10 border border-primary-500/30 rounded-full backdrop-blur-sm shadow-xl">
+              <Shield class="w-5 h-5 text-primary-400" aria-hidden="true" focusable="false" />
+              <span class="text-sm font-semibold text-primary-300">{t.hero.h1_part1}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-neutral-950">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto space-y-12">
+                <SectionHeader
+                    badgeVariant="v0_primary"
+                    badgeIcon={AlertTriangle}
+                    badgeIconClass="text-primary-400"
+                    badgeText={t.sections.problema.badge}
+                    title={t.sections.problema.title}
+                    content={t.sections.problema.content}
+                />
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <ComparisonCard
+                        variant="danger"
+                        badgeText={t.sections.problema.vendedor.advice}
+                        title={t.sections.problema.vendedor.title}
+                        features={t.sections.problema.vendedor.features}
+                    />
+
+                    <ComparisonCard
+                        variant="success"
+                        badgeText={t.sections.problema.socio.advice}
+                        title={t.sections.problema.socio.title}
+                        features={t.sections.problema.socio.features}
+                    />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-neutral-950">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <SectionHeader
+                    badgeVariant="v0_secondary"
+                    badgeIcon={Target}
+                    badgeIconClass="text-secondary-400"
+                    badgeText={t.sections.hub.badge}
+                    title={t.sections.hub.title}
+                    content={t.sections.hub.content}
+                />
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {t.sections.hub.featureCards.map((card, idx) => {
+                        const cardStyles = [
+                            { border: "border-primary-500/20 hover:border-primary-500/50", badgeBg: "bg-primary-500/10 border-primary-500/30", badgeText: "text-primary-300", iconColor: "text-primary-400", titleHover: "group-hover:text-primary-400" },
+                            { border: "border-accent-500/20 hover:border-accent-500/50", badgeBg: "bg-accent-500/10 border-accent-500/30", badgeText: "text-accent-300", iconColor: "text-accent-400", titleHover: "group-hover:text-accent-400" },
+                            { border: "border-secondary-500/20 hover:border-secondary-500/50", badgeBg: "bg-secondary-500/10 border-secondary-500/30", badgeText: "text-secondary-300", iconColor: "text-secondary-400", titleHover: "group-hover:text-secondary-400" },
+                            { border: "border-neutral-700 hover:border-neutral-600", badgeBg: "bg-neutral-700/50 border-neutral-600", badgeText: "text-neutral-300", iconColor: "text-neutral-400", titleHover: "group-hover:text-neutral-300" }
+                        ];
+                        const style = cardStyles[idx % cardStyles.length];
+                        
+                        return (
+                           <HubFeatureCard card={card} style={style} seeMoreText={t.sections.hub.teaser}/>
+                        );
+                    })}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-neutral-950">
+         <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <SectionHeader
+                    badgeVariant="v0_accent"
+                    badgeIcon={Star}
+                    badgeIconClass="text-accent-400"
+                    badgeText={t.sections.trust.badge}
+                    title={t.sections.trust.title}
+                    content={t.sections.trust.content}
+                />
+
+                <div class="bg-gradient-to-br from-neutral-900 to-neutral-800 border-2 border-accent-500/30 rounded-2xl p-8 md:p-12 space-y-8">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                        <div class="space-y-2">
+                            <div class="text-sm font-semibold text-accent-300 uppercase tracking-wider">{t.sections.trust.proofCard.type}</div>
+                            <div class="text-3xl font-bold text-foreground">{t.sections.trust.proofCard.platform}</div>
+                        </div>
+                        <div class="flex items-center gap-6">
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-accent-400">{t.sections.trust.proofCard.rating.split(' ')[0]}</div>
+                                <div class="flex gap-1 justify-center mt-1">
+                                    {[...Array(5)].map((_, i) => (
+                                        <Star class="w-5 h-5 text-accent-400" aria-hidden="true" focusable="false" />
+                                    ))}
+                                </div>
+                            </div>
+                            <div class="h-12 w-px bg-neutral-700"></div>
+                            <div class="text-center">
+                                <div class="text-sm text-muted-foreground">{t.sections.trust.proofCard.reviewsLabel}</div>
+                                <div class="text-2xl font-bold text-foreground">{t.sections.trust.proofCard.reviews.replace(/[^0-9]/g, '')}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <a 
+                            href={t.sections.trust.proofCard.url}
+                            target="_blank"
+                            rel="nofollow noopener noreferrer"
+                            class="inline-flex items-center gap-2 text-accent-400 hover:text-accent-300 font-semibold transition-colors"
+                        >
+                            Ver perfil completo en Fiverr
+                            <ExternalLink class="w-5 h-5" aria-hidden="true" focusable="false" />
+                        </a>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {testimonials.map(testimonial => (
+                        <TestimonialCard
+                            name={testimonial.name}
+                            type={testimonial.type}
+                            content={testimonial.content}
+                            img={testimonial.img}
+                            initial={testimonial.initial}
+                            color={testimonial.color as "primary" | "accent" | "secondary" | "neutral"}
+                        />
+                    ))}
+                </div>
+            </div>
+         </div>
+    </section>
+
+    <section class="py-16 bg-gradient-to-b from-neutral-900 to-neutral-950">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-br from-primary-900/20 via-neutral-900 to-neutral-900 border-2 border-primary-500/30 rounded-2xl p-8 md:p-12 text-center space-y-8">
+                    <div class="space-y-4">
+                        <h2 class="text-3xl md:text-4xl font-bold text-foreground text-balance">
+                            {t.sections.ctaFinal.title}
+                        </h2>
+                        <p class="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+                            {t.sections.ctaFinal.content}
+                        </p>
+                        <div class="text-muted-foreground" set:html={t.sections.ctaFinal.subtext} />
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <Button 
+                            href={t.ctas.primary.url} 
+                            variant="primary"
+                            size="lg"
+                            class="shadow-lg shadow-primary-900/50 hover:shadow-xl hover:shadow-primary-900/60 hover:scale-105"
+                        >
+                            {t.ctas.primary.text}
+                        </Button>
+                        
+                        <Button 
+                            href={t.ctas.secondary.url} 
+                            variant="outline"
+                            size="lg"
+                            class="bg-neutral-800 border-neutral-700 text-neutral-100 hover:bg-neutral-700"
+                        >
+                            {t.ctas.secondary.text}
+                        </Button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  </main>
+</BaseLayout>

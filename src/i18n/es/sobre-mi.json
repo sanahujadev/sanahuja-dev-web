@@ -1,0 +1,144 @@
+{
+  "lang": "es",
+  "alternateUrl": "/en/about-me",
+  "metadata": {
+    "title": "Quién es José Sanahuja | +108 Certificaciones | SanahujaDev",
+    "description": "Conoce al 'Socio Digital' detrás de SanahujaDev. Descubre mi historia, mis +108 certificaciones técnicas y mis reseñas 5★ como 'experto web en Tenerife'."
+  },
+  "copy": {
+    "hero": {
+      "badge": "Prueba de Autoridad",
+      "h1_part1": "José Javier Sanahuja",
+      "h1_part2": "Tu Socio Digital.",
+      "h1_lead": "No soy una agencia fantasma. Soy la persona que va a estar al otro lado del teléfono. Un <strong class=\"text-neutral-200\">consultor digital en Canarias</strong> con una obsesión: la transparencia y los resultados. Mi promesa no es solo una web, es acompañarte.",
+      "heroVisual": {
+        "title": "Prueba de Autoridad",
+        "subtitle": "Datos, no palabras.",
+        "stats": [
+          { "label": "Certificaciones Técnicas", "value": "108+", "color": "text-accent-400" },
+          { "label": "Reseñas en Fiverr", "value": "5.0", "icon": "Star", "color": "text-primary-500" },
+          { "label": "Proyectos 5 Estrellas", "value": "+13", "color": "text-secondary-400" },
+          { "label": "WPO Promedio", "value": "99", "color": "text-accent-400" }
+        ]
+      }
+    },
+    "sections": {
+      "story": {
+        "badge": "Mi Por Qué",
+        "title": "De <span class=\"text-neutral-400\">'Freelancer'</span> a <span class=\"text-primary-500\">'Socio Digital'</span>",
+        "content_1": "SanahujaDev nació de una frustración que seguro que conoces: la <strong class=\"text-neutral-200\">'web abandonada'</strong>. Vi a amigos y negocios locales gastar miles de euros en webs lentas, que daban errores, y cuyos desarrolladores <strong class=\"text-neutral-200\">(freelancers)</strong> desaparecían tras la entrega.",
+        "content_2": "Mi marca se construyó como la antítesis de eso. Yo no vendo un 'producto' y me voy. Doy un <strong class=\"text-primary-400\">servicio</strong> y me quedo. Mi modelo de 'Socio Digital' se basa en el acompañamiento de 12 meses. Porque, como siempre digo, <strong class=\"text-neutral-100\">tu éxito es mi éxito</strong>."
+      },
+      "proof": {
+        "badge": "Reputación Verificada",
+        "title": "Mi Reputación en el <span class=\"text-accent-400\">Mercado Global</span>",
+        "content": "La autoridad hay que ganársela, no se puede inventar. Esta es mi reputación en Fiverr, una de las plataformas más competitivas del mundo. Sin filtros, sin trampa. Esto es lo que dicen clientes reales.",
+        "proofCard": {
+          "type": "Plataforma",
+          "platform": "Fiverr",
+          "rating": "5.0",
+          "reviews": "(+13 Reseñas)",
+          "quote": "«José es un profesional increíble. No solo es técnicamente brillante (WPO 99), sino que se convierte en parte de tu equipo. Es un verdadero socio. Resolvió problemas que otros 3 desarrolladores no pudieron.»",
+          "url": "https://www.fiverr.com/josejsanahuja/create-a-full-stack-application",
+          "cta": "Ver Perfil Completo"
+        },
+        "reviewsGrid": [
+          {
+            "name": "Joaco B.",
+            "type": "Cliente Valorado",
+            "content": "Fue muy atento y estuvo muy pendiente a las dudas y revisiones que tuve del pedido. Altamente recomendado.",
+            "avatarSlug": "fiverr-client-joaco",
+            "initial": "J"
+          },
+          {
+            "name": "Antoine R.",
+            "type": "Cliente Valorado",
+            "content": "Excelente trabajo, como siempre.",
+            "avatarSlug": "fiverr-client-antoine",
+            "initial": "A"
+          },
+          {
+            "name": "Fengjason",
+            "type": "Cliente Valorado",
+            "content": "Este es mi segundo pedido con el Señor José, una experiencia realmente genial. ¡Me ha ayudado más allá de lo acordado y definitivamente lo recomendaré! ¡Muchas gracias, señor!",
+            "avatarSlug": "",
+            "initial": "F"
+          },
+          {
+            "name": "Alerco",
+            "type": "Cliente Valorado",
+            "content": "La relación con José Javier y su trabajo son extraordinarios.",
+            "avatarSlug": "",
+            "initial": "A"
+          },
+          {
+            "name": "ihatemyclass",
+            "type": "Cliente Valorado",
+            "content": "¡Trabajo fantástico! Aunque no expresé mi disponibilidad al principio, hicieron un trabajo excelente. Entienden bien el inglés y es fácil trabajar con ellos.",
+            "avatarSlug": "",
+            "initial": "I"
+          },
+          {
+            "name": "Thomas 8.",
+            "type": "Cliente Valorado",
+            "content": "Excelente proveedor de servicios. Muy contento con la comunicación, la capacidad de respuesta y el conocimiento general de José sobre arquitectura de bases de datos. 100% recomendado.",
+            "avatarSlug": "",
+            "initial": "T"
+          },
+          {
+             "name": "Jrgracec",
+             "type": "Cliente Valorado",
+             "content": "Excelente vendedor, respondió todas mis preguntas de manera clara y concisa. ¡Muy recomendado!",
+             "avatarSlug": "",
+             "initial": "J"
+          },
+          {
+             "name": "Jmloranzcoll",
+             "type": "Cliente Valorado",
+             "content": "Hizo todo el trabajo según lo planeado. A pesar de que teníamos bastante trabajo, lo hizo paso a paso.",
+             "avatarSlug": "",
+             "initial": "JM"
+          },
+          {
+             "name": "Marilui",
+             "type": "Cliente Valorada",
+             "content": "Hermoso trabajo, muy profesional.",
+             "avatarSlug": "",
+             "initial": "M"
+          }
+        ]
+      },
+      "diplomas": {
+        "badge": "La Sala de Trofeos",
+        "title": "Mi Obsesión: <span class=\"text-secondary-400\">+108 Certificaciones</span> Técnicas",
+        "content": "Un <strong class=\"text-neutral-200\">'experto web en Tenerife'</strong> debe probarlo. No me conformo con 'funciona'. Busco el WPO 99, la arquitectura perfecta, el código limpio. Esta es la prueba de mi compromiso con la excelencia técnica.",
+        "filterCategories": [
+          { "id": "all", "label": "Todo" },
+          { "id": "react", "label": "React/Next.js" },
+          { "id": "node", "label": "Node.js" },
+          { "id": "cloud", "label": "Cloud (AWS/Azure)" },
+          { "id": "db", "label": "Bases de Datos" },
+          { "id": "devops", "label": "DevOps" },
+          { "id": "java_python", "label": "Java/Python" },
+          { "id": "backend", "label": "Backend" },
+          { "id": "fundamentals", "label": "Fundamentos" }
+        ]
+      },
+      "ctaFinal": {
+        "title": "¿Listo para Hablar con un <span class=\"text-primary-500\">Experto Real</span>?",
+        "content": "Ahora que has visto mis 108 diplomas y mis reseñas de 5 estrellas... ¿Hablamos? Rellena el formulario y definamos qué es el éxito para ti. Sin rodeos, sin abandonos.",
+        "subtext": "<strong class=\"text-neutral-300\">Tu éxito es mi éxito.</strong> Empecemos con confianza total."
+      }
+    },
+    "ctas": {
+      "primary": {
+        "text": "¡Empieza tu Proyecto!",
+        "url": "/es/formulario-inicial/"
+      },
+      "secondary": {
+        "text": "Ver mis Servicios",
+        "url": "/es/servicios/"
+      }
+    }
+  }
+}

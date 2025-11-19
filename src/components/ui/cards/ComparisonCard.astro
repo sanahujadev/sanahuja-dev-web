@@ -1,0 +1,47 @@
+---
+// src/components/ui/cards/ComparisonCard.astro
+import XCircle from '../icons/XCircle.astro';
+import CheckCircle from '../icons/CheckCircle.astro';
+
+interface Props {
+    variant: "danger" | "success";
+    badgeText: string;
+    title: string;
+    features: string[];
+}
+
+const { variant, badgeText, title, features } = Astro.props;
+
+const isDanger = variant === "danger";
+
+const cardBorderClass = isDanger ? "border-red-500/20" : "border-accent-500/40";
+const badgeBgClass = isDanger ? "bg-red-500/10 border-red-500/30" : "bg-accent-500/10 border-accent-500/30";
+const badgeTextColorClass = isDanger ? "text-red-300" : "text-accent-300";
+const badgeIconClass = isDanger ? "text-red-400" : "text-accent-400";
+const featureIconClass = isDanger ? "text-red-400" : "text-accent-400";
+const featureTextColorClass = isDanger ? "text-muted-foreground" : "text-foreground font-medium";
+
+const Icon = isDanger ? XCircle : CheckCircle;
+---
+<div class={`bg-gradient-to-br from-neutral-900 to-neutral-800 border-2 ${cardBorderClass} rounded-xl p-8 space-y-6 ${!isDanger ? 'relative overflow-hidden' : ''}`}>
+    {
+        !isDanger && (
+            <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-accent-500/5 to-transparent pointer-events-none" aria-hidden="true"></div>
+        )
+    }
+    <div class="relative space-y-2">
+        <div class={`inline-flex items-center gap-2 px-3 py-1 ${badgeBgClass} rounded-full`}>
+            <Icon class={`w-4 h-4 ${badgeIconClass}`} aria-hidden="true" focusable="false" />
+            <span class={`text-xs font-semibold ${badgeTextColorClass}`}>{badgeText}</span>
+        </div>
+        <h3 class="text-2xl font-bold text-foreground">{title}</h3>
+    </div>
+    <ul class="space-y-3 relative">
+        {features.map(feature => (
+            <li class="flex items-start gap-3">
+                <Icon class={`w-5 h-5 ${featureIconClass} flex-shrink-0 mt-0.5`} aria-hidden="true" focusable="false" />
+                <span class={featureTextColorClass}>{feature}</span>
+            </li>
+        ))}
+    </ul>
+</div>

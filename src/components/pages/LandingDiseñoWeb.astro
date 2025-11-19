@@ -1,5 +1,5 @@
 ---
-// src/componentes/pages/LandingDiseñoWeb.astro
+// src/components/pages/LandingDiseñoWeb.astro
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Button from '../../components/ui/Button.astro';
 import Badge from '../../components/ui/Badge.astro';
@@ -10,6 +10,7 @@ import CheckCircle2 from '../../components/ui/icons/CheckCircle2.astro';
 import Shield from '../../components/ui/icons/Shield.astro';
 import type { LandingDiseñoWebCopy } from '../../i18n/utils';
 import WPOChart from '../shared/WPOChart.astro';
+import AudienceCard from '../../components/ui/cards/AudienceCard.astro';
 
 const {copy, alternateUrl, schema} = Astro.props;
 
@@ -261,21 +262,10 @@ const [audienceIntro] = body_sections[5].content.split('\n* ');
         <div class="space-y-6">
           
           {audienceCards.map(card => (
-            <div class="bg-card border border-border rounded-xl p-6 hover:border-neutral-700 transition-colors">
-              <div class="flex items-start gap-4">
-                <div class="bg-primary-500/10 rounded-lg p-2 mt-1">
-                  <div class="w-2 h-2 bg-primary-400 rounded-full"></div>
-                </div>
-                <div>
-                  <h3 class="text-lg font-semibold text-neutral-100 mb-2">
-                    {card.title}
-                  </h3>
-                  <p class="text-muted-foreground leading-relaxed">
-                    {card.description}
-                  </p>
-                </div>
-              </div>
-            </div>
+            <AudienceCard
+              title={card.title}
+              description={card.description}
+            />
           ))}
 
         </div>

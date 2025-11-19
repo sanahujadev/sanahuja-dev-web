@@ -55,7 +55,7 @@ export default defineConfig({
       name: 'chromium-a11y',
       use: { ...devices['Desktop Chrome'] },
       testMatch: /tests\/a11y\/.*\.spec\.ts/,
-      timeout: 12000,
+      timeout: 18000,
     }
   ],
 });

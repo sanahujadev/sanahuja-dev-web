@@ -1,0 +1,26 @@
+---
+// src/components/ui/cards/IncludedServiceCard.astro
+import Shield from '../icons/Shield.astro';
+interface Props {
+    Icon?: Astro.Component;
+    title: string;
+    price: string;
+    description: string;
+}
+
+const { Icon = Shield, title, price, description } = Astro.props;
+---
+<article class="bg-card/80 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-secondary-500/30 transition-all duration-300 h-full flex flex-col" data-feature={title}>
+    <div class="flex items-start gap-4 mb-4">
+        <div class="p-3 bg-secondary-500/10 rounded-lg">
+            <Icon class="w-6 h-6 text-secondary-400" />
+        </div>
+        <div class="flex-1">
+            <h3 class="text-xl font-bold mb-2 text-foreground">{title}</h3>
+            <span class="inline-block px-3 py-1 bg-neutral-800 text-muted-foreground rounded-full text-sm mb-3">{price}</span>
+        </div>
+    </div>
+    <p class="text-muted-foreground leading-relaxed flex-1">
+        {description}
+    </p>
+</article>
