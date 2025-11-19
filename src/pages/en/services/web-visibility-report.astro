@@ -1,0 +1,23 @@
+---
+import LandingInformeDeVisibilidad from '../../../components/pages/LandingInformeDeVisibilidad.astro';
+import t_page from '../../../i18n/en/services/informe-visibilidad-web.json' with { type: 'json' };
+
+const alternateUrl = new URL(t_page.alternateUrl, Astro.site).href;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": `${t_page.copy.hero.h1_part1} ${t_page.copy.hero.h1_part2}`,
+  "description": t_page.metadata.description,
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "SanahujaDev",
+    "areaServed": "Tenerife, Canary Islands, Spain"
+  }
+};
+---
+<LandingInformeDeVisibilidad
+  copy={t_page}
+  alternateUrl={alternateUrl}
+  schema={schema}
+/>

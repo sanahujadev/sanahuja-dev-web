@@ -1,0 +1,81 @@
+{
+  "lang": "en",
+  "alternateUrl": "/es/servicios/",
+  "metadata": {
+    "title": "Web Development Services Tenerife | Comprehensive Digital Solutions",
+    "description": "Web Agency in Tenerife. We offer Web Design, Maintenance, Technical SEO, and Online Reputation services. Everything your business needs to grow."
+  },
+  "copy": {
+    "hero": {
+      "h1_part1": "Digital Solutions",
+      "h1_part2": "for Businesses that Want to Grow",
+      "h1_lead": "We are not a 'web factory'. We are your <strong>external technical department.</strong> From platform creation to maintenance, optimization, and reputation defense. A complete ecosystem.",
+      "heroVisual": {
+        "title": "Digital Ecosystem",
+        "subtitle": "360º Coverage",
+        "type": "NetworkGraph",
+        "nodes": ["Design", "Maintenance", "Reputation", "Support"],
+        "nodeCore": "YOUR WEB"
+      }
+    },
+    "sections": {
+      "intro": {
+        "badge": "Comprehensive Approach",
+        "title": "What does your business need today?",
+        "content": "Every stage of your business requires a different tool. We have structured our services to accompany you throughout the entire digital lifecycle."
+      },
+      "servicesGrid": {
+        "title": "Our Service Catalog",
+        "cards": [
+          {
+            "title": "Strategic Web Design",
+            "description": "Creation of ultra-fast (WPO 99) websites oriented towards conversion.",
+            "url": "/en/services/web-design-tenerife",
+            "cta": "View Web Design",
+            "icon": "Layout",
+            "badge": "The Hook"
+          },
+          {
+            "title": "Web Maintenance",
+            "description": "Security, updates, and continuous optimization. Your technical peace of mind.",
+            "url": "/en/services/web-maintenance",
+            "cta": "View Maintenance",
+            "icon": "Shield",
+            "badge": "The Foundation"
+          },
+          {
+            "title": "Online Reputation Management",
+            "description": "Control your Google Maps profile. We reply to reviews and improve your Local SEO.",
+            "url": "/en/services/online-reputation-management",
+            "cta": "View Reputation",
+            "icon": "Star",
+            "badge": "Local SEO"
+          },
+          {
+            "title": "Hours Bank",
+            "description": "On-demand technical support. Quick solutions with no monthly contracts.",
+            "url": "/en/services/hours-bank",
+            "cta": "View Hourly Support",
+            "icon": "Clock",
+            "badge": "Flexible"
+          },
+          {
+            "title": "Visibility Report",
+            "description": "Technical diagnosis and WPO/SEO audit to know why your web isn't performing.",
+            "url": "/en/services/web-audit",
+            "cta": "View Audit",
+            "icon": "BarChart",
+            "badge": "Diagnosis"
+          }
+        ]
+      },
+      "ctaFinal": {
+        "title": "Don't know what you need?",
+        "content": "Don't worry. Fill out our initial form and we will analyze your case to recommend the best strategy.",
+        "cta": "Request Advice",
+        "subtext": "Your Digital Partner advises you.",
+        "url": "/en/formulario-inicial"
+      }
+    }
+  }
+}

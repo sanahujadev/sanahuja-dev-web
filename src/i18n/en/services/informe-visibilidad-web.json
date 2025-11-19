@@ -1,0 +1,83 @@
+{
+  "lang": "en",
+  "alternateUrl": "/es/servicios/informe-visibilidad-web",
+  "metadata": {
+    "title": "Web Audit Tenerife | Visibility & WPO Report",
+    "description": "Does your website not sell? 📉 Get a professional Technical SEO & WPO Audit. We analyze Core Web Vitals, traffic, and conversions. Real diagnosis."
+  },
+  "copy": {
+    "hero": {
+      "badge": "Professional Diagnosis",
+      "h1_part1": "Visibility Report:",
+      "h1_part2": "Stop Guessing, Start Growing",
+      "h1_lead": "Do you feel your website is invisible? Don't rely on intuition. We analyze your site with <strong>official data tools</strong> to tell you exactly what is failing and how your competition is outperforming you.",
+      "ctas": {
+        "primary": {
+          "text": "Request my Diagnosis",
+          "url": "/en/formulario-inicial/"
+        },
+        "secondary": {
+          "text": "View Sample Report",
+          "url": "#sample"
+        }
+      },
+      "heroVisual": {
+        "title": "Digital Health",
+        "subtitle": "360º Analysis",
+        "stats": [
+          { "label": "Core Web Vitals", "value": "LCP/CLS", "icon": "Activity" },
+          { "label": "Indexing", "value": "100%", "icon": "Search" },
+          { "label": "Visibility", "value": "SEO", "icon": "Eye" }
+        ]
+      }
+    },
+    "sections": {
+      "symptoms": {
+        "badge": "Does this sound familiar?",
+        "title": "Symptoms of a Sick Website",
+        "content": "Often the problem isn't the product, it's the vehicle. If you ask yourself these questions, you need this report:",
+        "featureCards": [
+          {
+            "title": "Why isn't my website selling?",
+            "description": "You have traffic but no one contacts you. We analyze user behavior (GA4) and leak points.",
+            "icon": "HelpCircle"
+          },
+          {
+            "title": "My website loads very slow",
+            "description": "Google penalizes slowness. We measure the real impact on your Core Web Vitals.",
+            "icon": "ZapOff"
+          },
+          {
+            "title": "I don't appear on Google",
+            "description": "Your competition shows up first. We audit your technical structure and the real queries finding you.",
+            "icon": "Search"
+          }
+        ]
+      },
+      "methodology": {
+        "badge": "Official Data & Technology",
+        "title": "Audit Based on Real Data",
+        "content": "We don't use 'gut feelings', we use the official Google ecosystem for an objective and professional analysis.",
+        "toolsGrid": [
+          { "name": "Google Search Console", "purpose": "Real Indexing & Queries" },
+          { "name": "Lighthouse / PageSpeed", "purpose": "WPO Metrics (LCP, FID, CLS)" },
+          { "name": "Google Analytics 4", "purpose": "Behavior & Conversions" },
+          { "name": "Looker Studio", "purpose": "Data Visualization" }
+        ]
+      },
+      "nextStep": {
+        "title": "Diagnosis is the First Step",
+        "content": "This report doesn't just tell you what's wrong, it tells you how to fix it. It is the ideal preliminary step for our Web Maintenance service, where we apply the solutions.",
+        "linkText": "Discover Web Maintenance",
+        "linkUrl": "/en/services/web-maintenance"
+      },
+      "ctaFinal": {
+        "title": "Want to know the truth about your website?",
+        "content": "Get a technical, impartial, and clear analysis. Discover the hidden potential of your business.",
+        "cta": "Request my Audit",
+        "subtext": "No subsequent hiring commitment.",
+        "url": "/en/formulario-inicial"
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "lang": "es",
+  "alternateUrl": "/en/services/web-visibility-report",
+  "metadata": {
+    "title": "Auditoría Web Tenerife | Informe de Visibilidad y WPO",
+    "description": "¿Tu web no vende? 📉 Obtén una Auditoría SEO Técnica y WPO profesional. Analizamos Core Web Vitals, tráfico y conversiones. Diagnóstico real."
+  },
+  "copy": {
+    "hero": {
+      "badge": "Diagnóstico Profesional",
+      "h1_part1": "Informe de Visibilidad:",
+      "h1_part2": "Deja de Adivinar, Empieza a Crecer",
+      "h1_lead": "¿Sientes que tu web es invisible? No confíes en la intuición. Analizamos tu sitio con <strong>herramientas de datos oficiales</strong> para decirte exactamente qué está fallando y cómo tu competencia te está superando.",
+      "ctas": {
+        "primary": {
+          "text": "Solicitar mi Diagnóstico",
+          "url": "/es/formulario-inicial/"
+        },
+        "secondary": {
+          "text": "Ver Ejemplo de Informe",
+          "url": "#ejemplo"
+        }
+      },
+      "heroVisual": {
+        "title": "Salud Digital",
+        "subtitle": "Análisis 360º",
+        "stats": [
+          { "label": "Core Web Vitals", "value": "LCP/CLS", "icon": "Activity" },
+          { "label": "Rastreo", "value": "100%", "icon": "Search" },
+          { "label": "Visibilidad", "value": "SEO", "icon": "Eye" }
+        ]
+      }
+    },
+    "sections": {
+      "symptoms": {
+        "badge": "¿Te suena esto?",
+        "title": "Síntomas de una Web Enferma",
+        "content": "Muchas veces el problema no es el producto, es el vehículo. Si te haces estas preguntas, necesitas este informe:",
+        "featureCards": [
+          {
+            "title": "¿Por qué mi web no vende?",
+            "description": "Tienes tráfico pero nadie contacta. Analizamos el comportamiento del usuario (GA4) y los puntos de fuga.",
+            "icon": "HelpCircle"
+          },
+          {
+            "title": "Mi web carga muy lento",
+            "description": "Google penaliza la lentitud. Medimos el impacto real en tus Core Web Vitals.",
+            "icon": "ZapOff"
+          },
+          {
+            "title": "No aparezco en Google",
+            "description": "Tu competencia sale primero. Auditamos la estructura técnica y las consultas reales por las que te encuentran.",
+            "icon": "Search"
+          }
+        ]
+      },
+      "methodology": {
+        "badge": "Datos Oficiales y Tecnología",
+        "title": "Auditoría Basada en Datos Reales",
+        "content": "No usamos 'olfato', usamos el ecosistema oficial de Google para un análisis objetivo y profesional.",
+        "toolsGrid": [
+          { "name": "Google Search Console", "purpose": "Indexación y Consultas Reales" },
+          { "name": "Lighthouse / PageSpeed", "purpose": "Métricas WPO (LCP, FID, CLS)" },
+          { "name": "Google Analytics 4", "purpose": "Comportamiento y Conversiones" },
+          { "name": "Looker Studio", "purpose": "Visualización de Datos" }
+        ]
+      },
+      "nextStep": {
+        "title": "El Diagnóstico es el Primer Paso",
+        "content": "Este informe no solo te dice qué está mal, te dice cómo arreglarlo. Es el paso previo ideal para nuestro servicio de Mantenimiento Web, donde aplicamos las soluciones.",
+        "linkText": "Descubre el Mantenimiento Web",
+        "linkUrl": "/es/servicios/mantenimiento-web"
+      },
+      "ctaFinal": {
+        "title": "¿Quieres saber la verdad sobre tu web?",
+        "content": "Consigue un análisis técnico, imparcial y claro. Descubre el potencial oculto de tu negocio.",
+        "cta": "Solicitar mi Auditoría",
+        "subtext": "Sin compromiso de contratación posterior.",
+        "url": "/es/formulario-inicial"
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "lang": "es",
+  "alternateUrl": "/en/services/",
+  "metadata": {
+    "title": "Servicios de Desarrollo Web Tenerife | Soluciones Digitales Integrales",
+    "description": "Agencia Web en Tenerife. Ofrecemos servicios de Diseño Web, Mantenimiento, SEO Técnico y Reputación Online. Todo lo que tu negocio necesita para crecer."
+  },
+  "copy": {
+    "hero": {
+      "h1_part1": "Soluciones Digitales",
+      "h1_part2": "para Empresas que Quieren Crecer",
+      "h1_lead": "No somos una 'fábrica de webs'. Somos tu <strong>departamento técnico externo.</strong> Desde la creación de tu plataforma hasta el mantenimiento, la optimización y la defensa de tu reputación. Un ecosistema completo.",
+      "heroVisual": {
+        "title": "Ecosistema Digital",
+        "subtitle": "Cobertura 360º",
+        "type": "NetworkGraph",
+        "nodes": ["Diseño", "Mantenimiento", "Reputación", "Soporte"],
+        "nodeCore": "TU WEB"
+      }
+    },
+    "sections": {
+      "intro": {
+        "badge": "Enfoque Integral",
+        "title": "¿Qué necesita tu negocio hoy?",
+        "content": "Cada etapa de tu negocio requiere una herramienta diferente. Hemos estructurado nuestros servicios para acompañarte en todo el ciclo de vida digital."
+      },
+      "servicesGrid": {
+        "title": "Nuestro Catálogo de Servicios",
+        "cards": [
+          {
+            "title": "Diseño Web Estratégico",
+            "description": "Creación de webs ultra-rápidas (WPO 99) orientadas a la conversión.",
+            "url": "/es/servicios/diseno-web-tenerife",
+            "cta": "Ver Diseño Web",
+            "icon": "Layout",
+            "badge": "El Gancho"
+          },
+          {
+            "title": "Mantenimiento Web",
+            "description": "Seguridad, actualizaciones y optimización continua. Tu tranquilidad técnica.",
+            "url": "/es/servicios/mantenimiento-web",
+            "cta": "Ver Mantenimiento",
+            "icon": "Shield",
+            "badge": "La Base"
+          },
+          {
+            "title": "Gestión Reputación Online",
+            "description": "Controla tu ficha de Google Maps. Respondemos reseñas y mejoramos tu SEO Local.",
+            "url": "/es/servicios/gestion-reputacion-online",
+            "cta": "Ver Reputación",
+            "icon": "Star",
+            "badge": "SEO Local"
+          },
+          {
+            "title": "Bolsa de Horas",
+            "description": "Soporte técnico bajo demanda. Soluciones rápidas sin contratos mensuales.",
+            "url": "/es/servicios/bolsa-de-horas",
+            "cta": "Ver Soporte por Horas",
+            "icon": "Clock",
+            "badge": "Flexible"
+          },
+          {
+            "title": "Informe de Visibilidad",
+            "description": "Diagnóstico técnico y auditoría WPO/SEO para saber por qué tu web no rinde.",
+            "url": "/es/servicios/informe-visibilidad-web",
+            "cta": "Ver Auditoría",
+            "icon": "BarChart",
+            "badge": "Diagnóstico"
+          }
+        ]
+      },
+      "ctaFinal": {
+        "title": "¿No sabes qué necesitas?",
+        "content": "No te preocupes. Rellena nuestro formulario inicial y analizaremos tu caso para recomendarte la mejor estrategia.",
+        "cta": "Solicitar Asesoramiento",
+        "subtext": "Tu Socio Digital te asesora.",
+        "url": "/es/formulario-inicial"
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "lang": "es",
+  "alternateUrl": "/en/services/hours-bank",
+  "metadata": {
+    "title": "Bolsa de Horas WordPress | Programador Web por Horas Tenerife",
+    "description": "¿Problemas urgentes en tu web? ⏱️ Soporte WordPress por horas, sin permanencia ni cuotas mensuales. Arreglamos errores, virus y cambios de diseño."
+  },
+  "copy": {
+    "hero": {
+      "badge": "Sin Permanencia",
+      "h1_part1": "Soporte Web por Horas:",
+      "h1_part2": "Tu Técnico Bajo Demanda",
+      "h1_lead": "Para el problema urgente o el cambio puntual. Sin contratos mensuales, sin ataduras. Contratas un pack de horas, lo usas cuando lo necesitas y <strong>nunca caduca</strong> (en 12 meses).",
+      "ctas": {
+        "primary": {
+          "text": "Ver Packs de Horas",
+          "url": "#pricing"
+        },
+        "secondary": {
+          "text": "Consultar por WhatsApp",
+          "url": "https://wa.me/34642794960",
+          "ariaLabel": "WhatsApp|contacto urgente"
+        }
+      },
+      "heroVisual": {
+        "title": "Flexibilidad Total",
+        "subtitle": "Paga solo por lo que usas.",
+        "stats": [
+          { "label": "Permanencia", "value": "0", "unit": "meses" },
+          { "label": "Respuesta", "value": "<24h", "color": "text-primary-500" },
+          { "label": "Caducidad", "value": "12", "unit": "meses" }
+        ]
+      }
+    },
+    "sections": {
+      "painPoints": {
+        "badge": "¿Qué solucionamos?",
+        "title": "Intervenciones Rápidas y Precisas",
+        "content": "No necesitas pagar una iguala mensual si solo tienes un problema puntual. Atacamos directamente el error para que tu negocio siga funcionando.",
+        "useCases": [
+          { "problem": "Error Crítico", "description": "Arreglar error 500 o pantalla blanca en WordPress.", "icon": "AlertOctagon" },
+          { "problem": "Limpieza", "description": "Eliminar virus o malware y recuperar la seguridad.", "icon": "ShieldAlert" },
+          { "problem": "Estilo y CSS", "description": "Cambios visuales, botones que no funcionan o ajustes móviles.", "icon": "PenTool" },
+          { "problem": "Actualizaciones", "description": "Actualizar plugins delicados sin romper la web.", "icon": "RefreshCw" }
+        ]
+      },
+      "benefits": {
+        "title": "¿Por qué elegir una Bolsa de Horas?",
+        "featureCards": [
+          {
+            "title": "Sin Ataduras",
+            "description": "Olvida los contratos fijos. Eres libre de usar tus horas hoy o dentro de 6 meses.",
+            "icon": "Unlock"
+          },
+          {
+            "title": "Control Total",
+            "description": "Fichamos cada minuto. Recibes un reporte detallado del tiempo consumido en cada tarea.",
+            "icon": "Clock"
+          },
+          {
+            "title": "Prioridad Técnica",
+            "description": "Acceso directo a un desarrollador senior (WPO Expert) sin pasar por intermediarios.",
+            "icon": "UserCheck"
+          }
+        ]
+      },
+      "pricing": {
+        "badge": "Tarifas Transparentes",
+        "title": "Elige tu Nivel de Soporte",
+        "packs": [
+          {
+            "name": "Pack Inicio",
+            "hours": "5 Horas",
+            "price": "Consultar",
+            "features": ["Ideal para pequeños ajustes", "Validez 12 meses", "Soporte Email"],
+            "highlight": false,
+            "cta": "Consultar Pack Inicio"
+          },
+          {
+            "name": "Pack Pro",
+            "hours": "10 Horas",
+            "price": "Mejor Precio/Hora",
+            "features": ["Ideal para limpiezas o urgencias", "Validez 12 meses", "Soporte Prioritario"],
+            "highlight": true,
+            "cta": "Consultar Pack Pro",
+            "badge": "Recomendado"
+          }
+        ]
+      },
+      "ctaFinal": {
+        "title": "¿Tienes un fuego que apagar?",
+        "content": "No dejes que un error técnico te haga perder ventas. Actuamos rápido.",
+        "url": "/es/formulario-inicial",
+        "cta": "Solicitar Soporte Urgente",
+        "subtext": "Soporte técnico profesional bajo demanda."
+      }
+    }
+  }
+}
