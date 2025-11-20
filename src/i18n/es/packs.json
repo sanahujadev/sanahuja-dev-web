@@ -1,0 +1,110 @@
+{
+  "lang": "es",
+  "alternateUrl": "/en/packs/",
+  "metadata": {
+    "title": "Precios Mantenimiento Web Tenerife | Tu Departamento Digital",
+    "description": "Elige tu nivel de socio digital. Desde estrategia de datos hasta gestión de reputación. Tarifas claras, sin permanencia y con todo incluido."
+  },
+  "copy": {
+    "hero": {
+      "badge": "Web as a Service (WaaS)",
+      "h1_part1": "Tu Departamento Digital",
+      "h1_part2": "por el precio de una cena.",
+      "h1_lead": "Deja de pagar facturas sueltas por hosting, técnico, SEO y redactor. Unificamos todos los servicios que tu negocio necesita para crecer en una sola cuota mensual. Sin sorpresas.",
+      "heroVisual": {
+        "title": "Tranquilidad Total",
+        "subtitle": "Céntrate en tu negocio.",
+        "stats": [
+          { "label": "Permanencia", "value": "0", "unit": "meses" },
+          { "label": "Soporte", "value": "WPO 99" },
+          { "label": "Ahorro", "value": "25€", "unit": "/mes" }
+        ]
+      }
+    },
+    "sections": {
+      "intro": {
+        "title": "No compres una web, contrata un Socio",
+        "content": "La mayoría de webs mueren a los 6 meses porque nadie las cuida. Mi modelo es diferente: yo me quedo. Elige qué área quieres potenciar: ¿Datos, Imagen o Todo?"
+      },
+      "comparison": {
+        "title": "Tu Departamento Digital, a Escala",
+        "subtitle": "Elige cómo quieres que te acompañemos. Sin costes ocultos, sin sorpresas.",
+        "plans": [
+          {
+            "name": "Pack Sociotécnico",
+            "role": "Crecimiento & Datos",
+            "description": "Para quien quiere entender a sus usuarios y crecer con SEO.",
+            "price": "105€/mes",
+            "cta": "Elegir Datos",
+            "badge": "Recomendado",
+            "url": "/es/packs/pack-sociotecnico-digital",
+            "highlight": true,
+            "features": [
+              { "name": "Mantenimiento WPO 99", "included": true },
+              { "name": "Plan de Autoridad (Blog)", "included": true },
+              { "name": "Informe Visibilidad (GA4)", "included": true },
+              { "name": "Gestión de Reputación", "included": false }
+            ]
+          },
+          {
+            "name": "Pack Imagen Digital",
+            "role": "Visibilidad Local",
+            "description": "Para negocios locales donde la imagen y las reseñas lo son todo.",
+            "price": "110€/mes",
+            "cta": "Elegir Imagen",
+            "url": "/es/packs/pack-imagen-digital",
+            "highlight": false,
+            "features": [
+              { "name": "Mantenimiento WPO 99", "included": true },
+              { "name": "Plan de Autoridad (Blog)", "included": true },
+              { "name": "Informe Visibilidad (GA4)", "included": false },
+              { "name": "Gestión de Reputación", "included": true }
+            ]
+          },
+          {
+            "name": "Todo en Uno",
+            "role": "Delegación Total",
+            "description": "Tu Socio Digital completo. Datos, Imagen y Técnica unificados.",
+            "price": "130€/mes",
+            "cta": "Quiero Todo",
+            "url": "/es/packs/todo-en-uno",
+            "highlight": false,
+            "features": [
+              { "name": "Mantenimiento WPO 99", "included": true },
+              { "name": "Plan de Autoridad (Blog)", "included": true },
+              { "name": "Informe Visibilidad (GA4)", "included": true },
+              { "name": "Gestión de Reputación", "included": true }
+            ]
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas Frecuentes sobre los Packs",
+        "items": [
+          {
+            "question": "¿Qué diferencia hay entre pagar una web y estos Packs?",
+            "answer": "Una web tradicional es un producto (pagas, te la dan y te apañas). Estos Packs son un **Servicio Integral**. Aquí no compras 'código', contratas a un Departamento Digital que trabaja cada mes para que tu negocio tenga visibilidad, seguridad y clientes. Es la diferencia entre comprar un coche y contratar un chófer."
+          },
+          {
+            "question": "¿La web es mía o es un alquiler?",
+            "answer": "**Es un Servicio Gestionado con Propiedad Intelectual de SanahujaDev.** Al inicio, yo asumo el coste real del desarrollo (valorado en miles de euros) para que tú entres con una inversión mínima. Por eso, el código me pertenece. \n\nSin embargo, **creo en las relaciones a largo plazo**. Si tras un tiempo prudencial de colaboración exitosa decides volar solo, o si tu situación personal lo requiere, nos sentaremos a valorar la cesión de la web. Todo depende de nuestra historia juntos. (Nota: Si el dominio lo compraste tú, siempre es tuyo; si lo pagué yo, va incluido en el paquete de servicios)."
+          },
+          {
+            "question": "¿Hay permanencia?",
+            "answer": "**No hay contratos de esclavitud, pero sí de compromiso.** Puedes cancelar el servicio cuando quieras, no te voy a retener a la fuerza. Pero ten en cuenta que, al ser un modelo de 'Web as a Service', si cancelas el servicio poco después de empezar, la web se desactiva (ya que no se ha amortizado el desarrollo). Mi objetivo es que te quedes años porque te va bien, no porque te obligue un papel."
+          },
+          {
+            "question": "¿Qué pasa si necesito cambios en la web?",
+            "answer": "El mantenimiento incluye actualizaciones técnicas y de seguridad para que nada falle. Si necesitas cambios de diseño estructural o nuevas funciones, al ser Socio Digital tienes tarifas preferentes o podemos usar una Bolsa de Horas. Los Packs cubren el *funcionamiento y crecimiento*, no el *rediseño continuo*."
+          }
+        ]
+      },
+      "ctaFinal": {
+        "title": "¿Dudas entre Datos o Imagen?",
+        "content": "No elijas. Por solo un poco más, llévatelo todo y delega la parte digital al 100%.",
+        "cta": "Hablar con José Javier",
+        "url": "/es/formulario-inicial"
+      }
+    }
+  }
+}

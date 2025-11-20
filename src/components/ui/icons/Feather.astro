@@ -1,0 +1,22 @@
+---
+// src/components/ui/icons/Feather.astro
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'svg'> {
+  class?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+<svg aria-hidden="true"
+  class={className}
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke="currentColor"
+  stroke-width="2"
+  {...props}
+>
+  <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5.25 10.75A6 6 0 0 0 10.75 16.25l8.49-8.49a6 6 0 0 0-8.49-8.49L5.25 10.75A6 6 0 0 0 10.75 16.25l8.49-8.49z"></path>
+  <path d="M16 8L2 22"></path>
+  <path d="M17.5 15H9"></path>
+</svg>

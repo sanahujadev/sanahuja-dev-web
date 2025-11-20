@@ -1,0 +1,167 @@
+---
+// src/components/pages/LandingPackImagenDigital.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../ui/Button.astro';
+import SectionHeader from '../../components/ui/SectionHeader.astro';
+import Code from '../ui/icons/Code.astro';
+import ArrowRight from '../ui/icons/ArrowRight.astro';
+import Sparkles from '../ui/icons/Sparkles.astro';
+import Star from '../ui/icons/Star.astro';
+import Shield from '../ui/icons/Shield.astro';
+import Clock from '../ui/icons/Clock.astro';
+import Target from '../ui/icons/Target.astro';
+import type { PackImagenDigitalCopy } from '../../i18n/utils';
+import AlertTriangle from '../ui/icons/AlertTriangle.astro';
+
+interface Props {
+  copy: PackImagenDigitalCopy;
+  alternateUrl: string;
+  schema: Record<string, any>;
+}
+
+const { copy, alternateUrl, schema } = Astro.props;
+
+const {
+    copy: t,
+    lang,
+    metadata
+} = copy;
+---
+
+<BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} slot="json-ld" />
+  <Fragment slot="head">
+    <title>{metadata.title}</title>
+    <meta name="description" content={metadata.description} />
+  </Fragment>
+  <main>
+  {/* Hero Section */}
+  <section id="hero">
+    {/* Background Grid */}
+    <div>
+      <div
+        style={{
+          backgroundImage:
+            "linear-gradient(rgb(99 102 241 / 0.1) 1px, transparent 1px), linear-gradient(90deg, rgb(99 102 241 / 0.1) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
+      ></div>
+    </div>
+
+    <div class="text-center">
+      <SectionHeader
+        badgeVariant="default"
+        badgeIcon={Code}
+        badgeIconClass="text-primary"
+        badgeText={t.hero.badge}
+        title={`${t.hero.h1_part1}<br>${t.hero.h1_part2}`}
+        content={t.hero.h1_lead}
+      />
+
+        <div>
+          <Button href={t.hero.ctas.primary.url}>
+            {t.hero.ctas.primary.text}
+          </Button>
+          <a href="#metodologia">
+            {t.hero.ctas.secondary.text}
+          </a>
+        </div>
+
+        {/* Hero Visual - Tech Stack */}
+        <div>
+          <div>
+            <div>{t.hero.heroVisual.title}</div>
+            <div>{t.hero.heroVisual.subtitle}</div>
+          </div>
+          <div>
+            {t.hero.heroVisual.stats.map((stat: { label: string; value: string }) => (
+              <div>
+                <span>{stat.value}</span>
+                <span>{stat.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Problems Section */}
+  <section id="desafios">
+    <div>
+      <SectionHeader
+        badgeVariant="default"
+        badgeIcon={AlertTriangle}
+        badgeIconClass="text-yellow-500"
+        badgeText={t.sections.painPoints.badge}
+        title={t.sections.painPoints.title}
+        content={t.sections.painPoints.content}
+      />
+
+      <div>
+        {t.sections.painPoints.list.map((painPoint, index) => (
+          <div>
+            <div>
+              {index === 0 && <AlertTriangle />}
+              {index === 1 && <Star />}
+              {index === 2 && <Clock />}
+              {index === 3 && <Target />}
+            </div>
+            <p>{painPoint}</p>
+          </div>
+        ))}
+      </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Solution Section */}
+  <section id="metodologia">
+    <div>
+      <SectionHeader
+        badgeVariant="default"
+        badgeIcon={Sparkles}
+        badgeIconClass="text-yellow-500"
+        badgeText={t.sections.solution.badge}
+        title={t.sections.solution.title}
+        content={t.sections.solution.content}
+      />
+
+      <div>
+        {t.sections.solution.features.map((feature, index) => (
+          <div>
+            <div>
+              {feature.icon === 'Star' && <Star />}
+              {feature.icon === 'MapPin' && <Target />}
+              {feature.icon === 'Shield' && <Shield />}
+            </div>
+            <h3>{feature.title}</h3>
+            <p>{feature.description}</p>
+          </div>
+        ))}
+      </div>
+      </div>
+    </div>
+  </section>
+
+  {/* CTA Final */}
+  <section id="cta-final">
+    <div>
+      <SectionHeader
+        badgeVariant="default"
+        badgeIcon={ArrowRight}
+        badgeIconClass="text-green-500"
+        badgeText="Siguiente Nivel"
+        title={t.sections.ctaFinal.title}
+        content={t.sections.ctaFinal.content}
+      />
+      <p>{t.sections.ctaFinal.subtext}</p>
+        <Button href="/es/formulario-inicial">
+          {t.sections.ctaFinal.cta}
+<ArrowRight />
+        </Button>
+      </div>
+    </div>
+  </section>
+</main>
+</BaseLayout>

@@ -9,6 +9,9 @@ import homeCopy from './es/home.json' with { type: 'json' };
 import servicesCopy from './es/services.json' with { type: 'json' };
 import informeVisibilidadWebCopy from './es/services/informe-visibilidad-web.json' with { type: 'json' };
 import bolsaDeHorasCopy from './es/services/bolsa-de-horas.json' with { type: 'json' };
+import packImagenDigitalCopy from './es/pack/imagen-digital.json' with { type: 'json' };
+import packTodoEnUnoCopy from './es/pack/todo-en-uno.json' with { type: 'json' };
+import packsCopy from './es/packs.json' with { type: 'json' };
 
 export type CookieConsentType = any;
 export type LandingDiseñoWebCopy = typeof landingDeiseñoWebCopy;
@@ -21,3 +24,6 @@ export type HomeCopy = typeof homeCopy;
 export type ServicesCopy = typeof servicesCopy;
 export type InformeVisibilidadWebCopy = typeof informeVisibilidadWebCopy;
 export type BolsaDeHorasCopy = typeof bolsaDeHorasCopy;
+export type PackImagenDigitalCopy = typeof packImagenDigitalCopy;
+export type PackTodoEnUnoCopy = typeof packTodoEnUnoCopy;
+export type PacksCopy = typeof packsCopy;

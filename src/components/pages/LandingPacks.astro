@@ -1,0 +1,178 @@
+---
+// src/components/pages/LandingPacks.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../ui/Button.astro';
+import SectionHeader from '../../components/ui/SectionHeader.astro';
+import type { PacksCopy } from '../../i18n/utils';
+import ShieldCheck from '../ui/icons/ShieldCheck.astro';
+import Check from '../ui/icons/Check.astro';
+import ArrowRight from '../ui/icons/ArrowRight.astro';
+
+interface Props {
+  copy: PacksCopy;
+  alternateUrl: string;
+  schema: Record<string, any>;
+}
+
+const { copy, alternateUrl, schema } = Astro.props;
+
+const {
+    copy: t,
+    lang,
+    metadata
+} = copy;
+---
+
+<BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} slot="json-ld" />
+  <Fragment slot="head">
+    <title>{metadata.title}</title>
+    <meta name="description" content={metadata.description} />
+  </Fragment>
+  <main>
+        {/* Hero Section */}
+        <section id="hero">
+          {/* Background Pattern */}
+          <div>
+            <div></div>
+          </div>
+
+          <div>
+            <div>
+              {/* Badge */}
+              <div>
+                <ShieldCheck />
+                <span>{t.hero.badge}</span>
+              </div>
+
+              {/* Headline */}
+              <h1>
+                <span>{t.hero.h1_part1}</span>
+                <br />
+                <span>{t.hero.h1_part2}</span>
+              </h1>
+
+              <p>{t.hero.h1_lead}</p>
+
+              {/* Hero Visual - Stats Card */}
+              <div>
+                <div>{t.hero.heroVisual.title}</div>
+                <div>{t.hero.heroVisual.subtitle}</div>
+                <div>
+                  {
+                    t.hero.heroVisual.stats.map((stat, index) => {
+                      return (
+                        <div>
+                          <div>{stat.value}</div>
+                          <div>{stat.label}</div>
+                        </div>
+                      )
+                    })
+                  }
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Comparison Section */}
+        <section id="comparativa">
+          <div>
+            <div>
+              <h2>{t.sections.comparison.title}</h2>
+              <p>{t.sections.comparison.subtitle}</p>
+            </div>
+
+            <div>
+              {/* Pack 1 */}
+              <div data-pack-recomendado="todo-en-uno">
+                <div>
+                  <div>{t.sections.comparison.plans[2].role}</div>
+                  <h3>{t.sections.comparison.plans[2].name}</h3>
+                  <p>{t.sections.comparison.plans[2].description}</p>
+                  <div>{t.sections.comparison.plans[2].price}</div>
+                  <Button href={t.sections.comparison.plans[2].url}>
+                    {t.sections.comparison.plans[2].cta}
+                  </Button>
+                </div>
+
+                <div>
+                  <div>
+                    <Check />
+                    <span>{t.sections.comparison.plans[2].features[0].name}</span>
+                  </div>
+
+                  <div>
+                    <Check />
+                    <span>{t.sections.comparison.plans[2].features[1].name}</span>
+                  </div>
+
+                  <div>
+                    <Check />
+                    <span>{t.sections.comparison.plans[2].features[3].name}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Pack 2 */}
+              <div>
+                <div>{t.sections.comparison.plans[0].badge}</div>
+                <div>{t.sections.comparison.plans[0].name}</div>
+                <h3>{t.sections.comparison.plans[0].name}</h3>
+                <p>{t.sections.comparison.plans[0].description}</p>
+                <div>{t.sections.comparison.plans[0].price}</div>
+                <Button href={t.sections.comparison.plans[0].url}>
+                  {t.sections.comparison.plans[0].cta}
+                </Button>
+              </div>
+
+              {/* Pack 3 */}
+              <div>
+                <div>
+                  <div>{t.sections.comparison.plans[1].role}</div>
+                  <h3>{t.sections.comparison.plans[1].name}</h3>
+                  <p>{t.sections.comparison.plans[1].description}</p>
+                  <div>{t.sections.comparison.plans[1].price}</div>
+                  <Button href={t.sections.comparison.plans[1].url}>
+                    {t.sections.comparison.plans[1].cta}
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section id="faq">
+          <div>
+            <div>
+              <h2>{t.sections.faq.title}</h2>
+
+              <div>
+                {t.sections.faq.items.map((item, index) => (
+                  <div>
+                    <h3>{item.question}</h3>
+                    <p set:html={item.answer} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Final */}
+        <section id="cta-final">
+          <div>
+            <div>
+              <h2>{t.sections.ctaFinal.title}</h2>
+              <p>{t.sections.ctaFinal.content}</p>
+              <Button href={t.sections.ctaFinal.url}>
+                {t.sections.ctaFinal.cta}
+                <ArrowRight />
+              </Button>
+            </div>
+          </div>
+        </section>
+      </main>
+</BaseLayout>

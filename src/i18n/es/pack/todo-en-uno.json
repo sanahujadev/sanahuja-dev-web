@@ -1,0 +1,125 @@
+{
+  "lang": "es",
+  "alternateUrl": "/en/packs/all-in-one",
+  "metadata": {
+    "title": "Pack Todo en Uno | Departamento Digital Externo",
+    "description": "La solución definitiva. Mantenimiento + Analítica + Reputación + Contenido. Delega el 100% de tu gestión digital a tu Socio Tecnológico."
+  },
+  "copy": {
+    "hero": {
+      "badge": "Delegación Total",
+      "h1_part1": "Pack Todo en Uno:",
+      "h1_part2": "Tu Socio Digital Completo.",
+      "h1_lead": "Deja de ser el 'hombre orquesta'. Yo soy tu Socio Digital. Tú ocúpate de tu negocio, yo me ocupo de TODO lo digital (Datos, Imagen y Técnica) por el precio de una cena de empresa.",
+      "ctas": {
+        "primary": {
+          "text": "Lo Quiero Todo (130€/mes)",
+          "url": "/es/formulario-inicial"
+        },
+        "secondary": {
+          "text": "Ver qué incluye",
+          "url": "#features"
+        }
+      },
+      "heroVisual": {
+        "title": "Paz Mental",
+        "subtitle": "Control Absoluto",
+        "stats": [
+          { "label": "Cobertura", "value": "360º", "description": "Técnica, Datos e Imagen unificados bajo un mismo techo estratégico." },
+          { "label": "Socio", "value": "1 a 1", "description": "Sin tickets anónimos. Comunicación directa con quien conoce tu negocio." },
+          { "label": "Ahorro", "value": "Max", "description": "Elimina la fricción y el sobrecoste de gestionar 3 proveedores distintos." }
+        ]
+      }
+    },
+    "sections": {
+      "painPoints": {
+        "badge": "El Problema",
+        "title": "No tienes tiempo para todo",
+        "content": "Intentar llevar el negocio, mirar el Analytics, contestar reseñas y actualizar plugins es imposible. Al final, algo falla y pierdes dinero.",
+        "list": [
+          "Estrés tecnológico constante",
+          "Oportunidades perdidas por falta de tiempo",
+          "Servicios contratados por separado (más caro)"
+        ]
+      },
+      "solution": {
+        "badge": "La Solución",
+        "title": "Tu Departamento Digital Externo",
+        "content": "Unificamos los 3 pilares: Técnica, Datos e Imagen. Es la opción más inteligente financieramente y la que más paz mental te aporta.",
+        "features": [
+          {
+            "title": "Todo lo del Pack Datos",
+            "description": "Informe de Visibilidad GA4 + Mantenimiento WPO.",
+            "icon": "BarChart"
+          },
+          {
+            "title": "Todo lo del Pack Imagen",
+            "description": "Gestión de Reputación GMB + Mantenimiento.",
+            "icon": "Star"
+          },
+          {
+            "title": "Plan de Autoridad",
+            "description": "Estrategia de contenidos SEO para crecer en ambos frentes.",
+            "icon": "Feather"
+          },
+           {
+            "title": "Prioridad en Soporte",
+            "description": "Acceso directo a tu Socio Digital para consultas estratégicas.",
+            "icon": "Phone"
+          }
+        ]
+      },
+      "workflow": {
+        "badge": "Transparencia Total",
+        "title": "Tu Maquinaria Digital, Paso a Paso",
+        "onboarding": {
+          "title": "Fase 1: El Despegue",
+          "steps": [
+            "<strong>Reunión de Estrategia:</strong> Definimos tus objetivos y alcance (90 min). Sin tecnicismos.",
+            "<strong>Activación:</strong> Formalizamos el acuerdo y configuro tus accesos (GA4, GMB, Hosting).",
+            "<strong>Ejecución:</strong> Puesta a punto técnica y lanzamiento. Tu ecosistema digital empieza a funcionar."
+          ]
+        },
+        "monthlyCycle": {
+          "title": "Fase 2: El Ciclo de Éxito Mensual",
+          "steps": [
+            "<strong>Semana 1 - Vigilancia:</strong> Monitorizo datos y aseguro que técnicamente todo esté al 100%.",
+            "<strong>Semana 2 - Defensa de Marca:</strong> Gestión activa de reseñas y reputación en Google.",
+            "<strong>Semana 3 - Ataque (Contenido):</strong> Redacción y publicación estratégica en el blog para atraer tráfico.",
+            "<strong>Semana 4 - Rendición de Cuentas:</strong> Recibes tu Informe de Visibilidad. Analizamos y ajustamos el rumbo."
+          ]
+        }
+      },
+      "pricing": {
+        "badge": "Inversión Inteligente",
+        "title": "Un Departamento Entero, Una Cuota",
+        "content": "Contratar esto por separado (SEO, Técnico, Community Manager) te costaría el triple. Aquí lo tienes unificado por el precio de una suscripción de software.",
+        "price": "130€/mes",
+        "features": [
+          "Cero costes ocultos",
+          "Sin permanencia (eres libre)",
+          "Cobertura 360º incluida",
+          "Rentabilidad en tiempo y dinero"
+        ],
+        "cta": "Delegar mi Gestión Digital",
+        "ctaUrl": "/es/formulario-inicial"
+      },
+      "downsell": {
+        "title": "¿Prefieres ir paso a paso?",
+        "content": "Si el pack 'Todo en Uno' te parece mucho para empezar, no te preocupes. Asegura primero lo esencial: la técnica.",
+        "offer": {
+          "name": "Mantenimiento Web Esencial",
+          "description": "Nos encargamos de que tu web no se rompa, sea segura y cargue rápido por solo 25€/mes. La base sólida para crecer después.",
+          "url": "/es/servicios/mantenimiento-web"
+        },
+        "cta": "Ver Opción Básica"
+      },
+      "ctaFinal": {
+        "title": "La decisión del CEO",
+        "content": "Por solo 20€ más que los otros packs, tienes cobertura total. Es la inversión más rentable para tu paz mental.",
+        "cta": "Contratar Pack Todo en Uno",
+        "subtext": "La opción recomendada por SanahujaDev."
+      }
+    }
+  }
+}

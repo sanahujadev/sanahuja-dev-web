@@ -1,0 +1,76 @@
+{
+  "lang": "es",
+  "alternateUrl": "/en/packs/digital-image",
+  "metadata": {
+    "title": "Pack Imagen Digital | Gestión Reputación y Reseñas Tenerife",
+    "description": "Ideal para negocios locales. Mantenimiento Web + Gestión de Reseñas Google (GMB) + Contenido. Cuida tu imagen y atrae clientes por confianza."
+  },
+  "copy": {
+    "hero": {
+      "badge": "Reputación Local",
+      "h1_part1": "Pack Imagen Digital:",
+      "h1_part2": "Tu Reputación Vende por Ti.",
+      "h1_lead": "Para el restaurante, la clínica o el taller. Tu reputación es tu mejor vendedor. Nosotros cuidamos tus estrellas en Google y mantenemos tu web activa para que los clientes confíen en ti a ciegas.",
+      "ctas": {
+        "primary": {
+          "text": "Contratar Pack (110€/mes)",
+          "url": "/es/formulario-inicial"
+        },
+        "secondary": {
+          "text": "Comparar Packs",
+          "url": "/es/packs/"
+        }
+      },
+      "heroVisual": {
+        "title": "Confianza Local",
+        "subtitle": "Brilla en tu Zona",
+        "stats": [
+          { "label": "Reseñas", "value": "GMB" },
+          { "label": "Contenido", "value": "1 Post" },
+          { "label": "Imagen", "value": "100%" }
+        ]
+      }
+    },
+    "sections": {
+      "painPoints": {
+        "badge": "El Problema",
+        "title": "¿Te juzgan por tu portada?",
+        "content": "Una web desactualizada o una ficha de Google con malas reseñas (o sin respuestas) espanta a los clientes antes de que entren por la puerta.",
+        "list": [
+          "Reseñas sin contestar dan mala imagen",
+          "La competencia tiene más estrellas",
+          "Web con noticias de 2019 (sensación de abandono)",
+          "No salgo en el mapa"
+        ]
+      },
+      "solution": {
+        "badge": "La Solución",
+        "title": "Control Total de tu Imagen",
+        "content": "Nos convertimos en tu departamento de RRPP. Respondemos a tus clientes, actualizamos tu blog para dar sensación de actividad y vigilamos que la web esté perfecta.",
+        "features": [
+          {
+            "title": "Gestión de Reputación",
+            "description": "Monitorización y respuesta profesional a reseñas en Google My Business.",
+            "icon": "Star"
+          },
+          {
+            "title": "Plan de Autoridad",
+            "description": "1 artículo mensual para mantener la web 'viva' y posicionar localmente.",
+            "icon": "MapPin"
+          },
+          {
+            "title": "Mantenimiento WPO",
+            "description": "Seguridad y velocidad para que la primera impresión sea excelente.",
+            "icon": "Shield"
+          }
+        ]
+      },
+      "ctaFinal": {
+        "title": "Que hablen bien de ti",
+        "content": "Cuida tu escaparate digital. Atrae a clientes por confianza, no por precio.",
+        "cta": "Quiero el Pack Imagen Digital",
+        "subtext": "Sin permanencia. Cancela cuando quieras."
+      }
+    }
+  }
+}
