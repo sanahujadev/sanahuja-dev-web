@@ -16,7 +16,7 @@ test.describe('A11Y: /es/packs/ (Hub)', () => {
   test('Navegación por teclado: Tab llega a pack recomendado', async ({ page }) => {
     await page.goto('/es/packs/');
     
-    const packRecomendado = page.locator('[data-pack-recomendado="todo-en-uno"] a');
+    const packRecomendado = page.locator('[data-pack-recomendado="sociotecnico-digital"] a');
     
     await expect(async () => {
       await page.keyboard.press('Tab');
@@ -28,9 +28,8 @@ test.describe('A11Y: /es/packs/ (Hub)', () => {
   test('Tabla comparativa tiene caption para screen readers', async ({ page }) => {
     await page.goto('/es/packs/');
     
-    const table = page.locator('#comparativa table');
-    const caption = table.locator('caption');
+    const caption = page.locator('#comparativa-titulo');
     await expect(caption).toBeVisible();
-    await expect(caption).toContainText('Comparativa de planes');
+    await expect(caption).toContainText('Tu Departamento Digital, a Escala');
   });
 });

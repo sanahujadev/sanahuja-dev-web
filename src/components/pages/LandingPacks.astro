@@ -124,10 +124,13 @@ const orderedPlans = [imagen, sociotecnico, todoEnUno];
         </section>
 
         {/* Comparison Section - "Tabla de la Verdad" */}
-        <section id="comparativa" class="py-20 relative">
+        <section id="comparativa" class="py-20 relative" aria-labelledby="comparativa-titulo">
           <div class="container mx-auto px-4">
+            {/* Caption semántico con ID para aria-labelledby */}
             <div class="text-center mb-16">
-              <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">{t.sections.comparison.title}</h2>
+              <h2 id="comparativa-titulo" class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                {t.sections.comparison.title}
+              </h2>
               <p class="text-lg text-muted-foreground">{t.sections.comparison.subtitle}</p>
             </div>
 
@@ -144,14 +147,14 @@ const orderedPlans = [imagen, sociotecnico, todoEnUno];
                         {/* Badge Destacado */}
                         {isHighlighted && (
                             <div class="absolute -top-4 left-1/2 -translate-x-1/2">
-                                <Badge class="bg-primary-600 text-white border-0 shadow-lg px-6 py-1">
+                                <Badge class="bg-primary-700 text-white border-0 shadow-lg px-6 py-1">
                                     {plan.badge}
                                 </Badge>
                             </div>
                         )}
 
                         <div class={`mb-6 ${isHighlighted ? "mt-2" : ""}`}>
-                            <div class={`text-sm font-semibold mb-2 ${isHighlighted ? "text-primary-300" : "text-muted-foreground"}`}>
+                            <div class={`text-sm font-semibold mb-2 ${isHighlighted ? "text-primary-400" : "text-muted-foreground"}`}>
                                 {plan.role}
                             </div>
                             <h3 class="text-2xl font-bold text-foreground mb-2">{plan.name}</h3>
@@ -173,7 +176,7 @@ const orderedPlans = [imagen, sociotecnico, todoEnUno];
 
                         <div class="space-y-3 pt-6 border-t border-border/50">
                             {plan.features.map((feature) => (
-                                <div class={`flex items-start gap-3 ${!feature.included ? "opacity-40" : ""}`}>
+                                <div class={`flex items-start gap-3 ${!feature.included ? "opacity-80" : ""}`}>
                                     {feature.included ? (
                                         <Check class={`w-5 h-5 mt-0.5 flex-shrink-0 ${isHighlighted ? "text-primary-400" : "text-accent-400"}`} />
                                     ) : (
