@@ -1,9 +1,10 @@
 ---
 // src/layouts/BaseLayout.astro
-import { AstroFont } from 'astro-font';
 import { ClientRouter } from "astro:transitions";
-import AppHeader from "../components/AppHeader.astro"; // <-- Aún no existe
-import "./../styles/global.css"; // <-- Brook creará este
+import { AstroFont } from 'astro-font';
+import AppHeader from "../components/AppHeader.astro";
+import '../styles/global.css';
+// import criticalCSS from '../styles/critical-inline.css?raw';
 import t_header_es from '../i18n/es/componentes/header.json' with { type: 'json' };
 import t_header_en from '../i18n/en/componentes/header.json' with { type: 'json' };
 import t_footer_es from '../i18n/es/componentes/footer.json' with { type: 'json' };
@@ -13,11 +14,17 @@ import AppFooter from '../components/AppFooter.astro';
 type Props = {
   lang?: 'es' | 'en';
   alternateUrl?: string;
-  // cookieConsent?: CookieConsentType; // <-- Aún no existe
+  disableTransitions?: boolean; // <-- Control granular
+  isConversionPage?: boolean;   // <-- Marca páginas críticas
 };
 
 // import type { CookieConsentType } from '../i18n/utils'; // <-- Aún no existe
-const { lang = 'es', alternateUrl } = Astro.props;
+const { 
+  lang = 'es', 
+  alternateUrl,
+  disableTransitions = false,
+  isConversionPage = false 
+} = Astro.props;
 const GTM_ID = import.meta.env.PUBLIC_GTM_ID;
 
 // ¡LÓGICA DE REFACTOR CORREGIDA!
@@ -40,41 +47,60 @@ const t_footer = lang === 'es' ? t_footer_es : t_footer_en;
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        
-        <slot name="head" />
+        <link rel="shortcut icon" href="/favicon.ico" />
 
+        <slot name="head" />
+        <!-- Canonical y alternates -->
         <link rel="canonical" href={canonicalURL} />
         {alternateUrl && <link rel="alternate" hreflang={alternateLang} href={alternateUrl} />}
 
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={Astro.url.href} />
+        <meta property="og:image" content={new URL("/og-image.jpeg", Astro.site).href} />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={Astro.url.href} />
+        <meta property="twitter:image" content={new URL("/og-image.jpeg", Astro.site).href} />
+
         <slot name="json-ld" />
 
-        <ClientRouter />
         <AstroFont
             config={[{
-                // 1. La tipografía de nuestra marca (Runbook)
                 name: "Montserrat", 
-                
-                // 2. Pesos que usaremos (Regular, Semibold, Bold, ExtraBold)
-                // (Ajustados desde mi propuesta anterior para incluir 500 y 800)
-                googleFontsURL: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap',
-                
-                // 3. Dejamos 'src: []' para que los obtenga de Google
-                src: [],
-                
-                // 4. Optimizaciones
-                preload: true,
                 display: "swap",
-                
-                // 5. Aplicación global (¡Correcto!)
                 selector: "html",
                 fallback: "sans-serif",
+                preload: true,
+                src: [
+                    { style: 'normal', weight: '400', path: '/fonts/montserrat-latin-400.woff2' },
+                    { style: 'normal', weight: '500', path: '/fonts/montserrat-latin-500.woff2' },
+                    { style: 'normal', weight: '600', path: '/fonts/montserrat-latin-600.woff2' },
+                    { style: 'normal', weight: '700', path: '/fonts/montserrat-latin-700.woff2' },
+                    { style: 'normal', weight: '800', path: '/fonts/montserrat-latin-800.woff2' },
+                ],
             }]}
         />
+
+        <!-- CRÍTICO 2: CSS inline para eliminar render blocking -->
+        <!-- style is:inline set:html={criticalCSS}></style>
+        
+        <!-- CRÍTICO 3: View Transitions con control granular -->
+        {!disableTransitions && <ClientRouter fallback="none" />}
+
+        <!-- Prefetch de páginas críticas del funnel (solo si NO es página de conversión) -->
+        {!isConversionPage && (
+          <>
+            <link rel="prefetch" href={lang === 'es' ? '/es/contacto' : '/en/contact'} />
+            <link rel="prefetch" href={lang === 'es' ? '/es/servicios' : '/en/services'} />
+          </>
+        )}
     </head>
     
     <body class="font-sans bg-neutral-900 text-neutral-200 antialiased">
         <AppHeader t={t_header} lang={lang} alternateUrl={alternateUrl} />
-        <slot />
+          <slot />
         <AppFooter t={t_footer} lang={lang} />
     </body>
 </html>
