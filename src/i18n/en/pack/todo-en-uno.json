@@ -1,0 +1,126 @@
+{
+  "lang": "en",
+  "alternateUrl": "/es/packs/todo-en-uno",
+  "metadata": {
+    "title": "All-in-One Pack | External Digital Department",
+    "description": "The ultimate solution. Maintenance + Analytics + Reputation + Content. Delegate 100% of your digital management to your Tech Partner."
+  },
+  "copy": {
+    "hero": {
+      "badge": "Total Delegation",
+      "h1_part1": "All-in-One Pack:",
+      "h1_part2": "Your Complete Digital Partner.",
+      "h1_lead": "Stop being a 'one-man band'. I am your Digital Partner. You focus on your business, I handle EVERYTHING digital (Data, Image, and Tech) for the price of a company dinner.",
+      "ctas": {
+        "primary": {
+          "text": "I Want It All",
+          "url": "/en/formulario-inicial"
+        },
+        "secondary": {
+          "text": "See what's included",
+          "url": "#features"
+        }
+      },
+      "heroVisual": {
+        "title": "Peace of Mind",
+        "subtitle": "Absolute Control",
+        "stats": [
+          { "label": "Coverage", "value": "360º", "description": "Technique, Data, and Image unified under one strategic roof." },
+          { "label": "Partner", "value": "1 on 1", "description": "No anonymous tickets. Direct communication with someone who knows your business." },
+          { "label": "Savings", "value": "Max", "description": "Eliminate the friction and extra cost of managing 3 different providers." }
+        ]
+      }
+    },
+    "sections": {
+      "painPoints": {
+        "badge": "The Problem",
+        "title": "You don't have time for everything",
+        "content": "Trying to run the business, check Analytics, reply to reviews, and update plugins is impossible. In the end, something fails, and you lose money.",
+        "list": [
+          "Constant tech stress",
+          "Missed opportunities due to lack of time",
+          "Services hired separately (more expensive)"
+        ]
+      },
+      "solution": {
+        "badge": "The Solution",
+        "title": "Your External Digital Department",
+        "content": "We unify the 3 pillars: Technique, Data, and Image. It is the smartest option financially and the one that brings the most peace of mind.",
+        "features": [
+          {
+            "title": "Everything in the Data Pack",
+            "description": "GA4 Visibility Report + WPO Maintenance.",
+            "icon": "BarChart"
+          },
+          {
+            "title": "Everything in the Image Pack",
+            "description": "GBP Reputation Management + Maintenance.",
+            "icon": "Star"
+          },
+          {
+            "title": "Authority Plan",
+            "description": "SEO content strategy to grow on both fronts.",
+            "icon": "Feather"
+          },
+           {
+            "title": "Priority Support",
+            "description": "Direct access to your Digital Partner for strategic consultations.",
+            "icon": "Phone"
+          }
+        ]
+      },
+      "workflow": {
+        "badge": "Total Transparency",
+        "title": "Your Digital Machinery, Step by Step",
+        "onboarding": {
+          "title": "Phase 1: Liftoff",
+          "steps": [
+            "<strong>Strategy Meeting:</strong> We define your goals and scope (90 min). No jargon.",
+            "<strong>Activation:</strong> We formalize the agreement and I configure your access (GA4, GBP, Hosting).",
+            "<strong>Execution:</strong> Technical tune-up and launch. Your digital ecosystem starts working."
+          ]
+        },
+        "monthlyCycle": {
+          "title": "Phase 2: The Monthly Success Cycle",
+          "steps": [
+            "<strong>Week 1 - Monitoring:</strong> I track data and ensure everything is technically 100%.",
+            "<strong>Week 2 - Brand Defense:</strong> Active management of reviews and reputation on Google.",
+            "<strong>Week 3 - Offense (Content):</strong> Strategic writing and publishing on the blog to attract traffic.",
+            "<strong>Week 4 - Accountability:</strong> You receive your Visibility Report. We analyze and adjust course."
+          ]
+        }
+      },
+      "pricing": {
+        "badge": "Smart Investment",
+        "title": "A Whole Department, One Fee",
+        "content": "Hiring this separately (SEO, Tech, Community Manager) would cost you triple. Here you have it unified for the price of a software subscription.",
+        "price": "130€/mo",
+        "slogan": "Monthly billing. No surprises.",
+        "features": [
+          "No hidden costs",
+          "No lock-in (you are free)",
+          "360º coverage included",
+          "ROI in time and money"
+        ],
+        "cta": "Delegate my Digital Management",
+        "ctaUrl": "/en/formulario-inicial"
+      },
+      "downsell": {
+        "title": "Prefer to take it step by step?",
+        "content": "If the 'All-in-One' pack seems like too much to start with, don't worry. Secure the essentials first: the technique.",
+        "offer": {
+          "name": "Essential Web Maintenance",
+          "description": "We ensure your website doesn't break, stays secure, and loads fast for just 25€/mo. The solid foundation to grow later.",
+          "url": "/en/services/web-maintenance"
+        },
+        "cta": "View Basic Option"
+      },
+      "ctaFinal": {
+        "title": "The CEO's Decision",
+        "content": "For just 20€ more than the other packs, you have total coverage. It is the most profitable investment for your peace of mind.",
+        "cta": "Be my tech partner",
+        "subtext": "The option recommended by SanahujaDev."
+      }
+    }
+  }
+}

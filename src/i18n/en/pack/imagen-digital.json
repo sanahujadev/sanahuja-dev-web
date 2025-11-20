@@ -1,0 +1,81 @@
+{
+  "lang": "en",
+  "alternateUrl": "/es/packs/imagen-digital",
+  "metadata": {
+    "title": "Digital Image Pack | Reputation & Review Management Tenerife",
+    "description": "Ideal for local businesses. Web Maintenance + Google Review Management (GBP) + Content. Protect your image and attract clients through trust."
+  },
+  "copy": {
+    "hero": {
+      "badge": "Local Reputation",
+      "h1_part1": "Digital Image Pack:",
+      "h1_part2": "Your Reputation Sells for You.",
+      "h1_lead": "For the restaurant, clinic, or workshop. Your reputation is your best salesperson. We take care of your Google stars and keep your website active so clients trust you blindly.",
+      "ctas": {
+        "primary": {
+          "text": "Protect my Reputation",
+          "url": "/en/formulario-inicial/"
+        },
+        "secondary": {
+          "text": "Compare Packs",
+          "url": "/en/packs/"
+        }
+      },
+      "heroVisual": {
+        "title": "Local Trust",
+        "subtitle": "Shine in your Area",
+        "stats": [
+          { "label": "Reputation", "value": "5★ Management", "description": "We reply to reviews and care for your image on Google." },
+          { "label": "Visibility", "value": "Local SEO", "description": "Strategic monthly content to rank in your area." },
+          { "label": "Web Health", "value": "WPO 99", "description": "Your website always fast and technically perfect." }
+        ]
+      }
+    },
+    "sections": {
+      "painPoints": {
+        "badge": "The Problem",
+        "title": "Are you being judged by your cover?",
+        "content": "An outdated website or a Google profile with bad reviews (or no replies) scares away customers before they even walk through the door.",
+        "list": [
+          "Unanswered reviews create a bad impression",
+          "Competitors have more stars than you",
+          "Your website looks abandoned (no posts)",
+          "I don't even show up on Google Maps"
+        ],
+        "upsell": {
+          "text": "Need help with your online reputation? Meet our service for ",
+          "linkText": "Reputation Management",
+          "url": "/en/services/online-reputation-management"
+        }
+      },
+      "solution": {
+        "badge": "The Solution",
+        "title": "Total Control of Your Image",
+        "content": "We become your PR department. We reply to your clients, update your blog to show activity, and ensure the website is technically perfect.",
+        "features": [
+          {
+            "title": "Reputation Management",
+            "description": "Monitoring and professional response to reviews on Google My Business.",
+            "icon": "Star"
+          },
+          {
+            "title": "Authority Plan",
+            "description": "1 monthly article to keep the web 'alive' and rank locally.",
+            "icon": "MapPin"
+          },
+          {
+            "title": "WPO Maintenance",
+            "description": "Security and speed so the first impression is excellent.",
+            "icon": "Shield"
+          }
+        ]
+      },
+      "ctaFinal": {
+        "title": "Let them speak well of you",
+        "content": "Take care of your digital storefront. Attract clients through trust, not price.",
+        "cta": "I Want the Digital Image Pack",
+        "subtext": "No lock-in contract. Cancel whenever you want."
+      }
+    }
+  }
+}

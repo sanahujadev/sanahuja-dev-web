@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
-test.describe('A11Y: /es/packs/pack-imagen-digital', () => {
+test.describe('A11Y: /es/packs/imagen-digital', () => {
   test('No violaciones WCAG en sección de reseñas', async ({ page }) => {
-    await page.goto('/es/packs/pack-imagen-digital');
+    await page.goto('/es/packs/imagen-digital');
     await page.waitForLoadState('networkidle');
 
     const results = await new AxeBuilder({ page })
@@ -14,7 +14,7 @@ test.describe('A11Y: /es/packs/pack-imagen-digital', () => {
   });
 
   test('Iconos de estrellas tienen aria-label', async ({ page }) => {
-    await page.goto('/es/packs/pack-imagen-digital');
+    await page.goto('/es/packs/imagen-digital');
     
     const starIcons = page.locator('#gmb-focus svg');
     const count = await starIcons.count();

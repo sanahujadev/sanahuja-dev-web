@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import t_es from '../../src/i18n/es/pack/imagen-digital.json' assert { type: 'json' };
 // import t_en from '../../src/i18n/en/packs/image-digital-pack.json' assert { type: 'json' };
 
-test.describe('E2E/SEO: /es/packs/pack-imagen-digital (Pack Imagen Digital)', () => {
+test.describe('E2E/SEO: /es/packs/imagen-digital (Pack Imagen Digital)', () => {
   const URL = '/es/packs/imagen-digital';
 
   test('Debe cumplir con los requisitos SEO básicos', async ({ page }) => {

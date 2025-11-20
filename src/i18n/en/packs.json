@@ -1,0 +1,120 @@
+{
+  "lang": "en",
+  "alternateUrl": "/es/packs/",
+  "metadata": {
+    "title": "Web Maintenance Prices Tenerife | Your Digital Department",
+    "description": "Choose your level of digital partnership. From data strategy to reputation management. Clear rates, no lock-in contracts, and all-inclusive."
+  },
+  "copy": {
+    "hero": {
+      "badge": "Web as a Service (WaaS)",
+      "h1_part1": "Your Digital Department",
+      "h1_part2": "for the price of a dinner.",
+      "h1_lead": "Stop paying loose invoices for hosting, tech support, SEO, and writers. We unify all the services your business needs to grow into a single monthly fee. No surprises.",
+      "ctas": {
+        "primary": {
+          "text": "Compare Plans",
+          "url": "#comparison"
+        },
+        "secondary": {
+          "text": "Calculate Savings",
+          "url": "/en/formulario-inicial/"
+        }
+      },
+      "heroVisual": {
+        "title": "Total Peace of Mind",
+        "subtitle": "Focus on your business.",
+        "stats": [
+          { "label": "Contract", "value": "Flexible" },
+          { "label": "Support", "value": "WPO 99" },
+          { "label": "Savings", "value": "€25", "unit": "/mo" }
+        ]
+      }
+    },
+    "sections": {
+      "intro": {
+        "title": "Don't buy a website, hire a Partner",
+        "content": "Most websites die after 6 months because no one takes care of them. My model is different: I stay. Choose which area you want to boost: Data, Image, or Everything?"
+      },
+      "comparison": {
+        "title": "Your Digital Department, at Scale",
+        "subtitle": "Choose how you want us to accompany you. No hidden costs, no surprises.",
+        "plans": [
+          {
+            "name": "Technical Partner Pack",
+            "role": "Growth & Data",
+            "description": "For those who want to understand their users and grow with SEO.",
+            "price": "105€/mo",
+            "cta": "Choose Data",
+            "badge": "Recommended",
+            "url": "/en/packs/technical-partner-pack",
+            "highlight": true,
+            "features": [
+              { "name": "WPO 99 Maintenance", "included": true },
+              { "name": "Authority Plan (Blog)", "included": true },
+              { "name": "Visibility Report (GA4)", "included": true },
+              { "name": "Reputation Management", "included": false }
+            ]
+          },
+          {
+            "name": "Digital Image Pack",
+            "role": "Local Visibility",
+            "description": "For local businesses where image and reviews are everything.",
+            "price": "110€/mo",
+            "cta": "Choose Image",
+            "url": "/en/packs/digital-image",
+            "highlight": false,
+            "features": [
+              { "name": "WPO 99 Maintenance", "included": true },
+              { "name": "Authority Plan (Blog)", "included": true },
+              { "name": "Visibility Report (GA4)", "included": false },
+              { "name": "Reputation Management", "included": true }
+            ]
+          },
+          {
+            "name": "All-in-One",
+            "role": "Total Delegation",
+            "description": "Your complete Digital Partner. Data, Image, and Technique unified.",
+            "price": "130€/mo",
+            "cta": "I Want Everything",
+            "url": "/en/packs/all-in-one",
+            "highlight": false,
+            "features": [
+              { "name": "WPO 99 Maintenance", "included": true },
+              { "name": "Authority Plan (Blog)", "included": true },
+              { "name": "Visibility Report (GA4)", "included": true },
+              { "name": "Reputation Management", "included": true }
+            ]
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions about Packs",
+        "items": [
+          {
+            "question": "What is the difference between paying for a website and these Packs?",
+            "answer": "A traditional website is a product (you pay, you get it, you figure it out). These Packs are a <strong>Comprehensive Service</strong>. Here you don't buy 'code', you hire a Digital Department that works every month so your business has visibility, security, and clients. It's the difference between buying a car and hiring a chauffeur. They also represent guaranteed solutions."
+          },
+          {
+            "question": "Is the website mine or is it a rental?",
+            "answer": "<strong>It is a Managed Service with Intellectual Property belonging to SanahujaDev.</strong> At the start, I assume the real cost of development (valued at thousands of euros) so you can enter with a minimal investment. Therefore, the code belongs to me. \n\nHowever, <strong>I believe in long-term relationships</strong>. If after a reasonable time of successful collaboration you decide to fly solo, or if your personal situation requires it, we will sit down to value the transfer of the website. Everything depends on our history together. (Note: If you bought the domain, it is always yours; if I paid for it, it is included in the service package)."
+          },
+          {
+            "question": "Is there a lock-in period?",
+            "answer": "<strong>There are no slavery contracts, but there is commitment.</strong> You can cancel the service whenever you want; I won't hold you by force. But keep in mind that, being a 'Web as a Service' model, if you cancel the service shortly after starting, the website is deactivated (since the development hasn't been amortized). My goal is for you to stay for years because you are doing well, not because a paper forces you to."
+          },
+          {
+            "question": "What happens if I need changes to the website?",
+            "answer": "Maintenance includes technical and security updates so nothing fails. If you need structural design changes or new functions, being a Digital Partner you have preferential rates or we can use an Hours Bank. The Packs cover *operation and growth*, not *continuous redesign*."
+          }
+        ]
+      },
+      "ctaFinal": {
+        "title": "Undecided between Data or Image?",
+        "content": "Don't choose. For just a little more, take it all and delegate the digital side 100%.",
+        "cta": "Speak with José Javier",
+        "url": "/en/formulario-inicial"
+      }
+    }
+  }
+}
