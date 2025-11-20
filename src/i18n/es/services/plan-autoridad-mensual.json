@@ -1,0 +1,111 @@
+{
+  "lang": "es",
+  "alternateUrl": "/en/services/authority-plan",
+  "metadata": {
+    "title": "Estrategia de Contenidos SEO Tenerife | Plan de Autoridad",
+    "description": "Convierte tu blog en un activo que vende. Redacción de artículos SEO estratégicos para atraer tráfico cualificado y posicionar tu marca en Google."
+  },
+  "copy": {
+    "hero": {
+      "badge": "Activos Digitales",
+      "h1_part1": "Plan de Autoridad:",
+      "h1_part2": "Tu Blog Trabajando 24/7.",
+      "h1_lead": "No vendemos 'relleno' ni palabras al peso. Creamos <strong>activos digitales</strong>. Artículos estratégicos diseñados para responder dudas de tus clientes, posicionarte como experto y atraer ventas mientras duermes.",
+      "ctas": {
+        "primary": {
+          "text": "Incluido en Pack Sociotécnico",
+          "url": "/es/packs/pack-sociotecnico-digital"
+        },
+        "secondary": {
+          "text": "Consultar Servicio Suelto",
+          "url": "/es/formulario-inicial"
+        }
+      },
+      "heroVisual": {
+        "title": "Dominio del Sector",
+        "subtitle": "Tu Marca, Referente",
+        "stats": [
+            { 
+                "label": "Posicionamiento", 
+                "value": "Autoridad", 
+                "description": "Conviértete en la voz experta y referente de tu sector." 
+            },
+            { 
+                "label": "Alcance", 
+                "value": "Visibilidad", 
+                "description": "Que tu marca aparezca siempre que tu cliente tenga una duda." 
+            },
+            { 
+                "label": "Resultado", 
+                "value": "Ventas", 
+                "description": "Tráfico cualificado que llega listo para comprar." 
+            }
+        ]
+      }
+    },
+    "sections": {
+      "painPoints": {
+        "badge": "El Blog Zombie",
+        "title": "¿Tu web es un desierto digital?",
+        "content": "Sabes que 'el contenido es el rey', pero la realidad operativa te supera. Si identificas estos síntomas en tu negocio, necesitas disciplina externa:",
+        "cards": [
+            {
+                "title": "Imagen de Abandono",
+                "description": "Entrar a un blog y ver que la última noticia es de 2019 genera desconfianza inmediata. Parece que el negocio ha cerrado.",
+                "icon": "CalendarX"
+            },
+            {
+                "title": "Invisibilidad en Google",
+                "description": "Escribes sobre lo que te gusta, no sobre lo que busca tu cliente. Resultado: Google te ignora y el tráfico es cero.",
+                "icon": "Ghost"
+            },
+            {
+                "title": "Parálisis por Análisis",
+                "description": "Pierdes horas mirando la pantalla en blanco pensando '¿de qué hablo hoy?' en lugar de estar facturando.",
+                "icon": "BrainCircuit"
+            },
+            {
+                "title": "Inconsistencia Crónica",
+                "description": "Empiezas fuerte en enero y lo dejas en febrero. El SEO requiere un ritmo marcial que no logras mantener por falta de tiempo.",
+                "icon": "ActivitySquare"
+            }
+        ]
+      },
+      "solution": {
+        "badge": "La Solución",
+        "title": "Disciplina y Estrategia SEO",
+        "content": "Nosotros ponemos la estrategia y las manos. Tú te llevas el tráfico. Cada mes, publicamos un artículo optimizado que ataca una intención de búsqueda real de tu cliente.",
+        "features": [
+          {
+            "title": "Investigación de Palabras Clave",
+            "description": "No adivinamos. Buscamos qué preguntan tus clientes en Google.",
+            "icon": "Search"
+          },
+          {
+            "title": "Redacción Persuasiva",
+            "description": "Textos escritos para humanos, optimizados para robots. Sin IA genérica.",
+            "icon": "PenTool"
+          },
+          {
+            "title": "Optimización On-Page",
+            "description": "Estructura H1/H2/H3, enlazado interno y metadatos perfectos.",
+            "icon": "Maximize"
+          }
+        ]
+      },
+      "pricing": {
+        "badge": "Ahorro Inteligente",
+        "title": "¿Cuánto vale tu tiempo?",
+        "content": "Contratar un copywriter SEO por artículo te costaría +100€. Aquí lo tienes INCLUIDO en tu cuota mensual.",
+        "cta": "Ver Pack Ahorro",
+        "url": "/es/packs/pack-sociotecnico-digital"
+      },
+      "ctaFinal": {
+        "title": "Deja de tener una web muda",
+        "content": "Empieza a hablar con tu mercado. Convierte tu web en una autoridad en tu sector.",
+        "cta": "Activar Plan de Autoridad",
+        "url": "/es/formulario-inicial"
+      }
+    }
+  }
+}

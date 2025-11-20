@@ -1,0 +1,40 @@
+{
+  "lang": "es",
+  "metadata": {
+    "title": "Términos y Condiciones | SanahujaDev",
+    "description": "Condiciones de contratación del servicio de diseño y mantenimiento web. Información sobre propiedad intelectual, pagos y responsabilidades.",
+    "robots": "index, follow"
+  },
+  "copy": {
+    "hero": {
+      "title": "Términos y Condiciones de Contratación",
+      "lastUpdated": "Última actualización: Diciembre 2025"
+    },
+    "sections": [
+      {
+        "title": "1. Identificación del Titular",
+        "content": "El responsable del servicio es <strong>José Javier Sanahuja Ortiz</strong> (en adelante, 'SanahujaDev'), con NIF <strong>45981719G</strong> y domicilio fiscal en Calle Unamuno, 38, San Isidro, Santa Cruz de Tenerife. Email de contacto: <strong>josejavier@sanahuja.dev</strong>."
+      },
+      {
+        "title": "2. Objeto del Servicio (Modelo WaaS)",
+        "content": "SanahujaDev presta servicios de diseño, desarrollo y mantenimiento web bajo un modelo de <strong>Web as a Service</strong> (Suscripción). El cliente contrata un servicio integral que incluye el uso de la infraestructura tecnológica, alojamiento, mantenimiento y estrategias digitales, a cambio de una cuota mensual recurrente."
+      },
+      {
+        "title": "3. Propiedad Intelectual y Cláusula de Permanencia",
+        "content": "<strong>IMPORTANTE:</strong> Dado que SanahujaDev subvenciona gran parte del coste inicial de desarrollo (hasta un 90%) para facilitar el acceso al servicio:\n\n* <strong>Licencia de Uso:</strong> Durante la vigencia del contrato, el Cliente tiene una licencia de uso no exclusiva sobre la web.\n* <strong>Propiedad del Código:</strong> La estructura, el código fuente y el diseño base son propiedad intelectual de SanahujaDev hasta que se cumplan 24 meses de servicio ininterrumpido o se abone el coste de liberación.\n* <strong>Propiedad del Contenido:</strong> Los textos, imágenes y logotipos aportados por el Cliente son siempre propiedad del Cliente.\n* <strong>Liberación Anticipada:</strong> Si el Cliente desea cancelar el servicio y migrar la web antes de 24 meses, deberá abonar la diferencia entre el precio promocional pagado y el valor de mercado del desarrollo (valorado en 1.500€ - 9.000€ según proyecto)."
+      },
+      {
+        "title": "4. Pagos y Suspensión del Servicio",
+        "content": "Los pagos se realizan mediante domiciliación bancaria o tarjeta a través de la plataforma segura <strong>Stripe</strong>.\n\n* <strong>Impagos:</strong> En caso de devolución de un recibo o fallo en el cobro, se notificará al Cliente. Si el pago no se regulariza en un plazo de <strong>10 días naturales</strong>, el servicio web será suspendido temporalmente (web offline).\n* <strong>Borrado:</strong> Tras <strong>30 días</strong> de impago sin solución, se procederá a la cancelación definitiva del contrato y el borrado de los datos alojados, sin posibilidad de recuperación posterior."
+      },
+      {
+        "title": "5. Limitación de Responsabilidad",
+        "content": "SanahujaDev se compromete a aplicar las mejores prácticas de seguridad y mantenimiento (WPO). No obstante:\n\n* La responsabilidad máxima de SanahujaDev ante cualquier incidencia se limita al importe de la última cuota mensual abonada.\n* SanahujaDev no se hace responsable de caídas del servidor ajenas (hosting de terceros), ataques informáticos de fuerza mayor, o lucro cesante (pérdidas de ventas) derivado de interrupciones del servicio."
+      },
+      {
+        "title": "6. Desistimiento y Cancelación",
+        "content": "El Cliente puede cancelar el servicio en cualquier momento preavisando con 15 días de antelación al siguiente ciclo de facturación, teniendo en cuenta lo estipulado en la cláusula 3 sobre la propiedad de la web."
+      }
+    ]
+  }
+}

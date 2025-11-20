@@ -1,0 +1,38 @@
+{
+  "lang": "es",
+  "metadata": {
+    "title": "Política de Cookies | SanahujaDev",
+    "description": "Uso de cookies en SanahujaDev. Cookies técnicas necesarias y analítica anónima. Gestión de consentimiento.",
+    "robots": "noindex, follow"
+  },
+  "copy": {
+    "hero": {
+      "title": "Política de Cookies",
+      "lastUpdated": "Última actualización: Diciembre 2025"
+    },
+    "intro": "En SanahujaDev usamos cookies propias y de terceros para que la web funcione y para entender cómo la usas. No te espiamos, solo medimos para mejorar.",
+    "sections": [
+      {
+        "title": "1. ¿Qué son las Cookies?",
+        "content": "Una cookie es un pequeño fichero de texto que se guarda en tu navegador. Sirve para 'recordar' cosas sobre tu visita (como si has iniciado sesión o qué idioma prefieres)."
+      },
+      {
+        "title": "2. Tipos de Cookies que usamos",
+        "types": [
+          {
+            "name": "Cookies Técnicas (Necesarias)",
+            "description": "Son esenciales para que la web funcione. En nuestro caso, solo usamos una cookie interna para recordar tus preferencias de privacidad (si has aceptado o rechazado el banner), para no tener que preguntarte en cada visita."
+          },
+          {
+            "name": "Cookies de Analítica (Opcionales)",
+            "description": "Usamos <strong>Google Analytics 4 (GA4)</strong> para medir cuántas visitas tenemos y qué páginas son las más populares. Estos datos son anónimos. Solo se activan si haces clic en 'Aceptar' en el banner de cookies."
+          }
+        ]
+      },
+      {
+        "title": "3. Gestión del Consentimiento",
+        "content": "Cumplimos con el <strong>Google Consent Mode v2</strong>. Esto significa que las cookies de Google no se instalarán hasta que nos des permiso explícito. Puedes cambiar tu configuración o retirar el consentimiento en cualquier momento desde el icono de 'Cookies' en la esquina inferior de la web."
+      }
+    ]
+  }
+}

@@ -19,11 +19,11 @@ const links = [
     label: t.nav.home,
   },
   {
-    href: `/${lang}/sobre-mi`,
+    href: lang === 'es' ? '/es/sobre-mi' : '/en/about-me',
     label: t.nav.about,
   },
   {
-    href: `/${lang}/servicios/diseno-web-tenerife`,
+    href: lang === 'es' ? '/es/servicios/diseno-web-tenerife' : '/en/services/web-design-tenerife',
     label: t.nav.gancho.label,
     badge: t.nav.gancho.badge,
     isPrimary: true, // ¡La clave de V0!
