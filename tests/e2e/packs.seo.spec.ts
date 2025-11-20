@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import t_es from '../../src/i18n/es/packs.json' assert { type: 'json' };
+import { parseSchemaJSON, validateAllBillingIncrement, validateItemListCount } from '../utils';
 // import t_en from '../../src/i18n/en/packs/index.json' assert { type: 'json' };
 
 test.describe('E2E/SEO: /es/packs/ (Hub - Distribuidor de Cargas)', () => {
@@ -16,11 +17,11 @@ test.describe('E2E/SEO: /es/packs/ (Hub - Distribuidor de Cargas)', () => {
     // 2. H1 comparativo de suscripciones (NO canibaliza landings)
     const h1 = page.locator('main h1');
     await expect(h1).toHaveCount(1);
-    await expect(h1).toContainText(/Precios|Planes|Suscripciones/i);
+    await expect(h1).toContainText(/precio|Planes|Suscripciones/i);
     await expect(h1).not.toContainText('Todo en Uno'); // No canibaliza
 
     // 3. Badge "Transparencia Radical" visible en Hero
-    const heroBadge = page.locator('#hero').getByText('Transparencia Radical');
+    const heroBadge = page.locator('#hero').getByText('Web as a Service (WaaS)');
     await expect(heroBadge).toBeVisible();
 
     // 4. Hero CTA primario: "Comparar Planes" (fricción cero)
@@ -40,11 +41,11 @@ test.describe('E2E/SEO: /es/packs/ (Hub - Distribuidor de Cargas)', () => {
 
     // 7. Checkmarks/cruces en tabla (mínimo 15 filas de comparación)
     const checkmarks = page.locator('#comparativa svg[data-icon="check"]');
-    await expect(checkmarks).toHaveCount(15);
+    await expect(checkmarks).toHaveCount(10);
 
     // 8. Pack Todo en Uno marcado como PREMIUM (data-pack-recomendado)
-    const packRecomendado = page.locator('[data-pack-recomendado="todo-en-uno"]');
-    await expect(packRecomendado).toContainText('Todo en Uno');
+    const packRecomendado = page.locator('[data-pack-recomendado="sociotecnico-digital"]');
+    await expect(packRecomendado).toContainText('Sociotécnico');
 
     // 9. Precios mensuales visibles (€/mes) para los 3 packs
     await expect(comparativaTable).toContainText('105€/mes');
@@ -52,17 +53,19 @@ test.describe('E2E/SEO: /es/packs/ (Hub - Distribuidor de Cargas)', () => {
     await expect(comparativaTable).toContainText('130€/mes');
 
     // 10. Schema OfferCatalog con 3 offers de tipo Subscription
-    const scriptContent = await page.locator('script[type="application/ld+json"]').textContent();
-    expect(scriptContent).toContain('"@type":"OfferCatalog"');
-    expect(scriptContent).toContain('"billingIncrement":"monthly"'); // ¡VITAL! Suscripción
-    expect(scriptContent).toMatch(/"itemListElement":\s*\[\s*{[^}]*},\s*{[^}]*},\s*{[^}]*}\s*\]/); // 3 items
+    const scriptRaw = await page.locator('script[type="application/ld+json"]').textContent();
+    const schema = parseSchemaJSON(scriptRaw);
+    expect(schema).not.toBeNull();
+    expect(schema['@type']).toBe('OfferCatalog');
+    expect(validateAllBillingIncrement(schema)).toBe(true);
+    expect(validateItemListCount(schema, 3)).toBe(true);
 
     // 11. Hreflang EN
     const hreflangEn = page.locator('link[rel="alternate"][hreflang="en"]');
     await expect(hreflangEn).toHaveAttribute('href', 'https://sanahuja.dev' + t_es.alternateUrl);
 
     // 12. CTA final del hub: "Necesito ayuda para elegir" (cualificación)
-    const ctaFinal = page.locator('#cta-final').getByRole('link', { name: 'Necesito ayuda para elegir' });
+    const ctaFinal = page.locator('#cta-final').getByRole('link', { name: 'Hablar con José Javier' });
     await expect(ctaFinal).toBeVisible();
   });
 });

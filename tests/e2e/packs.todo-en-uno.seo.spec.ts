@@ -10,7 +10,7 @@ test.describe('E2E/SEO: /es/packs/todo-en-uno (Jefe Delegador - Premium)', () =>
     await page.waitForLoadState('networkidle');
 
     // 1. SEO Básico (Keywords de partner tecnológico)
-    await expect(page).toHaveTitle(t_es.copy.hero.h1_part1);
+    await expect(page).toHaveTitle(t_es.metadata.title);
     await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', t_es.metadata.description);
 
     // 2. H1 de delegación total (B2B, alto ticket)
@@ -19,36 +19,36 @@ test.describe('E2E/SEO: /es/packs/todo-en-uno (Jefe Delegador - Premium)', () =>
     await expect(h1).toContainText(/Todo en Uno|Delegación Total|Partner Tecnológico/i);
 
     // 3. Badge "Paz Mental" visible (premium)
-    const heroBadge = page.locator('#hero').getByText('Paz Mental');
+    const heroBadge = page.locator('#hero').getByText('Delegación Total');
     await expect(heroBadge).toBeVisible();
 
     // 4. Hero CTA primario: "Delegar mi Web" (acción de CEO)
-    const heroCTA = page.locator('#hero a').getByText('Delegar mi Web');
-    await expect(heroCTA).toHaveAttribute('href', '/es/formulario-partner/');
+    const heroCTA = page.locator('#hero a').getByText('Lo Quiero Todo');
+    await expect(heroCTA).toHaveAttribute('href', '/es/formulario-inicial');
 
     // 5. Hero CTA secundario: "Ver flujo de trabajo"
-    const workflowCTA = page.locator('#hero a').getByText('Ver flujo de trabajo');
-    await expect(workflowCTA).toHaveAttribute('href', /#workflow/);
+    const workflowCTA = page.locator('#hero a').getByText('Ver qué incluye');
+    await expect(workflowCTA).toHaveAttribute('href', '#features');
 
     // 6. Incluye TODO: Analítica + Reputación + Mantenimiento + Contenido
     const todoList = page.locator('#todo-list');
     await expect(todoList).toBeVisible();
-    await expect(todoList).toContainText('Analítica'); // Cerebro
+    await expect(todoList).toContainText('Informe de Visibilidad'); // Cerebro
     await expect(todoList).toContainText('Reputación'); // Imagen
     await expect(todoList).toContainText('Mantenimiento'); // Técnica
-    await expect(todoList).toContainText('Contenido'); // Voz
+    await expect(todoList).toContainText('contenidos'); // Voz
 
     // 7. Fragmentación de proveedores como dolor
     const fragmentacion = page.locator('#fragmentacion');
     await expect(fragmentacion).toBeVisible();
-    await expect(fragmentacion).toContainText('fragmentación');
-    await expect(fragmentacion).toContainText('un proveedor');
+    await expect(fragmentacion).toContainText('No tienes tiempo');
+    await expect(fragmentacion).toContainText('Servicios contratados');
 
     // 8. Precio 130€/mes visible y destacado como "inversión"
     const pricing = page.locator('#pricing');
     await expect(pricing).toBeVisible();
     await expect(pricing).toContainText('130€/mes');
-    await expect(pricing).toContainText('inversión'); // Enfasis en retorno, no coste
+    await expect(pricing).toContainText('Inversión'); // Enfasis en retorno, no coste
 
     // 9. Schema Product con price 130€, isRelatedTo y billingIncrement
     const scriptContent = await page.locator('script[type="application/ld+json"]').textContent();

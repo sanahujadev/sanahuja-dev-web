@@ -5,13 +5,14 @@ import type { HTMLAttributes } from 'astro/types';
 
 interface Props extends HTMLAttributes<'div'> {
     badgeVariant: string;
-    badgeIcon: Astro.Component;
+    badgeIcon: any;
     badgeIconClass: string;
     badgeText: string;
     title: string;
     content?: string;
     titleClass?: string;
     contentClass?: string;
+    isH1?: boolean;
 }
 
 const { 
@@ -23,17 +24,20 @@ const {
     content, 
     titleClass, 
     contentClass,
+    isH1 = false,
     ...rest 
 } = Astro.props;
+
+const TitleTag = isH1 ? 'h1' : 'h2';
 
 const hasContent = content || Astro.slots.has('default');
 ---
 <div class:list={["text-center space-y-4", rest.class]}>
-    <Badge variant={badgeVariant}>
+    <Badge variant={badgeVariant as "default" | "v0_accent" | "v0_secondary" | "v0_primary" | "secondary"}>
         <Icon class={`w-5 h-5 ${badgeIconClass} mr-1.5`} aria-hidden="true" focusable="false" />
         {badgeText}
     </Badge>
-    <h2 class:list={["text-3xl md:text-4xl font-bold text-foreground text-balance", titleClass]} set:html={title} />
+    <TitleTag class:list={["text-3xl md:text-4xl font-bold text-foreground text-balance", titleClass]} set:html={title} />
     
     {hasContent && (
         content ? (

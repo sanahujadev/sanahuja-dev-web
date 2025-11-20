@@ -1,0 +1,103 @@
+---
+// src/pages/es/packs.astro
+import LandingPacks from '../../../components/pages/LandingPacks.astro';
+import t from '../../../i18n/es/packs.json';
+
+const schemaProduct = {
+  "@context": "https://schema.org",
+  "@type": "OfferCatalog",
+  "name": "Suscripciones de Marketing Digital SanahujaDev",
+  "description": "Comparativa de planes de suscripción mensual. Elige el pack que mejor se adapta a tu negocio.",
+  "itemListElement": [
+    {
+      "@type": "Product",
+      "name": "Pack Sociotécnico",
+      "description": "Datos, conversiones y mantenimiento técnico. Para empresas que quieren crecer con información real.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://sanahuja.dev/es/packs/solucion-integral",
+        "price": "105.00",
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "105.00",
+          "priceCurrency": "EUR",
+          "billingIncrement": "monthly"
+        },
+        "availability": "https://schema.org/InStock",
+        "category": "Subscription",
+        "seller": {
+          "@type": "LocalBusiness",
+          "name": "SanahujaDev",
+          "url": "https://sanahuja.dev"
+        }
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "Pack Imagen Digital",
+      "description": "Gestión de reputación online y mantenimiento web. Para negocios locales que viven de su imagen.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://sanahuja.dev/es/packs/pack-imagen-digital",
+        "price": "110.00",
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "110.00",
+          "priceCurrency": "EUR",
+          "billingIncrement": "monthly"
+        },
+        "availability": "https://schema.org/InStock",
+        "category": "Subscription",
+        "seller": {
+          "@type": "LocalBusiness",
+          "name": "SanahujaDev",
+          "url": "https://sanahuja.dev"
+        }
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "Pack Todo en Uno",
+      "description": "Delegación total. Analítica, reputación, mantenimiento y contenido. Para empresas que quieren olvidarse de la operativa digital.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://sanahuja.dev/es/packs/todo-en-uno",
+        "price": "130.00",
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "130.00",
+          "priceCurrency": "EUR",
+          "billingIncrement": "monthly"
+        },
+        "availability": "https://schema.org/InStock",
+        "category": "Subscription",
+        "seller": {
+          "@type": "LocalBusiness",
+          "name": "SanahujaDev",
+          "url": "https://sanahuja.dev"
+        }
+      }
+    }
+  ],
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "SanahujaDev",
+    "url": "https://sanahuja.dev",
+    "areaServed": {
+      "@type": "City",
+      "name": "Tenerife"
+    }
+  }
+}
+
+const alternateUrl = new URL(t.alternateUrl, Astro.site).href;
+---
+
+<LandingPacks
+  copy={t}
+  alternateUrl={alternateUrl}
+  schema={schemaProduct}
+/>

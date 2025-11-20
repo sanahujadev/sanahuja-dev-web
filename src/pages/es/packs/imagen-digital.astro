@@ -1,0 +1,49 @@
+---
+// src/pages/es/packs/imagen-digital.astro
+import LandingPackImagenDigital from '../../../components/pages/LandingPackImagenDigital.astro';
+import t from '../../../i18n/es/pack/imagen-digital.json';
+
+const schemaProduct = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Pack Imagen Digital",
+  "description": "Servicio mensual de gestión de reputación online y mantenimiento web para negocios locales en Tenerife. Gestión de Google My Business, respuesta a reseñas y soporte técnico urgente.",
+  "brand": {
+    "@type": "Brand",
+    "name": "SanahujaDev"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://sanahuja.dev/es/packs/pack-imagen-digital",
+    "price": "110.00",
+    "priceCurrency": "EUR",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "110.00",
+      "priceCurrency": "EUR",
+      "billingIncrement": "monthly",
+      "description": "Suscripción mensual. Cancelable en cualquier momento."
+    },
+    "availability": "https://schema.org/InStock",
+    "validFrom": "2024-01-01",
+    "category": "Subscription",
+    "seller": {
+      "@type": "LocalBusiness",
+      "name": "SanahujaDev",
+      "url": "https://sanahuja.dev",
+      "areaServed": {
+        "@type": "City",
+        "name": "Tenerife"
+      }
+    }
+  }
+};
+
+const alternateUrl = new URL(t.alternateUrl, Astro.site).href;
+---
+
+<LandingPackImagenDigital
+  copy={t}
+  alternateUrl={alternateUrl}
+  schema={schemaProduct}
+/>

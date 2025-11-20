@@ -13,8 +13,8 @@
       "h1_lead": "Para el restaurante, la clínica o el taller. Tu reputación es tu mejor vendedor. Nosotros cuidamos tus estrellas en Google y mantenemos tu web activa para que los clientes confíen en ti a ciegas.",
       "ctas": {
         "primary": {
-          "text": "Contratar Pack (110€/mes)",
-          "url": "/es/formulario-inicial"
+          "text": "Proteger mi Reputación",
+          "url": "/es/formulario-inicial/"
         },
         "secondary": {
           "text": "Comparar Packs",
@@ -25,9 +25,9 @@
         "title": "Confianza Local",
         "subtitle": "Brilla en tu Zona",
         "stats": [
-          { "label": "Reseñas", "value": "GMB" },
-          { "label": "Contenido", "value": "1 Post" },
-          { "label": "Imagen", "value": "100%" }
+          { "label": "Reputación", "value": "Gestión 5★", "description": "Respondemos reseñas y cuidamos tu imagen en Google." },
+          { "label": "Visibilidad", "value": "SEO Local", "description": "Contenido mensual estratégico para posicionarte en tu zona." },
+          { "label": "Salud Web", "value": "WPO 99", "description": "Tu web siempre rápida y técnicamente perfecta." }
         ]
       }
     },
@@ -39,9 +39,14 @@
         "list": [
           "Reseñas sin contestar dan mala imagen",
           "La competencia tiene más estrellas",
-          "Web con noticias de 2019 (sensación de abandono)",
-          "No salgo en el mapa"
-        ]
+          "Tu web es una red social y ¿sin posts?",
+          "Ni siquiera salgo en Google Maps"
+        ],
+        "upsell": {
+          "text": "¿Necesitas ayuda con tu reputación online? Conoce nuestro servicio de ",
+          "linkText": "Gestión de Reputación",
+          "url": "/es/servicios/gestion-reputacion-online"
+        }
       },
       "solution": {
         "badge": "La Solución",

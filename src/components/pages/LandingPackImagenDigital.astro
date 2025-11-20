@@ -2,16 +2,20 @@
 // src/components/pages/LandingPackImagenDigital.astro
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Button from '../ui/Button.astro';
-import SectionHeader from '../../components/ui/SectionHeader.astro';
-import Code from '../ui/icons/Code.astro';
+import Badge from '../ui/Badge.astro';
+
+// Iconos de la Orquesta
+import Code from '../ui/icons/Code.astro'; // Mantenido del esqueleto, aunque Sparkles/Star encajan mejor semánticamente
 import ArrowRight from '../ui/icons/ArrowRight.astro';
 import Sparkles from '../ui/icons/Sparkles.astro';
 import Star from '../ui/icons/Star.astro';
 import Shield from '../ui/icons/Shield.astro';
 import Clock from '../ui/icons/Clock.astro';
 import Target from '../ui/icons/Target.astro';
-import type { PackImagenDigitalCopy } from '../../i18n/utils';
 import AlertTriangle from '../ui/icons/AlertTriangle.astro';
+import CheckCircle from '../ui/icons/CheckCircle.astro'; // Añadido para la lista de soluciones si hace falta
+
+import type { PackImagenDigitalCopy } from '../../i18n/utils';
 
 interface Props {
   copy: PackImagenDigitalCopy;
@@ -29,139 +33,228 @@ const {
 ---
 
 <BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>
-  <script type="application/ld+json" set:html={JSON.stringify(schema)} slot="json-ld" />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} slot="json-ld" />
   <Fragment slot="head">
     <title>{metadata.title}</title>
     <meta name="description" content={metadata.description} />
   </Fragment>
-  <main>
-  {/* Hero Section */}
-  <section id="hero">
-    {/* Background Grid */}
-    <div>
-      <div
-        style={{
-          backgroundImage:
-            "linear-gradient(rgb(99 102 241 / 0.1) 1px, transparent 1px), linear-gradient(90deg, rgb(99 102 241 / 0.1) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      ></div>
-    </div>
 
-    <div class="text-center">
-      <SectionHeader
-        badgeVariant="default"
-        badgeIcon={Code}
-        badgeIconClass="text-primary"
-        badgeText={t.hero.badge}
-        title={`${t.hero.h1_part1}<br>${t.hero.h1_part2}`}
-        content={t.hero.h1_lead}
-      />
+  <main class="min-h-screen bg-background">
+    
+    <section id="hero" class="relative pt-32 pb-20 overflow-hidden">
+      <div class="absolute inset-0 opacity-10 pointer-events-none" aria-hidden="true">
+        <div
+          class="absolute inset-0"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgb(99 102 241 / 0.1) 1px, transparent 1px), linear-gradient(90deg, rgb(99 102 241 / 0.1) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        ></div>
+      </div>
 
-        <div>
-          <Button href={t.hero.ctas.primary.url}>
-            {t.hero.ctas.primary.text}
-          </Button>
-          <a href="#metodologia">
-            {t.hero.ctas.secondary.text}
-          </a>
-        </div>
-
-        {/* Hero Visual - Tech Stack */}
-        <div>
-          <div>
-            <div>{t.hero.heroVisual.title}</div>
-            <div>{t.hero.heroVisual.subtitle}</div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-5xl mx-auto text-center">
+          <div class="flex justify-center mb-6">
+            <Badge variant="v0_secondary">
+              <Star class="w-5 h-5 mr-1.5 text-secondary-400" />
+              {t.hero.badge}
+            </Badge>
           </div>
-          <div>
-            {t.hero.heroVisual.stats.map((stat: { label: string; value: string }) => (
-              <div>
-                <span>{stat.value}</span>
-                <span>{stat.label}</span>
+
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 text-balance">
+            <span class="text-foreground">{t.hero.h1_part1}</span>
+            <br />
+            <span class="text-secondary-400">{t.hero.h1_part2}</span>
+          </h1>
+
+          <p class="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto text-pretty leading-relaxed" set:html={t.hero.h1_lead} />
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <Button href={t.hero.ctas.primary.url} variant="primary">
+              {t.hero.ctas.primary.text}
+            </Button>
+            <Button href={t.hero.ctas.secondary.url} variant="outline" class="shadow-xl shadow-secondary-500/20">
+              {t.hero.ctas.secondary.text}
+            </Button>
+          </div>
+
+          <div class="inline-block bg-neutral-900/80 backdrop-blur-md border border-border rounded-2xl p-8">
+            <div class="text-center mb-6">
+              <div class="text-sm font-semibold text-muted-foreground mb-2">{t.hero.heroVisual.title}</div>
+              <div class="text-lg font-bold text-secondary-400">{t.hero.heroVisual.subtitle}</div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4 md:gap-8">
+              {t.hero.heroVisual.stats.map((stat) => (
+                <div class="flex flex-col items-center px-6 py-3 bg-neutral-800/50 border border-border rounded-lg min-w-[120px]">
+                  <span class="text-2xl font-bold text-foreground mb-1">{stat.value}</span>
+                  <span class="text-sm text-muted-foreground uppercase tracking-wider">{stat.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="desafios" class="py-20 bg-neutral-900/30">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-12">
+            <Badge variant="v0_primary" class="mb-4">
+               <AlertTriangle class="w-4 h-4 mr-1.5 text-primary-400" />
+               {t.sections.painPoints.badge}
+            </Badge>
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
+              {t.sections.painPoints.title}
+            </h2>
+            <p class="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+              {t.sections.painPoints.content}
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {t.sections.painPoints.list.map((painPoint, index) => (
+              <div class="bg-neutral-900/50 border border-border rounded-xl p-6 hover:border-primary-600/50 transition-colors h-full">
+                <div class="w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center mb-4">
+                  {index === 0 && <AlertTriangle class="w-6 h-6 text-primary-400" />}
+                  {index === 1 && <Star class="w-6 h-6 text-primary-400" />}
+                  {index === 2 && <Clock class="w-6 h-6 text-primary-400" />}
+                  {index === 3 && <Target class="w-6 h-6 text-primary-400" />}
+                </div>
+                <p class="text-muted-foreground leading-relaxed font-medium">
+                  {painPoint}
+                </p>
               </div>
             ))}
           </div>
+          
+          {t.sections.painPoints.upsell && (
+            <div class="text-center bg-neutral-900 border border-border rounded-xl p-6 max-w-2xl mx-auto">
+              <p class="text-muted-foreground flex flex-col sm:flex-row items-center justify-center gap-4">
+                <span>{t.sections.painPoints.upsell.text}</span>
+                <Button 
+                  href={t.sections.painPoints.upsell.url}
+                  variant="outline"
+                  size="sm"
+                  class="border-primary-500/30 hover:bg-primary-500/10 text-primary-400"
+                >
+                  {t.sections.painPoints.upsell.linkText}
+                  <ArrowRight class="w-4 h-4 ml-1.5" />
+                </Button>
+              </p>
+            </div>
+          )}
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  {/* Problems Section */}
-  <section id="desafios">
-    <div>
-      <SectionHeader
-        badgeVariant="default"
-        badgeIcon={AlertTriangle}
-        badgeIconClass="text-yellow-500"
-        badgeText={t.sections.painPoints.badge}
-        title={t.sections.painPoints.title}
-        content={t.sections.painPoints.content}
-      />
-
-      <div>
-        {t.sections.painPoints.list.map((painPoint, index) => (
-          <div>
-            <div>
-              {index === 0 && <AlertTriangle />}
-              {index === 1 && <Star />}
-              {index === 2 && <Clock />}
-              {index === 3 && <Target />}
-            </div>
-            <p>{painPoint}</p>
+    <section id="metodologia" class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-12">
+            <Badge variant="v0_accent" class="mb-4">
+               <Sparkles class="w-4 h-4 mr-1.5 text-accent-400" />
+               {t.sections.solution.badge}
+            </Badge>
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
+              {t.sections.solution.title}
+            </h2>
+            <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+               {t.sections.solution.content}
+            </p>
           </div>
-        ))}
-      </div>
-      </div>
-    </div>
-  </section>
 
-  {/* Solution Section */}
-  <section id="metodologia">
-    <div>
-      <SectionHeader
-        badgeVariant="default"
-        badgeIcon={Sparkles}
-        badgeIconClass="text-yellow-500"
-        badgeText={t.sections.solution.badge}
-        title={t.sections.solution.title}
-        content={t.sections.solution.content}
-      />
+          <div class="space-y-6 md:space-y-8">
+            {t.sections.solution.features.map((feature, index) => {
+              // 🎨 Definimos la paleta de colores según el índice (0, 1, 2)
+              // Esto asegura que cada tarjeta tenga su propia personalidad
+              const colorStyles = [
+                // Item 0: Reputación (Amber/Oro)
+                {
+                  border: "border-amber-500/30",
+                  shadow: "shadow-[0_0_30px_-10px_rgba(245,158,11,0.15)]", // Brillo exterior fijo
+                  bgGradient: "bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-amber-500/10 via-neutral-900/50 to-neutral-900", // Brillo interior difuminado
+                  iconBg: "bg-amber-500/10",
+                  iconBorder: "border-amber-500/20",
+                  iconColor: "text-amber-400",
+                },
+                // Item 1: SEO/Visibilidad (Cyan/Futurista)
+                {
+                  border: "border-cyan-500/30",
+                  shadow: "shadow-[0_0_30px_-10px_rgba(6,182,212,0.15)]",
+                  bgGradient: "bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-cyan-500/10 via-neutral-900/50 to-neutral-900",
+                  iconBg: "bg-cyan-500/10",
+                  iconBorder: "border-cyan-500/20",
+                  iconColor: "text-cyan-400",
+                },
+                // Item 2: Salud/WPO (Emerald/Seguridad)
+                {
+                  border: "border-emerald-500/30",
+                  shadow: "shadow-[0_0_30px_-10px_rgba(16,185,129,0.15)]",
+                  bgGradient: "bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-emerald-500/10 via-neutral-900/50 to-neutral-900",
+                  iconBg: "bg-emerald-500/10",
+                  iconBorder: "border-emerald-500/20",
+                  iconColor: "text-emerald-400",
+                },
+              ][index] || { // Fallback por si añades más items
+                  border: "border-primary-500/30",
+                  shadow: "shadow-[0_0_30px_-10px_rgba(var(--primary-500),0.15)]",
+                  bgGradient: "bg-neutral-900/50",
+                  iconBg: "bg-primary-500/10",
+                  iconBorder: "border-primary-500/20",
+                  iconColor: "text-primary-400",
+              };
 
-      <div>
-        {t.sections.solution.features.map((feature, index) => (
-          <div>
-            <div>
-              {feature.icon === 'Star' && <Star />}
-              {feature.icon === 'MapPin' && <Target />}
-              {feature.icon === 'Shield' && <Shield />}
-            </div>
-            <h3>{feature.title}</h3>
-            <p>{feature.description}</p>
+              return (
+                <div 
+                  class={`relative flex gap-6 items-start p-6 rounded-2xl border transition-all duration-300 hover:scale-[1.02] ${colorStyles.border} ${colorStyles.shadow} ${colorStyles.bgGradient}`}
+                >
+                  {/* Icon Container */}
+                  <div class={`flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center border backdrop-blur-sm ${colorStyles.iconBg} ${colorStyles.iconBorder}`}>
+                    {feature.icon === 'Star' && <Star class={`w-7 h-7 ${colorStyles.iconColor}`} />}
+                    {feature.icon === 'MapPin' && <Target class={`w-7 h-7 ${colorStyles.iconColor}`} />}
+                    {feature.icon === 'Shield' && <Shield class={`w-7 h-7 ${colorStyles.iconColor}`} />}
+                  </div>
+                  
+                  {/* Content */}
+                  <div class="flex-1 pt-1 z-10">
+                    <h3 class="text-xl font-bold text-foreground mb-2">{feature.title}</h3>
+                    <p class="text-muted-foreground leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
-        ))}
+        </div>
       </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  {/* CTA Final */}
-  <section id="cta-final">
-    <div>
-      <SectionHeader
-        badgeVariant="default"
-        badgeIcon={ArrowRight}
-        badgeIconClass="text-green-500"
-        badgeText="Siguiente Nivel"
-        title={t.sections.ctaFinal.title}
-        content={t.sections.ctaFinal.content}
-      />
-      <p>{t.sections.ctaFinal.subtext}</p>
-        <Button href="/es/formulario-inicial">
-          {t.sections.ctaFinal.cta}
-<ArrowRight />
-        </Button>
+    <section id="cta-final" class="py-20 bg-neutral-900/30">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-6">
+            {t.sections.ctaFinal.title}
+          </h2>
+          <p class="text-lg text-muted-foreground mb-8 text-pretty">
+            {t.sections.ctaFinal.content}
+          </p>
+          
+          <Button 
+            href="/es/formulario-inicial"
+            class="shadow-xl shadow-primary-600/20 group"
+            variant="primary"
+          >
+            {t.sections.ctaFinal.cta}
+            <ArrowRight class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Button>
+          
+          <p class="mt-6 text-sm text-muted-foreground">{t.sections.ctaFinal.subtext}</p>
+        </div>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
+
+  </main>
 </BaseLayout>

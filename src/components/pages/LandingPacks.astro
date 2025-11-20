@@ -2,11 +2,14 @@
 // src/components/pages/LandingPacks.astro
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Button from '../ui/Button.astro';
-import SectionHeader from '../../components/ui/SectionHeader.astro';
+import Badge from '../ui/Badge.astro'; // Usamos nuestro componente Badge
 import type { PacksCopy } from '../../i18n/utils';
+
+// Iconos
 import ShieldCheck from '../ui/icons/ShieldCheck.astro';
 import Check from '../ui/icons/Check.astro';
 import ArrowRight from '../ui/icons/ArrowRight.astro';
+import Ban from '../ui/icons/Ban.astro';
 
 interface Props {
   copy: PacksCopy;
@@ -21,139 +24,192 @@ const {
     lang,
     metadata
 } = copy;
+
+// Mapeo de orden para visualizar: 
+// Queremos mostrar: Pack 2 (Imagen) | Pack 1 (Sociotécnico - Destacado) | Pack 3 (Todo en Uno)
+// Según tu JSON:
+// plans[0] = Sociotécnico (Destacado)
+// plans[1] = Imagen Digital
+// plans[2] = Todo en Uno
+// V0 usa un grid de 3 columnas. Pondremos el destacado en medio visualmente o usaremos el orden del JSON y destacaremos por CSS.
+// Para seguir el diseño V0 (Izquierda: Inicial, Centro: Destacado, Derecha: Alto):
+// Vamos a reordenarlos manualmente para el renderizado: [Imagen, Sociotécnico, Todo en Uno]
+// Pero tu código original usaba índices harcodeados [2], [0], [1]. Vamos a ser más limpios.
+
+const sociotecnico = t.sections.comparison.plans.find(p => p.name.includes('Sociotécnico')) || t.sections.comparison.plans[0];
+const imagen = t.sections.comparison.plans.find(p => p.name.includes('Imagen')) || t.sections.comparison.plans[1];
+const todoEnUno = t.sections.comparison.plans.find(p => p.name.includes('Todo en Uno')) || t.sections.comparison.plans[2];
+
+// Orden visual: Imagen (Izq) - Sociotécnico (Centro/Destacado) - Todo en Uno (Dcha)
+const orderedPlans = [imagen, sociotecnico, todoEnUno];
+
 ---
 
 <BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>
-  <script type="application/ld+json" set:html={JSON.stringify(schema)} slot="json-ld" />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} slot="json-ld" />
   <Fragment slot="head">
     <title>{metadata.title}</title>
     <meta name="description" content={metadata.description} />
   </Fragment>
-  <main>
+
+  <main class="min-h-screen bg-background">
+        
         {/* Hero Section */}
-        <section id="hero">
-          {/* Background Pattern */}
-          <div>
-            <div></div>
+        <section id="hero" class="relative pt-32 pb-20 overflow-hidden">
+          {/* Background Pattern (V0 Style) */}
+          <div class="absolute inset-0 opacity-20 pointer-events-none" aria-hidden="true">
+            <div
+              class="absolute inset-0"
+              style={{
+                backgroundImage: "radial-gradient(circle at 2px 2px, rgb(100 116 139 / 0.15) 1px, transparent 0)",
+                backgroundSize: "40px 40px",
+              }}
+            ></div>
           </div>
 
-          <div>
-            <div>
+          <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
               {/* Badge */}
-              <div>
-                <ShieldCheck />
-                <span>{t.hero.badge}</span>
+              <div class="flex justify-center mb-6">
+                <Badge variant="v0_accent">
+                    <ShieldCheck class="w-5 h-5 mr-2 text-accent-400" />
+                    {t.hero.badge}
+                </Badge>
               </div>
 
               {/* Headline */}
-              <h1>
-                <span>{t.hero.h1_part1}</span>
+              <h1 class="text-4xl md:text-6xl font-bold mb-6 text-balance">
+                <span class="text-foreground">{t.hero.h1_part1}</span>
                 <br />
-                <span>{t.hero.h1_part2}</span>
+                <span class="text-primary-400">{t.hero.h1_part2}</span>
               </h1>
 
-              <p>{t.hero.h1_lead}</p>
+              <p class="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto text-pretty leading-relaxed">
+                {t.hero.h1_lead}
+              </p>
 
-              {/* Hero Visual - Stats Card */}
-              <div>
-                <div>{t.hero.heroVisual.title}</div>
-                <div>{t.hero.heroVisual.subtitle}</div>
-                <div>
-                  {
-                    t.hero.heroVisual.stats.map((stat, index) => {
+              {/* CTAs */}
+              <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <Button href={t.hero.ctas.primary.url} class="shadow-lg shadow-primary-500/20" variant='link'>
+                  {t.hero.ctas.primary.text}
+                </Button>
+                <Button href={t.hero.ctas.secondary.url} variant="primary" size="lg">
+                  {t.hero.ctas.secondary.text}
+                </Button>
+              </div>
+
+              {/* Hero Visual - Stats Card (V0 Style) */}
+              <div class="inline-block bg-neutral-900/80 backdrop-blur-md border border-border rounded-2xl p-8 mb-8">
+                <div class="text-sm font-semibold text-muted-foreground mb-4">{t.hero.heroVisual.title}</div>
+                <div class="text-lg font-bold text-accent-400 mb-6">{t.hero.heroVisual.subtitle}</div>
+                <div class="grid grid-cols-3 gap-8">
+                  {t.hero.heroVisual.stats.map((stat, index) => {
+                      // Colores rotativos para los stats
+                      const colors = ["text-primary-400", "text-accent-400", "text-secondary-400"];
+                      const colorClass = colors[index % colors.length];
                       return (
                         <div>
-                          <div>{stat.value}</div>
-                          <div>{stat.label}</div>
+                          <div class={`text-3xl font-bold mb-1 ${colorClass}`}>
+                            {stat.value}
+                            {stat.unit && <span class="text-lg text-muted-foreground ml-1">{stat.unit}</span>}
+                          </div>
+                          <div class="text-sm text-muted-foreground">{stat.label}</div>
                         </div>
                       )
-                    })
-                  }
-                  
+                  })}
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Comparison Section */}
-        <section id="comparativa">
-          <div>
-            <div>
-              <h2>{t.sections.comparison.title}</h2>
-              <p>{t.sections.comparison.subtitle}</p>
+        {/* Comparison Section - "Tabla de la Verdad" */}
+        <section id="comparativa" class="py-20 relative">
+          <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+              <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">{t.sections.comparison.title}</h2>
+              <p class="text-lg text-muted-foreground">{t.sections.comparison.subtitle}</p>
             </div>
 
-            <div>
-              {/* Pack 1 */}
-              <div data-pack-recomendado="todo-en-uno">
-                <div>
-                  <div>{t.sections.comparison.plans[2].role}</div>
-                  <h3>{t.sections.comparison.plans[2].name}</h3>
-                  <p>{t.sections.comparison.plans[2].description}</p>
-                  <div>{t.sections.comparison.plans[2].price}</div>
-                  <Button href={t.sections.comparison.plans[2].url}>
-                    {t.sections.comparison.plans[2].cta}
-                  </Button>
-                </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto items-start">
+              
+              {orderedPlans.map((plan) => {
+                  const isHighlighted = plan.highlight; // Sociotécnico
+                  const cardClasses = isHighlighted 
+                    ? "bg-neutral-900 border-2 border-primary-500 rounded-2xl p-8 relative shadow-2xl shadow-primary-500/20 transform md:scale-105 z-10"
+                    : "bg-neutral-900/50 border border-border rounded-2xl p-8 hover:border-border/80 transition-all";
+                  
+                  return (
+                    <article class={cardClasses} data-pack-recomendado={isHighlighted ? "sociotecnico-digital" : undefined}>
+                        {/* Badge Destacado */}
+                        {isHighlighted && (
+                            <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                                <Badge class="bg-primary-600 text-white border-0 shadow-lg px-6 py-1">
+                                    {plan.badge}
+                                </Badge>
+                            </div>
+                        )}
 
-                <div>
-                  <div>
-                    <Check />
-                    <span>{t.sections.comparison.plans[2].features[0].name}</span>
-                  </div>
+                        <div class={`mb-6 ${isHighlighted ? "mt-2" : ""}`}>
+                            <div class={`text-sm font-semibold mb-2 ${isHighlighted ? "text-primary-300" : "text-muted-foreground"}`}>
+                                {plan.role}
+                            </div>
+                            <h3 class="text-2xl font-bold text-foreground mb-2">{plan.name}</h3>
+                            <p class="text-sm text-muted-foreground mb-4 min-h-[40px]">
+                                {plan.description}
+                            </p>
+                            <div class={`text-3xl font-bold mb-6 ${isHighlighted ? "text-primary-400" : "text-foreground"}`}>
+                                {plan.price}
+                            </div>
+                            
+                            <Button 
+                                href={plan.url} 
+                                variant={isHighlighted ? "primary" : "outline"}
+                                class="w-full"
+                            >
+                                {plan.cta}
+                            </Button>
+                        </div>
 
-                  <div>
-                    <Check />
-                    <span>{t.sections.comparison.plans[2].features[1].name}</span>
-                  </div>
+                        <div class="space-y-3 pt-6 border-t border-border/50">
+                            {plan.features.map((feature) => (
+                                <div class={`flex items-start gap-3 ${!feature.included ? "opacity-40" : ""}`}>
+                                    {feature.included ? (
+                                        <Check class={`w-5 h-5 mt-0.5 flex-shrink-0 ${isHighlighted ? "text-primary-400" : "text-accent-400"}`} />
+                                    ) : (
+                                        <Ban class="w-5 h-5 mt-0.5 flex-shrink-0 text-muted-foreground" />
+                                    )}
+                                    <span class="text-sm text-muted-foreground">{feature.name}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </article>
+                  );
+              })}
 
-                  <div>
-                    <Check />
-                    <span>{t.sections.comparison.plans[2].features[3].name}</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Pack 2 */}
-              <div>
-                <div>{t.sections.comparison.plans[0].badge}</div>
-                <div>{t.sections.comparison.plans[0].name}</div>
-                <h3>{t.sections.comparison.plans[0].name}</h3>
-                <p>{t.sections.comparison.plans[0].description}</p>
-                <div>{t.sections.comparison.plans[0].price}</div>
-                <Button href={t.sections.comparison.plans[0].url}>
-                  {t.sections.comparison.plans[0].cta}
-                </Button>
-              </div>
-
-              {/* Pack 3 */}
-              <div>
-                <div>
-                  <div>{t.sections.comparison.plans[1].role}</div>
-                  <h3>{t.sections.comparison.plans[1].name}</h3>
-                  <p>{t.sections.comparison.plans[1].description}</p>
-                  <div>{t.sections.comparison.plans[1].price}</div>
-                  <Button href={t.sections.comparison.plans[1].url}>
-                    {t.sections.comparison.plans[1].cta}
-                  </Button>
-                </div>
-              </div>
             </div>
           </div>
         </section>
 
         {/* FAQ Section */}
-        <section id="faq">
-          <div>
-            <div>
-              <h2>{t.sections.faq.title}</h2>
+        {/* FAQ Section - Con estilo "Glow" sutil */}
+        <section id="faq" class="py-20 relative overflow-hidden">
+          {/* Decoración de fondo sutil para romper el negro absoluto */}
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary-500/5 blur-[120px] rounded-full pointer-events-none"></div>
 
-              <div>
-                {t.sections.faq.items.map((item, index) => (
-                  <div>
-                    <h3>{item.question}</h3>
-                    <p set:html={item.answer} />
+          <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-3xl mx-auto">
+              <h2 class="text-3xl font-bold text-foreground mb-12 text-center">{t.sections.faq.title}</h2>
+
+              <div class="space-y-6">
+                {t.sections.faq.items.map((item) => (
+                  <div class="group bg-gradient-to-br from-neutral-900/80 to-neutral-900/40 border border-white/5 rounded-2xl p-8 transition-all duration-300 hover:border-primary-500/30 hover:shadow-lg hover:shadow-primary-500/5 hover:-translate-y-1">
+                    <h3 class="text-lg font-semibold text-foreground mb-3 group-hover:text-primary-400 transition-colors">
+                      {item.question}
+                    </h3>
+                    <div class="text-muted-foreground leading-relaxed prose prose-invert max-w-none">
+                        <p set:html={item.answer} />
+                    </div>
                   </div>
                 ))}
               </div>
@@ -162,14 +218,19 @@ const {
         </section>
 
         {/* CTA Final */}
-        <section id="cta-final">
-          <div>
-            <div>
-              <h2>{t.sections.ctaFinal.title}</h2>
-              <p>{t.sections.ctaFinal.content}</p>
-              <Button href={t.sections.ctaFinal.url}>
+        <section id="cta-final" class="py-20">
+          <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+              <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-6">{t.sections.ctaFinal.title}</h2>
+              <p class="text-lg text-muted-foreground mb-8 text-pretty">{t.sections.ctaFinal.content}</p>
+              <Button 
+                href={t.sections.ctaFinal.url} 
+                size="lg" 
+                variant="primary" 
+                class="shadow-xl shadow-primary-600/20 group"
+              >
                 {t.sections.ctaFinal.cta}
-                <ArrowRight />
+                <ArrowRight class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
           </div>

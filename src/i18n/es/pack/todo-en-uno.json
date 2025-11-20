@@ -13,7 +13,7 @@
       "h1_lead": "Deja de ser el 'hombre orquesta'. Yo soy tu Socio Digital. Tú ocúpate de tu negocio, yo me ocupo de TODO lo digital (Datos, Imagen y Técnica) por el precio de una cena de empresa.",
       "ctas": {
         "primary": {
-          "text": "Lo Quiero Todo (130€/mes)",
+          "text": "Lo Quiero Todo",
           "url": "/es/formulario-inicial"
         },
         "secondary": {
@@ -117,7 +117,7 @@
       "ctaFinal": {
         "title": "La decisión del CEO",
         "content": "Por solo 20€ más que los otros packs, tienes cobertura total. Es la inversión más rentable para tu paz mental.",
-        "cta": "Contratar Pack Todo en Uno",
+        "cta": "Ser mi socio tecnológico",
         "subtext": "La opción recomendada por SanahujaDev."
       }
     }

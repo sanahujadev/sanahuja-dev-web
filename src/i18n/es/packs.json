@@ -11,11 +11,21 @@
       "h1_part1": "Tu Departamento Digital",
       "h1_part2": "por el precio de una cena.",
       "h1_lead": "Deja de pagar facturas sueltas por hosting, técnico, SEO y redactor. Unificamos todos los servicios que tu negocio necesita para crecer en una sola cuota mensual. Sin sorpresas.",
+      "ctas": {
+        "primary": {
+          "text": "Comparar Planes",
+          "url": "#comparativa"
+        },
+        "secondary": {
+          "text": "Calcular Ahorro",
+          "url": "/es/formulario-inicial/"
+        }
+      },
       "heroVisual": {
         "title": "Tranquilidad Total",
         "subtitle": "Céntrate en tu negocio.",
         "stats": [
-          { "label": "Permanencia", "value": "0", "unit": "meses" },
+          { "label": "Contrato", "value": "Flexible"},
           { "label": "Soporte", "value": "WPO 99" },
           { "label": "Ahorro", "value": "25€", "unit": "/mes" }
         ]
@@ -52,7 +62,7 @@
             "description": "Para negocios locales donde la imagen y las reseñas lo son todo.",
             "price": "110€/mes",
             "cta": "Elegir Imagen",
-            "url": "/es/packs/pack-imagen-digital",
+            "url": "/es/packs/imagen-digital",
             "highlight": false,
             "features": [
               { "name": "Mantenimiento WPO 99", "included": true },
@@ -83,15 +93,15 @@
         "items": [
           {
             "question": "¿Qué diferencia hay entre pagar una web y estos Packs?",
-            "answer": "Una web tradicional es un producto (pagas, te la dan y te apañas). Estos Packs son un **Servicio Integral**. Aquí no compras 'código', contratas a un Departamento Digital que trabaja cada mes para que tu negocio tenga visibilidad, seguridad y clientes. Es la diferencia entre comprar un coche y contratar un chófer."
+            "answer": "Una web tradicional es un producto (pagas, te la dan y te apañas). Estos Packs son un <strong>Servicio Integral</strong>. Aquí no compras 'código', contratas a un Departamento Digital que trabaja cada mes para que tu negocio tenga visibilidad, seguridad y clientes. Es la diferencia entre comprar un coche y contratar un chófer. También representan soluciones con garantía."
           },
           {
             "question": "¿La web es mía o es un alquiler?",
-            "answer": "**Es un Servicio Gestionado con Propiedad Intelectual de SanahujaDev.** Al inicio, yo asumo el coste real del desarrollo (valorado en miles de euros) para que tú entres con una inversión mínima. Por eso, el código me pertenece. \n\nSin embargo, **creo en las relaciones a largo plazo**. Si tras un tiempo prudencial de colaboración exitosa decides volar solo, o si tu situación personal lo requiere, nos sentaremos a valorar la cesión de la web. Todo depende de nuestra historia juntos. (Nota: Si el dominio lo compraste tú, siempre es tuyo; si lo pagué yo, va incluido en el paquete de servicios)."
+            "answer": "<strong>Es un Servicio Gestionado con Propiedad Intelectual de SanahujaDev.</strong> Al inicio, yo asumo el coste real del desarrollo (valorado en miles de euros) para que tú entres con una inversión mínima. Por eso, el código me pertenece. \n\nSin embargo, <strong>creo en las relaciones a largo plazo</strong>. Si tras un tiempo prudencial de colaboración exitosa decides volar solo, o si tu situación personal lo requiere, nos sentaremos a valorar la cesión de la web. Todo depende de nuestra historia juntos. (Nota: Si el dominio lo compraste tú, siempre es tuyo; si lo pagué yo, va incluido en el paquete de servicios)."
           },
           {
             "question": "¿Hay permanencia?",
-            "answer": "**No hay contratos de esclavitud, pero sí de compromiso.** Puedes cancelar el servicio cuando quieras, no te voy a retener a la fuerza. Pero ten en cuenta que, al ser un modelo de 'Web as a Service', si cancelas el servicio poco después de empezar, la web se desactiva (ya que no se ha amortizado el desarrollo). Mi objetivo es que te quedes años porque te va bien, no porque te obligue un papel."
+            "answer": "<strong>No hay contratos de esclavitud, pero sí de compromiso.</strong> Puedes cancelar el servicio cuando quieras, no te voy a retener a la fuerza. Pero ten en cuenta que, al ser un modelo de 'Web as a Service', si cancelas el servicio poco después de empezar, la web se desactiva (ya que no se ha amortizado el desarrollo). Mi objetivo es que te quedes años porque te va bien, no porque te obligue un papel."
           },
           {
             "question": "¿Qué pasa si necesito cambios en la web?",

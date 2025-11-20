@@ -3,12 +3,15 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Button from '../ui/Button.astro';
 import SectionHeader from '../../components/ui/SectionHeader.astro';
+import Badge from '../ui/Badge.astro';
+
+// Iconos de la Orquesta
 import Sparkles from '../ui/icons/Sparkles.astro';
 import Check from '../ui/icons/Check.astro';
 import Key from '../ui/icons/Key.astro';
 import Tag from '../ui/icons/Tag.astro';
 import ShieldCheck from '../ui/icons/ShieldCheck.astro';
-import ArrowRightStandard from '../ui/icons/ArrowRightStandard.astro';
+import ArrowRight from '../ui/icons/ArrowRight.astro'; // Usando ArrowRight estándar para consistencia
 import BarChart from '../ui/icons/BarChart.astro';
 import Star from '../ui/icons/Star.astro';
 import Feather from '../ui/icons/Feather.astro';
@@ -16,8 +19,10 @@ import Phone from '../ui/icons/Phone.astro';
 import AlertTriangle from '../ui/icons/AlertTriangle.astro';
 import Clock from '../ui/icons/Clock.astro';
 import FileText from '../ui/icons/FileText.astro';
+
 import type { PackTodoEnUnoCopy } from '../../i18n/utils';
 
+// Mapeo para iconos dinámicos del JSON
 const solutionIconMap: Record<string, any> = {
   BarChart,
   Star,
@@ -41,237 +46,317 @@ const {
 ---
 
 <BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>
-  <script type="application/ld+json" set:html={JSON.stringify(schema)} slot="json-ld" />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} slot="json-ld" />
   <Fragment slot="head">
     <title>{metadata.title}</title>
     <meta name="description" content={metadata.description} />
   </Fragment>
-  <main>
-  {/* Hero Section */}
-  <section id="hero">
-    {/* Background Pattern */}
-    <div style={{ opacity: "20%" }}>
-      <div
-        style={{
-          backgroundImage: "radial-gradient(circle at 2px 2px, rgb(20 184 166 / 0.15) 1px, transparent 0)",
-          backgroundSize: "40px 40px",
-        }}
-      ></div>
-    </div>
 
-    <div>
-      <div>
-        {/* Badge */}
-        <div>
-          <Sparkles class="w-5 h-5" />
-          <span>{t.hero.badge}</span>
-        </div>
+  <main class="min-h-screen bg-background">
+    
+    <section id="hero" class="relative pt-32 pb-20 overflow-hidden">
+      <div class="absolute inset-0 opacity-20 pointer-events-none" aria-hidden="true">
+        <div
+          class="absolute inset-0"
+          style={{
+            backgroundImage: "radial-gradient(circle at 2px 2px, rgb(20 184 166 / 0.15) 1px, transparent 0)",
+            backgroundSize: "40px 40px",
+          }}
+        ></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_center,rgba(20,184,166,0.1)_0%,transparent_50%)]"></div>
+      </div>
 
-        {/* Headline */}
-        <h1>
-          <span>{t.hero.h1_part1}</span>
-          <br />
-          <span>{t.hero.h1_part2}</span>
-        </h1>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-5xl mx-auto text-center">
+          <div class="flex justify-center mb-6">
+            <Badge variant="v0_accent">
+              <Sparkles class="w-4 h-4 mr-1.5 text-accent-400" />
+              {t.hero.badge}
+            </Badge>
+          </div>
 
-        <p>
-          {t.hero.h1_lead}
-        </p>
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 text-balance">
+            <span class="text-foreground">{t.hero.h1_part1}</span>
+            <br />
+            <span class="text-primary-400">{t.hero.h1_part2}</span>
+          </h1>
 
-        <div>
-          <Button href={t.hero.ctas.primary.url}>
-            {t.hero.ctas.primary.text}
-          </Button>
-          <a href={t.hero.ctas.secondary.url}>
-            {t.hero.ctas.secondary.text}
-          </a>
-        </div>
+          <p class="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto text-pretty leading-relaxed">
+            {t.hero.h1_lead}
+          </p>
 
-        {/* Hero Visual */}
-        <div>
-          {t.hero.heroVisual.stats.map((stat, index) => {
-            const Icon = [Key, Tag, ShieldCheck][index];
-            return (
-              <div>
-                <div>
-                  <Icon class="w-7 h-7 text-secondary-400" />
+          <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <Button href={t.hero.ctas.primary.url} variant="primary">
+              {t.hero.ctas.primary.text}
+            </Button>
+            <Button href={t.hero.ctas.secondary.url} variant="outline" class="shadow-xl shadow-primary-500/20">
+              {t.hero.ctas.secondary.text}
+            </Button>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6 text-left">
+            {t.hero.heroVisual.stats.map((stat, index) => {
+              // Icon selection logic based on index to match visual concepts
+              const Icon = [Key, Tag, ShieldCheck][index];
+              return (
+                <div class="bg-neutral-900/80 backdrop-blur-md border border-border rounded-2xl p-6 hover:border-primary-500/30 transition-colors">
+                  <div class="w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center mb-4">
+                    <Icon class="w-6 h-6 text-primary-400" />
+                  </div>
+                  <h3 class="text-lg font-semibold text-foreground mb-1 flex items-baseline gap-2">
+                      <span>{stat.label}:</span>
+                      <span class="text-primary-400 font-bold">{stat.value}</span>
+                  </h3>
+                  <p class="text-sm text-muted-foreground leading-relaxed">
+                    {stat.description}
+                  </p>
                 </div>
-                <h3>
-                    <span>{stat.label}:</span>
-                    <span>{stat.value}</span>
-                </h3>
-                <p>
-                  {stat.description}
-                </p>
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
+
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  {/* Pain Points Section */}
-  <section id="fragmentacion">
-    <div>
-      <SectionHeader
-        badgeVariant="v0_primary"
-        badgeIcon={AlertTriangle}
-        badgeIconClass="text-primary-400"
-        badgeText={t.sections.painPoints.badge}
-        title={t.sections.painPoints.title}
-        content={t.sections.painPoints.content}
-      />
-      <div>
-        {
-          t.sections.painPoints.list.map((point, index) => {
-            const Icon = [AlertTriangle, Clock, FileText][index];
-            return (<div>
-                <div>
-                <Icon />
+    <section id="fragmentacion" class="py-20 bg-neutral-900/30">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-12">
+            <Badge variant="v0_primary" class="mb-4">
+                <AlertTriangle class="w-4 h-4 mr-1.5 text-primary-400" />
+                {t.sections.painPoints.badge}
+            </Badge>
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
+                {t.sections.painPoints.title}
+            </h2>
+            <p class="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+                {t.sections.painPoints.content}
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            {t.sections.painPoints.list.map((point, index) => {
+              const Icon = [AlertTriangle, Clock, FileText][index];
+              return (
+                <div class="bg-neutral-900 border border-border rounded-xl p-6 hover:border-primary-500/30 transition-colors">
+                    <div class="w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <Icon class="w-6 h-6 text-primary-400" />
+                    </div>
+                    <p class="text-muted-foreground font-medium leading-relaxed">{point}</p>
                 </div>
-                <p>{point}</p>
-            </div>)
-          })
-        }   
-      </div>
-    </div>
-  </section>
-  
-  {/* Scope Section */}
-  <section id="todo-list">
-    <div>
-      <SectionHeader
-      badgeVariant="v0_accent"
-      badgeIcon={Sparkles}
-      badgeIconClass="text-accent-400"
-      badgeText={t.sections.solution.badge}
-      title={t.sections.solution.title}
-      content={t.sections.solution.content}
-      />
-      <div>
-        {t.sections.solution.features.map(feature => {
-          const Icon = solutionIconMap[feature.icon];
-          return (
-            <div>
-              <div>
-                <Icon class="w-6 h-6 text-primary-400" />
-              </div>
-              <h3>{feature.title}</h3>
-              <p>
-                {feature.description}
-              </p>
-            </div>
-          )
-        })}
-      </div>
-    </div>
-  </section>
-  
-  {/* Workflow Section - Placeholder for CTA target */}
-  <section id="workflow" class="py-20 bg-neutral-900/30">
-    <div>
-      <SectionHeader
-        badgeVariant="v0_secondary"
-        badgeIcon={Clock}
-        badgeIconClass="text-secondary-400"
-        badgeText={t.sections.workflow.badge}
-        title={t.sections.workflow.title}
-      />
-      <div>
-        {/* Onboarding Column */}
-        <div>
-          <h3>{t.sections.workflow.onboarding.title}</h3>
-          <ol>
-            {t.sections.workflow.onboarding.steps.map((step, index) => (
-              <li>
-                <div>{index + 1}</div>
-                <span>{step}</span>
-              </li>
-            ))}
-          </ol>
-        </div>
-        {/* Monthly Cycle Column */}
-        <div>
-          <h3>{t.sections.workflow.monthlyCycle.title}</h3>
-          <ul>
-            {t.sections.workflow.monthlyCycle.steps.map((step) => (
-              <li>
-                <Check/>
-                <span>{step}</span>
-              </li>
-            ))}
-          </ul>
+              )
+            })}   
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  
+    <section id="todo-list" class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-12">
+            <Badge variant="v0_accent" class="mb-4">
+                <Sparkles class="w-4 h-4 mr-1.5 text-accent-400" />
+                {t.sections.solution.badge}
+            </Badge>
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
+                {t.sections.solution.title}
+            </h2>
+            <p class="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+                {t.sections.solution.content}
+            </p>
+          </div>
 
-  {/* Pricing Section */}
-  <section id="pricing" class="py-20 bg-neutral-900/30">
-    <div class="max-w-xl mx-auto px-6 lg:px-8 text-center">
-        <SectionHeader
-            badgeVariant="v0_accent"
-            badgeIcon={Tag}
-            badgeIconClass="text-accent-400"
-            badgeText={t.sections.pricing.badge}
-            title={t.sections.pricing.title}
-            content={t.sections.pricing.content}
-        />
-        <div class="mt-8 text-5xl font-bold text-primary-400">
-            {t.sections.pricing.price}
+          <div class="grid md:grid-cols-2 gap-6">
+            {t.sections.solution.features.map((feature, index) => {
+              const Icon = solutionIconMap[feature.icon] || Star;
+              
+              // Paleta de Colores Cíclica para el efecto "Awakening"
+              // 0: Primary, 1: Secondary, 2: Accent, 3: Primary
+              const styles = [
+                { // Datos
+                    iconText: "text-primary-400", 
+                    bg: "bg-primary-500/10", 
+                    border: "border-primary-500/20", 
+                    hoverBorder: "hover:border-primary-500/50", 
+                    shadow: "hover:shadow-primary-500/10",
+                    titleHover: "group-hover:text-primary-300"
+                },
+                { // Imagen/Reputación
+                    iconText: "text-secondary-400", 
+                    bg: "bg-secondary-500/10", 
+                    border: "border-secondary-500/20", 
+                    hoverBorder: "hover:border-secondary-500/50", 
+                    shadow: "hover:shadow-secondary-500/10",
+                    titleHover: "group-hover:text-secondary-300"
+                },
+                { // Contenido
+                    iconText: "text-accent-400", 
+                    bg: "bg-accent-500/10", 
+                    border: "border-accent-500/20", 
+                    hoverBorder: "hover:border-accent-500/50", 
+                    shadow: "hover:shadow-accent-500/10",
+                    titleHover: "group-hover:text-accent-300"
+                },
+                { // Soporte
+                    iconText: "text-primary-400", 
+                    bg: "bg-primary-500/10", 
+                    border: "border-primary-500/20", 
+                    hoverBorder: "hover:border-primary-500/50", 
+                    shadow: "hover:shadow-primary-500/10",
+                    titleHover: "group-hover:text-primary-300"
+                }
+              ][index % 4];
+
+              return (
+                /* EFECTO AWAKENING:
+                   - Base: grayscale (gris), border-border (neutro)
+                   - Hover: grayscale-0 (color), border-color dinámico, shadow dinámica
+                */
+                <div class={`group flex gap-6 items-start p-6 bg-gradient-to-br from-neutral-900 to-neutral-900/50 border border-border rounded-2xl grayscale hover:grayscale-0 ${styles.hoverBorder} hover:shadow-xl ${styles.shadow} transition-all duration-500`}>
+                  
+                  <div class={`flex-shrink-0 w-12 h-12 ${styles.bg} ${styles.border} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}>
+                    <Icon class={`w-6 h-6 ${styles.iconText}`} />
+                  </div>
+                  
+                  <div>
+                    <h3 class={`text-lg font-bold text-foreground mb-2 ${styles.titleHover} transition-colors duration-500`}>
+                        {feature.title}
+                    </h3>
+                    <p class="text-sm text-muted-foreground leading-relaxed group-hover:text-neutral-300 transition-colors duration-500">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
         </div>
-        <ul class="space-y-2 mt-8 text-muted-foreground">
-            {t.sections.pricing.features.map(feature => (
-                <li class="flex items-center justify-center gap-2">
-                    <Check class="w-5 h-5 text-accent-400" />
-                    <span>{feature}</span>
-                </li>
-            ))}
-        </ul>
-        <Button href={t.sections.pricing.ctaUrl} class="mt-10" variant="primary">
-            {t.sections.pricing.cta}
-            <ArrowRightStandard class="w-5 h-5 ml-2" />
-        </Button>
-    </div>
-  </section>
+      </div>
+    </section>
   
-  {/* Downsell Section */}
-  <section id="downsell" class="py-20">
-    <div class="max-w-4xl mx-auto px-6 lg:px-8">
-        <div class="border border-border rounded-2xl p-8 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-            <div class="md:col-span-2">
-                <h3 class="text-2xl font-bold text-foreground">{t.sections.downsell.title}</h3>
-                <p class="text-muted-foreground mt-2">{t.sections.downsell.content}</p>
-                <div class="mt-4 border-l-2 border-accent-400 pl-4">
-                    <p class="font-semibold text-foreground">{t.sections.downsell.offer.name}</p>
-                    <p class="text-sm text-muted-foreground">{t.sections.downsell.offer.description}</p>
+    <section id="workflow" class="py-20 bg-neutral-900/30">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-12">
+            <Badge variant="v0_secondary" class="mb-4">
+                <Clock class="w-4 h-4 mr-1.5 text-secondary-400" />
+                {t.sections.workflow.badge}
+            </Badge>
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground text-balance">
+                {t.sections.workflow.title}
+            </h2>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-12">
+            {/* Onboarding Column */}
+            <div class="bg-neutral-900 border border-border rounded-2xl p-8">
+              <h3 class="text-xl font-bold text-foreground mb-6 border-b border-border pb-4">
+                  {t.sections.workflow.onboarding.title}
+              </h3>
+              <ol class="space-y-6">
+                {t.sections.workflow.onboarding.steps.map((step, index) => (
+                  <li class="flex gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-secondary-500/10 text-secondary-400 font-bold rounded-full flex items-center justify-center border border-secondary-500/20">
+                        {index + 1}
+                    </div>
+                    <span class="text-muted-foreground leading-relaxed" set:html={step} />
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            {/* Monthly Cycle Column */}
+            <div class="bg-gradient-to-br from-neutral-900 to-primary-900/10 border border-primary-500/20 rounded-2xl p-8 relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-32 h-32 bg-primary-500/10 blur-[60px] rounded-full pointer-events-none"></div>
+              <h3 class="text-xl font-bold text-foreground mb-6 border-b border-border pb-4 relative z-10">
+                  {t.sections.workflow.monthlyCycle.title}
+              </h3>
+              <ul class="space-y-6 relative z-10">
+                {t.sections.workflow.monthlyCycle.steps.map((step) => (
+                  <li class="flex gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 bg-primary-500/10 text-primary-400 rounded-full flex items-center justify-center">
+                        <Check class="w-5 h-5" />
+                    </div>
+                    <span class="text-muted-foreground leading-relaxed" set:html={step} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="py-20">
+        <div class="max-w-3xl mx-auto px-6 lg:px-8">
+            <div class="relative bg-gradient-to-b from-neutral-900 to-neutral-950 border-2 border-primary-500/30 rounded-3xl p-10 shadow-2xl shadow-primary-900/20 text-center overflow-hidden">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(20,184,166,0.15)_0%,transparent_60%)] pointer-events-none"></div>
+                
+                <div class="relative z-10">
+                    <Badge variant="v0_primary" class="mb-6">
+                        <Tag class="w-4 h-4 mr-1.5 text-primary-400" />
+                        {t.sections.pricing.badge}
+                    </Badge>
+                    <h2 class="text-3xl font-bold text-foreground mb-4">{t.sections.pricing.title}</h2>
+                    <p class="text-muted-foreground mb-8 max-w-xl mx-auto">{t.sections.pricing.content}</p>
+                    
+                    <div class="text-6xl font-bold text-primary-400 mb-2 tracking-tight">
+                        {t.sections.pricing.price}
+                    </div>
+                    <p class="text-sm text-muted-foreground mb-10">Facturación mensual. Sin sorpresas.</p>
+
+                    <ul class="grid sm:grid-cols-2 gap-4 text-left mb-10 max-w-lg mx-auto">
+                        {t.sections.pricing.features.map(feature => (
+                            <li class="flex items-center gap-2">
+                                <Check class="w-5 h-5 text-primary-400 flex-shrink-0" />
+                                <span class="text-neutral-200">{feature}</span>
+                            </li>
+                        ))}
+                    </ul>
+
+                    <Button href={t.sections.pricing.ctaUrl} variant="outline" class="w-full sm:w-auto shadow-xl shadow-primary-500/20 group">
+                        {t.sections.pricing.cta}
+                        <ArrowRight class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </Button>
                 </div>
             </div>
-            <div class="md:col-span-1">
-                <Button href={t.sections.downsell.offer.url} variant="outline" class="w-full">
-                    {t.sections.downsell.cta}
-                    <ArrowRightStandard class="w-5 h-5 ml-2" />
-                </Button>
+        </div>
+    </section>
+  
+    <section id="downsell" class="py-20 bg-neutral-900/30">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+            <div class="bg-neutral-900 border border-border rounded-2xl p-8 md:p-10 grid md:grid-cols-3 gap-8 items-center">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold text-foreground mb-3">{t.sections.downsell.title}</h3>
+                    <p class="text-muted-foreground mb-6">{t.sections.downsell.content}</p>
+                    <div class="bg-neutral-800/50 border-l-4 border-secondary-500 pl-6 py-2 rounded-r-lg">
+                        <p class="font-semibold text-foreground mb-1">{t.sections.downsell.offer.name}</p>
+                        <p class="text-sm text-muted-foreground">{t.sections.downsell.offer.description}</p>
+                    </div>
+                </div>
+                <div class="md:col-span-1">
+                    <Button href={t.sections.downsell.offer.url} variant="outline" class="w-full h-auto py-4 border-neutral-700 hover:bg-neutral-800">
+                        {t.sections.downsell.cta}
+                        <ArrowRight class="w-5 h-5 ml-2" />
+                    </Button>
+                </div>
             </div>
         </div>
-    </div>
-  </section>
+    </section>
 
-  {/* CTA Final */}
-  <section id="cta-final">
-    <div>
-      <div>
-        <h2>{t.sections.ctaFinal.title}</h2>
-        <p>{t.sections.ctaFinal.content}</p>
-        <Button href={t.hero.ctas.primary.url}>
-          {t.sections.ctaFinal.cta}
-          <ArrowRightStandard class="w-5 h-5" />
-        </Button>
-        <p>{t.sections.ctaFinal.subtext}</p>
-      </div>
-    </div>
-  </section>
-</main>
+    <section id="cta-final" class="py-20">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance">{t.sections.ctaFinal.title}</h2>
+            <p class="text-lg text-muted-foreground mb-8 text-pretty">{t.sections.ctaFinal.content}</p>
+            <Button href={t.hero.ctas.primary.url} variant="primary" class="shadow-xl shadow-primary-500/20 group">
+                {t.sections.ctaFinal.cta}
+                <ArrowRight class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <p class="mt-6 text-sm text-muted-foreground">{t.sections.ctaFinal.subtext}</p>
+        </div>
+    </section>
+
+  </main>
 </BaseLayout>
