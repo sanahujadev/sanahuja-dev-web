@@ -1,0 +1,20 @@
+---
+// src/components/ui/icons/Activity.astro
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'svg'> {
+  class?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+<svg aria-hidden="true"
+  class={className}
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke="currentColor"
+  stroke-width="2"
+  {...props}
+>
+  <path stroke-linecap="round" stroke-linejoin="round" d="M22 12h-4l-3 9L9 3l-3 9H2" />
+</svg>

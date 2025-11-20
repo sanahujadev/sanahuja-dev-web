@@ -1,0 +1,22 @@
+---
+// src/components/ui/icons/HelpCircle.astro
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'svg'> {
+  class?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+<svg aria-hidden="true"
+  class={className}
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke="currentColor"
+  stroke-width="2"
+  {...props}
+>
+  <circle cx="12" cy="12" r="10" />
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" />
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 17h.01" />
+</svg>

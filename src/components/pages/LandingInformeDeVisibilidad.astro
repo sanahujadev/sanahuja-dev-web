@@ -7,6 +7,11 @@ import Button from '../../components/ui/Button.astro';
 // Iconos de la Orquesta (Existentes)
 import BarChart from '../ui/icons/BarChart.astro';
 import ArrowRight from '../ui/icons/ArrowRight.astro';
+import Activity from '../ui/icons/Activity.astro';
+import HelpCircle from '../ui/icons/HelpCircle.astro';
+import ZapOff from '../ui/icons/ZapOff.astro';
+import Search from '../ui/icons/Search.astro';
+import Eye from '../ui/icons/Eye.astro';
 
 // Tipos y Datos
 import type { InformeVisibilidadWebCopy } from '../../i18n/utils';
@@ -20,13 +25,6 @@ interface Props {
 const { copy, alternateUrl, schema } = Astro.props;
 const { copy: t, lang, metadata } = copy;
 
-// --- ICONOS INLINE (Para los que no tenemos componente aún) ---
-// Activity (Ritmo cardiaco)
-const ActivityIcon = `<path stroke-linecap="round" stroke-linejoin="round" d="M22 12h-4l-3 9L9 3l-3 9H2" />`;
-// HelpCircle (Interrogación)
-const HelpCircleIcon = `<circle cx="12" cy="12" r="10" /><path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 17h.01" />`;
-// ZapOff (Rayo tachado)
-const ZapOffIcon = `<path stroke-linecap="round" stroke-linejoin="round" d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" /><path stroke-linecap="round" stroke-linejoin="round" d="M3 3l18 18" />`;
 
 ---
 
@@ -88,7 +86,7 @@ const ZapOffIcon = `<path stroke-linecap="round" stroke-linejoin="round" d="M13 
             <div class="relative bg-gradient-to-br from-neutral-900 to-neutral-900/50 border border-secondary-500/20 rounded-2xl p-10">
               <div class="text-center mb-8">
                 <div class="inline-block bg-secondary-500/10 rounded-2xl p-6 mb-4">
-                    <svg class="w-16 h-16 text-secondary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true" set:html={ActivityIcon} />
+                    <Activity class="w-16 h-16 text-secondary-400" />
                 </div>
                 <h2 class="text-2xl font-bold text-foreground mb-2">{t.hero.heroVisual.title}</h2>
                 <p class="text-muted-foreground">{t.hero.heroVisual.subtitle}</p>
@@ -98,14 +96,14 @@ const ZapOffIcon = `<path stroke-linecap="round" stroke-linejoin="round" d="M13 
                 {t.hero.heroVisual.stats.map((stat) => {
                     // Lógica simple para elegir icono basado en el label o posición (idealmente vendría del JSON)
                     // Mapeamos visualmente lo de V0 con los datos de Burro
-                    let Icon = ActivityIcon; // Default
-                    if (stat.icon === 'Search' || stat.label.includes('Rastreo')) Icon = `<circle cx="11" cy="11" r="8" /><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35" />`; // Search Icon SVG string
-                    if (stat.icon === 'Eye' || stat.label.includes('Visibilidad')) Icon = `<path stroke-linecap="round" stroke-linejoin="round" d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" />`; // Eye Icon SVG string
+                    let IconComponent = Activity; // Default
+                    if (stat.icon === 'Search' || stat.label.includes('Rastreo')) IconComponent = Search;
+                    if (stat.icon === 'Eye' || stat.label.includes('Visibilidad')) IconComponent = Eye;
 
                     return (
                         <div class="bg-neutral-950/50 border border-border rounded-xl p-4 flex items-center gap-4">
                             <div class="bg-secondary-500/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <svg class="w-6 h-6 text-secondary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true" set:html={Icon} />
+                                <IconComponent class="w-6 h-6 text-secondary-400" />
                             </div>
                             <div>
                                 <div class="text-sm text-muted-foreground">{stat.label}</div>
@@ -139,14 +137,14 @@ const ZapOffIcon = `<path stroke-linecap="round" stroke-linejoin="round" d="M13 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             {t.sections.symptoms.featureCards.map((card, idx) => {
                 // Icon selection based on index/context from V0 design
-                let IconSvg = HelpCircleIcon;
-                if (idx === 1) IconSvg = ZapOffIcon;
-                if (idx === 2) IconSvg = `<circle cx="11" cy="11" r="8" /><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35" />`; // Search
+                let IconComponent = HelpCircle;
+                if (idx === 1) IconComponent = ZapOff;
+                if (idx === 2) IconComponent = Search;
 
                 return (
                     <div class="bg-card/50 border border-border rounded-xl p-8 hover:border-secondary-500/30 transition-colors" data-symptom-card>
                         <div class="bg-secondary-500/10 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
-                             <svg class="w-7 h-7 text-secondary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true" set:html={IconSvg} />
+                             <IconComponent class="w-7 h-7 text-secondary-400" />
                         </div>
                         <h3 class="text-xl font-bold text-foreground mb-3">{card.title}</h3>
                         <p class="text-muted-foreground leading-relaxed">

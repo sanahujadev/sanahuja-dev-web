@@ -1,0 +1,21 @@
+---
+// src/components/ui/icons/ZapOff.astro
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'svg'> {
+  class?: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+<svg aria-hidden="true"
+  class={className}
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke="currentColor"
+  stroke-width="2"
+  {...props}
+>
+  <path stroke-linecap="round" stroke-linejoin="round" d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" />
+  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3l18 18" />
+</svg>
