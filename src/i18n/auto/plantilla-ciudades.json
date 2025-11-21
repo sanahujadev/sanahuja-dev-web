@@ -1,0 +1,159 @@
+{
+  "id": "master-template-v1",
+  "note": "Esta plantilla consume datos de localidades.json. Las variables {{variable}} se sustituyen en tiempo de compilación.",
+  "es": {
+    "metadata": {
+      "title": "Diseño Web en {{name}} | Tu Socio Digital en {{municipality}} ({{zip}})",
+      "description": "Agencia de Diseño Web en {{name}} ({{zip}}). {{seoData.usp_focus}} Especialistas en WPO y SEO Local.",
+      "robots": "index, follow"
+    },
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "SanahujaDev - Diseño Web {{name}}",
+      "description": "{{seoData.usp_focus}}",
+      "url": "https://sanahuja.dev/es/diseno-web-en/{{slug}}",
+      "areaServed": {
+        "@type": "City",
+        "name": "{{name}}",
+        "postalCode": "{{zip}}"
+      },
+      "priceRange": "$$"
+    },
+    "copy": {
+      "hero": {
+        "badge": "Servicio Local en {{name}}",
+        "h1_part1": "Diseño Web en {{name}}",
+        "h1_part2": "{{seoData.h1_modifier}}",
+        "h1_lead": "Olvídate de agencias lejanas que no entienden tu mercado. Soy José Javier, tu consultor tecnológico en <strong>{{municipality}}</strong>. Ayudo a negocios de la zona {{zip}} a vender más.",
+        "ctas": {
+          "primary": {
+            "text": "{{seoData.cta_text}}",
+            "url": "/es/formulario-inicial?location={{slug}}"
+          },
+          "secondary": {
+            "text": "Ver Casos de Éxito",
+            "url": "/es/sobre-mi"
+          }
+        },
+        "heroVisual": {
+          "title": "Digitalización {{name}}",
+          "subtitle": "Crecimiento Local",
+          "stats": [
+            { "label": "Zona", "value": "{{zone}}" },
+            { "label": "Código Postal", "value": "{{zip}}" },
+            { "label": "Enfoque", "value": "SEO Local" }
+          ]
+        }
+      },
+      "sections": {
+        "painPoint": {
+          "badge": "La Realidad Local",
+          "title": "¿Por qué tu negocio en {{name}} no despega?",
+          "content": "{{seoData.usp_focus}}",
+          "quote": "En {{name}}, la competencia digital es real. Una web genérica ya no sirve para destacar en {{zone}}.",
+          "author": "José Javier Sanahuja"
+        },
+        "solution": {
+          "badge": "La Estrategia",
+          "title": "{{seoData.h2_solution}}",
+          "content": "No usamos plantillas baratas. Diseñamos una herramienta de ventas a medida para el mercado de {{name}}.",
+          "features": [
+            {
+              "title": "SEO Local para {{name}}",
+              "description": "Optimizamos tu ficha para que salgas primero cuando busquen servicios en el código postal {{zip}}.",
+              "icon": "MapPin"
+            },
+            {
+              "title": "Velocidad Extrema (WPO)",
+              "description": "Tu web cargará al instante, vital para las conexiones móviles en la zona de {{zone}}.",
+              "icon": "Zap"
+            },
+            {
+              "title": "Trato Directo",
+              "description": "Sin intermediarios. Habla con el desarrollador que entiende las necesidades de {{municipality}}.",
+              "icon": "UserCheck"
+            }
+          ]
+        },
+        "ctaFinal": {
+          "title": "¿Listo para liderar en {{name}}?",
+          "content": "Lleva tu negocio de {{name}} al siguiente nivel. Deja de perder clientes frente a tu competencia local.",
+          "cta": "{{seoData.cta_text}}",
+          "url": "/es/formulario-inicial?location={{slug}}"
+        }
+      }
+    }
+  },
+  "en": {
+    "metadata": {
+      "title": "Web Design in {{name}} | Your Digital Partner in {{municipality}} ({{zip}})",
+      "description": "Web Design Agency in {{name}} ({{zip}}). {{seoDataEn.usp_focus}} WPO and Local SEO Specialists.",
+      "robots": "index, follow"
+    },
+    "copy": {
+      "hero": {
+        "badge": "Local Service in {{name}}",
+        "h1_part1": "Web Design in {{name}}",
+        "h1_part2": "{{seoDataEn.h1_modifier}}",
+        "h1_lead": "Forget distant agencies that don't understand your market. I am José Javier, your tech consultant in <strong>{{municipality}}</strong>. I help businesses in the {{zip}} area sell more.",
+        "ctas": {
+          "primary": {
+            "text": "{{seoDataEn.cta_text}}",
+            "url": "/en/formulario-inicial?location={{slug}}"
+          },
+          "secondary": {
+            "text": "View Case Studies",
+            "url": "/en/about-me"
+          }
+        },
+        "heroVisual": {
+          "title": "{{name}} Digitalization",
+          "subtitle": "Local Growth",
+          "stats": [
+            { "label": "Zone", "value": "{{zone}}" },
+            { "label": "Postal Code", "value": "{{zip}}" },
+            { "label": "Focus", "value": "Local SEO" }
+          ]
+        }
+      },
+      "sections": {
+        "painPoint": {
+          "badge": "The Local Reality",
+          "title": "Why isn't your business in {{name}} taking off?",
+          "content": "{{seoDataEn.usp_focus}}",
+          "quote": "In {{name}}, digital competition is real. A generic website is no longer enough to stand out in {{zone}}.",
+          "author": "José Javier Sanahuja"
+        },
+        "solution": {
+          "badge": "The Strategy",
+          "title": "{{seoDataEn.h2_solution}}",
+          "content": "We don't use cheap templates. We design a custom sales tool tailored for the {{name}} market.",
+          "features": [
+            {
+              "title": "Local SEO for {{name}}",
+              "description": "We optimize your profile so you rank first when people search for services in the {{zip}} postal code.",
+              "icon": "MapPin"
+            },
+            {
+              "title": "Extreme Speed (WPO)",
+              "description": "Your site will load instantly, crucial for mobile connections in the {{zone}} area.",
+              "icon": "Zap"
+            },
+            {
+              "title": "Direct Contact",
+              "description": "No intermediaries. Speak with the developer who understands the needs of {{municipality}}.",
+              "icon": "UserCheck"
+            }
+          ]
+        },
+        "ctaFinal": {
+          "title": "Ready to lead in {{name}}?",
+          "content": "Take your {{name}} business to the next level. Stop losing customers to your local competition.",
+          "cta": "{{seoDataEn.cta_text}}",
+          "url": "/en/formulario-inicial?location={{slug}}"
+        }
+      }
+    }
+  }
+}
