@@ -14,7 +14,8 @@ interface Props {
 
 const { copy, alternateUrl, schema } = Astro.props;
 const { copy: t, lang, metadata } = copy;
-
+const handleSubmit = (e: SubmitEvent) => { /* tu lógica */ };
+const toggleStep = (step: number) => { /* tu lógica */ };
 ---
 
 <BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>
@@ -23,151 +24,325 @@ const { copy: t, lang, metadata } = copy;
     <title>{metadata.title}</title>
     <meta name="description" content={metadata.description} />
   </Fragment>
-  <main>
-  {/* Hero with Success Check */}
-  <section id="hero">
-    {/* Badge */}
+<main>
+  {/* Hero */}
+  <div>
+    <h1>
+      Vamos a materializar tu idea.
+    </h1>
+    <p>Sin intermediarios. De humano a humano.</p>
+    <p>
+      Rellena lo básico para contactar. Si buscas iniciar un proyecto, despliega los detalles para que pueda
+      analizar tu caso.
+    </p>
+  </div>
+
+  {/* Form */}
+  <form onsubmit={handleSubmit}>
+    {/* Step 1: Identidad */}
     <div>
-      <div />
-      <span>Envío Confirmado</span>
+      <button
+        type="button"
+        onclick={() => toggleStep(1)}
+      >
+        <div>
+          <div>
+            01
+          </div>
+          <h3>Datos de Contacto</h3>
+        </div>
+        <svg
+          class={openStep === 1 ? "rotate-180" : ""}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      {openStep === 1 && (
+        <div>
+          <div>
+            <label>
+              Nombre <span>*</span>
+            </label>
+            <input
+              type="text"
+              required
+              value={formData.name}
+              oninput={(e) => setFormData({ ...formData, name: e.currentTarget.value })}
+              placeholder="Tu nombre completo"
+            />
+          </div>
+
+          <div>
+            <label>
+              Email <span>*</span>
+            </label>
+            <input
+              type="email"
+              required
+              value={formData.email}
+              oninput={(e) => setFormData({ ...formData, email: e.currentTarget.value })}
+              placeholder="tu@email.com"
+            />
+          </div>
+
+          <div>
+            <label>
+              Mensaje / Consulta <span>*</span>
+            </label>
+            <textarea
+              required
+              rows="4"
+              value={formData.message_basic}
+              oninput={(e) => setFormData({ ...formData, message_basic: e.currentTarget.value })}
+              placeholder="Cuéntame qué necesitas..."
+            />
+          </div>
+
+          {/* Accordion Trigger Text */}
+          <div>
+            <p>
+              ¿Buscas agendar una reunión de trabajo? Para saber si puedo ayudarte, necesito un poco de contexto
+              previo
+            </p>
+            <button
+              type="button"
+              onclick={() => toggleStep(2)}
+            >
+              <span>Desplegar detalles del proyecto</span>
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      )}
     </div>
 
-    {/* Animated Success Check */}
+    {/* Step 2: Alcance */}
+    <div>
+      <button
+        type="button"
+        onclick={() => toggleStep(2)}
+      >
+        <div>
+          <div>
+            02
+          </div>
+          <h3>Tipo de Proyecto y Tecnología</h3>
+        </div>
+        <svg
+          class={openStep === 2 ? "rotate-180" : ""}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      {openStep === 2 && (
+        <div>
+          {/* Project Type Cards */}
+          <div>
+            <label>¿Qué servicio te interesa?</label>
+            <div>
+              {projectTypes.map((type) => (
+                <button
+                  key={type.value}
+                  type="button"
+                  onclick={() => setSelectedProjectType(type.value)}
+                >
+                  <div>
+                    <div>
+                      {type.icon === "Layout" && (
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width={2}
+                            d="M4 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-3zM14 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1h-4a1 1 0 01-1-1v-3z"
+                          />
+                        </svg>
+                      )}
+                      {type.icon === "Package" && (
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width={2}
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                          />
+                        </svg>
+                      )}
+                      {type.icon === "Shield" && (
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width={2}
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                          />
+                        </svg>
+                      )}
+                      {type.icon === "HelpCircle" && (
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width={2}
+                            d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                          />
+                        </svg>
+                      )}
+                    </div>
+                    <span>{type.label}</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Tech Status Pills */}
+          <div>
+            <label>¿Tienes ya Dominio o Hosting?</label>
+            <div>
+              {techStatusOptions.map((option) => (
+                <button
+                  key={option.value}
+                  type="button"
+                  onclick={() => setSelectedTechStatus(option.value)}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Accordion Trigger Text */}
+          <div>
+            <p>
+              Para darte una respuesta honesta sobre la viabilidad (y no hacerte perder tiempo), definamos el
+              alcance
+            </p>
+            <button
+              type="button"
+              onclick={() => toggleStep(3)}
+            >
+              <span>Definir viabilidad y objetivos</span>
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+
+    {/* Step 3: Viabilidad */}
+    <div>
+      <button
+        type="button"
+        onclick={() => toggleStep(3)}
+      >
+        <div>
+          <div>
+            03
+          </div>
+          <h3>Viabilidad y Objetivos</h3>
+        </div>
+        <svg
+          class={openStep === 3 ? "rotate-180" : ""}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      {openStep === 3 && (
+        <div>
+          <div>
+            <label>¿Cuál es el objetivo principal de este proyecto?</label>
+            <input
+              type="text"
+              value={formData.goal}
+              oninput={(e) => setFormData({ ...formData, goal: e.currentTarget.value })}
+              placeholder="Ej: Vender más, mejorar imagen, automatizar citas..."
+            />
+          </div>
+
+          <div>
+            <label>¿Para cuándo lo necesitas?</label>
+            <select
+              value={formData.timeline}
+              onchange={(e) => setFormData({ ...formData, timeline: e.currentTarget.value })}
+            >
+              <option value="">Selecciona un plazo</option>
+              <option value="urgent">Urgente (Lo antes posible)</option>
+              <option value="standard">Estándar (Próximo mes)</option>
+              <option value="flexible">Flexible (Sin prisa)</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Rango de Inversión Disponible</label>
+            <p>
+              Saber esto me permite decirte qué soluciones encajan y cuáles no.
+            </p>
+            <select
+              value={formData.budget_range}
+              onchange={(e) => setFormData({ ...formData, budget_range: e.currentTarget.value })}
+            >
+              <option value="">Selecciona un rango</option>
+              <option value="low">Económico (&lt; 1.000€)</option>
+              <option value="medium">Profesional (1.000€ - 3.000€)</option>
+              <option value="high">Premium / A Medida (+3.000€)</option>
+            </select>
+          </div>
+        </div>
+      )}
+    </div>
+
+    {/* Ansiolítico Section */}
     <div>
       <div>
         <div>
           <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width={2}
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
           </svg>
         </div>
-        <div />
-      </div>
-    </div>
-
-    {/* Title */}
-    <h1>
-      Todo correcto. He recibido tu mensaje.
-    </h1>
-
-    {/* Reference ID */}
-    <p>
-      Referencia: <span>#LEAD_ID</span>
-    </p>
-
-    {/* Message */}
-    <div>
-      <p>
-        Tus datos han llegado a mi sistema de forma segura. No es una autorespuesta: soy{" "}
-        <strong>José Javier</strong> y revisaré personalmente lo que me acabas de
-        contar para darte una respuesta con sentido.
-      </p>
-    </div>
-
-    {/* Status */}
-    <div>
-      <div />
-      <span>Conexión Establecida</span>
-    </div>
-  </section>
-
-  {/* Timeline Section */}
-  <section id="timeline">
-    <h2>Próximos Pasos</h2>
-
-    <div>
-      {/* Step 01 */}
-      <div>
         <div>
-          <div>
-            <span>01</span>
-          </div>
-          <div />
-        </div>
-        <div>
-          <h3>Revisión Personal</h3>
           <p>
-            Analizaré tu consulta o las respuestas de tu formulario para entender bien tu contexto antes de
-            responder.
+            No te preocupes, esto no es un examen. Simplemente analizo estos datos para preparar nuestra primera
+            conversación.
           </p>
-        </div>
-      </div>
-
-      {/* Step 02 */}
-      <div>
-        <div>
-          <div>
-            <span>02</span>
-          </div>
-          <div />
-        </div>
-        <div>
-          <h3>Contacto &lt; 24h</h3>
-          <p>
-            Te escribiré por WhatsApp o Email (según lo que hayas preferido) para darte una respuesta directa.
-          </p>
-        </div>
-      </div>
-
-      {/* Step 03 */}
-      <div>
-        <div>
-          <div>
-            <span>03</span>
-          </div>
-        </div>
-        <div>
-          <h3>Siguiente Movimiento</h3>
-          <p>
-            Si veo que puedo ayudarte, definiremos juntos la hoja de ruta. Sin presiones, solo soluciones.
-          </p>
+          <a href="/es/politica-de-privacidad">
+            <span>Ver Política de Privacidad</span>
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
         </div>
       </div>
     </div>
-  </section>
 
-  {/* Loop Section - Profile Card */}
-  <section id="loop">
+    {/* Submit Button */}
     <div>
-      <h2>¿Quién va a leer tu mensaje?</h2>
-      <p>
-        Mientras analizo tu caso, te invito a saber quién está detrás de la pantalla. Descubre por qué mis
-        clientes confían en mi modelo de Socio Digital.
-      </p>
+      <button type="submit">
+        {openStep === 3 ? "Solicitar Estudio del Proyecto" : "Enviar Mensaje Básico"}
+      </button>
     </div>
-
-    <div>
-      <div>
-        <div>
-          <span>JJS</span>
-        </div>
-        <div>
-          <h3>José Javier Sanahuja</h3>
-          <p>Consultor & Socio Digital</p>
-          <p>
-            Más allá del código. Descubre mi historia, mis certificaciones y mi filosofía de trabajo transparente.
-          </p>
-        </div>
-      </div>
-
-      <a href="/es/sobre-mi">
-        <span>Leer sobre mí</span>
-        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </a>
-    </div>
-  </section>
-
-  {/* Legal Notice */}
-  <section id="legal">
-    <p>
-      Tus datos son confidenciales. Se usarán exclusivamente para responder a esta solicitud y evaluar la
-      viabilidad de nuestra colaboración.{" "}
-      <a href="/es/politica-de-privacidad">
-        Política de Privacidad
-      </a>
-      .
-    </p>
-  </section>
+  </form>
 </main>
+ 
 </BaseLayout>
