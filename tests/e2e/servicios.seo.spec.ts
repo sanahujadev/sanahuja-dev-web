@@ -29,7 +29,7 @@ test.describe('E2E/SEO: /es/servicios (Hub - Distribuidor)', () => {
     // Opción A: Modificar componente para añadir data-service-card
     // Opción B: Buscar dentro de #servicios
     const serviceCards = page.locator('#servicios > div > div > div > a'); // Selector más específico
-    await expect(serviceCards).toHaveCount(5);
+    await expect(serviceCards).toHaveCount(6);
 
     // 5. SILO: Enlace a bolsa-de-horas con anchor text exacto
     // FIX: Usamos selector de data attribute o buscamos el texto

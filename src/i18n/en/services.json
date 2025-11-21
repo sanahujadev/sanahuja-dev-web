@@ -44,6 +44,14 @@
             "badge": "The Foundation"
           },
           {
+            "title": "Monthly Authority Plan",
+            "description": "SEO article writing to attract traffic and position your brand.",
+            "url": "/en/services/authority-plan",
+            "cta": "View Authority Plan",
+            "icon": "PenTool",
+            "badge": "Digital Assets"
+          },
+          {
             "title": "Online Reputation Management",
             "description": "Control your Google Maps profile. We reply to reviews and improve your Local SEO.",
             "url": "/en/services/online-reputation-management",

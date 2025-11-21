@@ -44,6 +44,14 @@
             "badge": "La Base"
           },
           {
+            "title": "Plan de Autoridad Mensual",
+            "description": "Redacción de artículos SEO para atraer tráfico y posicionar tu marca.",
+            "url": "/es/servicios/plan-de-autoridad-mensual",
+            "cta": "Ver Plan Autoridad",
+            "icon": "PenTool",
+            "badge": "Activos Digitales"
+          },
+          {
             "title": "Gestión Reputación Online",
             "description": "Controla tu ficha de Google Maps. Respondemos reseñas y mejoramos tu SEO Local.",
             "url": "/es/servicios/gestion-reputacion-online",

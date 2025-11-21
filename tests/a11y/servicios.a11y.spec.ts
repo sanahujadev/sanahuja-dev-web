@@ -41,6 +41,6 @@ test.describe('A11Y: /es/servicios (Hub)', () => {
     await expect(sectionH2).toHaveCount(1);
     
     const cardH2 = page.locator('[data-service-card] h2');
-    await expect(cardH2).toHaveCount(5);
+    await expect(cardH2).toHaveCount(6);
   });
 });
