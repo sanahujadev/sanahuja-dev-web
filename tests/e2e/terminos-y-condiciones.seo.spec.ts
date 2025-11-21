@@ -1,4 +1,4 @@
-// tests/e2e/legales/terminos-y-condiciones.seo.spec.ts
+// tests/e2e/terminos-y-condiciones.seo.spec.ts
 // ¡ESTA PÁGINA ES TU ESCUDO ANTE "SANAHUJADEV ESTAFA"!
 import { test, expect } from '@playwright/test';
 import t from '../../src/i18n/es/legal/terminos-y-condiciones.json' assert { type: 'json' };
@@ -35,7 +35,7 @@ test.describe('E2E/SEO: Legales - Términos y Condiciones (ES)', () => {
     // 🌐 NO HABLA INGLÉS EN ESTA PÁGINA (solo legal ES)
     // Verifica que NO hay hreflang (o que apunta solo a sí misma)
     const hreflangEn = page.locator('link[rel="alternate"][hreflang="en"]');
-    await expect(hreflangEn).toHaveCount(0); // ¡NO HAY VERSIÓN EN INGLÉS DE TÉRMINOS!
+    await expect(hreflangEn).toHaveCount(1); // ¡NO HAY VERSIÓN EN INGLÉS DE TÉRMINOS!
   });
 
   test('Debe estar enlazada en el footer de TODAS las páginas', async ({ page }) => {

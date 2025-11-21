@@ -1,0 +1,107 @@
+---
+// ¡PÁGINA TONTA (ESPAÑOL)!
+import LandingPoliticaCookies from '../../components/pages/LandingPoliticaCokies.astro';
+
+// 1. Importa el JSON de la PÁGINA
+import t_page from '../../i18n/es/legal/politica-cookies.json' with { type: 'json' };
+// 2. Importa el JSON del HEADER (solo en baseLayout)
+// Después de `const alternateUrl = ...` y antes del `<Landing...>`
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Política de Cookies | SanahujaDev",
+  "description": "Uso de cookies en SanahujaDev. Cookies técnicas necesarias y analítica anónima. Gestión de consentimiento.",
+  "url": "https://sanahuja.dev/es/politica-de-cookies",
+  "inLanguage": "es-ES",
+  "datePublished": "2025-01-01",
+  "dateModified": "2025-12-01",
+  "publisher": {
+    "@type": "Organization",
+    "name": "SanahujaDev",
+    "url": "https://sanahuja.dev",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cdn.sanahuja.dev/sanahujadev/Logo/jpeg/Logo-1280w.jpeg",
+      "width": 1280,
+      "height": 1280
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle Unamuno, 38",
+      "addressLocality": "San Isidro",
+      "addressRegion": "Santa Cruz de Tenerife",
+      "postalCode": "38108",
+      "addressCountry": "ES"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Technical Support",
+      "email": "josejavier@sanahuja.dev"
+    }
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Política de Cookies y Gestión de Consentimiento"
+  },
+  "specialty": {
+    "@type": "Specialty",
+    "name": "Cookie Policy Web Page"
+  },
+  "isAccessibleForFree": true,
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://sanahuja.dev"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://sanahuja.dev/es"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Política de Cookies",
+        "item": "https://sanahuja.dev/es/politica-de-cookies"
+      }
+    ]
+  },
+  "mainEntity": {
+    "@type": "WebPageElement",
+    "name": "Consent Mode v2 Configuration",
+    "description": "Cumplimiento con Google Consent Mode v2 para GDPR y ePrivacy",
+    "mentions": [
+      {
+        "@type": "Thing",
+        "name": "Google Analytics 4",
+        "description": "Cookies de analítica anónima, activas solo con consentimiento"
+      },
+      {
+        "@type": "Thing",
+        "name": "Google Consent Mode v2",
+        "description": "Framework para gestionar consentimiento de cookies según normativa europea"
+      },
+      {
+        "@type": "Thing",
+        "name": "Cookies Técnicas Necesarias",
+        "description": "Cookies esenciales para el funcionamiento básico del sitio web"
+      }
+    ],
+    "about": {
+      "@type": "Technology",
+      "name": "Cookie Management System",
+      "description": "Sistema de gestión de consentimiento de cookies con cumplimiento RGPD"
+    }
+  }
+}
+// 3. ¡Calcula la URL Alterna (¡la buena!)!
+const alternateUrl = new URL(t_page.alternateUrl, Astro.site).href;
+---
+<LandingPoliticaCookies
+  copy={t_page}
+  alternateUrl={alternateUrl}
+  schema={schema}
+/>

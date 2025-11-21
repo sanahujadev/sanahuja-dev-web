@@ -1,5 +1,6 @@
 {
   "lang": "es",
+  "alternateUrl": "/en/privacy-policy",
   "metadata": {
     "title": "Política de Privacidad | SanahujaDev",
     "description": "Información sobre el tratamiento de tus datos personales. Cumplimiento RGPD. Uso de datos para evaluación de proyectos y gestión de cobros.",
@@ -27,6 +28,10 @@
             "title": "4. Tus Derechos y Reclamaciones",
             "content": "Tienes derecho a acceder, rectificar, suprimir ('derecho al olvido'), limitar el tratamiento, solicitar la portabilidad de tus datos y oponerte al tratamiento. Puedes ejercer estos derechos enviando un email a <strong>josejavier@sanahuja.dev</strong>.\n\nSi consideras que tus derechos no han sido respetados, tienes derecho a presentar una reclamación ante la <strong>Agencia Española de Protección de Datos (AEPD)</strong>."
         }
-    ]
+    ],
+    "footer":{
+      "teaser": "Para ejercer tus derechos o resolver dudas:",
+      "email": "josejavier@sanahuja.dev"
+    }
   }
 }

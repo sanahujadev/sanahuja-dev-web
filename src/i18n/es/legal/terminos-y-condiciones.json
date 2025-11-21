@@ -1,5 +1,6 @@
 {
   "lang": "es",
+  "alternateUrl": "/en/terms-and-conditions",
   "metadata": {
     "title": "Términos y Condiciones | SanahujaDev",
     "description": "Condiciones de contratación del servicio de diseño y mantenimiento web. Información sobre propiedad intelectual, pagos y responsabilidades.",
@@ -35,6 +36,10 @@
         "title": "6. Desistimiento y Cancelación",
         "content": "El Cliente puede cancelar el servicio en cualquier momento preavisando con 15 días de antelación al siguiente ciclo de facturación, teniendo en cuenta lo estipulado en la cláusula 3 sobre la propiedad de la web."
       }
-    ]
+    ],
+    "cta": {
+      "teaser":"¿Tienes dudas sobre estos términos?",
+      "email":"josejavier@sanahuja.dev"
+    }
   }
 }

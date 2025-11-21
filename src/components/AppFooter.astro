@@ -49,9 +49,9 @@ const footerData = {
     url: `/${lang}/formulario-inicial/`
   },
   legal: [
-    { label: t.legal.terminos, url: `/${lang}/terminos-y-condiciones` },
-    { label: t.legal.privacidad, url: `/${lang}/politica-de-privacidad` },
-    { label: t.legal.cookies, url: `/${lang}/politica-de-cookies` }
+    { label: t.legal.terminos, url: lang === 'es' ? '/es/terminos-y-condiciones' : '/en/terms-and-conditions'},
+    { label: t.legal.privacidad, url: lang === 'es' ? '/es/politica-de-privacidad' : '/en/privacy-policy'},
+    { label: t.legal.cookies, url: lang === 'es' ? '/es/politica-de-cookies' : '/en/cookies-policy'}
   ],
   cookieSettings: t.cookieSettings,
   copyright: t.copyright
@@ -173,7 +173,8 @@ const getSocialIcon = (name: string) => {
           {footerData.legal.map((link) => (
             <a 
               href={link.url}
-              class="text-neutral-400 hover:text-neutral-300 text-xs transition-colors"
+              target="_self"
+              class="text-neutral-400 text-xs transition-colors hover:text-neutral-300 focus:outline-1 focus:ring-2 focus:ring-primary-500 rounded-sm"
             >
               {link.label}
             </a>

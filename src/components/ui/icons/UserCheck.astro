@@ -9,6 +9,7 @@ interface Props extends HTMLAttributes<'svg'> {
 const { class: className, ...props } = Astro.props;
 ---
 <svg aria-hidden="true"
+  focusable="false"
   class={className}
   fill="none"
   viewBox="0 0 24 24"

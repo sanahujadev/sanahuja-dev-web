@@ -13,7 +13,6 @@ interface Props {
 
 const { copy, alternateUrl, schema } = Astro.props;
 const { copy: t, lang, metadata } = copy;
-
 ---
 
 <BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>
@@ -21,38 +20,49 @@ const { copy: t, lang, metadata } = copy;
   <Fragment slot="head">
     <title>{metadata.title}</title>
     <meta name="description" content={metadata.description} />
+    <meta name="robots" content="index, follow" />
   </Fragment>
-  <main>
-  {/* Hero Section */}
-  <section>
-    <div>
-      <h1>{t.hero.title}</h1>
-      <p>{t.hero.lastUpdated}</p>
-    </div>
-  </section>
 
-  {/* Content Sections */}
-  <section>
-    <div>
-      {t.sections.map((section, i) => (
-        <div>
-          <h2><span>{i + 1}.</span>
-          {section.title}
-          </h2>
-          <div set:html={section.content} />
+  <main class="min-h-screen bg-background">
+    
+    <section class="pt-32 pb-12 px-6 border-b border-border">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl lg:text-5xl font-bold text-foreground mb-4">{t.hero.title}</h1>
+        <p class="text-muted-foreground">{t.hero.lastUpdated}</p>
+      </div>
+    </section>
+
+    <section class="py-12 px-6">
+      <div class="max-w-4xl mx-auto space-y-12">
+        
+        {t.sections.map((section, i) => (
+          <div class={i === 2 ? "bg-neutral-900 border border-primary-500/30 rounded-xl p-8" : ""}>
+            <h2 class="text-2xl font-bold text-foreground mb-4 flex items-center gap-3">
+              <span class="text-primary-500">{i + 1}.</span>
+              {section.title}
+            </h2>
+            
+            {/* Usamos 'prose prose-invert' para estilizar el HTML del JSON (listas, negritas, etc.)
+                Añadimos estilos específicos para que las listas se parezcan al diseño V0
+            */}
+            <div class="text-muted-foreground leading-relaxed prose prose-invert max-w-none prose-p:text-muted-foreground prose-strong:text-foreground prose-ul:list-none prose-li:pl-0">
+              <div set:html={section.content.replace(/\n\n\* /g, '<br/><br/>• ').replace(/\n\* /g, '<br/>• ')} />
+              {/* Pequeño hack: Reemplazamos los asteriscos de markdown simple del JSON por bullets visuales si no vienen como HTML <ul> */}
+            </div>
+          </div>
+        ))}
+
+      </div>
+    </section>
+
+    <section class="py-12 px-6 bg-neutral-900/50 border-t border-border">
+        <div class="max-w-4xl mx-auto text-center">
+          <p class="text-muted-foreground mb-4">{t.cta.teaser}</p>
+          <a href={`mailto:${t.cta.email}`} class="text-primary-400 hover:text-primary-300 font-semibold transition-colors">
+            {t.cta.email}
+          </a>
         </div>
-      ))}
-    </div>
-  </section>
+    </section>
 
-  {/* Contact Section */}
-  <section>
-    <div>
-      <p>¿Tienes dudas sobre estos términos?</p>
-      <a href="mailto:josejavier@sanahuja.dev">
-        josejavier@sanahuja.dev
-      </a>
-    </div>
-  </section>
-</main>
+  </main>
 </BaseLayout>

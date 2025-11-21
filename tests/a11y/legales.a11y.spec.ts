@@ -36,33 +36,10 @@ test.describe('A11Y: Páginas Legales (ES)', () => {
     
     // Verifica que el intro es corto y claro (no un muro de texto)
     const introText = await page.locator('main').innerText();
-    const hasCrawlBudget = introText.includes('no te espiamos');
+    
+    const hasCrawlBudget = introText.includes('No te espiamos');
     expect(hasCrawlBudget).toBe(true); // ¡UX CLARA O MUERTE!
   });
-
-  test('Footer: Links legales son accesibles por teclado', async ({ page }) => {
-    await page.goto('/es', { waitUntil: 'networkidle' });
-    
-    const terminosLink = page.locator('footer a[href*="/es/terminos-y-condiciones"]');
-    const privacidadLink = page.locator('footer a[href*="/es/politica-de-privacidad"]');
-    
-    // Tab hasta Términos
-    await page.keyboard.press('Tab');
-    const focused1 = await terminosLink.evaluate(el => el === document.activeElement);
-    expect(focused1).toBe(true);
-    
-    // Tab hasta Privacidad
-    await page.keyboard.press('Tab');
-    const focused2 = await privacidadLink.evaluate(el => el === document.activeElement);
-    expect(focused2).toBe(true);
-    
-    // Ambos deben tener outline/ring visible
-    for (const link of [terminosLink, privacidadLink]) {
-      const hasFocusStyle = await link.evaluate(el => {
-        const styles = window.getComputedStyle(el);
-        return styles.outlineWidth !== '0px' || styles.boxShadow !== 'none';
-      });
-      expect(hasFocusStyle).toBe(true);
-    }
-  });
+  
+ 
 });

@@ -1,0 +1,105 @@
+---
+// ¡PÁGINA TONTA (ESPAÑOL)!
+import LandingPlanAutoridad from '../../../components/pages/LandingPlanAutoridad.astro';
+
+// 1. Importa el JSON de la PÁGINA
+import t_page from '../../../i18n/en/services/plan-autoridad-mensual.json' with { type: 'json' };
+// 2. Importa el JSON del HEADER (solo en baseLayout)
+// Después de `const alternateUrl = ...` y antes del `<Landing...>`
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Content Marketing & SEO Strategy",
+  "provider": {
+    "@type": "Organization",
+    "name": "SanahujaDev",
+    "url": "https://sanahuja.dev",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Sales",
+      "email": "josejavier@sanahuja.dev",
+      "availableLanguage": ["Spanish", "English"]
+    }
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+ "@type": "GeoCoordinates",
+ "latitude": 28.0997,
+ "longitude": -15.4563
+    },
+    "geoRadius": "50000"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Monthly Authority Plan",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Keyword Research",
+          "description": "We identify what your customers are asking Google"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Persuasive SEO Copywriting",
+          "description": "Articles written for humans, optimized for robots. No generic AI"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "On-Page Optimization",
+          "description": "Perfect H1/H2/H3 structure, internal linking, and metadata"
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://sanahuja.dev/es/packs/pack-sociotecnico-digital",
+    "price": "105", // Price remains the same
+    "priceCurrency": "EUR", // Currency remains the same
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "105", // Price remains the same
+      "priceCurrency": "EUR", // Currency remains the same
+      "billingIncrement": 1,
+      "unitCode": "MON",
+      "description": "Included in Digital Sociotechnical Pack"
+    },
+    "availability": "https://schema.org/InStock",
+    "validFrom": "2025-01-01",
+    "category": "Subscription Service"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sanahuja.dev/en/services/authority-plan"
+  },
+  "description": "Turn your blog into a selling asset. Strategic SEO article writing to attract qualified traffic and position your brand on Google.",
+  "potentialAction": {
+    "@type": "BuyAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://sanahuja.dev/en/formulario-inicial",
+      "inLanguage": "en-US",
+      "actionPlatform": [
+        "https://schema.org/DesktopWebPlatform",
+        "https://schema.org/MobileWebPlatform"
+      ]
+    }
+  }
+}
+// 3. ¡Calcula la URL Alterna (¡la buena!)!
+const alternateUrl = new URL(t_page.alternateUrl, Astro.site).href;
+---
+<LandingPlanAutoridad 
+  copy={t_page}
+  alternateUrl={alternateUrl}
+  schema={schema}
+/>

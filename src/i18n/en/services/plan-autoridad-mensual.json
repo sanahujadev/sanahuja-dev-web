@@ -1,0 +1,111 @@
+{
+  "lang": "en",
+  "alternateUrl": "/es/servicios/plan-de-autoridad-mensual",
+  "metadata": {
+    "title": "SEO Content Strategy Tenerife | Authority Plan",
+    "description": "Turn your blog into an asset that sells. Strategic SEO article writing to attract qualified traffic and position your brand on Google."
+  },
+  "copy": {
+    "hero": {
+      "badge": "Digital Assets",
+      "h1_part1": "Authority Plan:",
+      "h1_part2": "Your Blog Working 24/7.",
+      "h1_lead": "We don't sell 'fluff' or words by the pound. We create <strong>digital assets</strong>. Strategic articles designed to answer your clients' questions, position you as an expert, and attract sales while you sleep.",
+      "ctas": {
+        "primary": {
+          "text": "Included in Sociotechnical Pack",
+          "url": "/en/packs/sociotechnical-digital-pack"
+        },
+        "secondary": {
+          "text": "Consult Single Service",
+          "url": "/en/formulario-inicial"
+        }
+      },
+      "heroVisual": {
+        "title": "Industry Dominance",
+        "subtitle": "Your Brand, a Benchmark",
+        "stats": [
+            { 
+                "label": "Positioning", 
+                "value": "Authority", 
+                "description": "Become the expert voice and benchmark in your sector." 
+            },
+            { 
+                "label": "Reach", 
+                "value": "Visibility", 
+                "description": "Ensure your brand appears whenever your client has a question." 
+            },
+            { 
+                "label": "Result", 
+                "value": "Sales", 
+                "description": "Qualified traffic that arrives ready to buy." 
+            }
+        ]
+      }
+    },
+    "sections": {
+      "painPoints": {
+        "badge": "The Zombie Blog",
+        "title": "Is your website a digital desert?",
+        "content": "You know 'content is king', but operational reality overwhelms you. If you identify these symptoms in your business, you need external discipline:",
+        "cards": [
+            {
+                "title": "Image of Abandonment",
+                "description": "Entering a blog and seeing the last news is from 2019 generates immediate distrust. It looks like the business has closed.",
+                "icon": "CalendarX"
+            },
+            {
+                "title": "Invisibility on Google",
+                "description": "You write about what you like, not what your client searches for. Result: Google ignores you and traffic is zero.",
+                "icon": "Ghost"
+            },
+            {
+                "title": "Analysis Paralysis",
+                "description": "You waste hours staring at a blank screen thinking 'what do I talk about today?' instead of invoicing.",
+                "icon": "BrainCircuit"
+            },
+            {
+                "title": "Chronic Inconsistency",
+                "description": "You start strong in January and quit in February. SEO requires a martial rhythm you can't maintain due to lack of time.",
+                "icon": "ActivitySquare"
+            }
+        ]
+      },
+      "solution": {
+        "badge": "The Solution",
+        "title": "Discipline and SEO Strategy",
+        "content": "We provide the strategy and the hands. You get the traffic. Every month, we publish an optimized article that attacks a real search intent of your client.",
+        "features": [
+          {
+            "title": "Keyword Research",
+            "description": "We don't guess. We research what your clients ask Google.",
+            "icon": "Search"
+          },
+          {
+            "title": "Persuasive Copywriting",
+            "description": "Texts written for humans, optimized for robots. No generic AI.",
+            "icon": "PenTool"
+          },
+          {
+            "title": "On-Page Optimization",
+            "description": "H1/H2/H3 structure, internal linking, and perfect metadata.",
+            "icon": "Maximize"
+          }
+        ]
+      },
+      "pricing": {
+        "badge": "Smart Savings",
+        "title": "What is your time worth?",
+        "content": "Hiring an SEO copywriter per article would cost you +100€. Here it is INCLUDED in your monthly fee.",
+        "cta": "View Savings Pack",
+        "url": "/en/packs/sociotechnical-digital-pack"
+      },
+      "ctaFinal": {
+        "title": "Stop having a mute website",
+        "content": "Start talking to your market. Turn your website into an authority in your sector.",
+        "cta": "Activate Authority Plan",
+        "url": "/en/formulario-inicial"
+      }
+    }
+  }
+}

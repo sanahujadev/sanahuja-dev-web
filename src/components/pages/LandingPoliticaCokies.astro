@@ -14,7 +14,6 @@ interface Props {
 
 const { copy, alternateUrl, schema } = Astro.props;
 const { copy: t, lang, metadata } = copy;
-
 ---
 
 <BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>
@@ -24,72 +23,77 @@ const { copy: t, lang, metadata } = copy;
     <meta name="description" content={metadata.description} />
     <meta name="robots" content="noindex, follow" />
   </Fragment>
-  <main>
-  {/* Hero Section */}
-  <section>
-    <div>
-      <h1>{t.hero.title}</h1>
-      <p>{t.hero.lastUpdated}</p>
-    </div>
-  </section>
 
-  {/* Intro */}
-  <section>
-    <div>
-      <p set:html={t.intro} />
-    </div>
-  </section>
+  <main class="min-h-screen bg-background">
+    
+    <section class="pt-32 pb-12 px-6 border-b border-border">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl lg:text-5xl font-bold text-foreground mb-4">{t.hero.title}</h1>
+        <p class="text-muted-foreground">{t.hero.lastUpdated}</p>
+      </div>
+    </section>
 
-  {/* Content Sections */}
-  <section>
-    <div>
-      {t.sections.map((section, index) => (
-        <div>
-          <h2><span>{index + 1}.</span> {section.title}</h2>
-          
-          {section.types ? (
-            <div>
-              {section.types.map(type => (
-                <div>
-                  <h3>{type.name}</h3>
-                  <p set:html={type.description} />
-                </div>
-              ))}
+    <section class="py-12 px-6">
+      <div class="max-w-4xl mx-auto">
+        <p class="text-xl text-neutral-300 leading-relaxed" set:html={t.intro} />
+      </div>
+    </section>
+
+    <section class="pb-12 px-6">
+      <div class="max-w-4xl mx-auto space-y-12">
+        
+        {t.sections.map((section, index) => (
+          <div>
+            <h2 class="text-2xl font-bold text-foreground mb-4 flex items-center gap-3">
+              <span class="text-accent-500">{index + 1}.</span>
+              {section.title}
+            </h2>
+            
+            {/* Renderizado condicional: Si tiene 'types' (Sección 2) o 'content' simple */}
+            {section.types ? (
+              <div class="space-y-6">
+                {section.types.map(type => (
+                  <div class={`rounded-xl p-6 border ${type.name.includes('Analítica') ? 'bg-neutral-900 border-accent-500/30' : 'bg-neutral-900 border-border'}`}>
+                    <h3 class="text-xl font-bold text-foreground mb-3">{type.name}</h3>
+                    <p class="text-muted-foreground leading-relaxed" set:html={type.description} />
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div class="text-muted-foreground leading-relaxed space-y-4">
+                <p set:html={section.content} />
+              </div>
+            )}
+          </div>
+        ))}
+
+        {/* Visual Guide (Bloque estático al final del contenido) */}
+        <div class="bg-gradient-to-br from-accent-950/30 to-neutral-900 border border-accent-500/30 rounded-xl p-8 mt-12">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-accent-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <InformationCircle class="w-6 h-6 text-accent-400" />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-foreground mb-2">Control Total</h3>
+                <p class="text-muted-foreground">
+                  Tú decides qué cookies aceptar. Sin tu consentimiento explícito, solo usamos las estrictamente
+                  necesarias para el funcionamiento básico de la web.
+                </p>
+              </div>
             </div>
-          ) : (
-            <div>
-              <p set:html={section.content} />
-            </div>
-          )}
         </div>
-      ))}
-    </div>
-  </section>
 
-  {/* Visual Guide */}
-  <div>
-    <div>
-      <div>
-        <InformationCircle />
       </div>
-      <div>
-        <h3>Control Total</h3>
-        <p>
-          Tú decides qué cookies aceptar. Sin tu consentimiento explícito, solo usamos las estrictamente
-          necesarias para el funcionamiento básico de la web.
-        </p>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  {/* Contact Section */}
-  <section>
-    <div>
-      <p>¿Preguntas sobre cookies o privacidad?</p>
-      <a href="mailto:josejavier@sanahuja.dev">
-        josejavier@sanahuja.dev
-      </a>
-    </div>
-  </section>
-</main>
+    <section class="py-12 px-6 bg-neutral-900/50 border-t border-border">
+        <div class="max-w-4xl mx-auto text-center">
+          <p class="text-muted-foreground mb-4">{t.footer.teaser}</p>
+          <a href={`mailto:${t.footer.email}`} class="text-accent-400 hover:text-primary-400 font-semibold transition-colors">
+            {t.footer.email}
+          </a>
+        </div>
+    </section>
+
+  </main>
 </BaseLayout>

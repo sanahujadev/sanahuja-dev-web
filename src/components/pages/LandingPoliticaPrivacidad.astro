@@ -13,7 +13,6 @@ interface Props {
 
 const { copy, alternateUrl, schema } = Astro.props;
 const { copy: t, lang, metadata } = copy;
-
 ---
 
 <BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>
@@ -23,37 +22,47 @@ const { copy: t, lang, metadata } = copy;
     <meta name="description" content={metadata.description} />
     <meta name="robots" content="noindex, follow" />
   </Fragment>
-  <main>
-  {/* Hero Section */}
-  <section>
-    <div>
-      <h1>{t.hero.title}</h1>
-      <p>{t.hero.lastUpdated}</p>
-    </div>
-  </section>
 
-  {/* Content Sections */}
-  <section>
-    <div>
-      {t.sections.map((section, index) => (
-        <div>
-          <h2><span>{index + 1}.</span> {section.title}</h2>
-          <div>
-            <p set:html={section.content} />
+  <main class="min-h-screen bg-background">
+    
+    <section class="pt-32 pb-12 px-6 border-b border-border">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl lg:text-5xl font-bold text-foreground mb-4">{t.hero.title}</h1>
+        <p class="text-muted-foreground">{t.hero.lastUpdated}</p>
+      </div>
+    </section>
+
+    <section class="py-12 px-6">
+      <div class="max-w-4xl mx-auto space-y-12">
+        
+        {t.sections.map((section, index) => (
+          <div class={index === 3 ? "bg-neutral-900 border border-secondary-500/30 rounded-xl p-8" : ""}>
+            <h2 class="text-2xl font-bold text-foreground mb-4 flex items-center gap-3">
+              <span class="text-secondary-500">{index + 1}.</span>
+              {section.title}
+            </h2>
+            
+            {/* Usamos 'prose prose-invert' para que las listas <ul> y negritas <strong> 
+               del JSON se rendericen con estilo automáticamente.
+               Añadimos prose-ul:list-disc prose-ul:ml-4 para asegurar bullets visibles.
+            */}
+            <div class="text-muted-foreground leading-relaxed prose prose-invert max-w-none prose-p:text-muted-foreground prose-strong:text-foreground prose-ul:text-muted-foreground">
+              <div set:html={section.content} />
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
-  </section>
+        ))}
 
-  {/* Contact Section */}
-  <section>
-    <div>
-      <p>Para ejercer tus derechos o resolver dudas:</p>
-      <a href="mailto:josejavier@sanahuja.dev">
-        josejavier@sanahuja.dev
-      </a>
-    </div>
-  </section>
-</main>
+      </div>
+    </section>
+
+    <section class="py-12 px-6 bg-neutral-900/50 border-t border-border">
+        <div class="max-w-4xl mx-auto text-center">
+          <p class="text-muted-foreground mb-4">{t.footer.teaser}</p>
+          <a href={`mailto:${t.footer.email}`} class="text-secondary-400 hover:text-secondary-300 font-semibold transition-colors">
+            {t.footer.email}
+          </a>
+        </div>
+    </section>
+
+  </main>
 </BaseLayout>

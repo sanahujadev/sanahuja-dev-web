@@ -3,13 +3,15 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Button from '../../components/ui/Button.astro';
 import Badge from '../../components/ui/Badge.astro';
+
+// Iconos de la Orquesta
 import CheckCircle2 from '../ui/icons/CheckCircle2.astro';
 import AlertTriangle from '../ui/icons/AlertTriangle.astro';
 import CalendarX from '../ui/icons/CalendarX.astro';
 import Ghost from '../ui/icons/Ghost.astro';
 import BrainCircuit from '../ui/icons/BrainCircuit.astro';
 import ActivitySquare from '../ui/icons/ActivitySquare.astro';
-
+import ArrowRight from '../ui/icons/ArrowRight.astro'; // Añadido para consistencia en botones
 
 // Tipos
 import type { PlanDeAutoridadCopy } from '../../i18n/utils';
@@ -26,9 +28,15 @@ const { copy: t, lang, metadata } = copy;
 const icons = {
   CalendarX,
   Ghost,
-  BrainCircuit,
+  BrainCircuit, 
   ActivitySquare
 };
+
+// Iconos Inline (Search, PenTool, Maximize, DollarSign para Pricing)
+const SearchIcon = `<path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />`;
+const PenToolIcon = `<path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />`;
+const MaximizeIcon = `<path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />`;
+const DollarSignIcon = `<path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />`;
 
 ---
 
@@ -38,112 +46,183 @@ const icons = {
     <title>{metadata.title}</title>
     <meta name="description" content={metadata.description} />
   </Fragment>
-  <main>
-  {/* Hero Section - "Blog Trabajando 24/7" */}
-  <section>
-    {/* Background Gradient */}
-    <div />
 
-    <div>
-      {/* Badge */}
-      <div>
-        <CheckCircle2 />
-        <span>{t.hero.badge}</span>
-      </div>
+  <main class="min-h-screen bg-background">
+    
+    <section id="hero" class="relative pt-32 pb-20 px-6 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-primary-950/20 via-background to-background pointer-events-none" aria-hidden="true"></div>
 
-      <div>
-        {/* Left: Headline */}
-        <div>
-          <h1>
-            {t.hero.h1_part1} <span>{t.hero.h1_part2}</span>
-          </h1>
-          <p set:html={t.hero.h1_lead} />
-
-          {/* CTAs */}
-          <div class="flex flex-col sm:flex-row gap-4">
-            <Button 
-              href={t.hero.ctas.primary.url}
-              data-cta="primary"
-            >
-              {t.hero.ctas.primary.text}
-            </Button>
-            <Button
-              href={t.hero.ctas.secondary.url}
-              data-cta="secondary"
-            >
-              {t.hero.ctas.secondary.text}
-            </Button>
-          </div>
+      <div class="relative max-w-7xl mx-auto">
+        <div class="flex justify-center lg:justify-start mb-6">
+            <Badge variant="v0_accent">
+                <CheckCircle2 class="w-4 h-4 mr-1.5 text-accent-400" />
+                {t.hero.badge}
+            </Badge>
         </div>
 
-        {/* Right: Visual Stats */}
-        <div>
-          <div>
-            <div>
-              <h3>{t.hero.heroVisual.title}</h3>
-              <p>{t.hero.heroVisual.subtitle}</p>
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="text-center lg:text-left">
+            <h1 class="text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight text-balance">
+              {t.hero.h1_part1} <span class="text-primary-500">{t.hero.h1_part2}</span>
+            </h1>
+            <div class="text-xl text-muted-foreground mb-8 leading-relaxed text-pretty">
+                <p set:html={t.hero.h1_lead} />
             </div>
 
-            <div>
-              {t.hero.heroVisual.stats.map(stat => (
-                <div>
-                  <div>{stat.value}</div>
-                  <div>{stat.description}</div>
-                </div>
-              ))}
+            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Button 
+                href={t.hero.ctas.primary.url}
+                data-cta="primary"
+                variant='primary'
+                class="shadow-lg shadow-primary-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              >
+                {t.hero.ctas.primary.text}
+              </Button>
+              <Button
+                href={t.hero.ctas.secondary.url}
+                data-cta="secondary"
+                variant="outline"
+                class="shadow-lg shadow-primary-500/20"
+              >
+                {t.hero.ctas.secondary.text}
+              </Button>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  {/* Pain Points Section */}
-  <section>
-    <div>
-      <div>
-        <div>
-          <AlertTriangle />
-          <span>{t.sections.painPoints.badge}</span>
-        </div>
-        <h2>{t.sections.painPoints.title}</h2>
-        <p>{t.sections.painPoints.content}</p>
-      </div>
-
-      <div>
-        {t.sections.painPoints.cards.map(card => {
-          const Icon = icons[card.icon as keyof typeof icons];
-          return (
-            <div>
-              <div>
-                <Icon />
+          <div class="relative">
+            <div class="bg-gradient-to-br from-neutral-900 to-neutral-800 border border-border rounded-2xl p-8 shadow-2xl">
+              <div class="text-center mb-6">
+                <h2 class="text-2xl font-bold text-foreground mb-2">{t.hero.heroVisual.title}</h2>
+                <p class="text-secondary-400 font-medium">{t.hero.heroVisual.subtitle}</p>
               </div>
-              <h3>{card.title}</h3>
-              <p>{card.description}</p>
+
+              <div class="space-y-6">
+                {t.hero.heroVisual.stats.map((stat, index) => {
+                    // Colores rotativos para los stats
+                    const colors = ["text-primary-400", "text-accent-400", "text-secondary-400"];
+                    const colorClass = colors[index % colors.length];
+                    
+                    return (
+                        <div class="bg-neutral-800/50 border border-border rounded-lg p-4 hover:border-primary-500/30 transition-colors">
+                            <div class={`${colorClass} font-bold text-lg mb-1`}>{stat.value}</div>
+                            <div class="text-sm text-muted-foreground">{stat.description}</div>
+                        </div>
+                    );
+                })}
+              </div>
             </div>
-          )
-        })}
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Pricing Section -->
-  <section id="pricing">
-    <div>
-      <Button href={t.sections.pricing.url}>
-        {t.sections.pricing.cta}
-      </Button>
-    </div>
-  </section>
+    <section id="pain-points" class="py-20 px-6 bg-neutral-900/30">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <Badge variant="v0_primary" class="mb-4">
+            <AlertTriangle class="w-4 h-4 mr-1.5 text-primary-400" />
+            {t.sections.painPoints.badge}
+          </Badge>
+          <h2 class="text-4xl font-bold text-foreground mb-4 text-balance">{t.sections.painPoints.title}</h2>
+          <p class="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
+            {t.sections.painPoints.content}
+          </p>
+        </div>
 
-  <!-- Final CTA Section -->
-  <section id="cta-final">
-    <div>
-      <h2>{t.sections.ctaFinal.title}</h2>
-      <Button href={t.sections.ctaFinal.url}>
-        {t.sections.ctaFinal.cta}
-      </Button>
-    </div>
-  </section>
-</main>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {t.sections.painPoints.cards.map(card => {
+            const Icon = icons[card.icon as keyof typeof icons] || Ghost;
+            return (
+              <div id="feature-card" class="bg-neutral-900/50 border border-border rounded-xl p-6 hover:border-primary-500/50 transition-colors h-full">
+                <div class="w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center mb-4">
+                  <Icon class="w-6 h-6 text-primary-400" />
+                </div>
+                <h3 class="text-lg font-bold text-foreground mb-2">{card.title}</h3>
+                <p class="text-muted-foreground text-sm leading-relaxed">{card.description}</p>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+
+    <section id="solution" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-12">
+            <Badge variant="v0_accent" class="mb-4">
+              <CheckCircle2 class="w-4 h-4 mr-1.5 text-accent-400" />
+              {t.sections.solution.badge}
+            </Badge>
+            <h2 class="text-4xl font-bold text-foreground mb-4 text-balance">{t.sections.solution.title}</h2>
+            <p class="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
+              {t.sections.solution.content}
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            {t.sections.solution.features.map((feature, index) => {
+                // Icon Mapping based on index/content
+                let IconSvg = SearchIcon;
+                if (index === 1) IconSvg = PenToolIcon;
+                if (index === 2) IconSvg = MaximizeIcon;
+
+                return (
+                    <div class="bg-gradient-to-br from-neutral-900 to-neutral-800 border border-border rounded-xl p-8 hover:shadow-lg transition-all">
+                        <div class="w-16 h-16 bg-secondary-500/10 rounded-xl flex items-center justify-center mb-6">
+                            <svg focusable="false" class="w-8 h-8 text-secondary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true" set:html={IconSvg} />
+                        </div>
+                        <h3 class="text-xl font-bold text-foreground mb-3">{feature.title}</h3>
+                        <p class="text-muted-foreground leading-relaxed">{feature.description}</p>
+                    </div>
+                );
+            })}
+          </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-20 px-6 bg-neutral-900/30">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent-500/10 border border-accent-500/30 rounded-full mb-6">
+            <svg class="w-5 h-5 text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false" set:html={DollarSignIcon} />
+            <span class="text-sm font-semibold text-accent-300">{t.sections.pricing.badge}</span>
+        </div>
+
+        <h2 class="text-4xl font-bold text-foreground mb-4">{t.sections.pricing.title}</h2>
+        <p class="text-xl text-muted-foreground mb-8 text-pretty">
+            {t.sections.pricing.content}
+        </p>
+
+        <Button 
+            href={t.sections.pricing.url} 
+            size="lg" 
+            variant="primary"
+            class="shadow-xl shadow-primary-600/20 group"
+        >
+            {t.sections.pricing.cta}
+            <ArrowRight class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+        </Button>
+      </div>
+    </section>
+
+    <section id="cta-final" class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-gradient-to-br from-primary-950/50 via-neutral-900 to-neutral-900 border border-primary-500/30 rounded-2xl p-12 text-center shadow-2xl shadow-primary-900/10">
+            <h2 class="text-4xl font-bold text-foreground mb-4 text-balance">{t.sections.ctaFinal.title}</h2>
+            <p class="text-xl text-muted-foreground mb-8 text-pretty">
+                {t.sections.ctaFinal.content}
+            </p>
+            <Button 
+                href={t.sections.ctaFinal.url} 
+                size="lg" 
+                variant="primary"
+                class="shadow-xl shadow-primary-600/20 group"
+            >
+                {t.sections.ctaFinal.cta}
+                <ArrowRight class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </div>
+        </div>
+    </section>
+
+  </main>
 </BaseLayout>

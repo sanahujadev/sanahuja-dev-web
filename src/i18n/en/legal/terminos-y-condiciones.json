@@ -1,0 +1,45 @@
+{
+  "lang": "en",
+  "alternateUrl": "/es/terminos-y-condiciones",
+  "metadata": {
+    "title": "Terms and Conditions | SanahujaDev",
+    "description": "Contracting conditions for web design and maintenance service. Information on intellectual property, payments, and liabilities.",
+    "robots": "index, follow"
+  },
+  "copy": {
+    "hero": {
+      "title": "Terms and Conditions of Contract",
+      "lastUpdated": "Last updated: December 2025"
+    },
+    "sections": [
+      {
+        "title": "1. Identification of the Owner",
+        "content": "The party responsible for the service is <strong>José Javier Sanahuja Ortiz</strong> (hereinafter, 'SanahujaDev'), with Tax ID (NIF) <strong>45981719G</strong> and fiscal address at Calle Unamuno, 38, San Isidro, Santa Cruz de Tenerife. Contact email: <strong>josejavier@sanahuja.dev</strong>."
+      },
+      {
+        "title": "2. Object of the Service (WaaS Model)",
+        "content": "SanahujaDev provides web design, development, and maintenance services under a <strong>Web as a Service</strong> (Subscription) model. The client contracts a comprehensive service that includes the use of technological infrastructure, hosting, maintenance, and digital strategies, in exchange for a recurring monthly fee."
+      },
+      {
+        "title": "3. Intellectual Property and Retention Clause",
+        "content": "<strong>IMPORTANT:</strong> Given that SanahujaDev subsidizes a large part of the initial development cost (up to 90%) to facilitate access to the service:\n\n* <strong>License to Use:</strong> During the term of the contract, the Client has a non-exclusive license to use the website.\n* <strong>Code Ownership:</strong> The structure, source code, and base design remain the intellectual property of SanahujaDev until 24 months of uninterrupted service have been completed or the release cost is paid.\n* <strong>Content Ownership:</strong> Texts, images, and logos provided by the Client remain the property of the Client at all times.\n* <strong>Early Release:</strong> If the Client wishes to cancel the service and migrate the website before 24 months, they must pay the difference between the promotional price paid and the market value of the development (valued at 1,500€ - 9,000€ depending on the project)."
+      },
+      {
+        "title": "4. Payments and Service Suspension",
+        "content": "Payments are made via direct debit or card through the secure platform <strong>Stripe</strong>.\n\n* <strong>Non-payment:</strong> In the event of a returned receipt or payment failure, the Client will be notified. If the payment is not regularized within <strong>10 calendar days</strong>, the web service will be temporarily suspended (website offline).\n* <strong>Deletion:</strong> After <strong>30 days</strong> of unresolved non-payment, the contract will be definitively cancelled and the hosted data will be deleted, with no possibility of subsequent recovery."
+      },
+      {
+        "title": "5. Limitation of Liability",
+        "content": "SanahujaDev commits to applying best security and maintenance practices (WPO). However:\n\n* SanahujaDev's maximum liability for any incident is limited to the amount of the last monthly fee paid.\n* SanahujaDev is not responsible for server downtime caused by third parties (external hosting), force majeure cyberattacks, or loss of profit (lost sales) derived from service interruptions."
+      },
+      {
+        "title": "6. Withdrawal and Cancellation",
+        "content": "The Client may cancel the service at any time by giving 15 days' notice prior to the next billing cycle, taking into account the stipulations in clause 3 regarding website ownership."
+      }
+    ],
+    "cta": {
+      "teaser": "Do you have doubts about these terms?",
+      "email": "josejavier@sanahuja.dev"
+    }
+  }
+}

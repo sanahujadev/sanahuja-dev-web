@@ -1,5 +1,6 @@
 {
   "lang": "es",
+  "alternateUrl": "/en/cookies-policy",
   "metadata": {
     "title": "Política de Cookies | SanahujaDev",
     "description": "Uso de cookies en SanahujaDev. Cookies técnicas necesarias y analítica anónima. Gestión de consentimiento.",
@@ -33,6 +34,10 @@
         "title": "3. Gestión del Consentimiento",
         "content": "Cumplimos con el <strong>Google Consent Mode v2</strong>. Esto significa que las cookies de Google no se instalarán hasta que nos des permiso explícito. Puedes cambiar tu configuración o retirar el consentimiento en cualquier momento desde el icono de 'Cookies' en la esquina inferior de la web."
       }
-    ]
+    ],
+    "footer":{
+      "teaser":"¿Preguntas sobre cookies o privacidad?",
+      "email": "josejavier@sanahuja.dev"
+    }
   }
 }

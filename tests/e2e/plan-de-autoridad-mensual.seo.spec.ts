@@ -1,8 +1,8 @@
-// tests/e2e/servicios/plan-de-autoridad-mensual.seo.spec.ts
+// tests/e2e/plan-de-autoridad-mensual.seo.spec.ts
 // ¡ESTE TEST VA A FALLAR COMO UN NOVATO EN LA NBA!
 import { test, expect } from '@playwright/test';
 import t from '../../src/i18n/es/services/plan-autoridad-mensual.json' assert { type: 'json' };
-// import t_en from '../../src/i18n/en/services/plan-autoridad-mensual.json' assert { type: 'json' };
+import t_en from '../../src/i18n/en/services/plan-autoridad-mensual.json' assert { type: 'json' };
 
 test.describe('E2E/SEO: Servicios - Plan de Autoridad Mensual (ES)', () => {
   const URL = '/es/servicios/plan-de-autoridad-mensual';
@@ -22,8 +22,8 @@ test.describe('E2E/SEO: Servicios - Plan de Autoridad Mensual (ES)', () => {
     expect(h1Text).toContain(t.copy.hero.h1_part2);
     
     // 🎯 BADGE Y LEAD
-    await expect(page.locator('main section#hero')).toContainText(t.copy.hero.badge);
-    await expect(page.locator('main section#hero')).toContainText(t.copy.hero.h1_lead);
+    await expect(page.locator('main section#hero')).toContainText(t.copy.hero.badge.replace("<strong>", "").replace("</strong>", ""));
+    await expect(page.locator('main section#hero')).toContainText(t.copy.hero.h1_lead.replace("<strong>", "").replace("</strong>", ""));
     
     // 🚀 CTAS QUIRÚRGICOS
     const primaryCTA = page.locator('#hero').getByRole('link', { name: t.copy.hero.ctas.primary.text });
@@ -47,7 +47,7 @@ test.describe('E2E/SEO: Servicios - Plan de Autoridad Mensual (ES)', () => {
     expect(schema.serviceType).toBe('Content Marketing & SEO Strategy');
     
     // 🎴 FEATURE CARDS (Pain Points Section)
-    await expect(page.locator('#pain-points .feature-card')).toHaveCount(4);
+    await expect(page.locator('#pain-points #feature-card')).toHaveCount(4);
     // Verifica que cada card tiene título y descripción
     for (const card of t.copy.sections.painPoints.cards) {
       await expect(page.locator('#pain-points')).toContainText(card.title);
@@ -65,11 +65,11 @@ test.describe('E2E/SEO: Servicios - Plan de Autoridad Mensual (ES)', () => {
 
   test('Debe tener solo un H1 por página (SEO Canonical)', async ({ page }) => {
     await page.goto(URL, { waitUntil: 'networkidle' });
-    const h1Count = await page.locator('h1').count();
+    const h1Count = await page.locator('main h1').count();
     expect(h1Count).toBe(1); // ¡UNO SOLO, COMO MI PAIR PROGRAMMER IDEAL!
   });
 });
-/*
+
 test.describe('E2E/SEO: Services - Authority Plan (EN)', () => {
   const URL = '/en/services/authority-plan';
 
@@ -107,4 +107,4 @@ test.describe('E2E/SEO: Services - Authority Plan (EN)', () => {
     expect(schema['@type']).toBe('Service');
     expect(schema.serviceType).toBe('Content Marketing & SEO Strategy');
   });
-});*/
+});

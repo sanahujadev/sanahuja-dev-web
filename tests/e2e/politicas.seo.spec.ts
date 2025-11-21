@@ -1,4 +1,4 @@
-// tests/e2e/legales/politicas.seo.spec.ts
+// tests/e2e/politicas.seo.spec.ts
 // ¡ESTAS DOS PÁGINAS SON TU SEGURO DE VIDA ANTE EL RGPD!
 import { test, expect } from '@playwright/test';
 import privacidad from '../../src/i18n/es/legal/politica-privacidad.json' assert { type: 'json' };
@@ -25,7 +25,7 @@ test.describe('E2E/SEO: Legales - Políticas (Privacidad + Cookies) (ES)', () =>
     
     // 📊 DATOS DEL FORMULARIO (¡EL OBJETO DE CONVERSIÓN!)
     await expect(page.locator('main')).toContainText('Formulario de Contacto');
-    await expect(page.locator('main')).toContainText('evaluación técnica');
+    await expect(page.locator('main')).toContainText('Evaluación Técnica');
     
     // ✉️ TERCEROS (STRIPE, GA4)
     await expect(page.locator('main')).toContainText('Stripe');
@@ -49,7 +49,7 @@ test.describe('E2E/SEO: Legales - Políticas (Privacidad + Cookies) (ES)', () =>
     
     // 🎯 INTRO CLARA (NO LEGALÉS)
     await expect(page.locator('main')).toContainText(cookies.copy.intro);
-    await expect(page.locator('main')).toContainText('no te espiamos');
+    await expect(page.locator('main')).toContainText('No te espiamos');
     
     // 🍪 COOKIES TÉCNICAS Y ANALÍTICAS
     await expect(page.locator('main')).toContainText('Cookies Técnicas');

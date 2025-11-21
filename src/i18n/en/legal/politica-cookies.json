@@ -1,0 +1,43 @@
+{
+  "lang": "en",
+  "alternateUrl": "/es/politica-de-cookies",
+  "metadata": {
+    "title": "Cookies Policy | SanahujaDev",
+    "description": "Use of cookies at SanahujaDev. Necessary technical cookies and anonymous analytics. Consent management.",
+    "robots": "noindex, follow"
+  },
+  "copy": {
+    "hero": {
+      "title": "Cookies Policy",
+      "lastUpdated": "Last updated: December 2025"
+    },
+    "intro": "At SanahujaDev, we use first-party and third-party cookies to ensure the website functions correctly and to understand how you use it. We don't spy on you; we simply measure to improve.",
+    "sections": [
+      {
+        "title": "1. What are Cookies?",
+        "content": "A cookie is a small text file saved in your browser. It is used to 'remember' details about your visit (such as whether you have logged in or your preferred language)."
+      },
+      {
+        "title": "2. Types of Cookies We Use",
+        "types": [
+          {
+            "name": "Technical Cookies (Necessary)",
+            "description": "These are essential for the website to function. In our case, we only use an internal cookie to remember your privacy preferences (whether you accepted or rejected the banner), so we don't have to ask you on every visit."
+          },
+          {
+            "name": "Analytics Cookies (Optional)",
+            "description": "We use <strong>Google Analytics 4 (GA4)</strong> to measure how many visits we get and which pages are the most popular. This data is anonymous. They only activate if you click 'Accept' on the cookie banner."
+          }
+        ]
+      },
+      {
+        "title": "3. Consent Management",
+        "content": "We comply with **Google Consent Mode v2**. This means Google cookies will not be installed until you give us explicit permission. You can change your settings or withdraw consent at any time via the 'Cookies' icon in the bottom corner of the website."
+      }
+    ],
+    "footer": {
+      "teaser": "Questions about cookies or privacy?",
+      "email": "josejavier@sanahuja.dev"
+    }
+  }
+}

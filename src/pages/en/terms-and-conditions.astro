@@ -1,0 +1,86 @@
+---
+// ¡PÁGINA TONTA (ESPAÑOL)!
+import LandingTerminosYCondiciones from '../../components/pages/LandingTerminosYCondiciones.astro';
+
+// 1. Importa el JSON de la PÁGINA
+import t_page from '../../i18n/en/legal/terminos-y-condiciones.json' with { type: 'json' };
+// 2. Importa el JSON del HEADER (solo en baseLayout)
+// Después de `const alternateUrl = ...` y antes del `<Landing...>`
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Terms and Conditions of Contract | SanahujaDev",
+  "description": "Terms and conditions for web design and maintenance services. Information on intellectual property, payments, and responsibilities.",
+  "url": "https://sanahuja.dev/en/terms-and-conditions",
+  "inLanguage": "en-US",
+  "datePublished": "2025-01-01",
+  "dateModified": "2025-12-01",
+  "publisher": {
+    "@type": "Organization",
+    "name": "SanahujaDev",
+    "url": "https://sanahuja.dev",
+    // "logo": {
+    //   "@type": "ImageObject",
+    //   "url": "https://cdn.sanahuja.dev/sanahujadev/Logo/jpeg/Logo-1280w.jpeg",
+    //   "width": 1280,
+    //   "height": 1280
+    // },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Legal",
+      "email": "josejavier@sanahuja.dev"
+    }
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Terms of Service and Conditions of Contract"
+  },
+  "specialty": {
+    "@type": "Specialty",
+    "name": "Legal Services Web Page"
+  },
+  "isAccessibleForFree": true,
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://sanahuja.dev"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sanahuja.dev/en"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Terms and Conditions",
+        "item": "https://sanahuja.dev/en/terms-and-conditions"
+      }
+    ]
+  },
+  "mainEntity": {
+    "@type": "LegalService",
+    "name": "Modelo Web as a Service (WaaS)",
+    "termsOfService": "https://sanahuja.dev/en/terms-and-conditions",
+    "provider": {
+      "@type": "Organization",
+      "name": "SanahujaDev"
+    },
+    "hasLegalForm": {
+      "@type": "LegalForm",
+      "name": "Digital Subscription Contract",
+      "description": "Subsidized intellectual property with a 24-month permanence clause"
+    }
+  }
+}
+// 3. ¡Calcula la URL Alterna (¡la buena!)!
+const alternateUrl = new URL(t_page.alternateUrl, Astro.site).href;
+---
+<LandingTerminosYCondiciones 
+  copy={t_page}
+  alternateUrl={alternateUrl}
+  schema={schema}
+/>
