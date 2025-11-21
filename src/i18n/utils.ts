@@ -12,6 +12,10 @@ import bolsaDeHorasCopy from './es/services/bolsa-de-horas.json' with { type: 'j
 import packImagenDigitalCopy from './es/pack/imagen-digital.json' with { type: 'json' };
 import packTodoEnUnoCopy from './es/pack/todo-en-uno.json' with { type: 'json' };
 import packsCopy from './es/packs.json' with { type: 'json' };
+import planDeAutoridadCopy from './es/services/plan-autoridad-mensual.json' with { type: 'json' };
+import terminosYCondicionesCopy from './es/legal/terminos-y-condiciones.json' with { type: 'json' };
+import politicaPrivacidadCopy from './es/legal/politica-privacidad.json' with { type: 'json' };
+import politicaCookiesCopy from './es/legal/politica-cookies.json' with { type: 'json' };
 
 export type CookieConsentType = any;
 export type LandingDiseñoWebCopy = typeof landingDeiseñoWebCopy;
@@ -27,3 +31,7 @@ export type BolsaDeHorasCopy = typeof bolsaDeHorasCopy;
 export type PackImagenDigitalCopy = typeof packImagenDigitalCopy;
 export type PackTodoEnUnoCopy = typeof packTodoEnUnoCopy;
 export type PacksCopy = typeof packsCopy;
+export type PlanDeAutoridadCopy = typeof planDeAutoridadCopy;
+export type TerminosYCondicionesCopy = typeof terminosYCondicionesCopy;
+export type PoliticaPrivacidadCopy = typeof politicaPrivacidadCopy;
+export type PoliticaCookiesCopy = typeof politicaCookiesCopy;

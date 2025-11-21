@@ -1,0 +1,19 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+interface Props extends HTMLAttributes<'svg'> { class?: string; }
+const { class: className, ...props } = Astro.props;
+---
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class={className} {...props}>
+    <path d="M12 5a3 3 0 1 0-5.99 1.09"/>
+    <path d="M12 12a3 3 0 1 0 5.99-1.09"/>
+    <path d="M12 19a3 3 0 1 0-5.99 1.09"/>
+    <path d="M18 12a3 3 0 1 0 5.99-1.09"/>
+    <path d="M6 12a3 3 0 1 0-5.99-1.09"/>
+    <path d="M6.01 13.09A3 3 0 0 0 9 17.9v.1"/>
+    <path d="M18.01 10.91A3 3 0 0 0 15 6.1v-.1"/>
+    <path d="M12 17.9v.1a3 3 0 0 0 2.99-3.91"/>
+    <path d="M12 6.1v-.1a3 3 0 0 0-2.99 3.91"/>
+    <path d="M9 6.1v-.1A3 3 0 0 0 6.01 2a3 3 0 0 0 0 5.82"/>
+    <path d="M15 17.9v.1a3 3 0 0 0 2.99-3.91A3 3 0 0 0 15 12a3 3 0 0 0 0 5.82"/>
+    <path d="M9 17.9v.1a3 3 0 0 1-2.99-3.91A3 3 0 0 1 9 12a3 3 0 0 1 0 5.82"/>
+</svg>

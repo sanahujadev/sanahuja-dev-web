@@ -1,0 +1,149 @@
+---
+// src/components/pages/LandingPlanAutoridad.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/ui/Button.astro';
+import Badge from '../../components/ui/Badge.astro';
+import CheckCircle2 from '../ui/icons/CheckCircle2.astro';
+import AlertTriangle from '../ui/icons/AlertTriangle.astro';
+import CalendarX from '../ui/icons/CalendarX.astro';
+import Ghost from '../ui/icons/Ghost.astro';
+import BrainCircuit from '../ui/icons/BrainCircuit.astro';
+import ActivitySquare from '../ui/icons/ActivitySquare.astro';
+
+
+// Tipos
+import type { PlanDeAutoridadCopy } from '../../i18n/utils';
+
+interface Props {
+  copy: PlanDeAutoridadCopy;
+  alternateUrl: string;
+  schema: Record<string, any>;
+}
+
+const { copy, alternateUrl, schema } = Astro.props;
+const { copy: t, lang, metadata } = copy;
+
+const icons = {
+  CalendarX,
+  Ghost,
+  BrainCircuit,
+  ActivitySquare
+};
+
+---
+
+<BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} slot="json-ld" />
+  <Fragment slot="head">
+    <title>{metadata.title}</title>
+    <meta name="description" content={metadata.description} />
+  </Fragment>
+  <main>
+  {/* Hero Section - "Blog Trabajando 24/7" */}
+  <section>
+    {/* Background Gradient */}
+    <div />
+
+    <div>
+      {/* Badge */}
+      <div>
+        <CheckCircle2 />
+        <span>{t.hero.badge}</span>
+      </div>
+
+      <div>
+        {/* Left: Headline */}
+        <div>
+          <h1>
+            {t.hero.h1_part1} <span>{t.hero.h1_part2}</span>
+          </h1>
+          <p set:html={t.hero.h1_lead} />
+
+          {/* CTAs */}
+          <div class="flex flex-col sm:flex-row gap-4">
+            <Button 
+              href={t.hero.ctas.primary.url}
+              data-cta="primary"
+            >
+              {t.hero.ctas.primary.text}
+            </Button>
+            <Button
+              href={t.hero.ctas.secondary.url}
+              data-cta="secondary"
+            >
+              {t.hero.ctas.secondary.text}
+            </Button>
+          </div>
+        </div>
+
+        {/* Right: Visual Stats */}
+        <div>
+          <div>
+            <div>
+              <h3>{t.hero.heroVisual.title}</h3>
+              <p>{t.hero.heroVisual.subtitle}</p>
+            </div>
+
+            <div>
+              {t.hero.heroVisual.stats.map(stat => (
+                <div>
+                  <div>{stat.value}</div>
+                  <div>{stat.description}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Pain Points Section */}
+  <section>
+    <div>
+      <div>
+        <div>
+          <AlertTriangle />
+          <span>{t.sections.painPoints.badge}</span>
+        </div>
+        <h2>{t.sections.painPoints.title}</h2>
+        <p>{t.sections.painPoints.content}</p>
+      </div>
+
+      <div>
+        {t.sections.painPoints.cards.map(card => {
+          const Icon = icons[card.icon as keyof typeof icons];
+          return (
+            <div>
+              <div>
+                <Icon />
+              </div>
+              <h3>{card.title}</h3>
+              <p>{card.description}</p>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing">
+    <div>
+      <Button href={t.sections.pricing.url}>
+        {t.sections.pricing.cta}
+      </Button>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section id="cta-final">
+    <div>
+      <h2>{t.sections.ctaFinal.title}</h2>
+      <Button href={t.sections.ctaFinal.url}>
+        {t.sections.ctaFinal.cta}
+      </Button>
+    </div>
+  </section>
+</main>
+</BaseLayout>
