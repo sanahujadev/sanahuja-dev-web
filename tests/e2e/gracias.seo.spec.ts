@@ -1,7 +1,7 @@
-// tests/e2e/gracias/gracias-proyecto.seo.spec.ts
+// tests/e2e/gracias.seo.spec.ts
 // ¡ESTA PÁGINA ES TU META, PERO NO DEBE INDEXARSE!
 import { test, expect } from '@playwright/test';
-import t from '../../../src/i18n/es/gracias-proyecto.json' assert { type: 'json' };
+import t from '../../src/i18n/es/gracias-proyecto.json' assert { type: 'json' };
 
 test.describe('E2E/SEO: Gracias Proyecto (ES)', () => {
   const URL = '/es/gracias-proyecto';

@@ -1,7 +1,7 @@
-// tests/e2e/contacto/contacto.seo.spec.ts
+// tests/e2e/contacto.seo.spec.ts
 // ¡ESTE TEST VA A FALLAR PORQUE EL FORMULARIO NO EXISTE AÚN!
 import { test, expect } from '@playwright/test';
-import t from '../../../src/i18n/es/contacto.json' assert { type: 'json' };
+import t from '../../src/i18n/es/contacto.json' assert { type: 'json' };
 
 test.describe('E2E/SEO: Contacto (ES)', () => {
   const URL = '/es/contacto';
