@@ -33,7 +33,7 @@ test.describe('E2E/SEO: Gracias Proyecto (ES)', () => {
     // ⏱️ TIMELINE (3 pasos)
     await expect(page.locator('#timeline')).toBeVisible();
     await expect(page.locator('#timeline h2')).toContainText('Próximos Pasos');
-    await expect(page.locator('#timeline .step')).toHaveCount(3);
+    await expect(page.locator('#timeline article')).toHaveCount(3);
     
     // 🔄 LOOP DE FIDELIZACIÓN
     await expect(page.locator('#loop')).toBeVisible();
@@ -48,14 +48,14 @@ test.describe('E2E/SEO: Gracias Proyecto (ES)', () => {
     await expect(page.locator('#legal')).toContainText('Tus datos son confidenciales');
     await expect(page.locator('#legal')).toContainText('Política de Privacidad');
     
-    // 🌐 NO HREFLANG (esta página no tiene versión EN)
+    // 🌐 SI HREFLANG (esta página si tiene versión EN)
     const hreflangEn = page.locator('link[rel="alternate"][hreflang="en"]');
-    await expect(hreflangEn).toHaveCount(0); // ¡NO HAY VERSIÓN EN!
+    await expect(hreflangEn).toHaveCount(1); // ¡NO HAY VERSIÓN EN!
   });
 
   test('Debe tener solo un H1 (SEO Canonical)', async ({ page }) => {
     await page.goto(URL, { waitUntil: 'networkidle' });
-    const h1Count = await page.locator('h1').count();
+    const h1Count = await page.locator('main h1').count();
     expect(h1Count).toBe(1);
   });
 

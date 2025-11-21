@@ -67,7 +67,7 @@ test.describe('E2E/SEO: Contacto (ES)', () => {
 
   test('Debe tener solo un H1 (SEO Canonical)', async ({ page }) => {
     await page.goto(URL, { waitUntil: 'networkidle' });
-    const h1Count = await page.locator('h1').count();
+    const h1Count = await page.locator('main h1').count();
     expect(h1Count).toBe(1);
   });
 

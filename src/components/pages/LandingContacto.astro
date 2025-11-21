@@ -26,7 +26,7 @@ const toggleStep = (step: number) => { /* tu lógica */ };
   </Fragment>
 <main>
   {/* Hero */}
-  <div>
+  <section id="hero">
     <h1>
       Vamos a materializar tu idea.
     </h1>
@@ -35,12 +35,12 @@ const toggleStep = (step: number) => { /* tu lógica */ };
       Rellena lo básico para contactar. Si buscas iniciar un proyecto, despliega los detalles para que pueda
       analizar tu caso.
     </p>
-  </div>
+  </section>
 
   {/* Form */}
-  <form onsubmit={handleSubmit}>
+  <form id="contact-form" onsubmit={handleSubmit}>
     {/* Step 1: Identidad */}
-    <div>
+    <section id="step_1_identity">
       <button
         type="button"
         onclick={() => toggleStep(1)}
@@ -68,6 +68,7 @@ const toggleStep = (step: number) => { /* tu lógica */ };
               Nombre <span>*</span>
             </label>
             <input
+              name="name"
               type="text"
               required
               value={formData.name}
@@ -81,6 +82,7 @@ const toggleStep = (step: number) => { /* tu lógica */ };
               Email <span>*</span>
             </label>
             <input
+              name="email"
               type="email"
               required
               value={formData.email}
@@ -94,6 +96,7 @@ const toggleStep = (step: number) => { /* tu lógica */ };
               Mensaje / Consulta <span>*</span>
             </label>
             <textarea
+              name="message_basic"
               required
               rows="4"
               value={formData.message_basic}
@@ -120,11 +123,11 @@ const toggleStep = (step: number) => { /* tu lógica */ };
           </div>
         </div>
       )}
-    </div>
+    </section>
 
-    {/* Step 2: Alcance */}
-    <div>
-      <button
+    {/* Step 2: Alcance @TODO Revisar no hay inputs  */}
+    <section id="step_2_scope">
+      <Button
         type="button"
         onclick={() => toggleStep(2)}
       >
@@ -142,7 +145,7 @@ const toggleStep = (step: number) => { /* tu lógica */ };
         >
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M19 9l-7 7-7-7" />
         </svg>
-      </button>
+      </Button>
 
       {openStep === 2 && (
         <div>
@@ -240,11 +243,11 @@ const toggleStep = (step: number) => { /* tu lógica */ };
           </div>
         </div>
       )}
-    </div>
+    </section>
 
     {/* Step 3: Viabilidad */}
-    <div>
-      <button
+    <section id="step_3_viability">
+      <Button
         type="button"
         onclick={() => toggleStep(3)}
       >
@@ -262,7 +265,7 @@ const toggleStep = (step: number) => { /* tu lógica */ };
         >
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M19 9l-7 7-7-7" />
         </svg>
-      </button>
+      </Button>
 
       {openStep === 3 && (
         <div>
@@ -270,6 +273,7 @@ const toggleStep = (step: number) => { /* tu lógica */ };
             <label>¿Cuál es el objetivo principal de este proyecto?</label>
             <input
               type="text"
+              name="goal"
               value={formData.goal}
               oninput={(e) => setFormData({ ...formData, goal: e.currentTarget.value })}
               placeholder="Ej: Vender más, mejorar imagen, automatizar citas..."
@@ -279,6 +283,7 @@ const toggleStep = (step: number) => { /* tu lógica */ };
           <div>
             <label>¿Para cuándo lo necesitas?</label>
             <select
+              name="timeline"
               value={formData.timeline}
               onchange={(e) => setFormData({ ...formData, timeline: e.currentTarget.value })}
             >
@@ -295,6 +300,7 @@ const toggleStep = (step: number) => { /* tu lógica */ };
               Saber esto me permite decirte qué soluciones encajan y cuáles no.
             </p>
             <select
+              name="budget_range"
               value={formData.budget_range}
               onchange={(e) => setFormData({ ...formData, budget_range: e.currentTarget.value })}
             >
@@ -306,10 +312,10 @@ const toggleStep = (step: number) => { /* tu lógica */ };
           </div>
         </div>
       )}
-    </div>
+    </section>
 
     {/* Ansiolítico Section */}
-    <div>
+    <section>
       <div>
         <div>
           <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -326,22 +332,22 @@ const toggleStep = (step: number) => { /* tu lógica */ };
             No te preocupes, esto no es un examen. Simplemente analizo estos datos para preparar nuestra primera
             conversación.
           </p>
-          <a href="/es/politica-de-privacidad">
+          <Button href="/es/politica-de-privacidad" target="_self">
             <span>Ver Política de Privacidad</span>
             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M9 5l7 7-7 7" />
             </svg>
-          </a>
+          </Button>
         </div>
       </div>
-    </div>
+    </section>
 
     {/* Submit Button */}
-    <div>
-      <button type="submit">
+    <section>
+      <Button type="submit">
         {openStep === 3 ? "Solicitar Estudio del Proyecto" : "Enviar Mensaje Básico"}
-      </button>
-    </div>
+      </Button>
+    </section>
   </form>
 </main>
  

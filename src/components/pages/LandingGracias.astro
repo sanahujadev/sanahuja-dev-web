@@ -22,6 +22,7 @@ const { copy: t, lang, metadata } = copy;
   <Fragment slot="head">
     <title>{metadata.title}</title>
     <meta name="description" content={metadata.description} />
+    <meta name="robots" content="index, follow" />
   </Fragment>
 <main>
   {/* Hero with Success Check */}
@@ -76,7 +77,7 @@ const { copy: t, lang, metadata } = copy;
 
     <div>
       {/* Step 01 */}
-      <div>
+      <article>
         <div>
           <div>
             <span>01</span>
@@ -90,10 +91,10 @@ const { copy: t, lang, metadata } = copy;
             responder.
           </p>
         </div>
-      </div>
+      </article>
 
       {/* Step 02 */}
-      <div>
+      <article>
         <div>
           <div>
             <span>02</span>
@@ -106,10 +107,10 @@ const { copy: t, lang, metadata } = copy;
             Te escribiré por WhatsApp o Email (según lo que hayas preferido) para darte una respuesta directa.
           </p>
         </div>
-      </div>
+      </article>
 
       {/* Step 03 */}
-      <div>
+      <article>
         <div>
           <div>
             <span>03</span>
@@ -121,7 +122,7 @@ const { copy: t, lang, metadata } = copy;
             Si veo que puedo ayudarte, definiremos juntos la hoja de ruta. Sin presiones, solo soluciones.
           </p>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 
@@ -149,12 +150,12 @@ const { copy: t, lang, metadata } = copy;
         </div>
       </div>
 
-      <a href="/es/sobre-mi">
+      <Button href="/es/sobre-mi" target="_self">
         <span>Leer sobre mí</span>
         <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
-      </a>
+      </Button>
     </div>
   </section>
 
@@ -168,6 +169,6 @@ const { copy: t, lang, metadata } = copy;
       </a>
       .
     </p>
-  </legal>
+  </section>
 </main>
 </BaseLayout>
