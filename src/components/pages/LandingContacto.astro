@@ -1,0 +1,173 @@
+---
+// src/components/pages/LandingPlanAutoridad.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/ui/Button.astro';
+import Badge from '../../components/ui/Badge.astro';
+
+import type { ContactoCopy } from '../../i18n/utils';
+
+interface Props {
+  copy: ContactoCopy;
+  alternateUrl: string;
+  schema: Record<string, any>;
+}
+
+const { copy, alternateUrl, schema } = Astro.props;
+const { copy: t, lang, metadata } = copy;
+
+---
+
+<BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} slot="json-ld" />
+  <Fragment slot="head">
+    <title>{metadata.title}</title>
+    <meta name="description" content={metadata.description} />
+  </Fragment>
+  <main>
+  {/* Hero with Success Check */}
+  <section id="hero">
+    {/* Badge */}
+    <div>
+      <div />
+      <span>Envío Confirmado</span>
+    </div>
+
+    {/* Animated Success Check */}
+    <div>
+      <div>
+        <div>
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <div />
+      </div>
+    </div>
+
+    {/* Title */}
+    <h1>
+      Todo correcto. He recibido tu mensaje.
+    </h1>
+
+    {/* Reference ID */}
+    <p>
+      Referencia: <span>#LEAD_ID</span>
+    </p>
+
+    {/* Message */}
+    <div>
+      <p>
+        Tus datos han llegado a mi sistema de forma segura. No es una autorespuesta: soy{" "}
+        <strong>José Javier</strong> y revisaré personalmente lo que me acabas de
+        contar para darte una respuesta con sentido.
+      </p>
+    </div>
+
+    {/* Status */}
+    <div>
+      <div />
+      <span>Conexión Establecida</span>
+    </div>
+  </section>
+
+  {/* Timeline Section */}
+  <section id="timeline">
+    <h2>Próximos Pasos</h2>
+
+    <div>
+      {/* Step 01 */}
+      <div>
+        <div>
+          <div>
+            <span>01</span>
+          </div>
+          <div />
+        </div>
+        <div>
+          <h3>Revisión Personal</h3>
+          <p>
+            Analizaré tu consulta o las respuestas de tu formulario para entender bien tu contexto antes de
+            responder.
+          </p>
+        </div>
+      </div>
+
+      {/* Step 02 */}
+      <div>
+        <div>
+          <div>
+            <span>02</span>
+          </div>
+          <div />
+        </div>
+        <div>
+          <h3>Contacto &lt; 24h</h3>
+          <p>
+            Te escribiré por WhatsApp o Email (según lo que hayas preferido) para darte una respuesta directa.
+          </p>
+        </div>
+      </div>
+
+      {/* Step 03 */}
+      <div>
+        <div>
+          <div>
+            <span>03</span>
+          </div>
+        </div>
+        <div>
+          <h3>Siguiente Movimiento</h3>
+          <p>
+            Si veo que puedo ayudarte, definiremos juntos la hoja de ruta. Sin presiones, solo soluciones.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Loop Section - Profile Card */}
+  <section id="loop">
+    <div>
+      <h2>¿Quién va a leer tu mensaje?</h2>
+      <p>
+        Mientras analizo tu caso, te invito a saber quién está detrás de la pantalla. Descubre por qué mis
+        clientes confían en mi modelo de Socio Digital.
+      </p>
+    </div>
+
+    <div>
+      <div>
+        <div>
+          <span>JJS</span>
+        </div>
+        <div>
+          <h3>José Javier Sanahuja</h3>
+          <p>Consultor & Socio Digital</p>
+          <p>
+            Más allá del código. Descubre mi historia, mis certificaciones y mi filosofía de trabajo transparente.
+          </p>
+        </div>
+      </div>
+
+      <a href="/es/sobre-mi">
+        <span>Leer sobre mí</span>
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  {/* Legal Notice */}
+  <section id="legal">
+    <p>
+      Tus datos son confidenciales. Se usarán exclusivamente para responder a esta solicitud y evaluar la
+      viabilidad de nuestra colaboración.{" "}
+      <a href="/es/politica-de-privacidad">
+        Política de Privacidad
+      </a>
+      .
+    </p>
+  </section>
+</main>
+</BaseLayout>

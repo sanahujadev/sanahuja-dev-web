@@ -16,6 +16,8 @@ import planDeAutoridadCopy from './es/services/plan-autoridad-mensual.json' with
 import terminosYCondicionesCopy from './es/legal/terminos-y-condiciones.json' with { type: 'json' };
 import politicaPrivacidadCopy from './es/legal/politica-privacidad.json' with { type: 'json' };
 import politicaCookiesCopy from './es/legal/politica-cookies.json' with { type: 'json' };
+import graciasCopy from './es/gracias.json'  with { type: 'json' };
+import contactCopy from './es/contacto.json' with { type: 'json' };
 
 export type CookieConsentType = any;
 export type LandingDiseñoWebCopy = typeof landingDeiseñoWebCopy;
@@ -35,3 +37,5 @@ export type PlanDeAutoridadCopy = typeof planDeAutoridadCopy;
 export type TerminosYCondicionesCopy = typeof terminosYCondicionesCopy;
 export type PoliticaPrivacidadCopy = typeof politicaPrivacidadCopy;
 export type PoliticaCookiesCopy = typeof politicaCookiesCopy;
+export type GraciasCopy = typeof graciasCopy;
+export type ContactoCopy = typeof contactCopy;
