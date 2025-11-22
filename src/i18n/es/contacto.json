@@ -1,6 +1,11 @@
 {
   "lang": "es",
   "alternateUrl": "/en/contact",
+  "metadata": {
+    "title": "Pedir Presupuesto Web Tenerife | Iniciar Proyecto | SanahujaDev",
+    "description": "¿Buscas programador web en Tenerife? Cuéntame tu idea. Presupuesto sin compromiso, trato directo y respuesta en menos de 24h.",
+    "robots": "index, follow"
+  },
   "copy": {
     "hero": {
       "h1": "Vamos a materializar tu idea.",
@@ -12,15 +17,24 @@
         "type": "nested_accordion",
         "successUrl": "/es/gracias-proyecto",
         "baseSubmitLabel": "Enviar Mensaje Básico",
-        "fullSubmitLabel": "Solicitar Estudio del Proyecto"
+        "fullSubmitLabel": "Solicitar Estudio del Proyecto",
+        "seoKeyPhrase": "Rellena el formulario. Sin compromiso"
       },
       "steps": [
         {
           "id": "step_1_identity",
           "title": "Datos de Contacto",
           "fields": [
-            { "name": "name", "label": "Nombre", "required": true },
-            { "name": "email", "label": "Email", "required": true },
+            {
+              "name": "name",
+              "label": "Nombre",
+              "required": true
+            },
+            {
+              "name": "email",
+              "label": "Email",
+              "required": true
+            },
             {
               "name": "message_basic",
               "label": "Mensaje / Consulta",
@@ -28,7 +42,8 @@
               "required": true
             }
           ],
-          "accordionText": "¿Buscas agendar una reunión de trabajo? Para saber si puedo ayudarte, necesito un poco de contexto previo 👇"
+          "accordionText": "¿Buscas agendar una reunión de trabajo? Para saber si puedo ayudarte, necesito un poco de contexto previo 👇",
+          "accordionButton": "Desplegar detalles del proyecto"
         },
         {
           "id": "step_2_scope",
@@ -54,7 +69,11 @@
                   "value": "maintenance",
                   "icon": "Shield"
                 },
-                { "label": "Otro", "value": "other", "icon": "HelpCircle" }
+                {
+                  "label": "Otro",
+                  "value": "other",
+                  "icon": "HelpCircle"
+                }
               ]
             },
             {
@@ -62,14 +81,27 @@
               "label": "¿Tienes ya Dominio o Hosting?",
               "type": "pills",
               "options": [
-                { "label": "Tengo ambos", "value": "both" },
-                { "label": "Solo Dominio", "value": "domain_only" },
-                { "label": "Nada (Partimos de cero)", "value": "none" },
-                { "label": "No estoy seguro", "value": "unknown" }
+                {
+                  "label": "Tengo ambos",
+                  "value": "both"
+                },
+                {
+                  "label": "Solo Dominio",
+                  "value": "domain_only"
+                },
+                {
+                  "label": "Nada (Partimos de cero)",
+                  "value": "none"
+                },
+                {
+                  "label": "No estoy seguro",
+                  "value": "unknown"
+                }
               ]
             }
           ],
-          "accordionText": "Para darte una respuesta honesta sobre la viabilidad (y no hacerte perder tiempo), definamos el alcance 👇"
+          "accordionText": "Para darte una respuesta honesta sobre la viabilidad (y no hacerte perder tiempo), definamos el alcance 👇",
+          "accordionButton": "Definir viabilidad y objetivos"
         },
         {
           "id": "step_3_viability",
@@ -85,21 +117,41 @@
               "name": "timeline",
               "label": "¿Para cuándo lo necesitas?",
               "type": "select",
+              "placeholder": "Selecciona un plazo",
               "options": [
-                { "label": "Urgente (Lo antes posible)", "value": "urgent" },
-                { "label": "Estándar (Próximo mes)", "value": "standard" },
-                { "label": "Flexible (Sin prisa)", "value": "flexible" }
+                {
+                  "label": "Urgente (Lo antes posible)",
+                  "value": "urgent"
+                },
+                {
+                  "label": "Estándar (Próximo mes)",
+                  "value": "standard"
+                },
+                {
+                  "label": "Flexible (Sin prisa)",
+                  "value": "flexible"
+                }
               ]
             },
             {
               "name": "budget_range",
               "label": "Rango de Inversión Disponible",
               "type": "select",
+              "placeholder": "Selecciona un rango",
               "description": "Saber esto me permite decirte qué soluciones encajan y cuáles no.",
               "options": [
-                { "label": "Económico (< 1.000€)", "value": "low" },
-                { "label": "Profesional (1.000€ - 3.000€)", "value": "medium" },
-                { "label": "Premium / A Medida (+3.000€)", "value": "high" }
+                {
+                  "label": "Económico (< 1.000€)",
+                  "value": "low"
+                },
+                {
+                  "label": "Profesional (1.000€ - 3.000€)",
+                  "value": "medium"
+                },
+                {
+                  "label": "Premium / A Medida (+3.000€)",
+                  "value": "high"
+                }
               ]
             }
           ]
@@ -107,7 +159,8 @@
       ],
       "ansiolitico": {
         "text": "No te preocupes, esto no es un examen. Simplemente analizo estos datos para preparar nuestra primera conversación.",
-        "privacyLink": "/es/politica-de-privacidad"
+        "privacyLink": "/es/politica-de-privacidad",
+        "privacyButton": "Ver Política de Privacidad"
       }
     }
   }

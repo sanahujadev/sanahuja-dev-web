@@ -10,7 +10,7 @@
     "hero": {
       "badge": "Envío Confirmado",
       "title": "Todo correcto. He recibido tu mensaje.",
-      "subtitle": "Referencia: #LEAD_ID",
+      "subtitle": "Referencia:",
       "message": "Tus datos han llegado a mi sistema de forma segura. No es una autorespuesta: soy <strong>José Javier</strong> y revisaré personalmente lo que me acabas de contar para darte una respuesta con sentido.",
       "heroVisual": {
         "type": "SuccessCheck",

@@ -3,6 +3,8 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Button from "../../components/ui/Button.astro";
 import Badge from "../../components/ui/Badge.astro";
+import Check from "../../components/ui/icons/Check.astro";
+import ChevronRight from "../../components/ui/icons/ChevronRight.astro";
 
 import type { GraciasCopy } from "../../i18n/utils";
 
@@ -21,7 +23,7 @@ const { copy: t, lang, metadata } = copy;
   <Fragment slot="head">
     <title>{metadata.title}</title>
     <meta name="description" content={metadata.description} />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={metadata.robots} />
   </Fragment>
 <main>
   {/* Hero with Success Check */}
@@ -29,16 +31,14 @@ const { copy: t, lang, metadata } = copy;
     {/* Badge */}
     <div>
       <div />
-      <span>Envío Confirmado</span>
+      <span>{t.hero.badge}</span>
     </div>
 
     {/* Animated Success Check */}
     <div>
       <div>
         <div>
-          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-          </svg>
+          <Check />
         </div>
         <div />
       </div>
@@ -46,93 +46,52 @@ const { copy: t, lang, metadata } = copy;
 
     {/* Title */}
     <h1>
-      Todo correcto. He recibido tu mensaje.
+      {t.hero.title}
     </h1>
 
     {/* Reference ID */}
     <p>
-      Referencia: <span>#LEAD_ID</span>
+      {t.hero.subtitle} <span>#LEAD_ID</span>
     </p>
 
     {/* Message */}
     <div>
-      <p>
-        Tus datos han llegado a mi sistema de forma segura. No es una autorespuesta: soy{" "}
-        <strong>José Javier</strong> y revisaré personalmente lo que me acabas de
-        contar para darte una respuesta con sentido.
-      </p>
+      <p set:html={t.hero.message} />
     </div>
 
     {/* Status */}
     <div>
       <div />
-      <span>Conexión Establecida</span>
+      <span>{t.hero.heroVisual.statusText}</span>
     </div>
   </section>
 
   {/* Timeline Section */}
   <section id="timeline">
-    <h2>Próximos Pasos</h2>
-
+    <h2>{t.sections.timeline.title}</h2>
     <div>
-      {/* Step 01 */}
-      <article>
-        <div>
+      {t.sections.timeline.steps.map((step) => (
+        <article>
           <div>
-            <span>01</span>
+            <div>
+              <span>{step.step}</span>
+            </div>
+            <div />
           </div>
-          <div />
-        </div>
-        <div>
-          <h3>Revisión Personal</h3>
-          <p>
-            Analizaré tu consulta o las respuestas de tu formulario para entender bien tu contexto antes de
-            responder.
-          </p>
-        </div>
-      </article>
-
-      {/* Step 02 */}
-      <article>
-        <div>
           <div>
-            <span>02</span>
+            <h3>{step.title}</h3>
+            <p>{step.description}</p>
           </div>
-          <div />
-        </div>
-        <div>
-          <h3>Contacto &lt; 24h</h3>
-          <p>
-            Te escribiré por WhatsApp o Email (según lo que hayas preferido) para darte una respuesta directa.
-          </p>
-        </div>
-      </article>
-
-      {/* Step 03 */}
-      <article>
-        <div>
-          <div>
-            <span>03</span>
-          </div>
-        </div>
-        <div>
-          <h3>Siguiente Movimiento</h3>
-          <p>
-            Si veo que puedo ayudarte, definiremos juntos la hoja de ruta. Sin presiones, solo soluciones.
-          </p>
-        </div>
-      </article>
+        </article>
+      ))}
     </div>
   </section>
 
   {/* Loop Section - Profile Card */}
   <section id="loop">
     <div>
-      <h2>¿Quién va a leer tu mensaje?</h2>
-      <p>
-        Mientras analizo tu caso, te invito a saber quién está detrás de la pantalla. Descubre por qué mis
-        clientes confían en mi modelo de Socio Digital.
-      </p>
+      <h2>{t.sections.loop.title}</h2>
+      <p>{t.sections.loop.content}</p>
     </div>
 
     <div>
@@ -141,19 +100,15 @@ const { copy: t, lang, metadata } = copy;
           <span>JJS</span>
         </div>
         <div>
-          <h3>José Javier Sanahuja</h3>
-          <p>Consultor & Socio Digital</p>
-          <p>
-            Más allá del código. Descubre mi historia, mis certificaciones y mi filosofía de trabajo transparente.
-          </p>
+          <h3>{t.sections.loop.card.title}</h3>
+          <p>{t.sections.loop.card.role}</p>
+          <p>{t.sections.loop.card.text}</p>
         </div>
       </div>
 
-      <Button href="/es/sobre-mi" target="_self">
-        <span>Leer sobre mí</span>
-        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
+      <Button href={t.sections.loop.card.url} target="_self">
+        <span>{t.sections.loop.card.cta}</span>
+        <ChevronRight />
       </Button>
     </div>
   </section>
@@ -161,11 +116,12 @@ const { copy: t, lang, metadata } = copy;
   {/* Legal Notice */}
   <section id="legal">
     <p>
-      Tus datos son confidenciales. Se usarán exclusivamente para responder a esta solicitud y evaluar la
-      viabilidad de nuestra colaboración.{" "}
-      <a href="/es/politica-de-privacidad">
-        Política de Privacidad
-      </a>
+      {t.sections.legal.text}{" "}
+      {t.sections.legal.links.map((link) => (
+        <a href={link.url}>
+          {link.text}
+        </a>
+      ))}
       .
     </p>
   </section>
