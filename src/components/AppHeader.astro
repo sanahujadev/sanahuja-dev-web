@@ -1,16 +1,18 @@
 ---
 // src/components/AppHeader.astro
-import Button from './ui/Button.astro';
-import Badge from './ui/Badge.astro';
-import Menu from './ui/icons/Menu.astro';
-import X from './ui/icons/X.astro';
+import Button from "./ui/Button.astro";
+import Badge from "./ui/Badge.astro";
+import Menu from "./ui/icons/Menu.astro";
+import X from "./ui/icons/X.astro";
 
 // Asumimos que 't' y 'lang' vienen de BaseLayout
 // ¡Y note que he usado "Packs Estratégicos" como sugirió!
 const { t, lang, alternateUrl } = Astro.props;
 
 // La lógica del Switcher (de la demo original)
-const langSwitchUrl = alternateUrl ? new URL(alternateUrl).pathname : `/${lang === 'es' ? 'en' : 'es'}`;
+const langSwitchUrl = alternateUrl
+  ? new URL(alternateUrl).pathname
+  : `/${lang === "es" ? "en" : "es"}`;
 
 // ¡La lógica de "La Mascara" + V0!
 const links = [
@@ -19,11 +21,14 @@ const links = [
     label: t.nav.home,
   },
   {
-    href: lang === 'es' ? '/es/sobre-mi' : '/en/about-me',
+    href: lang === "es" ? "/es/sobre-mi" : "/en/about-me",
     label: t.nav.about,
   },
   {
-    href: lang === 'es' ? '/es/servicios/diseno-web-tenerife' : '/en/services/web-design-tenerife',
+    href:
+      lang === "es"
+        ? "/es/servicios/diseno-web-tenerife"
+        : "/en/services/web-design-tenerife",
     label: t.nav.gancho.label,
     badge: t.nav.gancho.badge,
     isPrimary: true, // ¡La clave de V0!

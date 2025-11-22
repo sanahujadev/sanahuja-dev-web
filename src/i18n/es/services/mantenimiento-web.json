@@ -53,9 +53,21 @@
         "title": "Prueba de Velocidad: Mi Mantenimiento SÍ Funciona (WPO 99)",
         "content": "¡Palabras baratas! ¡Pues no! Mi propia web tiene una nota de WPO (velocidad) de 99. Esa es la prueba. Un mantenimiento profesional no es 'actualizar plugins'; es mantener tu web ultra-rápida y segura, como una fortaleza.",
         "features": [
-          { "title": "Ultra-Rápida", "description": "Carga instantánea en cualquier dispositivo", "icon": "Zap" },
-          { "title": "Segura", "description": "SSL, backups y monitorización 24/7", "icon": "Shield" },
-          { "title": "Optimizada SEO", "description": "Google te posiciona mejor", "icon": "Target" }
+          {
+            "title": "Ultra-Rápida",
+            "description": "Carga instantánea en cualquier dispositivo",
+            "icon": "Zap"
+          },
+          {
+            "title": "Segura",
+            "description": "SSL, backups y monitorización 24/7",
+            "icon": "Shield"
+          },
+          {
+            "title": "Optimizada SEO",
+            "description": "Google te posiciona mejor",
+            "icon": "Target"
+          }
         ],
         "chart": {
           "title": "Comparativa Real",
@@ -70,18 +82,38 @@
         "title": "Mi Promesa: Enfoque en Objetivos, no solo en \"Estar Online\"",
         "content": "A la mayoría le pagas para que la web 'funcione'. A mí me pagas para que 'cumpla objetivos'. Yo estaré 'por detrás' analizando si la gente rellena el formulario, si te llaman, si la estrategia funciona... y si no, la cambiamos. Soy 'terco' para conseguir resultados.",
         "featureCards": [
-          { "title": "Análisis Continuo", "description": "Reviso tus métricas proactivamente", "icon": "Clock" },
-          { "title": "Foco en Resultados", "description": "Si no funciona, lo cambiamos", "icon": "Target" }
+          {
+            "title": "Análisis Continuo",
+            "description": "Reviso tus métricas proactivamente",
+            "icon": "Clock"
+          },
+          {
+            "title": "Foco en Resultados",
+            "description": "Si no funciona, lo cambiamos",
+            "icon": "Target"
+          }
         ]
       },
       "incluye": {
         "title": "¿Qué incluye este Soporte Web Profesional en Tenerife?",
         "content": "Esto no es solo 'actualizar mi página web'. El Mantenimiento Web Esencial (nuestra base por 20€/mes) incluye:",
         "featureCards": [
-          { "title": "Gestión de Dominio y SSL", "description": "Nos encargamos de las renovaciones y la seguridad para que tú no tengas que hacerlo." },
-          { "title": "Soporte de Hosting y Backups", "description": "Tu web en un servidor rápido y con copias de seguridad diarias. Tranquilidad total." },
-          { "title": "Monitorización de Disponibilidad", "description": "Vigilamos 24/7 que tu web nunca se caiga. Si algo pasa, soy el primero en saberlo." },
-          { "title": "Tu Socio Digital", "description": "La tranquilidad de tener un experto 'terco' a tu lado, enfocado en tus objetivos." }
+          {
+            "title": "Gestión de Dominio y SSL",
+            "description": "Nos encargamos de las renovaciones y la seguridad para que tú no tengas que hacerlo."
+          },
+          {
+            "title": "Soporte de Hosting y Backups",
+            "description": "Tu web en un servidor rápido y con copias de seguridad diarias. Tranquilidad total."
+          },
+          {
+            "title": "Monitorización de Disponibilidad",
+            "description": "Vigilamos 24/7 que tu web nunca se caiga. Si algo pasa, soy el primero en saberlo."
+          },
+          {
+            "title": "Tu Socio Digital",
+            "description": "La tranquilidad de tener un experto 'terco' a tu lado, enfocado en tus objetivos."
+          }
         ]
       },
       "precio": {

@@ -25,9 +25,21 @@
         "title": "Paz Mental",
         "subtitle": "Control Absoluto",
         "stats": [
-          { "label": "Cobertura", "value": "360º", "description": "Técnica, Datos e Imagen unificados bajo un mismo techo estratégico." },
-          { "label": "Socio", "value": "1 a 1", "description": "Sin tickets anónimos. Comunicación directa con quien conoce tu negocio." },
-          { "label": "Ahorro", "value": "Max", "description": "Elimina la fricción y el sobrecoste de gestionar 3 proveedores distintos." }
+          {
+            "label": "Cobertura",
+            "value": "360º",
+            "description": "Técnica, Datos e Imagen unificados bajo un mismo techo estratégico."
+          },
+          {
+            "label": "Socio",
+            "value": "1 a 1",
+            "description": "Sin tickets anónimos. Comunicación directa con quien conoce tu negocio."
+          },
+          {
+            "label": "Ahorro",
+            "value": "Max",
+            "description": "Elimina la fricción y el sobrecoste de gestionar 3 proveedores distintos."
+          }
         ]
       }
     },
@@ -62,7 +74,7 @@
             "description": "Estrategia de contenidos SEO para crecer en ambos frentes.",
             "icon": "Feather"
           },
-           {
+          {
             "title": "Prioridad en Soporte",
             "description": "Acceso directo a tu Socio Digital para consultas estratégicas.",
             "icon": "Phone"

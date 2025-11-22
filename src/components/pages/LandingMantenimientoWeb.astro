@@ -1,23 +1,23 @@
 ---
 // --- 1. Instrumentos (Componentes) ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Button from '../../components/ui/Button.astro';
-import Badge from '../../components/ui/Badge.astro';
-import ArrowRight from '../../components/ui/icons/ArrowRight.astro';
-import Shield from '../../components/ui/icons/Shield.astro';
-import AlertTriangle from '../../components/ui/icons/AlertTriangle.astro';
-import CheckCircle2 from '../../components/ui/icons/CheckCircle2.astro';
-import Zap from '../../components/ui/icons/Zap.astro';
-import Target from '../../components/ui/icons/Target.astro';
-import Heart from '../../components/ui/icons/Heart.astro';
-import TrendingUp from '../../components/ui/icons/TrendingUp.astro';
-import Clock from '../../components/ui/icons/Clock.astro';
-import type { LandingMantenimientoWebCopy } from '../../i18n/utils';
-import WPOChart from '../shared/WPOChart.astro';
-import SectionHeader from '../../components/ui/SectionHeader.astro';
-import FeatureListItem from '../../components/ui/FeatureListItem.astro';
-import ObjectiveFeatureCard from '../../components/ui/cards/ObjectiveFeatureCard.astro';
-import IncludedFeatureCard from '../../components/ui/cards/IncludedFeatureCard.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Button from "../../components/ui/Button.astro";
+import Badge from "../../components/ui/Badge.astro";
+import ArrowRight from "../../components/ui/icons/ArrowRight.astro";
+import Shield from "../../components/ui/icons/Shield.astro";
+import AlertTriangle from "../../components/ui/icons/AlertTriangle.astro";
+import CheckCircle2 from "../../components/ui/icons/CheckCircle2.astro";
+import Zap from "../../components/ui/icons/Zap.astro";
+import Target from "../../components/ui/icons/Target.astro";
+import Heart from "../../components/ui/icons/Heart.astro";
+import TrendingUp from "../../components/ui/icons/TrendingUp.astro";
+import Clock from "../../components/ui/icons/Clock.astro";
+import type { LandingMantenimientoWebCopy } from "../../i18n/utils";
+import WPOChart from "../shared/WPOChart.astro";
+import SectionHeader from "../../components/ui/SectionHeader.astro";
+import FeatureListItem from "../../components/ui/FeatureListItem.astro";
+import ObjectiveFeatureCard from "../../components/ui/cards/ObjectiveFeatureCard.astro";
+import IncludedFeatureCard from "../../components/ui/cards/IncludedFeatureCard.astro";
 
 // Recibe las props de la "Página Tonta"
 const { copy, alternateUrl, schema } = Astro.props;
@@ -26,10 +26,10 @@ const {
   lang,
   copy: t,
   endpoint,
-  metadata
+  metadata,
 } = copy as LandingMantenimientoWebCopy;
 
-const iconMap :Record<string, any>= {
+const iconMap: Record<string, any> = {
   Zap,
   Shield,
   Target,
@@ -38,13 +38,18 @@ const iconMap :Record<string, any>= {
   AlertTriangle,
   CheckCircle2,
   TrendingUp,
-  ArrowRight
+  ArrowRight,
 };
 
 // ¡La función mágica de Burro/Brook!
-const processContent = (content: string, strongClass: string = 'font-semibold text-primary-400'): string => {
-  return content
-    .replace(/\*\*([^*]+)\*\*/g, `<strong class="${strongClass}">$1</strong>`);
+const processContent = (
+  content: string,
+  strongClass: string = "font-semibold text-primary-400",
+): string => {
+  return content.replace(
+    /\*\*([^*]+)\*\*/g,
+    `<strong class="${strongClass}">$1</strong>`,
+  );
 };
 ---
 <BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>

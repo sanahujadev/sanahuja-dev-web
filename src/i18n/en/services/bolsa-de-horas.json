@@ -38,10 +38,26 @@
         "title": "Fast and Precise Interventions",
         "content": "You don't need to pay a monthly retainer if you only have a one-off problem. We tackle the error directly so your business keeps running.",
         "useCases": [
-          { "problem": "Critical Error", "description": "Fix 500 error or white screen in WordPress.", "icon": "AlertOctagon" },
-          { "problem": "Cleanup", "description": "Remove virus or malware and recover security.", "icon": "ShieldAlert" },
-          { "problem": "Style & CSS", "description": "Visual changes, buttons not working, or mobile adjustments.", "icon": "PenTool" },
-          { "problem": "Updates", "description": "Update delicate plugins without breaking the site.", "icon": "RefreshCw" }
+          {
+            "problem": "Critical Error",
+            "description": "Fix 500 error or white screen in WordPress.",
+            "icon": "AlertOctagon"
+          },
+          {
+            "problem": "Cleanup",
+            "description": "Remove virus or malware and recover security.",
+            "icon": "ShieldAlert"
+          },
+          {
+            "problem": "Style & CSS",
+            "description": "Visual changes, buttons not working, or mobile adjustments.",
+            "icon": "PenTool"
+          },
+          {
+            "problem": "Updates",
+            "description": "Update delicate plugins without breaking the site.",
+            "icon": "RefreshCw"
+          }
         ]
       },
       "benefits": {
@@ -72,7 +88,11 @@
             "name": "Starter Pack",
             "hours": "5 Hours",
             "price": "Consult",
-            "features": ["Ideal for small tweaks", "12-month validity", "Email Support"],
+            "features": [
+              "Ideal for small tweaks",
+              "12-month validity",
+              "Email Support"
+            ],
             "highlight": false,
             "cta": "Consult Starter Pack"
           },
@@ -80,7 +100,11 @@
             "name": "Pro Pack",
             "hours": "10 Hours",
             "price": "Best Price/Hour",
-            "features": ["Ideal for cleanups or urgencies", "12-month validity", "Priority Support"],
+            "features": [
+              "Ideal for cleanups or urgencies",
+              "12-month validity",
+              "Priority Support"
+            ],
             "highlight": true,
             "cta": "Consult Pro Pack",
             "badge": "Recommended"

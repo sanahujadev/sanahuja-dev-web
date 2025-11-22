@@ -1,20 +1,20 @@
 ---
 // src/components/pages/LandingInformeDeVisibilidad.astro
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Badge from '../../components/ui/Badge.astro';
-import Button from '../../components/ui/Button.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Badge from "../../components/ui/Badge.astro";
+import Button from "../../components/ui/Button.astro";
 
 // Iconos de la Orquesta (Existentes)
-import BarChart from '../ui/icons/BarChart.astro';
-import ArrowRight from '../ui/icons/ArrowRight.astro';
-import Activity from '../ui/icons/Activity.astro';
-import HelpCircle from '../ui/icons/HelpCircle.astro';
-import ZapOff from '../ui/icons/ZapOff.astro';
-import Search from '../ui/icons/Search.astro';
-import Eye from '../ui/icons/Eye.astro';
+import BarChart from "../ui/icons/BarChart.astro";
+import ArrowRight from "../ui/icons/ArrowRight.astro";
+import Activity from "../ui/icons/Activity.astro";
+import HelpCircle from "../ui/icons/HelpCircle.astro";
+import ZapOff from "../ui/icons/ZapOff.astro";
+import Search from "../ui/icons/Search.astro";
+import Eye from "../ui/icons/Eye.astro";
 
 // Tipos y Datos
-import type { InformeVisibilidadWebCopy } from '../../i18n/utils';
+import type { InformeVisibilidadWebCopy } from "../../i18n/utils";
 
 interface Props {
   copy: InformeVisibilidadWebCopy;
@@ -24,8 +24,6 @@ interface Props {
 
 const { copy, alternateUrl, schema } = Astro.props;
 const { copy: t, lang, metadata } = copy;
-
-
 ---
 
 <BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>

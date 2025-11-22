@@ -1,5 +1,5 @@
 {
-  "endpoint": "/es",  
+  "endpoint": "/es",
   "lang": "es",
   "alternateUrl": "/en",
   "metadata": {
@@ -54,7 +54,7 @@
             "Enfoque en 'tus objetivos'",
             "WPO Rápido (99)"
           ],
-          "advice":"Elige esto"
+          "advice": "Elige esto"
         }
       },
       "hub": {
@@ -108,12 +108,46 @@
           "cta": "Ver perfil completo en Fiverr"
         },
         "testimonials": [
-          { "name": "Joaco B.", "type": "Cliente Valorado", "content": "Fue muy atento y estuvo muy pendiente a las dudas y revisiones que tuve del pedido. Altamente recomendado.", "img": "fiverr-client-joaco" },
-          { "name": "Alerco", "type": "Cliente Valorado", "content": "La relación con José Javier y su trabajo son extraordinarios.", "initial": "A", "color": "secondary" },
-          { "name": "ihatemyclass", "type": "Cliente Valorado", "content": "Trabajo fantástico! Aunque no expresé mi disponibilidad al principio, hicieron un trabajo excelente.", "initial": "I", "color": "accent" },
-          { "name": "Antoine R.", "type": "Cliente Valorado", "content": "Excelente trabajo, como siempre.", "img": "fiverr-client-antoine" },
-          { "name": "Fengjason", "type": "Cliente Valorado", "content": "Este es mi segundo pedido con el Señor José, una experiencia realmente genial.", "initial": "F", "color": "primary" },
-          { "name": "Thomas 8.", "type": "Cliente Valorado", "content": "Excelente proveedor de servicios. Muy contento con la comunicación y el conocimiento general.", "initial": "T", "color": "secondary" }
+          {
+            "name": "Joaco B.",
+            "type": "Cliente Valorado",
+            "content": "Fue muy atento y estuvo muy pendiente a las dudas y revisiones que tuve del pedido. Altamente recomendado.",
+            "img": "fiverr-client-joaco"
+          },
+          {
+            "name": "Alerco",
+            "type": "Cliente Valorado",
+            "content": "La relación con José Javier y su trabajo son extraordinarios.",
+            "initial": "A",
+            "color": "secondary"
+          },
+          {
+            "name": "ihatemyclass",
+            "type": "Cliente Valorado",
+            "content": "Trabajo fantástico! Aunque no expresé mi disponibilidad al principio, hicieron un trabajo excelente.",
+            "initial": "I",
+            "color": "accent"
+          },
+          {
+            "name": "Antoine R.",
+            "type": "Cliente Valorado",
+            "content": "Excelente trabajo, como siempre.",
+            "img": "fiverr-client-antoine"
+          },
+          {
+            "name": "Fengjason",
+            "type": "Cliente Valorado",
+            "content": "Este es mi segundo pedido con el Señor José, una experiencia realmente genial.",
+            "initial": "F",
+            "color": "primary"
+          },
+          {
+            "name": "Thomas 8.",
+            "type": "Cliente Valorado",
+            "content": "Excelente proveedor de servicios. Muy contento con la comunicación y el conocimiento general.",
+            "initial": "T",
+            "color": "secondary"
+          }
         ]
       },
       "ctaFinal": {

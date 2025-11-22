@@ -17,19 +17,19 @@
         "content": "Tus datos son tratados por <strong>José Javier Sanahuja Ortiz</strong> (SanahujaDev). NIF: 45981719G. Dirección: Calle Unamuno, 38, San Isidro, Tenerife. Email: <strong>josejavier@sanahuja.dev</strong>."
       },
       {
-            "title": "2. Finalidad y Conservación de los Datos",
-            "content": "En SanahujaDev recogemos datos a través de nuestro Formulario de Contacto y durante la prestación del servicio con las siguientes finalidades:\n\n* <strong>Evaluación Técnica:</strong> Analizar la viabilidad de tu proyecto web (Base legal: Medidas precontractuales).\n* <strong>Gestión Comercial:</strong> Enviarte presupuestos y comunicaciones del servicio (Base legal: Interés legítimo).\n* <strong>Facturación y Cobro:</strong> Gestionar pagos y cumplir obligaciones fiscales (Base legal: Ejecución del contrato).\n\n<strong>Conservación:</strong> Los datos fiscales (facturas) se conservarán durante 5 años por obligación legal. Los presupuestos no aceptados se eliminarán a los 12 meses para facilitar futuras consultas."
-        },
-        {
-            "title": "3. Comunicación de Datos a Terceros",
-            "content": "No vendemos tus datos. Solo los cedemos a proveedores tecnológicos estrictamente necesarios para que la web funcione, quienes actúan como Encargados del Tratamiento:\n\n* <strong>Stripe (Pagos):</strong> Tus datos bancarios son procesados directamente por Stripe en sus servidores seguros (nivel PCI-DSS). SanahujaDev nunca tiene acceso a tu número de tarjeta completo.\n* <strong>Infraestructura Cloud (AWS / Vercel / Netlify):</strong> Proveedores de alojamiento y computación en la nube donde se hospeda tu sitio web y bases de datos.\n* <strong>Google Analytics (GA4):</strong> Herramienta de analítica para medir el tráfico web de forma anónima (ver Política de Cookies)."
-        },
-        {
-            "title": "4. Tus Derechos y Reclamaciones",
-            "content": "Tienes derecho a acceder, rectificar, suprimir ('derecho al olvido'), limitar el tratamiento, solicitar la portabilidad de tus datos y oponerte al tratamiento. Puedes ejercer estos derechos enviando un email a <strong>josejavier@sanahuja.dev</strong>.\n\nSi consideras que tus derechos no han sido respetados, tienes derecho a presentar una reclamación ante la <strong>Agencia Española de Protección de Datos (AEPD)</strong>."
-        }
+        "title": "2. Finalidad y Conservación de los Datos",
+        "content": "En SanahujaDev recogemos datos a través de nuestro Formulario de Contacto y durante la prestación del servicio con las siguientes finalidades:\n\n* <strong>Evaluación Técnica:</strong> Analizar la viabilidad de tu proyecto web (Base legal: Medidas precontractuales).\n* <strong>Gestión Comercial:</strong> Enviarte presupuestos y comunicaciones del servicio (Base legal: Interés legítimo).\n* <strong>Facturación y Cobro:</strong> Gestionar pagos y cumplir obligaciones fiscales (Base legal: Ejecución del contrato).\n\n<strong>Conservación:</strong> Los datos fiscales (facturas) se conservarán durante 5 años por obligación legal. Los presupuestos no aceptados se eliminarán a los 12 meses para facilitar futuras consultas."
+      },
+      {
+        "title": "3. Comunicación de Datos a Terceros",
+        "content": "No vendemos tus datos. Solo los cedemos a proveedores tecnológicos estrictamente necesarios para que la web funcione, quienes actúan como Encargados del Tratamiento:\n\n* <strong>Stripe (Pagos):</strong> Tus datos bancarios son procesados directamente por Stripe en sus servidores seguros (nivel PCI-DSS). SanahujaDev nunca tiene acceso a tu número de tarjeta completo.\n* <strong>Infraestructura Cloud (AWS / Vercel / Netlify):</strong> Proveedores de alojamiento y computación en la nube donde se hospeda tu sitio web y bases de datos.\n* <strong>Google Analytics (GA4):</strong> Herramienta de analítica para medir el tráfico web de forma anónima (ver Política de Cookies)."
+      },
+      {
+        "title": "4. Tus Derechos y Reclamaciones",
+        "content": "Tienes derecho a acceder, rectificar, suprimir ('derecho al olvido'), limitar el tratamiento, solicitar la portabilidad de tus datos y oponerte al tratamiento. Puedes ejercer estos derechos enviando un email a <strong>josejavier@sanahuja.dev</strong>.\n\nSi consideras que tus derechos no han sido respetados, tienes derecho a presentar una reclamación ante la <strong>Agencia Española de Protección de Datos (AEPD)</strong>."
+      }
     ],
-    "footer":{
+    "footer": {
       "teaser": "Para ejercer tus derechos o resolver dudas:",
       "email": "josejavier@sanahuja.dev"
     }

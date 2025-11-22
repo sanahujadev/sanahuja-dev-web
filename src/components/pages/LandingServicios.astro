@@ -1,21 +1,21 @@
 ---
 // src/components/pages/LandingServicios.astro
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Button from '../../components/ui/Button.astro';
-import Badge from '../../components/ui/Badge.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Button from "../../components/ui/Button.astro";
+import Badge from "../../components/ui/Badge.astro";
 
 // Iconos de la Orquesta
-import Shield from '../../components/ui/icons/Shield.astro';
-import Star from '../../components/ui/icons/Star.astro';
-import Clock from '../../components/ui/icons/Clock.astro';
-import BarChart from '../../components/ui/icons/BarChart.astro';
-import ArrowRight from '../../components/ui/icons/ArrowRight.astro';
-import LayoutIcon from '../../components/ui/icons/LayoutIcon.astro'; // Use LayoutIcon from LayoutIcon.astro
-import Network from '../../components/ui/icons/Network.astro';
-import PenTool from '../../components/ui/icons/PenTool.astro';
+import Shield from "../../components/ui/icons/Shield.astro";
+import Star from "../../components/ui/icons/Star.astro";
+import Clock from "../../components/ui/icons/Clock.astro";
+import BarChart from "../../components/ui/icons/BarChart.astro";
+import ArrowRight from "../../components/ui/icons/ArrowRight.astro";
+import LayoutIcon from "../../components/ui/icons/LayoutIcon.astro"; // Use LayoutIcon from LayoutIcon.astro
+import Network from "../../components/ui/icons/Network.astro";
+import PenTool from "../../components/ui/icons/PenTool.astro";
 
 // Tipos
-import type { ServicesCopy } from '../../i18n/utils';
+import type { ServicesCopy } from "../../i18n/utils";
 
 interface Props {
   copy: ServicesCopy;
@@ -34,45 +34,47 @@ const iconMap: Record<string, any> = {
   Clock: Clock,
   BarChart: BarChart,
   Network: Network, // Add Network to the map
-  PenTool: PenTool
+  PenTool: PenTool,
 };
 
 // Estilos cíclicos para las tarjetas
 const serviceStyles = [
-    {
-        badgeColor: "bg-primary-500/10 text-primary-400 border-primary-500/20",
-        borderColor: "hover:border-primary-500/30",
-        iconColor: "group-hover:text-primary-400"
-    },
-    {
-        badgeColor: "bg-accent-500/10 text-accent-400 border-accent-500/20",
-        borderColor: "hover:border-accent-500/30",
-        iconColor: "group-hover:text-accent-400"
-    },
-    {
-        badgeColor: "bg-secondary-500/10 text-secondary-400 border-secondary-500/20",
-        borderColor: "hover:border-secondary-500/30",
-        iconColor: "group-hover:text-secondary-400"
-    },
-    {
-        badgeColor: "bg-primary-500/10 text-primary-400 border-primary-500/20",
-        borderColor: "hover:border-primary-500/30",
-        iconColor: "group-hover:text-primary-400"
-    },
-    {
-        badgeColor: "bg-secondary-500/10 text-secondary-400 border-secondary-500/20",
-        borderColor: "hover:border-secondary-500/30",
-        iconColor: "group-hover:text-secondary-400"
-    }
+  {
+    badgeColor: "bg-primary-500/10 text-primary-400 border-primary-500/20",
+    borderColor: "hover:border-primary-500/30",
+    iconColor: "group-hover:text-primary-400",
+  },
+  {
+    badgeColor: "bg-accent-500/10 text-accent-400 border-accent-500/20",
+    borderColor: "hover:border-accent-500/30",
+    iconColor: "group-hover:text-accent-400",
+  },
+  {
+    badgeColor:
+      "bg-secondary-500/10 text-secondary-400 border-secondary-500/20",
+    borderColor: "hover:border-secondary-500/30",
+    iconColor: "group-hover:text-secondary-400",
+  },
+  {
+    badgeColor: "bg-primary-500/10 text-primary-400 border-primary-500/20",
+    borderColor: "hover:border-primary-500/30",
+    iconColor: "group-hover:text-primary-400",
+  },
+  {
+    badgeColor:
+      "bg-secondary-500/10 text-secondary-400 border-secondary-500/20",
+    borderColor: "hover:border-secondary-500/30",
+    iconColor: "group-hover:text-secondary-400",
+  },
 ];
 
 const services = t.sections.servicesGrid.cards.map((service, index) => {
-    const style = serviceStyles[index % serviceStyles.length];
-    return {
-        ...service,
-        IconComponent: iconMap[service.icon],
-        ...style
-    }
+  const style = serviceStyles[index % serviceStyles.length];
+  return {
+    ...service,
+    IconComponent: iconMap[service.icon],
+    ...style,
+  };
 });
 ---
 

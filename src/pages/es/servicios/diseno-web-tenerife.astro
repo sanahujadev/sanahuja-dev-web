@@ -1,6 +1,8 @@
 ---
-import LandingDiseñoWeb from '../../../components/pages/LandingDiseñoWeb.astro';
-import copy_es from '../../../i18n/es/services/diseno-web-tenerife.json' with { type: 'json' };
+import LandingDiseñoWeb from "../../../components/pages/LandingDiseñoWeb.astro";
+import copy_es from "../../../i18n/es/services/diseno-web-tenerife.json" with {
+  type: "json",
+};
 
 const alternateUrl = new URL(copy_es.alternateUrl, Astro.site).href;
 
@@ -8,13 +10,13 @@ const alternateUrl = new URL(copy_es.alternateUrl, Astro.site).href;
 const schema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": `${copy_es.h1} ${copy_es.h2s.join('. ')}`,
-  "description": copy_es.meta_description,
-  "provider": {
+  name: `${copy_es.h1} ${copy_es.h2s.join(". ")}`,
+  description: copy_es.meta_description,
+  provider: {
     "@type": "LocalBusiness",
-    "name": "SanahujaDev",
-    "areaServed": "Tenerife, Canarias, España"
- }
+    name: "SanahujaDev",
+    areaServed: "Tenerife, Canarias, España",
+  },
 };
 ---
 <LandingDiseñoWeb copy={copy_es} alternateUrl={alternateUrl} schema={schema} />

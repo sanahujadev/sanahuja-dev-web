@@ -1,25 +1,25 @@
 ---
 // src/components/ui/cards/HubFeatureCard.astro
-import ArrowRight from '../icons/ArrowRight.astro';
-import Gift from '../icons/Gift.astro';
-import Package from '../icons/Package.astro';
-import User from '../icons/User.astro';
-import FileText from '../icons/FileText.astro';
+import ArrowRight from "../icons/ArrowRight.astro";
+import Gift from "../icons/Gift.astro";
+import Package from "../icons/Package.astro";
+import User from "../icons/User.astro";
+import FileText from "../icons/FileText.astro";
 
 interface Card {
-    url: string;
-    badge: string;
-    title: string;
-    description: string;
-    icon: string;
+  url: string;
+  badge: string;
+  title: string;
+  description: string;
+  icon: string;
 }
 
 interface Style {
-    border: string;
-    badgeBg: string;
-    badgeText: string;
-    iconColor: string;
-    titleHover: string;
+  border: string;
+  badgeBg: string;
+  badgeText: string;
+  iconColor: string;
+  titleHover: string;
 }
 
 interface Props {
@@ -31,10 +31,10 @@ interface Props {
 const { card, style, seeMoreText } = Astro.props;
 
 const hubIconMap: Record<string, any> = {
-  "Gift": Gift,
-  "Package": Package,
-  "User": User,
-  "FileText": FileText
+  Gift: Gift,
+  Package: Package,
+  User: User,
+  FileText: FileText,
 };
 
 const Icon = hubIconMap[card.icon] || Package;

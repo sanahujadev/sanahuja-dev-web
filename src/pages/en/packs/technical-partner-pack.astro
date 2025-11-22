@@ -1,20 +1,20 @@
 ---
 // src/pages/es/packs/pack-sociotecnico-digital.astro
-import LandingPackSocioTecnicoDigital from '../../../components/pages/LandingPackSocioTecnicoDigital.astro';
-import t from '../../../i18n/en/pack/pack-sociotecnico-digital.json';
+import LandingPackSocioTecnicoDigital from "../../../components/pages/LandingPackSocioTecnicoDigital.astro";
+import t from "../../../i18n/en/pack/pack-sociotecnico-digital.json";
 
 const schemaProduct = {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": t.copy.h1_part1,
-  "description": t.metadata.description,
-  "offers": {
+  name: t.copy.h1_part1,
+  description: t.metadata.description,
+  offers: {
     "@type": "Offer",
-    "price": "105.00",
-    "priceCurrency": "EUR",
-    "availability": "https://schema.org/InStock",
-    "url": `https://sanahuja.dev${t.endpoint}`
-  }
+    price: "105.00",
+    priceCurrency: "EUR",
+    availability: "https://schema.org/InStock",
+    url: `https://sanahuja.dev${t.endpoint}`,
+  },
 };
 
 const alternateUrl = new URL(t.alternateUrl, Astro.site).href;

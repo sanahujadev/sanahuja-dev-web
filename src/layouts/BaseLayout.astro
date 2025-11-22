@@ -1,29 +1,37 @@
 ---
 // src/layouts/BaseLayout.astro
 import { ClientRouter } from "astro:transitions";
-import { AstroFont } from 'astro-font';
+import { AstroFont } from "astro-font";
 import AppHeader from "../components/AppHeader.astro";
-import '../styles/global.css';
+import "../styles/global.css";
 // import criticalCSS from '../styles/critical-inline.css?raw';
-import t_header_es from '../i18n/es/componentes/header.json' with { type: 'json' };
-import t_header_en from '../i18n/en/componentes/header.json' with { type: 'json' };
-import t_footer_es from '../i18n/es/componentes/footer.json' with { type: 'json' };
-import t_footer_en from '../i18n/en/componentes/footer.json' with { type: 'json' };
-import AppFooter from '../components/AppFooter.astro';
+import t_header_es from "../i18n/es/componentes/header.json" with {
+  type: "json",
+};
+import t_header_en from "../i18n/en/componentes/header.json" with {
+  type: "json",
+};
+import t_footer_es from "../i18n/es/componentes/footer.json" with {
+  type: "json",
+};
+import t_footer_en from "../i18n/en/componentes/footer.json" with {
+  type: "json",
+};
+import AppFooter from "../components/AppFooter.astro";
 
 type Props = {
-  lang?: 'es' | 'en';
+  lang?: "es" | "en";
   alternateUrl?: string;
   disableTransitions?: boolean; // <-- Control granular
-  isConversionPage?: boolean;   // <-- Marca páginas críticas
+  isConversionPage?: boolean; // <-- Marca páginas críticas
 };
 
 // import type { CookieConsentType } from '../i18n/utils'; // <-- Aún no existe
-const { 
-  lang = 'es', 
+const {
+  lang = "es",
   alternateUrl,
   disableTransitions = false,
-  isConversionPage = false 
+  isConversionPage = false,
 } = Astro.props;
 const GTM_ID = import.meta.env.PUBLIC_GTM_ID;
 
@@ -34,11 +42,10 @@ const pathName = Astro.url.pathname; // <-- Esto SÍ es /es/servicios/diseno-web
 // ¡Construimos la URL canónica de PRODUCCIÓN!
 const canonicalURL = new URL(pathName, siteURL).href;
 
-const alternateLang = pathName.substring(1, 3) === 'es' ? 'en' : 'es';
+const alternateLang = pathName.substring(1, 3) === "es" ? "en" : "es";
 
-const t_header = lang === 'es' ? t_header_es : t_header_en;
-const t_footer = lang === 'es' ? t_footer_es : t_footer_en;
-
+const t_header = lang === "es" ? t_header_es : t_header_en;
+const t_footer = lang === "es" ? t_footer_es : t_footer_en;
 ---
 
 <!DOCTYPE html>

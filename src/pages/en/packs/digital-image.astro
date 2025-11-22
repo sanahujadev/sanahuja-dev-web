@@ -1,42 +1,43 @@
 ---
 // src/pages/es/packs/imagen-digital.astro
-import LandingPackImagenDigital from '../../../components/pages/LandingPackImagenDigital.astro';
-import t from '../../../i18n/en/pack/imagen-digital.json';
+import LandingPackImagenDigital from "../../../components/pages/LandingPackImagenDigital.astro";
+import t from "../../../i18n/en/pack/imagen-digital.json";
 
 const schemaProduct = {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "Pack Digital Image",
-  "description": "Monthly online reputation management and web maintenance service for local businesses in Tenerife. Google My Business management, review response, and urgent technical support.",
-  "brand": {
+  name: "Pack Digital Image",
+  description:
+    "Monthly online reputation management and web maintenance service for local businesses in Tenerife. Google My Business management, review response, and urgent technical support.",
+  brand: {
     "@type": "Brand",
-    "name": "SanahujaDev"
+    name: "SanahujaDev",
   },
-  "offers": {
+  offers: {
     "@type": "Offer",
-    "url": "https://sanahuja.dev/en/packs/digital-image",
-    "price": "110.00",
-    "priceCurrency": "EUR",
-    "priceSpecification": {
+    url: "https://sanahuja.dev/en/packs/digital-image",
+    price: "110.00",
+    priceCurrency: "EUR",
+    priceSpecification: {
       "@type": "PriceSpecification",
-      "price": "110.00",
-      "priceCurrency": "EUR",
-      "billingIncrement": "monthly",
-      "description": "Monthly subscription. Cancelable at any time."
+      price: "110.00",
+      priceCurrency: "EUR",
+      billingIncrement: "monthly",
+      description: "Monthly subscription. Cancelable at any time.",
     },
-    "availability": "https://schema.org/InStock",
-    "validFrom": "2024-01-01",
-    "category": "Subscription",
-    "seller": {
+    availability: "https://schema.org/InStock",
+    validFrom: "2024-01-01",
+    category: "Subscription",
+    seller: {
       "@type": "LocalBusiness",
-      "name": "SanahujaDev",
-      "url": "https://sanahuja.dev",
-      "areaServed": {
+      name: "SanahujaDev",
+      url: "https://sanahuja.dev",
+      areaServed: {
         "@type": "City",
-        "name": "Tenerife"
-      }
-    }
-  }
+        name: "Tenerife",
+      },
+    },
+  },
 };
 
 const alternateUrl = new URL(t.alternateUrl, Astro.site).href;

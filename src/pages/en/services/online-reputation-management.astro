@@ -1,10 +1,12 @@
 ---
 // src/pages/es/servicios/gestion-reputacion-online.astro
 // ¡PÁGINA TONTA (ESPAÑOL)!
-import LandingGestionReputacionOnline from '../../../components/pages/LandingGestionReputacionOnline.astro';
+import LandingGestionReputacionOnline from "../../../components/pages/LandingGestionReputacionOnline.astro";
 
 // 1. Importa el JSON de la PÁGINA
-import t_page from '../../../i18n/en/services/gestion-reputacion-online.json' with { type: 'json' };
+import t_page from "../../../i18n/en/services/gestion-reputacion-online.json" with {
+  type: "json",
+};
 // 2. Importa el JSON del HEADER (solo en baseLayout)
 
 // 3. ¡Calcula la URL Alterna (¡la buena!)!
@@ -14,13 +16,13 @@ const alternateUrl = new URL(t_page.alternateUrl, Astro.site).href;
 const schema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": `${t_page.copy.h1_part1} ${t_page.copy.h1_part2}`,
-  "description": t_page.metadata.description,
-  "provider": {
+  name: `${t_page.copy.h1_part1} ${t_page.copy.h1_part2}`,
+  description: t_page.metadata.description,
+  provider: {
     "@type": "LocalBusiness",
-    "name": "SanahujaDev",
-    "areaServed": "Tenerife, Canary Islands, Spain"
-  }
+    name: "SanahujaDev",
+    areaServed: "Tenerife, Canary Islands, Spain",
+  },
 };
 ---
 <LandingGestionReputacionOnline 

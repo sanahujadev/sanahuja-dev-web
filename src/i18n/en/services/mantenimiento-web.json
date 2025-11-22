@@ -53,9 +53,21 @@
         "title": "Speed Proof: My Maintenance REALLY Works (WPO 99)",
         "content": "Cheap talk! Not at all. My own website has a WPO (speed) score of 99. That's the proof. Professional maintenance isn't just 'updating plugins'; it's keeping your website ultra-fast and secure, like a fortress.",
         "features": [
-          { "title": "Ultra-Fast", "description": "Instant loading on any device", "icon": "Zap" },
-          { "title": "Secure", "description": "SSL, backups, and 24/7 monitoring", "icon": "Shield" },
-          { "title": "SEO Optimized", "description": "Google ranks you better", "icon": "Target" }
+          {
+            "title": "Ultra-Fast",
+            "description": "Instant loading on any device",
+            "icon": "Zap"
+          },
+          {
+            "title": "Secure",
+            "description": "SSL, backups, and 24/7 monitoring",
+            "icon": "Shield"
+          },
+          {
+            "title": "SEO Optimized",
+            "description": "Google ranks you better",
+            "icon": "Target"
+          }
         ],
         "chart": {
           "title": "Real Comparison",
@@ -70,18 +82,38 @@
         "title": "My Promise: Focus on Goals, not just \"Being Online\"",
         "content": "You pay most people to keep the site 'running'. You pay me to 'achieve goals'. I'll be 'behind the scenes' analyzing if people are filling out forms, if they're calling, if the strategy is working... and if not, we change it. I'm 'stubborn' about getting results.",
         "featureCards": [
-          { "title": "Continuous Analysis", "description": "I proactively review your metrics", "icon": "Clock" },
-          { "title": "Focus on Results", "description": "If it's not working, we change it", "icon": "Target" }
+          {
+            "title": "Continuous Analysis",
+            "description": "I proactively review your metrics",
+            "icon": "Clock"
+          },
+          {
+            "title": "Focus on Results",
+            "description": "If it's not working, we change it",
+            "icon": "Target"
+          }
         ]
       },
       "incluye": {
         "title": "What does this Professional Web Support in Tenerife include?",
         "content": "This isn't just 'updating my website'. The Essential Web Maintenance (our base at €20/month) includes:",
         "featureCards": [
-          { "title": "Domain & SSL Management", "description": "We handle renewals and security so you don't have to." },
-          { "title": "Hosting Support & Backups", "description": "Your site on a fast server with daily backups. Total peace of mind." },
-          { "title": "Uptime Monitoring", "description": "We watch 24/7 to ensure your site never goes down. If something happens, I'm the first to know." },
-          { "title": "Your Digital Partner", "description": "The peace of mind of having a 'stubborn' expert by your side, focused on your goals." }
+          {
+            "title": "Domain & SSL Management",
+            "description": "We handle renewals and security so you don't have to."
+          },
+          {
+            "title": "Hosting Support & Backups",
+            "description": "Your site on a fast server with daily backups. Total peace of mind."
+          },
+          {
+            "title": "Uptime Monitoring",
+            "description": "We watch 24/7 to ensure your site never goes down. If something happens, I'm the first to know."
+          },
+          {
+            "title": "Your Digital Partner",
+            "description": "The peace of mind of having a 'stubborn' expert by your side, focused on your goals."
+          }
         ]
       },
       "precio": {

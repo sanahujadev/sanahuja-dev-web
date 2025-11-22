@@ -35,8 +35,8 @@
         "content": "Cumplimos con el <strong>Google Consent Mode v2</strong>. Esto significa que las cookies de Google no se instalarán hasta que nos des permiso explícito. Puedes cambiar tu configuración o retirar el consentimiento en cualquier momento desde el icono de 'Cookies' en la esquina inferior de la web."
       }
     ],
-    "footer":{
-      "teaser":"¿Preguntas sobre cookies o privacidad?",
+    "footer": {
+      "teaser": "¿Preguntas sobre cookies o privacidad?",
       "email": "josejavier@sanahuja.dev"
     }
   }

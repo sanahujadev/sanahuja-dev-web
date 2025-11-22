@@ -1,5 +1,5 @@
 {
-  "endpoint": "/en/packs/technical-partner-pack",  
+  "endpoint": "/en/packs/technical-partner-pack",
   "lang": "en",
   "alternateUrl": "/es/packs/pack-sociotecnico-digital",
   "metadata": {
@@ -17,7 +17,12 @@
       "stats": [
         { "label": "Value (Separate)", "value": "€130", "unit": "/month" },
         { "label": "Monthly Savings", "value": "€25", "unit": "in savings" },
-        { "label": "Pack Price", "value": "€105", "highlight": true, "unit": "/month" }
+        {
+          "label": "Pack Price",
+          "value": "€105",
+          "highlight": true,
+          "unit": "/month"
+        }
       ]
     },
     "sections": {
@@ -74,9 +79,22 @@
         "title": "Real Value vs. Pack Price",
         "content": "Transparency is a pillar of my brand. No fine print. If you hired these **6 services** separately, the total cost would be €130 per month. By bundling them in this pack, you save €25 every month.",
         "breakdown": [
-          { "label": "Real Value (Separate)", "value": "€130.00", "type": "strikethrough" },
-          { "label": "Immediate Savings (Pack)", "value": "- €25.00", "type": "savings" },
-          { "label": "Technical Partner Pack Price", "value": "€105.00", "type": "final", "unit": "/month" }
+          {
+            "label": "Real Value (Separate)",
+            "value": "€130.00",
+            "type": "strikethrough"
+          },
+          {
+            "label": "Immediate Savings (Pack)",
+            "value": "- €25.00",
+            "type": "savings"
+          },
+          {
+            "label": "Technical Partner Pack Price",
+            "value": "€105.00",
+            "type": "final",
+            "unit": "/month"
+          }
         ]
       },
       "ctaFinal": {

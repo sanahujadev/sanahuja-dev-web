@@ -1,43 +1,43 @@
 {
-    "brand": {
-      "tagline": "No solo creo sitios web: te acompaño en tu camino digital, porque tu éxito también es el mío."
-    },
-    "localizacion": {
-      "titulo": "Socio Digital en Canarias",
-      "ciudad": "Tenerife, Santa Cruz de Tenerife",
-      "gmb_link_label": "Ver Perfil de Google Business",
-      "gmb_url": "URL-DE-TU-PERFIL-DE-GOOGLE-BUSINESS-AQUI"
-    },
-    "navegacion": {
-      "titulo": "Servicios Estratégicos",
-      "links": {
-        "mantenimiento": "Mantenimiento Web",
-        "reputacion": "Gestión de Reputación",
-        "blog": "Plan de Autoridad (Blog)",
-        "informe": "Informe de Visibilidad",
-        "bolsa": "Bolsa de Horas"
-      }
-    },
-    "social": {
-      "titulo": "Conecta",
-      "links": {
-        "linkedin": "LinkedIn",
-        "linkedin_url": "https://www.linkedin.com/in/josejsanahuja/",
-        "github": "Github",
-        "github_url": "https://github.com/sanahujadev/sanahujadev",
-        "freelancer": "Fiverr (5★)",
-        "freelancer_url": "https://www.fiverr.com/josejsanahuja/create-a-full-stack-application"
-      }
-    },
-    "help": {
-      "text": "¿Empezamos tu proyecto?",
-      "contact": "Rellenar Formulario"
-    },
-    "legal": {
-      "terminos": "Términos y Condiciones",
-      "privacidad": "Política de Privacidad",
-      "cookies": "Política de Cookies"
-    },
-    "cookieSettings": "Gestionar cookies",
-    "copyright": "SanahujaDev/> ©"
-  }
+  "brand": {
+    "tagline": "No solo creo sitios web: te acompaño en tu camino digital, porque tu éxito también es el mío."
+  },
+  "localizacion": {
+    "titulo": "Socio Digital en Canarias",
+    "ciudad": "Tenerife, Santa Cruz de Tenerife",
+    "gmb_link_label": "Ver Perfil de Google Business",
+    "gmb_url": "URL-DE-TU-PERFIL-DE-GOOGLE-BUSINESS-AQUI"
+  },
+  "navegacion": {
+    "titulo": "Servicios Estratégicos",
+    "links": {
+      "mantenimiento": "Mantenimiento Web",
+      "reputacion": "Gestión de Reputación",
+      "blog": "Plan de Autoridad (Blog)",
+      "informe": "Informe de Visibilidad",
+      "bolsa": "Bolsa de Horas"
+    }
+  },
+  "social": {
+    "titulo": "Conecta",
+    "links": {
+      "linkedin": "LinkedIn",
+      "linkedin_url": "https://www.linkedin.com/in/josejsanahuja/",
+      "github": "Github",
+      "github_url": "https://github.com/sanahujadev/sanahujadev",
+      "freelancer": "Fiverr (5★)",
+      "freelancer_url": "https://www.fiverr.com/josejsanahuja/create-a-full-stack-application"
+    }
+  },
+  "help": {
+    "text": "¿Empezamos tu proyecto?",
+    "contact": "Rellenar Formulario"
+  },
+  "legal": {
+    "terminos": "Términos y Condiciones",
+    "privacidad": "Política de Privacidad",
+    "cookies": "Política de Cookies"
+  },
+  "cookieSettings": "Gestionar cookies",
+  "copyright": "SanahujaDev/> ©"
+}

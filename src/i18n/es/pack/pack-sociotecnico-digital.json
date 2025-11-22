@@ -15,9 +15,14 @@
       "title": "El Ahorro de la Estrategia",
       "subtitle": "Unifica tus servicios y ahorra cada mes.",
       "stats": [
-        { "label": "Valor por Separado", "value": "130€", "unit": "/mes"},
-        { "label": "Ahorro Mensual", "value": "25€", "unit": "de ahorro"},
-        { "label": "Precio del Pack", "value": "105€", "highlight": true, "unit": "/mes" }
+        { "label": "Valor por Separado", "value": "130€", "unit": "/mes" },
+        { "label": "Ahorro Mensual", "value": "25€", "unit": "de ahorro" },
+        {
+          "label": "Precio del Pack",
+          "value": "105€",
+          "highlight": true,
+          "unit": "/mes"
+        }
       ]
     },
     "sections": {
@@ -60,7 +65,8 @@
             "description": "Un vistazo rápido a tus 4 métricas clave de Google Search Console y tu Ficha de Negocio.",
             "icon": "Camera",
             "price": "Valor 5€/mes"
-          },{
+          },
+          {
             "title": "Gestión de Formulario de Conversión Anti-Spam",
             "description": "Cada mensaje de un cliente es una oportunidad. Nos aseguramos de que nunca pierdas una.",
             "icon": "",
@@ -73,9 +79,22 @@
         "title": "El Valor Real vs. El Precio del Pack",
         "content": "La transparencia es un pilar de mi marca. No hay letra pequeña. Si contratas estos 5 servicios por separado, el coste total es de 130€ al mes. Al unirlos en este pack, ahorras 25€ cada mes.",
         "breakdown": [
-          { "label": "Valor Real por Separado", "value": "130,00€", "type": "strikethrough" },
-          { "label": "Ahorro Inmediato (Pack)", "value": "- 25,00€", "type": "savings" },
-          { "label": "Precio Pack Sociotécnico", "value": "105,00€", "type": "final", "unit": "/mes" }
+          {
+            "label": "Valor Real por Separado",
+            "value": "130,00€",
+            "type": "strikethrough"
+          },
+          {
+            "label": "Ahorro Inmediato (Pack)",
+            "value": "- 25,00€",
+            "type": "savings"
+          },
+          {
+            "label": "Precio Pack Sociotécnico",
+            "value": "105,00€",
+            "type": "final",
+            "unit": "/mes"
+          }
         ]
       },
       "ctaFinal": {

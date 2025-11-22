@@ -1,1 +1,66 @@
-{ "lang": "es", "alternateUrl": "/en/thank-you", "metadata": { "title": "Solicitud Recibida | SanahujaDev", "description": "Hemos recibido tu solicitud correctamente.", "robots": "noindex, nofollow" }, "copy": { "hero": { "badge": "Envío Confirmado", "title": "Todo correcto. He recibido tu mensaje.", "subtitle": "Referencia: #LEAD_ID", "message": "Tus datos han llegado a mi sistema de forma segura. No es una autorespuesta: soy <strong>José Javier</strong> y revisaré personalmente lo que me acabas de contar para darte una respuesta con sentido.", "heroVisual": { "type": "SuccessCheck", "animation": "Pulse", "statusText": "Conexión Establecida" } }, "sections": { "timeline": { "title": "Próximos Pasos", "steps": [ { "step": "01", "title": "Revisión Personal", "description": "Analizaré tu consulta o las respuestas de tu formulario para entender bien tu contexto antes de responder." }, { "step": "02", "title": "Contacto < 24h", "description": "Te escribiré por WhatsApp o Email (según lo que hayas preferido) para darte una respuesta directa." }, { "step": "03", "title": "Siguiente Movimiento", "description": "Si veo que puedo ayudarte, definiremos juntos la hoja de ruta. Sin presiones, solo soluciones." } ] }, "loop": { "title": "¿Quién va a leer tu mensaje?", "content": "Mientras analizo tu caso, te invito a saber quién está detrás de la pantalla. Descubre por qué mis clientes confían en mi modelo de Socio Digital.", "card": { "type": "ProfileSnippet", "title": "José Javier Sanahuja", "role": "Consultor & Socio Digital", "image": "/images/profile-small.webp", "text": "Más allá del código. Descubre mi historia, mis certificaciones y mi filosofía de trabajo transparente.", "cta": "Leer sobre mí", "url": "/es/sobre-mi" } }, "legal": { "text": "Tus datos son confidenciales. Se usarán exclusivamente para responder a esta solicitud y evaluar la viabilidad de nuestra colaboración.", "links": [ { "text": "Política de Privacidad", "url": "/es/politica-de-privacidad" } ] } } } }
+{
+  "lang": "es",
+  "alternateUrl": "/en/thank-you",
+  "metadata": {
+    "title": "Solicitud Recibida | SanahujaDev",
+    "description": "Hemos recibido tu solicitud correctamente.",
+    "robots": "noindex, nofollow"
+  },
+  "copy": {
+    "hero": {
+      "badge": "Envío Confirmado",
+      "title": "Todo correcto. He recibido tu mensaje.",
+      "subtitle": "Referencia: #LEAD_ID",
+      "message": "Tus datos han llegado a mi sistema de forma segura. No es una autorespuesta: soy <strong>José Javier</strong> y revisaré personalmente lo que me acabas de contar para darte una respuesta con sentido.",
+      "heroVisual": {
+        "type": "SuccessCheck",
+        "animation": "Pulse",
+        "statusText": "Conexión Establecida"
+      }
+    },
+    "sections": {
+      "timeline": {
+        "title": "Próximos Pasos",
+        "steps": [
+          {
+            "step": "01",
+            "title": "Revisión Personal",
+            "description": "Analizaré tu consulta o las respuestas de tu formulario para entender bien tu contexto antes de responder."
+          },
+          {
+            "step": "02",
+            "title": "Contacto < 24h",
+            "description": "Te escribiré por WhatsApp o Email (según lo que hayas preferido) para darte una respuesta directa."
+          },
+          {
+            "step": "03",
+            "title": "Siguiente Movimiento",
+            "description": "Si veo que puedo ayudarte, definiremos juntos la hoja de ruta. Sin presiones, solo soluciones."
+          }
+        ]
+      },
+      "loop": {
+        "title": "¿Quién va a leer tu mensaje?",
+        "content": "Mientras analizo tu caso, te invito a saber quién está detrás de la pantalla. Descubre por qué mis clientes confían en mi modelo de Socio Digital.",
+        "card": {
+          "type": "ProfileSnippet",
+          "title": "José Javier Sanahuja",
+          "role": "Consultor & Socio Digital",
+          "image": "/images/profile-small.webp",
+          "text": "Más allá del código. Descubre mi historia, mis certificaciones y mi filosofía de trabajo transparente.",
+          "cta": "Leer sobre mí",
+          "url": "/es/sobre-mi"
+        }
+      },
+      "legal": {
+        "text": "Tus datos son confidenciales. Se usarán exclusivamente para responder a esta solicitud y evaluar la viabilidad de nuestra colaboración.",
+        "links": [
+          {
+            "text": "Política de Privacidad",
+            "url": "/es/politica-de-privacidad"
+          }
+        ]
+      }
+    }
+  }
+}

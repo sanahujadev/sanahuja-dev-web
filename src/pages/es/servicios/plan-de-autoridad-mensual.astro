@@ -1,100 +1,105 @@
 ---
 // ¡PÁGINA TONTA (ESPAÑOL)!
-import LandingPlanAutoridad from '../../../components/pages/LandingPlanAutoridad.astro';
+import LandingPlanAutoridad from "../../../components/pages/LandingPlanAutoridad.astro";
 
 // 1. Importa el JSON de la PÁGINA
-import t_page from '../../../i18n/es/services/plan-autoridad-mensual.json' with { type: 'json' };
+import t_page from "../../../i18n/es/services/plan-autoridad-mensual.json" with {
+  type: "json",
+};
 // 2. Importa el JSON del HEADER (solo en baseLayout)
 // Después de `const alternateUrl = ...` y antes del `<Landing...>`
 const schema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": "Content Marketing & SEO Strategy",
-  "provider": {
+  serviceType: "Content Marketing & SEO Strategy",
+  provider: {
     "@type": "Organization",
-    "name": "SanahujaDev",
-    "url": "https://sanahuja.dev",
-    "contactPoint": {
+    name: "SanahujaDev",
+    url: "https://sanahuja.dev",
+    contactPoint: {
       "@type": "ContactPoint",
-      "contactType": "Sales",
-      "email": "josejavier@sanahuja.dev",
-      "availableLanguage": ["Spanish", "English"]
-    }
+      contactType: "Sales",
+      email: "josejavier@sanahuja.dev",
+      availableLanguage: ["Spanish", "English"],
+    },
   },
-  "areaServed": {
+  areaServed: {
     "@type": "GeoCircle",
-    "geoMidpoint": {
+    geoMidpoint: {
       "@type": "GeoCoordinates",
-      "latitude": 28.0997,
-      "longitude": -15.4563
+      latitude: 28.0997,
+      longitude: -15.4563,
     },
-    "geoRadius": "50000"
+    geoRadius: "50000",
   },
-  "hasOfferCatalog": {
+  hasOfferCatalog: {
     "@type": "OfferCatalog",
-    "name": "Plan de Autoridad Mensual",
-    "itemListElement": [
+    name: "Plan de Autoridad Mensual",
+    itemListElement: [
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "Investigación de Palabras Clave",
-          "description": "Identificamos qué preguntan tus clientes en Google"
-        }
+          name: "Investigación de Palabras Clave",
+          description: "Identificamos qué preguntan tus clientes en Google",
+        },
       },
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "Redacción Persuasiva SEO",
-          "description": "Artículos escritos para humanos, optimizados para robots. Sin IA genérica"
-        }
+          name: "Redacción Persuasiva SEO",
+          description:
+            "Artículos escritos para humanos, optimizados para robots. Sin IA genérica",
+        },
       },
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "Optimización On-Page",
-          "description": "Estructura H1/H2/H3, enlazado interno y metadatos perfectos"
-        }
-      }
-    ]
+          name: "Optimización On-Page",
+          description:
+            "Estructura H1/H2/H3, enlazado interno y metadatos perfectos",
+        },
+      },
+    ],
   },
-  "offers": {
+  offers: {
     "@type": "Offer",
-    "url": "https://sanahuja.dev/es/packs/pack-sociotecnico-digital",
-    "price": "105",
-    "priceCurrency": "EUR",
-    "priceSpecification": {
+    url: "https://sanahuja.dev/es/packs/pack-sociotecnico-digital",
+    price: "105",
+    priceCurrency: "EUR",
+    priceSpecification: {
       "@type": "PriceSpecification",
-      "price": "105",
-      "priceCurrency": "EUR",
-      "billingIncrement": 1,
-      "unitCode": "MON",
-      "description": "Incluido en Pack Sociotécnico Digital"
+      price: "105",
+      priceCurrency: "EUR",
+      billingIncrement: 1,
+      unitCode: "MON",
+      description: "Incluido en Pack Sociotécnico Digital",
     },
-    "availability": "https://schema.org/InStock",
-    "validFrom": "2025-01-01",
-    "category": "Servicio de Suscripción"
+    availability: "https://schema.org/InStock",
+    validFrom: "2025-01-01",
+    category: "Servicio de Suscripción",
   },
-  "mainEntityOfPage": {
+  mainEntityOfPage: {
     "@type": "WebPage",
-    "@id": "https://sanahuja.dev/es/servicios/plan-de-autoridad-mensual"
+    "@id": "https://sanahuja.dev/es/servicios/plan-de-autoridad-mensual",
   },
-  "description": "Convierte tu blog en un activo que vende. Redacción de artículos SEO estratégicos para atraer tráfico cualificado y posicionar tu marca en Google.",
-  "potentialAction": {
+  description:
+    "Convierte tu blog en un activo que vende. Redacción de artículos SEO estratégicos para atraer tráfico cualificado y posicionar tu marca en Google.",
+  potentialAction: {
     "@type": "BuyAction",
-    "target": {
+    target: {
       "@type": "EntryPoint",
-      "urlTemplate": "https://sanahuja.dev/es/formulario-inicial",
-      "inLanguage": "es-ES",
-      "actionPlatform": [
+      urlTemplate: "https://sanahuja.dev/es/formulario-inicial",
+      inLanguage: "es-ES",
+      actionPlatform: [
         "https://schema.org/DesktopWebPlatform",
-        "https://schema.org/MobileWebPlatform"
-      ]
-    }
-  }
-}
+        "https://schema.org/MobileWebPlatform",
+      ],
+    },
+  },
+};
 // 3. ¡Calcula la URL Alterna (¡la buena!)!
 const alternateUrl = new URL(t_page.alternateUrl, Astro.site).href;
 ---

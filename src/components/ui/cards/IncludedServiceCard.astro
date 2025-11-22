@@ -1,11 +1,11 @@
 ---
 // src/components/ui/cards/IncludedServiceCard.astro
-import Shield from '../icons/Shield.astro';
+import Shield from "../icons/Shield.astro";
 interface Props {
-    Icon?: Astro.Component;
-    title: string;
-    price: string;
-    description: string;
+  Icon?: Astro.Component;
+  title: string;
+  price: string;
+  description: string;
 }
 
 const { Icon = Shield, title, price, description } = Astro.props;

@@ -9,14 +9,14 @@ interface Props {
   alt: string;
   sizes: string;
   class?: string;
-  loading?: 'lazy' | 'eager';
-  decoding?: 'async' | 'sync' | 'auto';
+  loading?: "lazy" | "eager";
+  decoding?: "async" | "sync" | "auto";
   width: number;
   height: number;
   basePath: string; // ej. 'web/servicios'
-  fallbackFormat?: 'jpeg' | 'png'; // Permitimos jpeg o png como fallback
+  fallbackFormat?: "jpeg" | "png"; // Permitimos jpeg o png como fallback
   transitionName?: string;
-  fetchpriority?: 'high' | 'low' | 'auto';
+  fetchpriority?: "high" | "low" | "auto";
 }
 
 const {
@@ -24,26 +24,29 @@ const {
   alt,
   sizes,
   class: className,
-  loading = 'lazy',
-  decoding = 'async',
+  loading = "lazy",
+  decoding = "async",
   width,
   height,
   basePath,
-  fallbackFormat = 'jpeg',
-  transitionName = '',
-  fetchpriority = 'auto'
+  fallbackFormat = "jpeg",
+  transitionName = "",
+  fetchpriority = "auto",
 } = Astro.props;
 
 const widths = [360, 720, 1280, 1920];
-const formats: Array<'avif' | 'webp'> = ['avif', 'webp']; // Dejamos que el fallback se maneje por separado
+const formats: Array<"avif" | "webp"> = ["avif", "webp"]; // Dejamos que el fallback se maneje por separado
 
 // ¡Usamos el CDN de la marca!
-const cdnBaseUrl = 'https://cdn.sanahuja.dev/'; 
+const cdnBaseUrl = "https://cdn.sanahuja.dev/";
 
-const generateSrcset = (format: 'avif' | 'webp' | 'jpeg' | 'png') => {
+const generateSrcset = (format: "avif" | "webp" | "jpeg" | "png") => {
   return widths
-    .map(w => `${cdnBaseUrl}${basePath}/${imageName}/${format}/${imageName}-${w}w.${format} ${w}w`)
-    .join(', ');
+    .map(
+      (w) =>
+        `${cdnBaseUrl}${basePath}/${imageName}/${format}/${imageName}-${w}w.${format} ${w}w`,
+    )
+    .join(", ");
 };
 ---
 <picture transition:name={transitionName}>

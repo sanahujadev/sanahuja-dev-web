@@ -25,9 +25,21 @@
         "title": "Local Trust",
         "subtitle": "Shine in your Area",
         "stats": [
-          { "label": "Reputation", "value": "5★ Management", "description": "We reply to reviews and care for your image on Google." },
-          { "label": "Visibility", "value": "Local SEO", "description": "Strategic monthly content to rank in your area." },
-          { "label": "Web Health", "value": "WPO 99", "description": "Your website always fast and technically perfect." }
+          {
+            "label": "Reputation",
+            "value": "5★ Management",
+            "description": "We reply to reviews and care for your image on Google."
+          },
+          {
+            "label": "Visibility",
+            "value": "Local SEO",
+            "description": "Strategic monthly content to rank in your area."
+          },
+          {
+            "label": "Web Health",
+            "value": "WPO 99",
+            "description": "Your website always fast and technically perfect."
+          }
         ]
       }
     },

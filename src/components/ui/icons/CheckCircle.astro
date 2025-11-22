@@ -1,7 +1,9 @@
 ---
 // src/components/ui/icons/CheckCircle.astro
-import type { HTMLAttributes } from 'astro/types';
-interface Props extends HTMLAttributes<'svg'> { class?: string; }
+import type { HTMLAttributes } from "astro/types";
+interface Props extends HTMLAttributes<"svg"> {
+  class?: string;
+}
 const { class: className, ...props } = Astro.props;
 ---
 <svg aria-hidden="true" focusable="false" class={className} fill="currentColor" viewBox="0 0 20 20" {...props}>

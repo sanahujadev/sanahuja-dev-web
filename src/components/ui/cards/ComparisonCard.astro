@@ -1,13 +1,13 @@
 ---
 // src/components/ui/cards/ComparisonCard.astro
-import XCircle from '../icons/XCircle.astro';
-import CheckCircle from '../icons/CheckCircle.astro';
+import XCircle from "../icons/XCircle.astro";
+import CheckCircle from "../icons/CheckCircle.astro";
 
 interface Props {
-    variant: "danger" | "success";
-    badgeText: string;
-    title: string;
-    features: string[];
+  variant: "danger" | "success";
+  badgeText: string;
+  title: string;
+  features: string[];
 }
 
 const { variant, badgeText, title, features } = Astro.props;
@@ -15,11 +15,15 @@ const { variant, badgeText, title, features } = Astro.props;
 const isDanger = variant === "danger";
 
 const cardBorderClass = isDanger ? "border-red-500/20" : "border-accent-500/40";
-const badgeBgClass = isDanger ? "bg-red-500/10 border-red-500/30" : "bg-accent-500/10 border-accent-500/30";
+const badgeBgClass = isDanger
+  ? "bg-red-500/10 border-red-500/30"
+  : "bg-accent-500/10 border-accent-500/30";
 const badgeTextColorClass = isDanger ? "text-red-300" : "text-accent-300";
 const badgeIconClass = isDanger ? "text-red-400" : "text-accent-400";
 const featureIconClass = isDanger ? "text-red-400" : "text-accent-400";
-const featureTextColorClass = isDanger ? "text-muted-foreground" : "text-foreground font-medium";
+const featureTextColorClass = isDanger
+  ? "text-muted-foreground"
+  : "text-foreground font-medium";
 
 const Icon = isDanger ? XCircle : CheckCircle;
 ---

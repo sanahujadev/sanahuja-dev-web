@@ -1,28 +1,28 @@
 ---
 // src/components/pages/LandingGestionReputacionOnline.astro
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Button from '../../components/ui/Button.astro';
-import Badge from '../../components/ui/Badge.astro';
-import ArrowRight from '../../components/ui/icons/ArrowRight.astro';
-import Shield from '../../components/ui/icons/Shield.astro';
-import AlertTriangle from '../../components/ui/icons/AlertTriangle.astro';
-import CheckCircle2 from '../../components/ui/icons/CheckCircle2.astro'; // (El contorno, de Mantenimiento)
-import Zap from '../../components/ui/icons/Zap.astro';
-import Target from '../../components/ui/icons/Target.astro';
-import TrendingUp from '../../components/ui/icons/TrendingUp.astro';
-import Clock from '../../components/ui/icons/Clock.astro';
-import Heart from '../../components/ui/icons/Heart.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Button from "../../components/ui/Button.astro";
+import Badge from "../../components/ui/Badge.astro";
+import ArrowRight from "../../components/ui/icons/ArrowRight.astro";
+import Shield from "../../components/ui/icons/Shield.astro";
+import AlertTriangle from "../../components/ui/icons/AlertTriangle.astro";
+import CheckCircle2 from "../../components/ui/icons/CheckCircle2.astro"; // (El contorno, de Mantenimiento)
+import Zap from "../../components/ui/icons/Zap.astro";
+import Target from "../../components/ui/icons/Target.astro";
+import TrendingUp from "../../components/ui/icons/TrendingUp.astro";
+import Clock from "../../components/ui/icons/Clock.astro";
+import Heart from "../../components/ui/icons/Heart.astro";
 // (¡Nuevos instrumentos para esta pieza!)
-import XCircle from '../../components/ui/icons/XCircle.astro';
-import CheckCircle from '../../components/ui/icons/CheckCircle.astro';
-import ChatAlt2 from '../../components/ui/icons/ChatAlt2.astro';
-import Eye from '../../components/ui/icons/Eye.astro';
-import ThumbsUp from '../../components/ui/icons/ThumbsUp.astro';
-import Send from '../../components/ui/icons/Send.astro';
-import Ban from '../../components/ui/icons/Ban.astro';
-import SectionHeader from '../../components/ui/SectionHeader.astro';
-import ServiceFeatureCard from '../../components/ui/cards/ServiceFeatureCard.astro';
-import type { LandingGestionReputacionOnlineCopy } from '../../i18n/utils';
+import XCircle from "../../components/ui/icons/XCircle.astro";
+import CheckCircle from "../../components/ui/icons/CheckCircle.astro";
+import ChatAlt2 from "../../components/ui/icons/ChatAlt2.astro";
+import Eye from "../../components/ui/icons/Eye.astro";
+import ThumbsUp from "../../components/ui/icons/ThumbsUp.astro";
+import Send from "../../components/ui/icons/Send.astro";
+import Ban from "../../components/ui/icons/Ban.astro";
+import SectionHeader from "../../components/ui/SectionHeader.astro";
+import ServiceFeatureCard from "../../components/ui/cards/ServiceFeatureCard.astro";
+import type { LandingGestionReputacionOnlineCopy } from "../../i18n/utils";
 
 const { copy, alternateUrl, schema } = Astro.props;
 
@@ -46,25 +46,46 @@ const iconMap: Record<string, any> = {
   AlertTriangle,
   CheckCircle2,
   TrendingUp,
-  ArrowRight
+  ArrowRight,
 };
 const featureCardColors = [
-  { blur: 'from-secondary-500/10 to-secondary-600/10', ring: 'bg-secondary-500/10 border-secondary-500/20', text: 'text-secondary-400' },
-  { blur: 'from-accent-500/10 to-accent-600/10', ring: 'bg-accent-500/10 border-accent-500/20', text: 'text-accent-400' },
-  { blur: 'from-primary-500/10 to-primary-600/10', ring: 'bg-primary-500/10 border-primary-500/20', text: 'text-primary-400' },
-  { blur: 'from-secondary-500/10 to-secondary-600/10', ring: 'bg-secondary-500/10 border-secondary-500/20', text: 'text-secondary-400' },
+  {
+    blur: "from-secondary-500/10 to-secondary-600/10",
+    ring: "bg-secondary-500/10 border-secondary-500/20",
+    text: "text-secondary-400",
+  },
+  {
+    blur: "from-accent-500/10 to-accent-600/10",
+    ring: "bg-accent-500/10 border-accent-500/20",
+    text: "text-accent-400",
+  },
+  {
+    blur: "from-primary-500/10 to-primary-600/10",
+    ring: "bg-primary-500/10 border-primary-500/20",
+    text: "text-primary-400",
+  },
+  {
+    blur: "from-secondary-500/10 to-secondary-600/10",
+    ring: "bg-secondary-500/10 border-secondary-500/20",
+    text: "text-secondary-400",
+  },
 ];
 
 const protocolStepColors = [
-  'from-primary-500 to-primary-600 shadow-primary-500/25',
-  'from-secondary-500 to-secondary-600 shadow-secondary-500/25',
-  'from-accent-500 to-accent-600 shadow-accent-500/25',
-  'from-primary-500 to-accent-500 shadow-primary-500/25', // ¡El combo V0!
+  "from-primary-500 to-primary-600 shadow-primary-500/25",
+  "from-secondary-500 to-secondary-600 shadow-secondary-500/25",
+  "from-accent-500 to-accent-600 shadow-accent-500/25",
+  "from-primary-500 to-accent-500 shadow-primary-500/25", // ¡El combo V0!
 ];
 // --- 4. Función de Procesamiento (Para <strong>) ---
-const processContent = (content: string, strongClass: string = 'font-semibold text-primary-500'): string => {
-  return content
-    .replace(/\*\*([^*]+)\*\*/g, `<strong class="${strongClass}">$1</strong>`);
+const processContent = (
+  content: string,
+  strongClass: string = "font-semibold text-primary-500",
+): string => {
+  return content.replace(
+    /\*\*([^*]+)\*\*/g,
+    `<strong class="${strongClass}">$1</strong>`,
+  );
 };
 ---
 <BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>

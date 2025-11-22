@@ -27,7 +27,11 @@
         "subtitle": "Paga solo por lo que usas.",
         "stats": [
           { "label": "Permanencia", "value": "0", "unit": "meses" },
-          { "label": "Respuesta", "value": "<24h", "color": "text-primary-500" },
+          {
+            "label": "Respuesta",
+            "value": "<24h",
+            "color": "text-primary-500"
+          },
           { "label": "Caducidad", "value": "12", "unit": "meses" }
         ]
       }
@@ -38,10 +42,26 @@
         "title": "Intervenciones Rápidas y Precisas",
         "content": "No necesitas pagar una iguala mensual si solo tienes un problema puntual. Atacamos directamente el error para que tu negocio siga funcionando.",
         "useCases": [
-          { "problem": "Error Crítico", "description": "Arreglar error 500 o pantalla blanca en WordPress.", "icon": "AlertOctagon" },
-          { "problem": "Limpieza", "description": "Eliminar virus o malware y recuperar la seguridad.", "icon": "ShieldAlert" },
-          { "problem": "Estilo y CSS", "description": "Cambios visuales, botones que no funcionan o ajustes móviles.", "icon": "PenTool" },
-          { "problem": "Actualizaciones", "description": "Actualizar plugins delicados sin romper la web.", "icon": "RefreshCw" }
+          {
+            "problem": "Error Crítico",
+            "description": "Arreglar error 500 o pantalla blanca en WordPress.",
+            "icon": "AlertOctagon"
+          },
+          {
+            "problem": "Limpieza",
+            "description": "Eliminar virus o malware y recuperar la seguridad.",
+            "icon": "ShieldAlert"
+          },
+          {
+            "problem": "Estilo y CSS",
+            "description": "Cambios visuales, botones que no funcionan o ajustes móviles.",
+            "icon": "PenTool"
+          },
+          {
+            "problem": "Actualizaciones",
+            "description": "Actualizar plugins delicados sin romper la web.",
+            "icon": "RefreshCw"
+          }
         ]
       },
       "benefits": {
@@ -72,7 +92,11 @@
             "name": "Pack Inicio",
             "hours": "5 Horas",
             "price": "Consultar",
-            "features": ["Ideal para pequeños ajustes", "Validez 12 meses", "Soporte Email"],
+            "features": [
+              "Ideal para pequeños ajustes",
+              "Validez 12 meses",
+              "Soporte Email"
+            ],
             "highlight": false,
             "cta": "Consultar Pack Inicio"
           },
@@ -80,7 +104,11 @@
             "name": "Pack Pro",
             "hours": "10 Horas",
             "price": "Mejor Precio/Hora",
-            "features": ["Ideal para limpiezas o urgencias", "Validez 12 meses", "Soporte Prioritario"],
+            "features": [
+              "Ideal para limpiezas o urgencias",
+              "Validez 12 meses",
+              "Soporte Prioritario"
+            ],
             "highlight": true,
             "cta": "Consultar Pack Pro",
             "badge": "Recomendado"

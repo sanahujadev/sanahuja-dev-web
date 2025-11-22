@@ -15,9 +15,22 @@
         "title": "Prueba de Autoridad",
         "subtitle": "Datos, no palabras.",
         "stats": [
-          { "label": "Certificaciones Técnicas", "value": "108+", "color": "text-accent-400" },
-          { "label": "Reseñas en Fiverr", "value": "5.0", "icon": "Star", "color": "text-primary-500" },
-          { "label": "Proyectos 5 Estrellas", "value": "+13", "color": "text-secondary-400" },
+          {
+            "label": "Certificaciones Técnicas",
+            "value": "108+",
+            "color": "text-accent-400"
+          },
+          {
+            "label": "Reseñas en Fiverr",
+            "value": "5.0",
+            "icon": "Star",
+            "color": "text-primary-500"
+          },
+          {
+            "label": "Proyectos 5 Estrellas",
+            "value": "+13",
+            "color": "text-secondary-400"
+          },
           { "label": "WPO Promedio", "value": "99", "color": "text-accent-400" }
         ]
       }
@@ -86,25 +99,25 @@
             "initial": "T"
           },
           {
-             "name": "Jrgracec",
-             "type": "Cliente Valorado",
-             "content": "Excelente vendedor, respondió todas mis preguntas de manera clara y concisa. ¡Muy recomendado!",
-             "avatarSlug": "",
-             "initial": "J"
+            "name": "Jrgracec",
+            "type": "Cliente Valorado",
+            "content": "Excelente vendedor, respondió todas mis preguntas de manera clara y concisa. ¡Muy recomendado!",
+            "avatarSlug": "",
+            "initial": "J"
           },
           {
-             "name": "Jmloranzcoll",
-             "type": "Cliente Valorado",
-             "content": "Hizo todo el trabajo según lo planeado. A pesar de que teníamos bastante trabajo, lo hizo paso a paso.",
-             "avatarSlug": "",
-             "initial": "JM"
+            "name": "Jmloranzcoll",
+            "type": "Cliente Valorado",
+            "content": "Hizo todo el trabajo según lo planeado. A pesar de que teníamos bastante trabajo, lo hizo paso a paso.",
+            "avatarSlug": "",
+            "initial": "JM"
           },
           {
-             "name": "Marilui",
-             "type": "Cliente Valorada",
-             "content": "Hermoso trabajo, muy profesional.",
-             "avatarSlug": "",
-             "initial": "M"
+            "name": "Marilui",
+            "type": "Cliente Valorada",
+            "content": "Hermoso trabajo, muy profesional.",
+            "avatarSlug": "",
+            "initial": "M"
           }
         ]
       },

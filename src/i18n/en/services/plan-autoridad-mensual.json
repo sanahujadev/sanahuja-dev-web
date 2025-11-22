@@ -25,21 +25,21 @@
         "title": "Industry Dominance",
         "subtitle": "Your Brand, a Benchmark",
         "stats": [
-            { 
-                "label": "Positioning", 
-                "value": "Authority", 
-                "description": "Become the expert voice and benchmark in your sector." 
-            },
-            { 
-                "label": "Reach", 
-                "value": "Visibility", 
-                "description": "Ensure your brand appears whenever your client has a question." 
-            },
-            { 
-                "label": "Result", 
-                "value": "Sales", 
-                "description": "Qualified traffic that arrives ready to buy." 
-            }
+          {
+            "label": "Positioning",
+            "value": "Authority",
+            "description": "Become the expert voice and benchmark in your sector."
+          },
+          {
+            "label": "Reach",
+            "value": "Visibility",
+            "description": "Ensure your brand appears whenever your client has a question."
+          },
+          {
+            "label": "Result",
+            "value": "Sales",
+            "description": "Qualified traffic that arrives ready to buy."
+          }
         ]
       }
     },
@@ -49,26 +49,26 @@
         "title": "Is your website a digital desert?",
         "content": "You know 'content is king', but operational reality overwhelms you. If you identify these symptoms in your business, you need external discipline:",
         "cards": [
-            {
-                "title": "Image of Abandonment",
-                "description": "Entering a blog and seeing the last news is from 2019 generates immediate distrust. It looks like the business has closed.",
-                "icon": "CalendarX"
-            },
-            {
-                "title": "Invisibility on Google",
-                "description": "You write about what you like, not what your client searches for. Result: Google ignores you and traffic is zero.",
-                "icon": "Ghost"
-            },
-            {
-                "title": "Analysis Paralysis",
-                "description": "You waste hours staring at a blank screen thinking 'what do I talk about today?' instead of invoicing.",
-                "icon": "BrainCircuit"
-            },
-            {
-                "title": "Chronic Inconsistency",
-                "description": "You start strong in January and quit in February. SEO requires a martial rhythm you can't maintain due to lack of time.",
-                "icon": "ActivitySquare"
-            }
+          {
+            "title": "Image of Abandonment",
+            "description": "Entering a blog and seeing the last news is from 2019 generates immediate distrust. It looks like the business has closed.",
+            "icon": "CalendarX"
+          },
+          {
+            "title": "Invisibility on Google",
+            "description": "You write about what you like, not what your client searches for. Result: Google ignores you and traffic is zero.",
+            "icon": "Ghost"
+          },
+          {
+            "title": "Analysis Paralysis",
+            "description": "You waste hours staring at a blank screen thinking 'what do I talk about today?' instead of invoicing.",
+            "icon": "BrainCircuit"
+          },
+          {
+            "title": "Chronic Inconsistency",
+            "description": "You start strong in January and quit in February. SEO requires a martial rhythm you can't maintain due to lack of time.",
+            "icon": "ActivitySquare"
+          }
         ]
       },
       "solution": {

@@ -25,21 +25,21 @@
         "title": "Dominio del Sector",
         "subtitle": "Tu Marca, Referente",
         "stats": [
-            { 
-                "label": "Posicionamiento", 
-                "value": "Autoridad", 
-                "description": "Conviértete en la voz experta y referente de tu sector." 
-            },
-            { 
-                "label": "Alcance", 
-                "value": "Visibilidad", 
-                "description": "Que tu marca aparezca siempre que tu cliente tenga una duda." 
-            },
-            { 
-                "label": "Resultado", 
-                "value": "Ventas", 
-                "description": "Tráfico cualificado que llega listo para comprar." 
-            }
+          {
+            "label": "Posicionamiento",
+            "value": "Autoridad",
+            "description": "Conviértete en la voz experta y referente de tu sector."
+          },
+          {
+            "label": "Alcance",
+            "value": "Visibilidad",
+            "description": "Que tu marca aparezca siempre que tu cliente tenga una duda."
+          },
+          {
+            "label": "Resultado",
+            "value": "Ventas",
+            "description": "Tráfico cualificado que llega listo para comprar."
+          }
         ]
       }
     },
@@ -49,26 +49,26 @@
         "title": "¿Tu web es un desierto digital?",
         "content": "Sabes que 'el contenido es el rey', pero la realidad operativa te supera. Si identificas estos síntomas en tu negocio, necesitas disciplina externa:",
         "cards": [
-            {
-                "title": "Imagen de Abandono",
-                "description": "Entrar a un blog y ver que la última noticia es de 2019 genera desconfianza inmediata. Parece que el negocio ha cerrado.",
-                "icon": "CalendarX"
-            },
-            {
-                "title": "Invisibilidad en Google",
-                "description": "Escribes sobre lo que te gusta, no sobre lo que busca tu cliente. Resultado: Google te ignora y el tráfico es cero.",
-                "icon": "Ghost"
-            },
-            {
-                "title": "Parálisis por Análisis",
-                "description": "Pierdes horas mirando la pantalla en blanco pensando '¿de qué hablo hoy?' en lugar de estar facturando.",
-                "icon": "BrainCircuit"
-            },
-            {
-                "title": "Inconsistencia Crónica",
-                "description": "Empiezas fuerte en enero y lo dejas en febrero. El SEO requiere un ritmo marcial que no logras mantener por falta de tiempo.",
-                "icon": "ActivitySquare"
-            }
+          {
+            "title": "Imagen de Abandono",
+            "description": "Entrar a un blog y ver que la última noticia es de 2019 genera desconfianza inmediata. Parece que el negocio ha cerrado.",
+            "icon": "CalendarX"
+          },
+          {
+            "title": "Invisibilidad en Google",
+            "description": "Escribes sobre lo que te gusta, no sobre lo que busca tu cliente. Resultado: Google te ignora y el tráfico es cero.",
+            "icon": "Ghost"
+          },
+          {
+            "title": "Parálisis por Análisis",
+            "description": "Pierdes horas mirando la pantalla en blanco pensando '¿de qué hablo hoy?' en lugar de estar facturando.",
+            "icon": "BrainCircuit"
+          },
+          {
+            "title": "Inconsistencia Crónica",
+            "description": "Empiezas fuerte en enero y lo dejas en febrero. El SEO requiere un ritmo marcial que no logras mantener por falta de tiempo.",
+            "icon": "ActivitySquare"
+          }
         ]
       },
       "solution": {

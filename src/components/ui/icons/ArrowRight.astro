@@ -1,8 +1,10 @@
 ---
 // src/components/ui/icons/ArrowRight.astro
 // Icono para nuestros botones CTA, inspirado en V0
-import type { HTMLAttributes } from 'astro/types';
-interface Props extends HTMLAttributes<'svg'> { class?: string; }
+import type { HTMLAttributes } from "astro/types";
+interface Props extends HTMLAttributes<"svg"> {
+  class?: string;
+}
 const { class: className, ...props } = Astro.props;
 ---
 <svg aria-hidden="true" focusable="false" 

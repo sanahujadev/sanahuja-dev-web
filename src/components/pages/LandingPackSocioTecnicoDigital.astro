@@ -1,19 +1,19 @@
 ---
 // src/components/pages/LandingPackSocioTecnicoDigital.astro
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Badge from '../../components/ui/Badge.astro';
-import Button from '../../components/ui/Button.astro';
-import ArrowRight from '../../components/ui/icons/ArrowRight.astro';
-import Shield from '../../components/ui/icons/Shield.astro';
-import Check from '../../components/ui/icons/Check.astro';
-import Package from '../../components/ui/icons/Package.astro';
-import BarChart from '../../components/ui/icons/BarChart.astro';
-import FileText from '../../components/ui/icons/FileText.astro';
-import Cookie from '../../components/ui/icons/Cookie.astro';
-import Camera from '../../components/ui/icons/Camera.astro';
-import Envelope from '../../components/ui/icons/Envelope.astro';
-import IncludedServiceCard from '../../components/ui/cards/IncludedServiceCard.astro';
-import type { PackSociotecnicoDigitalCopy } from '../../i18n/utils';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Badge from "../../components/ui/Badge.astro";
+import Button from "../../components/ui/Button.astro";
+import ArrowRight from "../../components/ui/icons/ArrowRight.astro";
+import Shield from "../../components/ui/icons/Shield.astro";
+import Check from "../../components/ui/icons/Check.astro";
+import Package from "../../components/ui/icons/Package.astro";
+import BarChart from "../../components/ui/icons/BarChart.astro";
+import FileText from "../../components/ui/icons/FileText.astro";
+import Cookie from "../../components/ui/icons/Cookie.astro";
+import Camera from "../../components/ui/icons/Camera.astro";
+import Envelope from "../../components/ui/icons/Envelope.astro";
+import IncludedServiceCard from "../../components/ui/cards/IncludedServiceCard.astro";
+import type { PackSociotecnicoDigitalCopy } from "../../i18n/utils";
 
 interface Props {
   copy: PackSociotecnicoDigitalCopy;
@@ -23,11 +23,7 @@ interface Props {
 
 const { copy, alternateUrl, schema } = Astro.props;
 
-const {
-    copy: t,
-    lang,
-    metadata
-} = copy;
+const { copy: t, lang, metadata } = copy;
 
 const iconMap: Record<string, any> = {
   Shield,
@@ -35,12 +31,15 @@ const iconMap: Record<string, any> = {
   FileText,
   Cookie,
   Camera,
-  Envelope // (¡Nuevo!)
+  Envelope, // (¡Nuevo!)
 };
 
-const processContent = (content: string, strongClass: string = 'font-semibold'): string => {
+const processContent = (
+  content: string,
+  strongClass: string = "font-semibold",
+): string => {
   return content
-    .replace(/\ \[cite:.*?\ \]/g, '')
+    .replace(/\ \[cite:.*?\ \]/g, "")
     .replace(/\*\*([^*]+)\*\*/g, `<strong class="${strongClass}">$1</strong>`);
 };
 ---

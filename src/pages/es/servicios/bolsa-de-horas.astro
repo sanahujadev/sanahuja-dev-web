@@ -1,24 +1,26 @@
 ---
-import LandingBolsaDeHoras from '../../../components/pages/LandingBolsaDeHoras.astro';
-import t_page from '../../../i18n/es/services/bolsa-de-horas.json' with { type: 'json' };
+import LandingBolsaDeHoras from "../../../components/pages/LandingBolsaDeHoras.astro";
+import t_page from "../../../i18n/es/services/bolsa-de-horas.json" with {
+  type: "json",
+};
 
 const alternateUrl = new URL(t_page.alternateUrl, Astro.site).href;
 
 const schema = {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": `${t_page.copy.hero.h1_part1} ${t_page.copy.hero.h1_part2}`,
-  "description": t_page.metadata.description,
-  "brand": {
+  name: `${t_page.copy.hero.h1_part1} ${t_page.copy.hero.h1_part2}`,
+  description: t_page.metadata.description,
+  brand: {
     "@type": "Brand",
-    "name": "SanahujaDev"
+    name: "SanahujaDev",
   },
-  "offers": t_page.copy.sections.pricing.packs.map(pack => ({
+  offers: t_page.copy.sections.pricing.packs.map((pack) => ({
     "@type": "Offer",
-    "name": pack.name,
-    "price": pack.price === 'Consultar' ? undefined : pack.price, // Schema.org expects a number, so we omit if it's text
-    "priceCurrency": "EUR"
-  }))
+    name: pack.name,
+    price: pack.price === "Consultar" ? undefined : pack.price, // Schema.org expects a number, so we omit if it's text
+    priceCurrency: "EUR",
+  })),
 };
 ---
 <LandingBolsaDeHoras 

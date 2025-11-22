@@ -25,7 +25,7 @@
         "title": "Tranquilidad Total",
         "subtitle": "Céntrate en tu negocio.",
         "stats": [
-          { "label": "Contrato", "value": "Flexible"},
+          { "label": "Contrato", "value": "Flexible" },
           { "label": "Soporte", "value": "WPO 99" },
           { "label": "Ahorro", "value": "25€", "unit": "/mes" }
         ]

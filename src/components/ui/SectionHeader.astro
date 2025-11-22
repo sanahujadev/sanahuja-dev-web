@@ -1,36 +1,36 @@
 ---
 // src/components/ui/SectionHeader.astro
-import Badge from './Badge.astro';
-import type { HTMLAttributes } from 'astro/types';
+import Badge from "./Badge.astro";
+import type { HTMLAttributes } from "astro/types";
 
-interface Props extends HTMLAttributes<'div'> {
-    badgeVariant: string;
-    badgeIcon: any;
-    badgeIconClass: string;
-    badgeText: string;
-    title: string;
-    content?: string;
-    titleClass?: string;
-    contentClass?: string;
-    isH1?: boolean;
+interface Props extends HTMLAttributes<"div"> {
+  badgeVariant: string;
+  badgeIcon: any;
+  badgeIconClass: string;
+  badgeText: string;
+  title: string;
+  content?: string;
+  titleClass?: string;
+  contentClass?: string;
+  isH1?: boolean;
 }
 
-const { 
-    badgeVariant, 
-    badgeIcon: Icon, 
-    badgeIconClass, 
-    badgeText, 
-    title, 
-    content, 
-    titleClass, 
-    contentClass,
-    isH1 = false,
-    ...rest 
+const {
+  badgeVariant,
+  badgeIcon: Icon,
+  badgeIconClass,
+  badgeText,
+  title,
+  content,
+  titleClass,
+  contentClass,
+  isH1 = false,
+  ...rest
 } = Astro.props;
 
-const TitleTag = isH1 ? 'h1' : 'h2';
+const TitleTag = isH1 ? "h1" : "h2";
 
-const hasContent = content || Astro.slots.has('default');
+const hasContent = content || Astro.slots.has("default");
 ---
 <div class:list={["text-center space-y-4", rest.class]}>
     <Badge variant={badgeVariant as "default" | "v0_accent" | "v0_secondary" | "v0_primary" | "secondary"}>

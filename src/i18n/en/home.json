@@ -108,12 +108,46 @@
           "cta": "View full profile on Fiverr"
         },
         "testimonials": [
-          { "name": "Joaco B.", "type": "Valued Client", "content": "He was very attentive and kept a close eye on the questions and revisions I had for the order. Highly recommended.", "img": "fiverr-client-joaco" },
-          { "name": "Alerco", "type": "Valued Client", "content": "The relationship with José Javier and his work are extraordinary.", "initial": "A", "color": "secondary" },
-          { "name": "ihatemyclass", "type": "Valued Client", "content": "Fantastic work! Even though I didn't express my availability at the start, they did an excellent job.", "initial": "I", "color": "accent" },
-          { "name": "Antoine R.", "type": "Valued Client", "content": "Excellent work, as always.", "img": "fiverr-client-antoine" },
-          { "name": "Fengjason", "type": "Valued Client", "content": "This is my second order with Mr. José, a really great experience.", "initial": "F", "color": "primary" },
-          { "name": "Thomas 8.", "type": "Valued Client", "content": "Excellent service provider. Very happy with the communication and general knowledge.", "initial": "T", "color": "secondary" }
+          {
+            "name": "Joaco B.",
+            "type": "Valued Client",
+            "content": "He was very attentive and kept a close eye on the questions and revisions I had for the order. Highly recommended.",
+            "img": "fiverr-client-joaco"
+          },
+          {
+            "name": "Alerco",
+            "type": "Valued Client",
+            "content": "The relationship with José Javier and his work are extraordinary.",
+            "initial": "A",
+            "color": "secondary"
+          },
+          {
+            "name": "ihatemyclass",
+            "type": "Valued Client",
+            "content": "Fantastic work! Even though I didn't express my availability at the start, they did an excellent job.",
+            "initial": "I",
+            "color": "accent"
+          },
+          {
+            "name": "Antoine R.",
+            "type": "Valued Client",
+            "content": "Excellent work, as always.",
+            "img": "fiverr-client-antoine"
+          },
+          {
+            "name": "Fengjason",
+            "type": "Valued Client",
+            "content": "This is my second order with Mr. José, a really great experience.",
+            "initial": "F",
+            "color": "primary"
+          },
+          {
+            "name": "Thomas 8.",
+            "type": "Valued Client",
+            "content": "Excellent service provider. Very happy with the communication and general knowledge.",
+            "initial": "T",
+            "color": "secondary"
+          }
         ]
       },
       "ctaFinal": {

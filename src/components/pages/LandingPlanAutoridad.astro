@@ -1,20 +1,20 @@
 ---
 // src/components/pages/LandingPlanAutoridad.astro
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Button from '../../components/ui/Button.astro';
-import Badge from '../../components/ui/Badge.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Button from "../../components/ui/Button.astro";
+import Badge from "../../components/ui/Badge.astro";
 
 // Iconos de la Orquesta
-import CheckCircle2 from '../ui/icons/CheckCircle2.astro';
-import AlertTriangle from '../ui/icons/AlertTriangle.astro';
-import CalendarX from '../ui/icons/CalendarX.astro';
-import Ghost from '../ui/icons/Ghost.astro';
-import BrainCircuit from '../ui/icons/BrainCircuit.astro';
-import ActivitySquare from '../ui/icons/ActivitySquare.astro';
-import ArrowRight from '../ui/icons/ArrowRight.astro'; // Añadido para consistencia en botones
+import CheckCircle2 from "../ui/icons/CheckCircle2.astro";
+import AlertTriangle from "../ui/icons/AlertTriangle.astro";
+import CalendarX from "../ui/icons/CalendarX.astro";
+import Ghost from "../ui/icons/Ghost.astro";
+import BrainCircuit from "../ui/icons/BrainCircuit.astro";
+import ActivitySquare from "../ui/icons/ActivitySquare.astro";
+import ArrowRight from "../ui/icons/ArrowRight.astro"; // Añadido para consistencia en botones
 
 // Tipos
-import type { PlanDeAutoridadCopy } from '../../i18n/utils';
+import type { PlanDeAutoridadCopy } from "../../i18n/utils";
 
 interface Props {
   copy: PlanDeAutoridadCopy;
@@ -28,8 +28,8 @@ const { copy: t, lang, metadata } = copy;
 const icons = {
   CalendarX,
   Ghost,
-  BrainCircuit, 
-  ActivitySquare
+  BrainCircuit,
+  ActivitySquare,
 };
 
 // Iconos Inline (Search, PenTool, Maximize, DollarSign para Pricing)
@@ -37,7 +37,6 @@ const SearchIcon = `<path stroke-linecap="round" stroke-linejoin="round" d="M21 
 const PenToolIcon = `<path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />`;
 const MaximizeIcon = `<path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />`;
 const DollarSignIcon = `<path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />`;
-
 ---
 
 <BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>

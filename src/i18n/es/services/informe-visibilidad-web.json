@@ -25,7 +25,11 @@
         "title": "Salud Digital",
         "subtitle": "Análisis 360º",
         "stats": [
-          { "label": "Core Web Vitals", "value": "LCP/CLS", "icon": "Activity" },
+          {
+            "label": "Core Web Vitals",
+            "value": "LCP/CLS",
+            "icon": "Activity"
+          },
           { "label": "Rastreo", "value": "100%", "icon": "Search" },
           { "label": "Visibilidad", "value": "SEO", "icon": "Eye" }
         ]
@@ -59,9 +63,18 @@
         "title": "Auditoría Basada en Datos Reales",
         "content": "No usamos 'olfato', usamos el ecosistema oficial de Google para un análisis objetivo y profesional.",
         "toolsGrid": [
-          { "name": "Google Search Console", "purpose": "Indexación y Consultas Reales" },
-          { "name": "Lighthouse / PageSpeed", "purpose": "Métricas WPO (LCP, FID, CLS)" },
-          { "name": "Google Analytics 4", "purpose": "Comportamiento y Conversiones" },
+          {
+            "name": "Google Search Console",
+            "purpose": "Indexación y Consultas Reales"
+          },
+          {
+            "name": "Lighthouse / PageSpeed",
+            "purpose": "Métricas WPO (LCP, FID, CLS)"
+          },
+          {
+            "name": "Google Analytics 4",
+            "purpose": "Comportamiento y Conversiones"
+          },
           { "name": "Looker Studio", "purpose": "Visualización de Datos" }
         ]
       },

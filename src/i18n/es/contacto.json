@@ -1,1 +1,114 @@
-{ "lang": "es", "alternateUrl": "/en/contact", "copy": { "hero": { "h1": "Vamos a materializar tu idea.", "subtitle": "Sin intermediarios. De humano a humano.", "intro": "Rellena lo básico para contactar. Si buscas iniciar un proyecto, despliega los detalles para que pueda analizar tu caso." }, "formUI": { "config": { "type": "nested_accordion", "successUrl": "/es/gracias-proyecto", "baseSubmitLabel": "Enviar Mensaje Básico", "fullSubmitLabel": "Solicitar Estudio del Proyecto" }, "steps": [ { "id": "step_1_identity", "title": "Datos de Contacto", "fields": [ { "name": "name", "label": "Nombre", "required": true }, { "name": "email", "label": "Email", "required": true }, { "name": "message_basic", "label": "Mensaje / Consulta", "type": "textarea", "required": true } ],"accordionText": "¿Buscas agendar una reunión de trabajo? Para saber si puedo ayudarte, necesito un poco de contexto previo 👇" }, { "id": "step_2_scope", "title": "Tipo de Proyecto y Tecnología", "fields": [ { "name": "project_type", "label": "¿Qué servicio te interesa?", "type": "cards", "options": [ { "label": "Nueva Web / Rediseño", "value": "new_web", "icon": "Layout" }, { "label": "Pack Todo en Uno", "value": "pack_all", "icon": "Package" }, { "label": "Mantenimiento", "value": "maintenance", "icon": "Shield" }, { "label": "Otro", "value": "other", "icon": "HelpCircle" } ] }, { "name": "tech_status", "label": "¿Tienes ya Dominio o Hosting?", "type": "pills", "options": [ { "label": "Tengo ambos", "value": "both" }, { "label": "Solo Dominio", "value": "domain_only" }, { "label": "Nada (Partimos de cero)", "value": "none" }, { "label": "No estoy seguro", "value": "unknown" } ] } ],"accordionText": "Para darte una respuesta honesta sobre la viabilidad (y no hacerte perder tiempo), definamos el alcance 👇" }, { "id": "step_3_viability", "title": "Viabilidad y Objetivos", "fields": [ { "name": "goal", "label": "¿Cuál es el objetivo principal de este proyecto?", "type": "text", "placeholder": "Ej: Vender más, mejorar imagen, automatizar citas..." }, { "name": "timeline", "label": "¿Para cuándo lo necesitas?", "type": "select", "options": [ { "label": "Urgente (Lo antes posible)", "value": "urgent" }, { "label": "Estándar (Próximo mes)", "value": "standard" }, { "label": "Flexible (Sin prisa)", "value": "flexible" } ] }, { "name": "budget_range", "label": "Rango de Inversión Disponible", "type": "select", "description": "Saber esto me permite decirte qué soluciones encajan y cuáles no.", "options": [ { "label": "Económico (< 1.000€)", "value": "low" }, { "label": "Profesional (1.000€ - 3.000€)", "value": "medium" }, { "label": "Premium / A Medida (+3.000€)", "value": "high" } ] } ] } ], "ansiolitico": { "text": "No te preocupes, esto no es un examen. Simplemente analizo estos datos para preparar nuestra primera conversación.", "privacyLink": "/es/politica-de-privacidad" } } } }
+{
+  "lang": "es",
+  "alternateUrl": "/en/contact",
+  "copy": {
+    "hero": {
+      "h1": "Vamos a materializar tu idea.",
+      "subtitle": "Sin intermediarios. De humano a humano.",
+      "intro": "Rellena lo básico para contactar. Si buscas iniciar un proyecto, despliega los detalles para que pueda analizar tu caso."
+    },
+    "formUI": {
+      "config": {
+        "type": "nested_accordion",
+        "successUrl": "/es/gracias-proyecto",
+        "baseSubmitLabel": "Enviar Mensaje Básico",
+        "fullSubmitLabel": "Solicitar Estudio del Proyecto"
+      },
+      "steps": [
+        {
+          "id": "step_1_identity",
+          "title": "Datos de Contacto",
+          "fields": [
+            { "name": "name", "label": "Nombre", "required": true },
+            { "name": "email", "label": "Email", "required": true },
+            {
+              "name": "message_basic",
+              "label": "Mensaje / Consulta",
+              "type": "textarea",
+              "required": true
+            }
+          ],
+          "accordionText": "¿Buscas agendar una reunión de trabajo? Para saber si puedo ayudarte, necesito un poco de contexto previo 👇"
+        },
+        {
+          "id": "step_2_scope",
+          "title": "Tipo de Proyecto y Tecnología",
+          "fields": [
+            {
+              "name": "project_type",
+              "label": "¿Qué servicio te interesa?",
+              "type": "cards",
+              "options": [
+                {
+                  "label": "Nueva Web / Rediseño",
+                  "value": "new_web",
+                  "icon": "Layout"
+                },
+                {
+                  "label": "Pack Todo en Uno",
+                  "value": "pack_all",
+                  "icon": "Package"
+                },
+                {
+                  "label": "Mantenimiento",
+                  "value": "maintenance",
+                  "icon": "Shield"
+                },
+                { "label": "Otro", "value": "other", "icon": "HelpCircle" }
+              ]
+            },
+            {
+              "name": "tech_status",
+              "label": "¿Tienes ya Dominio o Hosting?",
+              "type": "pills",
+              "options": [
+                { "label": "Tengo ambos", "value": "both" },
+                { "label": "Solo Dominio", "value": "domain_only" },
+                { "label": "Nada (Partimos de cero)", "value": "none" },
+                { "label": "No estoy seguro", "value": "unknown" }
+              ]
+            }
+          ],
+          "accordionText": "Para darte una respuesta honesta sobre la viabilidad (y no hacerte perder tiempo), definamos el alcance 👇"
+        },
+        {
+          "id": "step_3_viability",
+          "title": "Viabilidad y Objetivos",
+          "fields": [
+            {
+              "name": "goal",
+              "label": "¿Cuál es el objetivo principal de este proyecto?",
+              "type": "text",
+              "placeholder": "Ej: Vender más, mejorar imagen, automatizar citas..."
+            },
+            {
+              "name": "timeline",
+              "label": "¿Para cuándo lo necesitas?",
+              "type": "select",
+              "options": [
+                { "label": "Urgente (Lo antes posible)", "value": "urgent" },
+                { "label": "Estándar (Próximo mes)", "value": "standard" },
+                { "label": "Flexible (Sin prisa)", "value": "flexible" }
+              ]
+            },
+            {
+              "name": "budget_range",
+              "label": "Rango de Inversión Disponible",
+              "type": "select",
+              "description": "Saber esto me permite decirte qué soluciones encajan y cuáles no.",
+              "options": [
+                { "label": "Económico (< 1.000€)", "value": "low" },
+                { "label": "Profesional (1.000€ - 3.000€)", "value": "medium" },
+                { "label": "Premium / A Medida (+3.000€)", "value": "high" }
+              ]
+            }
+          ]
+        }
+      ],
+      "ansiolitico": {
+        "text": "No te preocupes, esto no es un examen. Simplemente analizo estos datos para preparar nuestra primera conversación.",
+        "privacyLink": "/es/politica-de-privacidad"
+      }
+    }
+  }
+}

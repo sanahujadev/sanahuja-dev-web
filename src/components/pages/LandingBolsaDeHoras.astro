@@ -1,22 +1,22 @@
 ---
 // src/components/pages/LandingBolsaDeHoras.astro
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Button from '../../components/ui/Button.astro';
-import Badge from '../../components/ui/Badge.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Button from "../../components/ui/Button.astro";
+import Badge from "../../components/ui/Badge.astro";
 
 // Iconos de la Orquesta (Existentes)
-import Clock from '../../components/ui/icons/Clock.astro';
-import ArrowRight from '../../components/ui/icons/ArrowRight.astro';
-import CheckCircle2 from '../../components/ui/icons/CheckCircle2.astro';
-import AlertOctagon from '../../components/ui/icons/AlertOctagon.astro';
-import ShieldAlert from '../../components/ui/icons/ShieldAlert.astro';
-import PenTool from '../../components/ui/icons/PenTool.astro';
-import RefreshCw from '../../components/ui/icons/RefreshCw.astro';
-import Unlock from '../../components/ui/icons/Unlock.astro';
-import UserCheck from '../../components/ui/icons/UserCheck.astro';
+import Clock from "../../components/ui/icons/Clock.astro";
+import ArrowRight from "../../components/ui/icons/ArrowRight.astro";
+import CheckCircle2 from "../../components/ui/icons/CheckCircle2.astro";
+import AlertOctagon from "../../components/ui/icons/AlertOctagon.astro";
+import ShieldAlert from "../../components/ui/icons/ShieldAlert.astro";
+import PenTool from "../../components/ui/icons/PenTool.astro";
+import RefreshCw from "../../components/ui/icons/RefreshCw.astro";
+import Unlock from "../../components/ui/icons/Unlock.astro";
+import UserCheck from "../../components/ui/icons/UserCheck.astro";
 
 // Tipos
-import type { BolsaDeHorasCopy } from '../../i18n/utils';
+import type { BolsaDeHorasCopy } from "../../i18n/utils";
 
 interface Props {
   copy: BolsaDeHorasCopy;
@@ -26,7 +26,6 @@ interface Props {
 
 const { copy, alternateUrl, schema } = Astro.props;
 const { copy: t, lang, metadata } = copy;
-
 ---
 
 <BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>

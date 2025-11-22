@@ -1,23 +1,23 @@
 ---
 // src/components/pages/LandingHome.astro
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Button from '../../components/ui/Button.astro';
-import Badge from '../../components/ui/Badge.astro';
-import OptimizedLazyImage from '../ui/OptimizedLazyImage.astro';
-import TestimonialCard from '../ui/cards/TestimonialCard.astro';
-import HubFeatureCard from '../ui/cards/HubFeatureCard.astro';
-import ComparisonCard from '../ui/cards/ComparisonCard.astro';
-import SectionHeader from '../ui/SectionHeader.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Button from "../../components/ui/Button.astro";
+import Badge from "../../components/ui/Badge.astro";
+import OptimizedLazyImage from "../ui/OptimizedLazyImage.astro";
+import TestimonialCard from "../ui/cards/TestimonialCard.astro";
+import HubFeatureCard from "../ui/cards/HubFeatureCard.astro";
+import ComparisonCard from "../ui/cards/ComparisonCard.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
 
 // --- Instrumentos de la Orquesta (Iconos) ---
-import Shield from '../../components/ui/icons/Shield.astro';
-import AlertTriangle from '../../components/ui/icons/AlertTriangle.astro'; // Para "Problema"
-import Target from '../../components/ui/icons/Target.astro'; // Para "Pensamiento Piramidal"
-import Star from '../../components/ui/icons/Star.astro';
-import ExternalLink from '../../components/ui/icons/ExternalLink.astro';
+import Shield from "../../components/ui/icons/Shield.astro";
+import AlertTriangle from "../../components/ui/icons/AlertTriangle.astro"; // Para "Problema"
+import Target from "../../components/ui/icons/Target.astro"; // Para "Pensamiento Piramidal"
+import Star from "../../components/ui/icons/Star.astro";
+import ExternalLink from "../../components/ui/icons/ExternalLink.astro";
 
-import type { HomeCopy } from '../../i18n/utils';
-import OptimizedImage from '../ui/OptimizedImage.astro';
+import type { HomeCopy } from "../../i18n/utils";
+import OptimizedImage from "../ui/OptimizedImage.astro";
 
 interface Props {
   copy: HomeCopy;
@@ -27,11 +27,7 @@ interface Props {
 
 const { copy, alternateUrl, schema } = Astro.props;
 
-const {
-    copy: t,
-    lang,
-    metadata
-} = copy;
+const { copy: t, lang, metadata } = copy;
 
 // Fallback por si el JSON no tiene testimonios aún (aunque asumimos que sí)
 const testimonials = t.sections.trust.testimonials || [];

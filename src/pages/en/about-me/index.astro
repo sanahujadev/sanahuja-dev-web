@@ -1,6 +1,6 @@
 ---
-import LandingSobreMi from '../../../components/pages/LandingSobreMi.astro';
-import copy_en from '../../../i18n/en/sobre-mi.json' with { type: 'json' };
+import LandingSobreMi from "../../../components/pages/LandingSobreMi.astro";
+import copy_en from "../../../i18n/en/sobre-mi.json" with { type: "json" };
 
 const alternateUrl = new URL(copy_en.alternateUrl, Astro.site).href;
 
@@ -8,19 +8,19 @@ const alternateUrl = new URL(copy_en.alternateUrl, Astro.site).href;
 const schema = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
-  "mainEntity": {
+  mainEntity: {
     "@type": "Person",
-    "name": "José Javier Sanahuja",
-    "alternateName": "SanahujaDev",
-    "jobTitle": "Digital Consultant in Canary Islands",
-    "description": copy_en.metadata.description,
-    "url": new URL(Astro.url.pathname, Astro.site).href,
-    "sameAs": [
+    name: "José Javier Sanahuja",
+    alternateName: "SanahujaDev",
+    jobTitle: "Digital Consultant in Canary Islands",
+    description: copy_en.metadata.description,
+    url: new URL(Astro.url.pathname, Astro.site).href,
+    sameAs: [
       "https://www.fiverr.com/josejsanahuja/create-a-full-stack-application",
       "https://www.linkedin.com/in/jjsanahuja/",
-      "https://github.com/jjsanahuja"
-    ]
-  }
+      "https://github.com/jjsanahuja",
+    ],
+  },
 };
 ---
 <LandingSobreMi copy={copy_en} alternateUrl={alternateUrl} schema={schema} />

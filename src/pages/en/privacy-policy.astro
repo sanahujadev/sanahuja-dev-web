@@ -1,90 +1,94 @@
 ---
 // ¡PÁGINA TONTA (ESPAÑOL)!
-import LandingPoliticaPrivacidad from '../../components/pages/LandingPoliticaPrivacidad.astro';
+import LandingPoliticaPrivacidad from "../../components/pages/LandingPoliticaPrivacidad.astro";
 
 // 1. Importa el JSON de la PÁGINA
-import t_page from '../../i18n/en/legal/politica-privacidad.json' with { type: 'json' };
+import t_page from "../../i18n/en/legal/politica-privacidad.json" with {
+  type: "json",
+};
 // 2. Importa el JSON del HEADER (solo en baseLayout)
 // Después de `const alternateUrl = ...` y antes del `<Landing...>`
 const schema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Privacy Policy | SanahujaDev",
-  "description": "Information about the processing of your personal data. GDPR compliance. Use of data for project evaluation and payment management.",
-  "url": "https://sanahuja.dev/en/privacy-policy",
-  "inLanguage": "en-US",
-  "datePublished": "2025-01-01",
-  "dateModified": "2025-12-01",
-  "publisher": {
+  name: "Privacy Policy | SanahujaDev",
+  description:
+    "Information about the processing of your personal data. GDPR compliance. Use of data for project evaluation and payment management.",
+  url: "https://sanahuja.dev/en/privacy-policy",
+  inLanguage: "en-US",
+  datePublished: "2025-01-01",
+  dateModified: "2025-12-01",
+  publisher: {
     "@type": "Organization",
-    "name": "SanahujaDev",
-    "url": "https://sanahuja.dev",
-    "logo": {
+    name: "SanahujaDev",
+    url: "https://sanahuja.dev",
+    logo: {
       "@type": "ImageObject",
-      "url": "https://cdn.sanahuja.dev/sanahujadev/Logo/jpeg/Logo-1280w.jpeg",
-      "width": 1280,
-      "height": 1280
+      url: "https://cdn.sanahuja.dev/sanahujadev/Logo/jpeg/Logo-1280w.jpeg",
+      width: 1280,
+      height: 1280,
     },
-    "contactPoint": {
+    contactPoint: {
       "@type": "ContactPoint",
-      "contactType": "Privacy",
-      "email": "josejavier@sanahuja.dev"
-    }
-  },
-  "about": {
-    "@type": "Thing",
-    "name": "Privacy Policy and Data Protection"
-  },
-  "specialty": {
-    "@type": "Specialty",
-    "name": "Privacy Policy Web Page"
-  },
-  "isAccessibleForFree": true,
-  "isPartOf": {
-    "@type": "WebSite",
-    "@id": "https://sanahuja.dev"
-  },
-  "breadcrumb": {
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://sanahuja.dev/en"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Privacy Policy",
-        "item": "https://sanahuja.dev/en/privacy-policy"
-      }
-    ]
-  },
-  "mainEntity": {
-    "@type": "WebPageElement",
-    "name": "GDPR Compliance Statement",
-    "description": "Compliance with the General Data Protection Regulation (GDPR) EU 2016/679",
-    "publisher": {
-      "@type": "Organization",
-      "name": "SanahujaDev",
-      "legalName": "José Javier Sanahuja Ortiz",
-      "vatID": "ES45981719G"
+      contactType: "Privacy",
+      email: "josejavier@sanahuja.dev",
     },
-    "mentions": [
+  },
+  about: {
+    "@type": "Thing",
+    name: "Privacy Policy and Data Protection",
+  },
+  specialty: {
+    "@type": "Specialty",
+    name: "Privacy Policy Web Page",
+  },
+  isAccessibleForFree: true,
+  isPartOf: {
+    "@type": "WebSite",
+    "@id": "https://sanahuja.dev",
+  },
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://sanahuja.dev/en",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Privacy Policy",
+        item: "https://sanahuja.dev/en/privacy-policy",
+      },
+    ],
+  },
+  mainEntity: {
+    "@type": "WebPageElement",
+    name: "GDPR Compliance Statement",
+    description:
+      "Compliance with the General Data Protection Regulation (GDPR) EU 2016/679",
+    publisher: {
+      "@type": "Organization",
+      name: "SanahujaDev",
+      legalName: "José Javier Sanahuja Ortiz",
+      vatID: "ES45981719G",
+    },
+    mentions: [
       {
         "@type": "Thing",
-        "name": "Google Analytics 4",
-        "description": "Web analytics tool with IP anonymization"
+        name: "Google Analytics 4",
+        description: "Web analytics tool with IP anonymization",
       },
       {
         "@type": "Thing",
-        "name": "Stripe",
-        "description": "Secure PCI-DSS payment processor"
-      }
-    ]
-  }
-}
+        name: "Stripe",
+        description: "Secure PCI-DSS payment processor",
+      },
+    ],
+  },
+};
 // 3. ¡Calcula la URL Alterna (¡la buena!)!
 const alternateUrl = new URL(t_page.alternateUrl, Astro.site).href;
 ---

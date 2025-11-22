@@ -15,10 +15,27 @@
         "title": "Proof of Authority",
         "subtitle": "Data, not words.",
         "stats": [
-          { "label": "Technical Certifications", "value": "108+", "color": "text-accent-400" },
-          { "label": "Fiverr Reviews", "value": "5.0", "icon": "Star", "color": "text-primary-500" },
-          { "label": "5-Star Projects", "value": "+13", "color": "text-secondary-400" },
-          { "label": "Avg WPO Score", "value": "99", "color": "text-accent-400" }
+          {
+            "label": "Technical Certifications",
+            "value": "108+",
+            "color": "text-accent-400"
+          },
+          {
+            "label": "Fiverr Reviews",
+            "value": "5.0",
+            "icon": "Star",
+            "color": "text-primary-500"
+          },
+          {
+            "label": "5-Star Projects",
+            "value": "+13",
+            "color": "text-secondary-400"
+          },
+          {
+            "label": "Avg WPO Score",
+            "value": "99",
+            "color": "text-accent-400"
+          }
         ]
       }
     },
@@ -86,25 +103,25 @@
             "initial": "T"
           },
           {
-             "name": "Jrgracec",
-             "type": "Valued Client",
-             "content": "Excellent seller, answered all my questions clearly and concisely. Highly recommended!",
-             "avatarSlug": "",
-             "initial": "J"
+            "name": "Jrgracec",
+            "type": "Valued Client",
+            "content": "Excellent seller, answered all my questions clearly and concisely. Highly recommended!",
+            "avatarSlug": "",
+            "initial": "J"
           },
           {
-             "name": "Jmloranzcoll",
-             "type": "Valued Client",
-             "content": "Did all the work as planned. Even though we had quite a lot of work, he did it step by step.",
-             "avatarSlug": "",
-             "initial": "JM"
+            "name": "Jmloranzcoll",
+            "type": "Valued Client",
+            "content": "Did all the work as planned. Even though we had quite a lot of work, he did it step by step.",
+            "avatarSlug": "",
+            "initial": "JM"
           },
           {
-             "name": "Marilui",
-             "type": "Valued Client",
-             "content": "Beautiful work, very professional.",
-             "avatarSlug": "",
-             "initial": "M"
+            "name": "Marilui",
+            "type": "Valued Client",
+            "content": "Beautiful work, very professional.",
+            "avatarSlug": "",
+            "initial": "M"
           }
         ]
       },

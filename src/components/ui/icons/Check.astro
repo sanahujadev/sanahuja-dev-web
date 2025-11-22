@@ -1,7 +1,9 @@
 ---
 // src/components/ui/icons/Check.astro
-import type { HTMLAttributes } from 'astro/types';
-interface Props extends HTMLAttributes<'svg'> { class?: string; }
+import type { HTMLAttributes } from "astro/types";
+interface Props extends HTMLAttributes<"svg"> {
+  class?: string;
+}
 const { class: className, ...props } = Astro.props;
 ---
 <svg data-icon="check" aria-hidden="true" focusable="false" class="w-6 h-6 text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" {...props}>

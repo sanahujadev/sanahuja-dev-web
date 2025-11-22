@@ -25,9 +25,21 @@
         "title": "Peace of Mind",
         "subtitle": "Absolute Control",
         "stats": [
-          { "label": "Coverage", "value": "360º", "description": "Technique, Data, and Image unified under one strategic roof." },
-          { "label": "Partner", "value": "1 on 1", "description": "No anonymous tickets. Direct communication with someone who knows your business." },
-          { "label": "Savings", "value": "Max", "description": "Eliminate the friction and extra cost of managing 3 different providers." }
+          {
+            "label": "Coverage",
+            "value": "360º",
+            "description": "Technique, Data, and Image unified under one strategic roof."
+          },
+          {
+            "label": "Partner",
+            "value": "1 on 1",
+            "description": "No anonymous tickets. Direct communication with someone who knows your business."
+          },
+          {
+            "label": "Savings",
+            "value": "Max",
+            "description": "Eliminate the friction and extra cost of managing 3 different providers."
+          }
         ]
       }
     },
@@ -62,7 +74,7 @@
             "description": "SEO content strategy to grow on both fronts.",
             "icon": "Feather"
           },
-           {
+          {
             "title": "Priority Support",
             "description": "Direct access to your Digital Partner for strategic consultations.",
             "icon": "Phone"

@@ -1,15 +1,15 @@
 ---
 // src/components/pages/LandingPacks.astro
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Button from '../ui/Button.astro';
-import Badge from '../ui/Badge.astro'; // Usamos nuestro componente Badge
-import type { PacksCopy } from '../../i18n/utils';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Button from "../ui/Button.astro";
+import Badge from "../ui/Badge.astro"; // Usamos nuestro componente Badge
+import type { PacksCopy } from "../../i18n/utils";
 
 // Iconos
-import ShieldCheck from '../ui/icons/ShieldCheck.astro';
-import Check from '../ui/icons/Check.astro';
-import ArrowRight from '../ui/icons/ArrowRight.astro';
-import Ban from '../ui/icons/Ban.astro';
+import ShieldCheck from "../ui/icons/ShieldCheck.astro";
+import Check from "../ui/icons/Check.astro";
+import ArrowRight from "../ui/icons/ArrowRight.astro";
+import Ban from "../ui/icons/Ban.astro";
 
 interface Props {
   copy: PacksCopy;
@@ -19,13 +19,9 @@ interface Props {
 
 const { copy, alternateUrl, schema } = Astro.props;
 
-const {
-    copy: t,
-    lang,
-    metadata
-} = copy;
+const { copy: t, lang, metadata } = copy;
 
-// Mapeo de orden para visualizar: 
+// Mapeo de orden para visualizar:
 // Queremos mostrar: Pack 2 (Imagen) | Pack 1 (Sociotécnico - Destacado) | Pack 3 (Todo en Uno)
 // Según tu JSON:
 // plans[0] = Sociotécnico (Destacado)
@@ -36,13 +32,18 @@ const {
 // Vamos a reordenarlos manualmente para el renderizado: [Imagen, Sociotécnico, Todo en Uno]
 // Pero tu código original usaba índices harcodeados [2], [0], [1]. Vamos a ser más limpios.
 
-const sociotecnico = t.sections.comparison.plans.find(p => p.name.includes('Sociotécnico')) || t.sections.comparison.plans[0];
-const imagen = t.sections.comparison.plans.find(p => p.name.includes('Imagen')) || t.sections.comparison.plans[1];
-const todoEnUno = t.sections.comparison.plans.find(p => p.name.includes('Todo en Uno')) || t.sections.comparison.plans[2];
+const sociotecnico =
+  t.sections.comparison.plans.find((p) => p.name.includes("Sociotécnico")) ||
+  t.sections.comparison.plans[0];
+const imagen =
+  t.sections.comparison.plans.find((p) => p.name.includes("Imagen")) ||
+  t.sections.comparison.plans[1];
+const todoEnUno =
+  t.sections.comparison.plans.find((p) => p.name.includes("Todo en Uno")) ||
+  t.sections.comparison.plans[2];
 
 // Orden visual: Imagen (Izq) - Sociotécnico (Centro/Destacado) - Todo en Uno (Dcha)
 const orderedPlans = [imagen, sociotecnico, todoEnUno];
-
 ---
 
 <BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>

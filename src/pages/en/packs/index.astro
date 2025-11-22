@@ -1,97 +1,101 @@
 ---
 // src/pages/es/packs.astro
-import LandingPacks from '../../../components/pages/LandingPacks.astro';
-import t from '../../../i18n/en/packs.json';
+import LandingPacks from "../../../components/pages/LandingPacks.astro";
+import t from "../../../i18n/en/packs.json";
 
 const schemaProduct = {
   "@context": "https://schema.org",
   "@type": "OfferCatalog",
-  "name": "SanahujaDev Digital Marketing Subscriptions",
-  "description": "Comparison of monthly subscription plans. Choose the pack that best suits your business.",
-  "itemListElement": [
+  name: "SanahujaDev Digital Marketing Subscriptions",
+  description:
+    "Comparison of monthly subscription plans. Choose the pack that best suits your business.",
+  itemListElement: [
     {
       "@type": "Product",
-      "name": "Technical Partner Pack",
-      "description": "Data, conversions, and technical maintenance. For companies that want to grow with real information.",
-      "offers": {
+      name: "Technical Partner Pack",
+      description:
+        "Data, conversions, and technical maintenance. For companies that want to grow with real information.",
+      offers: {
         "@type": "Offer",
-        "url": "https://sanahuja.dev/en/packs/technical-partner-pack",
-        "price": "105.00",
-        "priceCurrency": "EUR",
-        "priceSpecification": {
+        url: "https://sanahuja.dev/en/packs/technical-partner-pack",
+        price: "105.00",
+        priceCurrency: "EUR",
+        priceSpecification: {
           "@type": "PriceSpecification",
-          "price": "105.00",
-          "priceCurrency": "EUR",
-          "billingIncrement": "monthly"
+          price: "105.00",
+          priceCurrency: "EUR",
+          billingIncrement: "monthly",
         },
-        "availability": "https://schema.org/InStock",
-        "category": "Subscription",
-        "seller": {
+        availability: "https://schema.org/InStock",
+        category: "Subscription",
+        seller: {
           "@type": "LocalBusiness",
-          "name": "SanahujaDev",
-          "url": "https://sanahuja.dev/en"
-        }
-      }
+          name: "SanahujaDev",
+          url: "https://sanahuja.dev/en",
+        },
+      },
     },
     {
       "@type": "Product",
-      "name": "Digital Image Pack",
-      "description": "Online reputation management and web maintenance. For local businesses that thrive on their image.",
-      "offers": {
+      name: "Digital Image Pack",
+      description:
+        "Online reputation management and web maintenance. For local businesses that thrive on their image.",
+      offers: {
         "@type": "Offer",
-        "url": "https://sanahuja.dev/en/packs/digital-image",
-        "price": "110.00",
-        "priceCurrency": "EUR",
-        "priceSpecification": {
+        url: "https://sanahuja.dev/en/packs/digital-image",
+        price: "110.00",
+        priceCurrency: "EUR",
+        priceSpecification: {
           "@type": "PriceSpecification",
-          "price": "110.00",
-          "priceCurrency": "EUR",
-          "billingIncrement": "monthly"
+          price: "110.00",
+          priceCurrency: "EUR",
+          billingIncrement: "monthly",
         },
-        "availability": "https://schema.org/InStock",
-        "category": "Subscription",
-        "seller": {
+        availability: "https://schema.org/InStock",
+        category: "Subscription",
+        seller: {
           "@type": "LocalBusiness",
-          "name": "SanahujaDev",
-          "url": "https://sanahuja.dev/en"
-        }
-      }
+          name: "SanahujaDev",
+          url: "https://sanahuja.dev/en",
+        },
+      },
     },
     {
       "@type": "Product",
-      "name": "All in One Pack",
-      "description": "Total delegation. Analytics, reputation, maintenance, and content. For companies that want to forget about digital operations.",
-      "offers": {
+      name: "All in One Pack",
+      description:
+        "Total delegation. Analytics, reputation, maintenance, and content. For companies that want to forget about digital operations.",
+      offers: {
         "@type": "Offer",
-        "url": "https://sanahuja.dev/en/packs/all-in-one",
-        "price": "130.00",
-        "priceCurrency": "EUR",
-        "priceSpecification": {
+        url: "https://sanahuja.dev/en/packs/all-in-one",
+        price: "130.00",
+        priceCurrency: "EUR",
+        priceSpecification: {
           "@type": "PriceSpecification",
-          "price": "130.00",
-          "priceCurrency": "EUR",
-          "billingIncrement": "monthly"
+          price: "130.00",
+          priceCurrency: "EUR",
+          billingIncrement: "monthly",
         },
-        "availability": "https://schema.org/InStock",
-        "category": "Subscription",
-        "seller": {
+        availability: "https://schema.org/InStock",
+        category: "Subscription",
+        seller: {
           "@type": "LocalBusiness",
-          "name": "SanahujaDev",
-          "url": "https://sanahuja.dev/en"
-        }
-      }
-    }
+          name: "SanahujaDev",
+          url: "https://sanahuja.dev/en",
+        },
+      },
+    },
   ],
-  "provider": {
+  provider: {
     "@type": "LocalBusiness",
-    "name": "SanahujaDev",
-    "url": "https://sanahuja.dev/en",
-    "areaServed": {
+    name: "SanahujaDev",
+    url: "https://sanahuja.dev/en",
+    areaServed: {
       "@type": "City",
-      "name": "Tenerife"
-    }
-  }
-}
+      name: "Tenerife",
+    },
+  },
+};
 
 const alternateUrl = new URL(t.alternateUrl, Astro.site).href;
 ---

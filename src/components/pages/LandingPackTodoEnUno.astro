@@ -1,26 +1,26 @@
 ---
 // src/components/pages/LandingPackTodoEnUno.astro
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Button from '../ui/Button.astro';
-import SectionHeader from '../../components/ui/SectionHeader.astro';
-import Badge from '../ui/Badge.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Button from "../ui/Button.astro";
+import SectionHeader from "../../components/ui/SectionHeader.astro";
+import Badge from "../ui/Badge.astro";
 
 // Iconos de la Orquesta
-import Sparkles from '../ui/icons/Sparkles.astro';
-import Check from '../ui/icons/Check.astro';
-import Key from '../ui/icons/Key.astro';
-import Tag from '../ui/icons/Tag.astro';
-import ShieldCheck from '../ui/icons/ShieldCheck.astro';
-import ArrowRight from '../ui/icons/ArrowRight.astro'; // Usando ArrowRight estándar para consistencia
-import BarChart from '../ui/icons/BarChart.astro';
-import Star from '../ui/icons/Star.astro';
-import Feather from '../ui/icons/Feather.astro';
-import Phone from '../ui/icons/Phone.astro';
-import AlertTriangle from '../ui/icons/AlertTriangle.astro';
-import Clock from '../ui/icons/Clock.astro';
-import FileText from '../ui/icons/FileText.astro';
+import Sparkles from "../ui/icons/Sparkles.astro";
+import Check from "../ui/icons/Check.astro";
+import Key from "../ui/icons/Key.astro";
+import Tag from "../ui/icons/Tag.astro";
+import ShieldCheck from "../ui/icons/ShieldCheck.astro";
+import ArrowRight from "../ui/icons/ArrowRight.astro"; // Usando ArrowRight estándar para consistencia
+import BarChart from "../ui/icons/BarChart.astro";
+import Star from "../ui/icons/Star.astro";
+import Feather from "../ui/icons/Feather.astro";
+import Phone from "../ui/icons/Phone.astro";
+import AlertTriangle from "../ui/icons/AlertTriangle.astro";
+import Clock from "../ui/icons/Clock.astro";
+import FileText from "../ui/icons/FileText.astro";
 
-import type { PackTodoEnUnoCopy } from '../../i18n/utils';
+import type { PackTodoEnUnoCopy } from "../../i18n/utils";
 
 // Mapeo para iconos dinámicos del JSON
 const solutionIconMap: Record<string, any> = {
@@ -38,11 +38,7 @@ interface Props {
 
 const { copy, alternateUrl, schema } = Astro.props;
 
-const {
-    copy: t,
-    lang,
-    metadata
-} = copy;
+const { copy: t, lang, metadata } = copy;
 ---
 
 <BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>

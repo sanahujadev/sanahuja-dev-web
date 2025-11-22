@@ -17,19 +17,19 @@
         "content": "Your data is processed by <strong>José Javier Sanahuja Ortiz</strong> (SanahujaDev). Tax ID (NIF): 45981719G. Address: Calle Unamuno, 38, San Isidro, Tenerife. Email: <strong>josejavier@sanahuja.dev</strong>."
       },
       {
-            "title": "2. Purpose and Retention of Data",
-            "content": "At SanahujaDev, we collect data through our Contact Form and during the provision of the service for the following purposes:\n\n* <strong>Technical Evaluation:</strong> To analyze the viability of your web project (Legal basis: Pre-contractual measures).\n* <strong>Commercial Management:</strong> To send you quotes and service communications (Legal basis: Legitimate interest).\n* <strong>Billing and Collection:</strong> To manage payments and comply with tax obligations (Legal basis: Contract execution).\n\n<strong>Retention:</strong> Tax data (invoices) will be kept for 5 years due to legal obligation. Unaccepted quotes will be deleted after 12 months to facilitate future inquiries."
-        },
-        {
-            "title": "3. Data Communication to Third Parties",
-            "content": "We do not sell your data. We only transfer it to technology providers strictly necessary for the website to function, who act as Data Processors:\n\n* <strong>Stripe (Payments):</strong> Your banking data is processed directly by Stripe on their secure servers (PCI-DSS level). SanahujaDev never has access to your full card number.\n* <strong>Cloud Infrastructure (AWS / Vercel / Netlify):</strong> Hosting and cloud computing providers where your website and databases are hosted.\n* <strong>Google Analytics (GA4):</strong> Analytics tool to measure web traffic anonymously (see Cookie Policy)."
-        },
-        {
-            "title": "4. Your Rights and Claims",
-            "content": "You have the right to access, rectify, delete ('right to be forgotten'), limit processing, request data portability, and object to processing. You can exercise these rights by sending an email to <strong>josejavier@sanahuja.dev</strong>.\n\nIf you consider that your rights have not been respected, you have the right to file a claim with the <strong>Spanish Data Protection Agency (AEPD)</strong>."
-        }
+        "title": "2. Purpose and Retention of Data",
+        "content": "At SanahujaDev, we collect data through our Contact Form and during the provision of the service for the following purposes:\n\n* <strong>Technical Evaluation:</strong> To analyze the viability of your web project (Legal basis: Pre-contractual measures).\n* <strong>Commercial Management:</strong> To send you quotes and service communications (Legal basis: Legitimate interest).\n* <strong>Billing and Collection:</strong> To manage payments and comply with tax obligations (Legal basis: Contract execution).\n\n<strong>Retention:</strong> Tax data (invoices) will be kept for 5 years due to legal obligation. Unaccepted quotes will be deleted after 12 months to facilitate future inquiries."
+      },
+      {
+        "title": "3. Data Communication to Third Parties",
+        "content": "We do not sell your data. We only transfer it to technology providers strictly necessary for the website to function, who act as Data Processors:\n\n* <strong>Stripe (Payments):</strong> Your banking data is processed directly by Stripe on their secure servers (PCI-DSS level). SanahujaDev never has access to your full card number.\n* <strong>Cloud Infrastructure (AWS / Vercel / Netlify):</strong> Hosting and cloud computing providers where your website and databases are hosted.\n* <strong>Google Analytics (GA4):</strong> Analytics tool to measure web traffic anonymously (see Cookie Policy)."
+      },
+      {
+        "title": "4. Your Rights and Claims",
+        "content": "You have the right to access, rectify, delete ('right to be forgotten'), limit processing, request data portability, and object to processing. You can exercise these rights by sending an email to <strong>josejavier@sanahuja.dev</strong>.\n\nIf you consider that your rights have not been respected, you have the right to file a claim with the <strong>Spanish Data Protection Agency (AEPD)</strong>."
+      }
     ],
-    "footer":{
+    "footer": {
       "teaser": "To exercise your rights or resolve doubts:",
       "email": "josejavier@sanahuja.dev"
     }

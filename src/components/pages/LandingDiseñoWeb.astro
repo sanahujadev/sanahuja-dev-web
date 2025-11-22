@@ -1,25 +1,25 @@
 ---
 // src/components/pages/LandingDiseñoWeb.astro
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Button from '../../components/ui/Button.astro';
-import Badge from '../../components/ui/Badge.astro';
-import OptimizedImage from '../../components/ui/OptimizedImage.astro';
-import Zap from '../../components/ui/icons/Zap.astro';
-import TrendingUp from '../../components/ui/icons/TrendingUp.astro';
-import CheckCircle2 from '../../components/ui/icons/CheckCircle2.astro';
-import Shield from '../../components/ui/icons/Shield.astro';
-import type { LandingDiseñoWebCopy } from '../../i18n/utils';
-import WPOChart from '../shared/WPOChart.astro';
-import AudienceCard from '../../components/ui/cards/AudienceCard.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Button from "../../components/ui/Button.astro";
+import Badge from "../../components/ui/Badge.astro";
+import OptimizedImage from "../../components/ui/OptimizedImage.astro";
+import Zap from "../../components/ui/icons/Zap.astro";
+import TrendingUp from "../../components/ui/icons/TrendingUp.astro";
+import CheckCircle2 from "../../components/ui/icons/CheckCircle2.astro";
+import Shield from "../../components/ui/icons/Shield.astro";
+import type { LandingDiseñoWebCopy } from "../../i18n/utils";
+import WPOChart from "../shared/WPOChart.astro";
+import AudienceCard from "../../components/ui/cards/AudienceCard.astro";
 
-const {copy, alternateUrl, schema} = Astro.props;
+const { copy, alternateUrl, schema } = Astro.props;
 
-const { 
-  title, 
-  meta_description, 
-  lang, 
-  body_sections, 
-  badge, 
+const {
+  title,
+  meta_description,
+  lang,
+  body_sections,
+  badge,
   audienceCards,
   heroStats,
   ganchoBadge,
@@ -32,14 +32,16 @@ const {
   h2s,
 } = copy as LandingDiseñoWebCopy;
 
-const processContent = (content: string, strongClass: string = 'font-semibold text-primary-500'): string => {
+const processContent = (
+  content: string,
+  strongClass: string = "font-semibold text-primary-500",
+): string => {
   return content
-    .replace(/\ \[cite:.*?\ \]/g, '')
+    .replace(/\ \[cite:.*?\ \]/g, "")
     .replace(/\*\*([^*]+)\*\*/g, `<strong class="${strongClass}">$1</strong>`);
 };
 
-const [audienceIntro] = body_sections[5].content.split('\n* ');
-
+const [audienceIntro] = body_sections[5].content.split("\n* ");
 ---
 <BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>
   <Fragment slot="head">

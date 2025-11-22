@@ -25,7 +25,11 @@
         "title": "Digital Health",
         "subtitle": "360º Analysis",
         "stats": [
-          { "label": "Core Web Vitals", "value": "LCP/CLS", "icon": "Activity" },
+          {
+            "label": "Core Web Vitals",
+            "value": "LCP/CLS",
+            "icon": "Activity"
+          },
           { "label": "Indexing", "value": "100%", "icon": "Search" },
           { "label": "Visibility", "value": "SEO", "icon": "Eye" }
         ]
@@ -59,8 +63,14 @@
         "title": "Audit Based on Real Data",
         "content": "We don't use 'gut feelings', we use the official Google ecosystem for an objective and professional analysis.",
         "toolsGrid": [
-          { "name": "Google Search Console", "purpose": "Real Indexing & Queries" },
-          { "name": "Lighthouse / PageSpeed", "purpose": "WPO Metrics (LCP, FID, CLS)" },
+          {
+            "name": "Google Search Console",
+            "purpose": "Real Indexing & Queries"
+          },
+          {
+            "name": "Lighthouse / PageSpeed",
+            "purpose": "WPO Metrics (LCP, FID, CLS)"
+          },
           { "name": "Google Analytics 4", "purpose": "Behavior & Conversions" },
           { "name": "Looker Studio", "purpose": "Data Visualization" }
         ]

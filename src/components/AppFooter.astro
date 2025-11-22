@@ -1,72 +1,112 @@
 ---
 // src/components/AppFooter.astro
-import Button from './ui/Button.astro';
-import LinkedIn from './ui/icons/LinkedIn.astro';
-import GitHub from './ui/icons/Github.astro';
-import Star from './ui/icons/Star.astro';
-import ExternalLink from './ui/icons/ExternalLink.astro';
+import Button from "./ui/Button.astro";
+import LinkedIn from "./ui/icons/LinkedIn.astro";
+import GitHub from "./ui/icons/Github.astro";
+import Star from "./ui/icons/Star.astro";
+import ExternalLink from "./ui/icons/ExternalLink.astro";
 import type { FooterType } from "../i18n/utils";
 // ¡La partitura de V0, traducida a Astro y afinada por Brook!
 
 const { t, lang } = Astro.props as {
   t: FooterType;
-  lang: 'es' | 'en';
+  lang: "es" | "en";
 };
 
 // --- 1. La "Letra" (Datos) ---
 // (He adaptado los 'url' y 'label' para usar 't' y 'lang' de Astro)
 const footerData = {
   brand: {
-    tagline: t.brand.tagline 
+    tagline: t.brand.tagline,
   },
   localizacion: {
     titulo: t.localizacion.titulo,
     ciudad: t.localizacion.ciudad,
     gmb_link_label: t.localizacion.gmb_link_label,
-    gmb_url: t.localizacion.gmb_url // (Añadido para el href)
+    gmb_url: t.localizacion.gmb_url, // (Añadido para el href)
   },
   navegacion: {
     titulo: t.navegacion.titulo,
     links: [
-      { label: t.navegacion.links.mantenimiento, url: `/${lang}/servicios/mantenimiento-web` },
-      { label: t.navegacion.links.reputacion, url: `/${lang}/servicios/gestion-reputacion-online` },
+      {
+        label: t.navegacion.links.mantenimiento,
+        url: `/${lang}/servicios/mantenimiento-web`,
+      },
+      {
+        label: t.navegacion.links.reputacion,
+        url: `/${lang}/servicios/gestion-reputacion-online`,
+      },
       { label: t.navegacion.links.blog, url: `/${lang}/blog` },
-      { label: t.navegacion.links.informe, url: `/${lang}/servicios/informe-visibilidad-web` },
-      { label: t.navegacion.links.bolsa, url: `/${lang}/servicios/bolsa-de-horas` }
-    ]
+      {
+        label: t.navegacion.links.informe,
+        url: `/${lang}/servicios/informe-visibilidad-web`,
+      },
+      {
+        label: t.navegacion.links.bolsa,
+        url: `/${lang}/servicios/bolsa-de-horas`,
+      },
+    ],
   },
   social: {
     titulo: t.social.titulo,
     links: [
-      { name: "linkedin", label: t.social.links.linkedin, url: t.social.links.linkedin_url },
-      { name: "github", label: t.social.links.github, url: t.social.links.github_url },
-      { name: "freelancer", label: t.social.links.freelancer, url: t.social.links.freelancer_url }
-    ]
+      {
+        name: "linkedin",
+        label: t.social.links.linkedin,
+        url: t.social.links.linkedin_url,
+      },
+      {
+        name: "github",
+        label: t.social.links.github,
+        url: t.social.links.github_url,
+      },
+      {
+        name: "freelancer",
+        label: t.social.links.freelancer,
+        url: t.social.links.freelancer_url,
+      },
+    ],
   },
   help: {
     text: t.help.text,
     contact: t.help.contact,
-    url: `/${lang}/formulario-inicial/`
+    url: `/${lang}/formulario-inicial/`,
   },
   legal: [
-    { label: t.legal.terminos, url: lang === 'es' ? '/es/terminos-y-condiciones' : '/en/terms-and-conditions'},
-    { label: t.legal.privacidad, url: lang === 'es' ? '/es/politica-de-privacidad' : '/en/privacy-policy'},
-    { label: t.legal.cookies, url: lang === 'es' ? '/es/politica-de-cookies' : '/en/cookies-policy'}
+    {
+      label: t.legal.terminos,
+      url:
+        lang === "es"
+          ? "/es/terminos-y-condiciones"
+          : "/en/terms-and-conditions",
+    },
+    {
+      label: t.legal.privacidad,
+      url: lang === "es" ? "/es/politica-de-privacidad" : "/en/privacy-policy",
+    },
+    {
+      label: t.legal.cookies,
+      url: lang === "es" ? "/es/politica-de-cookies" : "/en/cookies-policy",
+    },
   ],
   cookieSettings: t.cookieSettings,
-  copyright: t.copyright
+  copyright: t.copyright,
 };
 
 // --- 2. La Lógica (Función de Iconos) ---
 // (La lógica de V0, 100% compatible con Astro)
 const getSocialIcon = (name: string) => {
-  switch(name) {
-    case 'linkedin': return LinkedIn;
-    case 'github': return GitHub;
-    case 'freelancer': return Star; // Devolvemos solo la estrella
-    default: return null;
+  switch (name) {
+    case "linkedin":
+      return LinkedIn;
+    case "github":
+      return GitHub;
+    case "freelancer":
+      return Star; // Devolvemos solo la estrella
+    default:
+      return null;
   }
-}
+};
 ---
 <footer aria-label="Footer" class="bg-background border-t border-border">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">

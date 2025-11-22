@@ -1,71 +1,73 @@
 ---
 // src/pages/es/packs/todo-en-uno.astro
-import LandingPackTodoEnUno from '../../../components/pages/LandingPackTodoEnUno.astro';
-import t from '../../../i18n/en/pack/todo-en-uno.json';
+import LandingPackTodoEnUno from "../../../components/pages/LandingPackTodoEnUno.astro";
+import t from "../../../i18n/en/pack/todo-en-uno.json";
 
 const schemaProduct = {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "Pack All in One",
-  "description": "Total delegation of digital marketing. Includes advanced analytics (AI), online reputation management, proactive web maintenance, and monthly content creation. A complete technological partner for companies that want to forget about digital operations.",
-  "image": "https://sanahuja.dev/images/packs/todo-en-uno-preview.jpg",
-  "brand": {
+  name: "Pack All in One",
+  description:
+    "Total delegation of digital marketing. Includes advanced analytics (AI), online reputation management, proactive web maintenance, and monthly content creation. A complete technological partner for companies that want to forget about digital operations.",
+  image: "https://sanahuja.dev/images/packs/todo-en-uno-preview.jpg",
+  brand: {
     "@type": "Brand",
-    "name": "SanahujaDev"
+    name: "SanahujaDev",
   },
-  "offers": {
+  offers: {
     "@type": "Offer",
-    "url": "https://sanahuja.dev/en/packs/all-in-one",
-    "price": "130.00",
-    "priceCurrency": "EUR",
-    "priceSpecification": {
+    url: "https://sanahuja.dev/en/packs/all-in-one",
+    price: "130.00",
+    priceCurrency: "EUR",
+    priceSpecification: {
       "@type": "PriceSpecification",
-      "price": "130.00",
-      "priceCurrency": "EUR",
-      "billingIncrement": "monthly", 
-      "description": "Premium monthly subscription. Includes all areas of digital marketing."
+      price: "130.00",
+      priceCurrency: "EUR",
+      billingIncrement: "monthly",
+      description:
+        "Premium monthly subscription. Includes all areas of digital marketing.",
     },
-    "availability": "https://schema.org/InStock",
-    "validFrom": "2024-01-01",
-    "category": "Subscription",
-    "seller": {
+    availability: "https://schema.org/InStock",
+    validFrom: "2024-01-01",
+    category: "Subscription",
+    seller: {
       "@type": "LocalBusiness",
-      "name": "SanahujaDev",
-      "url": "https://sanahuja.dev",
-      "areaServed": {
+      name: "SanahujaDev",
+      url: "https://sanahuja.dev",
+      areaServed: {
         "@type": "City",
-        "name": "Tenerife"
-      }
-    }
+        name: "Tenerife",
+      },
+    },
   },
-  "isRelatedTo": [
+  isRelatedTo: [
     {
       "@type": "Product",
-      "name": "Pack Technical Partner",
-      "url": "https://sanahuja.dev/en/packs/technical-partner-pack"
+      name: "Pack Technical Partner",
+      url: "https://sanahuja.dev/en/packs/technical-partner-pack",
     },
     {
       "@type": "Product",
-      "name": "Pack Imagen Digital",
-      "url": "https://sanahuja.dev/en/packs/digital-image"
-    }
+      name: "Pack Imagen Digital",
+      url: "https://sanahuja.dev/en/packs/digital-image",
+    },
   ],
-  "aggregateRating": {
+  aggregateRating: {
     "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "12",
-    "bestRating": "5",
-    "worstRating": "1"
+    ratingValue: "4.9",
+    reviewCount: "12",
+    bestRating: "5",
+    worstRating: "1",
   },
-  "provider": {
+  provider: {
     "@type": "LocalBusiness",
-    "name": "SanahujaDev",
-    "url": "https://sanahuja.dev",
-    "areaServed": {
+    name: "SanahujaDev",
+    url: "https://sanahuja.dev",
+    areaServed: {
       "@type": "City",
-      "name": "Tenerife"
-    }
-  }
+      name: "Tenerife",
+    },
+  },
 };
 
 const alternateUrl = new URL(t.alternateUrl, Astro.site).href;

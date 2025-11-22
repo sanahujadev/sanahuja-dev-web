@@ -25,9 +25,21 @@
         "title": "Confianza Local",
         "subtitle": "Brilla en tu Zona",
         "stats": [
-          { "label": "Reputación", "value": "Gestión 5★", "description": "Respondemos reseñas y cuidamos tu imagen en Google." },
-          { "label": "Visibilidad", "value": "SEO Local", "description": "Contenido mensual estratégico para posicionarte en tu zona." },
-          { "label": "Salud Web", "value": "WPO 99", "description": "Tu web siempre rápida y técnicamente perfecta." }
+          {
+            "label": "Reputación",
+            "value": "Gestión 5★",
+            "description": "Respondemos reseñas y cuidamos tu imagen en Google."
+          },
+          {
+            "label": "Visibilidad",
+            "value": "SEO Local",
+            "description": "Contenido mensual estratégico para posicionarte en tu zona."
+          },
+          {
+            "label": "Salud Web",
+            "value": "WPO 99",
+            "description": "Tu web siempre rápida y técnicamente perfecta."
+          }
         ]
       }
     },
