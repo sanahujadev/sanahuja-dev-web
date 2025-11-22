@@ -45,7 +45,7 @@ export default defineConfig({
     { 
       name: 'firefox-e2e', 
       use: { ...devices['Desktop Firefox'] },
-      timeout: 12000,
+      timeout: 15000,
       testMatch: /tests\/(e2e|integration)\/.*\.spec\.ts/ 
     },
 

@@ -15,8 +15,16 @@
       "title": "The Savings of Strategy",
       "subtitle": "Unify your services and save every month.",
       "stats": [
-        { "label": "Value (Separate)", "value": "€130", "unit": "/month" },
-        { "label": "Monthly Savings", "value": "€25", "unit": "in savings" },
+        {
+          "label": "Value (Separate)",
+          "value": "€130",
+          "unit": "/month"
+        },
+        {
+          "label": "Monthly Savings",
+          "value": "€25",
+          "unit": "in savings"
+        },
         {
           "label": "Pack Price",
           "value": "€105",
@@ -106,7 +114,7 @@
     "ctas": {
       "primary": {
         "text": "I want the Technical Partner Pack!",
-        "url": "/en/formulario-inicial/"
+        "url": "/en/contact/"
       },
       "secondary": {
         "text": "View All Packs",

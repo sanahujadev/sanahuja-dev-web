@@ -18,7 +18,7 @@
         },
         "secondary": {
           "text": "Consult Single Service",
-          "url": "/en/formulario-inicial"
+          "url": "/en/contact"
         }
       },
       "heroVisual": {
@@ -104,7 +104,7 @@
         "title": "Stop having a mute website",
         "content": "Start talking to your market. Turn your website into an authority in your sector.",
         "cta": "Activate Authority Plan",
-        "url": "/en/formulario-inicial"
+        "url": "/en/contact"
       }
     }
   }

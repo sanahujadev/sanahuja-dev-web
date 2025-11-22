@@ -14,7 +14,7 @@
       "ctas": {
         "primary": {
           "text": "Solicitar mi Diagnóstico",
-          "url": "/es/formulario-inicial/"
+          "url": "/es/contacto/"
         },
         "secondary": {
           "text": "Ver Ejemplo de Informe",
@@ -30,8 +30,16 @@
             "value": "LCP/CLS",
             "icon": "Activity"
           },
-          { "label": "Rastreo", "value": "100%", "icon": "Search" },
-          { "label": "Visibilidad", "value": "SEO", "icon": "Eye" }
+          {
+            "label": "Rastreo",
+            "value": "100%",
+            "icon": "Search"
+          },
+          {
+            "label": "Visibilidad",
+            "value": "SEO",
+            "icon": "Eye"
+          }
         ]
       }
     },
@@ -75,7 +83,10 @@
             "name": "Google Analytics 4",
             "purpose": "Comportamiento y Conversiones"
           },
-          { "name": "Looker Studio", "purpose": "Visualización de Datos" }
+          {
+            "name": "Looker Studio",
+            "purpose": "Visualización de Datos"
+          }
         ]
       },
       "nextStep": {
@@ -89,7 +100,7 @@
         "content": "Consigue un análisis técnico, imparcial y claro. Descubre el potencial oculto de tu negocio.",
         "cta": "Solicitar mi Auditoría",
         "subtext": "Sin compromiso de contratación posterior.",
-        "url": "/es/formulario-inicial"
+        "url": "/es/contacto"
       }
     }
   }

@@ -26,13 +26,21 @@
         "title": "Flexibilidad Total",
         "subtitle": "Paga solo por lo que usas.",
         "stats": [
-          { "label": "Permanencia", "value": "0", "unit": "meses" },
+          {
+            "label": "Permanencia",
+            "value": "0",
+            "unit": "meses"
+          },
           {
             "label": "Respuesta",
             "value": "<24h",
             "color": "text-primary-500"
           },
-          { "label": "Caducidad", "value": "12", "unit": "meses" }
+          {
+            "label": "Caducidad",
+            "value": "12",
+            "unit": "meses"
+          }
         ]
       }
     },
@@ -118,7 +126,7 @@
       "ctaFinal": {
         "title": "¿Tienes un fuego que apagar?",
         "content": "No dejes que un error técnico te haga perder ventas. Actuamos rápido.",
-        "url": "/es/formulario-inicial",
+        "url": "/es/contacto",
         "cta": "Solicitar Soporte Urgente",
         "subtext": "Soporte técnico profesional bajo demanda."
       }

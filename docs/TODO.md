@@ -43,8 +43,8 @@ Lo que no se ve, pero nos salva de demandas y mide el éxito.
 - [ ] ✅ **CERRADO**
 
 ### Página: `formulario-inicial`
-- [ ] 🔴 **ROJO**: Test E2E que `/es/formulario-inicial/` carga, tiene `no-index`, y contiene el `iframe` del Google Form.
-- [ ] 🟢 **VERDE**: Crear `src/pages/es/formulario-inicial.astro` con `meta no-index` y un `iframe` pelado.
+- [ ] 🔴 **ROJO**: Test E2E que `/es/contacto/` carga, tiene `no-index`, y contiene el `iframe` del Google Form.
+- [ ] 🟢 **VERDE**: Crear `src/pages/es/contacto.astro` con `meta no-index` y un `iframe` pelado.
 - [ ] 🎼 **COMPOSICIÓN**: Estilizar la página (centrado, padding) para que el formulario sea usable.
 - [ ] 🔵 **VERIFICACIÓN**: Test A11y (el `iframe` necesita un `title`).
 - [ ] ✅ **CERRADO**
@@ -218,3 +218,4 @@ Aquí es donde aplastamos a la competencia[cite: 635].
 - [M] ... (Esto es un meta-ítem que se trabaja en paralelo)...
 - [ ] 🔵 **VERIFICACIÓN**: Rellenar `en.json` con todas las traducciones. Crear el contenido en `src/content/blog/en/`.
 - [ ] ✅ **CERRADO**: El test E2E de `hreflang` pasa al 100%.
+

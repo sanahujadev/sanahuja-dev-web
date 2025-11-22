@@ -18,16 +18,26 @@
         },
         "secondary": {
           "text": "Calculate Savings",
-          "url": "/en/formulario-inicial/"
+          "url": "/en/contact/"
         }
       },
       "heroVisual": {
         "title": "Total Peace of Mind",
         "subtitle": "Focus on your business.",
         "stats": [
-          { "label": "Contract", "value": "Flexible" },
-          { "label": "Support", "value": "WPO 99" },
-          { "label": "Savings", "value": "€25", "unit": "/mo" }
+          {
+            "label": "Contract",
+            "value": "Flexible"
+          },
+          {
+            "label": "Support",
+            "value": "WPO 99"
+          },
+          {
+            "label": "Savings",
+            "value": "€25",
+            "unit": "/mo"
+          }
         ]
       }
     },
@@ -50,10 +60,22 @@
             "url": "/en/packs/technical-partner-pack",
             "highlight": true,
             "features": [
-              { "name": "WPO 99 Maintenance", "included": true },
-              { "name": "Authority Plan (Blog)", "included": true },
-              { "name": "Visibility Report (GA4)", "included": true },
-              { "name": "Reputation Management", "included": false }
+              {
+                "name": "WPO 99 Maintenance",
+                "included": true
+              },
+              {
+                "name": "Authority Plan (Blog)",
+                "included": true
+              },
+              {
+                "name": "Visibility Report (GA4)",
+                "included": true
+              },
+              {
+                "name": "Reputation Management",
+                "included": false
+              }
             ]
           },
           {
@@ -65,10 +87,22 @@
             "url": "/en/packs/digital-image",
             "highlight": false,
             "features": [
-              { "name": "WPO 99 Maintenance", "included": true },
-              { "name": "Authority Plan (Blog)", "included": true },
-              { "name": "Visibility Report (GA4)", "included": false },
-              { "name": "Reputation Management", "included": true }
+              {
+                "name": "WPO 99 Maintenance",
+                "included": true
+              },
+              {
+                "name": "Authority Plan (Blog)",
+                "included": true
+              },
+              {
+                "name": "Visibility Report (GA4)",
+                "included": false
+              },
+              {
+                "name": "Reputation Management",
+                "included": true
+              }
             ]
           },
           {
@@ -80,10 +114,22 @@
             "url": "/en/packs/all-in-one",
             "highlight": false,
             "features": [
-              { "name": "WPO 99 Maintenance", "included": true },
-              { "name": "Authority Plan (Blog)", "included": true },
-              { "name": "Visibility Report (GA4)", "included": true },
-              { "name": "Reputation Management", "included": true }
+              {
+                "name": "WPO 99 Maintenance",
+                "included": true
+              },
+              {
+                "name": "Authority Plan (Blog)",
+                "included": true
+              },
+              {
+                "name": "Visibility Report (GA4)",
+                "included": true
+              },
+              {
+                "name": "Reputation Management",
+                "included": true
+              }
             ]
           }
         ]
@@ -113,7 +159,7 @@
         "title": "Undecided between Data or Image?",
         "content": "Don't choose. For just a little more, take it all and delegate the digital side 100%.",
         "cta": "Speak with José Javier",
-        "url": "/en/formulario-inicial"
+        "url": "/en/contact"
       }
     }
   }

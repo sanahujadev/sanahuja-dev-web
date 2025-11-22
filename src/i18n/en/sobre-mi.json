@@ -130,15 +130,42 @@
         "title": "My Obsession: <span class=\"text-secondary-400\">+108 Technical</span> Certifications",
         "content": "A <strong class=\"text-neutral-200\">'web expert in Tenerife'</strong> must prove it. I don't settle for 'it works'. I aim for WPO 99, perfect architecture, and clean code. This is the proof of my commitment to technical excellence.",
         "filterCategories": [
-          { "id": "all", "label": "All" },
-          { "id": "react", "label": "React/Next.js" },
-          { "id": "node", "label": "Node.js" },
-          { "id": "cloud", "label": "Cloud (AWS/Azure)" },
-          { "id": "db", "label": "Databases" },
-          { "id": "devops", "label": "DevOps" },
-          { "id": "java_python", "label": "Java/Python" },
-          { "id": "backend", "label": "Backend" },
-          { "id": "fundamentals", "label": "Fundamentals" }
+          {
+            "id": "all",
+            "label": "All"
+          },
+          {
+            "id": "react",
+            "label": "React/Next.js"
+          },
+          {
+            "id": "node",
+            "label": "Node.js"
+          },
+          {
+            "id": "cloud",
+            "label": "Cloud (AWS/Azure)"
+          },
+          {
+            "id": "db",
+            "label": "Databases"
+          },
+          {
+            "id": "devops",
+            "label": "DevOps"
+          },
+          {
+            "id": "java_python",
+            "label": "Java/Python"
+          },
+          {
+            "id": "backend",
+            "label": "Backend"
+          },
+          {
+            "id": "fundamentals",
+            "label": "Fundamentals"
+          }
         ]
       },
       "ctaFinal": {
@@ -150,7 +177,7 @@
     "ctas": {
       "primary": {
         "text": "Start Your Project!",
-        "url": "/en/formulario-inicial/"
+        "url": "/en/contact/"
       },
       "secondary": {
         "text": "View my Services",

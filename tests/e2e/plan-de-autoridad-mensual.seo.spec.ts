@@ -60,7 +60,7 @@ test.describe('E2E/SEO: Servicios - Plan de Autoridad Mensual (ES)', () => {
     
     // 🎯 FINAL CTA
     await expect(page.locator('#cta-final')).toContainText(t.copy.sections.ctaFinal.title);
-    await expect(page.locator('#cta-final a[href*="/formulario-inicial"]')).toBeVisible();
+    await expect(page.locator('#cta-final a[href*="/es/contacto"]')).toBeVisible();
   });
 
   test('Debe tener solo un H1 por página (SEO Canonical)', async ({ page }) => {

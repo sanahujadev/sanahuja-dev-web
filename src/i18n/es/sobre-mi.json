@@ -31,7 +31,11 @@
             "value": "+13",
             "color": "text-secondary-400"
           },
-          { "label": "WPO Promedio", "value": "99", "color": "text-accent-400" }
+          {
+            "label": "WPO Promedio",
+            "value": "99",
+            "color": "text-accent-400"
+          }
         ]
       }
     },
@@ -126,15 +130,42 @@
         "title": "Mi Obsesión: <span class=\"text-secondary-400\">+108 Certificaciones</span> Técnicas",
         "content": "Un <strong class=\"text-neutral-200\">'experto web en Tenerife'</strong> debe probarlo. No me conformo con 'funciona'. Busco el WPO 99, la arquitectura perfecta, el código limpio. Esta es la prueba de mi compromiso con la excelencia técnica.",
         "filterCategories": [
-          { "id": "all", "label": "Todo" },
-          { "id": "react", "label": "React/Next.js" },
-          { "id": "node", "label": "Node.js" },
-          { "id": "cloud", "label": "Cloud (AWS/Azure)" },
-          { "id": "db", "label": "Bases de Datos" },
-          { "id": "devops", "label": "DevOps" },
-          { "id": "java_python", "label": "Java/Python" },
-          { "id": "backend", "label": "Backend" },
-          { "id": "fundamentals", "label": "Fundamentos" }
+          {
+            "id": "all",
+            "label": "Todo"
+          },
+          {
+            "id": "react",
+            "label": "React/Next.js"
+          },
+          {
+            "id": "node",
+            "label": "Node.js"
+          },
+          {
+            "id": "cloud",
+            "label": "Cloud (AWS/Azure)"
+          },
+          {
+            "id": "db",
+            "label": "Bases de Datos"
+          },
+          {
+            "id": "devops",
+            "label": "DevOps"
+          },
+          {
+            "id": "java_python",
+            "label": "Java/Python"
+          },
+          {
+            "id": "backend",
+            "label": "Backend"
+          },
+          {
+            "id": "fundamentals",
+            "label": "Fundamentos"
+          }
         ]
       },
       "ctaFinal": {
@@ -146,7 +177,7 @@
     "ctas": {
       "primary": {
         "text": "¡Empieza tu Proyecto!",
-        "url": "/es/formulario-inicial/"
+        "url": "/es/contacto/"
       },
       "secondary": {
         "text": "Ver mis Servicios",

@@ -29,7 +29,7 @@
         "ctas": {
           "primary": {
             "text": "{{seoData.cta_text}}",
-            "url": "/es/formulario-inicial?location={{slug}}"
+            "url": "/es/contacto?location={{slug}}"
           },
           "secondary": {
             "text": "Ver Casos de Éxito",
@@ -40,9 +40,18 @@
           "title": "Digitalización {{name}}",
           "subtitle": "Crecimiento Local",
           "stats": [
-            { "label": "Zona", "value": "{{zone}}" },
-            { "label": "Código Postal", "value": "{{zip}}" },
-            { "label": "Enfoque", "value": "SEO Local" }
+            {
+              "label": "Zona",
+              "value": "{{zone}}"
+            },
+            {
+              "label": "Código Postal",
+              "value": "{{zip}}"
+            },
+            {
+              "label": "Enfoque",
+              "value": "SEO Local"
+            }
           ]
         }
       },
@@ -80,7 +89,7 @@
           "title": "¿Listo para liderar en {{name}}?",
           "content": "Lleva tu negocio de {{name}} al siguiente nivel. Deja de perder clientes frente a tu competencia local.",
           "cta": "{{seoData.cta_text}}",
-          "url": "/es/formulario-inicial?location={{slug}}"
+          "url": "/es/contacto?location={{slug}}"
         }
       }
     }
@@ -100,7 +109,7 @@
         "ctas": {
           "primary": {
             "text": "{{seoDataEn.cta_text}}",
-            "url": "/en/formulario-inicial?location={{slug}}"
+            "url": "/en/contact?location={{slug}}"
           },
           "secondary": {
             "text": "View Case Studies",
@@ -111,9 +120,18 @@
           "title": "{{name}} Digitalization",
           "subtitle": "Local Growth",
           "stats": [
-            { "label": "Zone", "value": "{{zone}}" },
-            { "label": "Postal Code", "value": "{{zip}}" },
-            { "label": "Focus", "value": "Local SEO" }
+            {
+              "label": "Zone",
+              "value": "{{zone}}"
+            },
+            {
+              "label": "Postal Code",
+              "value": "{{zip}}"
+            },
+            {
+              "label": "Focus",
+              "value": "Local SEO"
+            }
           ]
         }
       },
@@ -151,7 +169,7 @@
           "title": "Ready to lead in {{name}}?",
           "content": "Take your {{name}} business to the next level. Stop losing customers to your local competition.",
           "cta": "{{seoDataEn.cta_text}}",
-          "url": "/en/formulario-inicial?location={{slug}}"
+          "url": "/en/contact?location={{slug}}"
         }
       }
     }

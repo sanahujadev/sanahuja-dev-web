@@ -14,7 +14,7 @@
       "ctas": {
         "primary": {
           "text": "Request my Diagnosis",
-          "url": "/en/formulario-inicial/"
+          "url": "/en/contact/"
         },
         "secondary": {
           "text": "View Sample Report",
@@ -30,8 +30,16 @@
             "value": "LCP/CLS",
             "icon": "Activity"
           },
-          { "label": "Indexing", "value": "100%", "icon": "Search" },
-          { "label": "Visibility", "value": "SEO", "icon": "Eye" }
+          {
+            "label": "Indexing",
+            "value": "100%",
+            "icon": "Search"
+          },
+          {
+            "label": "Visibility",
+            "value": "SEO",
+            "icon": "Eye"
+          }
         ]
       }
     },
@@ -71,8 +79,14 @@
             "name": "Lighthouse / PageSpeed",
             "purpose": "WPO Metrics (LCP, FID, CLS)"
           },
-          { "name": "Google Analytics 4", "purpose": "Behavior & Conversions" },
-          { "name": "Looker Studio", "purpose": "Data Visualization" }
+          {
+            "name": "Google Analytics 4",
+            "purpose": "Behavior & Conversions"
+          },
+          {
+            "name": "Looker Studio",
+            "purpose": "Data Visualization"
+          }
         ]
       },
       "nextStep": {
@@ -86,7 +100,7 @@
         "content": "Get a technical, impartial, and clear analysis. Discover the hidden potential of your business.",
         "cta": "Request my Audit",
         "subtext": "No subsequent hiring commitment.",
-        "url": "/en/formulario-inicial"
+        "url": "/en/contact"
       }
     }
   }

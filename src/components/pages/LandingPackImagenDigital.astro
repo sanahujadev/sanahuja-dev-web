@@ -29,16 +29,23 @@ const { copy: t, lang, metadata } = copy;
 ---
 
 <BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} slot="json-ld" />
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(schema)}
+    slot="json-ld"
+  />
   <Fragment slot="head">
     <title>{metadata.title}</title>
     <meta name="description" content={metadata.description} />
   </Fragment>
 
   <main class="min-h-screen bg-background">
-    
     <section id="hero" class="relative pt-32 pb-20 overflow-hidden">
-      <div class="absolute inset-0 opacity-10 pointer-events-none" aria-hidden="true">
+      <div
+        class="absolute inset-0 opacity-10 pointer-events-none"
+        aria-hidden="true"
+      >
         <div
           class="absolute inset-0"
           style={{
@@ -46,7 +53,8 @@ const { copy: t, lang, metadata } = copy;
               "linear-gradient(rgb(99 102 241 / 0.1) 1px, transparent 1px), linear-gradient(90deg, rgb(99 102 241 / 0.1) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
-        ></div>
+        >
+        </div>
       </div>
 
       <div class="container mx-auto px-4 relative z-10">
@@ -64,29 +72,48 @@ const { copy: t, lang, metadata } = copy;
             <span class="text-secondary-400">{t.hero.h1_part2}</span>
           </h1>
 
-          <p class="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto text-pretty leading-relaxed" set:html={t.hero.h1_lead} />
+          <p
+            class="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto text-pretty leading-relaxed"
+            set:html={t.hero.h1_lead}
+          />
 
           <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button href={t.hero.ctas.primary.url} variant="primary">
               {t.hero.ctas.primary.text}
             </Button>
-            <Button href={t.hero.ctas.secondary.url} variant="outline" class="shadow-xl shadow-secondary-500/20">
+            <Button
+              href={t.hero.ctas.secondary.url}
+              variant="outline"
+              class="shadow-xl shadow-secondary-500/20"
+            >
               {t.hero.ctas.secondary.text}
             </Button>
           </div>
 
-          <div class="inline-block bg-neutral-900/80 backdrop-blur-md border border-border rounded-2xl p-8">
+          <div
+            class="inline-block bg-neutral-900/80 backdrop-blur-md border border-border rounded-2xl p-8"
+          >
             <div class="text-center mb-6">
-              <div class="text-sm font-semibold text-muted-foreground mb-2">{t.hero.heroVisual.title}</div>
-              <div class="text-lg font-bold text-secondary-400">{t.hero.heroVisual.subtitle}</div>
+              <div class="text-sm font-semibold text-muted-foreground mb-2">
+                {t.hero.heroVisual.title}
+              </div>
+              <div class="text-lg font-bold text-secondary-400">
+                {t.hero.heroVisual.subtitle}
+              </div>
             </div>
             <div class="flex flex-wrap justify-center gap-4 md:gap-8">
-              {t.hero.heroVisual.stats.map((stat) => (
-                <div class="flex flex-col items-center px-6 py-3 bg-neutral-800/50 border border-border rounded-lg min-w-[120px]">
-                  <span class="text-2xl font-bold text-foreground mb-1">{stat.value}</span>
-                  <span class="text-sm text-muted-foreground uppercase tracking-wider">{stat.label}</span>
-                </div>
-              ))}
+              {
+                t.hero.heroVisual.stats.map((stat) => (
+                  <div class="flex flex-col items-center px-6 py-3 bg-neutral-800/50 border border-border rounded-lg min-w-[120px]">
+                    <span class="text-2xl font-bold text-foreground mb-1">
+                      {stat.value}
+                    </span>
+                    <span class="text-sm text-muted-foreground uppercase tracking-wider">
+                      {stat.label}
+                    </span>
+                  </div>
+                ))
+              }
             </div>
           </div>
         </div>
@@ -98,49 +125,59 @@ const { copy: t, lang, metadata } = copy;
         <div class="max-w-5xl mx-auto">
           <div class="text-center mb-12">
             <Badge variant="v0_primary" class="mb-4">
-               <AlertTriangle class="w-4 h-4 mr-1.5 text-primary-400" />
-               {t.sections.painPoints.badge}
+              <AlertTriangle class="w-4 h-4 mr-1.5 text-primary-400" />
+              {t.sections.painPoints.badge}
             </Badge>
-            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
+            <h2
+              class="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance"
+            >
               {t.sections.painPoints.title}
             </h2>
-            <p class="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+            <p
+              class="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty"
+            >
               {t.sections.painPoints.content}
             </p>
           </div>
 
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {t.sections.painPoints.list.map((painPoint, index) => (
-              <div class="bg-neutral-900/50 border border-border rounded-xl p-6 hover:border-primary-600/50 transition-colors h-full">
-                <div class="w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center mb-4">
-                  {index === 0 && <AlertTriangle class="w-6 h-6 text-primary-400" />}
-                  {index === 1 && <Star class="w-6 h-6 text-primary-400" />}
-                  {index === 2 && <Clock class="w-6 h-6 text-primary-400" />}
-                  {index === 3 && <Target class="w-6 h-6 text-primary-400" />}
+            {
+              t.sections.painPoints.list.map((painPoint, index) => (
+                <div class="bg-neutral-900/50 border border-border rounded-xl p-6 hover:border-primary-600/50 transition-colors h-full">
+                  <div class="w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center mb-4">
+                    {index === 0 && (
+                      <AlertTriangle class="w-6 h-6 text-primary-400" />
+                    )}
+                    {index === 1 && <Star class="w-6 h-6 text-primary-400" />}
+                    {index === 2 && <Clock class="w-6 h-6 text-primary-400" />}
+                    {index === 3 && <Target class="w-6 h-6 text-primary-400" />}
+                  </div>
+                  <p class="text-muted-foreground leading-relaxed font-medium">
+                    {painPoint}
+                  </p>
                 </div>
-                <p class="text-muted-foreground leading-relaxed font-medium">
-                  {painPoint}
+              ))
+            }
+          </div>
+
+          {
+            t.sections.painPoints.upsell && (
+              <div class="text-center bg-neutral-900 border border-border rounded-xl p-6 max-w-2xl mx-auto">
+                <p class="text-muted-foreground flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <span>{t.sections.painPoints.upsell.text}</span>
+                  <Button
+                    href={t.sections.painPoints.upsell.url}
+                    variant="outline"
+                    size="sm"
+                    class="border-primary-500/30 hover:bg-primary-500/10 text-primary-400"
+                  >
+                    {t.sections.painPoints.upsell.linkText}
+                    <ArrowRight class="w-4 h-4 ml-1.5" />
+                  </Button>
                 </p>
               </div>
-            ))}
-          </div>
-          
-          {t.sections.painPoints.upsell && (
-            <div class="text-center bg-neutral-900 border border-border rounded-xl p-6 max-w-2xl mx-auto">
-              <p class="text-muted-foreground flex flex-col sm:flex-row items-center justify-center gap-4">
-                <span>{t.sections.painPoints.upsell.text}</span>
-                <Button 
-                  href={t.sections.painPoints.upsell.url}
-                  variant="outline"
-                  size="sm"
-                  class="border-primary-500/30 hover:bg-primary-500/10 text-primary-400"
-                >
-                  {t.sections.painPoints.upsell.linkText}
-                  <ArrowRight class="w-4 h-4 ml-1.5" />
-                </Button>
-              </p>
-            </div>
-          )}
+            )
+          }
         </div>
       </div>
     </section>
@@ -150,79 +187,98 @@ const { copy: t, lang, metadata } = copy;
         <div class="max-w-5xl mx-auto">
           <div class="text-center mb-12">
             <Badge variant="v0_accent" class="mb-4">
-               <Sparkles class="w-4 h-4 mr-1.5 text-accent-400" />
-               {t.sections.solution.badge}
+              <Sparkles class="w-4 h-4 mr-1.5 text-accent-400" />
+              {t.sections.solution.badge}
             </Badge>
-            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
+            <h2
+              class="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance"
+            >
               {t.sections.solution.title}
             </h2>
             <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
-               {t.sections.solution.content}
+              {t.sections.solution.content}
             </p>
           </div>
 
           <div class="space-y-6 md:space-y-8">
-            {t.sections.solution.features.map((feature, index) => {
-              // 🎨 Definimos la paleta de colores según el índice (0, 1, 2)
-              // Esto asegura que cada tarjeta tenga su propia personalidad
-              const colorStyles = [
-                // Item 0: Reputación (Amber/Oro)
-                {
-                  border: "border-amber-500/30",
-                  shadow: "shadow-[0_0_30px_-10px_rgba(245,158,11,0.15)]", // Brillo exterior fijo
-                  bgGradient: "bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-amber-500/10 via-neutral-900/50 to-neutral-900", // Brillo interior difuminado
-                  iconBg: "bg-amber-500/10",
-                  iconBorder: "border-amber-500/20",
-                  iconColor: "text-amber-400",
-                },
-                // Item 1: SEO/Visibilidad (Cyan/Futurista)
-                {
-                  border: "border-cyan-500/30",
-                  shadow: "shadow-[0_0_30px_-10px_rgba(6,182,212,0.15)]",
-                  bgGradient: "bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-cyan-500/10 via-neutral-900/50 to-neutral-900",
-                  iconBg: "bg-cyan-500/10",
-                  iconBorder: "border-cyan-500/20",
-                  iconColor: "text-cyan-400",
-                },
-                // Item 2: Salud/WPO (Emerald/Seguridad)
-                {
-                  border: "border-emerald-500/30",
-                  shadow: "shadow-[0_0_30px_-10px_rgba(16,185,129,0.15)]",
-                  bgGradient: "bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-emerald-500/10 via-neutral-900/50 to-neutral-900",
-                  iconBg: "bg-emerald-500/10",
-                  iconBorder: "border-emerald-500/20",
-                  iconColor: "text-emerald-400",
-                },
-              ][index] || { // Fallback por si añades más items
+            {
+              t.sections.solution.features.map((feature, index) => {
+                // 🎨 Definimos la paleta de colores según el índice (0, 1, 2)
+                // Esto asegura que cada tarjeta tenga su propia personalidad
+                const colorStyles = [
+                  // Item 0: Reputación (Amber/Oro)
+                  {
+                    border: "border-amber-500/30",
+                    shadow: "shadow-[0_0_30px_-10px_rgba(245,158,11,0.15)]", // Brillo exterior fijo
+                    bgGradient:
+                      "bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-amber-500/10 via-neutral-900/50 to-neutral-900", // Brillo interior difuminado
+                    iconBg: "bg-amber-500/10",
+                    iconBorder: "border-amber-500/20",
+                    iconColor: "text-amber-400",
+                  },
+                  // Item 1: SEO/Visibilidad (Cyan/Futurista)
+                  {
+                    border: "border-cyan-500/30",
+                    shadow: "shadow-[0_0_30px_-10px_rgba(6,182,212,0.15)]",
+                    bgGradient:
+                      "bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-cyan-500/10 via-neutral-900/50 to-neutral-900",
+                    iconBg: "bg-cyan-500/10",
+                    iconBorder: "border-cyan-500/20",
+                    iconColor: "text-cyan-400",
+                  },
+                  // Item 2: Salud/WPO (Emerald/Seguridad)
+                  {
+                    border: "border-emerald-500/30",
+                    shadow: "shadow-[0_0_30px_-10px_rgba(16,185,129,0.15)]",
+                    bgGradient:
+                      "bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-emerald-500/10 via-neutral-900/50 to-neutral-900",
+                    iconBg: "bg-emerald-500/10",
+                    iconBorder: "border-emerald-500/20",
+                    iconColor: "text-emerald-400",
+                  },
+                ][index] || {
+                  // Fallback por si añades más items
                   border: "border-primary-500/30",
-                  shadow: "shadow-[0_0_30px_-10px_rgba(var(--primary-500),0.15)]",
+                  shadow:
+                    "shadow-[0_0_30px_-10px_rgba(var(--primary-500),0.15)]",
                   bgGradient: "bg-neutral-900/50",
                   iconBg: "bg-primary-500/10",
                   iconBorder: "border-primary-500/20",
                   iconColor: "text-primary-400",
-              };
+                };
 
-              return (
-                <div 
-                  class={`relative flex gap-6 items-start p-6 rounded-2xl border transition-all duration-300 hover:scale-[1.02] ${colorStyles.border} ${colorStyles.shadow} ${colorStyles.bgGradient}`}
-                >
-                  {/* Icon Container */}
-                  <div class={`flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center border backdrop-blur-sm ${colorStyles.iconBg} ${colorStyles.iconBorder}`}>
-                    {feature.icon === 'Star' && <Star class={`w-7 h-7 ${colorStyles.iconColor}`} />}
-                    {feature.icon === 'MapPin' && <Target class={`w-7 h-7 ${colorStyles.iconColor}`} />}
-                    {feature.icon === 'Shield' && <Shield class={`w-7 h-7 ${colorStyles.iconColor}`} />}
+                return (
+                  <div
+                    class={`relative flex gap-6 items-start p-6 rounded-2xl border transition-all duration-300 hover:scale-[1.02] ${colorStyles.border} ${colorStyles.shadow} ${colorStyles.bgGradient}`}
+                  >
+                    {/* Icon Container */}
+                    <div
+                      class={`flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center border backdrop-blur-sm ${colorStyles.iconBg} ${colorStyles.iconBorder}`}
+                    >
+                      {feature.icon === "Star" && (
+                        <Star class={`w-7 h-7 ${colorStyles.iconColor}`} />
+                      )}
+                      {feature.icon === "MapPin" && (
+                        <Target class={`w-7 h-7 ${colorStyles.iconColor}`} />
+                      )}
+                      {feature.icon === "Shield" && (
+                        <Shield class={`w-7 h-7 ${colorStyles.iconColor}`} />
+                      )}
+                    </div>
+
+                    {/* Content */}
+                    <div class="flex-1 pt-1 z-10">
+                      <h3 class="text-xl font-bold text-foreground mb-2">
+                        {feature.title}
+                      </h3>
+                      <p class="text-muted-foreground leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
                   </div>
-                  
-                  {/* Content */}
-                  <div class="flex-1 pt-1 z-10">
-                    <h3 class="text-xl font-bold text-foreground mb-2">{feature.title}</h3>
-                    <p class="text-muted-foreground leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })
+            }
           </div>
         </div>
       </div>
@@ -237,20 +293,23 @@ const { copy: t, lang, metadata } = copy;
           <p class="text-lg text-muted-foreground mb-8 text-pretty">
             {t.sections.ctaFinal.content}
           </p>
-          
-          <Button 
-            href="/es/formulario-inicial"
+
+          <Button
+            href="/es/contacto"
             class="shadow-xl shadow-primary-600/20 group"
             variant="primary"
           >
             {t.sections.ctaFinal.cta}
-            <ArrowRight class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight
+              class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
+            />
           </Button>
-          
-          <p class="mt-6 text-sm text-muted-foreground">{t.sections.ctaFinal.subtext}</p>
+
+          <p class="mt-6 text-sm text-muted-foreground">
+            {t.sections.ctaFinal.subtext}
+          </p>
         </div>
       </div>
     </section>
-
   </main>
 </BaseLayout>

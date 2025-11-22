@@ -14,7 +14,12 @@
         "title": "Digital Ecosystem",
         "subtitle": "360º Coverage",
         "type": "NetworkGraph",
-        "nodes": ["Design", "Maintenance", "Reputation", "Support"],
+        "nodes": [
+          "Design",
+          "Maintenance",
+          "Reputation",
+          "Support"
+        ],
         "nodeCore": "YOUR WEB"
       }
     },
@@ -82,7 +87,7 @@
         "content": "Don't worry. Fill out our initial form and we will analyze your case to recommend the best strategy.",
         "cta": "Request Advice",
         "subtext": "Your Digital Partner advises you.",
-        "url": "/en/formulario-inicial"
+        "url": "/en/contact"
       }
     }
   }

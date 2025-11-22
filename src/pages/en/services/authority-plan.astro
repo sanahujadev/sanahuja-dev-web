@@ -3,9 +3,7 @@
 import LandingPlanAutoridad from "../../../components/pages/LandingPlanAutoridad.astro";
 
 // 1. Importa el JSON de la PÁGINA
-import t_page from "../../../i18n/en/services/plan-autoridad-mensual.json" with {
-  type: "json",
-};
+import t_page from "../../../i18n/en/services/plan-autoridad-mensual.json" with { type: "json" };
 // 2. Importa el JSON del HEADER (solo en baseLayout)
 // Después de `const alternateUrl = ...` y antes del `<Landing...>`
 const schema = {
@@ -91,7 +89,7 @@ const schema = {
     "@type": "BuyAction",
     target: {
       "@type": "EntryPoint",
-      urlTemplate: "https://sanahuja.dev/en/formulario-inicial",
+      urlTemplate: "https://sanahuja.dev/en/contact",
       inLanguage: "en-US",
       actionPlatform: [
         "https://schema.org/DesktopWebPlatform",
@@ -103,7 +101,8 @@ const schema = {
 // 3. ¡Calcula la URL Alterna (¡la buena!)!
 const alternateUrl = new URL(t_page.alternateUrl, Astro.site).href;
 ---
-<LandingPlanAutoridad 
+
+<LandingPlanAutoridad
   copy={t_page}
   alternateUrl={alternateUrl}
   schema={schema}

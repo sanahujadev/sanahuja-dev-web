@@ -109,7 +109,7 @@
   "ctas": [
     {
       "text": "Start Your Project!",
-      "url": "/en/formulario-inicial/",
+      "url": "/en/contact/",
       "type": "primary",
       "justification": "Main CTA from the Brief, directs to the macro-conversion."
     },
@@ -148,7 +148,7 @@
     "h2": "Let's start building your digital future",
     "content": "Shall we talk? Fill out the initial form and let's define what success means for you. No beating around the bush.",
     "buttonText": "Start Your Project!",
-    "buttonUrl": "/en/formulario-inicial/",
+    "buttonUrl": "/en/contact/",
     "subtext": "Your success is my success. Let's start today."
   },
   "justification_notes": {

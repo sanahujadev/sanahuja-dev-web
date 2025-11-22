@@ -29,7 +29,6 @@ export default defineConfig({
     sitemap({
       // Filtra las páginas del funnel para que no salgan en el sitemap
       filter: (page) =>
-        !page.includes('/formulario-inicial') &&
         !page.includes('/gracias-proyecto'),
       
       // Añade las reglas i18n al sitemap

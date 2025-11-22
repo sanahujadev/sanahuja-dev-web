@@ -24,7 +24,7 @@ test.describe('E2E/SEO: /es/packs/todo-en-uno (Jefe Delegador - Premium)', () =>
 
     // 4. Hero CTA primario: "Delegar mi Web" (acción de CEO)
     const heroCTA = page.locator('#hero a').getByText('Lo Quiero Todo');
-    await expect(heroCTA).toHaveAttribute('href', '/es/formulario-inicial');
+    await expect(heroCTA).toHaveAttribute('href', '/es/contacto');
 
     // 5. Hero CTA secundario: "Ver flujo de trabajo"
     const workflowCTA = page.locator('#hero a').getByText('Ver qué incluye');

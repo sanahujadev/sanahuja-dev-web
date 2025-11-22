@@ -15,8 +15,16 @@
       "title": "El Ahorro de la Estrategia",
       "subtitle": "Unifica tus servicios y ahorra cada mes.",
       "stats": [
-        { "label": "Valor por Separado", "value": "130€", "unit": "/mes" },
-        { "label": "Ahorro Mensual", "value": "25€", "unit": "de ahorro" },
+        {
+          "label": "Valor por Separado",
+          "value": "130€",
+          "unit": "/mes"
+        },
+        {
+          "label": "Ahorro Mensual",
+          "value": "25€",
+          "unit": "de ahorro"
+        },
         {
           "label": "Precio del Pack",
           "value": "105€",
@@ -106,7 +114,7 @@
     "ctas": {
       "primary": {
         "text": "¡Quiero el Pack Socio-Técnico!",
-        "url": "/es/formulario-inicial/"
+        "url": "/es/contacto/"
       },
       "secondary": {
         "text": "Ver todos los Packs",

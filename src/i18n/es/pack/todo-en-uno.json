@@ -14,7 +14,7 @@
       "ctas": {
         "primary": {
           "text": "Lo Quiero Todo",
-          "url": "/es/formulario-inicial"
+          "url": "/es/contacto"
         },
         "secondary": {
           "text": "Ver qué incluye",
@@ -115,7 +115,7 @@
           "Rentabilidad en tiempo y dinero"
         ],
         "cta": "Delegar mi Gestión Digital",
-        "ctaUrl": "/es/formulario-inicial"
+        "ctaUrl": "/es/contacto"
       },
       "downsell": {
         "title": "¿Prefieres ir paso a paso?",

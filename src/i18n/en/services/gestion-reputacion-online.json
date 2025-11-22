@@ -17,8 +17,14 @@
         "span": "Your Competition",
         "title": "Abandoned Online Presence",
         "stats": [
-          { "value": "+6", "label": "Months Inactive" },
-          { "value": "0", "label": "Trust" }
+          {
+            "value": "+6",
+            "label": "Months Inactive"
+          },
+          {
+            "value": "0",
+            "label": "Trust"
+          }
         ],
         "features": [
           "Old reviews with no response",
@@ -32,8 +38,14 @@
         "span": "Your Digital Partner",
         "title": "Managed Online Presence",
         "stats": [
-          { "value": "<48h", "label": "Response" },
-          { "value": "100%", "label": "Coverage" }
+          {
+            "value": "<48h",
+            "label": "Response"
+          },
+          {
+            "value": "100%",
+            "label": "Coverage"
+          }
         ],
         "features": [
           "We answer reviews (positive and negative) in <48h",
@@ -46,10 +58,22 @@
       "slogan_2": " we get you ranked."
     },
     "statsBar": [
-      { "value": "100%", "label": "Review Coverage" },
-      { "value": "Visible", "label": "Local SEO Boost" },
-      { "value": "€25", "label": "From/month" },
-      { "value": "High", "label": "Customer Trust" }
+      {
+        "value": "100%",
+        "label": "Review Coverage"
+      },
+      {
+        "value": "Visible",
+        "label": "Local SEO Boost"
+      },
+      {
+        "value": "€25",
+        "label": "From/month"
+      },
+      {
+        "value": "High",
+        "label": "Customer Trust"
+      }
     ],
     "sections": {
       "importancia": {
@@ -119,7 +143,7 @@
     "ctas": {
       "primary": {
         "text": "Master Your Local Reputation!",
-        "url": "/en/formulario-inicial/"
+        "url": "/en/contact/"
       },
       "secondary": {
         "text": "View Web Maintenance",

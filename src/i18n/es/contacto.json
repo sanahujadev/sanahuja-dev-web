@@ -28,18 +28,21 @@
             {
               "name": "name",
               "label": "Nombre",
-              "required": true
+              "required": true,
+              "placeholder": "Tu nombre o de la Empresa"
             },
             {
               "name": "email",
               "label": "Email",
-              "required": true
+              "required": true,
+              "placeholder": "Email de empresa"
             },
             {
-              "name": "message_basic",
+                "name": "message_basic",
               "label": "Mensaje / Consulta",
               "type": "textarea",
-              "required": true
+              "required": true,
+              "placeholder": "Consulta lo que tengas en mente"
             }
           ],
           "accordionText": "¿Buscas agendar una reunión de trabajo? Para saber si puedo ayudarte, necesito un poco de contexto previo 👇",

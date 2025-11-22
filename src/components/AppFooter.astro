@@ -70,7 +70,7 @@ const footerData = {
   help: {
     text: t.help.text,
     contact: t.help.contact,
-    url: `/${lang}/formulario-inicial/`,
+    url: lang === "es" ? `/${lang}/contacto/` : `/${lang}/contact/`,
   },
   legal: [
     {
@@ -108,11 +108,10 @@ const getSocialIcon = (name: string) => {
   }
 };
 ---
+
 <footer aria-label="Footer" class="bg-background border-t border-border">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    
     <div class="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
-      
       <div class="lg:col-span-4">
         <div class="text-2xl font-bold text-foreground mb-4">
           Sanahuja<span class="text-primary-500">Dev/&gt;</span>
@@ -120,79 +119,97 @@ const getSocialIcon = (name: string) => {
         <p class="text-muted-foreground leading-relaxed text-pretty">
           {footerData.brand.tagline}
         </p>
-        
+
         <div class="mt-8 space-y-2">
-          <h3 class="text-sm font-semibold text-neutral-300 uppercase tracking-wider">
+          <h3
+            class="text-sm font-semibold text-neutral-300 uppercase tracking-wider"
+          >
             {footerData.localizacion.titulo}
           </h3>
-          <p class="text-muted-foreground text-sm">{footerData.localizacion.ciudad}</p>
-          <a 
+          <p class="text-muted-foreground text-sm">
+            {footerData.localizacion.ciudad}
+          </p>
+          <a
             href={footerData.localizacion.gmb_url}
-            target="_blank" rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
             class="inline-flex items-center gap-1.5 text-sm text-secondary-400 hover:text-secondary-300 transition-colors group"
           >
             {footerData.localizacion.gmb_link_label}
-            <ExternalLink class="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <ExternalLink
+              class="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+            />
           </a>
         </div>
       </div>
 
       <div class="lg:col-span-3">
-        <h3 class="text-sm font-semibold text-neutral-300 uppercase tracking-wider mb-6">
+        <h3
+          class="text-sm font-semibold text-neutral-300 uppercase tracking-wider mb-6"
+        >
           {footerData.navegacion.titulo}
         </h3>
         <ul class="space-y-3">
-          {footerData.navegacion.links.map((link) => (
-            <li>
-              <a 
-                href={link.url}
-                class="text-muted-foreground hover:text-foreground transition-colors text-sm"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
+          {
+            footerData.navegacion.links.map((link) => (
+              <li>
+                <a
+                  href={link.url}
+                  class="text-muted-foreground hover:text-foreground transition-colors text-sm"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
 
       <div class="lg:col-span-2">
-        <h3 class="text-sm font-semibold text-neutral-300 uppercase tracking-wider mb-6">
+        <h3
+          class="text-sm font-semibold text-neutral-300 uppercase tracking-wider mb-6"
+        >
           {footerData.social.titulo}
         </h3>
         <ul class="space-y-3">
-          {footerData.social.links.map((link) => {
-            const Icon = getSocialIcon(link.name);
-            return (
-              <li>
-                <a 
-                  href={link.url}
-                  target="_blank" rel="noopener noreferrer"
-                  class="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors text-sm group"
-                >
-                  <span class="w-5 h-5 flex items-center justify-center text-neutral-400 group-hover:text-secondary-400 transition-colors">
-                    {Icon && <Icon class="w-5 h-5" />}
-                    
-                    {link.name === 'freelancer' && (
-                      <div class="flex items-center gap-1">
-                        <Star class="w-4 h-4" />
-                        <span class="text-xs font-semibold">5</span>
-                      </div>
-                    )}
-                  </span>
-                  {link.label}
-                </a>
-              </li>
-            )
-          })}
+          {
+            footerData.social.links.map((link) => {
+              const Icon = getSocialIcon(link.name);
+              return (
+                <li>
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors text-sm group"
+                  >
+                    <span class="w-5 h-5 flex items-center justify-center text-neutral-400 group-hover:text-secondary-400 transition-colors">
+                      {Icon && <Icon class="w-5 h-5" />}
+
+                      {link.name === "freelancer" && (
+                        <div class="flex items-center gap-1">
+                          <Star class="w-4 h-4" />
+                          <span class="text-xs font-semibold">5</span>
+                        </div>
+                      )}
+                    </span>
+                    {link.label}
+                  </a>
+                </li>
+              );
+            })
+          }
         </ul>
       </div>
 
       <div class="lg:col-span-3">
-        <div class="bg-gradient-to-br from-neutral-800 to-neutral-900 border border-border rounded-xl p-6">
+        <div
+          class="bg-gradient-to-br from-neutral-800 to-neutral-900 border border-border rounded-xl p-6"
+        >
           <h3 class="text-lg font-semibold text-foreground mb-3">
             {footerData.help.text}
           </h3>
-          <Button 
+          <Button
             href={footerData.help.url}
             variant="default"
             class="w-full shadow-lg shadow-primary-500/20"
@@ -206,21 +223,25 @@ const getSocialIcon = (name: string) => {
     <div class="border-t border-border py-8">
       <div class="flex flex-col md:flex-row items-center justify-between gap-4">
         <div class="text-neutral-400 text-sm">
-          {footerData.copyright} {new Date().getFullYear()}
+          {footerData.copyright}
+          {new Date().getFullYear()}
         </div>
 
         <div class="flex flex-wrap items-center justify-center gap-6">
-          {footerData.legal.map((link) => (
-            <a 
-              href={link.url}
-              target="_self"
-              class="text-neutral-400 text-xs transition-colors hover:text-neutral-300 focus:outline-1 focus:ring-2 focus:ring-primary-500 rounded-sm"
-            >
-              {link.label}
-            </a>
-          ))}
-          <button 
-            id="cookie-settings-button" class="text-neutral-400 hover:text-neutral-300 text-xs transition-colors"
+          {
+            footerData.legal.map((link) => (
+              <a
+                href={link.url}
+                target="_self"
+                class="text-neutral-400 text-xs transition-colors hover:text-neutral-300 focus:outline-1 focus:ring-2 focus:ring-primary-500 rounded-sm"
+              >
+                {link.label}
+              </a>
+            ))
+          }
+          <button
+            id="cookie-settings-button"
+            class="text-neutral-400 hover:text-neutral-300 text-xs transition-colors"
           >
             {footerData.cookieSettings}
           </button>

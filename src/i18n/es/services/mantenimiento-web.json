@@ -15,10 +15,22 @@
       "title": "Tu Socio Digital",
       "subtitle": "Siempre vigilando tu éxito",
       "stats": [
-        { "label": "Monitorización", "value": "24/7" },
-        { "label": "WPO Score", "value": "99" },
-        { "label": "Desde/mes", "value": "20€" },
-        { "label": "Abandonos", "value": "0" }
+        {
+          "label": "Monitorización",
+          "value": "24/7"
+        },
+        {
+          "label": "WPO Score",
+          "value": "99"
+        },
+        {
+          "label": "Desde/mes",
+          "value": "20€"
+        },
+        {
+          "label": "Abandonos",
+          "value": "0"
+        }
       ]
     },
     "sections": {
@@ -71,9 +83,18 @@
         ],
         "chart": {
           "title": "Comparativa Real",
-          "main": { "label": "SanahujaDev (Mi Web)", "value": 99 },
-          "competitorA": { "label": "Competidor Tenerife A", "value": 53 },
-          "competitorB": { "label": "Competidor Tenerife B", "value": 41 },
+          "main": {
+            "label": "SanahujaDev (Mi Web)",
+            "value": 99
+          },
+          "competitorA": {
+            "label": "Competidor Tenerife A",
+            "value": 53
+          },
+          "competitorB": {
+            "label": "Competidor Tenerife B",
+            "value": 41
+          },
           "summary": "<span class=\"text-accent-400 font-semibold\">+87% más rápida</span> que la competencia local"
         }
       },
@@ -135,7 +156,7 @@
     "ctas": {
       "primary": {
         "text": "¡Contrata tu Tranquilidad!",
-        "url": "/es/formulario-inicial/"
+        "url": "/es/contacto/"
       },
       "secondary": {
         "text": "Ver todos los Packs",

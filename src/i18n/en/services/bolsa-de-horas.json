@@ -26,9 +26,21 @@
         "title": "Total Flexibility",
         "subtitle": "Pay only for what you use.",
         "stats": [
-          { "label": "Commitment", "value": "0", "unit": "months" },
-          { "label": "Response", "value": "<24h", "color": "text-primary-500" },
-          { "label": "Expiry", "value": "12", "unit": "months" }
+          {
+            "label": "Commitment",
+            "value": "0",
+            "unit": "months"
+          },
+          {
+            "label": "Response",
+            "value": "<24h",
+            "color": "text-primary-500"
+          },
+          {
+            "label": "Expiry",
+            "value": "12",
+            "unit": "months"
+          }
         ]
       }
     },
@@ -114,7 +126,7 @@
       "ctaFinal": {
         "title": "Do you have a fire to put out?",
         "content": "Don't let a technical error make you lose sales. We act fast.",
-        "url": "/en/formulario-inicial",
+        "url": "/en/contact",
         "cta": "Request Urgent Support",
         "subtext": "Professional technical support on demand."
       }

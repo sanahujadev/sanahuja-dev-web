@@ -18,7 +18,7 @@
         },
         "secondary": {
           "text": "Consultar Servicio Suelto",
-          "url": "/es/formulario-inicial"
+          "url": "/es/contacto"
         }
       },
       "heroVisual": {
@@ -104,7 +104,7 @@
         "title": "Deja de tener una web muda",
         "content": "Empieza a hablar con tu mercado. Convierte tu web en una autoridad en tu sector.",
         "cta": "Activar Plan de Autoridad",
-        "url": "/es/formulario-inicial"
+        "url": "/es/contacto"
       }
     }
   }

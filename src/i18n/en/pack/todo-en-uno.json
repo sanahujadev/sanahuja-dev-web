@@ -14,7 +14,7 @@
       "ctas": {
         "primary": {
           "text": "I Want It All",
-          "url": "/en/formulario-inicial"
+          "url": "/en/contact"
         },
         "secondary": {
           "text": "See what's included",
@@ -115,7 +115,7 @@
           "ROI in time and money"
         ],
         "cta": "Delegate my Digital Management",
-        "ctaUrl": "/en/formulario-inicial"
+        "ctaUrl": "/en/contact"
       },
       "downsell": {
         "title": "Prefer to take it step by step?",

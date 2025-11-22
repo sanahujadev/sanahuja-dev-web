@@ -21,14 +21,14 @@ test.describe('E2E/SEO: /es/packs/imagen-digital (Pack Imagen Digital)', () => {
     // 3. Hero Section
     const heroSection = page.locator('#hero');
     await expect(heroSection).toBeVisible();
-    
+
     // 4. Hero Badge
     const heroBadge = heroSection.getByText('Reputación Local');
     await expect(heroBadge).toBeVisible();
 
     // 4. Hero CTA primario: "Proteger mi Reputación" (acción emocional)
     const heroCTA = page.locator('#hero a').getByText('Proteger mi Reputación');
-    await expect(heroCTA).toHaveAttribute('href', '/es/formulario-inicial/');
+    await expect(heroCTA).toHaveAttribute('href', '/es/contacto/');
 
     // 5. Hero CTA secundario: "Ver mi perfil actual"
     const demoCTA = page.locator('#hero a').getByText('Comparar Packs');

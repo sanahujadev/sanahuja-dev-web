@@ -3,19 +3,19 @@ import { test, expect } from '@playwright/test';
 import t from '../../src/i18n/es/componentes/header.json' assert { type: 'json' };
 
 test.describe('Fase 1 (ROJO): Test de Integración para AppHeader', () => {
-  
+
   test('El header debe renderizar todos los elementos funcionales y de navegación', async ({ page }) => {
     // 1. NAVEGACIÓN:
     // Vamos a una página cualquiera que sepamos que usa el BaseLayout,
     // ya que el AppHeader es parte de él.
     await page.goto('/es/servicios/diseno-web-tenerife');
-    
+
     // 2. LOCALIZACIÓN:
     // Acotamos la búsqueda al elemento <header> para más precisión y robustez.
     const header = page.locator('header');
 
     // 3. ASERCIONES (VERIFICACIÓN):
-    
+
     // A. Links de Navegación Principales
     await expect(header.getByRole('link', { name: t.nav.home, exact: true })).toBeVisible();
     await expect(header.getByRole('link', { name: t.nav.about, exact: true })).toBeVisible();
@@ -30,7 +30,7 @@ test.describe('Fase 1 (ROJO): Test de Integración para AppHeader', () => {
     // C. Botón de Call to Action (CTA)
     const ctaButton = header.getByRole('link', { name: t.cta.getStarted });
     await expect(ctaButton).toBeVisible();
-    await expect(ctaButton).toHaveAttribute('href', '/es/formulario-inicial/');
+    await expect(ctaButton).toHaveAttribute('href', '/es/contacto/');
 
     // D. Controles de Accesibilidad (ARIA)
     await expect(header.getByLabel(t.aria.logo, { exact: true })).toBeVisible();

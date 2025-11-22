@@ -18,16 +18,26 @@
         },
         "secondary": {
           "text": "Calcular Ahorro",
-          "url": "/es/formulario-inicial/"
+          "url": "/es/contacto/"
         }
       },
       "heroVisual": {
         "title": "Tranquilidad Total",
         "subtitle": "Céntrate en tu negocio.",
         "stats": [
-          { "label": "Contrato", "value": "Flexible" },
-          { "label": "Soporte", "value": "WPO 99" },
-          { "label": "Ahorro", "value": "25€", "unit": "/mes" }
+          {
+            "label": "Contrato",
+            "value": "Flexible"
+          },
+          {
+            "label": "Soporte",
+            "value": "WPO 99"
+          },
+          {
+            "label": "Ahorro",
+            "value": "25€",
+            "unit": "/mes"
+          }
         ]
       }
     },
@@ -50,10 +60,22 @@
             "url": "/es/packs/pack-sociotecnico-digital",
             "highlight": true,
             "features": [
-              { "name": "Mantenimiento WPO 99", "included": true },
-              { "name": "Plan de Autoridad (Blog)", "included": true },
-              { "name": "Informe Visibilidad (GA4)", "included": true },
-              { "name": "Gestión de Reputación", "included": false }
+              {
+                "name": "Mantenimiento WPO 99",
+                "included": true
+              },
+              {
+                "name": "Plan de Autoridad (Blog)",
+                "included": true
+              },
+              {
+                "name": "Informe Visibilidad (GA4)",
+                "included": true
+              },
+              {
+                "name": "Gestión de Reputación",
+                "included": false
+              }
             ]
           },
           {
@@ -65,10 +87,22 @@
             "url": "/es/packs/imagen-digital",
             "highlight": false,
             "features": [
-              { "name": "Mantenimiento WPO 99", "included": true },
-              { "name": "Plan de Autoridad (Blog)", "included": true },
-              { "name": "Informe Visibilidad (GA4)", "included": false },
-              { "name": "Gestión de Reputación", "included": true }
+              {
+                "name": "Mantenimiento WPO 99",
+                "included": true
+              },
+              {
+                "name": "Plan de Autoridad (Blog)",
+                "included": true
+              },
+              {
+                "name": "Informe Visibilidad (GA4)",
+                "included": false
+              },
+              {
+                "name": "Gestión de Reputación",
+                "included": true
+              }
             ]
           },
           {
@@ -80,10 +114,22 @@
             "url": "/es/packs/todo-en-uno",
             "highlight": false,
             "features": [
-              { "name": "Mantenimiento WPO 99", "included": true },
-              { "name": "Plan de Autoridad (Blog)", "included": true },
-              { "name": "Informe Visibilidad (GA4)", "included": true },
-              { "name": "Gestión de Reputación", "included": true }
+              {
+                "name": "Mantenimiento WPO 99",
+                "included": true
+              },
+              {
+                "name": "Plan de Autoridad (Blog)",
+                "included": true
+              },
+              {
+                "name": "Informe Visibilidad (GA4)",
+                "included": true
+              },
+              {
+                "name": "Gestión de Reputación",
+                "included": true
+              }
             ]
           }
         ]
@@ -113,7 +159,7 @@
         "title": "¿Dudas entre Datos o Imagen?",
         "content": "No elijas. Por solo un poco más, llévatelo todo y delega la parte digital al 100%.",
         "cta": "Hablar con José Javier",
-        "url": "/es/formulario-inicial"
+        "url": "/es/contacto"
       }
     }
   }

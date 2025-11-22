@@ -109,7 +109,7 @@
   "ctas": [
     {
       "text": "¡Empieza tu Proyecto!",
-      "url": "/es/formulario-inicial/",
+      "url": "/es/contacto/",
       "type": "primary",
       "justification": "CTA principal del Brief , dirige a la macro-conversión."
     },
@@ -148,7 +148,7 @@
     "h2": "Empecemos a construir tu futuro digital",
     "content": "¿Hablamos? Rellena el formulario inicial y definamos juntos qué es el éxito para ti. Sin rodeos.",
     "buttonText": "¡Empieza tu Proyecto!",
-    "buttonUrl": "/es/formulario-inicial/",
+    "buttonUrl": "/es/contacto/",
     "subtext": "Tu éxito es mi éxito. Empecemos hoy."
   },
   "justification_notes": {

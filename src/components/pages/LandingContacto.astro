@@ -2,13 +2,14 @@
 // src/components/pages/LandingContacto.astro
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Button from "../../components/ui/Button.astro";
-import Badge from "../../components/ui/Badge.astro";
+
+// Iconos
 import ChevronDown from "../../components/ui/icons/ChevronDown.astro";
 import ChevronRight from "../../components/ui/icons/ChevronRight.astro";
-import LayoutIcon from "../../components/ui/icons/LayoutIcon.astro";
+import LayoutIcon from "../../components/ui/icons/LayoutIcon.astro"; // Asumiendo que existe, si no, usa Target o Layout del set anterior
 import Package from "../../components/ui/icons/Package.astro";
 import Shield from "../../components/ui/icons/Shield.astro";
-import HelpCircle from "../../components/ui/icons/HelpCircle.astro";
+import HelpCircle from "../../components/ui/icons/HelpCircle.astro"; // Si no existe, usar InformationCircle
 import InformationCircle from "../../components/ui/icons/InformationCircle.astro";
 
 import type { ContactoCopy } from "../../i18n/utils";
@@ -22,342 +23,453 @@ interface Props {
 const { copy, alternateUrl, schema } = Astro.props;
 const { copy: t, lang, metadata } = copy;
 
-// Variables dummy para que el componente compile en Astro estático
-// TODO: Implementar lógica de interactividad real con Preact/React o Vanilla JS
-const openStep = 1;
-const formData = {
-  name: "",
-  email: "",
-  message_basic: "",
-  goal: "",
-  timeline: "",
-  budget_range: "",
+// Helpers para extraer opciones de los campos del JSON (Type Narrowing)
+const getOptions = (fieldIndex: number, stepIndex: number) => {
+  const field = t.formUI.steps[stepIndex]?.fields[fieldIndex];
+  return field && "options" in field ? field.options : [];
 };
 
-// Type narrowing para campos con options
-const projectTypeField = t.formUI.steps[1].fields[0];
-const projectTypes =
-  "options" in projectTypeField ? projectTypeField.options : [];
+const projectTypes = getOptions(0, 1); // Step 2, Field 0
+const techStatusOptions = getOptions(1, 1); // Step 2, Field 1
+const timelineOptions = getOptions(1, 2); // Step 3, Field 1
+const budgetOptions = getOptions(2, 2); // Step 3, Field 2
 
-const techStatusField = t.formUI.steps[1].fields[1];
-const techStatusOptions =
-  "options" in techStatusField ? techStatusField.options : [];
-
-// Icon map
+// Icon Map
 const iconMap: Record<string, any> = {
-  Layout: LayoutIcon,
-  Package: Package,
-  Shield: Shield,
-  HelpCircle: HelpCircle,
+  "Layout": LayoutIcon,
+  "Package": Package,
+  "Shield": Shield,
+  "HelpCircle": HelpCircle
 };
 ---
 
 <BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>
-  <script
-    is:inline
-    type="application/ld+json"
-    set:html={JSON.stringify(schema)}
-    slot="json-ld"
-  />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} slot="json-ld" />
   <Fragment slot="head">
     <title>{metadata.title}</title>
     <meta name="description" content={metadata.description} />
   </Fragment>
-  <main>
-    {/* Hero */}
-    <section id="hero">
-      <h1>
-        {t.hero.h1}
-      </h1>
-      <p>{t.hero.subtitle}</p>
-      <p>
-        {t.hero.intro}
-      </p>
-    </section>
 
-    {/* Form */}
-    <form id="contact-form">
-      {/* Step 1: Identidad */}
-      <section id="step_1_identity">
-        <button type="button">
-          <div>
-            <div>01</div>
-            <h3>{t.formUI.steps[0].title}</h3>
-          </div>
-          <ChevronDown />
-        </button>
-
-        {
-          /* Renderizado siempre visible para SEO y porque la lógica JS no funciona en Astro estático */
-        }
-        <div>
-          <div>
-            <label>
-              {t.formUI.steps[0].fields[0].label}
-              <span>*</span>
-            </label>
-            <input
-              name="name"
-              type="text"
-              required
-              placeholder="Tu nombre completo"
-            />
-          </div>
-
-          <div>
-            <label>
-              {t.formUI.steps[0].fields[1].label}
-              <span>*</span>
-            </label>
-            <input
-              name="email"
-              type="email"
-              required
-              placeholder="tu@email.com"
-            />
-          </div>
-
-          <div>
-            <label>
-              {t.formUI.steps[0].fields[2].label}
-              <span>*</span>
-            </label>
-            <textarea
-              name="message_basic"
-              required
-              rows="4"
-              placeholder="Cuéntame qué necesitas..."></textarea>
-          </div>
-
-          {/* Accordion Trigger Text */}
-          <div>
-            <p>
-              {t.formUI.steps[0].accordionText}
-            </p>
-            <button type="button">
-              <span
-                >{
-                  "accordionButton" in t.formUI.steps[0]
-                    ? t.formUI.steps[0].accordionButton
-                    : "Desplegar"
-                }</span
-              >
-              <ChevronRight />
-            </button>
-          </div>
-        </div>
+  <main class="min-h-screen bg-background">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 py-16">
+      
+      {/* Hero Section */}
+      <section id="hero" class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">
+          {t.hero.h1}
+        </h1>
+        <p class="text-xl text-primary-400 mb-4">{t.hero.subtitle}</p>
+        <p class="text-muted-foreground max-w-2xl mx-auto text-balance">
+          {t.hero.intro}
+        </p>
       </section>
 
-      {/* Step 2: Alcance */}
-      <section id="step_2_scope">
-        <Button type="button">
-          <div>
-            <div>02</div>
-            <h3>{t.formUI.steps[1].title}</h3>
-          </div>
-          <ChevronDown />
-        </Button>
+      {/* Contact Form */}
+      <form id="contact-form" class="space-y-6" method="POST">
+        
+        {/* ========================================== */}
+        {/* STEP 1: IDENTIDAD (Siempre abierto visualmente al inicio) */}
+        {/* ========================================== */}
+        <div id="step_1_identity" class="bg-neutral-900 border border-border rounded-xl overflow-hidden transition-all duration-300" id="step-1-container">
+          <button
+            type="button"
+            class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-neutral-800/50 transition-colors accordion-trigger"
+            data-step="1"
+            aria-expanded="true"
+            aria-controls="step-1-content"
+          >
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-primary-500/10 border border-primary-500/30 flex items-center justify-center text-primary-400 font-bold text-sm">
+                01
+              </div>
+              <h3 class="text-lg font-semibold text-foreground">{t.formUI.steps[0].title}</h3>
+            </div>
+            <div class="icon-container transition-transform duration-300 rotate-180">
+               <ChevronDown class="w-5 h-5 text-muted-foreground" />
+            </div>
+          </button>
 
-        <div>
-          {/* Project Type Cards */}
-          <div>
-            <label>{t.formUI.steps[1].fields[0].label}</label>
+          <div id="step-1-content" class="px-6 pb-6 space-y-4 border-t border-border">
+            {/* Nombre */}
             <div>
-              {
-                projectTypes &&
-                  projectTypes.map((type) => {
-                    const iconName =
-                      "icon" in type ? (type as any).icon : "HelpCircle";
-                    const IconComponent = iconMap[iconName || "HelpCircle"];
-                    return (
-                      <label>
-                        <input
-                          type="radio"
-                          name="project_type"
-                          value={type.value}
-                          class="sr-only"
-                        />
-                        <div>
-                          <div>{IconComponent && <IconComponent />}</div>
-                          <span>{type.label}</span>
+              <label for="name" class="block text-sm font-medium text-neutral-300 mb-2">
+                {t.formUI.steps[0].fields[0].label} <span class="text-primary-400">*</span>
+              </label>
+              <input
+                name="name"
+                type="text"
+                required
+                class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                placeholder={(t.formUI.steps[0].fields[0] as any).placeholder}
+              />
+            </div>
+
+            {/* Email */}
+            <div>
+              <label for="email" class="block text-sm font-medium text-neutral-300 mb-2">
+                {t.formUI.steps[0].fields[1].label} <span class="text-primary-400">*</span>
+              </label>
+              <input
+                name="email"
+                type="email"
+                required
+                class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                placeholder={(t.formUI.steps[0].fields[1] as any).placeholder}
+              />
+            </div>
+
+            {/* Mensaje */}
+            <div>
+              <label for="message_basic" class="block text-sm font-medium text-neutral-300 mb-2">
+                {t.formUI.steps[0].fields[2].label} <span class="text-primary-400">*</span>
+              </label>
+              <textarea
+                name="message_basic"
+                required
+                rows="4"
+                aria-describedby="message_basic-error"
+                class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none transition-all"
+                placeholder={(t.formUI.steps[0].fields[2] as any).placeholder}
+              ></textarea>
+              <span id="message_basic-error" role="alert" class="error-message text-red-400 text-xs mt-1 hidden">
+                Cuéntame brevemente qué necesitas.
+              </span>
+            </div>
+
+            {/* Trigger Siguiente Paso */}
+            <div class="pt-4 border-t border-border">
+              <p class="text-sm text-muted-foreground mb-3">
+                {t.formUI.steps[0].accordionText}
+              </p>
+              <button
+                type="button"
+                class="text-sm font-medium text-primary-400 hover:text-primary-300 flex items-center gap-2 next-step-trigger"
+                data-target-step="2"
+              >
+                <span>{t.formUI.steps[0].accordionButton || "Desplegar detalles del proyecto"}</span>
+                <ChevronRight class="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* ========================================== */}
+        {/* STEP 2: ALCANCE (Cerrado por defecto) */}
+        {/* ========================================== */}
+        <div id={t.formUI.steps[1].id} class="bg-neutral-900 border border-border rounded-xl overflow-hidden transition-all duration-300">
+          <button
+            type="button"
+            class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-neutral-800/50 transition-colors accordion-trigger"
+            data-step="2"
+            aria-expanded="false"
+            aria-controls="step-2-content"
+          >
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-secondary-500/10 border border-secondary-500/30 flex items-center justify-center text-secondary-400 font-bold text-sm">
+                02
+              </div>
+              <h3 class="text-lg font-semibold text-foreground">{t.formUI.steps[1].title}</h3>
+            </div>
+            <div class="icon-container transition-transform duration-300">
+               <ChevronDown class="w-5 h-5 text-muted-foreground" />
+            </div>
+          </button>
+
+          <div id="step-2-content" class="hidden px-6 pb-6 space-y-6 border-t border-border">
+            {/* Project Type Cards */}
+            <div>
+              <label class="block text-sm font-medium text-neutral-300 mb-3">{t.formUI.steps[1].fields[0].label}</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {projectTypes && projectTypes.map((type) => {
+                  const Icon = iconMap[(type as any).icon] || HelpCircle;
+                  return (
+                    <label class="cursor-pointer relative">
+                      <input type="radio" name="project_type" value={type.value} class="peer sr-only" />
+                      <div class="p-4 rounded-lg border-2 border-neutral-700 bg-neutral-800 text-left transition-all peer-checked:border-primary-500 peer-checked:bg-primary-500/10 hover:border-neutral-600">
+                        <div class="flex items-center gap-3">
+                          <div class="w-10 h-10 rounded-lg bg-neutral-700 text-neutral-400 flex items-center justify-center peer-checked:bg-primary-500/20 peer-checked:text-primary-400 transition-colors">
+                             <Icon class="w-5 h-5" />
+                          </div>
+                          <span class="text-sm font-medium text-neutral-300 peer-checked:text-primary-300">{type.label}</span>
                         </div>
-                      </label>
-                    );
-                  })
-              }
-            </div>
-          </div>
-
-          {/* Tech Status Pills */}
-          <div>
-            <label>{t.formUI.steps[1].fields[1].label}</label>
-            <div>
-              {
-                techStatusOptions &&
-                  techStatusOptions.map((option) => (
-                    <label>
-                      <input
-                        type="radio"
-                        name="tech_status"
-                        value={option.value}
-                        class="sr-only"
-                      />
-                      <span>{option.label}</span>
+                      </div>
                     </label>
-                  ))
-              }
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Tech Status Pills */}
+            <div>
+              <label class="block text-sm font-medium text-neutral-300 mb-3">{t.formUI.steps[1].fields[1].label}</label>
+              <div class="flex flex-wrap gap-2">
+                {techStatusOptions && techStatusOptions.map((option) => (
+                  <label class="cursor-pointer">
+                    <input type="radio" name="tech_status" value={option.value} class="peer sr-only" />
+                    <span class="inline-block px-4 py-2 rounded-full text-sm font-medium border-2 border-neutral-700 bg-neutral-800 text-neutral-400 transition-all peer-checked:border-accent-500 peer-checked:bg-accent-500/10 peer-checked:text-accent-300 hover:border-neutral-600">
+                      {option.label}
+                    </span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            {/* Trigger Siguiente Paso */}
+            <div class="pt-4 border-t border-border">
+              <p class="text-sm text-muted-foreground mb-3">
+                {t.formUI.steps[1].accordionText}
+              </p>
+              <button
+                type="button"
+                class="text-sm font-medium text-secondary-400 hover:text-secondary-300 flex items-center gap-2 next-step-trigger"
+                data-target-step="3"
+              >
+                <span>{t.formUI.steps[1].accordionButton || "Definir viabilidad"}</span>
+                <ChevronRight class="w-4 h-4" />
+              </button>
             </div>
           </div>
-
-          {/* Accordion Trigger Text */}
-          <div>
-            <p>
-              {t.formUI.steps[1].accordionText}
-            </p>
-            <button type="button">
-              <span
-                >{
-                  "accordionButton" in t.formUI.steps[1]
-                    ? t.formUI.steps[1].accordionButton
-                    : "Desplegar"
-                }</span
-              >
-              <ChevronRight />
-            </button>
-          </div>
         </div>
-      </section>
 
-      {/* Step 3: Viabilidad */}
-      <section id="step_3_viability">
-        <Button type="button">
-          <div>
-            <div>03</div>
-            <h3>{t.formUI.steps[2].title}</h3>
-          </div>
-          <ChevronDown />
-        </Button>
+        {/* ========================================== */}
+        {/* STEP 3: VIABILIDAD (Cerrado por defecto) */}
+        {/* ========================================== */}
+        <div id={t.formUI.steps[2].id} class="bg-neutral-900 border border-border rounded-xl overflow-hidden transition-all duration-300">
+          <button
+            type="button"
+            class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-neutral-800/50 transition-colors accordion-trigger"
+            data-step="3"
+            aria-expanded="false"
+            aria-controls="step-3-content"
+          >
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-accent-500/10 border border-accent-500/30 flex items-center justify-center text-accent-400 font-bold text-sm">
+                03
+              </div>
+              <h3 class="text-lg font-semibold text-foreground">{t.formUI.steps[2].title}</h3>
+            </div>
+            <div class="icon-container transition-transform duration-300">
+               <ChevronDown class="w-5 h-5 text-muted-foreground" />
+            </div>
+          </button>
 
-        <div>
-          <div>
-            <label>{t.formUI.steps[2].fields[0].label}</label>
-            {
-              (() => {
-                const goalField = t.formUI.steps[2].fields[0];
-                const placeholder =
-                  "placeholder" in goalField ? goalField.placeholder : "";
-                return (
-                  <input type="text" name="goal" placeholder={placeholder} />
-                );
-              })()
-            }
-          </div>
+          <div id="step-3-content" class="hidden px-6 pb-6 space-y-4 border-t border-border">
+            {/* Objetivo */}
+            <div>
+              <label class="block text-sm font-medium text-neutral-300 mb-2">
+                {t.formUI.steps[2].fields[0].label}
+              </label>
+              <input
+                type="text"
+                name="goal"
+                class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all"
+                placeholder={(t.formUI.steps[2].fields[0] as any).placeholder}
+              />
+            </div>
 
-          <div>
-            <label>{t.formUI.steps[2].fields[1].label}</label>
-            <select name="timeline">
-              {
-                (() => {
-                  const timelineField = t.formUI.steps[2].fields[1];
-                  const placeholder =
-                    "placeholder" in timelineField
-                      ? timelineField.placeholder
-                      : "Selecciona";
-                  return <option value="">{placeholder}</option>;
-                })()
-              }
-              {
-                (() => {
-                  const timelineField = t.formUI.steps[2].fields[1];
-                  const options =
-                    "options" in timelineField ? timelineField.options : [];
-                  return options?.map((opt) => (
+            {/* Timeline Select */}
+            <div>
+              <label class="block text-sm font-medium text-neutral-300 mb-2">
+                {t.formUI.steps[2].fields[1].label}
+              </label>
+              <div class="relative">
+                <select
+                  name="timeline"
+                  class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent appearance-none cursor-pointer"
+                >
+                  <option value="">{(t.formUI.steps[2].fields[1] as any).placeholder || "Selecciona..."}</option>
+                  {timelineOptions && timelineOptions.map(opt => (
                     <option value={opt.value}>{opt.label}</option>
-                  ));
-                })()
-              }
-            </select>
-          </div>
+                  ))}
+                </select>
+                <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-neutral-500">
+                  <ChevronDown class="w-4 h-4" />
+                </div>
+              </div>
+            </div>
 
-          <div>
-            <label>{t.formUI.steps[2].fields[2].label}</label>
-            {
-              (() => {
-                const budgetField = t.formUI.steps[2].fields[2];
-                const description =
-                  "description" in budgetField ? budgetField.description : "";
-                return <p>{description}</p>;
-              })()
-            }
-            <select name="budget_range">
-              {
-                (() => {
-                  const budgetField = t.formUI.steps[2].fields[2];
-                  const placeholder =
-                    "placeholder" in budgetField
-                      ? budgetField.placeholder
-                      : "Selecciona";
-                  return <option value="">{placeholder}</option>;
-                })()
-              }
-              {
-                (() => {
-                  const budgetField = t.formUI.steps[2].fields[2];
-                  const options =
-                    "options" in budgetField ? budgetField.options : [];
-                  return options?.map((opt) => (
+            {/* Budget Select */}
+            <div>
+              <label class="block text-sm font-medium text-neutral-300 mb-2">
+                {t.formUI.steps[2].fields[2].label}
+              </label>
+              <p class="text-xs text-muted-foreground mb-2">
+                {(t.formUI.steps[2].fields[2] as any).description}
+              </p>
+              <div class="relative">
+                <select
+                  name="budget_range"
+                  class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent appearance-none cursor-pointer"
+                >
+                  <option value="">{(t.formUI.steps[2].fields[2] as any).placeholder || "Selecciona..."}</option>
+                  {budgetOptions && budgetOptions.map(opt => (
                     <option value={opt.value}>{opt.label}</option>
-                  ));
-                })()
-              }
-            </select>
+                  ))}
+                </select>
+                <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-neutral-500">
+                  <ChevronDown class="w-4 h-4" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
 
-      {/* Ansiolítico Section */}
-      <section>
-        <div>
-          <div>
-            <InformationCircle />
-          </div>
-          <div>
-            <p>
-              {t.formUI.ansiolitico.text}
-            </p>
-            <Button href={t.formUI.ansiolitico.privacyLink} target="_self">
-              <span
-                >{
-                  "privacyButton" in t.formUI.ansiolitico
-                    ? t.formUI.ansiolitico.privacyButton
-                    : "Privacidad"
-                }</span
+        {/* Ansiolítico Section */}
+        <div class="bg-neutral-900 border border-border rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-lg bg-accent-500/10 flex items-center justify-center flex-shrink-0">
+              <InformationCircle class="w-5 h-5 text-accent-400" />
+            </div>
+            <div class="flex-1">
+              <p class="text-sm text-muted-foreground leading-relaxed">
+                {t.formUI.ansiolitico.text}
+              </p>
+              <a
+                href={t.formUI.ansiolitico.privacyLink}
+                target="_self"
+                class="text-sm text-accent-400 hover:text-accent-300 inline-flex items-center gap-1 mt-2 focus:outline-none focus:underline"
               >
-              <ChevronRight />
-            </Button>
+                <span>{t.formUI.ansiolitico.privacyButton}</span>
+                <ChevronRight class="w-3 h-3" />
+              </a>
+            </div>
           </div>
         </div>
-      </section>
 
-      {/* Submit Button */}
-      <section>
-        <Button type="submit">
-          {t.formUI.config.fullSubmitLabel}
-        </Button>
-        <p>{t.formUI.config.seoKeyPhrase}</p>
-      </section>
-    </form>
+        {/* Submit Button */}
+        <div class="flex flex-col items-center pt-4 space-y-4">
+          <Button 
+            type="submit"
+            variant="primary"
+            class="w-full sm:w-auto shadow-lg shadow-primary-500/20 hover:scale-105 transition-transform"
+          >
+            {t.formUI.config.fullSubmitLabel}
+          </Button>
+          <p class="text-xs text-muted-foreground">{t.formUI.config.seoKeyPhrase}</p>
+        </div>
+
+      </form>
+    </div>
   </main>
-  <script is:inline>
-    const form = document.getElementById("contact-form");
-    if (form) {
+
+  {/* SCRIPT DE INTERACTIVIDAD (Acordeón Vanilla JS) */}
+  <script>
+    function initializeForm() {
+      // Corrección 1: Decirle a TS que esto es un FORMULARIO, no un elemento genérico
+      const form = document.getElementById("contact-form") as HTMLFormElement | null;
+      
+      if (!form || form.dataset.formInitialized === 'true') {
+        return;
+      }
+      form.dataset.formInitialized = 'true';
+
+      // 1. Manejo de Acordeones
+      const triggers = document.querySelectorAll('.accordion-trigger');
+      
+      function toggleStep(stepId: string, forceOpen = false) {
+        const content = document.getElementById(`step-${stepId}-content`);
+        const button = document.querySelector(`button[data-step="${stepId}"]`);
+        const icon = button?.querySelector('.icon-container');
+
+        if (!content || !button) return;
+
+        const isClosed = content.classList.contains('hidden');
+        
+        if (forceOpen || isClosed) {
+          content.classList.remove('hidden');
+          button.setAttribute('aria-expanded', 'true');
+          icon?.classList.add('rotate-180');
+        } else if (!forceOpen) {
+          content.classList.add('hidden');
+          button.setAttribute('aria-expanded', 'false');
+          icon?.classList.remove('rotate-180');
+        }
+      }
+
+      triggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+          // Corrección 2: Castear currentTarget a HTMLElement para acceder a dataset
+          const target = e.currentTarget as HTMLElement;
+          const step = target.dataset.step;
+          if (step) toggleStep(step);
+        });
+      });
+
+      // 2. Botones "Siguiente Paso"
+      const nextButtons = document.querySelectorAll('.next-step-trigger');
+      nextButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          // Corrección 2b: Castear de nuevo para acceder a dataset
+          const target = e.currentTarget as HTMLElement;
+          const targetStep = target.dataset.targetStep;
+          if (targetStep) {
+            toggleStep(targetStep, true);
+            const targetContainer = document.getElementById(`step-${targetStep}-container`);
+            targetContainer?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        });
+      });
+
+      // 3. Manejo del Submit con VALIDACIÓN
       form.addEventListener("submit", (e) => {
         e.preventDefault();
+        
+        const errorMessages = form.querySelectorAll('.error-message');
+        errorMessages.forEach(msg => msg.classList.add('hidden'));
+        
+        const invalidInputs = form.querySelectorAll('[data-invalid]');
+        invalidInputs.forEach(input => input.removeAttribute('data-invalid'));
+
+        let isValid = true;
+        // Corrección 3: Definir el tipo explícito para la variable que guardará el input inválido
+        let firstInvalidInput: HTMLInputElement | HTMLTextAreaElement | null = null;
+
+        const requiredFields = ['name', 'email', 'message_basic'];
+        
+        requiredFields.forEach(fieldName => {
+            // Corrección 4: Castear el resultado de querySelector a Input o TextArea para acceder a .value
+            const input = form.querySelector(`[name="${fieldName}"]`) as HTMLInputElement | HTMLTextAreaElement | null;
+            
+            if (input && !input.value.trim()) {
+                isValid = false;
+                input.setAttribute('data-invalid', 'true');
+                
+                const errorMsg = document.getElementById(`${fieldName}-error`);
+                if (errorMsg) errorMsg.classList.remove('hidden');
+
+                if (!firstInvalidInput) firstInvalidInput = input;
+            }
+        });
+
+        if (!isValid) {
+            const globalError = document.getElementById('global-form-error');
+            if (globalError) globalError.classList.remove('hidden');
+
+            toggleStep('1', true);
+            
+            // Corrección 5: Como ya tipamos firstInvalidInput, ahora .focus() es válido
+            if (firstInvalidInput) {
+                (firstInvalidInput as HTMLElement).focus();
+            }
+            return; 
+        }
+
+        // Corrección 6: form ya está casteado como HTMLFormElement arriba, así que FormData no se queja
         const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
-        console.log("Form Data:", data);
-        window.location.href = "/es/gracias-proyecto";
+        const data = Object.fromEntries(formData.entries());
+        
+        console.log("Simulando envío de formulario a una API...");
+
+        setTimeout(() => {
+          console.log("--- Respuesta de API Simulada ---");
+          console.log("Datos del formulario:", data);
+          console.log("---------------------------------");
+          window.location.href = "/es/gracias-proyecto"; // Descomentado para la acción final
+        }, 600);
       });
+
     }
+
+    document.addEventListener('astro:page-load', initializeForm);
   </script>
 </BaseLayout>

@@ -25,9 +25,18 @@
         "title": "Confianza Técnica",
         "subtitle": "Resultados, no palabras.",
         "stats": [
-          { "label": "Puntuación WPO", "value": "99" },
-          { "label": "Descuento Inicial", "value": "90%" },
-          { "label": "Meses de Soporte", "value": "12" }
+          {
+            "label": "Puntuación WPO",
+            "value": "99"
+          },
+          {
+            "label": "Descuento Inicial",
+            "value": "90%"
+          },
+          {
+            "label": "Meses de Soporte",
+            "value": "12"
+          }
         ]
       }
     },
@@ -159,7 +168,7 @@
     "ctas": {
       "primary": {
         "text": "¡Empieza tu Proyecto!",
-        "url": "/es/formulario-inicial/"
+        "url": "/es/contacto/"
       },
       "secondary": {
         "text": "Ver Packs Estratégicos",

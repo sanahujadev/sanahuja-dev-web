@@ -14,7 +14,12 @@
         "title": "Ecosistema Digital",
         "subtitle": "Cobertura 360º",
         "type": "NetworkGraph",
-        "nodes": ["Diseño", "Mantenimiento", "Reputación", "Soporte"],
+        "nodes": [
+          "Diseño",
+          "Mantenimiento",
+          "Reputación",
+          "Soporte"
+        ],
         "nodeCore": "TU WEB"
       }
     },
@@ -82,7 +87,7 @@
         "content": "No te preocupes. Rellena nuestro formulario inicial y analizaremos tu caso para recomendarte la mejor estrategia.",
         "cta": "Solicitar Asesoramiento",
         "subtext": "Tu Socio Digital te asesora.",
-        "url": "/es/formulario-inicial"
+        "url": "/es/contacto"
       }
     }
   }

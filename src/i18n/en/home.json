@@ -25,9 +25,18 @@
         "title": "Technical Trust",
         "subtitle": "Results, not words.",
         "stats": [
-          { "label": "WPO Score", "value": "99" },
-          { "label": "Initial Discount", "value": "90%" },
-          { "label": "Months of Support", "value": "12" }
+          {
+            "label": "WPO Score",
+            "value": "99"
+          },
+          {
+            "label": "Initial Discount",
+            "value": "90%"
+          },
+          {
+            "label": "Months of Support",
+            "value": "12"
+          }
         ]
       }
     },
@@ -159,7 +168,7 @@
     "ctas": {
       "primary": {
         "text": "Start Your Project!",
-        "url": "/en/formulario-inicial/"
+        "url": "/en/contact/"
       },
       "secondary": {
         "text": "View Strategic Packs",

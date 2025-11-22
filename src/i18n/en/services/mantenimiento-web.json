@@ -15,10 +15,22 @@
       "title": "Your Digital Partner",
       "subtitle": "Always watching out for your success",
       "stats": [
-        { "label": "Monitoring", "value": "24/7" },
-        { "label": "WPO Score", "value": "99" },
-        { "label": "From/month", "value": "€20" },
-        { "label": "Abandonments", "value": "0" }
+        {
+          "label": "Monitoring",
+          "value": "24/7"
+        },
+        {
+          "label": "WPO Score",
+          "value": "99"
+        },
+        {
+          "label": "From/month",
+          "value": "€20"
+        },
+        {
+          "label": "Abandonments",
+          "value": "0"
+        }
       ]
     },
     "sections": {
@@ -71,9 +83,18 @@
         ],
         "chart": {
           "title": "Real Comparison",
-          "main": { "label": "SanahujaDev (My Site)", "value": 99 },
-          "competitorA": { "label": "Tenerife Competitor A", "value": 53 },
-          "competitorB": { "label": "Tenerife Competitor B", "value": 41 },
+          "main": {
+            "label": "SanahujaDev (My Site)",
+            "value": 99
+          },
+          "competitorA": {
+            "label": "Tenerife Competitor A",
+            "value": 53
+          },
+          "competitorB": {
+            "label": "Tenerife Competitor B",
+            "value": 41
+          },
           "summary": "<span class=\"text-accent-400 font-semibold\">+87% faster</span> than local competition"
         }
       },
@@ -135,7 +156,7 @@
     "ctas": {
       "primary": {
         "text": "Hire Your Peace of Mind!",
-        "url": "/en/formulario-inicial/"
+        "url": "/en/contact/"
       },
       "secondary": {
         "text": "See All Packs",

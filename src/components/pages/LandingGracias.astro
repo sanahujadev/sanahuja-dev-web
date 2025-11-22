@@ -23,107 +23,135 @@ const { copy: t, lang, metadata } = copy;
   <Fragment slot="head">
     <title>{metadata.title}</title>
     <meta name="description" content={metadata.description} />
-    <meta name="robots" content={metadata.robots} />
+    {/* Aseguramos que el meta robots sea correcto según props, aunque suele ser noindex para thank-you pages */}
+    <meta name="robots" content={metadata.robots || "noindex, nofollow"} />
   </Fragment>
-<main>
-  {/* Hero with Success Check */}
-  <section id="hero">
-    {/* Badge */}
-    <div>
-      <div />
-      <span>{t.hero.badge}</span>
-    </div>
 
-    {/* Animated Success Check */}
-    <div>
-      <div>
-        <div>
-          <Check />
+  <main class="min-h-screen bg-background">
+    
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 py-16">
+      
+      {/* Hero with Success Check */}
+      <section id="hero" class="text-center mb-16">
+        {/* Badge */}
+        <div class="flex justify-center mb-6">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent-500/10 border border-accent-500/30 rounded-full">
+            <div class="w-2 h-2 rounded-full bg-accent-400 animate-pulse" aria-hidden="true"></div>
+            <span class="text-sm font-semibold text-accent-300">{t.hero.badge}</span>
+          </div>
         </div>
-        <div />
-      </div>
-    </div>
 
-    {/* Title */}
-    <h1>
-      {t.hero.title}
-    </h1>
-
-    {/* Reference ID */}
-    <p>
-      {t.hero.subtitle} <span>#LEAD_ID</span>
-    </p>
-
-    {/* Message */}
-    <div>
-      <p set:html={t.hero.message} />
-    </div>
-
-    {/* Status */}
-    <div>
-      <div />
-      <span>{t.hero.heroVisual.statusText}</span>
-    </div>
-  </section>
-
-  {/* Timeline Section */}
-  <section id="timeline">
-    <h2>{t.sections.timeline.title}</h2>
-    <div>
-      {t.sections.timeline.steps.map((step) => (
-        <article>
-          <div>
-            <div>
-              <span>{step.step}</span>
+        {/* Animated Success Check */}
+        <div class="mb-6 flex justify-center">
+          <div class="relative">
+            <div class="w-24 h-24 rounded-full bg-accent-500/10 border-2 border-accent-500 flex items-center justify-center animate-in zoom-in duration-500">
+              <Check class="w-12 h-12 text-accent-400" aria-hidden="true" />
             </div>
-            <div />
+            <div class="absolute inset-0 rounded-full bg-accent-500/20 animate-ping pointer-events-none" aria-hidden="true"></div>
           </div>
-          <div>
-            <h3>{step.title}</h3>
-            <p>{step.description}</p>
+        </div>
+
+        {/* Title */}
+        <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">
+          {t.hero.title}
+        </h1>
+
+        {/* Reference ID */}
+        <p class="text-muted-foreground mb-6">
+          {t.hero.subtitle} <span class="text-primary-400 font-mono">#LEAD_ID</span>
+        </p>
+
+        {/* Message */}
+        <div class="max-w-2xl mx-auto">
+          <p class="text-lg text-muted-foreground leading-relaxed text-balance" set:html={t.hero.message} />
+        </div>
+
+        {/* Status */}
+        <div class="mt-6 inline-flex items-center gap-2 px-4 py-2 bg-neutral-900 border border-border rounded-lg">
+          <div class="w-2 h-2 rounded-full bg-accent-400 animate-pulse" aria-hidden="true"></div>
+          <span class="text-sm text-muted-foreground">{t.hero.heroVisual.statusText}</span>
+        </div>
+      </section>
+
+      {/* Timeline Section */}
+      <section id="timeline" class="mb-16">
+        <h2 class="text-2xl font-bold text-foreground text-center mb-12">{t.sections.timeline.title}</h2>
+        
+        <div class="space-y-8 max-w-2xl mx-auto">
+          {t.sections.timeline.steps.map((step, index) => {
+            // Lógica visual para los colores del timeline (Primary -> Secondary -> Accent)
+            const stepColors = [
+                { bg: "bg-primary-500/10", border: "border-primary-500", text: "text-primary-400" },
+                { bg: "bg-secondary-500/10", border: "border-secondary-500", text: "text-secondary-400" },
+                { bg: "bg-accent-500/10", border: "border-accent-500", text: "text-accent-400" }
+            ];
+            const style = stepColors[index % stepColors.length];
+            const isLast = index === t.sections.timeline.steps.length - 1;
+
+            return (
+              <article class="flex gap-6">
+                <div class="flex flex-col items-center">
+                  <div class={`w-12 h-12 rounded-full ${style.bg} border-2 ${style.border} flex items-center justify-center flex-shrink-0`}>
+                    <span class={`${style.text} font-bold`}>{step.step}</span>
+                  </div>
+                  {!isLast && <div class="w-0.5 h-full bg-border mt-2 min-h-[2rem]" aria-hidden="true"></div>}
+                </div>
+                <div class="pb-8">
+                  <h3 class="text-lg font-semibold text-foreground mb-2">{step.title}</h3>
+                  <p class="text-muted-foreground leading-relaxed">{step.description}</p>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Loop Section - Profile Card */}
+      <section id="loop" class="mb-16">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl font-bold text-foreground mb-3">{t.sections.loop.title}</h2>
+          <p class="text-muted-foreground max-w-2xl mx-auto text-balance">{t.sections.loop.content}</p>
+        </div>
+
+        <div class="max-w-2xl mx-auto bg-neutral-900 border border-border rounded-xl p-8 hover:border-primary-500/50 transition-all group">
+          <div class="flex items-start gap-6 mb-6">
+            <div class="w-20 h-20 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+              <span class="text-2xl font-bold text-neutral-950">JJS</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-foreground mb-1">{t.sections.loop.card.title}</h3>
+              <p class="text-primary-400 font-medium mb-3">{t.sections.loop.card.role}</p>
+              <p class="text-muted-foreground text-sm leading-relaxed">{t.sections.loop.card.text}</p>
+            </div>
           </div>
-        </article>
-      ))}
-    </div>
-  </section>
 
-  {/* Loop Section - Profile Card */}
-  <section id="loop">
-    <div>
-      <h2>{t.sections.loop.title}</h2>
-      <p>{t.sections.loop.content}</p>
-    </div>
-
-    <div>
-      <div>
-        <div>
-          <span>JJS</span>
+          <Button 
+            href={t.sections.loop.card.url} 
+            target="_self" 
+            variant="ghost"
+            class="bg-primary-500/10 hover:bg-primary-500/20 border border-primary-500/30 text-primary-400 w-full sm:w-auto justify-center group-hover:scale-105 transition-transform"
+          >
+            <span>{t.sections.loop.card.cta}</span>
+            <ChevronRight class="ml-2 w-4 h-4" />
+          </Button>
         </div>
-        <div>
-          <h3>{t.sections.loop.card.title}</h3>
-          <p>{t.sections.loop.card.role}</p>
-          <p>{t.sections.loop.card.text}</p>
-        </div>
-      </div>
+      </section>
 
-      <Button href={t.sections.loop.card.url} target="_self">
-        <span>{t.sections.loop.card.cta}</span>
-        <ChevronRight />
-      </Button>
+      {/* Legal Notice */}
+      <section id="legal" class="text-center">
+        <p class="text-xs text-muted-foreground max-w-2xl mx-auto text-balance">
+          {t.sections.legal.text}{" "}
+          {t.sections.legal.links.map((link, index) => (
+            <span>
+                <a href={link.url} class="text-accent-400 hover:text-accent-300 underline decoration-dotted underline-offset-2 focus:outline-none focus:ring-2 focus:ring-accent-500 rounded-sm">
+                {link.text}
+                </a>
+                {index < t.sections.legal.links.length - 1 ? ", " : "."}
+            </span>
+          ))}
+        </p>
+      </section>
+
     </div>
-  </section>
-
-  {/* Legal Notice */}
-  <section id="legal">
-    <p>
-      {t.sections.legal.text}{" "}
-      {t.sections.legal.links.map((link) => (
-        <a href={link.url}>
-          {link.text}
-        </a>
-      ))}
-      .
-    </p>
-  </section>
-</main>
+  </main>
 </BaseLayout>

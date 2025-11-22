@@ -30,7 +30,7 @@ test.describe('E2E/SEO: /es/packs/ (Hub - Distribuidor de Cargas)', () => {
 
     // 5. Hero CTA secundario: "Calcular Ahorro"
     const calcCTA = page.locator('#hero a').getByText('Calcular Ahorro', { exact: false });
-    await expect(calcCTA).toHaveAttribute('href', '/es/formulario-inicial/');
+    await expect(calcCTA).toHaveAttribute('href', '/es/contacto/');
 
     // 6. Tabla comparativa visible con 3 columnas de suscripción
     const comparativaTable = page.locator('#comparativa');

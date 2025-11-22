@@ -39,7 +39,7 @@ test.describe('Fase 4 (VERIFICACIÓN): Test de Integración para AppFooter', () 
     // E. CTA "Help" (¡Probamos el link bilingüe!)
     await expect(footer.getByText(t.help.text)).toBeVisible();
     const helpLink = footer.getByRole('link', { name: t.help.contact });
-    await expect(helpLink).toHaveAttribute('href', `/${lang}/formulario-inicial/`);
+    await expect(helpLink).toHaveAttribute('href', `/${lang}/contacto/`);
     
     // F. Botón de Cookies
     await expect(footer.getByRole('button', { name: t.cookieSettings })).toBeVisible();

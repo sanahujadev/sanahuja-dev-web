@@ -23,7 +23,7 @@ test.describe('E2E/SEO: /es/servicios/informe-visibilidad-web (Médico Diagnosta
 
     // 4. Hero CTA primario (URL absoluta a formulario)
     const heroCTA = page.locator('#hero a').getByText('Solicitar mi Diagnóstico');
-    await expect(heroCTA).toHaveAttribute('href', '/es/formulario-inicial/');
+    await expect(heroCTA).toHaveAttribute('href', '/es/contacto/');
 
     // 5. Hero CTA secundario (#ejemplo)
     const exampleCTA = page.locator('#hero a').getByText('Ver Ejemplo de Informe');
