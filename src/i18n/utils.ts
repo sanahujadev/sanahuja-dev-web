@@ -42,6 +42,8 @@ import politicaCookiesCopy from "./es/legal/politica-cookies.json" with {
 };
 import graciasCopy from "./es/gracias.json" with { type: "json" };
 import contactCopy from "./es/contacto.json" with { type: "json" };
+import plantillaCiudadesTemplate from './auto/plantilla-ciudades.json' with { type: "json" };
+import localidadesDB from './auto/localidades.json' with { type: "json" };
 
 export type CookieConsentType = any;
 export type LandingDiseñoWebCopy = typeof landingDeiseñoWebCopy;
@@ -64,3 +66,5 @@ export type PoliticaPrivacidadCopy = typeof politicaPrivacidadCopy;
 export type PoliticaCookiesCopy = typeof politicaCookiesCopy;
 export type GraciasCopy = typeof graciasCopy;
 export type ContactoCopy = typeof contactCopy;
+export type PlantillaCiudad = typeof plantillaCiudadesTemplate.es;
+export type LocalidadDB = typeof localidadesDB[0]

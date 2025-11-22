@@ -4,16 +4,17 @@
     "name": "Adeje",
     "zip": "38670",
     "municipality": "Adeje",
-    "zone": "Sur Turístico",
-    "type": "Ciudad/Núcleo",
     "painPointId": "P2",
+    "type": "Ciudad/Núcleo",
     "seoData": {
+      "zone": "Sur Turístico",
       "h1_modifier": "para Superar la Saturación Competitiva",
       "usp_focus": "En un mercado saturado de oferta turística, tu web debe cargar al instante en móviles y convertir visitas en reservas. Diseñamos para la alta competencia.",
       "h2_solution": "Diseño Web Premium para el Sector Turístico",
       "cta_text": "Maximizar mis Reservas en Adeje"
     },
     "seoDataEn": {
+      "zone": "Touristic South",
       "h1_modifier": "to Outperform Tourist Competition",
       "usp_focus": "In a saturated tourist market, your website must load instantly on mobile and turn visitors into bookings. We design for high-competition zones.",
       "h2_solution": "Premium Web Design for the Tourism Sector",
@@ -25,16 +26,17 @@
     "name": "Alcalá",
     "zip": "38686",
     "municipality": "Guía de Isora",
-    "zone": "Sur/Oeste",
-    "type": "Pueblo Costero",
     "painPointId": "P2",
+    "type": "Pueblo Costero",
     "seoData": {
+      "zone": "Sur/Oeste",
       "h1_modifier": "para Turismo de Calidad y Marítimo",
       "usp_focus": "Tu cliente busca experiencias exclusivas en la costa. Tu web debe reflejar esa calidad y facilitar la contratación de servicios desde el móvil.",
       "h2_solution": "Imagen Digital a la Altura de tu Servicio",
       "cta_text": "Atraer Turismo de Calidad"
     },
     "seoDataEn": {
+      "zone": "Coast Town",
       "h1_modifier": "for Quality Maritime Tourism",
       "usp_focus": "Your client seeks exclusive coastal experiences. Your website must reflect that quality and make mobile service booking effortless.",
       "h2_solution": "Digital Image Matching Your Service",
@@ -46,16 +48,17 @@
     "name": "Arafo",
     "zip": "38550",
     "municipality": "Arafo",
-    "zone": "Este/Medianías",
-    "type": "Pueblo Agrícola",
     "painPointId": "P1",
+    "type": "Pueblo Agrícola",
     "seoData": {
+      "zone": "Este/Medianías",
       "h1_modifier": "para Digitalizar tu Producción Local",
       "usp_focus": "Lleva tus productos de la tierra al mundo digital. Creamos e-commerce sencillos y rentables para que vendas sin intermediarios.",
       "h2_solution": "Tu Escaparate Digital Económico y Rentable",
       "cta_text": "Digitalizar mi Negocio en Arafo"
     },
     "seoDataEn": {
+      "zone": "Farming Village",
       "h1_modifier": "to Digitalize Your Local Production",
       "usp_focus": "Take your products from the land to the digital world. We create simple, profitable e-commerce sites so you can sell without intermediaries.",
       "h2_solution": "Your Cost-Effective Digital Showcase",
@@ -67,16 +70,17 @@
     "name": "Arico",
     "zip": "38260",
     "municipality": "Arico",
-    "zone": "Sureste",
-    "type": "Municipio Disperso",
     "painPointId": "P3",
+    "type": "Municipio Disperso",
     "seoData": {
+      "zone": "Sureste",
       "h1_modifier": "Optimizado para Zonas de Baja Cobertura",
       "usp_focus": "Sabemos que la fibra no llega a todos lados. Creamos webs ultraligeras que cargan rápido incluso con conexiones 4G inestables.",
       "h2_solution": "Tecnología Low-Bandwidth para Arico",
       "cta_text": "Web Rápida para Arico"
     },
     "seoDataEn": {
+      "zone": "Dispersed Municipality",
       "h1_modifier": "Optimized for Low Coverage Areas",
       "usp_focus": "We know fiber doesn't reach everywhere. We create ultra-light websites that load fast even on unstable 4G connections.",
       "h2_solution": "Low-Bandwidth Tech for Arico",
@@ -88,16 +92,17 @@
     "name": "Armeñime",
     "zip": "38678",
     "municipality": "Adeje",
-    "zone": "Sur Turístico",
-    "type": "Núcleo de Playa",
     "painPointId": "P2",
+    "type": "Núcleo de Playa",
     "seoData": {
+      "zone": "Sur Turístico",
       "h1_modifier": "para Captar al Turista Móvil",
       "usp_focus": "Miles de visitantes pasan por tu zona buscando en Google Maps. Tu web debe ser la primera opción que vean en su smartphone.",
       "h2_solution": "Visibilidad Móvil Inmediata",
       "cta_text": "Mejorar mi Posición en Armeñime"
     },
     "seoDataEn": {
+      "zone": "Touristic South",
       "h1_modifier": "to Capture Mobile Tourists",
       "usp_focus": "Thousands of visitors pass through your area searching Google Maps. Your site must be the first option they see on their smartphone.",
       "h2_solution": "Immediate Mobile Visibility",
@@ -109,16 +114,17 @@
     "name": "Arona",
     "zip": "38640",
     "municipality": "Arona",
-    "zone": "Sur",
-    "type": "Ciudad/Núcleo",
     "painPointId": "P4",
+    "type": "Ciudad/Núcleo",
     "seoData": {
+      "zone": "Sur",
       "h1_modifier": "para Servicios B2B y Gestión",
       "usp_focus": "Como centro neurálgico del sur, tu empresa necesita una imagen corporativa sólida y sistemas que automaticen tus procesos.",
       "h2_solution": "Soluciones Corporativas Escalables",
       "cta_text": "Modernizar mi Empresa en Arona"
     },
     "seoDataEn": {
+      "zone": "South",
       "h1_modifier": "for B2B Services & Management",
       "usp_focus": "As the southern business hub, your company needs a solid corporate image and systems that automate your processes.",
       "h2_solution": "Scalable Corporate Solutions",
@@ -130,16 +136,17 @@
     "name": "Bajamar",
     "zip": "38250",
     "municipality": "San Cristóbal de La Laguna",
-    "zone": "Norte Costero",
-    "type": "Turismo Local",
     "painPointId": "P5",
+    "type": "Turismo Local",
     "seoData": {
+      "zone": "Norte Costero",
       "h1_modifier": "para Revitalizar el Ocio Local",
       "usp_focus": "Atrae al turismo local y peninsular con una web que transmita la calma y belleza de la costa norte. Renovación de imagen obligatoria.",
       "h2_solution": "Rebranding para Turismo Tradicional",
       "cta_text": "Renovar mi Imagen en Bajamar"
     },
     "seoDataEn": {
+      "zone": "North Coast",
       "h1_modifier": "to Revitalize Local Leisure",
       "usp_focus": "Attract local and mainland tourists with a website that conveys the calm and beauty of the north coast. Image renewal is mandatory.",
       "h2_solution": "Rebranding for Traditional Tourism",
@@ -151,16 +158,17 @@
     "name": "Buenavista del Norte",
     "zip": "38483",
     "municipality": "Buenavista del Norte",
-    "zone": "Extremo Norte Rural",
-    "type": "Pueblo Histórico",
     "painPointId": "P1",
+    "type": "Pueblo Histórico",
     "seoData": {
+      "zone": "Extremo Norte Rural",
       "h1_modifier": "para Ecoturismo y Negocio Local",
       "usp_focus": "Convierte el aislamiento en ventaja. Una web optimizada atrae al turista rural que busca autenticidad y desconexión.",
       "h2_solution": "Presencia Digital Coste-Eficiente",
       "cta_text": "Atraer Turismo Rural"
     },
     "seoDataEn": {
+      "zone": "Far Northern Rural",
       "h1_modifier": "for Ecotourism & Local Business",
       "usp_focus": "Turn isolation into an advantage. An optimized website attracts rural tourists seeking authenticity and disconnection.",
       "h2_solution": "Cost-Efficient Digital Presence",
@@ -172,16 +180,17 @@
     "name": "Candelaria",
     "zip": "38530",
     "municipality": "Candelaria",
-    "zone": "Este Metropolitano",
-    "type": "Ciudad/Servicios",
     "painPointId": "P4",
+    "type": "Ciudad/Servicios",
     "seoData": {
+      "zone": "Este Metropolitano",
       "h1_modifier": "para Alto Tráfico Comercial",
       "usp_focus": "Tu negocio está en un punto de alto tránsito. Necesitas una web que gestione citas y pedidos automáticamente para no perder clientes.",
       "h2_solution": "Automatización para Comercios Activos",
       "cta_text": "Optimizar mi Negocio en Candelaria"
     },
     "seoDataEn": {
+      "zone": "Motropolitan East",
       "h1_modifier": "for High Commercial Traffic",
       "usp_focus": "Your business is in a high-traffic spot. You need a website that manages appointments and orders automatically to avoid losing customers.",
       "h2_solution": "Automation for Active Businesses",
@@ -193,16 +202,17 @@
     "name": "Costa del Silencio",
     "zip": "38630",
     "municipality": "Arona",
-    "zone": "Sur Turístico",
-    "type": "Urb. Residencial",
     "painPointId": "P2",
+    "type": "Urb. Residencial",
     "seoData": {
+      "zone": "Sur Turístico",
       "h1_modifier": "para Servicios Inmobiliarios y Ocio",
       "usp_focus": "El residente extranjero busca servicios en su idioma. Tu web debe ser multilingüe y generar confianza internacional inmediata.",
       "h2_solution": "Diseño Multilingüe y SEO Internacional",
       "cta_text": "Vender a Extranjeros"
     },
     "seoDataEn": {
+      "zone": "Touristic South",
       "h1_modifier": "for Real Estate & Leisure",
       "usp_focus": "Foreign residents search for services in their language. Your site must be multi-language and generate immediate international trust.",
       "h2_solution": "Multi-language Design & Int. SEO",
@@ -214,16 +224,17 @@
     "name": "La Cuesta",
     "zip": "38320",
     "municipality": "San Cristóbal de La Laguna",
-    "zone": "Área Metropolitana",
-    "type": "Núcleo Urbano",
     "painPointId": "P4",
+    "type": "Núcleo Urbano",
     "seoData": {
+      "zone": "Área Metropolitana",
       "h1_modifier": "para Competir en Alta Densidad",
       "usp_focus": "En una zona tan comercial, destacar es vital. Tu web debe posicionarte por encima de los cientos de negocios que te rodean.",
       "h2_solution": "SEO Local Agresivo para Comercios",
       "cta_text": "Destacar en La Cuesta"
     },
     "seoDataEn": {
+      "zone": "Metropolitan AreaMetropolitan Area",
       "h1_modifier": "to Compete in High Density",
       "usp_focus": "In such a commercial area, standing out is vital. Your website must rank you above the hundreds of businesses surrounding you.",
       "h2_solution": "Aggressive Local SEO for Retail",
@@ -235,16 +246,17 @@
     "name": "El Médano",
     "zip": "38612",
     "municipality": "Granadilla de Abona",
-    "zone": "Sur Turístico",
-    "type": "Playa/Deportes",
     "painPointId": "P2",
+    "type": "Playa/Deportes",
     "seoData": {
+      "zone": "Sur Turístico",
       "h1_modifier": "para Deportes y Turismo Activo",
       "usp_focus": "Tu cliente vive en Instagram. Necesitas una web visualmente impactante, rápida y con sistema de reservas integrado para móviles.",
       "h2_solution": "Webs Visuales de Alta Conversión",
       "cta_text": "Impulsar mi Marca en El Médano"
     },
     "seoDataEn": {
+      "zone": "Touristic South",
       "h1_modifier": "for Sports & Active Tourism",
       "usp_focus": "Your client lives on Instagram. You need a visually striking, fast website with an integrated mobile booking system.",
       "h2_solution": "High-Conversion Visual Websites",
@@ -256,16 +268,17 @@
     "name": "El Tanque",
     "zip": "38435",
     "municipality": "El Tanque",
-    "zone": "Norte Rural",
-    "type": "Pueblo Aislado",
     "painPointId": "P1",
+    "type": "Pueblo Aislado",
     "seoData": {
+      "zone": "Norte Rural",
       "h1_modifier": "para Supervivencia Digital",
       "usp_focus": "Digitalizarse no tiene por qué ser caro. Ofrecemos soluciones web básicas y robustas para que tu negocio local sea visible sin grandes costes.",
       "h2_solution": "Tu Primera Web Profesional y Asequible",
       "cta_text": "Digitalizarme en El Tanque"
     },
     "seoDataEn": {
+      "zone": "North RuralNorth Rural",
       "h1_modifier": "for Digital Survival",
       "usp_focus": "Going digital doesn't have to be expensive. We offer robust, basic web solutions so your local business is visible without huge costs.",
       "h2_solution": "Your First Professional Web",
@@ -277,16 +290,17 @@
     "name": "Fasnia",
     "zip": "38570",
     "municipality": "Fasnia",
-    "zone": "Sureste",
-    "type": "Pueblo Rural",
     "painPointId": "P3",
+    "type": "Pueblo Rural",
     "seoData": {
+      "zone": "Sureste",
       "h1_modifier": "para Negocios Rurales Conectados",
       "usp_focus": "La dispersión geográfica no debe aislar tu negocio. Creamos webs que funcionan fluidas incluso con cobertura limitada.",
       "h2_solution": "Conectividad Digital para el Sur",
       "cta_text": "Conectar mi Negocio en Fasnia"
     },
     "seoDataEn": {
+      "zone": "South East",
       "h1_modifier": "for Connected Rural Businesses",
       "usp_focus": "Geographic dispersion shouldn't isolate your business. We create websites that run smoothly even with limited coverage.",
       "h2_solution": "Digital Connectivity for the South",
@@ -298,16 +312,17 @@
     "name": "Garachico",
     "zip": "38450",
     "municipality": "Garachico",
-    "zone": "Norte Rural",
-    "type": "Pueblo Histórico",
     "painPointId": "P5",
+    "type": "Pueblo Histórico",
     "seoData": {
+      "zone": "Norte Rural",
       "h1_modifier": "para Valorizar el Patrimonio",
       "usp_focus": "Tu negocio es parte de la historia. Usamos el storytelling digital para atraer a turistas que buscan cultura y gastronomía auténtica.",
       "h2_solution": "Diseño Web con Identidad Local",
       "cta_text": "Promocionar mi Negocio en Garachico"
     },
     "seoDataEn": {
+      "zone": "North Rural",
       "h1_modifier": "to Valourize Heritage",
       "usp_focus": "Your business is part of history. We use digital storytelling to attract tourists seeking authentic culture and gastronomy.",
       "h2_solution": "Web Design with Local Identity",
@@ -319,16 +334,17 @@
     "name": "Granadilla (Casco)",
     "zip": "38600",
     "municipality": "Granadilla de Abona",
-    "zone": "Sur",
-    "type": "Pueblo Administrativo",
     "painPointId": "P1",
+    "type": "Pueblo Administrativo",
     "seoData": {
+      "zone": "Sur",
       "h1_modifier": "para Servicios Administrativos y Locales",
       "usp_focus": "Facilita la vida a tus vecinos. Una web clara y funcional para gestorías, servicios y comercios que buscan ser la referencia local.",
       "h2_solution": "Claridad y Funcionalidad Web",
       "cta_text": "Digitalizar Servicios en Granadilla"
     },
     "seoDataEn": {
+      "zone": "South",
       "h1_modifier": "for Admin & Local Services",
       "usp_focus": "Make life easier for your neighbors. A clear, functional website for agencies, services, and shops aiming to be the local reference.",
       "h2_solution": "Web Clarity & Functionality",
@@ -340,16 +356,17 @@
     "name": "Guía de Isora",
     "zip": "38680",
     "municipality": "Guía de Isora",
-    "zone": "Oeste",
-    "type": "Ciudad/Núcleo",
     "painPointId": "P2",
+    "type": "Ciudad/Núcleo",
     "seoData": {
+      "zone": "Oeste",
       "h1_modifier": "para Servicios de Alta Gama",
       "usp_focus": "Con el turismo de lujo de Abama cerca, tu imagen digital debe ser impecable. Diseño premium para captar clientes de alto poder adquisitivo.",
       "h2_solution": "Estética de Lujo y Funcionalidad",
       "cta_text": "Captar Clientes Premium"
     },
     "seoDataEn": {
+      "zone": "West",
       "h1_modifier": "for High-End Services",
       "usp_focus": "With Abama's luxury tourism nearby, your digital image must be impeccable. Premium design to capture high-net-worth clients.",
       "h2_solution": "Luxury Aesthetics & Functionality",
@@ -361,16 +378,17 @@
     "name": "Güímar",
     "zip": "38500",
     "municipality": "Güímar",
-    "zone": "Este",
-    "type": "Centro Logístico",
     "painPointId": "P4",
+    "type": "Centro Logístico",
     "seoData": {
+      "zone": "Este",
       "h1_modifier": "para Logística y Producción",
       "usp_focus": "Desde el Valle hasta el Polígono, Güímar mueve Tenerife. Tu web debe ser una herramienta de ventas B2B robusta y eficiente.",
       "h2_solution": "Webs para Industria y Logística",
       "cta_text": "Potenciar Industria en Güímar"
     },
     "seoDataEn": {
+      "zone": "East",
       "h1_modifier": "for Logistics & Production",
       "usp_focus": "From the Valley to the Industrial Park, Güímar moves Tenerife. Your site must be a robust and efficient B2B sales tool.",
       "h2_solution": "Webs for Industry & Logistics",
@@ -382,16 +400,17 @@
     "name": "Icod de los Vinos",
     "zip": "38430",
     "municipality": "Icod de los Vinos",
-    "zone": "Norte Rural",
-    "type": "Pueblo Histórico",
     "painPointId": "P1",
+    "type": "Pueblo Histórico",
     "seoData": {
+      "zone": "Norte Rural",
       "h1_modifier": "para Impulsar el Comercio Local",
       "usp_focus": "Ayudamos al pequeño comercio de Icod a competir con las grandes superficies. Tiendas online sencillas y visibilidad en Google Maps.",
       "h2_solution": "Digitalización del Comercio Tradicional",
       "cta_text": "Vender Online desde Icod"
     },
     "seoDataEn": {
+      "zone": "North Rural",
       "h1_modifier": "to Boost Local Trade",
       "usp_focus": "We help Icod's small businesses compete with big retailers. Simple online stores and Google Maps visibility.",
       "h2_solution": "Traditional Commerce Digitalization",
@@ -403,16 +422,17 @@
     "name": "La Caleta",
     "zip": "38679",
     "municipality": "Adeje",
-    "zone": "Sur Turístico",
-    "type": "Zona Exclusiva",
     "painPointId": "P2",
+    "type": "Zona Exclusiva",
     "seoData": {
+      "zone": "Sur Turístico",
       "h1_modifier": "para Gastronomía y Lujo",
       "usp_focus": "La Caleta es sinónimo de calidad. Tu restaurante o negocio debe transmitir esa exclusividad con un diseño web elegante y apetecible.",
       "h2_solution": "Diseño Gourmet y Exclusivo",
       "cta_text": "Destacar en La Caleta"
     },
     "seoDataEn": {
+      "zone": "Touristic South",
       "h1_modifier": "for Gastronomy & Luxury",
       "usp_focus": "La Caleta is synonymous with quality. Your restaurant or business must convey that exclusivity with elegant, appetizing web design.",
       "h2_solution": "Gourmet & Exclusive Design",
@@ -424,16 +444,17 @@
     "name": "La Laguna (Centro)",
     "zip": "38200",
     "municipality": "San Cristóbal de La Laguna",
-    "zone": "Área Metropolitana",
-    "type": "Ciudad Histórica",
     "painPointId": "P4",
+    "type": "Ciudad Histórica",
     "seoData": {
+      "zone": "Área Metropolitana",
       "h1_modifier": "para Profesionales y B2B",
       "usp_focus": "En el entorno universitario y legal, la autoridad es clave. Diseñamos webs corporativas que transmiten seriedad y captan leads cualificados.",
       "h2_solution": "Diseño Corporativo de Alta Autoridad",
       "cta_text": "Mejorar mi Imagen Profesional"
     },
     "seoDataEn": {
+      "zone": "Metropolitan Area",
       "h1_modifier": "for Professionals & B2B",
       "usp_focus": "In the university and legal environment, authority is key. We design corporate websites that convey seriousness and capture qualified leads.",
       "h2_solution": "High-Authority Corporate Design",
@@ -445,16 +466,17 @@
     "name": "La Matanza",
     "zip": "38370",
     "municipality": "La Matanza de Acentejo",
-    "zone": "Norte Agrícola",
-    "type": "Pueblo Agrícola",
     "painPointId": "P1",
+    "type": "Pueblo Agrícola",
     "seoData": {
+      "zone": "Norte Agrícola",
       "h1_modifier": "para Venta Directa de Producto",
       "usp_focus": "Del campo a la mesa. Ayudamos a agricultores y productores locales a vender sin intermediarios con webs fáciles de gestionar.",
       "h2_solution": "E-commerce de Kilómetro Cero",
       "cta_text": "Vender mis Productos"
     },
     "seoDataEn": {
+      "zone": "Farming Village",
       "h1_modifier": "for Direct Product Sales",
       "usp_focus": "From farm to table. We help farmers and local producers sell without intermediaries using easy-to-manage websites.",
       "h2_solution": "Zero-Kilometer E-commerce",
@@ -466,16 +488,17 @@
     "name": "La Orotava",
     "zip": "38300",
     "municipality": "La Orotava",
-    "zone": "Norte Turístico",
-    "type": "Ciudad Histórica",
     "painPointId": "P5",
+    "type": "Ciudad Histórica",
     "seoData": {
+      "zone": "Norte Turístico",
       "h1_modifier": "que Une Tradición y Modernidad",
       "usp_focus": "Renueva la imagen de tu negocio histórico sin perder su esencia. Atraemos a nuevas generaciones con un diseño web moderno y atractivo.",
       "h2_solution": "Rebranding Digital con Respeto Histórico",
       "cta_text": "Modernizar mi Negocio en La Orotava"
     },
     "seoDataEn": {
+      "zone": "Touristic North",
       "h1_modifier": "Uniting Tradition & Modernity",
       "usp_focus": "Renew your historic business image without losing its essence. We attract new generations with modern, appealing web design.",
       "h2_solution": "Digital Rebranding with History",
@@ -487,16 +510,17 @@
     "name": "Las Mercedes",
     "zip": "38293",
     "municipality": "San Cristóbal de La Laguna",
-    "zone": "Norte/Anaga",
-    "type": "Entorno Rural",
     "painPointId": "P3",
+    "type": "Entorno Rural",
     "seoData": {
+      "zone": "Norte/Anaga",
       "h1_modifier": "para Turismo Rural y Ciencia",
       "usp_focus": "En la puerta de Anaga, la conexión es vital. Diseñamos webs que posicionan tu restaurante o casa rural como el refugio perfecto.",
       "h2_solution": "Visibilidad en la Puerta de Anaga",
       "cta_text": "Atraer Senderistas y Clientes"
     },
     "seoDataEn": {
+      "zone": "North/Anaga",
       "h1_modifier": "for Rural Tourism & Science",
       "usp_focus": "At the gateway to Anaga, connection is vital. We design websites that position your restaurant or rural house as the perfect refuge.",
       "h2_solution": "Visibility at Anaga's Doorstep",
@@ -508,16 +532,17 @@
     "name": "Playa de las Américas",
     "zip": "38660",
     "municipality": "Arona",
-    "zone": "Sur Turístico",
-    "type": "Ocio Masivo",
     "painPointId": "P2",
+    "type": "Ocio Masivo",
     "seoData": {
+      "zone": "Sur Turístico",
       "h1_modifier": "de Alto Rendimiento Turístico",
       "usp_focus": "Aquí la competencia es feroz. Necesitas una web agresiva en ventas, multi-idioma y ultra-rápida para captar al turista antes que el vecino.",
       "h2_solution": "Webs de Conversión Instantánea",
       "cta_text": "Ganar a la Competencia en Américas"
     },
     "seoDataEn": {
+      "zone": "Touristic South",
       "h1_modifier": "High-Performance Tourist Web",
       "usp_focus": "Competition here is fierce. You need an aggressive sales website, multi-language and ultra-fast to capture tourists before your neighbor.",
       "h2_solution": "Instant Conversion Websites",
@@ -529,16 +554,17 @@
     "name": "Playa Paraíso",
     "zip": "38678",
     "municipality": "Adeje",
-    "zone": "Sur Turístico",
-    "type": "Urb. Turística",
     "painPointId": "P2",
+    "type": "Urb. Turística",
     "seoData": {
+      "zone": "Sur Turístico",
       "h1_modifier": "para el Boom Residencial",
       "usp_focus": "Con el crecimiento explosivo de la zona, tu negocio debe destacar. Diseño moderno para nuevos residentes y turistas exigentes.",
       "h2_solution": "Imagen Moderna para Zona en Auge",
       "cta_text": "Crecer en Playa Paraíso"
     },
     "seoDataEn": {
+      "zone": "Touristic South",
       "h1_modifier": "for the Residential Boom",
       "usp_focus": "With the area's explosive growth, your business must stand out. Modern design for new residents and demanding tourists.",
       "h2_solution": "Modern Image for Booming Area",
@@ -550,16 +576,17 @@
     "name": "Puerto de la Cruz",
     "zip": "38400",
     "municipality": "Puerto de la Cruz",
-    "zone": "Norte Turístico",
-    "type": "Ciudad Turística",
     "painPointId": "P5",
+    "type": "Ciudad Turística",
     "seoData": {
+      "zone": "Norte Turístico",
       "h1_modifier": "para la Renovación Turística",
       "usp_focus": "El Puerto se está reinventando. Tu negocio también debería. Actualiza tu presencia digital para atraer al nuevo perfil de turista digital.",
       "h2_solution": "Modernización Web Hotelera y de Ocio",
       "cta_text": "Actualizar mi Web en el Puerto"
     },
     "seoDataEn": {
+      "zone": "Touristic North",
       "h1_modifier": "for Tourist Renewal",
       "usp_focus": "Puerto is reinventing itself. Your business should too. Update your digital presence to attract the new profile of digital tourist.",
       "h2_solution": "Hotel & Leisure Web Modernization",
@@ -571,16 +598,17 @@
     "name": "Radazul",
     "zip": "38109",
     "municipality": "El Rosario",
-    "zone": "Área Metropolitana",
-    "type": "Urb. Residencial",
     "painPointId": "P4",
+    "type": "Urb. Residencial",
     "seoData": {
+      "zone": "Área Metropolitana",
       "h1_modifier": "para Servicios Exclusivos",
       "usp_focus": "Radazul exige calidad. Tu web debe reflejar el alto nivel de tus servicios náuticos o residenciales para un cliente que valora la excelencia.",
       "h2_solution": "Diseño Web de Alto Standing",
       "cta_text": "Captar Clientes en Radazul"
     },
     "seoDataEn": {
+      "zone": "Metropolitan Area",
       "h1_modifier": "for Exclusive Services",
       "usp_focus": "Radazul demands quality. Your website must reflect the high level of your nautical or residential services for excellence-seeking clients.",
       "h2_solution": "High-End Web Design",
@@ -592,16 +620,17 @@
     "name": "San Isidro",
     "zip": "38611",
     "municipality": "Granadilla de Abona",
-    "zone": "Sur/Servicios",
-    "type": "Núcleo Comercial",
     "painPointId": "P4",
+    "type": "Núcleo Comercial",
     "seoData": {
+      "zone": "Sur/Servicios",
       "h1_modifier": "para Logística y Servicios",
       "usp_focus": "Como motor comercial del sur, necesitas eficiencia. Webs que integran catálogos, citas y gestión para empresas en rápido crecimiento.",
       "h2_solution": "Plataformas Web para Empresas en Expansión",
       "cta_text": "Escalar mi Negocio en San Isidro"
     },
     "seoDataEn": {
+      "zone": "Comercial Core",
       "h1_modifier": "for Logistics & Services",
       "usp_focus": "As the south's commercial engine, you need efficiency. Websites integrating catalogs, appointments, and management for fast-growing companies.",
       "h2_solution": "Web Platforms for Expanding Firms",
@@ -613,16 +642,17 @@
     "name": "Santa Cruz de Tenerife",
     "zip": "38001",
     "municipality": "Santa Cruz de Tenerife",
-    "zone": "Capital",
-    "type": "Capital",
     "painPointId": "P4",
+    "type": "Capital",
     "seoData": {
+      "zone": "Capital",
       "h1_modifier": "para Liderar en la Capital",
       "usp_focus": "En la milla de oro de los negocios, no puedes tener una web amateur. Ofrecemos desarrollo a medida para empresas exigentes.",
       "h2_solution": "Desarrollo Web Corporativo Avanzado",
       "cta_text": "Liderar en Santa Cruz"
     },
     "seoDataEn": {
+      "zone": "Capital",
       "h1_modifier": "to Lead in the Capital",
       "usp_focus": "In the business golden mile, you can't have an amateur site. We offer custom development for demanding companies.",
       "h2_solution": "Advanced Corporate Web Development",
@@ -634,16 +664,17 @@
     "name": "Taco",
     "zip": "38108",
     "municipality": "San Cristóbal de La Laguna",
-    "zone": "Área Metropolitana",
-    "type": "Polígono Industrial",
     "painPointId": "P4",
+    "type": "Polígono Industrial",
     "seoData": {
+      "zone": "Área Metropolitana",
       "h1_modifier": "para Industria y Logística",
       "usp_focus": "Tu cliente busca capacidad y seriedad. Diseñamos catálogos técnicos y webs industriales que facilitan las ventas B2B.",
       "h2_solution": "Digitalización Industrial y Catálogos",
       "cta_text": "Digitalizar mi Industria en Taco"
     },
     "seoDataEn": {
+      "zone": "Metropolitan Area",
       "h1_modifier": "for Industry & Logistics",
       "usp_focus": "Your client seeks capacity and seriousness. We design technical catalogs and industrial webs facilitating B2B sales.",
       "h2_solution": "Industrial Digitalization & Catalogs",
@@ -655,16 +686,17 @@
     "name": "Tegueste",
     "zip": "38280",
     "municipality": "Tegueste",
-    "zone": "Norte",
-    "type": "Ciudad Residencial",
     "painPointId": "P4",
+    "type": "Ciudad Residencial",
     "seoData": {
+      "zone": "Norte",
       "h1_modifier": "para Servicios de Calidad",
       "usp_focus": "Tegueste valora lo auténtico y la calidad de vida. Tu web debe transmitir cercanía y profesionalidad para el cliente local.",
       "h2_solution": "Diseño Web Cercano y Profesional",
       "cta_text": "Destacar en Tegueste"
     },
     "seoDataEn": {
+      "zone": "North",
       "h1_modifier": "for Quality Services",
       "usp_focus": "Tegueste values authenticity and quality of life. Your website must convey warmth and professionalism for the local client.",
       "h2_solution": "Approachable & Professional Design",
@@ -676,16 +708,17 @@
     "name": "Vilaflor",
     "zip": "38613",
     "municipality": "Vilaflor",
-    "zone": "Medianías Altas",
-    "type": "Pueblo Aislado",
     "painPointId": "P3",
+    "type": "Pueblo Aislado",
     "seoData": {
+      "zone": "Medianías Altas",
       "h1_modifier": "Optimizado para Conectividad Rural",
       "usp_focus": "A 1.500 metros, cada kilobyte cuenta. Desarrollamos las webs más ligeras de Tenerife para que tus clientes te vean sin esperas.",
       "h2_solution": "Webs Ultraligeras de Alta Montaña",
       "cta_text": "Mejorar Conexión en Vilaflor"
     },
     "seoDataEn": {
+      "zone": "Upper Midlands",
       "h1_modifier": "Optimized for Rural Connectivity",
       "usp_focus": "At 1,500 meters, every kilobyte counts. We develop the lightest websites in Tenerife so your customers see you without waiting.",
       "h2_solution": "Ultra-light High Mountain Websites",

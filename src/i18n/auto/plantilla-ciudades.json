@@ -10,7 +10,7 @@
     "schema": {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "name": "SanahujaDev - Diseño Web {{name}}",
+      "name": "SanahujaDev - Diseño Web en {{name}}",
       "description": "{{seoData.usp_focus}}",
       "url": "https://sanahuja.dev/es/diseno-web-en/{{slug}}",
       "areaServed": {
@@ -37,12 +37,12 @@
           }
         },
         "heroVisual": {
-          "title": "Digitalización {{name}}",
+          "title": "Digitalización en {{name}}",
           "subtitle": "Crecimiento Local",
           "stats": [
             {
               "label": "Zona",
-              "value": "{{zone}}"
+              "value": "{{seoData.zone}}"
             },
             {
               "label": "Código Postal",
@@ -60,7 +60,7 @@
           "badge": "La Realidad Local",
           "title": "¿Por qué tu negocio en {{name}} no despega?",
           "content": "{{seoData.usp_focus}}",
-          "quote": "En {{name}}, la competencia digital es real. Una web genérica ya no sirve para destacar en {{zone}}.",
+          "quote": "En {{name}}, la competencia digital es real. Una web genérica ya no sirve para destacar en {{seoData.zone}}.",
           "author": "José Javier Sanahuja"
         },
         "solution": {
@@ -75,7 +75,7 @@
             },
             {
               "title": "Velocidad Extrema (WPO)",
-              "description": "Tu web cargará al instante, vital para las conexiones móviles en la zona de {{zone}}.",
+              "description": "Tu web cargará al instante, vital para las conexiones móviles en la zona de {{seoData.zone}}.",
               "icon": "Zap"
             },
             {
@@ -89,7 +89,9 @@
           "title": "¿Listo para liderar en {{name}}?",
           "content": "Lleva tu negocio de {{name}} al siguiente nivel. Deja de perder clientes frente a tu competencia local.",
           "cta": "{{seoData.cta_text}}",
-          "url": "/es/contacto?location={{slug}}"
+          "url": "/es/contacto?location={{slug}}",
+          "cta2": "Quiero más información",
+          "url2": "/es/servicios/diseno-web-tenerife"
         }
       }
     }
@@ -122,7 +124,7 @@
           "stats": [
             {
               "label": "Zone",
-              "value": "{{zone}}"
+              "value": "{{seoData.zone}}"
             },
             {
               "label": "Postal Code",
@@ -140,7 +142,7 @@
           "badge": "The Local Reality",
           "title": "Why isn't your business in {{name}} taking off?",
           "content": "{{seoDataEn.usp_focus}}",
-          "quote": "In {{name}}, digital competition is real. A generic website is no longer enough to stand out in {{zone}}.",
+          "quote": "In {{name}}, digital competition is real. A generic website is no longer enough to stand out in {{seoData.zone}}.",
           "author": "José Javier Sanahuja"
         },
         "solution": {
@@ -155,7 +157,7 @@
             },
             {
               "title": "Extreme Speed (WPO)",
-              "description": "Your site will load instantly, crucial for mobile connections in the {{zone}} area.",
+              "description": "Your site will load instantly, crucial for mobile connections in the {{seoData.zone}} area.",
               "icon": "Zap"
             },
             {
@@ -169,7 +171,9 @@
           "title": "Ready to lead in {{name}}?",
           "content": "Take your {{name}} business to the next level. Stop losing customers to your local competition.",
           "cta": "{{seoDataEn.cta_text}}",
-          "url": "/en/contact?location={{slug}}"
+          "url": "/en/contact?location={{slug}}",
+          "cta2": "I Want more information",
+          "url2": "/en/services/web-design-tenerife"
         }
       }
     }
