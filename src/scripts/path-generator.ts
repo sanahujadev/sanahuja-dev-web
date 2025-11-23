@@ -6,7 +6,7 @@ import localidades from '../i18n/auto/localidades.json';
 // solo necesitamos los datos de localidad para la generación de rutas.
 
 // Definición de los slugs de diseño
-const designSlugs: Record<string, string> = { 
+const designSlugs: Record<'es' | 'en', string> = { 
     es: "diseno-web-en", 
     en: "web-design-in" 
 };
@@ -24,16 +24,12 @@ export const getProgrammaticStaticPaths = async () => {
             paths.push({
                 params: {
                     autoLang: lang,
-                    designText: designSlugs[lang],
+                    designText: designSlugs[lang as 'es' | 'en'],
                     localidad: loc.slug,
                 },
                 // Mantenemos los props que necesita la página .astro
                 props: {
                     localidad: loc,
-                    // Deberías importar y pasar el template real aquí si lo necesitas en el test,
-                    // pero para simplificar, usaremos un mock si es necesario, o lo importamos arriba.
-                    // Para pasar el test de integración, debemos inyectar la plantilla si se usa en props.
-                    plantilla: {}, // Simplificado: Se cargarían aquí los datos de plantilla
                     lang,
                 },
             });

@@ -2,7 +2,7 @@
 
 import { it, expect, describe } from 'vitest';
 // Importar la función getStaticPaths directamente.
-import { getStaticPaths } from '../../src/pages/[autoLang]/[designText]/[localidad].astro';
+import { getProgrammaticStaticPaths } from '../../src/scripts/path-generator';
 // Importar los datos reales para verificar la longitud.
 import localidades from '../../src/i18n/auto/localidades.json' with { type: 'json' }; 
 
@@ -27,14 +27,14 @@ describe('Integración: Generación de Rutas Programáticas', () => {
     
     // Este test fallará si el número de rutas generadas no es 44.
     it('Debe generar el número correcto de rutas (22 localidades x 2 idiomas)', async () => {
-        const paths = await getStaticPaths(); // Call without arguments
+        const paths = await getProgrammaticStaticPaths(); // Call without arguments
 
         expect(paths).toHaveLength(EXPECTED_ROUTES_COUNT);
     });
 
     // Este test fallará si el slug de Adeje en español no es correcto.
     it('Debe generar la ruta correcta para "Adeje" en Español', async () => {
-        const paths = await getStaticPaths(); // Call without arguments
+        const paths = await getProgrammaticStaticPaths(); // Call without arguments
         
         // Buscamos la ruta específica que debe existir
         const adejeES = paths.find((p: StaticPathItem) => 
@@ -52,7 +52,7 @@ describe('Integración: Generación de Rutas Programáticas', () => {
 
     // Este test fallará si los props no contienen la información de localidad y plantilla.
     it('La ruta debe pasar los props necesarios para la construcción de la página', async () => {
-        const paths = await getStaticPaths(); // Call without arguments
+        const paths = await getProgrammaticStaticPaths(); // Call without arguments
         const adejeES = paths.find((p: StaticPathItem) => p.params.localidad === 'adeje' && p.params.autoLang === 'es'); // Explicitly type p
 
         // El test fallará si no incluye los datos de la localidad y la plantilla JSON

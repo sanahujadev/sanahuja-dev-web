@@ -3,37 +3,18 @@
 import localidades from "../../../i18n/auto/localidades.json" with { type: "json" };
 import plantillaJson from "../../../i18n/auto/plantilla-ciudades.json" with { type: "json" };
 import {buildCiudad, construirPlantillaDeCiudad} from "../../../scripts/utils"
+import {getProgrammaticStaticPaths} from "../../../scripts/path-generator"
 
 const designSlugs: Record<string, string> = { es: "diseno-web-en", en: "web-design-in" };
 
 export async function getStaticPaths() {
-  const langs = Object.keys(designSlugs);
-  const paths: any[] = [];
-
-  for (const loc of localidades) {
-    for (const lang of langs) {
-      paths.push({
-        params: {
-          autoLang: lang,
-          designText: designSlugs[lang],
-          localidad: loc.slug,
-        },
-        props: {
-          localidad: loc,
-          plantilla: plantillaJson,
-          lang,
-        },
-      });
-    }
-  }
-
-  return paths;
+  return await getProgrammaticStaticPaths();
 }
 
-const { localidad, plantilla, lang } = Astro.props;
+const { localidad, lang } = Astro.props;
 
 // Seleccionamos el bloque de idioma correcto
-const tpl = plantilla[lang];
+const tpl = plantillaJson[lang];
 const ciudad = buildCiudad(localidad, lang);
 
 const copy = construirPlantillaDeCiudad(tpl, ciudad);
