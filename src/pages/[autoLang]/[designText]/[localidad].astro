@@ -11,11 +11,61 @@ export async function getStaticPaths() {
   return await getProgrammaticStaticPaths();
 }
 
-const { localidad, lang } = Astro.props;
+const { localidad, lang, alternatePath } = Astro.props;
 
 // Seleccionamos el bloque de idioma correcto
 const tpl = plantillaJson[lang];
 const ciudad = buildCiudad(localidad, lang);
 
 const copy = construirPlantillaDeCiudad(tpl, ciudad);
+
+const alternateUrl = new URL(alternatePath, Astro.site).href;
 ---
+<BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(copy.schema)} slot="json-ld" />
+  <Fragment slot="head">
+    <title>{metadata.title}</title>
+    <meta name="description" content={metadata.description} />
+    <meta name="robots" content={metadata.robots} />
+  </Fragment>
+  <main>
+    <section>
+      <h1>
+        {copy.hero.h1_part1}{" "}
+        {copy.hero.h1_part2}
+      </h1>
+      <p innerHTML={copy.hero.h1_lead} />
+      <a href={copy.hero.ctas.primary.url}>
+        {copy.hero.ctas.primary.text}
+      </a>
+    </section>
+    <section>
+      <h2>{copy.sections.painPoint.title}</h2>
+      <p>{copy.sections.painPoint.content}</p>
+      <blockquote>
+        {copy.sections.painPoint.quote}
+      </blockquote>
+    </section>
+    <section>
+        <h2>{copy.sections.solution.title}</h2>
+        <p>{copy.sections.solution.content}</p>
+        <ul>
+          {copy.sections.solution.features.map((f) => (
+            <li>
+              <strong>{f.title}</strong><br />
+              {f.description}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2>{copy.sections.ctaFinal.title}</h2>
+        <p>{copy.sections.ctaFinal.content}</p>
+        <a href={copy.sections.ctaFinal.url}>
+          {seoData.cta_text}
+        </a>
+      </section>
+  </main>
+
+</BaseLayout>

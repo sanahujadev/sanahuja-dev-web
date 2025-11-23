@@ -18,19 +18,23 @@ export const getProgrammaticStaticPaths = async () => {
 
     const langs = Object.keys(designSlugs);
     const paths: any[] = [];
-
     for (const loc of localidades) {
         for (const lang of langs) {
+            const alternateLang = lang === 'es'? 'en' : 'es';
+            const designText = designSlugs[lang as 'es' | 'en'];
+            const alternateDesignText = designSlugs[alternateLang];
+            const alternatePath = `/${alternateLang}/${alternateDesignText}/${loc.slug}`
             paths.push({
                 params: {
                     autoLang: lang,
-                    designText: designSlugs[lang as 'es' | 'en'],
+                    designText,
                     localidad: loc.slug,
                 },
                 // Mantenemos los props que necesita la página .astro
                 props: {
                     localidad: loc,
                     lang,
+                    alternatePath 
                 },
             });
         }

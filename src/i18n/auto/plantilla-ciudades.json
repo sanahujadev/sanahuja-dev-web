@@ -60,7 +60,7 @@
           "badge": "La Realidad Local",
           "title": "¿Por qué tu negocio en {{name}} no despega?",
           "content": "{{seoData.usp_focus}}",
-          "quote": "En {{name}}, la competencia digital es real. Una web genérica ya no sirve para destacar en {{seoData.zone}}.",
+          "quote": "<span>Zona {{seoData.zone}}.</span> En {{name}}, la competencia digital es real. Una web genérica ya no sirve para destacar.",
           "author": "José Javier Sanahuja"
         },
         "solution": {
