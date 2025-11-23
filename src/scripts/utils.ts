@@ -9,17 +9,17 @@ export const construirPlantillaDeCiudad = (
     let templateJson;
     // replace one by one
     templateStr = templateStr
-        .replace('{{name}}', ciudad.name)
-        .replace('{{municipality}}', ciudad.municipality)
-        .replace('{{painPointId}}', ciudad.painPointId)
-        .replace('{{slug}}', ciudad.slug)
-        .replace('{{type}}', ciudad.type)
-        .replace('{{zip}}', ciudad.zip)
-        .replace('{{seoData.zone}}', ciudad.seoData.zone)
-        .replace('{{seoData.usp_focus}}', ciudad.seoData.usp_focus)
-        .replace('{{seoData.h2_solution}}', ciudad.seoData.h2_solution)
-        .replace('{{seoData.h1_modifier}}', ciudad.seoData.h1_modifier)
-        .replace('{{seoData.cta_text}}', ciudad.seoData.cta_text);
+        .replaceAll('{{name}}', ciudad.name)
+        .replaceAll('{{municipality}}', ciudad.municipality)
+        .replaceAll('{{painPointId}}', ciudad.painPointId)
+        .replaceAll('{{slug}}', ciudad.slug)
+        .replaceAll('{{type}}', ciudad.type)
+        .replaceAll('{{zip}}', ciudad.zip)
+        .replaceAll('{{seoData.zone}}', ciudad.seoData.zone)
+        .replaceAll('{{seoData.usp_focus}}', ciudad.seoData.usp_focus)
+        .replaceAll('{{seoData.h2_solution}}', ciudad.seoData.h2_solution)
+        .replaceAll('{{seoData.h1_modifier}}', ciudad.seoData.h1_modifier)
+        .replaceAll('{{seoData.cta_text}}', ciudad.seoData.cta_text);
 
     // parseJson
     try {

@@ -1,13 +1,14 @@
 ---
+// src/pages/[autoLang]/[designText]/[localidad].astro
 import localidades from "../../../i18n/auto/localidades.json" with { type: "json" };
-import plantilla from "../../../i18n/auto/plantilla-ciudades.json" with { type: "json" };
-import {buildCiudad, construirPlantillaDeCiudad} from "../../../scripts/util"
+import plantillaJson from "../../../i18n/auto/plantilla-ciudades.json" with { type: "json" };
+import {buildCiudad, construirPlantillaDeCiudad} from "../../../scripts/utils"
 
-const designSlugs = { es: "diseno-web-en", en: "web-design-in" };
+const designSlugs: Record<string, string> = { es: "diseno-web-en", en: "web-design-in" };
 
 export async function getStaticPaths() {
   const langs = Object.keys(designSlugs);
-  const paths = [];
+  const paths: any[] = [];
 
   for (const loc of localidades) {
     for (const lang of langs) {
@@ -19,7 +20,7 @@ export async function getStaticPaths() {
         },
         props: {
           localidad: loc,
-          plantilla,
+          plantilla: plantillaJson,
           lang,
         },
       });
