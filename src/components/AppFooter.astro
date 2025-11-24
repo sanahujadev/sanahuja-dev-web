@@ -6,15 +6,23 @@ import GitHub from "./ui/icons/Github.astro";
 import Star from "./ui/icons/Star.astro";
 import ExternalLink from "./ui/icons/ExternalLink.astro";
 import type { FooterType } from "../i18n/utils";
-// ¡La partitura de V0, traducida a Astro y afinada por Brook!
+
+// 1. IMPORTAMOS LOS DATOS REALES PARA EL SEO
+import localidades from "../i18n/auto/localidades.json";
 
 const { t, lang } = Astro.props as {
   t: FooterType;
   lang: "es" | "en";
 };
 
+// --- Configuración de Slugs para las rutas SEO ---
+const designSlugs: Record<string, string> = {
+  es: "diseno-web-en",
+  en: "web-design-in",
+};
+const currentDesignSlug = designSlugs[lang];
+
 // --- 1. La "Letra" (Datos) ---
-// (He adaptado los 'url' y 'label' para usar 't' y 'lang' de Astro)
 const footerData = {
   brand: {
     tagline: t.brand.tagline,
@@ -23,7 +31,7 @@ const footerData = {
     titulo: t.localizacion.titulo,
     ciudad: t.localizacion.ciudad,
     gmb_link_label: t.localizacion.gmb_link_label,
-    gmb_url: t.localizacion.gmb_url, // (Añadido para el href)
+    gmb_url: t.localizacion.gmb_url,
   },
   navegacion: {
     titulo: t.navegacion.titulo,
@@ -94,7 +102,6 @@ const footerData = {
 };
 
 // --- 2. La Lógica (Función de Iconos) ---
-// (La lógica de V0, 100% compatible con Astro)
 const getSocialIcon = (name: string) => {
   switch (name) {
     case "linkedin":
@@ -102,7 +109,7 @@ const getSocialIcon = (name: string) => {
     case "github":
       return GitHub;
     case "freelancer":
-      return Star; // Devolvemos solo la estrella
+      return Star;
     default:
       return null;
   }
@@ -112,6 +119,7 @@ const getSocialIcon = (name: string) => {
 <footer aria-label="Footer" class="bg-background border-t border-border">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
+      {/* BRAND & LOCALIZACION */}
       <div class="lg:col-span-4">
         <div class="text-2xl font-bold text-foreground mb-4">
           Sanahuja<span class="text-primary-500">Dev/&gt;</span>
@@ -143,6 +151,7 @@ const getSocialIcon = (name: string) => {
         </div>
       </div>
 
+      {/* NAVEGACION */}
       <div class="lg:col-span-3">
         <h3
           class="text-sm font-semibold text-neutral-300 uppercase tracking-wider mb-6"
@@ -165,6 +174,7 @@ const getSocialIcon = (name: string) => {
         </ul>
       </div>
 
+      {/* SOCIAL */}
       <div class="lg:col-span-2">
         <h3
           class="text-sm font-semibold text-neutral-300 uppercase tracking-wider mb-6"
@@ -202,6 +212,7 @@ const getSocialIcon = (name: string) => {
         </ul>
       </div>
 
+      {/* CTA BOX */}
       <div class="lg:col-span-3">
         <div
           class="bg-gradient-to-br from-neutral-800 to-neutral-900 border border-border rounded-xl p-6"
@@ -220,6 +231,49 @@ const getSocialIcon = (name: string) => {
       </div>
     </div>
 
+    {/* ========================================================== */}
+    {/* THE SEO TRENCH - ZONA DE COBERTURA DINÁMICA */}
+    {/* ========================================================== */}
+    <div class="border-t border-border/50 py-8">
+      <div class="flex flex-col gap-4">
+        <div class="flex items-center gap-2 mb-2">
+            {/* CORRECCIÓN: Usamos text-neutral-200 (casi blanco) para el título pequeño */}
+            <span class="text-xs font-bold text-neutral-200 uppercase tracking-widest whitespace-nowrap">
+            📍 Zonas de Cobertura {lang === 'es' ? 'Principal' : 'Main Coverage'}:
+            </span>
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+        </div>
+        
+        <div class="flex flex-wrap gap-x-3 gap-y-2">
+          {localidades.map((loc) => {
+             const url = `/${lang}/${currentDesignSlug}/${loc.slug}`;
+             const name = loc.name;
+             
+             return (
+                <a 
+                  href={url}
+                  class="text-[10px] sm:text-xs text-neutral-300 hover:text-primary-400 transition-colors border-b border-transparent hover:border-primary-500/50 pb-0.5"
+                  title={`Diseño web en ${name}`}
+                >
+                  {name}
+                </a>
+             );
+          })}
+        </div>
+        
+        {/* CORRECCIÓN: Disclaimer en text-neutral-400 (legible pero secundario) */}
+        <p class="text-[10px] text-neutral-400 italic mt-1">
+            * {lang === 'es' 
+                ? 'Prestamos servicio presencial en Tenerife y remoto para todo el mundo.' 
+                : 'Providing on-site service in Tenerife and remote service worldwide.'}
+        </p>
+      </div>
+    </div>
+
+    {/* COPYRIGHT & LEGAL */}
     <div class="border-t border-border py-8">
       <div class="flex flex-col md:flex-row items-center justify-between gap-4">
         <div class="text-neutral-400 text-sm">
