@@ -3,7 +3,7 @@
   "alternateUrl": "/es/packs/",
   "metadata": {
     "title": "Web Maintenance Prices Tenerife | Your Digital Department",
-    "description": "Choose your level of digital partnership. From data strategy to reputation management. Clear rates, no lock-in contracts, and all-inclusive."
+    "description": "Choose your level of digital partnership. From data strategy to reputation management. Clear rates, and all-inclusive."
   },
   "copy": {
     "hero": {
@@ -31,12 +31,12 @@
           },
           {
             "label": "Support",
-            "value": "WPO 99"
+            "value": "WPO 90+"
           },
           {
             "label": "Savings",
-            "value": "€25",
-            "unit": "/mo"
+            "value": "€15", 
+            "unit": "from"
           }
         ]
       }
@@ -54,7 +54,7 @@
             "name": "Technical Partner Pack",
             "role": "Growth & Data",
             "description": "For those who want to understand their users and grow with SEO.",
-            "price": "105€/mo",
+            "price": "€145/mo",
             "cta": "Choose Data",
             "badge": "Recommended",
             "url": "/en/packs/technical-partner-pack",
@@ -82,13 +82,13 @@
             "name": "Digital Image Pack",
             "role": "Local Visibility",
             "description": "For local businesses where image and reviews are everything.",
-            "price": "110€/mo",
+            "price": "€130/mo",
             "cta": "Choose Image",
             "url": "/en/packs/digital-image",
             "highlight": false,
             "features": [
               {
-                "name": "WPO 99 Maintenance",
+                "name": "WPO 90+ Maintenance",
                 "included": true
               },
               {
@@ -107,20 +107,20 @@
           },
           {
             "name": "All-in-One",
-            "role": "Total Delegation",
-            "description": "Your complete Digital Partner. Data, Image, and Technique unified.",
-            "price": "130€/mo",
-            "cta": "I Want Everything",
+            "role": "Technical Control",
+            "description": "The essentials for a serious business. We unify stability and data to achieve goals.",
+            "price": "€75/mo",
+            "cta": "Choose All-in-One",
             "url": "/en/packs/all-in-one",
             "highlight": false,
             "features": [
               {
-                "name": "WPO 99 Maintenance",
+                "name": "WPO 90+ Maintenance",
                 "included": true
               },
               {
                 "name": "Authority Plan (Blog)",
-                "included": true
+                "included": false
               },
               {
                 "name": "Visibility Report (GA4)",
@@ -128,7 +128,7 @@
               },
               {
                 "name": "Reputation Management",
-                "included": true
+                "included": false
               }
             ]
           }
@@ -143,7 +143,7 @@
           },
           {
             "question": "Is the website mine or is it a rental?",
-            "answer": "<strong>It is a Managed Service with Intellectual Property belonging to SanahujaDev.</strong> At the start, I assume the real cost of development (valued at thousands of euros) so you can enter with a minimal investment. Therefore, the code belongs to me. \n\nHowever, <strong>I believe in long-term relationships</strong>. If after a reasonable time of successful collaboration you decide to fly solo, or if your personal situation requires it, we will sit down to value the transfer of the website. Everything depends on our history together. (Note: If you bought the domain, it is always yours; if I paid for it, it is included in the service package)."
+            "answer": "<strong>It is a Managed Service with Intellectual Property of SanahujaDev.</strong> At the beginning, I assume the real cost of development (valued at thousands of euros) so that you can enter with a minimal investment. Therefore, the code belongs to me. However, <strong>I believe in long-term relationships</strong>. If after a reasonable period of successful collaboration you decide to go solo, or if your personal situation requires it, we will sit down to assess the transfer of the website. It all depends on our history together. (Note: If you bought the domain, it is always yours; if I paid for it, it is included in the service package)."
           },
           {
             "question": "Is there a lock-in period?",

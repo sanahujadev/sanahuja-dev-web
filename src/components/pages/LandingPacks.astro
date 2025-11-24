@@ -111,8 +111,8 @@ const orderedPlans = [imagen, sociotecnico, todoEnUno];
                       return (
                         <div>
                           <div class={`text-3xl font-bold mb-1 ${colorClass}`}>
-                            {stat.value}
                             {stat.unit && <span class="text-lg text-muted-foreground ml-1">{stat.unit}</span>}
+                            {stat.value}
                           </div>
                           <div class="text-sm text-muted-foreground">{stat.label}</div>
                         </div>

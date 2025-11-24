@@ -3,8 +3,8 @@
   "lang": "es",
   "alternateUrl": "/en/packs/technical-partner-pack",
   "metadata": {
-    "title": "Pack Sociotécnico Digital | Ahorra 25€/mes | SanahujaDev",
-    "description": "Consigue el 'paquete seo y contenido' de SanahujaDev. El Pack Sociotécnico Digital incluye mantenimiento, analítica y autoridad. Ahorra 25€/mes."
+    "title": "Pack Sociotécnico Digital | Ahorra 35€/mes | SanahujaDev",
+    "description": "Consigue el 'paquete seo y contenido' de SanahujaDev. El Pack Sociotécnico Digital incluye mantenimiento, analítica y autoridad. Ahorra 35€/mes."
   },
   "copy": {
     "heroBadge": "Pack Estratégico de Valor",
@@ -17,17 +17,17 @@
       "stats": [
         {
           "label": "Valor por Separado",
-          "value": "130€",
+          "value": "180€",
           "unit": "/mes"
         },
         {
           "label": "Ahorro Mensual",
-          "value": "25€",
+          "value": "35€",
           "unit": "de ahorro"
         },
         {
           "label": "Precio del Pack",
-          "value": "105€",
+          "value": "145€",
           "highlight": true,
           "unit": "/mes"
         }
@@ -48,19 +48,19 @@
             "title": "Mantenimiento Web Esencial",
             "description": "Tu 'Socio Digital' vigilando. WPO 99, seguridad, copias y soporte técnico.",
             "icon": "Shield",
-            "price": "Valor 20€/mes"
+            "price": "Valor 40€/mes"
           },
           {
             "title": "Informe de Visibilidad (GA4)",
             "description": "Un informe mensual para entender qué funciona: visitas, conversiones y de dónde vienen.",
             "icon": "BarChart",
-            "price": "Valor 15€/mes"
+            "price": "Valor 40€/mes"
           },
           {
             "title": "Plan de Autoridad (1 Post)",
             "description": "Un artículo de blog mensual (SEO) para tu 'Plan de Autoridad'. El 'paquete seo y contenido en Tenerife'.",
             "icon": "FileText",
-            "price": "Valor 75€/mes"
+            "price": "Valor 90€/mes"
           },
           {
             "title": "Gestión Banner de Cookies",
@@ -69,37 +69,31 @@
             "price": "Valor 10€/mes"
           },
           {
-            "title": "Snapshot Mensual (GSC/GMB)",
-            "description": "Un vistazo rápido a tus 4 métricas clave de Google Search Console y tu Ficha de Negocio.",
-            "icon": "Camera",
-            "price": "Valor 5€/mes"
-          },
-          {
             "title": "Gestión de Formulario de Conversión Anti-Spam",
             "description": "Cada mensaje de un cliente es una oportunidad. Nos aseguramos de que nunca pierdas una.",
             "icon": "",
-            "price": "Valor 5€/mes"
+            "price": "Incluido en el Mantenimiento Web"
           }
         ]
       },
       "valor": {
         "badge": "Ahorro y Transparencia",
         "title": "El Valor Real vs. El Precio del Pack",
-        "content": "La transparencia es un pilar de mi marca. No hay letra pequeña. Si contratas estos 5 servicios por separado, el coste total es de 130€ al mes. Al unirlos en este pack, ahorras 25€ cada mes.",
+        "content": "La transparencia es un pilar de mi marca. No hay letra pequeña. Si contratas estos 5 servicios por separado, el coste total es de 180€ al mes. Al unirlos en este pack, ahorras 35€ cada mes.",
         "breakdown": [
           {
             "label": "Valor Real por Separado",
-            "value": "130,00€",
+            "value": "180,00€",
             "type": "strikethrough"
           },
           {
             "label": "Ahorro Inmediato (Pack)",
-            "value": "- 25,00€",
+            "value": "- 35,00€",
             "type": "savings"
           },
           {
             "label": "Precio Pack Sociotécnico",
-            "value": "105,00€",
+            "value": "145,00€",
             "type": "final",
             "unit": "/mes"
           }

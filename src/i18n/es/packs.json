@@ -3,7 +3,7 @@
   "alternateUrl": "/en/packs/",
   "metadata": {
     "title": "Precios Mantenimiento Web Tenerife | Tu Departamento Digital",
-    "description": "Elige tu nivel de socio digital. Desde estrategia de datos hasta gestión de reputación. Tarifas claras, sin permanencia y con todo incluido."
+    "description": "Elige tu nivel de socio digital. Desde estrategia de datos hasta gestión de reputación. Tarifas claras, y con todo incluido."
   },
   "copy": {
     "hero": {
@@ -31,12 +31,12 @@
           },
           {
             "label": "Soporte",
-            "value": "WPO 99"
+            "value": "WPO 90+"
           },
           {
             "label": "Ahorro",
-            "value": "25€",
-            "unit": "/mes"
+            "value": "15€", 
+            "unit": "desde"
           }
         ]
       }
@@ -54,7 +54,7 @@
             "name": "Pack Sociotécnico",
             "role": "Crecimiento & Datos",
             "description": "Para quien quiere entender a sus usuarios y crecer con SEO.",
-            "price": "105€/mes",
+            "price": "145€/mes",
             "cta": "Elegir Datos",
             "badge": "Recomendado",
             "url": "/es/packs/pack-sociotecnico-digital",
@@ -82,13 +82,13 @@
             "name": "Pack Imagen Digital",
             "role": "Visibilidad Local",
             "description": "Para negocios locales donde la imagen y las reseñas lo son todo.",
-            "price": "110€/mes",
+            "price": "130€/mes",
             "cta": "Elegir Imagen",
             "url": "/es/packs/imagen-digital",
             "highlight": false,
             "features": [
               {
-                "name": "Mantenimiento WPO 99",
+                "name": "Mantenimiento WPO 90+",
                 "included": true
               },
               {
@@ -107,20 +107,20 @@
           },
           {
             "name": "Todo en Uno",
-            "role": "Delegación Total",
-            "description": "Tu Socio Digital completo. Datos, Imagen y Técnica unificados.",
-            "price": "130€/mes",
-            "cta": "Quiero Todo",
+            "role": "Control Técnico",
+            "description": "Lo esencial para un negocio serio. Unificamos la estabilidad y los datos para lograr objetivos.",
+            "price": "75€/mes",
+            "cta": "Elegir Todo en Uno",
             "url": "/es/packs/todo-en-uno",
             "highlight": false,
             "features": [
               {
-                "name": "Mantenimiento WPO 99",
+                "name": "Mantenimiento WPO 90+",
                 "included": true
               },
               {
                 "name": "Plan de Autoridad (Blog)",
-                "included": true
+                "included": false
               },
               {
                 "name": "Informe Visibilidad (GA4)",
@@ -128,7 +128,7 @@
               },
               {
                 "name": "Gestión de Reputación",
-                "included": true
+                "included": false
               }
             ]
           }

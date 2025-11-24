@@ -3,8 +3,8 @@
   "lang": "en",
   "alternateUrl": "/es/servicios/mantenimiento-web",
   "metadata": {
-    "title": "Web Maintenance Tenerife | End Your \"Abandoned Website\" (WPO 99)",
-    "description": "Is your website abandoned? 🚀 I offer Web Maintenance in Tenerife with real support (WPO 99). It doesn't just 'work'; it achieves your goals."
+    "title": "Web Maintenance Tenerife | End Your \"Abandoned Website\" (WPO 90+)",
+    "description": "Is your website abandoned? 🚀 I offer Web Maintenance in Tenerife with real support (WPO 90+). It doesn't just 'work'; it achieves your goals."
   },
   "copy": {
     "h1_part1": "Web Maintenance Tenerife:",
@@ -21,11 +21,11 @@
         },
         {
           "label": "WPO Score",
-          "value": "99"
+          "value": "90+"
         },
         {
           "label": "From/month",
-          "value": "€20"
+          "value": "€40"
         },
         {
           "label": "Abandonments",
@@ -62,8 +62,8 @@
       },
       "wpo": {
         "badge": "Real Technical Proof",
-        "title": "Speed Proof: My Maintenance REALLY Works (WPO 99)",
-        "content": "Cheap talk! Not at all. My own website has a WPO (speed) score of 99. That's the proof. Professional maintenance isn't just 'updating plugins'; it's keeping your website ultra-fast and secure, like a fortress.",
+        "title": "Speed Proof: My Maintenance REALLY Works (WPO 90+)",
+        "content": "Cheap talk! Not at all. My own website has a WPO (speed) score of 90+. That's the proof. Professional maintenance isn't just 'updating plugins'; it's keeping your website ultra-fast and secure, like a fortress.",
         "features": [
           {
             "title": "Ultra-Fast",
@@ -117,7 +117,7 @@
       },
       "incluye": {
         "title": "What does this Professional Web Support in Tenerife include?",
-        "content": "This isn't just 'updating my website'. The Essential Web Maintenance (our base at €20/month) includes:",
+        "content": "This isn't just 'updating my website'. The Essential Web Maintenance (our base at €40/month) includes:",
         "featureCards": [
           {
             "title": "Domain & SSL Management",
@@ -132,13 +132,17 @@
             "description": "We watch 24/7 to ensure your site never goes down. If something happens, I'm the first to know."
           },
           {
+            "title": "Basic Metrics Analysis",
+            "description": "I proactively review your metrics to readjust the strategy if necessary."
+          },
+          {
             "title": "Your Digital Partner",
-            "description": "The peace of mind of having a 'stubborn' expert by your side, focused on your goals."
+            "description": "The peace of mind of having an expert by your side, focused on your goals."
           }
         ]
       },
       "precio": {
-        "basePrice": "€20/month",
+        "basePrice": "€40/month",
         "commitment": "Minimum 12-month commitment",
         "subtitle": "Essential Web Maintenance"
       },

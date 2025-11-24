@@ -3,8 +3,8 @@
   "lang": "es",
   "alternateUrl": "/en/services/web-maintenance",
   "metadata": {
-    "title": "Mantenimiento Web Tenerife | Evita tu \"Web Abandonada\" (WPO 99)",
-    "description": "¿Tu web está abandonada? 🚀 Ofrezco Mantenimiento Web en Tenerife con soporte real (WPO 99). No solo 'funciona', cumple tus objetivos."
+    "title": "Mantenimiento Web Tenerife | Evita tu \"Web Abandonada\" (WPO 90+)",
+    "description": "¿Tu web está abandonada? 🚀 Ofrezco Mantenimiento Web en Tenerife con soporte real (WPO 90+). No solo 'funciona', cumple tus objetivos."
   },
   "copy": {
     "h1_part1": "Mantenimiento Web Tenerife:",
@@ -21,11 +21,11 @@
         },
         {
           "label": "WPO Score",
-          "value": "99"
+          "value": "90+"
         },
         {
           "label": "Desde/mes",
-          "value": "20€"
+          "value": "40€"
         },
         {
           "label": "Abandonos",
@@ -62,8 +62,8 @@
       },
       "wpo": {
         "badge": "Prueba Técnica Real",
-        "title": "Prueba de Velocidad: Mi Mantenimiento SÍ Funciona (WPO 99)",
-        "content": "¡Palabras baratas! ¡Pues no! Mi propia web tiene una nota de WPO (velocidad) de 99. Esa es la prueba. Un mantenimiento profesional no es 'actualizar plugins'; es mantener tu web ultra-rápida y segura, como una fortaleza.",
+        "title": "Prueba de Velocidad: Mi Mantenimiento SÍ Funciona (WPO 90+)",
+        "content": "¡Palabras baratas! ¡Pues no! Mi propia web tiene una nota de WPO (velocidad) de 90+. Esa es la prueba. Un mantenimiento profesional no es 'actualizar plugins'; es mantener tu web ultra-rápida y segura, como una fortaleza.",
         "features": [
           {
             "title": "Ultra-Rápida",
@@ -117,7 +117,7 @@
       },
       "incluye": {
         "title": "¿Qué incluye este Soporte Web Profesional en Tenerife?",
-        "content": "Esto no es solo 'actualizar mi página web'. El Mantenimiento Web Esencial (nuestra base por 20€/mes) incluye:",
+        "content": "Esto no es solo 'actualizar mi página web'. El Mantenimiento Web Esencial (nuestra base por 40€/mes) incluye:",
         "featureCards": [
           {
             "title": "Gestión de Dominio y SSL",
@@ -132,13 +132,17 @@
             "description": "Vigilamos 24/7 que tu web nunca se caiga. Si algo pasa, soy el primero en saberlo."
           },
           {
+            "title": "Análisis de Métricas Básicas",
+            "description": "Reviso tus métricas proactivamente para reajustar la estrategia si es necesario."
+          },
+          {
             "title": "Tu Socio Digital",
-            "description": "La tranquilidad de tener un experto 'terco' a tu lado, enfocado en tus objetivos."
+            "description": "La tranquilidad de tener un experto a tu lado, enfocado en tus objetivos."
           }
         ]
       },
       "precio": {
-        "basePrice": "20€/mes",
+        "basePrice": "40€/mes",
         "commitment": "Compromiso mínimo 12 meses",
         "subtitle": "Mantenimiento Web Esencial"
       },

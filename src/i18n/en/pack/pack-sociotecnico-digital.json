@@ -3,8 +3,8 @@
   "lang": "en",
   "alternateUrl": "/es/packs/pack-sociotecnico-digital",
   "metadata": {
-    "title": "Technical Partner Pack | Save €25/month | SanahujaDev",
-    "description": "Get the 'SEO and content package' from SanahujaDev. The Technical Partner Pack includes maintenance, analytics, and authority. Save €25/month."
+    "title": "Technical Partner Pack | Save €35/month | SanahujaDev",
+    "description": "Get the 'SEO and content package' from SanahujaDev. The Technical Partner Pack includes maintenance, analytics, and authority. Save €35/month."
   },
   "copy": {
     "heroBadge": "Strategic Value Pack",
@@ -17,17 +17,17 @@
       "stats": [
         {
           "label": "Value (Separate)",
-          "value": "€130",
+          "value": "€180",
           "unit": "/month"
         },
         {
           "label": "Monthly Savings",
-          "value": "€25",
+          "value": "€35",
           "unit": "in savings"
         },
         {
           "label": "Pack Price",
-          "value": "€105",
+          "value": "€145",
           "highlight": true,
           "unit": "/month"
         }
@@ -41,26 +41,26 @@
       },
       "incluye": {
         "title": "What EXACTLY does this Pack include?",
-        "content": "This is the package for the owner who wants to delegate the technical and tactical side to focus on strategy. It includes 6 key services that work together:",
-        "enumServices": "Includes 6 strategic services",
+        "content": "This is the package for the owner who wants to delegate the technical and tactical side to focus on strategy. It includes 5 key services that work together:",
+        "enumServices": "Includes 5 strategic services",
         "featureCards": [
           {
             "title": "Essential Web Maintenance",
             "description": "Your 'Digital Partner' on guard. WPO 99, security, backups, and tech support.",
             "icon": "Shield",
-            "price": "Value €20/month"
+            "price": "Value €40/month"
           },
           {
             "title": "Visibility Report (GA4)",
             "description": "A monthly report to understand what's working: visits, conversions, and where they come from.",
             "icon": "BarChart",
-            "price": "Value €15/month"
+            "price": "Value €40/month"
           },
           {
             "title": "Authority Plan (1 Post)",
             "description": "One monthly SEO blog post for your 'Authority Plan'. The 'SEO and content package in Tenerife'.",
             "icon": "FileText",
-            "price": "Value €75/month"
+            "price": "Value €90/month"
           },
           {
             "title": "Cookie Banner Management",
@@ -69,37 +69,31 @@
             "price": "Value €10/month"
           },
           {
-            "title": "Monthly Snapshot (GSC/GMB)",
-            "description": "A quick look at your 4 key metrics from Google Search Console and your Business Profile.",
-            "icon": "Camera",
-            "price": "Value €5/month"
-          },
-          {
-            "title": "Anti-Spam Form Management",
+            "title": "Anti-Spam Conversion Form Management",
             "description": "Every client message is an opportunity. We make sure you never miss one.",
-            "icon": "MailCheck",
-            "price": "Value €5/month"
+            "icon": "",
+            "price": "Included in Web Maintenance"
           }
         ]
       },
       "valor": {
         "badge": "Savings and Transparency",
         "title": "Real Value vs. Pack Price",
-        "content": "Transparency is a pillar of my brand. No fine print. If you hired these **6 services** separately, the total cost would be €130 per month. By bundling them in this pack, you save €25 every month.",
+        "content": "Transparency is a pillar of my brand. No fine print. If you hired these 5 services separately, the total cost would be €180 per month. By bundling them in this pack, you save €35 every month.",
         "breakdown": [
           {
             "label": "Real Value (Separate)",
-            "value": "€130.00",
+            "value": "€180.00",
             "type": "strikethrough"
           },
           {
             "label": "Immediate Savings (Pack)",
-            "value": "- €25.00",
+            "value": "- €35.00",
             "type": "savings"
           },
           {
             "label": "Technical Partner Pack Price",
-            "value": "€105.00",
+            "value": "€145.00",
             "type": "final",
             "unit": "/month"
           }

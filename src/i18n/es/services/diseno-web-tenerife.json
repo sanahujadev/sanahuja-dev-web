@@ -2,14 +2,14 @@
   "endpoint": "/es/servicios/diseno-web-tenerife",
   "lang": "es",
   "alternateUrl": "/en/services/web-design-tenerife",
-  "title": "Diseño Web Tenerife | Webs Profesionales para Pymes (WPO 99)",
-  "meta_description": "¿Buscas Diseño Web en Tenerife? 🚀 Consigue tu web profesional (WPO 99) con un 90% dto. al contratar tu mantenimiento. ¡Somos tu Socio Digital!",
+  "title": "Diseño Web Tenerife | Webs Profesionales para Pymes (hasta WPO 99)",
+  "meta_description": "¿Buscas Diseño Web en Tenerife? 🚀 Consigue tu web profesional (hasta WPO 99) con un 75% dto. al contratar tu mantenimiento. ¡Somos tu Socio Digital!",
   "h1": "Diseño Web en Tenerife que SÍ Cumple Objetivos",
-  "badge": "WPO 99 Garantizado",
+  "badge": "WPO 90+ Garantizado",
   "h2s": [
     "¿Harto del Diseño Web en Canarias?",
-    "Mi \"Gancho\": Tu Web Profesional con un 90% de Descuento",
-    "El Doble de Rápida que tu Competencia (WPO 99)",
+    "Mi \"Gancho\": Tu Web Profesional con un 75% de Descuento",
+    "El Doble de Rápida que tu Competencia (WPO 90+)",
     "Más que un Desarrollador: Tu Socio Digital en Tenerife",
     "¿Para quién es esta solución de Diseño Web?",
     "¿Cuánto cuesta crear una página web en Canarias?",
@@ -21,7 +21,7 @@
       "label": "Puntuación WPO"
     },
     "discount": {
-      "value": "90%",
+      "value": "75%",
       "label": "Descuento Inicial"
     },
     "support": {
@@ -41,7 +41,7 @@
       "title": "Comparativa WPO",
       "main": {
         "label": "Tu Nueva Web",
-        "value": "99"
+        "value": "90+"
       },
       "competitorA": {
         "label": "Competidor A",
@@ -72,7 +72,7 @@
   "body_sections": [
     {
       "heading": "h1_lead",
-      "content": "Para el autónomo 'aislado'  y la pyme 'frustrada'. Creo tu web profesional, ultra-rápida (WPO 99)  y me quedo a tu lado para que consigas tus metas. Porque **tu éxito es mi éxito**."
+      "content": "Para el autónomo 'aislado'  y la pyme 'frustrada'. Creo tu web profesional, ultra-rápida (WPO 90+)  y me quedo a tu lado para que consigas tus metas. Porque **tu éxito es mi éxito**."
     },
     {
       "heading": "¿Harto del Diseño Web en Canarias?",
@@ -82,12 +82,12 @@
       "basePath": "sanahujadev"
     },
     {
-      "heading": "Mi \"Gancho\": Tu Web Profesional con un 90% de Descuento",
-      "content": "Quiero que los autónomos y pymes de Tenerife tengan acceso a servicios profesionales asequibles. Mi estrategia es transparente : te ofrezco un **90% de descuento** en la creación o migración de tu sitio web. ¿La única condición? Que te comprometas con tu éxito  contratando el servicio de 'Mantenimiento Web Esencial' por 12 meses. Sin trampa."
+      "heading": "Mi \"Gancho\": Tu Web Profesional con un 75% de Descuento",
+      "content": "Quiero que los autónomos y pymes de Tenerife tengan acceso a servicios profesionales asequibles. Mi estrategia es transparente : te ofrezco un **75% de descuento** en la creación o migración de tu sitio web. ¿La única condición? Que te comprometas con tu éxito  contratando el servicio de 'Mantenimiento Web Esencial' por 12 meses. Sin trampa."
     },
     {
-      "heading": "El Doble de Rápida que tu Competencia (WPO 99)",
-      "content": "Tu web no solo será moderna, seria y transmitirá confianza; será técnicamente superior. Mi sitio tiene una puntuación de velocidad (WPO) de 99. Nuestros competidores locales (como otras agencias en Tenerife) se mueven entre 41 y 53. Una web rápida no es un lujo; es la base para que Google te respete y tus clientes no se marchen antes de conocerte."
+      "heading": "El Doble de Rápida que tu Competencia (WPO 90+)",
+      "content": "Tu web no solo será moderna, seria y transmitirá confianza; será técnicamente superior. Mi sitio tiene una puntuación de velocidad (WPO) de 90+. Nuestros competidores locales (como otras agencias en Tenerife) se mueven entre 41 y 53. Una web rápida no es un lujo; es la base para que Google te respete y tus clientes no se marchen antes de conocerte."
     },
     {
       "heading": "Más que un Desarrollador: Tu Socio Digital en Tenerife",
@@ -99,7 +99,7 @@
     },
     {
       "heading": "¿Cuánto cuesta crear una página web en Canarias?",
-      "content": "El precio lo marca el mercado. ¿Has visto webs básicas de 1.500€ a 3.000€ por ingenieros locales? ¿Has visto webs baratas de 300€ por ingenieros que están tan lejos que nunca vas a conocer?\n Mi 'Valor Real de Mercado' en Canarias por un proyecto profesional simulado de 5.445€, queda con el 'Precio Estratégico Gancho' en un coste de 544,50€, siempre que contrates el servicio de mantenimiento por un año (300€ extras).\nAsí de claro."
+      "content": "El precio lo marca el mercado. ¿Has visto webs básicas de 1.500€ a 3.000€ por ingenieros locales? ¿Has visto webs baratas de 300€ por ingenieros que están tan lejos que nunca vas a conocer?\n Mi 'Valor Real de Mercado' en Canarias por un proyecto profesional simulado de 3.000€, queda con el 'Precio Estratégico Gancho' en un coste de 750€, siempre que contrates el pack de socio digital por un año (480€ extras).\nAsí de claro."
     },
     {
       "heading": "Empecemos a construir tu futuro digital",
@@ -136,11 +136,11 @@
   ],
   "precioSection": {
     "badge": "Precio Estratégico Gancho",
-    "contexto": "El precio lo marca el mercado. ¿Has visto webs básicas de 1.500€ a 3.000€ por ingenieros locales? ¿Has visto webs baratas de 300€ por ingenieros que están tan lejos que nunca vas a conocer? Mi 'Valor Real de Mercado' en Canarias por un proyecto profesional <b>simulado</b> (con estrategia SEO avanzada) es de <span class=\"text-neutral-100 font-semibold line-through decoration-neutral-600\">5.445€</span>.",
+    "contexto": "El precio lo marca el mercado. ¿Has visto webs básicas de 1.500€ a 3.000€ por ingenieros locales? ¿Has visto webs baratas de 300€ por ingenieros que están tan lejos que nunca vas a conocer? Mi 'Valor Real de Mercado' en Canarias por un proyecto profesional <b>simulado</b> (con estrategia SEO avanzada) es de <span class=\"text-primary-400 font-semibold line-through decoration-neutral-600\">6.000€</span>.",
     "gancho": {
-      "precio": "544,50€",
-      "subtitulo": "Coste del Proyecto (Contratando 1 año de soporte por 300€ extras)",
-      "ahorro": "90% de ahorro sobre el Valor Real"
+      "precio": "1.500€",
+      "subtitulo": "Coste del Proyecto (Contratando 1 año de soporte por 480€ extras)",
+      "ahorro": "75% de ahorro sobre el Valor Real"
     },
     "cierre": "Así de claro. Sin rodeos."
   },
@@ -152,9 +152,9 @@
     "subtext": "Tu éxito es mi éxito. Empecemos hoy."
   },
   "justification_notes": {
-    "title": "Keyword principal  + Audiencia (Pymes) + Diferenciador clave (WPO 99).",
-    "meta_description": "Keyword principal  + PUV (Gancho del 90% dto.)  + Diferenciador (WPO 99)  + Tono (🚀) + Brand (Socio Digital).",
+    "title": "Keyword principal  + Audiencia (Pymes) + Diferenciador clave (WPO 90+).",
+    "meta_description": "Keyword principal  + PUV (Gancho del 90% dto.)  + Diferenciador (WPO 90+)  + Tono (🚀) + Brand (Socio Digital).",
     "h1": "Keyword principal  + Foco en el diferenciador clave de la marca: 'conseguir los objetivos' , que ataca el dolor de la Audiencia 2 ('Frustrado').",
-    "body_sections": "Se sigue la estructura del brief: se ataca el dolor de ambas audiencias , se presenta el 'Gancho' , se explota la ventaja WPO 99 vs competidores  y se refuerza la promesa de 'Socio Digital'  que no abandona. Se usan keywords secundarias ('desarrollo web tenerife', 'rediseño web tenerife')  y se responde a 'cuánto cuesta'  con total transparencia , usando los precios del Runbook. El tono es accesible pero profesional."
+    "body_sections": "Se sigue la estructura del brief: se ataca el dolor de ambas audiencias , se presenta el 'Gancho' , se explota la ventaja WPO 90+ vs competidores  y se refuerza la promesa de 'Socio Digital'  que no abandona. Se usan keywords secundarias ('desarrollo web tenerife', 'rediseño web tenerife')  y se responde a 'cuánto cuesta'  con total transparencia , usando los precios del Runbook. El tono es accesible pero profesional."
   }
 }

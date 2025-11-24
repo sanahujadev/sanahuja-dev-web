@@ -2,43 +2,43 @@
   "lang": "en",
   "alternateUrl": "/es/packs/todo-en-uno",
   "metadata": {
-    "title": "All-in-One Pack | External Digital Department",
-    "description": "The ultimate solution. Maintenance + Analytics + Reputation + Content. Delegate 100% of your digital management to your Tech Partner."
+    "title": "All-in-One Pack | Tech + Data + Legal | SanahujaDev",
+    "description": "Absolute control of your digital asset. We unify Web Maintenance (WPO), Analytics (GA4), and Legal Compliance (Cookies) in a single fee."
   },
   "copy": {
     "hero": {
-      "badge": "Total Delegation",
+      "badge": "Total Technical Control",
       "h1_part1": "All-in-One Pack:",
-      "h1_part2": "Your Complete Digital Partner.",
-      "h1_lead": "Stop being a 'one-man band'. I am your Digital Partner. You focus on your business, I handle EVERYTHING digital (Data, Image, and Tech) for the price of a company dinner.",
+      "h1_part2": "Engineering + Data.",
+      "h1_lead": "The essentials for a serious digital business. We unify <strong>technical stability</strong> (Maintenance), <strong>business intelligence</strong> (GA4 Reports), and <strong>legal peace of mind</strong> (Cookies). No frills, just performance.",
       "ctas": {
         "primary": {
-          "text": "I Want It All",
+          "text": "Secure my Infrastructure",
           "url": "/en/contact"
         },
         "secondary": {
-          "text": "See what's included",
+          "text": "See breakdown",
           "url": "#features"
         }
       },
       "heroVisual": {
-        "title": "Peace of Mind",
-        "subtitle": "Absolute Control",
+       "title": "Solid Foundations",
+        "subtitle": "Your Digital Base",
         "stats": [
           {
-            "label": "Coverage",
-            "value": "360º",
-            "description": "Technique, Data, and Image unified under one strategic roof."
+            "label": "Tech",
+            "value": "100%",
+            "description": "WPO Maintenance and armored Security."
           },
           {
-            "label": "Partner",
-            "value": "1 on 1",
-            "description": "No anonymous tickets. Direct communication with someone who knows your business."
+            "label": "Data",
+            "value": "GA4",
+            "description": "Monthly traffic and conversion reports."
           },
           {
-            "label": "Savings",
-            "value": "Max",
-            "description": "Eliminate the friction and extra cost of managing 3 different providers."
+            "label": "Legal",
+            "value": "GDPR",
+            "description": "Cookie consent management included."
           }
         ]
       }
@@ -46,90 +46,90 @@
     "sections": {
       "painPoints": {
         "badge": "The Problem",
-        "title": "You don't have time for everything",
-        "content": "Trying to run the business, check Analytics, reply to reviews, and update plugins is impossible. In the end, something fails, and you lose money.",
+        "title": "Navigating blindly is dangerous",
+        "content": "Having a website without maintenance is a risk. Having it without analytics is flying blind. And having it without cookie management is illegal. Managing this separately is expensive and chaotic.",
         "list": [
-          "Constant tech stress",
-          "Missed opportunities due to lack of time",
-          "Services hired separately (more expensive)"
+          "Websites that break or are slow",
+          "Total lack of knowledge about visits",
+          "Risk of fines for GDPR/Cookies"
         ]
       },
       "solution": {
         "badge": "The Solution",
-        "title": "Your External Digital Department",
-        "content": "We unify the 3 pillars: Technique, Data, and Image. It is the smartest option financially and the one that brings the most peace of mind.",
+        "title": "Your Unified Technical Ecosystem",
+        "content": "This pack solves the three technical headaches at once. I make sure it works, that it's legal, and I tell you how many people come in and buy.",
         "features": [
           {
-            "title": "Everything in the Data Pack",
-            "description": "GA4 Visibility Report + WPO Maintenance.",
+            "title": "Premium Maintenance",
+            "description": "24/7 Monitoring, WPO 90+ and Backups.",
+            "icon": "Shield"
+          },
+          {
+            "title": "Data Intelligence",
+            "description": "Monthly Visibility Report (GA4) explained in plain English.",
             "icon": "BarChart"
           },
           {
-            "title": "Everything in the Image Pack",
-            "description": "GBP Reputation Management + Maintenance.",
-            "icon": "Star"
+            "title": "Legal Compliance",
+            "description": "Management and implementation of the Cookie Banner (Consent Mode).",
+            "icon": "Cookie"
           },
           {
-            "title": "Authority Plan",
-            "description": "SEO content strategy to grow on both fronts.",
-            "icon": "Feather"
-          },
-          {
-            "title": "Priority Support",
-            "description": "Direct access to your Digital Partner for strategic consultations.",
+            "title": "Technology Partner",
+            "description": "Priority technical support for any incident.",
             "icon": "Phone"
           }
         ]
       },
       "workflow": {
-        "badge": "Total Transparency",
-        "title": "Your Digital Machinery, Step by Step",
+        "badge": "Frictionless",
+        "title": "Your peace of mind, systematized",
         "onboarding": {
-          "title": "Phase 1: Liftoff",
+          "title": "Phase 1: Setup",
           "steps": [
-            "<strong>Strategy Meeting:</strong> We define your goals and scope (90 min). No jargon.",
-            "<strong>Activation:</strong> We formalize the agreement and I configure your access (GA4, GBP, Hosting).",
-            "<strong>Execution:</strong> Technical tune-up and launch. Your digital ecosystem starts working."
+            "<strong>Initial Audit:</strong> I review the status of security, speed, and Google tags.",
+            "<strong>Legalization:</strong> I configure your Cookie Banner to comply with the law without losing data.",
+            "<strong>Connection:</strong> I link your website to my monitoring systems."
           ]
         },
         "monthlyCycle": {
-          "title": "Phase 2: The Monthly Success Cycle",
+          "title": "Phase 2: The Monthly Cycle",
           "steps": [
-            "<strong>Week 1 - Monitoring:</strong> I track data and ensure everything is technically 100%.",
-            "<strong>Week 2 - Brand Defense:</strong> Active management of reviews and reputation on Google.",
-            "<strong>Week 3 - Offense (Content):</strong> Strategic writing and publishing on the blog to attract traffic.",
-            "<strong>Week 4 - Accountability:</strong> You receive your Visibility Report. We analyze and adjust course."
+            "<strong>Continuous Surveillance:</strong> Your website is monitored 24/7. If it goes down, I'll fix it.",
+            "<strong>Optimization:</strong> Technical adjustments to maintain high speed (WPO).",
+            "<strong>Data Collection:</strong> Traffic and conversion analysis.",
+            "<strong>Report:</strong> At the end of the month you will receive your status and visitor report."
           ]
         }
       },
       "pricing": {
-        "badge": "Smart Investment",
-        "title": "A Whole Department, One Fee",
-        "content": "Hiring this separately (SEO, Tech, Community Manager) would cost you triple. Here you have it unified for the price of a software subscription.",
-        "price": "130€/mo",
-        "slogan": "Monthly billing. No surprises.",
+        "badge": "Logical Price",
+        "title": "Tech and Data, simplified",
+        "content": "Hiring a technician and an analyst separately would cost you much more. Here you have the fundamental basis of your digital business in a single invoice.",
+        "price": "€75/month",
+        "slogan": "You save €15/month compared to hiring separately.",
         "features": [
-          "No hidden costs",
-          "No lock-in (you are free)",
-          "360º coverage included",
-          "ROI in time and money"
+          "Premium Maintenance included",
+          "GA4 Analytics included",
+          "Cookie Management included",
+          "No mandatory lock-in"
         ],
-        "cta": "Delegate my Digital Management",
+        "cta": "Activate All-in-One Pack",
         "ctaUrl": "/en/contact"
       },
       "downsell": {
-        "title": "Prefer to take it step by step?",
-        "content": "If the 'All-in-One' pack seems like too much to start with, don't worry. Secure the essentials first: the technique.",
+        "title": "Prefer to go step by step?",
+        "content": "If the 'All-in-One' pack seems like too much to start with, don't worry. First, secure the essentials: the technical side.",
         "offer": {
           "name": "Essential Web Maintenance",
-          "description": "We ensure your website doesn't break, stays secure, and loads fast for just 25€/mo. The solid foundation to grow later.",
+          "description": "We make sure your website doesn't break, is secure, and loads quickly for just €40/month. The solid foundation to grow later.",
           "url": "/en/services/web-maintenance"
         },
         "cta": "View Basic Option"
       },
       "ctaFinal": {
         "title": "The CEO's Decision",
-        "content": "For just 20€ more than the other packs, you have total coverage. It is the most profitable investment for your peace of mind.",
+        "content": "For just €35 more than basic maintenance, you get access to data intelligence. It is the investment that drives your business.",
         "cta": "Be my tech partner",
         "subtext": "The option recommended by SanahujaDev."
       }
