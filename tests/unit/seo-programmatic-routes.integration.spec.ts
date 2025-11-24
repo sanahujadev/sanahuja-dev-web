@@ -9,8 +9,8 @@ import localidades from '../../src/i18n/auto/localidades.json' with { type: 'jso
 interface StaticPathItem {
     params: {
         localidad: string;
-        autoLang: string;
-        designText: string;
+        autolang: string;
+        designtext: string;
     };
     props: {
         localidad: any;
@@ -42,21 +42,21 @@ describe('Integración: Generación de Rutas Programáticas', () => {
         // Buscamos la ruta específica que debe existir
         const adejeES = paths.find((p: StaticPathItem) => 
             p.params.localidad === 'adeje' && 
-            p.params.autoLang === 'es'
+            p.params.autolang === 'es'
         );
 
         // El test fallará si no encuentra la ruta (adejeES es undefined)
         expect(adejeES).toBeDefined();
 
-        // El test fallará si el slug (designText) o el parámetro de idioma es incorrecto.
-        expect(adejeES.params.designText).toBe('diseno-web-en');
-        expect(adejeES.params.autoLang).toBe('es');
+        // El test fallará si el slug (designtext) o el parámetro de idioma es incorrecto.
+        expect(adejeES.params.designtext).toBe('diseno-web-en');
+        expect(adejeES.params.autolang).toBe('es');
     });
 
     // Este test fallará si los props no contienen la información de localidad y plantilla.
     it('La ruta debe pasar los props necesarios para la construcción de la página', async () => {
         const paths = await getProgrammaticStaticPaths(); // Call without arguments
-        const adejeES = paths.find((p: StaticPathItem) => p.params.localidad === 'adeje' && p.params.autoLang === 'es'); // Explicitly type p
+        const adejeES = paths.find((p: StaticPathItem) => p.params.localidad === 'adeje' && p.params.autolang === 'es'); // Explicitly type p
 
         // El test fallará si no incluye los datos de la localidad y la plantilla JSON
         expect(adejeES.props.localidad).toBeDefined();

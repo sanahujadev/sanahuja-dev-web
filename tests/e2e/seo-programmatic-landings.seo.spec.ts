@@ -70,7 +70,7 @@ test.describe('P5: SEO Programático (Ejército de Clones)', () => {
         const hreflangLink = page.locator(`link[rel="alternate"][hreflang="en"]`).first();
         const href = await hreflangLink.getAttribute('href');
 
-        // Verificar que el href es el slug esperado (designText en inglés + localidad)
+        // Verificar que el href es el slug esperado (designtext en inglés + localidad)
         expect(href).toContain(EXPECTED_ALTERNATE_URL);
         expect(href).toBeDefined();
     });
