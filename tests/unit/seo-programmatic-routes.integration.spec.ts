@@ -14,7 +14,7 @@ interface StaticPathItem {
     };
     props: {
         localidad: any;
-        plantilla: any;
+        alternatePath: any;
         lang: string;
     };
 }
@@ -23,6 +23,9 @@ const LOCALIDADES_COUNT = localidades.length;
 const EXPECTED_ROUTES_COUNT = LOCALIDADES_COUNT * 2; // Español y Inglés
 console.log('LOCALIDADES_COUNT', LOCALIDADES_COUNT);
 console.log('EXPECTED_ROUTES_COUNT', EXPECTED_ROUTES_COUNT);
+localidades.forEach((localidad) => {
+    console.log(localidad.slug);
+});
 describe('Integración: Generación de Rutas Programáticas', () => {
     
     // Este test fallará si el número de rutas generadas no es 44.
@@ -58,7 +61,7 @@ describe('Integración: Generación de Rutas Programáticas', () => {
         // El test fallará si no incluye los datos de la localidad y la plantilla JSON
         expect(adejeES.props.localidad).toBeDefined();
         expect(adejeES.props.localidad.name).toBe('Adeje');
-        expect(adejeES.props.plantilla).toBeDefined();
+        expect(adejeES.props.alternatePath).toBeDefined();
         expect(adejeES.props.lang).toBe('es');
     });
 });

@@ -41,6 +41,5 @@ export const buildCiudad = (localidad: LocalidadDB, lang: "es" | "en") => {
     ...rest,
     seoData: lang === "es" ? seoData : seoDataEn,
   };
-
   return ciudad;
 };

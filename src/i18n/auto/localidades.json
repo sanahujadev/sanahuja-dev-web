@@ -53,14 +53,14 @@
     "seoData": {
       "zone": "Este/Medianías",
       "h1_modifier": "para Digitalizar tu Producción Local",
-      "usp_focus": "Lleva tus productos de la tierra al mundo digital. Creamos e-commerce sencillos y rentables para que vendas sin intermediarios.",
+      "usp_focus": "Lleva tus productos de la tierra al mundo digital. Creamos estrategias sencillas y rentables para que vendas sin intermediarios.",
       "h2_solution": "Tu Escaparate Digital Económico y Rentable",
       "cta_text": "Digitalizar mi Negocio en Arafo"
     },
     "seoDataEn": {
       "zone": "Farming Village",
       "h1_modifier": "to Digitalize Your Local Production",
-      "usp_focus": "Take your products from the land to the digital world. We create simple, profitable e-commerce sites so you can sell without intermediaries.",
+      "usp_focus": "Take your products from the land to the digital world. We create simple, profitable strategies so you can sell without intermediaries.",
       "h2_solution": "Your Cost-Effective Digital Showcase",
       "cta_text": "Digitalize my Business in Arafo"
     }
@@ -68,7 +68,7 @@
   {
     "slug": "arico",
     "name": "Arico",
-    "zip": "38260",
+    "zip": "38580",
     "municipality": "Arico",
     "painPointId": "P3",
     "type": "Municipio Disperso",
@@ -472,15 +472,15 @@
       "zone": "Norte Agrícola",
       "h1_modifier": "para Venta Directa de Producto",
       "usp_focus": "Del campo a la mesa. Ayudamos a agricultores y productores locales a vender sin intermediarios con webs fáciles de gestionar.",
-      "h2_solution": "E-commerce de Kilómetro Cero",
-      "cta_text": "Vender mis Productos"
+      "h2_solution": "Visibilidad en toda la Isla",
+      "cta_text": "Digitalizar mi Negocio"
     },
     "seoDataEn": {
       "zone": "Farming Village",
       "h1_modifier": "for Direct Product Sales",
       "usp_focus": "From farm to table. We help farmers and local producers sell without intermediaries using easy-to-manage websites.",
-      "h2_solution": "Zero-Kilometer E-commerce",
-      "cta_text": "Sell my Products"
+      "h2_solution": "Visibility on the whole Island",
+      "cta_text": "Digitalize my Business"
     }
   },
   {

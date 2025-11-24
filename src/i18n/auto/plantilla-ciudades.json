@@ -45,7 +45,7 @@
               "value": "{{seoData.zone}}"
             },
             {
-              "label": "Código Postal",
+              "label": "C.P.",
               "value": "{{zip}}"
             },
             {
@@ -57,11 +57,11 @@
       },
       "sections": {
         "painPoint": {
-          "badge": "La Realidad Local",
+          "badge": "La Realidad en {{name}}",
           "title": "¿Por qué tu negocio en {{name}} no despega?",
           "content": "{{seoData.usp_focus}}",
-          "quote": "<span>Zona {{seoData.zone}}.</span> En {{name}}, la competencia digital es real. Una web genérica ya no sirve para destacar.",
-          "author": "José Javier Sanahuja"
+          "quote": "Zona: <span class='text-primary-400'>{{seoData.zone}}.</span> En {{name}}, la competencia digital es real. Una web genérica ya no sirve para destacar.",
+          "author": "— José Javier Sanahuja"
         },
         "solution": {
           "badge": "La Estrategia",
@@ -91,7 +91,17 @@
           "cta": "{{seoData.cta_text}}",
           "url": "/es/contacto?location={{slug}}",
           "cta2": "Quiero más información",
-          "url2": "/es/servicios/diseno-web-tenerife"
+          "url2": "/es/servicios/diseno-web-tenerife",
+          "trustBadges": [
+            {
+              "text": "WPO 99 Garantizado",
+              "icon": "Check"
+            },
+            {
+              "text": "Servicio Local en {{name}}",
+              "icon": "MapPin"
+            }
+          ]
         }
       }
     }
@@ -99,18 +109,18 @@
   "en": {
     "metadata": {
       "title": "Web Design in {{name}} | Your Digital Partner in {{municipality}} ({{zip}})",
-      "description": "Web Design Agency in {{name}} ({{zip}}). {{seoDataEn.usp_focus}} WPO and Local SEO Specialists.",
+      "description": "Web Design Agency in {{name}} ({{zip}}). {{seoData.usp_focus}} WPO and Local SEO Specialists.",
       "robots": "index, follow"
     },
     "copy": {
       "hero": {
         "badge": "Local Service in {{name}}",
         "h1_part1": "Web Design in {{name}}",
-        "h1_part2": "{{seoDataEn.h1_modifier}}",
+        "h1_part2": "{{seoData.h1_modifier}}",
         "h1_lead": "Forget distant agencies that don't understand your market. I am José Javier, your tech consultant in <strong>{{municipality}}</strong>. I help businesses in the {{zip}} area sell more.",
         "ctas": {
           "primary": {
-            "text": "{{seoDataEn.cta_text}}",
+            "text": "{{seoData.cta_text}}",
             "url": "/en/contact?location={{slug}}"
           },
           "secondary": {
@@ -127,7 +137,7 @@
               "value": "{{seoData.zone}}"
             },
             {
-              "label": "Postal Code",
+              "label": "Zip",
               "value": "{{zip}}"
             },
             {
@@ -139,15 +149,15 @@
       },
       "sections": {
         "painPoint": {
-          "badge": "The Local Reality",
+          "badge": "The Reality in {{name}}",
           "title": "Why isn't your business in {{name}} taking off?",
-          "content": "{{seoDataEn.usp_focus}}",
+          "content": "{{seoData.usp_focus}}",
           "quote": "In {{name}}, digital competition is real. A generic website is no longer enough to stand out in {{seoData.zone}}.",
-          "author": "José Javier Sanahuja"
+          "author": "— José Javier Sanahuja"
         },
         "solution": {
           "badge": "The Strategy",
-          "title": "{{seoDataEn.h2_solution}}",
+          "title": "{{seoData.h2_solution}}",
           "content": "We don't use cheap templates. We design a custom sales tool tailored for the {{name}} market.",
           "features": [
             {
@@ -170,10 +180,20 @@
         "ctaFinal": {
           "title": "Ready to lead in {{name}}?",
           "content": "Take your {{name}} business to the next level. Stop losing customers to your local competition.",
-          "cta": "{{seoDataEn.cta_text}}",
+          "cta": "{{seoData.cta_text}}",
           "url": "/en/contact?location={{slug}}",
           "cta2": "I Want more information",
-          "url2": "/en/services/web-design-tenerife"
+          "url2": "/en/services/web-design-tenerife",
+          "trustBadges": [
+            {
+              "text": "WPO 99 Guaranteed",
+              "icon": "Check"
+            },
+            {
+              "text": "Local Service in {{name}}",
+              "icon": "MapPin"
+            }
+          ]
         }
       }
     }
