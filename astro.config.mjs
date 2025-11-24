@@ -17,6 +17,7 @@ export default defineConfig({
     locales: ['es', 'en'],
     routing: {
       prefixDefaultLocale: true, // Queremos /es/ y /en/, no / y /en/
+      redirectToDefaultLocale: false,
       strategy: 'pathname',
     },
     fallback: {

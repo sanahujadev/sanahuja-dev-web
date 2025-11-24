@@ -1,16 +1,10 @@
 ---
+import RedirectLayout from '../layouts/RedirectLayout.astro';
 
+const targetUrl = '/es';
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<RedirectLayout lang="es">
+    <meta slot="meta" http-equiv="refresh" content={`0;url=${targetUrl}`} />
+    <link slot="meta" rel="canonical" href={targetUrl} />
+    <a slot="link" href={targetUrl} class="text-primary-500">haz clic aquí</a>
+</RedirectLayout>

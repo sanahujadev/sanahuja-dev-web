@@ -1,0 +1,69 @@
+---
+// src/layouts/RedirectLayout.astro
+import { AstroFont } from 'astro-font';
+import "../styles/global.css";
+import t_header_es from "../i18n/es/componentes/header.json" with {
+  type: "json",
+};
+import t_footer_es from "../i18n/es/componentes/footer.json" with {
+  type: "json",
+};
+import t_redirect_es from "../i18n/es/componentes/redirect.json" with {
+  type: "json",
+};
+import t_redirect_en from "../i18n/en/componentes/redirect.json" with {
+  type: "json",
+};
+import AppHeader from '../components/AppHeader.astro';
+import AppFooter from '../components/AppFooter.astro';
+
+type Props = {
+  lang?: "es" | "en";
+};
+
+const { lang = "es" } = Astro.props;
+
+const t = lang === "es" ? t_redirect_es : t_redirect_en;
+---
+
+<!DOCTYPE html>
+<html lang={lang} class="dark scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <title>{t.title}</title>
+
+        <AstroFont
+            config={[{
+                name: "Montserrat", 
+                display: "swap",
+                selector: "html",
+                fallback: "sans-serif",
+                preload: true,
+                src: [
+                    { style: 'normal', weight: '400', path: '/fonts/montserrat-latin-400.woff2' },
+                    { style: 'normal', weight: '500', path: '/fonts/montserrat-latin-500.woff2' },
+                    { style: 'normal', weight: '600', path: '/fonts/montserrat-latin-600.woff2' },
+                    { style: 'normal', weight: '700', path: '/fonts/montserrat-latin-700.woff2' },
+                    { style: 'normal', weight: '800', path: '/fonts/montserrat-latin-800.woff2' },
+                ],
+            }]}
+        />
+        <slot name="meta" />
+    </head>
+    <body class="font-sans bg-background text-foreground antialiased">
+        <AppHeader t={t_header_es} lang="es" alternateUrl="" />
+        <main class="flex items-center justify-center min-h-screen">
+            <div class="text-center">
+                <div class="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-primary-500 mx-auto"></div>
+                <h1 class="mt-8 text-4xl font-bold text-foreground">{t.h1}</h1>
+                <p class="mt-4 text-muted-foreground">
+                    {t.p}<slot name="link" />
+                </p>
+            </div>
+        </main>
+        <AppFooter t={t_footer_es} lang="es" />
+    </body>
+</html>
