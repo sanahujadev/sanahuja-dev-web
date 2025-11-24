@@ -1,11 +1,20 @@
 ---
 // src/pages/[autoLang]/[designText]/[localidad].astro
-import localidades from "../../../i18n/auto/localidades.json" with { type: "json" };
-import plantillaJson from "../../../i18n/auto/plantilla-ciudades.json" with { type: "json" };
-import {buildCiudad, construirPlantillaDeCiudad} from "../../../scripts/utils"
-import {getProgrammaticStaticPaths} from "../../../scripts/path-generator"
+import plantillaJson from "../../../i18n/auto/plantilla-ciudades.json" with {
+  type: "json",
+};
+import {
+  buildCiudad,
+  construirPlantillaDeCiudad,
+} from "../../../scripts/utils";
+import { getProgrammaticStaticPaths } from "../../../scripts/path-generator";
+import type { LocalidadDB, PlantillaCiudad } from "../../../i18n/utils";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
 
-const designSlugs: Record<string, string> = { es: "diseno-web-en", en: "web-design-in" };
+const designSlugs: Record<string, string> = {
+  es: "diseno-web-en",
+  en: "web-design-in",
+};
 
 export async function getStaticPaths() {
   return await getProgrammaticStaticPaths();
@@ -14,8 +23,8 @@ export async function getStaticPaths() {
 const { localidad, lang, alternatePath } = Astro.props;
 
 // Seleccionamos el bloque de idioma correcto
-const tpl = plantillaJson[lang];
-const ciudad = buildCiudad(localidad, lang);
+const tpl = plantillaJson[lang as "es" | "en"] as PlantillaCiudad;
+const ciudad: Omit<LocalidadDB, "seoDataEn"> = buildCiudad(localidad, lang);
 
 const copy = construirPlantillaDeCiudad(tpl, ciudad);
 
@@ -24,33 +33,33 @@ const alternateUrl = new URL(alternatePath, Astro.site).href;
 <BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(copy.schema)} slot="json-ld" />
   <Fragment slot="head">
-    <title>{metadata.title}</title>
-    <meta name="description" content={metadata.description} />
-    <meta name="robots" content={metadata.robots} />
+    <title>{copy.metadata.title}</title>
+    <meta name="description" content={copy.metadata.description} />
+    <meta name="robots" content={copy.metadata.robots} />
   </Fragment>
   <main>
     <section>
       <h1>
-        {copy.hero.h1_part1}{" "}
-        {copy.hero.h1_part2}
+        {copy.copy.hero.h1_part1}{" "}
+        {copy.copy.hero.h1_part2}
       </h1>
-      <p innerHTML={copy.hero.h1_lead} />
-      <a href={copy.hero.ctas.primary.url}>
-        {copy.hero.ctas.primary.text}
+      <p set:html={copy.copy.hero.h1_lead} />
+      <a href={copy.copy.hero.ctas.primary.url}>
+        {copy.copy.hero.ctas.primary.text}
       </a>
     </section>
     <section>
-      <h2>{copy.sections.painPoint.title}</h2>
-      <p>{copy.sections.painPoint.content}</p>
+      <h2>{copy.copy.sections.painPoint.title}</h2>
+      <p>{copy.copy.sections.painPoint.content}</p>
       <blockquote>
-        {copy.sections.painPoint.quote}
+        {copy.copy.sections.painPoint.quote}
       </blockquote>
     </section>
     <section>
-        <h2>{copy.sections.solution.title}</h2>
-        <p>{copy.sections.solution.content}</p>
+        <h2>{copy.copy.sections.solution.title}</h2>
+        <p>{copy.copy.sections.solution.content}</p>
         <ul>
-          {copy.sections.solution.features.map((f) => (
+          {copy.copy.sections.solution.features.map((f) => (
             <li>
               <strong>{f.title}</strong><br />
               {f.description}
@@ -60,10 +69,13 @@ const alternateUrl = new URL(alternatePath, Astro.site).href;
       </section>
 
       <section>
-        <h2>{copy.sections.ctaFinal.title}</h2>
-        <p>{copy.sections.ctaFinal.content}</p>
-        <a href={copy.sections.ctaFinal.url}>
-          {seoData.cta_text}
+        <h2>{copy.copy.sections.ctaFinal.title}</h2>
+        <p>{copy.copy.sections.ctaFinal.content}</p>
+        <a href={copy.copy.sections.ctaFinal.url}>
+          {copy.copy.sections.ctaFinal.cta}
+        </a>
+        <a href={copy.copy.sections.ctaFinal.url2}>
+          {copy.copy.sections.ctaFinal.cta2}
         </a>
       </section>
   </main>

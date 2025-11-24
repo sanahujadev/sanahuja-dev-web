@@ -38,7 +38,7 @@
               "placeholder": "Email de empresa"
             },
             {
-                "name": "message_basic",
+              "name": "message_basic",
               "label": "Mensaje / Consulta",
               "type": "textarea",
               "required": true,

@@ -14,12 +14,7 @@
         "title": "Ecosistema Digital",
         "subtitle": "Cobertura 360º",
         "type": "NetworkGraph",
-        "nodes": [
-          "Diseño",
-          "Mantenimiento",
-          "Reputación",
-          "Soporte"
-        ],
+        "nodes": ["Diseño", "Mantenimiento", "Reputación", "Soporte"],
         "nodeCore": "TU WEB"
       }
     },
