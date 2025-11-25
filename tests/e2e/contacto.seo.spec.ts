@@ -74,8 +74,9 @@ test.describe('E2E/SEO: Contacto (ES)', () => {
     expect(h1Count).toBe(1);
   });
 
+
   test('Formulario debe redirigir a /es/gracias-proyecto tras envío exitoso', async ({ page }) => {
-    await page.goto(URL, { waitUntil: 'networkidle' });
+    await page.goto(URL, { waitUntil: 'domcontentloaded' });
 
     // Espera a que el JS del formulario se haya inicializado para prevenir race conditions.
     await expect(page.locator('#contact-form')).toHaveAttribute('data-form-initialized', 'true', {timeout: 15000});

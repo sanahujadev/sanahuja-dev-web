@@ -18,7 +18,8 @@
         "successUrl": "/es/gracias-proyecto",
         "baseSubmitLabel": "Enviar Mensaje Básico",
         "fullSubmitLabel": "Solicitar Estudio del Proyecto",
-        "seoKeyPhrase": "Rellena el formulario. Sin compromiso"
+        "seoKeyPhrase": "Rellena el formulario. Sin compromiso",
+        "genericErrorMessage": "Campo requerido o con errores"
       },
       "steps": [
         {

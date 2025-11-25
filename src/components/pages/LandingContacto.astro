@@ -65,7 +65,7 @@ const iconMap: Record<string, any> = {
       </section>
 
       {/* Contact Form */}
-      <form id="contact-form" class="space-y-6" method="POST">
+      <form id="contact-form" class="space-y-6" method="POST" data-success-url={t.formUI.config.successUrl}>
         
         {/* ========================================== */}
         {/* STEP 1: IDENTIDAD (Siempre abierto visualmente al inicio) */}
@@ -354,122 +354,52 @@ const iconMap: Record<string, any> = {
 
   {/* SCRIPT DE INTERACTIVIDAD (Acordeón Vanilla JS) */}
   <script>
+    import { ContactForm } from '../../scripts/contacto/ContactForm.ts'; 
+    
+    const config = {
+      lang: "es",
+      successUrl: ""
+    };
+    const MAX_RETRIES = 10;
+    let retries = 0;
+
     function initializeForm() {
-      // Corrección 1: Decirle a TS que esto es un FORMULARIO, no un elemento genérico
-      const form = document.getElementById("contact-form") as HTMLFormElement | null;
-      
-      if (!form || form.dataset.formInitialized === 'true') {
-        return;
-      }
-      form.dataset.formInitialized = 'true';
-
-      // 1. Manejo de Acordeones
-      const triggers = document.querySelectorAll('.accordion-trigger');
-      
-      function toggleStep(stepId: string, forceOpen = false) {
-        const content = document.getElementById(`step-${stepId}-content`);
-        const button = document.querySelector(`button[data-step="${stepId}"]`);
-        const icon = button?.querySelector('.icon-container');
-
-        if (!content || !button) return;
-
-        const isClosed = content.classList.contains('hidden');
-        
-        if (forceOpen || isClosed) {
-          content.classList.remove('hidden');
-          button.setAttribute('aria-expanded', 'true');
-          icon?.classList.add('rotate-180');
-        } else if (!forceOpen) {
-          content.classList.add('hidden');
-          button.setAttribute('aria-expanded', 'false');
-          icon?.classList.remove('rotate-180');
-        }
-      }
-
-      triggers.forEach(trigger => {
-        trigger.addEventListener('click', (e) => {
-          // Corrección 2: Castear currentTarget a HTMLElement para acceder a dataset
-          const target = e.currentTarget as HTMLElement;
-          const step = target.dataset.step;
-          if (step) toggleStep(step);
-        });
-      });
-
-      // 2. Botones "Siguiente Paso"
-      const nextButtons = document.querySelectorAll('.next-step-trigger');
-      nextButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          // Corrección 2b: Castear de nuevo para acceder a dataset
-          const target = e.currentTarget as HTMLElement;
-          const targetStep = target.dataset.targetStep;
-          if (targetStep) {
-            toggleStep(targetStep, true);
-            const targetContainer = document.getElementById(`step-${targetStep}-container`);
-            targetContainer?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }
-        });
-      });
-
-      // 3. Manejo del Submit con VALIDACIÓN
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        
-        const errorMessages = form.querySelectorAll('.error-message');
-        errorMessages.forEach(msg => msg.classList.add('hidden'));
-        
-        const invalidInputs = form.querySelectorAll('[data-invalid]');
-        invalidInputs.forEach(input => input.removeAttribute('data-invalid'));
-
-        let isValid = true;
-        // Corrección 3: Definir el tipo explícito para la variable que guardará el input inválido
-        let firstInvalidInput: HTMLInputElement | HTMLTextAreaElement | null = null;
-
-        const requiredFields = ['name', 'email', 'message_basic'];
-        
-        requiredFields.forEach(fieldName => {
-            // Corrección 4: Castear el resultado de querySelector a Input o TextArea para acceder a .value
-            const input = form.querySelector(`[name="${fieldName}"]`) as HTMLInputElement | HTMLTextAreaElement | null;
+            const contactFormElement = document.getElementById('contact-form') as HTMLFormElement;
             
-            if (input && !input.value.trim()) {
-                isValid = false;
-                input.setAttribute('data-invalid', 'true');
-                
-                const errorMsg = document.getElementById(`${fieldName}-error`);
-                if (errorMsg) errorMsg.classList.remove('hidden');
-
-                if (!firstInvalidInput) firstInvalidInput = input;
+            if (!contactFormElement || (contactFormElement as any).formInstance) {
+                return;
             }
-        });
 
-        if (!isValid) {
-            const globalError = document.getElementById('global-form-error');
-            if (globalError) globalError.classList.remove('hidden');
+            // Aquí irían tus comprobaciones de librerías externas si las tuvieras:
+            // if (typeof window.Turnstile === 'undefined') { ... }
 
-            toggleStep('1', true);
-            
-            // Corrección 5: Como ya tipamos firstInvalidInput, ahora .focus() es válido
-            if (firstInvalidInput) {
-                (firstInvalidInput as HTMLElement).focus();
+            try {
+                // Inyectamos la configuración del JSON al constructor
+                const formInstance = new ContactForm(contactFormElement);
+                contactFormElement.formInstance = formInstance;
+                retries = 0;
+            } catch (error) {
+                console.error("Error initializing ContactForm:", error);
             }
-            return; 
         }
 
-        // Corrección 6: form ya está casteado como HTMLFormElement arriba, así que FormData no se queja
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
+        // Polling loop para manejar la race condition de Astro
+        function startPolling() {
+            if (document.readyState !== 'loading') {
+                initializeForm();
+            } else {
+                retries++;
+                if (retries < MAX_RETRIES) {
+                    setTimeout(startPolling, 300);
+                } else {
+                    console.error("Failed to initialize form after maximum retries.");
+                }
+            }
+        }
         
-        console.log("Simulando envío de formulario a una API...");
+        // Start initialization immediately
+        startPolling(); 
 
-        setTimeout(() => {
-          console.log("--- Respuesta de API Simulada ---");
-          console.log("Datos del formulario:", data);
-          console.log("---------------------------------");
-          window.location.href = "/es/gracias-proyecto"; // Descomentado para la acción final
-        }, 600);
-      });
-
-    }
-
-    document.addEventListener('astro:page-load', initializeForm);
+        document.addEventListener('astro:page-load', startPolling);
   </script>
 </BaseLayout>
