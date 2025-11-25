@@ -12,6 +12,8 @@ import Shield from "../../components/ui/icons/Shield.astro";
 import HelpCircle from "../../components/ui/icons/HelpCircle.astro"; // Si no existe, usar InformationCircle
 import InformationCircle from "../../components/ui/icons/InformationCircle.astro";
 
+import FormErrorIcon from "../../components/ui/FormErrorIcon.astro";
+
 import type { ContactoCopy } from "../../i18n/utils";
 
 interface Props {
@@ -44,18 +46,32 @@ const iconMap: Record<string, any> = {
 ---
 
 <BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} slot="json-ld" />
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(schema)}
+    slot="json-ld"
+  />
   <Fragment slot="head">
     <title>{metadata.title}</title>
     <meta name="description" content={metadata.description} />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.2/build/css/intlTelInput.css"
+    />
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.2/build/js/intlTelInput.min.js"
+    ></script>
   </Fragment>
 
   <main class="min-h-screen bg-background">
     <div class="max-w-4xl mx-auto px-6 lg:px-8 py-16">
-      
       {/* Hero Section */}
       <section id="hero" class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">
+        <h1
+          class="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance"
+        >
           {t.hero.h1}
         </h1>
         <p class="text-xl text-primary-400 mb-4">{t.hero.subtitle}</p>
@@ -65,12 +81,21 @@ const iconMap: Record<string, any> = {
       </section>
 
       {/* Contact Form */}
-      <form id="contact-form" class="space-y-6" method="POST" data-success-url={t.formUI.config.successUrl}>
-        
+      <form
+        id="contact-form"
+        class="space-y-6"
+        method="POST"
+        data-success-url={t.formUI.config.successUrl}
+        novalidate
+      >
         {/* ========================================== */}
         {/* STEP 1: IDENTIDAD (Siempre abierto visualmente al inicio) */}
         {/* ========================================== */}
-        <div id="step_1_identity" class="bg-neutral-900 border border-border rounded-xl overflow-hidden transition-all duration-300" id="step-1-container">
+        <div
+          id="step_1_identity"
+          class="bg-neutral-900 border border-border rounded-xl overflow-hidden transition-all duration-300"
+          id="step-1-container"
+        >
           <button
             type="button"
             class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-neutral-800/50 transition-colors accordion-trigger"
@@ -79,60 +104,152 @@ const iconMap: Record<string, any> = {
             aria-controls="step-1-content"
           >
             <div class="flex items-center gap-3">
-              <div class="w-8 h-8 rounded-full bg-primary-500/10 border border-primary-500/30 flex items-center justify-center text-primary-400 font-bold text-sm">
+              <div
+                class="w-8 h-8 rounded-full bg-primary-500/10 border border-primary-500/30 flex items-center justify-center text-primary-400 font-bold text-sm"
+              >
                 01
               </div>
-              <h3 class="text-lg font-semibold text-foreground">{t.formUI.steps[0].title}</h3>
+              <h3 class="text-lg font-semibold text-foreground">
+                {t.formUI.steps[0].title}
+              </h3>
             </div>
-            <div class="icon-container transition-transform duration-300 rotate-180">
-               <ChevronDown class="w-5 h-5 text-muted-foreground" />
+            <div
+              class="icon-container transition-transform duration-300 rotate-180"
+            >
+              <ChevronDown class="w-5 h-5 text-muted-foreground" />
             </div>
           </button>
 
-          <div id="step-1-content" class="px-6 pb-6 space-y-4 border-t border-border">
+          <div
+            id="step-1-content"
+            class="px-6 pb-6 space-y-4 border-t border-border"
+          >
             {/* Nombre */}
             <div>
-              <label for="name" class="block text-sm font-medium text-neutral-300 mb-2">
-                {t.formUI.steps[0].fields[0].label} <span class="text-primary-400">*</span>
+              <label
+                for="name"
+                class="block text-sm font-medium text-neutral-300 mb-2"
+              >
+                {t.formUI.steps[0].fields[0].label}
+                <span class="text-primary-400">*</span>
               </label>
-              <input
-                name="name"
-                type="text"
-                required
-                class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
-                placeholder={(t.formUI.steps[0].fields[0] as any).placeholder}
-              />
+              <div class="relative">
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  maxlength="254"
+                  class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all aria-[invalid=true]:border-red-500 aria-[invalid=true]:ring-red-500/20"
+                  placeholder={(t.formUI.steps[0].fields[0] as any).placeholder}
+                />
+                <FormErrorIcon
+                  id="name-error-icon"
+                  class="absolute inset-y-0 right-0 flex items-center pr-3"
+                />
+              </div>
+              <span
+                id="name-error"
+                role="alert"
+                class="hidden text-red-400 text-xs mt-1 flex items-center gap-1"
+              >
+                {t.formUI.config.genericErrorMessage}
+              </span>
             </div>
 
             {/* Email */}
             <div>
-              <label for="email" class="block text-sm font-medium text-neutral-300 mb-2">
-                {t.formUI.steps[0].fields[1].label} <span class="text-primary-400">*</span>
+              <label
+                for="email"
+                class="block text-sm font-medium text-neutral-300 mb-2"
+              >
+                {t.formUI.steps[0].fields[1].label}
+                <span class="text-primary-400">*</span>
               </label>
-              <input
-                name="email"
-                type="email"
-                required
-                class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
-                placeholder={(t.formUI.steps[0].fields[1] as any).placeholder}
-              />
+              <div class="relative">
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  maxlength="254"
+                  class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all aria-[invalid=true]:border-red-500 aria-[invalid=true]:ring-red-500/20"
+                  placeholder={(t.formUI.steps[0].fields[1] as any).placeholder}
+                />
+                <FormErrorIcon
+                  id="email-error-icon"
+                  class="absolute inset-y-0 right-0 flex items-center pr-3"
+                />
+              </div>
+              <span
+                id="email-error"
+                role="alert"
+                class="hidden text-red-400 text-xs mt-1 flex items-center gap-1"
+              >
+                {t.formUI.config.genericErrorMessage}
+              </span>
+            </div>
+
+            {/* Teléfono */}
+            <div>
+              <label
+                for="phone"
+                class="block text-sm font-medium text-neutral-300 mb-2"
+              >
+                {t.formUI.steps[0].fields[3]?.label || "Teléfono"}
+              </label>
+              <div class="relative">
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all aria-[invalid=true]:border-red-500 aria-[invalid=true]:ring-red-500/20"
+                />
+                <FormErrorIcon
+                  id="phone-error-icon"
+                  class="absolute inset-y-0 right-0 flex items-center pr-3"
+                />
+              </div>
+              <span
+                id="phone-error"
+                role="alert"
+                class="hidden text-red-400 text-xs mt-1 flex items-center gap-1"
+              >
+                {t.formUI.config.genericErrorMessage}
+              </span>
             </div>
 
             {/* Mensaje */}
             <div>
-              <label for="message_basic" class="block text-sm font-medium text-neutral-300 mb-2">
-                {t.formUI.steps[0].fields[2].label} <span class="text-primary-400">*</span>
+              <label
+                for="message_basic"
+                class="block text-sm font-medium text-neutral-300 mb-2"
+              >
+                {t.formUI.steps[0].fields[2].label}
+                <span class="text-primary-400">*</span>
               </label>
-              <textarea
-                name="message_basic"
-                required
-                rows="4"
-                aria-describedby="message_basic-error"
-                class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none transition-all"
-                placeholder={(t.formUI.steps[0].fields[2] as any).placeholder}
-              ></textarea>
-              <span id="message_basic-error" role="alert" class="error-message text-red-400 text-xs mt-1 hidden">
-                Cuéntame brevemente qué necesitas.
+              <div class="relative">
+                <textarea
+                  id="message_basic"
+                  name="message_basic"
+                  required
+                  rows="4"
+                  maxlength="3000"
+                  aria-describedby="message_basic-error"
+                  class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none transition-all aria-[invalid=true]:border-red-500 aria-[invalid=true]:ring-red-500/20"
+                  placeholder={(t.formUI.steps[0].fields[2] as any).placeholder}
+                ></textarea>
+                <FormErrorIcon
+                  id="message_basic-error-icon"
+                  class="absolute top-3 right-3"
+                />
+              </div>
+              <span
+                id="message_basic-error"
+                role="alert"
+                class="error-message text-red-400 text-xs mt-1 hidden flex items-center gap-1"
+              >
+                {t.formUI.config.genericErrorMessage}
               </span>
             </div>
 
@@ -146,7 +263,12 @@ const iconMap: Record<string, any> = {
                 class="text-sm font-medium text-primary-400 hover:text-primary-300 flex items-center gap-2 next-step-trigger"
                 data-target-step="2"
               >
-                <span>{t.formUI.steps[0].accordionButton || "Desplegar detalles del proyecto"}</span>
+                <span
+                  >{
+                    t.formUI.steps[0].accordionButton ||
+                      "Desplegar detalles del proyecto"
+                  }</span
+                >
                 <ChevronRight class="w-4 h-4" />
               </button>
             </div>
@@ -156,7 +278,10 @@ const iconMap: Record<string, any> = {
         {/* ========================================== */}
         {/* STEP 2: ALCANCE (Cerrado por defecto) */}
         {/* ========================================== */}
-        <div id={t.formUI.steps[1].id} class="bg-neutral-900 border border-border rounded-xl overflow-hidden transition-all duration-300">
+        <div
+          id={t.formUI.steps[1].id}
+          class="bg-neutral-900 border border-border rounded-xl overflow-hidden transition-all duration-300"
+        >
           <button
             type="button"
             class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-neutral-800/50 transition-colors accordion-trigger"
@@ -165,54 +290,83 @@ const iconMap: Record<string, any> = {
             aria-controls="step-2-content"
           >
             <div class="flex items-center gap-3">
-              <div class="w-8 h-8 rounded-full bg-secondary-500/10 border border-secondary-500/30 flex items-center justify-center text-secondary-400 font-bold text-sm">
+              <div
+                class="w-8 h-8 rounded-full bg-secondary-500/10 border border-secondary-500/30 flex items-center justify-center text-secondary-400 font-bold text-sm"
+              >
                 02
               </div>
-              <h3 class="text-lg font-semibold text-foreground">{t.formUI.steps[1].title}</h3>
+              <h3 class="text-lg font-semibold text-foreground">
+                {t.formUI.steps[1].title}
+              </h3>
             </div>
             <div class="icon-container transition-transform duration-300">
-               <ChevronDown class="w-5 h-5 text-muted-foreground" />
+              <ChevronDown class="w-5 h-5 text-muted-foreground" />
             </div>
           </button>
 
-          <div id="step-2-content" class="hidden px-6 pb-6 space-y-6 border-t border-border">
+          <div
+            id="step-2-content"
+            class="hidden px-6 pb-6 space-y-6 border-t border-border"
+          >
             {/* Project Type Cards */}
-            <div>
-              <label class="block text-sm font-medium text-neutral-300 mb-3">{t.formUI.steps[1].fields[0].label}</label>
+            <fieldset>
+              <legend class="block text-sm font-medium text-neutral-300 mb-3"
+                >{t.formUI.steps[1].fields[0].label}</legend
+              >
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {projectTypes && projectTypes.map((type) => {
-                  const Icon = iconMap[(type as any).icon] || HelpCircle;
-                  return (
-                    <label class="cursor-pointer relative">
-                      <input type="radio" name="project_type" value={type.value} class="peer sr-only" />
-                      <div class="p-4 rounded-lg border-2 border-neutral-700 bg-neutral-800 text-left transition-all peer-checked:border-primary-500 peer-checked:bg-primary-500/10 hover:border-neutral-600">
-                        <div class="flex items-center gap-3">
-                          <div class="w-10 h-10 rounded-lg bg-neutral-700 text-neutral-400 flex items-center justify-center peer-checked:bg-primary-500/20 peer-checked:text-primary-400 transition-colors">
-                             <Icon class="w-5 h-5" />
+                {
+                  projectTypes &&
+                    projectTypes.map((type) => {
+                      const Icon = iconMap[(type as any).icon] || HelpCircle;
+                      return (
+                        <label class="cursor-pointer relative">
+                          <input
+                            type="radio"
+                            name="project_type"
+                            value={type.value}
+                            class="peer sr-only"
+                          />
+                          <div class="p-4 rounded-lg border-2 border-neutral-700 bg-neutral-800 text-left transition-all peer-checked:border-primary-500 peer-checked:bg-primary-500/10 hover:border-neutral-600 peer-focus-visible:ring-2 peer-focus-visible:ring-primary-500 peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-neutral-900">
+                            <div class="flex items-center gap-3">
+                              <div class="w-10 h-10 rounded-lg bg-neutral-700 text-neutral-400 flex items-center justify-center peer-checked:bg-primary-500/20 peer-checked:text-primary-400 transition-colors">
+                                <Icon class="w-5 h-5" />
+                              </div>
+                              <span class="text-sm font-medium text-neutral-300 peer-checked:text-primary-300">
+                                {type.label}
+                              </span>
+                            </div>
                           </div>
-                          <span class="text-sm font-medium text-neutral-300 peer-checked:text-primary-300">{type.label}</span>
-                        </div>
-                      </div>
-                    </label>
-                  );
-                })}
+                        </label>
+                      );
+                    })
+                }
               </div>
-            </div>
+            </fieldset>
 
             {/* Tech Status Pills */}
-            <div>
-              <label class="block text-sm font-medium text-neutral-300 mb-3">{t.formUI.steps[1].fields[1].label}</label>
+            <fieldset>
+              <legend class="block text-sm font-medium text-neutral-300 mb-3"
+                >{t.formUI.steps[1].fields[1].label}</legend
+              >
               <div class="flex flex-wrap gap-2">
-                {techStatusOptions && techStatusOptions.map((option) => (
-                  <label class="cursor-pointer">
-                    <input type="radio" name="tech_status" value={option.value} class="peer sr-only" />
-                    <span class="inline-block px-4 py-2 rounded-full text-sm font-medium border-2 border-neutral-700 bg-neutral-800 text-neutral-400 transition-all peer-checked:border-accent-500 peer-checked:bg-accent-500/10 peer-checked:text-accent-300 hover:border-neutral-600">
-                      {option.label}
-                    </span>
-                  </label>
-                ))}
+                {
+                  techStatusOptions &&
+                    techStatusOptions.map((option) => (
+                      <label class="cursor-pointer">
+                        <input
+                          type="radio"
+                          name="tech_status"
+                          value={option.value}
+                          class="peer sr-only"
+                        />
+                        <span class="inline-block px-4 py-2 rounded-full text-sm font-medium border-2 border-neutral-700 bg-neutral-800 text-neutral-400 transition-all peer-checked:border-accent-500 peer-checked:bg-accent-500/10 peer-checked:text-accent-300 hover:border-neutral-600 peer-focus-visible:ring-2 peer-focus-visible:ring-accent-500 peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-neutral-900">
+                          {option.label}
+                        </span>
+                      </label>
+                    ))
+                }
               </div>
-            </div>
+            </fieldset>
 
             {/* Trigger Siguiente Paso */}
             <div class="pt-4 border-t border-border">
@@ -224,7 +378,11 @@ const iconMap: Record<string, any> = {
                 class="text-sm font-medium text-secondary-400 hover:text-secondary-300 flex items-center gap-2 next-step-trigger"
                 data-target-step="3"
               >
-                <span>{t.formUI.steps[1].accordionButton || "Definir viabilidad"}</span>
+                <span
+                  >{
+                    t.formUI.steps[1].accordionButton || "Definir viabilidad"
+                  }</span
+                >
                 <ChevronRight class="w-4 h-4" />
               </button>
             </div>
@@ -234,7 +392,10 @@ const iconMap: Record<string, any> = {
         {/* ========================================== */}
         {/* STEP 3: VIABILIDAD (Cerrado por defecto) */}
         {/* ========================================== */}
-        <div id={t.formUI.steps[2].id} class="bg-neutral-900 border border-border rounded-xl overflow-hidden transition-all duration-300">
+        <div
+          id={t.formUI.steps[2].id}
+          class="bg-neutral-900 border border-border rounded-xl overflow-hidden transition-all duration-300"
+        >
           <button
             type="button"
             class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-neutral-800/50 transition-colors accordion-trigger"
@@ -243,23 +404,34 @@ const iconMap: Record<string, any> = {
             aria-controls="step-3-content"
           >
             <div class="flex items-center gap-3">
-              <div class="w-8 h-8 rounded-full bg-accent-500/10 border border-accent-500/30 flex items-center justify-center text-accent-400 font-bold text-sm">
+              <div
+                class="w-8 h-8 rounded-full bg-accent-500/10 border border-accent-500/30 flex items-center justify-center text-accent-400 font-bold text-sm"
+              >
                 03
               </div>
-              <h3 class="text-lg font-semibold text-foreground">{t.formUI.steps[2].title}</h3>
+              <h3 class="text-lg font-semibold text-foreground">
+                {t.formUI.steps[2].title}
+              </h3>
             </div>
             <div class="icon-container transition-transform duration-300">
-               <ChevronDown class="w-5 h-5 text-muted-foreground" />
+              <ChevronDown class="w-5 h-5 text-muted-foreground" />
             </div>
           </button>
 
-          <div id="step-3-content" class="hidden px-6 pb-6 space-y-4 border-t border-border">
+          <div
+            id="step-3-content"
+            class="hidden px-6 pb-6 space-y-4 border-t border-border"
+          >
             {/* Objetivo */}
             <div>
-              <label class="block text-sm font-medium text-neutral-300 mb-2">
+              <label
+                for="goal"
+                class="block text-sm font-medium text-neutral-300 mb-2"
+              >
                 {t.formUI.steps[2].fields[0].label}
               </label>
               <input
+                id="goal"
                 type="text"
                 name="goal"
                 class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all"
@@ -269,20 +441,34 @@ const iconMap: Record<string, any> = {
 
             {/* Timeline Select */}
             <div>
-              <label class="block text-sm font-medium text-neutral-300 mb-2">
+              <label
+                for="timeline"
+                class="block text-sm font-medium text-neutral-300 mb-2"
+              >
                 {t.formUI.steps[2].fields[1].label}
               </label>
               <div class="relative">
                 <select
+                  id="timeline"
                   name="timeline"
                   class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent appearance-none cursor-pointer"
                 >
-                  <option value="">{(t.formUI.steps[2].fields[1] as any).placeholder || "Selecciona..."}</option>
-                  {timelineOptions && timelineOptions.map(opt => (
-                    <option value={opt.value}>{opt.label}</option>
-                  ))}
+                  <option value=""
+                    >{
+                      (t.formUI.steps[2].fields[1] as any).placeholder ||
+                        t.formUI.config.selectPlaceholder
+                    }</option
+                  >
+                  {
+                    timelineOptions &&
+                      timelineOptions.map((opt) => (
+                        <option value={opt.value}>{opt.label}</option>
+                      ))
+                  }
                 </select>
-                <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-neutral-500">
+                <div
+                  class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-neutral-500"
+                >
                   <ChevronDown class="w-4 h-4" />
                 </div>
               </div>
@@ -290,7 +476,10 @@ const iconMap: Record<string, any> = {
 
             {/* Budget Select */}
             <div>
-              <label class="block text-sm font-medium text-neutral-300 mb-2">
+              <label
+                for="budget_range"
+                class="block text-sm font-medium text-neutral-300 mb-2"
+              >
                 {t.formUI.steps[2].fields[2].label}
               </label>
               <p class="text-xs text-muted-foreground mb-2">
@@ -298,15 +487,26 @@ const iconMap: Record<string, any> = {
               </p>
               <div class="relative">
                 <select
+                  id="budget_range"
                   name="budget_range"
                   class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent appearance-none cursor-pointer"
                 >
-                  <option value="">{(t.formUI.steps[2].fields[2] as any).placeholder || "Selecciona..."}</option>
-                  {budgetOptions && budgetOptions.map(opt => (
-                    <option value={opt.value}>{opt.label}</option>
-                  ))}
+                  <option value=""
+                    >{
+                      (t.formUI.steps[2].fields[2] as any).placeholder ||
+                        t.formUI.config.selectPlaceholder
+                    }</option
+                  >
+                  {
+                    budgetOptions &&
+                      budgetOptions.map((opt) => (
+                        <option value={opt.value}>{opt.label}</option>
+                      ))
+                  }
                 </select>
-                <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-neutral-500">
+                <div
+                  class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-neutral-500"
+                >
                   <ChevronDown class="w-4 h-4" />
                 </div>
               </div>
@@ -317,7 +517,9 @@ const iconMap: Record<string, any> = {
         {/* Ansiolítico Section */}
         <div class="bg-neutral-900 border border-border rounded-xl p-6">
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 rounded-lg bg-accent-500/10 flex items-center justify-center flex-shrink-0">
+            <div
+              class="w-10 h-10 rounded-lg bg-accent-500/10 flex items-center justify-center flex-shrink-0"
+            >
               <InformationCircle class="w-5 h-5 text-accent-400" />
             </div>
             <div class="flex-1">
@@ -338,68 +540,108 @@ const iconMap: Record<string, any> = {
 
         {/* Submit Button */}
         <div class="flex flex-col items-center pt-4 space-y-4">
-          <Button 
+          <Button
             type="submit"
             variant="primary"
             class="w-full sm:w-auto shadow-lg shadow-primary-500/20 hover:scale-105 transition-transform"
           >
             {t.formUI.config.fullSubmitLabel}
           </Button>
-          <p class="text-xs text-muted-foreground">{t.formUI.config.seoKeyPhrase}</p>
+          <p class="text-xs text-muted-foreground">
+            {t.formUI.config.seoKeyPhrase}
+          </p>
         </div>
-
       </form>
     </div>
   </main>
 
   {/* SCRIPT DE INTERACTIVIDAD (Acordeón Vanilla JS) */}
   <script>
-    import { ContactForm } from '../../scripts/contacto/ContactForm.ts'; 
-    
+    import { ContactForm } from "../../scripts/contacto/ContactForm.ts";
+
     const config = {
       lang: "es",
-      successUrl: ""
+      successUrl: "",
     };
     const MAX_RETRIES = 10;
     let retries = 0;
 
     function initializeForm() {
-            const contactFormElement = document.getElementById('contact-form') as HTMLFormElement;
-            
-            if (!contactFormElement || (contactFormElement as any).formInstance) {
-                return;
-            }
+      const contactFormElement = document.getElementById(
+        "contact-form",
+      ) as HTMLFormElement;
 
-            // Aquí irían tus comprobaciones de librerías externas si las tuvieras:
-            // if (typeof window.Turnstile === 'undefined') { ... }
+      if (!contactFormElement || (contactFormElement as any).formInstance) {
+        return;
+      }
 
-            try {
-                // Inyectamos la configuración del JSON al constructor
-                const formInstance = new ContactForm(contactFormElement);
-                contactFormElement.formInstance = formInstance;
-                retries = 0;
-            } catch (error) {
-                console.error("Error initializing ContactForm:", error);
-            }
+      // Aquí irían tus comprobaciones de librerías externas si las tuvieras:
+      // if (typeof window.Turnstile === 'undefined') { ... }
+
+      try {
+        // Inyectamos la configuración del JSON al constructor
+        const formInstance = new ContactForm(contactFormElement);
+        contactFormElement.formInstance = formInstance;
+        retries = 0;
+      } catch (error) {
+        console.error("Error initializing ContactForm:", error);
+      }
+    }
+
+    // Polling loop para manejar la race condition de Astro
+    function startPolling() {
+      if (document.readyState !== "loading") {
+        initializeForm();
+      } else {
+        retries++;
+        if (retries < MAX_RETRIES) {
+          setTimeout(startPolling, 300);
+        } else {
+          console.error("Failed to initialize form after maximum retries.");
         }
+      }
+    }
 
-        // Polling loop para manejar la race condition de Astro
-        function startPolling() {
-            if (document.readyState !== 'loading') {
-                initializeForm();
-            } else {
-                retries++;
-                if (retries < MAX_RETRIES) {
-                    setTimeout(startPolling, 300);
-                } else {
-                    console.error("Failed to initialize form after maximum retries.");
-                }
-            }
-        }
-        
-        // Start initialization immediately
-        startPolling(); 
+    // Start initialization immediately
+    startPolling();
 
-        document.addEventListener('astro:page-load', startPolling);
+    document.addEventListener("astro:page-load", startPolling);
   </script>
+
+  <style is:global>
+    /* Overrides for intl-tel-input in dark mode */
+    .iti {
+      width: 100%;
+    }
+
+    .iti__dropdown-content {
+      background-color: #262626 !important; /* neutral-800 */
+      border-color: #404040 !important; /* neutral-700 */
+      color: #fafafa !important; /* neutral-50 */
+    }
+
+    .iti__search-input {
+      background-color: #171717 !important; /* neutral-900 */
+      border-color: #404040 !important; /* neutral-700 */
+      color: #fafafa !important; /* neutral-50 */
+    }
+
+    .iti__country-list {
+      background-color: #262626 !important; /* neutral-800 */
+    }
+
+    .iti__country {
+      color: #fafafa !important; /* neutral-50 */
+    }
+
+    .iti__country.iti__highlight {
+      background-color: #404040 !important; /* neutral-700 */
+    }
+
+    /* Fix search icon color if needed */
+    .iti__search-icon-svg circle,
+    .iti__search-icon-svg line {
+      stroke: #a3a3a3; /* neutral-400 */
+    }
+  </style>
 </BaseLayout>

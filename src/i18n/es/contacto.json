@@ -19,7 +19,8 @@
         "baseSubmitLabel": "Enviar Mensaje Básico",
         "fullSubmitLabel": "Solicitar Estudio del Proyecto",
         "seoKeyPhrase": "Rellena el formulario. Sin compromiso",
-        "genericErrorMessage": "Campo requerido o con errores"
+        "genericErrorMessage": "Campo requerido o con errores",
+        "selectPlaceholder": "Selecciona..."
       },
       "steps": [
         {
@@ -44,6 +45,13 @@
               "type": "textarea",
               "required": true,
               "placeholder": "Consulta lo que tengas en mente"
+            },
+            {
+              "name": "phone",
+              "label": "Teléfono (Opcional)",
+              "type": "tel",
+              "required": false,
+              "placeholder": ""
             }
           ],
           "accordionText": "¿Buscas agendar una reunión de trabajo? Para saber si puedo ayudarte, necesito un poco de contexto previo 👇",

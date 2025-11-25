@@ -11,14 +11,30 @@ export class ContactForm {
     private form: HTMLFormElement;
     private successUrl: string;
     private firstInvalidInput: HTMLInputElement | HTMLTextAreaElement | null = null;
+    private phoneInput: HTMLInputElement | null = null;
+    private iti: any;
 
     constructor(formElement: HTMLFormElement) {
         this.form = formElement;
         this.successUrl = this.form.dataset.successUrl || '/';
+        this.phoneInput = this.form.querySelector('input[name="phone"]');
 
         this.initListeners();
+        this.initPhoneInput();
         // Marca la inicialización para el test SEO
         this.form.setAttribute('data-form-initialized', 'true');
+    }
+
+    private initPhoneInput() {
+        if (!this.phoneInput || !(window as any).intlTelInput) return;
+
+        this.iti = (window as any).intlTelInput(this.phoneInput, {
+            initialCountry: "es",
+            nationalMode: false,
+            validationNumberTypes: null,
+            // @ts-ignore
+            loadUtils: () => import("https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.2/build/js/utils.js"),
+        });
     }
 
     private initListeners() {
@@ -45,7 +61,7 @@ export class ContactForm {
         if (!content || !button) return;
 
         const isClosed = content.classList.contains('hidden');
-        
+
         if (forceOpen || isClosed) {
             content.classList.remove('hidden');
             button.setAttribute('aria-expanded', 'true');
@@ -72,22 +88,31 @@ export class ContactForm {
 
     // Maneja la validación y el envío
     private validateForm(requiredFields: string[]): boolean {
-        // (Tu implementación anterior de validación)
-        // ... (Código que limpia errores y busca campos vacíos)
         let isValid = true;
         this.firstInvalidInput = null;
 
         requiredFields.forEach(fieldName => {
             const input = this.form.querySelector(`[name="${fieldName}"]`) as HTMLInputElement | HTMLTextAreaElement | null;
-            
-            if (input && input.hasAttribute('required') && !input.value.trim()) {
-                isValid = false;
-                input.setAttribute('data-invalid', 'true');
-                // Lógica de mostrar error, etc.
-                const errorMsg = document.getElementById(`${fieldName}-error`);
-                if (errorMsg) errorMsg.classList.remove('hidden');
 
-                if (!this.firstInvalidInput) this.firstInvalidInput = input;
+            if (input) {
+                // Reset individual error state
+                input.removeAttribute('aria-invalid');
+                const errorMsg = document.getElementById(`${fieldName}-error`);
+                const errorIcon = document.getElementById(`${fieldName}-error-icon`);
+
+                if (errorMsg) errorMsg.classList.add('hidden');
+                if (errorIcon) errorIcon.classList.add('hidden');
+
+                if (input.hasAttribute('required') && !input.value.trim()) {
+                    isValid = false;
+                    input.setAttribute('aria-invalid', 'true');
+
+                    // Mostrar error e icono
+                    if (errorMsg) errorMsg.classList.remove('hidden');
+                    if (errorIcon) errorIcon.classList.remove('hidden');
+
+                    if (!this.firstInvalidInput) this.firstInvalidInput = input;
+                }
             }
         });
 
@@ -111,7 +136,7 @@ export class ContactForm {
 
         // Simulación de envío a la API (Próxima tarea para All Might Coder)
         console.log("Simulando envío de formulario a una API...");
-        
+
         // Timeout simula el tiempo de respuesta del servidor (0.6s)
         setTimeout(() => {
             // **Paso clave de la Conversión:** Redirección a la página de éxito
@@ -123,7 +148,7 @@ export class ContactForm {
     private handleAccordionClick(e: Event) {
         const target = e.currentTarget as HTMLElement;
         console.log(target.dataset, "debug");
-        
+
         const step = target.dataset.step;
         if (step) this.toggleStep(step);
     }

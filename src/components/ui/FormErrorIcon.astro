@@ -1,0 +1,22 @@
+---
+interface Props {
+    id: string;
+    class?: string;
+}
+
+const { id, class: className } = Astro.props;
+---
+
+<div id={id} class:list={["pointer-events-none hidden", className]}>
+    <svg
+        class="h-5 w-5 text-red-500"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+    >
+        <path
+            fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a1 1 0 011 1v4a1 1 0 11-2 0V6a1 1 0 011-1zm0 8a1 1 0 100 2 1 1 0 000-2z"
+            clip-rule="evenodd"></path>
+    </svg>
+</div>
