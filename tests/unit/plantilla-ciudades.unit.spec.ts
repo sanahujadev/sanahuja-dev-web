@@ -18,7 +18,6 @@ describe("construirPlantillaDeCiudad", () => {
         const ciudad = buildCiudad(localidad, lang);
         
         const copy = construirPlantillaDeCiudad(tpl, ciudad);
-        console.log(copy);
         const copyString = JSON.stringify(copy);
         expect(copyString).not.toContain("{{");
         // expect(copyString).not.toContain("}}");

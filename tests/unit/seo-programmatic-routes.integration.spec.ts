@@ -21,11 +21,6 @@ interface StaticPathItem {
 
 const LOCALIDADES_COUNT = localidades.length;
 const EXPECTED_ROUTES_COUNT = LOCALIDADES_COUNT * 2; // Español y Inglés
-console.log('LOCALIDADES_COUNT', LOCALIDADES_COUNT);
-console.log('EXPECTED_ROUTES_COUNT', EXPECTED_ROUTES_COUNT);
-localidades.forEach((localidad) => {
-    console.log(localidad.slug);
-});
 describe('Integración: Generación de Rutas Programáticas', () => {
     
     // Este test fallará si el número de rutas generadas no es 44.

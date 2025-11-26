@@ -19,6 +19,13 @@ import type { ContactoCopy } from "../../i18n/utils";
 // Estilos de intl-tel-input (Versión local para corregir rutas de imágenes)
 import "../../styles/intl-tel-input.css";
 
+// Variables de entorno (Astro 5 schema)
+import {
+  PUBLIC_TURNSTILE_SITE_KEY,
+  API_URL,
+  API_KEY
+} from "astro:env/client";
+
 interface Props {
   copy: ContactoCopy;
   alternateUrl: string;
@@ -58,6 +65,7 @@ const iconMap: Record<string, any> = {
   <Fragment slot="head">
     <title>{metadata.title}</title>
     <meta name="description" content={metadata.description} />
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   </Fragment>
 
   <main class="min-h-screen bg-background">
@@ -81,6 +89,9 @@ const iconMap: Record<string, any> = {
         class="space-y-6"
         method="POST"
         data-success-url={t.formUI.config.successUrl}
+        data-turnstile-site-key={PUBLIC_TURNSTILE_SITE_KEY}
+        data-api-url={API_URL}
+        data-api-key={API_KEY}
         novalidate
       >
         {/* ========================================== */}
@@ -577,6 +588,9 @@ const iconMap: Record<string, any> = {
               </span>
             </div>
           </div>
+
+          {/* Turnstile Widget Container */}
+          <div id="turnstile-widget" class="flex justify-center my-4"></div>
 
           <Button
             type="submit"

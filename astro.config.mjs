@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, envField } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 import tailwindcss from '@tailwindcss/vite';
@@ -10,7 +10,20 @@ export default defineConfig({
   
   // URL de producción (¡CRÍTICO para el sitemap y SEO!)
   site: 'https://sanahuja.dev', 
-
+  env: {
+    schema: {
+      PUBLIC_TURNSTILE_SITE_KEY: envField.string({
+        context: "client",
+        access: "public",
+      }),
+      API_URL: envField.string({ context: "client", access: "public" }),
+      API_KEY: envField.string({ context: "client", access: "public" }),
+      PUBLIC_GTM_ID: envField.string({
+        context: "client",
+        access: "public",
+      }),
+    },
+  },
   // Configuración de Internacionalización (nuestra arquitectura)
   i18n: {
     defaultLocale: 'es',

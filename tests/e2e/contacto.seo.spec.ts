@@ -7,7 +7,7 @@ test.describe('E2E/SEO: Contacto (ES)', () => {
   const URL = '/es/contacto';
 
   test('Debe cumplir contrato SEO completo: title, meta, H1, formulario, schema', async ({ page }) => {
-    await page.goto(URL, { waitUntil: 'networkidle' });
+    await page.goto(URL, { waitUntil: 'domcontentloaded' });
 
     // 📍 METADATA HEAD
     await expect(page).toHaveTitle(t.metadata.title);
@@ -69,13 +69,28 @@ test.describe('E2E/SEO: Contacto (ES)', () => {
   });
 
   test('Debe tener solo un H1 (SEO Canonical)', async ({ page }) => {
-    await page.goto(URL, { waitUntil: 'networkidle' });
+    await page.goto(URL, { waitUntil: 'domcontentloaded' });
     const h1Count = await page.locator('main h1').count();
     expect(h1Count).toBe(1);
   });
 
 
   test('Formulario debe redirigir a /es/gracias-proyecto tras envío exitoso', async ({ page }) => {
+    // 🛡️ MOCK TURNSTILE: Inyectamos un script antes de cargar la página
+    // Esto simula que Cloudflare ya cargó y resuelve el captcha automáticamente.
+    await page.addInitScript(() => {
+        (window as any).turnstile = {
+            render: (selector: string, options: any) => {
+                console.log('Mock Turnstile rendered on', selector);
+                // Simulamos éxito inmediato llamando al callback con un token falso
+                if (options.callback) {
+                    setTimeout(() => options.callback('mock-token-for-testing'), 100);
+                }
+                return 'mock-widget-id';
+            }
+        };
+    });
+
     await page.goto(URL, { waitUntil: 'domcontentloaded' });
 
     // Espera a que el JS del formulario se haya inicializado para prevenir race conditions.
@@ -88,6 +103,10 @@ test.describe('E2E/SEO: Contacto (ES)', () => {
 
     // Marca el consentimiento obligatorio (Nuevo requisito)
     await page.check('input[name="consent"]');
+
+    // Esperamos un momento para asegurar que el mock de Turnstile haya disparado el callback
+    // (Aunque el setTimeout de 100ms es rápido, el ciclo de eventos puede variar)
+    await page.waitForTimeout(500);
 
     // Envía
     await page.click('button[type="submit"]');

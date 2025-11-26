@@ -193,7 +193,6 @@ describe('construirPlantillaDeCiudad (Unit)', () => {
         // El test fallará si NO se lanza un error.
         expect(() => {
             const result = construirPlantillaDeCiudad(BROKEN_TEMPLATE_WITH_PLACEHOLDER, MOCK_LOCALIDAD_ADEJE_CORRUPTA);
-            console.log(result, "debugging");
         }).toThrow(
             /Error al construir la ciudad Adeje/
         );

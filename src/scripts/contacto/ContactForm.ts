@@ -26,6 +26,13 @@ export class ContactForm {
     private consentErrorMsg: HTMLElement | null; // Nuevo
     private consentErrorIcon: HTMLElement | null; // Nuevo
 
+    // Configuración Turnstile y API
+    private turnstileSiteKey: string;
+    private turnstileToken: string | null = null;
+    private turnstileWidgetId: string | null = null;
+    private apiUrl: string;
+    private apiKey: string;
+
     // Librerías y Estado
     private iti: any;
     private firstInvalidInput: HTMLInputElement | HTMLTextAreaElement | null = null;
@@ -34,6 +41,11 @@ export class ContactForm {
         this.form = formElement;
         this.successUrl = this.form.dataset.successUrl || '/';
         
+        // 0. Inicializar Configuración
+        this.turnstileSiteKey = this.form.dataset.turnstileSiteKey || "";
+        this.apiUrl = this.form.dataset.apiUrl || "";
+        this.apiKey = this.form.dataset.apiKey || "";
+
         // 1. Inicialización de Inputs
         this.nameInput = this.form.querySelector('input[name="name"]');
         this.emailInput = this.form.querySelector('input[name="email"]');
@@ -55,9 +67,54 @@ export class ContactForm {
 
         this.initListeners();
         this.initPhoneInput();
+        this.initTurnstile(); // Nuevo
         
         // Marca la inicialización para el test SEO
         this.form.setAttribute('data-form-initialized', 'true');
+    }
+
+    private async initTurnstile() {
+        if (!this.turnstileSiteKey) {
+            console.error("Turnstile site key no encontrada.");
+            return;
+        }
+
+        const widgetContainer = document.getElementById('turnstile-widget');
+        if (!widgetContainer) return;
+
+        // Polling para esperar a que window.turnstile esté disponible
+        let attempts = 0;
+        const maxAttempts = 50; // 5 segundos aprox
+        
+        while (!(window as any).turnstile && attempts < maxAttempts) {
+            await new Promise(resolve => setTimeout(resolve, 100));
+            attempts++;
+        }
+
+        if (!(window as any).turnstile) {
+            console.error("Error: Turnstile no cargó a tiempo.");
+            return;
+        }
+
+        try {
+            this.turnstileWidgetId = (window as any).turnstile.render('#turnstile-widget', {
+                sitekey: this.turnstileSiteKey,
+                callback: (token: string) => {
+                    this.turnstileToken = token;
+                    // Opcional: Limpiar error visual si existiera
+                },
+                'expired-callback': () => {
+                    console.warn("Turnstile token expired.");
+                    this.turnstileToken = null;
+                },
+                'error-callback': () => {
+                    console.error("Turnstile encountered an error.");
+                    this.turnstileToken = null;
+                },
+            });
+        } catch (e) {
+            console.error("Failed to render Turnstile widget:", e);
+        }
     }
 
     private initPhoneInput() {
@@ -238,10 +295,14 @@ export class ContactForm {
         const isFormValid = await this.validateForm();
 
         if (!isFormValid) {
-            // Asumimos que los datos personales están en el paso 1.
-            // En un futuro podríamos detectar en qué paso está this.firstInvalidInput
             this.toggleStep('1', true);
             this.firstInvalidInput?.focus();
+            return;
+        }
+
+        // Validar Turnstile
+        if (!this.turnstileToken) {
+            alert("Por favor, completa la verificación de seguridad.");
             return;
         }
 

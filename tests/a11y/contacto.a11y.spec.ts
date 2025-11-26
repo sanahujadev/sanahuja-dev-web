@@ -6,7 +6,8 @@ import AxeBuilder from '@axe-core/playwright';
 test.describe('A11Y: Contacto (ES)', () => {
   
   test('No debe tener violaciones críticas WCAG 2.1 AA', async ({ page }) => {
-    await page.goto('/es/contacto', { waitUntil: 'networkidle' });
+    await page.goto('/es/contacto', { waitUntil: 'domcontentloaded' });
+    await expect(page.locator('#contact-form')).toBeVisible(); // Espera explícita
     
     const results = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
@@ -16,7 +17,7 @@ test.describe('A11Y: Contacto (ES)', () => {
   });
 
   test('Formulario: labels asociados a inputs, required funciona', async ({ page }) => {
-    await page.goto('/es/contacto', { waitUntil: 'networkidle' });
+    await page.goto('/es/contacto', { waitUntil: 'domcontentloaded' });
     
     // Verifica que cada input tiene label
     const nameInput = page.locator('input[name="name"]');
@@ -36,7 +37,7 @@ test.describe('A11Y: Contacto (ES)', () => {
   });
 
   test('Navegación por teclado: Tab llega al botón de envío con focus visible', async ({ page }) => {
-    await page.goto('/es/contacto', { waitUntil: 'networkidle' });
+    await page.goto('/es/contacto', { waitUntil: 'domcontentloaded' });
     
     const submitButton = page.locator('button[type="submit"]');
     
@@ -56,7 +57,8 @@ test.describe('A11Y: Contacto (ES)', () => {
   });
 
   test('Errores de validación deben ser anunciados a screen readers', async ({ page }) => {
-    await page.goto('/es/contacto', { waitUntil: 'networkidle' });
+    await page.goto('/es/contacto', { waitUntil: 'domcontentloaded' });
+    await expect(page.locator('#contact-form')).toBeVisible();
     
     // Intenta enviar formulario vacío
     await page.click('button[type="submit"]');
