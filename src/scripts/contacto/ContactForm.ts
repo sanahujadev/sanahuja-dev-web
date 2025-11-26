@@ -13,6 +13,7 @@ export class ContactForm {
     private phoneInput: HTMLInputElement | null;
     private messageInput: HTMLTextAreaElement | null;
     private consentCheckbox: HTMLInputElement | null; // Nuevo
+    private nicknameInput: HTMLInputElement | null; // Honeypot
 
     // Elementos de UI de Error (Cacheados para rendimiento)
     private nameErrorMsg: HTMLElement | null;
@@ -52,6 +53,7 @@ export class ContactForm {
         this.phoneInput = this.form.querySelector('input[name="phone"]');
         this.messageInput = this.form.querySelector('textarea[name="message_basic"]'); // O 'message' según tu HTML
         this.consentCheckbox = this.form.querySelector('input[name="consent"]'); // Nuevo
+        this.nicknameInput = this.form.querySelector('input[name="nickname"]'); // Honeypot
 
         // 2. Inicialización de UI de Errores
         this.nameErrorMsg = document.getElementById('name-error');
@@ -292,6 +294,14 @@ export class ContactForm {
     private async handleSubmit(e: Event) {
         e.preventDefault();
 
+        // 1. Honeypot Check (Seguridad Anti-Spam)
+        // Si el campo oculto tiene valor, es un bot. Simulamos éxito y salimos.
+        if (this.nicknameInput && this.nicknameInput.value) {
+            console.log("Bot detected (Honeypot triggered). Simulating success.");
+            setTimeout(() => { window.location.href = this.successUrl; }, 600);
+            return;
+        }
+
         const isFormValid = await this.validateForm();
 
         if (!isFormValid) {
@@ -305,6 +315,34 @@ export class ContactForm {
             alert("Por favor, completa la verificación de seguridad.");
             return;
         }
+
+        // 2. Construcción del Payload
+        // Recogemos datos explícitos y también los radios/selects usando FormData para mayor comodidad
+        const formData = new FormData(this.form);
+        
+        // Objeto base tipado (parcialmente)
+        const payload = {
+            // Identidad
+            name: this.nameInput?.value.trim(),
+            email: this.emailInput?.value.trim(),
+            phone: this.phoneInput?.value.trim(), // Podríamos usar this.iti.getNumber() para formato E.164
+            message: this.messageInput?.value.trim(),
+            
+            // Alcance (Steps 2 & 3) - Obtenidos via FormData
+            project_type: formData.get('project_type'),
+            tech_status: formData.get('tech_status'),
+            goal: formData.get('goal'),
+            timeline: formData.get('timeline'),
+            budget_range: formData.get('budget_range'),
+
+            // Seguridad & Meta
+            turnstileToken: this.turnstileToken,
+            formId: this.form.id,
+            url: window.location.href,
+            timestamp: new Date().toISOString()
+        };
+
+        console.log("Payload preparado para envío:", payload);
 
         console.log("Simulando envío de formulario a una API...");
 

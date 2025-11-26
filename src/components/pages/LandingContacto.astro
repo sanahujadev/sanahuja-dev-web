@@ -94,6 +94,18 @@ const iconMap: Record<string, any> = {
         data-api-key={API_KEY}
         novalidate
       >
+        {/* Honeypot Field (Hidden) */}
+        <div class="hidden" aria-hidden="true">
+          <label for="nickname">Nickname</label>
+          <input
+            type="text"
+            id="nickname"
+            name="nickname"
+            tabindex="-1"
+            autocomplete="off"
+          />
+        </div>
+
         {/* ========================================== */}
         {/* STEP 1: IDENTIDAD (Siempre abierto visualmente al inicio) */}
         {/* ========================================== */}
