@@ -1,5 +1,7 @@
 // src/scripts/ContactForm.ts
 
+import intlTelInput from 'intl-tel-input';
+
 // Usaremos un tipo genérico para las opciones del formulario
 interface FormField {
     // Definiciones simplificadas para el script
@@ -26,15 +28,20 @@ export class ContactForm {
     }
 
     private initPhoneInput() {
-        if (!this.phoneInput || !(window as any).intlTelInput) return;
+        if (!this.phoneInput) return;
 
-        this.iti = (window as any).intlTelInput(this.phoneInput, {
-            initialCountry: "es",
-            nationalMode: false,
-            validationNumberTypes: null,
-            // @ts-ignore
-            loadUtils: () => import("https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.2/build/js/utils.js"),
-        });
+        try {
+            // Inicialización directa con el módulo importado
+            this.iti = intlTelInput(this.phoneInput, {
+                initialCountry: "es",
+                nationalMode: false,
+                validationNumberTypes: null,
+                // @ts-ignore
+                loadUtils: () => import("intl-tel-input/utils"),
+            });
+        } catch (error) {
+            console.error("Error inicializando intl-tel-input:", error);
+        }
     }
 
     private initListeners() {
@@ -86,12 +93,41 @@ export class ContactForm {
         }
     }
 
+    // Helper: Validación de formato de email
+    private validateEmailFormat(email: string): boolean {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    // Helper: Validación de formato de teléfono (Async)
+    private async validatePhoneFormat(): Promise<boolean> {
+        // Si no hay instancia de la librería, asumimos válido para no bloquear
+        if (!this.iti) return true; 
+        
+        let isPhoneValid = false;
+        try {
+            // Esperamos a que el script de utilidades esté listo
+            if (this.iti.utilsReady) {
+                await this.iti.utilsReady;
+            }
+            
+            const val = this.phoneInput?.value.trim() || "";
+            // Es válido si está vacío o si la librería dice que es un número válido
+            isPhoneValid = val === "" || this.iti.isValidNumber();
+        } catch (err) {
+            console.error("Error validando teléfono:", err);
+            isPhoneValid = true; 
+        }
+        return isPhoneValid;
+    }
+
     // Maneja la validación y el envío
-    private validateForm(requiredFields: string[]): boolean {
+    private async validateForm(requiredFields: string[]): Promise<boolean> {
         let isValid = true;
         this.firstInvalidInput = null;
 
-        requiredFields.forEach(fieldName => {
+        // Usamos for...of para poder usar await dentro del loop secuencialmente
+        for (const fieldName of requiredFields) {
             const input = this.form.querySelector(`[name="${fieldName}"]`) as HTMLInputElement | HTMLTextAreaElement | null;
 
             if (input) {
@@ -103,7 +139,33 @@ export class ContactForm {
                 if (errorMsg) errorMsg.classList.add('hidden');
                 if (errorIcon) errorIcon.classList.add('hidden');
 
-                if (input.hasAttribute('required') && !input.value.trim()) {
+                let fieldIsValid = true;
+                const value = input.value.trim();
+
+                // 1. Validación Genérica: Requerido
+                if (input.hasAttribute('required') && !value) {
+                    fieldIsValid = false;
+                } 
+                // 2. Validaciones Específicas (solo si hay valor)
+                else if (value) {
+                    switch (fieldName) {
+                        case 'email':
+                            fieldIsValid = this.validateEmailFormat(value);
+                            break;
+                        case 'phone':
+                            fieldIsValid = await this.validatePhoneFormat();
+                            break;
+                        case 'name':
+                            fieldIsValid = value.length >= 2; // Mínimo 2 caracteres
+                            break;
+                        case 'message_basic':
+                        case 'message':
+                            fieldIsValid = value.length >= 10; // Mínimo 10 caracteres
+                            break;
+                    }
+                }
+
+                if (!fieldIsValid) {
                     isValid = false;
                     input.setAttribute('aria-invalid', 'true');
 
@@ -114,19 +176,24 @@ export class ContactForm {
                     if (!this.firstInvalidInput) this.firstInvalidInput = input;
                 }
             }
-        });
+        }
 
         return isValid;
     }
 
-    private handleSubmit(e: Event) {
+    private async handleSubmit(e: Event) {
         e.preventDefault();
 
-        // **CRÍTICO:** Aquí defines los campos requeridos para el envío básico
-        const requiredFields = ['name', 'email', 'message_basic'];
+        // **CRÍTICO:** Campos a validar.
+        // Nota: 'phone' se valida si está presente en esta lista. 
+        // Si es opcional en HTML pero quieres validar formato si escriben algo, inclúyelo aquí.
+        const fieldsToValidate = ['name', 'email', 'message_basic', 'phone'];
 
-        if (!this.validateForm(requiredFields)) {
-            // Si falla la validación básica, abre el primer step y enfoca el error
+        const isFormValid = await this.validateForm(fieldsToValidate);
+
+        if (!isFormValid) {
+            // Si falla la validación, abre el paso 1 (donde suelen estar los datos de contacto)
+            // o detecta en qué paso está el error (mejora futura)
             this.toggleStep('1', true);
             if (this.firstInvalidInput) {
                 this.firstInvalidInput.focus();

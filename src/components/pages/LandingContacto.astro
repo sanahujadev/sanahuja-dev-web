@@ -16,6 +16,9 @@ import FormErrorIcon from "../../components/ui/FormErrorIcon.astro";
 
 import type { ContactoCopy } from "../../i18n/utils";
 
+// Estilos de intl-tel-input (Versión local para corregir rutas de imágenes)
+import "../../styles/intl-tel-input.css";
+
 interface Props {
   copy: ContactoCopy;
   alternateUrl: string;
@@ -55,14 +58,6 @@ const iconMap: Record<string, any> = {
   <Fragment slot="head">
     <title>{metadata.title}</title>
     <meta name="description" content={metadata.description} />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.2/build/css/intlTelInput.css"
-    />
-    <script
-      is:inline
-      src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.2/build/js/intlTelInput.min.js"
-    ></script>
   </Fragment>
 
   <main class="min-h-screen bg-background">
@@ -559,10 +554,6 @@ const iconMap: Record<string, any> = {
   <script>
     import { ContactForm } from "../../scripts/contacto/ContactForm.ts";
 
-    const config = {
-      lang: "es",
-      successUrl: "",
-    };
     const MAX_RETRIES = 10;
     let retries = 0;
 

@@ -26,6 +26,9 @@ importers:
       clsx:
         specifier: 2.1.1
         version: 2.1.1
+      intl-tel-input:
+        specifier: 25.12.5
+        version: 25.12.5
       tailwind-merge:
         specifier: 3.4.0
         version: 3.4.0
@@ -1313,6 +1316,9 @@ packages:
 
   inline-style-parser@0.2.6:
     resolution: {integrity: sha512-gtGXVaBdl5mAes3rPcMedEBm12ibjt1kDMFfheul1wUAOVEJW60voNdMVzVkfLN06O7ZaD/rxhfKgtlgtTbMjg==}
+
+  intl-tel-input@25.12.5:
+    resolution: {integrity: sha512-zat95u/9sM0/xbAzbwEjk98lFhG26CSJ1f8BSoATnF5Pxw5/aiX3JJCQfOp+f44EZFsECF24nuKY/JlTXIwnUw==}
 
   iron-webcrypto@1.2.1:
     resolution: {integrity: sha512-feOM6FaSr6rEABp/eDfVseKyTMDt+KGpeB35SkVn9Tyn0CqvVsY3EwI0v5i8nMHyJnzCIQf7nsy3p41TPkJZhg==}
@@ -3642,6 +3648,8 @@ snapshots:
   indent-string@4.0.0: {}
 
   inline-style-parser@0.2.6: {}
+
+  intl-tel-input@25.12.5: {}
 
   iron-webcrypto@1.2.1: {}
 
