@@ -172,7 +172,14 @@
       "ansiolitico": {
         "text": "No te preocupes, esto no es un examen. Simplemente analizo estos datos para preparar nuestra primera conversación.",
         "privacyLink": "/es/politica-de-privacidad",
-        "privacyButton": "Ver Política de Privacidad"
+        "privacyButton": "Ver Política de Privacidad",
+        "termsLink": "/es/terminos-y-condiciones" 
+      },
+      "consent": {
+        "text_part1": "He leído y acepto la ",
+        "privacy_link_text": "Política de Privacidad",
+        "text_part2": " y los ",
+        "terms_link_text": "Términos y Condiciones"
       }
     }
   }

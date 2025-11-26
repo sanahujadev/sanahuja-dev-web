@@ -429,6 +429,7 @@ const iconMap: Record<string, any> = {
                 id="goal"
                 type="text"
                 name="goal"
+                maxlength="200"
                 class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all"
                 placeholder={(t.formUI.steps[2].fields[0] as any).placeholder}
               />
@@ -535,6 +536,48 @@ const iconMap: Record<string, any> = {
 
         {/* Submit Button */}
         <div class="flex flex-col items-center pt-4 space-y-4">
+          {/* Checkbox de Consentimiento */}
+          <div class="flex items-start mb-4">
+            <div class="flex items-center h-5">
+              <input
+                id="consent-checkbox"
+                name="consent"
+                type="checkbox"
+                required
+                class="focus:ring-primary-500 h-4 w-4 text-primary-600 border-neutral-700 rounded bg-neutral-800 aria-[invalid=true]:border-red-500 aria-[invalid=true]:ring-red-500/20"
+              />
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="consent-checkbox" class="font-medium text-neutral-300">
+                {t.formUI.consent.text_part1}
+                <a
+                  href={t.formUI.ansiolitico.privacyLink}
+                  target="_self"
+                  class="text-primary-400 hover:text-primary-300 focus:outline-none focus:underline"
+                >
+                  {t.formUI.consent.privacy_link_text}
+                </a>
+                {t.formUI.consent.text_part2}
+                <a
+                  href={t.formUI.ansiolitico.termsLink}
+                  target="_self"
+                  class="text-primary-400 hover:text-primary-300 focus:outline-none focus:underline"
+                >
+                  {t.formUI.consent.terms_link_text}
+                </a>
+                <span class="text-primary-400">*</span>
+              </label>
+              
+              <span
+                id="consent-error"
+                role="alert"
+                class="hidden text-red-400 text-xs mt-1 flex items-center gap-1"
+              >
+                {t.formUI.config.genericErrorMessage}
+              </span>
+            </div>
+          </div>
+
           <Button
             type="submit"
             variant="primary"

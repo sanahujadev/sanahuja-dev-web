@@ -12,6 +12,7 @@ export class ContactForm {
     private emailInput: HTMLInputElement | null;
     private phoneInput: HTMLInputElement | null;
     private messageInput: HTMLTextAreaElement | null;
+    private consentCheckbox: HTMLInputElement | null; // Nuevo
 
     // Elementos de UI de Error (Cacheados para rendimiento)
     private nameErrorMsg: HTMLElement | null;
@@ -22,6 +23,8 @@ export class ContactForm {
     private phoneErrorIcon: HTMLElement | null;
     private messageErrorMsg: HTMLElement | null;
     private messageErrorIcon: HTMLElement | null;
+    private consentErrorMsg: HTMLElement | null; // Nuevo
+    private consentErrorIcon: HTMLElement | null; // Nuevo
 
     // Librerías y Estado
     private iti: any;
@@ -36,6 +39,7 @@ export class ContactForm {
         this.emailInput = this.form.querySelector('input[name="email"]');
         this.phoneInput = this.form.querySelector('input[name="phone"]');
         this.messageInput = this.form.querySelector('textarea[name="message_basic"]'); // O 'message' según tu HTML
+        this.consentCheckbox = this.form.querySelector('input[name="consent"]'); // Nuevo
 
         // 2. Inicialización de UI de Errores
         this.nameErrorMsg = document.getElementById('name-error');
@@ -46,6 +50,8 @@ export class ContactForm {
         this.phoneErrorIcon = document.getElementById('phone-error-icon');
         this.messageErrorMsg = document.getElementById('message_basic-error');
         this.messageErrorIcon = document.getElementById('message_basic-error-icon');
+        this.consentErrorMsg = document.getElementById('consent-error'); // Nuevo
+        this.consentErrorIcon = document.getElementById('consent-error-icon'); // Nuevo
 
         this.initListeners();
         this.initPhoneInput();
@@ -88,24 +94,31 @@ export class ContactForm {
         this.setupFieldValidation(this.emailInput, 'email');
         this.setupFieldValidation(this.phoneInput, 'phone');
         this.setupFieldValidation(this.messageInput, 'message');
+        this.setupFieldValidation(this.consentCheckbox, 'consent'); // Nuevo
     }
 
     // Configura los listeners de validación para un campo específico
-    private setupFieldValidation(input: HTMLInputElement | HTMLTextAreaElement | null, fieldType: 'name' | 'email' | 'phone' | 'message') {
+    private setupFieldValidation(input: HTMLInputElement | HTMLTextAreaElement | null, fieldType: 'name' | 'email' | 'phone' | 'message' | 'consent') {
         if (!input) return;
 
-        // onBlur: Validar cuando el usuario deja el campo
-        input.addEventListener('blur', () => this.validateField(input, fieldType));
+        const isCheckbox = input.type === 'checkbox';
 
-        // onInput: Limpiar errores mientras el usuario corrige
-        input.addEventListener('input', () => {
-            input.removeAttribute('aria-invalid');
-            this.toggleErrorUI(fieldType, false);
-        });
+        // onBlur/onChange para checkboxes: Validar cuando el usuario deja el campo o cambia su valor
+        if (isCheckbox) {
+            input.addEventListener('change', () => this.validateField(input, fieldType));
+            // No necesitamos un onInput para checkboxes para limpiar errores, ya que 'change' lo maneja y el 'input' no es relevante
+        } else {
+            input.addEventListener('blur', () => this.validateField(input, fieldType));
+            // onInput: Limpiar errores mientras el usuario corrige
+            input.addEventListener('input', () => {
+                input.removeAttribute('aria-invalid');
+                this.toggleErrorUI(fieldType, false);
+            });
+        }
     }
 
     // Muestra u oculta la UI de error para un tipo de campo
-    private toggleErrorUI(fieldType: 'name' | 'email' | 'phone' | 'message', show: boolean) {
+    private toggleErrorUI(fieldType: 'name' | 'email' | 'phone' | 'message' | 'consent', show: boolean) {
         let msgEl, iconEl;
 
         switch (fieldType) {
@@ -113,6 +126,7 @@ export class ContactForm {
             case 'email': msgEl = this.emailErrorMsg; iconEl = this.emailErrorIcon; break;
             case 'phone': msgEl = this.phoneErrorMsg; iconEl = this.phoneErrorIcon; break;
             case 'message': msgEl = this.messageErrorMsg; iconEl = this.messageErrorIcon; break;
+            case 'consent': msgEl = this.consentErrorMsg; iconEl = this.consentErrorIcon; break; // Nuevo
         }
 
         if (show) {
@@ -125,16 +139,22 @@ export class ContactForm {
     }
 
     // Lógica Central de Validación por Campo
-    private async validateField(input: HTMLInputElement | HTMLTextAreaElement, fieldType: 'name' | 'email' | 'phone' | 'message'): Promise<boolean> {
+    private async validateField(input: HTMLInputElement | HTMLTextAreaElement, fieldType: 'name' | 'email' | 'phone' | 'message' | 'consent'): Promise<boolean> {
         let isValid = true;
-        const value = input.value.trim();
+        const isCheckbox = input.type === 'checkbox';
+        const value = isCheckbox ? (input as HTMLInputElement).checked.toString() : input.value.trim(); // Usamos 'true'/'false' para checkboxes
 
         // 1. Validación Genérica: Requerido
-        if (input.hasAttribute('required') && !value) {
-            isValid = false;
-        } 
-        // 2. Validaciones Específicas
-        else if (value) {
+        if (input.hasAttribute('required')) {
+            if (isCheckbox && !(input as HTMLInputElement).checked) {
+                isValid = false;
+            } else if (!isCheckbox && !value) {
+                isValid = false;
+            }
+        }
+        // 2. Validaciones Específicas (solo si hay valor o está marcado para checkboxes)
+        // Para checkboxes, entramos aquí si es requerido y está marcado, o si no es requerido pero está marcado.
+        else if (value || isCheckbox) { 
             switch (fieldType) {
                 case 'email':
                     isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -148,12 +168,21 @@ export class ContactForm {
                 case 'message':
                     isValid = value.length >= 10;
                     break;
+                case 'consent':
+                    // Si es checkbox, la validación principal es si está 'checked' (manejado por 'required' arriba)
+                    // No hay una validación de formato compleja para un checkbox más allá de su estado 'checked'.
+                    isValid = (input as HTMLInputElement).checked; 
+                    break;
             }
         }
 
         if (!isValid) {
             input.setAttribute('aria-invalid', 'true');
             this.toggleErrorUI(fieldType, true);
+        } else {
+            // ÉXITO: Limpiar estado de error explícitamente
+            input.removeAttribute('aria-invalid');
+            this.toggleErrorUI(fieldType, false);
         }
 
         return isValid;
@@ -189,6 +218,9 @@ export class ContactForm {
         }
         if (this.messageInput) {
             if (!(await this.validateField(this.messageInput, 'message'))) this.markInvalid(this.messageInput, ref => isFormValid = false);
+        }
+        if (this.consentCheckbox) { // Nuevo
+            if (!(await this.validateField(this.consentCheckbox, 'consent'))) this.markInvalid(this.consentCheckbox, ref => isFormValid = false);
         }
 
         return isFormValid;
