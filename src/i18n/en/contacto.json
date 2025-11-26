@@ -1,0 +1,186 @@
+{
+  "lang": "en",
+  "alternateUrl": "/es/contacto",
+  "metadata": {
+    "title": "Request Web Quote Tenerife | Start Project | SanahujaDev",
+    "description": "Looking for a web developer in Tenerife? Tell me your idea. No-obligation quote, direct contact, and response in less than 24h.",
+    "robots": "index, follow"
+  },
+  "copy": {
+    "hero": {
+      "h1": "Let's materialize your idea.",
+      "subtitle": "No intermediaries. From human to human.",
+      "intro": "Fill in the basics to contact. If you're looking to start a project, expand the details so I can analyze your case."
+    },
+    "formUI": {
+      "config": {
+        "type": "nested_accordion",
+        "successUrl": "/en/thank-you-project",
+        "baseSubmitLabel": "Send Basic Message",
+        "fullSubmitLabel": "Request Project Study",
+        "seoKeyPhrase": "Fill out the form. No obligation.",
+        "genericErrorMessage": "Required field or with errors",
+        "selectPlaceholder": "Select..."
+      },
+      "steps": [
+        {
+          "id": "step_1_identity",
+          "title": "Contact Details",
+          "fields": [
+            {
+              "name": "name",
+              "label": "Name",
+              "required": true,
+              "placeholder": "Your name or Company name"
+            },
+            {
+              "name": "email",
+              "label": "Email",
+              "required": true,
+              "placeholder": "Business email"
+            },
+            {
+              "name": "message_basic",
+              "label": "Message / Inquiry",
+              "type": "textarea",
+              "required": true,
+              "placeholder": "Ask whatever you have in mind"
+            },
+            {
+              "name": "phone",
+              "label": "Phone (Optional)",
+              "type": "tel",
+              "required": false,
+              "placeholder": ""
+            }
+          ],
+          "accordionText": "Looking to schedule a work meeting? To know if I can help you, I need a little context first 👇",
+          "accordionButton": "Expand project details"
+        },
+        {
+          "id": "step_2_scope",
+          "title": "Project Type and Technology",
+          "fields": [
+            {
+              "name": "project_type",
+              "label": "What service are you interested in?",
+              "type": "cards",
+              "options": [
+                {
+                  "label": "New Web / Redesign",
+                  "value": "new_web",
+                  "icon": "Layout"
+                },
+                {
+                  "label": "All-in-One Pack",
+                  "value": "pack_all",
+                  "icon": "Package"
+                },
+                {
+                  "label": "Maintenance",
+                  "value": "maintenance",
+                  "icon": "Shield"
+                },
+                {
+                  "label": "Other",
+                  "value": "other",
+                  "icon": "HelpCircle"
+                }
+              ]
+            },
+            {
+              "name": "tech_status",
+              "label": "Do you already have a Domain or Hosting?",
+              "type": "pills",
+              "options": [
+                {
+                  "label": "I have both",
+                  "value": "both"
+                },
+                {
+                  "label": "Domain only",
+                  "value": "domain_only"
+                },
+                {
+                  "label": "Nothing (Starting from scratch)",
+                  "value": "none"
+                },
+                {
+                  "label": "I'm not sure",
+                  "value": "unknown"
+                }
+              ]
+            }
+          ],
+          "accordionText": "To give you an honest answer about feasibility (and not waste your time), let's define the scope 👇",
+          "accordionButton": "Define feasibility and goals"
+        },
+        {
+          "id": "step_3_viability",
+          "title": "Feasibility and Goals",
+          "fields": [
+            {
+              "name": "goal",
+              "label": "What is the main goal of this project?",
+              "type": "text",
+              "placeholder": "Ex: Sell more, improve image, automate appointments..."
+            },
+            {
+              "name": "timeline",
+              "label": "When do you need it?",
+              "type": "select",
+              "placeholder": "Select a timeframe",
+              "options": [
+                {
+                  "label": "Urgent (ASAP)",
+                  "value": "urgent"
+                },
+                {
+                  "label": "Standard (Next month)",
+                  "value": "standard"
+                },
+                {
+                  "label": "Flexible (No rush)",
+                  "value": "flexible"
+                }
+              ]
+            },
+            {
+              "name": "budget_range",
+              "label": "Available Investment Range",
+              "type": "select",
+              "placeholder": "Select a range",
+              "description": "Knowing this allows me to tell you which solutions fit and which don't.",
+              "options": [
+                {
+                  "label": "Economic (< €1,000)",
+                  "value": "low"
+                },
+                {
+                  "label": "Professional (€1,000 - €3,000)",
+                  "value": "medium"
+                },
+                {
+                  "label": "Premium / Custom (+€3,000)",
+                  "value": "high"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ansiolitico": {
+        "text": "Don't worry, this isn't an exam. I simply analyze this data to prepare for our first conversation.",
+        "privacyLink": "/en/privacy-policy",
+        "privacyButton": "View Privacy Policy",
+        "termsLink": "/en/terms-and-conditions"
+      },
+      "consent": {
+        "text_part1": "I have read and accept the ",
+        "privacy_link_text": "Privacy Policy",
+        "text_part2": " and the ",
+        "terms_link_text": "Terms and Conditions"
+      }
+    }
+  }
+}

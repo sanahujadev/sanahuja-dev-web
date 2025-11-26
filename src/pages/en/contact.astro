@@ -1,0 +1,49 @@
+---
+// CONTACT PAGE (ENGLISH)!
+import LandingContacto from "../../components/pages/LandingContacto.astro";
+
+// 1. Import the PAGE JSON
+import t_page from "../../i18n/en/contacto.json" with { type: "json" };
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: t_page.metadata.title,
+  description: t_page.metadata.description,
+  url: "https://sanahuja.dev/en/contact",
+  inLanguage: "en-US",
+  contactType: "Sales",
+  datePublished: "2024-01-01",
+  dateModified: "2024-12-31",
+  publisher: {
+    "@type": "Organization",
+    name: "SanahujaDev",
+    url: "https://sanahuja.dev",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://cdn.sanahuja.dev/sanahujadev/Logo/jpeg/Logo-1280w.jpeg",
+      width: 1280,
+      height: 1280,
+    },
+  },
+  mainEntity: {
+    "@type": "Organization",
+    name: "SanahujaDev",
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "Sales",
+      email: "josejavier@sanahuja.dev",
+      availableLanguage: ["es", "en"],
+    },
+  },
+};
+
+// 3. Calculate Alternate URL
+const alternateUrl = new URL(t_page.alternateUrl, Astro.site).href;
+---
+
+<LandingContacto
+  copy={t_page}
+  alternateUrl={alternateUrl}
+  schema={schema}
+/>
