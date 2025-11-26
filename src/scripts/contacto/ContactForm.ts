@@ -2,27 +2,54 @@
 
 import intlTelInput from 'intl-tel-input';
 
-// Usaremos un tipo genérico para las opciones del formulario
-interface FormField {
-    // Definiciones simplificadas para el script
-    name: string;
-    required?: boolean;
-}
-
 export class ContactForm {
+    // Elementos Core
     private form: HTMLFormElement;
     private successUrl: string;
-    private firstInvalidInput: HTMLInputElement | HTMLTextAreaElement | null = null;
-    private phoneInput: HTMLInputElement | null = null;
+    
+    // Inputs Principales
+    private nameInput: HTMLInputElement | null;
+    private emailInput: HTMLInputElement | null;
+    private phoneInput: HTMLInputElement | null;
+    private messageInput: HTMLTextAreaElement | null;
+
+    // Elementos de UI de Error (Cacheados para rendimiento)
+    private nameErrorMsg: HTMLElement | null;
+    private nameErrorIcon: HTMLElement | null;
+    private emailErrorMsg: HTMLElement | null;
+    private emailErrorIcon: HTMLElement | null;
+    private phoneErrorMsg: HTMLElement | null;
+    private phoneErrorIcon: HTMLElement | null;
+    private messageErrorMsg: HTMLElement | null;
+    private messageErrorIcon: HTMLElement | null;
+
+    // Librerías y Estado
     private iti: any;
+    private firstInvalidInput: HTMLInputElement | HTMLTextAreaElement | null = null;
 
     constructor(formElement: HTMLFormElement) {
         this.form = formElement;
         this.successUrl = this.form.dataset.successUrl || '/';
+        
+        // 1. Inicialización de Inputs
+        this.nameInput = this.form.querySelector('input[name="name"]');
+        this.emailInput = this.form.querySelector('input[name="email"]');
         this.phoneInput = this.form.querySelector('input[name="phone"]');
+        this.messageInput = this.form.querySelector('textarea[name="message_basic"]'); // O 'message' según tu HTML
+
+        // 2. Inicialización de UI de Errores
+        this.nameErrorMsg = document.getElementById('name-error');
+        this.nameErrorIcon = document.getElementById('name-error-icon');
+        this.emailErrorMsg = document.getElementById('email-error');
+        this.emailErrorIcon = document.getElementById('email-error-icon');
+        this.phoneErrorMsg = document.getElementById('phone-error');
+        this.phoneErrorIcon = document.getElementById('phone-error-icon');
+        this.messageErrorMsg = document.getElementById('message_basic-error');
+        this.messageErrorIcon = document.getElementById('message_basic-error-icon');
 
         this.initListeners();
         this.initPhoneInput();
+        
         // Marca la inicialización para el test SEO
         this.form.setAttribute('data-form-initialized', 'true');
     }
@@ -31,7 +58,6 @@ export class ContactForm {
         if (!this.phoneInput) return;
 
         try {
-            // Inicialización directa con el módulo importado
             this.iti = intlTelInput(this.phoneInput, {
                 initialCountry: "es",
                 nationalMode: false,
@@ -56,11 +82,146 @@ export class ContactForm {
 
         // 2. Submit Handler
         this.form.addEventListener("submit", (e) => this.handleSubmit(e));
+
+        // 3. Validación Individual (onBlur & onInput)
+        this.setupFieldValidation(this.nameInput, 'name');
+        this.setupFieldValidation(this.emailInput, 'email');
+        this.setupFieldValidation(this.phoneInput, 'phone');
+        this.setupFieldValidation(this.messageInput, 'message');
     }
 
+    // Configura los listeners de validación para un campo específico
+    private setupFieldValidation(input: HTMLInputElement | HTMLTextAreaElement | null, fieldType: 'name' | 'email' | 'phone' | 'message') {
+        if (!input) return;
+
+        // onBlur: Validar cuando el usuario deja el campo
+        input.addEventListener('blur', () => this.validateField(input, fieldType));
+
+        // onInput: Limpiar errores mientras el usuario corrige
+        input.addEventListener('input', () => {
+            input.removeAttribute('aria-invalid');
+            this.toggleErrorUI(fieldType, false);
+        });
+    }
+
+    // Muestra u oculta la UI de error para un tipo de campo
+    private toggleErrorUI(fieldType: 'name' | 'email' | 'phone' | 'message', show: boolean) {
+        let msgEl, iconEl;
+
+        switch (fieldType) {
+            case 'name': msgEl = this.nameErrorMsg; iconEl = this.nameErrorIcon; break;
+            case 'email': msgEl = this.emailErrorMsg; iconEl = this.emailErrorIcon; break;
+            case 'phone': msgEl = this.phoneErrorMsg; iconEl = this.phoneErrorIcon; break;
+            case 'message': msgEl = this.messageErrorMsg; iconEl = this.messageErrorIcon; break;
+        }
+
+        if (show) {
+            msgEl?.classList.remove('hidden');
+            iconEl?.classList.remove('hidden');
+        } else {
+            msgEl?.classList.add('hidden');
+            iconEl?.classList.add('hidden');
+        }
+    }
+
+    // Lógica Central de Validación por Campo
+    private async validateField(input: HTMLInputElement | HTMLTextAreaElement, fieldType: 'name' | 'email' | 'phone' | 'message'): Promise<boolean> {
+        let isValid = true;
+        const value = input.value.trim();
+
+        // 1. Validación Genérica: Requerido
+        if (input.hasAttribute('required') && !value) {
+            isValid = false;
+        } 
+        // 2. Validaciones Específicas
+        else if (value) {
+            switch (fieldType) {
+                case 'email':
+                    isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+                    break;
+                case 'phone':
+                    isValid = await this.validatePhoneFormat();
+                    break;
+                case 'name':
+                    isValid = value.length >= 2;
+                    break;
+                case 'message':
+                    isValid = value.length >= 10;
+                    break;
+            }
+        }
+
+        if (!isValid) {
+            input.setAttribute('aria-invalid', 'true');
+            this.toggleErrorUI(fieldType, true);
+        }
+
+        return isValid;
+    }
+
+    private async validatePhoneFormat(): Promise<boolean> {
+        if (!this.iti) return true;
+        
+        try {
+            if (this.iti.utilsReady) await this.iti.utilsReady;
+            const val = this.phoneInput?.value.trim() || "";
+            return val === "" || this.iti.isValidNumber();
+        } catch (err) {
+            console.error("Error validando teléfono:", err);
+            return true; // Fallback seguro
+        }
+    }
+
+    private async validateForm(): Promise<boolean> {
+        let isFormValid = true;
+        this.firstInvalidInput = null;
+
+        // Validamos secuencialmente (o en paralelo si quisiéramos)
+        // Usamos las referencias directas
+        if (this.nameInput) {
+            if (!(await this.validateField(this.nameInput, 'name'))) this.markInvalid(this.nameInput, ref => isFormValid = false);
+        }
+        if (this.emailInput) {
+            if (!(await this.validateField(this.emailInput, 'email'))) this.markInvalid(this.emailInput, ref => isFormValid = false);
+        }
+        if (this.phoneInput) {
+            if (!(await this.validateField(this.phoneInput, 'phone'))) this.markInvalid(this.phoneInput, ref => isFormValid = false);
+        }
+        if (this.messageInput) {
+            if (!(await this.validateField(this.messageInput, 'message'))) this.markInvalid(this.messageInput, ref => isFormValid = false);
+        }
+
+        return isFormValid;
+    }
+    
+    // Helper para gestionar el foco del primer error
+    private markInvalid(input: HTMLInputElement | HTMLTextAreaElement, callback: (v: boolean) => void) {
+        callback(false);
+        if (!this.firstInvalidInput) this.firstInvalidInput = input;
+    }
+
+    private async handleSubmit(e: Event) {
+        e.preventDefault();
+
+        const isFormValid = await this.validateForm();
+
+        if (!isFormValid) {
+            // Asumimos que los datos personales están en el paso 1.
+            // En un futuro podríamos detectar en qué paso está this.firstInvalidInput
+            this.toggleStep('1', true);
+            this.firstInvalidInput?.focus();
+            return;
+        }
+
+        console.log("Simulando envío de formulario a una API...");
+
+        setTimeout(() => {
+            window.location.href = this.successUrl;
+        }, 600);
+    }
+
+    // --- Métodos de UI (Acordeón) ---
     private toggleStep(stepId: string, forceOpen: boolean = false) {
-        // (Lógica de toggleStep: añadir/quitar clase 'hidden', rotar íconos, aria-expanded)
-        // ... (Tu implementación anterior de toggleStep, con `this.form.querySelector`)
         const content = this.form.querySelector(`#step-${stepId}-content`);
         const button = this.form.querySelector(`button[data-step="${stepId}"]`);
         const icon = button?.querySelector('.icon-container');
@@ -80,143 +241,20 @@ export class ContactForm {
         }
     }
 
-    // Maneja el clic en el botón de pasar al siguiente step
+    private handleAccordionClick(e: Event) {
+        const target = e.currentTarget as HTMLElement;
+        const step = target.dataset.step;
+        if (step) this.toggleStep(step);
+    }
+
     private handleNextStep(e: Event) {
         e.preventDefault();
         const target = e.currentTarget as HTMLElement;
         const targetStep = target.dataset.targetStep;
         if (targetStep) {
             this.toggleStep(targetStep, true);
-            // Scroll al nuevo paso abierto
             const targetContainer = document.getElementById(`step-${targetStep}-container`);
             targetContainer?.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
-    }
-
-    // Helper: Validación de formato de email
-    private validateEmailFormat(email: string): boolean {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-
-    // Helper: Validación de formato de teléfono (Async)
-    private async validatePhoneFormat(): Promise<boolean> {
-        // Si no hay instancia de la librería, asumimos válido para no bloquear
-        if (!this.iti) return true; 
-        
-        let isPhoneValid = false;
-        try {
-            // Esperamos a que el script de utilidades esté listo
-            if (this.iti.utilsReady) {
-                await this.iti.utilsReady;
-            }
-            
-            const val = this.phoneInput?.value.trim() || "";
-            // Es válido si está vacío o si la librería dice que es un número válido
-            isPhoneValid = val === "" || this.iti.isValidNumber();
-        } catch (err) {
-            console.error("Error validando teléfono:", err);
-            isPhoneValid = true; 
-        }
-        return isPhoneValid;
-    }
-
-    // Maneja la validación y el envío
-    private async validateForm(requiredFields: string[]): Promise<boolean> {
-        let isValid = true;
-        this.firstInvalidInput = null;
-
-        // Usamos for...of para poder usar await dentro del loop secuencialmente
-        for (const fieldName of requiredFields) {
-            const input = this.form.querySelector(`[name="${fieldName}"]`) as HTMLInputElement | HTMLTextAreaElement | null;
-
-            if (input) {
-                // Reset individual error state
-                input.removeAttribute('aria-invalid');
-                const errorMsg = document.getElementById(`${fieldName}-error`);
-                const errorIcon = document.getElementById(`${fieldName}-error-icon`);
-
-                if (errorMsg) errorMsg.classList.add('hidden');
-                if (errorIcon) errorIcon.classList.add('hidden');
-
-                let fieldIsValid = true;
-                const value = input.value.trim();
-
-                // 1. Validación Genérica: Requerido
-                if (input.hasAttribute('required') && !value) {
-                    fieldIsValid = false;
-                } 
-                // 2. Validaciones Específicas (solo si hay valor)
-                else if (value) {
-                    switch (fieldName) {
-                        case 'email':
-                            fieldIsValid = this.validateEmailFormat(value);
-                            break;
-                        case 'phone':
-                            fieldIsValid = await this.validatePhoneFormat();
-                            break;
-                        case 'name':
-                            fieldIsValid = value.length >= 2; // Mínimo 2 caracteres
-                            break;
-                        case 'message_basic':
-                        case 'message':
-                            fieldIsValid = value.length >= 10; // Mínimo 10 caracteres
-                            break;
-                    }
-                }
-
-                if (!fieldIsValid) {
-                    isValid = false;
-                    input.setAttribute('aria-invalid', 'true');
-
-                    // Mostrar error e icono
-                    if (errorMsg) errorMsg.classList.remove('hidden');
-                    if (errorIcon) errorIcon.classList.remove('hidden');
-
-                    if (!this.firstInvalidInput) this.firstInvalidInput = input;
-                }
-            }
-        }
-
-        return isValid;
-    }
-
-    private async handleSubmit(e: Event) {
-        e.preventDefault();
-
-        // **CRÍTICO:** Campos a validar.
-        // Nota: 'phone' se valida si está presente en esta lista. 
-        // Si es opcional en HTML pero quieres validar formato si escriben algo, inclúyelo aquí.
-        const fieldsToValidate = ['name', 'email', 'message_basic', 'phone'];
-
-        const isFormValid = await this.validateForm(fieldsToValidate);
-
-        if (!isFormValid) {
-            // Si falla la validación, abre el paso 1 (donde suelen estar los datos de contacto)
-            // o detecta en qué paso está el error (mejora futura)
-            this.toggleStep('1', true);
-            if (this.firstInvalidInput) {
-                this.firstInvalidInput.focus();
-            }
-            return;
-        }
-
-        // Simulación de envío a la API (Próxima tarea para All Might Coder)
-        console.log("Simulando envío de formulario a una API...");
-
-        // Timeout simula el tiempo de respuesta del servidor (0.6s)
-        setTimeout(() => {
-            // **Paso clave de la Conversión:** Redirección a la página de éxito
-            window.location.href = this.successUrl;
-        }, 600);
-    }
-
-    // Y otros métodos privados (handleAccordionClick, etc.)
-    private handleAccordionClick(e: Event) {
-        const target = e.currentTarget as HTMLElement;
-        console.log(target.dataset, "debug");
-
-        const step = target.dataset.step;
-        if (step) this.toggleStep(step);
     }
 }
