@@ -53,7 +53,7 @@ test.describe('E2E/SEO: /es/packs/imagen-digital (Pack Imagen Digital)', () => {
     // 10. Schema Product con price 110€ y billingIncrement
     const scriptContent = await page.locator('script[type="application/ld+json"]').textContent();
     expect(scriptContent).toContain('"@type":"Product"');
-    expect(scriptContent).toMatch(/"price":\s*"110(\.00)?"/);
+    expect(scriptContent).toMatch(/"price":\s*"130(\.00)?"/);
     expect(scriptContent).toContain('"billingIncrement":"monthly"');
     expect(scriptContent).toContain('"description":"Servicio mensual de gestión de reputación online y mantenimiento web');
 

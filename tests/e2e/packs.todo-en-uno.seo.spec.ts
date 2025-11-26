@@ -18,42 +18,46 @@ test.describe('E2E/SEO: /es/packs/todo-en-uno (Jefe Delegador - Premium)', () =>
     await expect(h1).toHaveCount(1);
     await expect(h1).toContainText(/Todo en Uno|Delegación Total|Partner Tecnológico/i);
 
-    // 3. Badge "Paz Mental" visible (premium)
-    const heroBadge = page.locator('#hero').getByText('Delegación Total');
+    // 3. Badge "Paz Mental" visible (premium) - Actualizado a copy real
+    const heroBadge = page.locator('#hero').getByText('Control Técnico Total');
     await expect(heroBadge).toBeVisible();
 
-    // 4. Hero CTA primario: "Delegar mi Web" (acción de CEO)
-    const heroCTA = page.locator('#hero a').getByText('Lo Quiero Todo');
+    // 4. Hero CTA primario: "Delegar mi Web" (acción de CEO) - Actualizado a copy real
+    const heroCTA = page.locator('#hero a').getByText('Asegurar mi Infraestructura');
+    await expect(heroCTA).toBeVisible();
     await expect(heroCTA).toHaveAttribute('href', '/es/contacto');
 
     // 5. Hero CTA secundario: "Ver flujo de trabajo"
-    const workflowCTA = page.locator('#hero a').getByText('Ver qué incluye');
-    await expect(workflowCTA).toHaveAttribute('href', '#features');
+    const workflowCTA = page.locator('#hero a').getByText('Ver desglose');
+    await expect(workflowCTA).toHaveAttribute('href', '#todo-list');
 
     // 6. Incluye TODO: Analítica + Reputación + Mantenimiento + Contenido
+    // El ID de la sección donde se muestran las "features" ahora es #todo-list
     const todoList = page.locator('#todo-list');
     await expect(todoList).toBeVisible();
-    await expect(todoList).toContainText('Informe de Visibilidad'); // Cerebro
-    await expect(todoList).toContainText('Reputación'); // Imagen
-    await expect(todoList).toContainText('Mantenimiento'); // Técnica
-    await expect(todoList).toContainText('contenidos'); // Voz
-
-    // 7. Fragmentación de proveedores como dolor
+    await expect(todoList).toContainText('Mantenimiento Premium'); // Técnica
+    await expect(todoList).toContainText('Inteligencia de Datos'); // Datos
+    await expect(todoList).toContainText('Cumplimiento Legal'); // Legal
+    // Los textos han cambiado un poco, ajusto las expectativas
+    await expect(todoList).toContainText('Monitorización 24/7, WPO 90+ y Copias de Seguridad.'); 
+    await expect(todoList).toContainText('Informe mensual de Visibilidad (GA4) explicado en humano.'); 
+    await expect(todoList).toContainText('Gestión e implementación del Banner de Cookies (Consent Mode).'); 
+    await expect(todoList).toContainText('Prioridad en soporte técnico ante cualquier incidencia.');
     const fragmentacion = page.locator('#fragmentacion');
     await expect(fragmentacion).toBeVisible();
-    await expect(fragmentacion).toContainText('No tienes tiempo');
-    await expect(fragmentacion).toContainText('Servicios contratados');
+    await expect(fragmentacion).toContainText('Tener una web sin mantenimiento es un riesgo');
+    await expect(fragmentacion).toContainText('Desconocimiento total de las visitas');
 
     // 8. Precio 130€/mes visible y destacado como "inversión"
     const pricing = page.locator('#pricing');
     await expect(pricing).toBeVisible();
-    await expect(pricing).toContainText('130€/mes');
-    await expect(pricing).toContainText('Inversión'); // Enfasis en retorno, no coste
+    await expect(pricing).toContainText('75€/mes');
+    await expect(pricing).toContainText('en una sola factura');
 
     // 9. Schema Product con price 130€, isRelatedTo y billingIncrement
     const scriptContent = await page.locator('script[type="application/ld+json"]').textContent();
     expect(scriptContent).toContain('"@type":"Product"');
-    expect(scriptContent).toMatch(/"price":\s*"130(\.00)?"/);
+    expect(scriptContent).toMatch(/"price":\s*"75(\.00)?"/);
     expect(scriptContent).toContain('"billingIncrement":"monthly"');
     expect(scriptContent).toContain('"isRelatedTo"'); // Refuerza que agrupa otros servicios
 

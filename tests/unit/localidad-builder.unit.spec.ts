@@ -121,7 +121,11 @@ const MOCK_TEMPLATE_ES: PlantillaCiudad = {
           "cta": "{{seoData.cta_text}}",
           "url": "/es/contacto?location={{slug}}",
           "cta2": "Quiero más información",
-          "url2": "/es/servicios/diseno-web-tenerife"
+          "url2": "/es/servicios/diseno-web-tenerife",
+          "trustBadges": [
+            { "text": "WPO 99 Garantizado", "icon": "Check" },
+            { "text": "Servicio Local en {{name}}", "icon": "MapPin" }
+          ]
         }
       }
     }

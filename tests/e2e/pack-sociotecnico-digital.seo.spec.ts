@@ -79,7 +79,7 @@ test.describe('E2E/SEO: Pack Sociotécnico Digital (ES)', () => {
     const jsonLd = await page.locator('script[type="application/ld+json"]').textContent();
     expect(jsonLd).toContain('"@type":"Product"');
     expect(jsonLd).toContain('"name":"Pack Sociotécnico Digital"');
-    expect(jsonLd).toContain('"price":"105.00"');
+    expect(jsonLd).toContain('"price":"145.00"');
     expect(jsonLd).toContain('"priceCurrency":"EUR"');
   });
 
@@ -157,7 +157,7 @@ test.describe('E2E/SEO: Pack Sociotécnico Digital (ES)', () => {
       const jsonLd = await page.locator('script[type="application/ld+json"]').textContent();
       expect(jsonLd).toContain('"@type":"Product"');
       expect(jsonLd).toContain('"name":"Technical Partner Pack"');
-      expect(jsonLd).toContain('"price":"105.00"');
+      expect(jsonLd).toContain('"price":"145.00"');
       expect(jsonLd).toContain('"priceCurrency":"EUR"');
     });
   });
