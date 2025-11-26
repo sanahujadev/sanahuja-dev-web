@@ -61,13 +61,17 @@ test.describe('A11Y: Contacto (ES)', () => {
     // Intenta enviar formulario vacío
     await page.click('button[type="submit"]');
     
-    // Verifica que aparece mensaje de error accesible
-    const errorMessage = page.locator('[role="alert"], .error-message');
-    await expect(errorMessage).toBeVisible();
+    // Verifica que aparece mensaje de error accesible ESPECÍFICO para el nombre
+    // Usamos el ID exacto que espera el ARIA
+    const nameError = page.locator('#name-error');
+    await expect(nameError).toBeVisible();
     
-    // Verifica que el error está asociado al campo
+    // Verifica que el error está asociado al campo visual y semánticamente
     const nameInput = page.locator('input[name="name"]');
-    const ariaInvalid = await nameInput.getAttribute('aria-invalid');
-    expect(ariaInvalid).toBe('true');
+    await expect(nameInput).toHaveAttribute('aria-invalid', 'true');
+    
+    // Opcional: Verificar que también falla el email (confirmando múltiples errores simultáneos)
+    const emailError = page.locator('#email-error');
+    await expect(emailError).toBeVisible();
   });
 });

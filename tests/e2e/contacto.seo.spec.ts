@@ -86,6 +86,9 @@ test.describe('E2E/SEO: Contacto (ES)', () => {
     await page.fill('input[name="email"]', 'test@example.com');
     await page.fill('textarea[name="message_basic"]', 'This is a test message');
 
+    // Marca el consentimiento obligatorio (Nuevo requisito)
+    await page.check('input[name="consent"]');
+
     // Envía
     await page.click('button[type="submit"]');
 
