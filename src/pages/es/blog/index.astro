@@ -1,0 +1,35 @@
+---
+import LandingBlog from "../../../components/pages/LandingBlog.astro";
+import blog_es from "../../../i18n/es/blog/index.json";
+
+// Generar el esquema SEO dinámicamente para la página de listado del blog
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": blog_es.metadata.title,
+  "description": blog_es.metadata.description,
+  "url": `https://sanahuja.dev${blog_es.endpoint}`,
+  "isPartOf": {
+    "@type": "WebSite",
+    "url": "https://sanahuja.dev",
+    "name": "SanahujaDev",
+  },
+  "inLanguage": blog_es.lang,
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": `https://sanahuja.dev${blog_es.metadata.og_image}`,
+    "width": "1200", // Asumiendo tamaño estándar para OG image
+    "height": "630"
+  },
+  "datePublished": "2025-01-01", // Placeholder, esto debería ser dinámico o no estar aquí para una lista de posts
+  "dateModified": "2025-01-01", // Placeholder
+};
+
+const alternateUrl = new URL(blog_es.alternateUrl, Astro.site).href;
+---
+
+<LandingBlog
+  copy={blog_es}
+  alternateUrl={alternateUrl}
+  schema={schema}
+/>

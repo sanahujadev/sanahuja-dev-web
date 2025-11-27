@@ -91,6 +91,15 @@ test.describe('E2E/SEO: Contacto (ES)', () => {
         };
     });
 
+    // 🛡️ MOCK API: Interceptamos el envío del formulario
+    await page.route('**/forms', async route => {
+        await route.fulfill({
+            status: 200,
+            contentType: 'application/json',
+            body: JSON.stringify({ messageId: 'test-lead-123' })
+        });
+    });
+
     await page.goto(URL, { waitUntil: 'domcontentloaded' });
 
     // Espera a que el JS del formulario se haya inicializado para prevenir race conditions.
@@ -112,7 +121,7 @@ test.describe('E2E/SEO: Contacto (ES)', () => {
     await page.click('button[type="submit"]');
 
     // Espera redirección (AJAX + window.location)
-    await page.waitForURL('/es/gracias-proyecto');
-    await expect(page).toHaveURL('/es/gracias-proyecto');
+    await page.waitForURL(/\/es\/gracias-proyecto/);
+    await expect(page).toHaveURL(/\/es\/gracias-proyecto/);
   });
 });

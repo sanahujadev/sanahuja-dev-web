@@ -1,0 +1,81 @@
+{
+  "endpoint": "/en/blog",
+  "lang": "en",
+  "alternateUrl": "/es/blog",
+  "metadata": {
+    "title": "SanahujaDev Blog | Digital Strategy, WPO & Local SEO in Tenerife",
+    "description": "Technical and strategic articles for businesses seeking profitability. Analysis on WPO, local positioning, and efficient web development in the Canary Islands.",
+    "og_image": "/images/og-blog-sanahujadev.jpg"
+  },
+  "copy": {
+    "hero": {
+      "visualIcon": "BookOpen",
+      "badge": "Resource Center",
+      "h1": "Technology with <span class='text-primary-500'>Business Vision.</span>",
+      "subtitle": "You won't find generic news here. I share tactical analyses on how to turn a website into a profitable tool. Technical clarity, straight to the point, and focused on your goals.",
+      "cta": {
+        "text": "Read latest analysis",
+        "anchor": "#latest-post"
+      }
+    },
+    "categories": {
+      "title": "Explore by Solutions",
+      "description": "Find exactly the strategy your business needs to improve.",
+      "items": [
+        { 
+          "label": "View All", 
+          "slug": "all",
+          "icon": "Grid"
+        },
+        { 
+          "label": "Web Performance (WPO)", 
+          "slug": "wpo",
+          "icon": "Zap",
+          "tooltip": "Speed and load optimization"
+        },
+        { 
+          "label": "Local SEO & Visibility", 
+          "slug": "seo-local",
+          "icon": "MapPin",
+          "tooltip": "Positioning strategies in the Canary Islands"
+        },
+        { 
+          "label": "Digital Profitability", 
+          "slug": "negocio",
+          "icon": "TrendingUp",
+          "tooltip": "Conversion and return on investment"
+        }
+      ]
+    },
+    "emptyState": {
+      "visualState": "Blueprint",
+      "title": "Under Development",
+      "message": "My commitment to quality is absolute. I am finalizing the first technical analysis on WPO and it will not be published until it meets my standards. Thank you for your patience.",
+      "cta": {
+        "text": "Connect on LinkedIn",
+        "url": "https://linkedin.com/in/josejsanahuja",
+        "icon": "Linkedin"
+      }
+    },
+    "newsletter": {
+      "visualState": "ShieldCheck",
+      "title": "Valuable Insights, Respecting Your Time",
+      "description": "Receive notifications only when I publish relevant content for your business optimization. No unnecessary frequency.",
+      "placeholder": "your@email.com",
+      "button": "Subscribe",
+      "disclaimer": "Privacy guaranteed. Unsubscribe whenever you want."
+    },
+    "ctaFinal": {
+      "visualBackground": "MinimalTech",
+      "title": "From theory to implementation.",
+      "content": "Understanding the strategy is the first step. Executing it correctly makes the difference. If you are looking for a technical partner to apply it, I am available.",
+      "button": "Request Proposal",
+      "url": "/en/contact?source=blog_footer"
+    }
+  },
+  "justification": {
+    "seo": "Retaining strong keywords: 'WPO', 'Local SEO', 'Profitability'. Title remains click-worthy but projects authority.",
+    "branding": "100% aligned with source [45] (Serious, clear, technical). Using 'Straight to the point' [51] but in a professional context. Message reinforces 'Your success is my success' [66] by focusing on client profitability.",
+    "ux": "Clear labels in categories. Newsletter message reduces friction promising respect for user time (aligned with 'Busy freelancer' target [9])."
+  }
+}

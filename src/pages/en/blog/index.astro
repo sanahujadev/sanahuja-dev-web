@@ -1,0 +1,35 @@
+---
+import LandingBlog from "../../../components/pages/LandingBlog.astro";
+import blog_en from "../../../i18n/en/blog/index.json";
+
+// Generar el esquema SEO dinámicamente para la página de listado del blog (EN)
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": blog_en.metadata.title,
+  "description": blog_en.metadata.description,
+  "url": `https://sanahuja.dev${blog_en.endpoint}`,
+  "isPartOf": {
+    "@type": "WebSite",
+    "url": "https://sanahuja.dev",
+    "name": "SanahujaDev",
+  },
+  "inLanguage": blog_en.lang,
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": `https://sanahuja.dev${blog_en.metadata.og_image}`,
+    "width": "1200",
+    "height": "630"
+  },
+  "datePublished": "2025-01-01", 
+  "dateModified": "2025-01-01",
+};
+
+const alternateUrl = `https://sanahuja.dev${blog_en.alternateUrl}`;
+---
+
+<LandingBlog
+  copy={blog_en}
+  alternateUrl={alternateUrl}
+  schema={schema}
+/>
