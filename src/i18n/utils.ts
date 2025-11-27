@@ -46,6 +46,7 @@ import plantillaCiudadesTemplate from "./auto/plantilla-ciudades.json" with {
   type: "json",
 };
 import localidadesDB from "./auto/localidades.json" with { type: "json" };
+import blogCopy from "./es/blog/index.json" with { type: "json" };
 
 export type CookieConsentType = any;
 export type LandingDiseñoWebCopy = typeof landingDeiseñoWebCopy;
@@ -70,3 +71,4 @@ export type GraciasCopy = typeof graciasCopy;
 export type ContactoCopy = typeof contactCopy;
 export type PlantillaCiudad = typeof plantillaCiudadesTemplate.es;
 export type LocalidadDB = (typeof localidadesDB)[0];
+export type BlogCopy = typeof blogCopy;

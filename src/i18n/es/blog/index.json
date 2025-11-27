@@ -1,0 +1,81 @@
+{
+  "endpoint": "/es/blog",
+  "lang": "es",
+  "alternateUrl": "/en/blog",
+  "metadata": {
+    "title": "Blog SanahujaDev | Estrategia Digital, WPO y SEO Local en Tenerife",
+    "description": "Artículos técnicos y estratégicos para negocios que buscan rentabilidad. Análisis sobre WPO, posicionamiento local y desarrollo web eficiente en Canarias.",
+    "og_image": "/images/og-blog-sanahujadev.jpg"
+  },
+  "copy": {
+    "hero": {
+      "visualIcon": "BookOpen",
+      "badge": "Centro de Recursos",
+      "h1": "Tecnología con <span class='text-primary-500'>Visión de Negocio.</span>",
+      "subtitle": "Aquí no encontrarás noticias genéricas. Comparto análisis tácticos sobre cómo convertir una web en una herramienta rentable. Claridad técnica, sin rodeos y enfocada en tus objetivos.",
+      "cta": {
+        "text": "Leer último análisis",
+        "anchor": "#latest-post"
+      }
+    },
+    "categories": {
+      "title": "Explora por Soluciones",
+      "description": "Encuentra directamente la estrategia que tu negocio necesita mejorar.",
+      "items": [
+        { 
+          "label": "Ver todo", 
+          "slug": "all",
+          "icon": "Grid"
+        },
+        { 
+          "label": "Rendimiento Web (WPO)", 
+          "slug": "wpo",
+          "icon": "Zap",
+          "tooltip": "Optimización de velocidad y carga"
+        },
+        { 
+          "label": "SEO Local y Visibilidad", 
+          "slug": "seo-local",
+          "icon": "MapPin",
+          "tooltip": "Estrategias de posicionamiento en Canarias"
+        },
+        { 
+          "label": "Rentabilidad Digital", 
+          "slug": "negocio",
+          "icon": "TrendingUp",
+          "tooltip": "Conversión y retorno de inversión"
+        }
+      ]
+    },
+    "emptyState": {
+      "visualState": "Blueprint",
+      "title": "En Fase de Desarrollo",
+      "message": "Mi compromiso con la calidad es absoluto. Estoy finalizando el primer análisis técnico sobre WPO y no se publicará hasta que cumpla con mis estándares de exigencia. Gracias por tu paciencia.",
+      "cta": {
+        "text": "Conectar en LinkedIn",
+        "url": "https://linkedin.com/in/josejsanahuja",
+        "icon": "Linkedin"
+      }
+    },
+    "newsletter": {
+      "visualState": "ShieldCheck",
+      "title": "Información de Valor, Respetando tu Tiempo",
+      "description": "Recibe notificaciones únicamente cuando publique contenido relevante para la optimización de tu negocio. Sin frecuencia innecesaria.",
+      "placeholder": "tu@email.com",
+      "button": "Suscribirse",
+      "disclaimer": "Privacidad garantizada. Date de baja cuando quieras."
+    },
+    "ctaFinal": {
+      "visualBackground": "MinimalTech",
+      "title": "De la teoría a la implementación.",
+      "content": "Entender la estrategia es el primer paso. Ejecutarla correctamente es lo que marca la diferencia. Si buscas un socio técnico para aplicarlo, estoy disponible.",
+      "button": "Solicitar Propuesta",
+      "url": "/es/contacto?source=blog_footer"
+    }
+  },
+  "justification": {
+    "seo": "Mantenemos las keywords fuertes: 'WPO', 'SEO Local', 'Rentabilidad'. El título sigue siendo click-worthy pero proyecta autoridad.",
+    "branding": "Alineado al 100% con la fuente [45] (Serio, claro, técnico). Usamos 'Sin rodeos' [51] pero en un contexto profesional. El mensaje refuerza la promesa de 'Tu éxito es mi éxito' [66] al enfocarse en la rentabilidad del cliente.",
+    "ux": "Etiquetas claras en las categorías. El mensaje de newsletter reduce la fricción prometiendo respeto por el tiempo del usuario (alineado con el target 'Autónomo sin tiempo' [9])."
+  }
+}
