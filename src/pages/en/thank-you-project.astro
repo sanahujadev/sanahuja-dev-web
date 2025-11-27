@@ -1,0 +1,69 @@
+---
+// THANK YOU PAGE (ENGLISH)!
+import LandingGracias from "../../components/pages/LandingGracias.astro";
+
+// 1. Import the JSON of the PAGE
+import t_page from "../../i18n/en/gracias.json" with { type: "json" };
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: t_page.metadata.title,
+  description: t_page.metadata.description,
+  url: "https://sanahuja.dev/en/thank-you-project",
+  inLanguage: "en-US",
+  datePublished: "2024-01-01",
+  dateModified: "2024-12-31",
+  publisher: {
+    "@type": "Organization",
+    name: "SanahujaDev",
+    url: "https://sanahuja.dev",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://cdn.sanahuja.dev/sanahujadev/Logo/jpeg/Logo-1280w.jpeg",
+      width: 1280,
+      height: 1280,
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "Technical Support",
+      email: "josejavier@sanahuja.dev",
+    },
+  },
+  about: {
+    "@type": "Thing",
+    name: "Contact Confirmation",
+  },
+  isAccessibleForFree: true,
+  isPartOf: {
+    "@type": "WebSite",
+    "@id": "https://sanahuja.dev",
+  },
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://sanahuja.dev/en",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Thank You for your Project",
+        item: "https://sanahuja.dev/en/thank-you-project",
+      },
+    ],
+  },
+};
+
+// 3. Calculate the Alternate URL
+const alternateUrl = new URL(t_page.alternateUrl, Astro.site).href;
+---
+
+<LandingGracias
+  copy={t_page}
+  alternateUrl={alternateUrl}
+  schema={schema}
+/>

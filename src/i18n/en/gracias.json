@@ -1,0 +1,66 @@
+{
+  "lang": "en",
+  "alternateUrl": "/es/gracias-proyecto",
+  "metadata": {
+    "title": "Request Received | SanahujaDev",
+    "description": "Your request has been successfully received.",
+    "robots": "noindex, nofollow"
+  },
+  "copy": {
+    "hero": {
+      "badge": "Submission Confirmed",
+      "title": "All good. I have received your message.",
+      "subtitle": "Reference:",
+      "message": "Your data has safely arrived in my system. This is not an auto-response: I am <strong>José Javier</strong> and I will personally review what you just told me to give you a meaningful response.",
+      "heroVisual": {
+        "type": "SuccessCheck",
+        "animation": "Pulse",
+        "statusText": "Connection Established"
+      }
+    },
+    "sections": {
+      "timeline": {
+        "title": "Next Steps",
+        "steps": [
+          {
+            "step": "01",
+            "title": "Personal Review",
+            "description": "I will analyze your query or form responses to fully understand your context before replying."
+          },
+          {
+            "step": "02",
+            "title": "Contact < 24h",
+            "description": "I will write to you via WhatsApp or Email (depending on your preference) to give you a direct answer."
+          },
+          {
+            "step": "03",
+            "title": "Next Move",
+            "description": "If I see I can help you, we will jointly define the roadmap. No pressure, just solutions."
+          }
+        ]
+      },
+      "loop": {
+        "title": "Who will read your message?",
+        "content": "While I analyze your case, I invite you to learn about the person behind the screen. Discover why my clients trust my Digital Partner model.",
+        "card": {
+          "type": "ProfileSnippet",
+          "title": "José Javier Sanahuja",
+          "role": "Consultant & Digital Partner",
+          "image": "/images/profile-small.webp",
+          "text": "Beyond the code. Discover my story, my certifications, and my philosophy of transparent work.",
+          "cta": "Read about me",
+          "url": "/en/about-me"
+        }
+      },
+      "legal": {
+        "text": "Your data is confidential. It will be used exclusively to respond to this request and evaluate the viability of our collaboration.",
+        "links": [
+          {
+            "text": "Privacy Policy",
+            "url": "/en/privacy-policy"
+          }
+        ]
+      }
+    }
+  }
+}

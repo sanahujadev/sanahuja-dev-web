@@ -18,6 +18,7 @@
         "successUrl": "/en/thank-you-project",
         "baseSubmitLabel": "Send Basic Message",
         "fullSubmitLabel": "Request Project Study",
+        "sendingLabel": "Sending...",
         "seoKeyPhrase": "Fill out the form. No obligation.",
         "genericErrorMessage": "Required field or with errors",
         "selectPlaceholder": "Select..."

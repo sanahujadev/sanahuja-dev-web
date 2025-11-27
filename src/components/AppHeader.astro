@@ -46,6 +46,7 @@ const links = [
     label: t.nav.language.label,
     badge: t.nav.language.badge,
     isLanguage: true,
+    id: "lang-switcher-btn"
   },
 ];
 ---
@@ -64,6 +65,7 @@ const links = [
         {links.map((link) => (
           <Button
             href={link.href}
+            id={link.id}
             class:list={[
               'px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-2',
               link.isPrimary
@@ -114,6 +116,7 @@ const links = [
         {links.map((link) => (
           <Button
             href={link.href}
+            id={link.id}
             class:list={[
               'px-4 py-3 rounded-lg text-sm font-medium transition-colors flex items-center gap-x-2',
               link.isPrimary
@@ -173,7 +176,21 @@ const links = [
       });
     });
   }
+
+  function initLangSwitcher() {
+    const langBtn = document.getElementById("lang-switcher-btn") as HTMLAnchorElement;
+    if (langBtn && window.location.search) {
+        // Solo añadimos si no los tiene ya (por si se ejecutara dos veces)
+        if (!langBtn.href.includes('?')) {
+             langBtn.href = `${langBtn.href}${window.location.search}`;
+        }
+    }
+  }
   
   initNavbar();
-  document.addEventListener('astro:page-load', initNavbar);
+  initLangSwitcher();
+  document.addEventListener('astro:page-load', () => {
+    initNavbar();
+    initLangSwitcher();
+  });
 </script>

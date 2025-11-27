@@ -58,7 +58,7 @@ const { copy: t, lang, metadata } = copy;
 
         {/* Reference ID */}
         <p class="text-muted-foreground mb-6">
-          {t.hero.subtitle} <span class="text-primary-400 font-mono">#LEAD_ID</span>
+          {t.hero.subtitle} <span id="lead-id-display" class="text-primary-400 font-mono">#LEAD_ID</span>
         </p>
 
         {/* Message */}
@@ -72,6 +72,22 @@ const { copy: t, lang, metadata } = copy;
           <span class="text-sm text-muted-foreground">{t.hero.heroVisual.statusText}</span>
         </div>
       </section>
+
+      <script is:inline>
+        function updateLeadId() {
+          const leadIdDisplay = document.getElementById('lead-id-display');
+          if (leadIdDisplay) {
+            const urlParams = new URLSearchParams(window.location.search);
+            const leadId = urlParams.get('LEAD_ID');
+            if (leadId) {
+              leadIdDisplay.textContent = `#${leadId}`;
+            }
+          }
+        }
+
+        document.addEventListener('DOMContentLoaded', updateLeadId);
+        document.addEventListener('astro:page-load', updateLeadId);
+      </script>
 
       {/* Timeline Section */}
       <section id="timeline" class="mb-16">

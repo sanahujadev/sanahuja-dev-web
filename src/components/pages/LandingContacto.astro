@@ -89,6 +89,7 @@ const iconMap: Record<string, any> = {
         class="space-y-6"
         method="POST"
         data-success-url={t.formUI.config.successUrl}
+        data-sending-label={t.formUI.config.sendingLabel}
         data-turnstile-site-key={PUBLIC_TURNSTILE_SITE_KEY}
         data-api-url={API_URL}
         data-api-key={API_KEY}
@@ -611,6 +612,10 @@ const iconMap: Record<string, any> = {
           >
             {t.formUI.config.fullSubmitLabel}
           </Button>
+          
+          {/* Form Status Message */}
+          <div id="form-status" class="hidden mt-4 p-4 rounded-lg text-sm text-center"></div>
+
           <p class="text-xs text-muted-foreground">
             {t.formUI.config.seoKeyPhrase}
           </p>
