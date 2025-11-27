@@ -1,0 +1,77 @@
+[
+  {
+    "id": "1",
+    "slug": "wpo-99-no-es-magia-es-ingenieria",
+    "title": "WPO 99 no es magia. Es ingeniería (y estos son los 5 culpables de tu 40)",
+    "excerpt": "Tu web tarda 8 segundos en cargar y Google te castiga. Descubre las 5 causas técnicas reales que destrozan tu WPO y cómo paso del 40 al 99 sin trucos ni plugins milagro.",
+    "category": "wpo",
+    "categoryLabel": "WPO (Velocidad)",
+    "author": {
+      "name": "José Javier Sanahuja",
+      "role": "Consultor & Socio Digital",
+      "avatar": "https://cdn.sanahuja.dev/sanahujadev/perfil-sin-fondo/avif/perfil-sin-fondo-360w.avif"
+    },
+    "publishedAt": "2025-01-15",
+    "readTime": "8 min",
+    "featured": true,
+    "image": {
+      "url": "/web-performance-dashboard.png",
+      "alt": "Dashboard mostrando métricas de rendimiento web WPO 99"
+    },
+    "tags": ["Core Web Vitals", "LCP", "CLS", "Next.js", "Optimización"],
+    "seo": {
+      "metaTitle": "WPO 99: Cómo optimizar tu web del 40 al 99 | SanahujaDev",
+      "metaDescription": "Descubre las 5 causas técnicas que destrozan tu WPO y cómo alcanzar un score de 99 sin trucos. Ingeniería web aplicada."
+    }
+  },
+  {
+    "id": "2",
+    "slug": "google-business-profile-tenerife-competencia-dormida",
+    "title": "Tu competencia en Tenerife lleva 3 años sin actualizar su Google Business Profile",
+    "excerpt": "Analicé 50 negocios digitales en Tenerife y descubrí algo brutal: el 80% tiene su GMB abandonado. Esta es la brecha que puedes aprovechar HOY.",
+    "category": "seo-local",
+    "categoryLabel": "SEO Local Tenerife",
+    "author": {
+      "name": "José Javier Sanahuja",
+      "role": "Consultor & Socio Digital",
+      "avatar": "https://cdn.sanahuja.dev/sanahujadev/perfil-sin-fondo/avif/perfil-sin-fondo-360w.avif"
+    },
+    "publishedAt": "2025-01-10",
+    "readTime": "6 min",
+    "featured": false,
+    "image": {
+      "url": "/google-maps-business-profile-tenerife.jpg",
+      "alt": "Mapa de Google Business Profiles activos vs inactivos en Tenerife"
+    },
+    "tags": ["SEO Local", "Google Maps", "GMB", "Tenerife", "Competencia"],
+    "seo": {
+      "metaTitle": "SEO Local Tenerife: La brecha de GMB que nadie aprovecha | SanahujaDev",
+      "metaDescription": "80% de negocios en Tenerife tienen su Google Business Profile abandonado. Descubre cómo dominar el SEO local aprovechando esta brecha."
+    }
+  },
+  {
+    "id": "3",
+    "slug": "web-bonita-vs-web-rentable-diferencia-5000-euros",
+    "title": "Web bonita vs. Web rentable: La diferencia son 5.000€ al año",
+    "excerpt": "Diseñé 40+ webs en Fiverr. Las \"bonitas\" generan ego. Las rentables generan clientes. Te muestro los 4 elementos que convierten visitas en ventas reales.",
+    "category": "negocio",
+    "categoryLabel": "Estrategia de Negocio",
+    "author": {
+      "name": "José Javier Sanahuja",
+      "role": "Consultor & Socio Digital",
+      "avatar": "https://cdn.sanahuja.dev/sanahujadev/perfil-sin-fondo/avif/perfil-sin-fondo-360w.avif"
+    },
+    "publishedAt": "2025-01-05",
+    "readTime": "10 min",
+    "featured": false,
+    "image": {
+      "url": "/website-conversion-strategy-dashboard.jpg",
+      "alt": "Comparativa entre diseño estético y diseño orientado a conversión"
+    },
+    "tags": ["Conversión", "ROI", "Estrategia", "CRO", "Negocio"],
+    "seo": {
+      "metaTitle": "Web Rentable vs Web Bonita: 4 Claves para Convertir | SanahujaDev",
+      "metaDescription": "Las webs bonitas generan ego, las rentables generan clientes. Descubre los 4 elementos que convierten visitas en ventas reales."
+    }
+  }
+]

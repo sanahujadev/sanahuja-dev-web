@@ -1,0 +1,174 @@
+---
+// src/components/pages/LandingBlog.astro
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+// Tipos y Datos
+import type { BlogCopy } from "../../i18n/utils";
+import Button from "../ui/Button.astro";
+import BlogCard, { type BlogPost } from "../ui/cards/BlogCard.astro";
+import blogStubData from "../../data/blog-stub.json";
+
+// Iconos
+import BookOpen from "../ui/icons/BookOpen.astro";
+import ChevronDown from "../ui/icons/ChevronDown.astro";
+import Grid from "../ui/icons/Grid.astro";
+import Zap from "../ui/icons/Zap.astro";
+import MapPin from "../ui/icons/MapPin.astro";
+import TrendingUp from "../ui/icons/TrendingUp.astro";
+import ShieldCheck from "../ui/icons/ShieldCheck.astro";
+import ArrowRight from "../ui/icons/ArrowRight.astro";
+
+interface Props {
+  copy: BlogCopy;
+  alternateUrl: string;
+  schema: Record<string, any>;
+}
+
+const { copy, alternateUrl, schema } = Astro.props;
+const { copy: t, lang, metadata } = copy;
+
+// Mapeo de Iconos para Categorías
+const iconMap: Record<string, any> = {
+  BookOpen,
+  Grid,
+  Zap,
+  MapPin,
+  TrendingUp,
+};
+
+const activeCategory = "all";
+const filteredPosts: BlogPost[] = blogStubData as BlogPost[]; 
+---
+
+<BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>
+  <Fragment slot="head">
+    <title>{metadata.title}</title>
+    <meta name="description" content={metadata.description} />
+  </Fragment>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} slot="json-ld" />
+
+<main>
+  {/* Hero Section */}
+  <section>
+    <div />
+
+    <div>
+      <div>
+        <BookOpen />
+        <span>{t.hero.badge}</span>
+      </div>
+
+      <h1 set:html={t.hero.h1} />
+
+      <p>
+        {t.hero.subtitle}
+      </p>
+
+      <a href={t.hero.cta.anchor}>
+        {t.hero.cta.text}
+        <ChevronDown />
+      </a>
+    </div>
+  </section>
+
+  {/* Categories Filter */}
+  <section>
+    <div>
+      <div>
+        <h2>{t.categories.title}</h2>
+        <p>{t.categories.description}</p>
+      </div>
+
+      <div>
+        {t.categories.items.map((cat) => {
+          const Icon = iconMap[cat.icon] || Grid;
+          return (
+            <Button
+              title={cat.tooltip || cat.label}
+              data-category={cat.slug}
+            >
+              <span>
+                <Icon />
+                {cat.label}
+              </span>
+
+              {cat.tooltip && <span>{cat.tooltip}</span>}
+            </Button>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  {/* Blog Posts Grid */}
+  <section id="latest-post">
+    <div>
+      {filteredPosts.length > 0 ? (
+        <div>
+          {filteredPosts.map((post) => (
+            <BlogCard post={post} lang={lang as "es" | "en"} />
+          ))}
+        </div>
+      ) : (
+        <div>
+          <h3>{t.emptyState.title}</h3>
+          <p>
+            {t.emptyState.message}
+          </p>
+        </div>
+      )}
+    </div>
+  </section>
+  
+  {/* Newsletter Section */}
+  <section class="py-16 px-4 bg-neutral-900">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-secondary-500/10 rounded-full mb-6">
+        <ShieldCheck class="w-8 h-8 text-secondary-400" />
+      </div>
+
+      <h2 class="text-3xl font-bold mb-4">{t.newsletter.title}</h2>
+      <p class="text-neutral-400 mb-8 text-lg">
+        {t.newsletter.description}
+      </p>
+
+      <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input
+          type="email"
+          placeholder={t.newsletter.placeholder}
+          required
+          class="flex-1 px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-100 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-primary-500"
+        />
+        <Button
+          type="submit"
+          class="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-semibold transition-colors whitespace-nowrap"
+        >
+          {t.newsletter.button}
+        </Button>
+      </form>
+
+      <p class="text-sm text-neutral-500 mt-4">{t.newsletter.disclaimer}</p>
+    </div>
+  </section>
+
+  {/* CTA Final */}
+  <section class="relative py-20 px-4 overflow-hidden">
+    {/* Background gradient */}
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-900/20 via-neutral-950 to-secondary-900/20" />
+
+    <div class="relative max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">{t.ctaFinal.title}</h2>
+      <p class="text-lg text-neutral-300 mb-8 max-w-2xl mx-auto">
+        {t.ctaFinal.content}
+      </p>
+      <Button
+        href={t.ctaFinal.url}
+        class="inline-flex items-center gap-2 px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-bold text-lg transition-colors shadow-lg shadow-primary-600/20"
+      >
+        {t.ctaFinal.button}
+        <ArrowRight />
+      </Button>
+    </div>
+  </section>
+</main>
+</BaseLayout>

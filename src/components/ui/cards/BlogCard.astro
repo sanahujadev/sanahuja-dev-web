@@ -1,0 +1,95 @@
+---
+import Button from "../Button.astro";
+import ChevronRight from "../icons/ChevronRight.astro";
+
+// Definición de Tipos (Idealmente esto iría en un archivo src/types/blog.ts)
+export interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  content?: string;
+  category: "wpo" | "seo-local" | "negocio";
+  categoryLabel: string;
+  author: {
+    name: string;
+    role: string;
+    avatar: string;
+  };
+  publishedAt: string;
+  readTime: string;
+  featured: boolean;
+  image: {
+    url: string;
+    alt: string;
+  };
+  tags: string[];
+  seo: {
+    metaTitle: string;
+    metaDescription: string;
+  };
+}
+
+interface Props {
+  post: BlogPost;
+  lang: "es" | "en";
+}
+
+const { post, lang } = Astro.props;
+
+const formatDate = (dateString: string, locale: string) => {
+    return new Date(dateString).toLocaleDateString(locale === "es" ? "es-ES" : "en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+    });
+};
+---
+
+<article>
+  {post.featured && <div>Destacado</div>}
+
+  <div>
+    <img src={post.image.url || "/placeholder.svg"} alt={post.image.alt} />
+
+    <div>
+      <span>{post.categoryLabel}</span>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <time datetime={post.publishedAt}>
+        {formatDate(post.publishedAt, lang)}
+      </time>
+      <span>•</span>
+      <span>{post.readTime} lectura</span>
+    </div>
+
+    <h3>
+      <Button href={`/${lang}/blog/${post.slug}`}>{post.title}</Button>
+    </h3>
+
+    <p>{post.excerpt}</p>
+
+    <div>
+      {post.tags.slice(0, 3).map((tag) => (
+        <span>{tag}</span>
+      ))}
+    </div>
+
+    <div>
+      <div>
+        <img src={post.author.avatar || "/placeholder.svg"} alt={post.author.name} />
+        <div>
+          <p>{post.author.name}</p>
+          <p>{post.author.role}</p>
+        </div>
+      </div>
+
+      <Button href={`/${lang}/blog/${post.slug}`}>
+        <ChevronRight />
+      </Button>
+    </div>
+  </div>
+</article>

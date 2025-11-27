@@ -26,6 +26,7 @@ export class ContactForm {
     private messageErrorIcon: HTMLElement | null;
     private consentErrorMsg: HTMLElement | null; // Nuevo
     private consentErrorIcon: HTMLElement | null; // Nuevo
+    private formStatus: HTMLElement | null; // Status message container
 
     // Configuración Turnstile y API
     private turnstileSiteKey: string;
@@ -37,6 +38,9 @@ export class ContactForm {
     // Librerías y Estado
     private iti: any;
     private firstInvalidInput: HTMLInputElement | HTMLTextAreaElement | null = null;
+    private submitBtn: HTMLButtonElement | null;
+    private originalBtnContent: string = "";
+    private sendingLabel: string = "Sending...";
 
     constructor(formElement: HTMLFormElement) {
         this.form = formElement;
@@ -46,6 +50,7 @@ export class ContactForm {
         this.turnstileSiteKey = this.form.dataset.turnstileSiteKey || "";
         this.apiUrl = this.form.dataset.apiUrl || "";
         this.apiKey = this.form.dataset.apiKey || "";
+        this.sendingLabel = this.form.dataset.sendingLabel || "Enviando...";
 
         // 1. Inicialización de Inputs
         this.nameInput = this.form.querySelector('input[name="name"]');
@@ -54,6 +59,7 @@ export class ContactForm {
         this.messageInput = this.form.querySelector('textarea[name="message_basic"]'); // O 'message' según tu HTML
         this.consentCheckbox = this.form.querySelector('input[name="consent"]'); // Nuevo
         this.nicknameInput = this.form.querySelector('input[name="nickname"]'); // Honeypot
+        this.submitBtn = this.form.querySelector('button[type="submit"]');
 
         // 2. Inicialización de UI de Errores
         this.nameErrorMsg = document.getElementById('name-error');
@@ -66,6 +72,7 @@ export class ContactForm {
         this.messageErrorIcon = document.getElementById('message_basic-error-icon');
         this.consentErrorMsg = document.getElementById('consent-error'); // Nuevo
         this.consentErrorIcon = document.getElementById('consent-error-icon'); // Nuevo
+        this.formStatus = document.getElementById('form-status'); // Status container
 
         this.initListeners();
         this.initPhoneInput();
@@ -291,14 +298,38 @@ export class ContactForm {
         if (!this.firstInvalidInput) this.firstInvalidInput = input;
     }
 
+    private setLoading(isLoading: boolean) {
+        if (!this.submitBtn) return;
+
+        if (isLoading) {
+            this.originalBtnContent = this.submitBtn.innerHTML;
+            this.submitBtn.disabled = true;
+            this.submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+            this.submitBtn.innerHTML = `
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                ${this.sendingLabel}
+            `;
+        } else {
+            this.submitBtn.disabled = false;
+            this.submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+            this.submitBtn.innerHTML = this.originalBtnContent;
+        }
+    }
+
     private async handleSubmit(e: Event) {
         e.preventDefault();
 
         // 1. Honeypot Check (Seguridad Anti-Spam)
         // Si el campo oculto tiene valor, es un bot. Simulamos éxito y salimos.
         if (this.nicknameInput && this.nicknameInput.value) {
-            console.log("Bot detected (Honeypot triggered). Simulating success.");
-            setTimeout(() => { window.location.href = this.successUrl; }, 600);
+            setTimeout(() => { 
+                const url = new URL(this.successUrl, window.location.origin);
+                url.searchParams.set('LEAD_ID', '482');
+                window.location.href = url.toString();
+            }, 600);
             return;
         }
 
@@ -312,43 +343,108 @@ export class ContactForm {
 
         // Validar Turnstile
         if (!this.turnstileToken) {
-            alert("Por favor, completa la verificación de seguridad.");
+            this.showStatus("Por favor, completa la verificación de seguridad.", 'error');
             return;
         }
 
         // 2. Construcción del Payload
-        // Recogemos datos explícitos y también los radios/selects usando FormData para mayor comodidad
         const formData = new FormData(this.form);
-        
-        // Objeto base tipado (parcialmente)
         const payload = {
-            // Identidad
-            name: this.nameInput?.value.trim(),
-            email: this.emailInput?.value.trim(),
-            phone: this.phoneInput?.value.trim(), // Podríamos usar this.iti.getNumber() para formato E.164
-            message: this.messageInput?.value.trim(),
-            
-            // Alcance (Steps 2 & 3) - Obtenidos via FormData
-            project_type: formData.get('project_type'),
-            tech_status: formData.get('tech_status'),
-            goal: formData.get('goal'),
-            timeline: formData.get('timeline'),
-            budget_range: formData.get('budget_range'),
-
-            // Seguridad & Meta
-            turnstileToken: this.turnstileToken,
-            formId: this.form.id,
-            url: window.location.href,
-            timestamp: new Date().toISOString()
+            fromName: this.nameInput?.value.trim(),
+            fromEmail: this.emailInput?.value.trim(),
+            numeroDeTelefono: this.phoneInput?.value.trim(),
+            body: this.messageInput?.value.trim(),
+            conversion :{
+                project_type: this.getLabelForField('project_type'),
+                tech_status: this.getLabelForField('tech_status'),
+                goal: formData.get('goal'),
+                timeline: this.getLabelForField('timeline'),
+                budget_range: this.getLabelForField('budget_range'),
+            },
+            nickname: formData.get('nickname'),
+            cfTurnstileResponse: this.turnstileToken,
+            consent: this.consentCheckbox?.checked || false,
         };
 
-        console.log("Payload preparado para envío:", payload);
+        try {
+            this.setLoading(true);
+            // Limpiar estado previo
+            if (this.formStatus) this.formStatus.classList.add('hidden');
 
-        console.log("Simulando envío de formulario a una API...");
+            const response = await fetch(`${this.apiUrl}/forms`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-api-key': this.apiKey
+                },
+                body: JSON.stringify(payload)
+            });
 
-        setTimeout(() => {
-            window.location.href = this.successUrl;
-        }, 600);
+            if (response.ok) {
+                const data = await response.json().catch(() => ({}));
+                const url = new URL(this.successUrl, window.location.origin);
+                if (data.messageId) {
+                    url.searchParams.set('LEAD_ID', data.messageId);
+                }
+                window.location.href = url.toString();
+            } else {
+                this.setLoading(false);
+                const errorData = await response.json().catch(() => ({}));
+                console.error("Error en respuesta API:", errorData);
+                this.showStatus("Hubo un problema al enviar tu solicitud. Por favor, inténtalo de nuevo.", 'error');
+            }
+        } catch (error) {
+            this.setLoading(false);
+            console.error("Error de red o sistema:", error);
+            this.showStatus("Error de conexión. Por favor, verifica tu internet e inténtalo de nuevo.", 'error');
+        }
+    }
+
+    private showStatus(message: string, type: 'success' | 'error') {
+        if (!this.formStatus) return;
+
+        this.formStatus.textContent = message;
+        this.formStatus.classList.remove('hidden', 'bg-green-500/10', 'text-green-400', 'border-green-500/20', 'bg-red-500/10', 'text-red-400', 'border-red-500/20', 'border');
+
+        if (type === 'success') {
+            this.formStatus.classList.add('bg-green-500/10', 'text-green-400', 'border-green-500/20', 'border');
+        } else {
+            this.formStatus.classList.add('bg-red-500/10', 'text-red-400', 'border-red-500/20', 'border');
+        }
+
+        this.formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Helper para obtener el texto visible (label) en lugar del value interno
+    private getLabelForField(fieldName: string): string {
+        const element = this.form.querySelector(`[name="${fieldName}"]`);
+        if (!element) return "";
+
+        // Caso SELECT
+        if (element.tagName === 'SELECT') {
+            const select = element as HTMLSelectElement;
+            if (select.selectedIndex < 0) return "";
+            if (!select.value) return "";
+            return select.options[select.selectedIndex].text.trim();
+        }
+        
+        // Caso RADIO Group
+        if (element.getAttribute('type') === 'radio') {
+            const checked = this.form.querySelector(`input[name="${fieldName}"]:checked`) as HTMLInputElement;
+            if (!checked) return "";
+            
+            const labelParent = checked.closest('label');
+            if (labelParent) {
+               // Buscamos el span que contiene el texto (estructura Astro actual)
+               const span = labelParent.querySelector('span');
+               if (span) return span.textContent?.trim() || "";
+               return labelParent.textContent?.trim() || "";
+            }
+            return checked.value;
+        }
+        
+        // Default (Input text, etc)
+        return (element as HTMLInputElement).value;
     }
 
     // --- Métodos de UI (Acordeón) ---
