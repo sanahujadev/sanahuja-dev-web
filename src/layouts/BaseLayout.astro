@@ -90,10 +90,7 @@ const t_footer = lang === "es" ? t_footer_es : t_footer_en;
             }]}
         />
 
-        <!-- CRÍTICO 2: CSS inline para eliminar render blocking -->
-        <!-- style is:inline set:html={criticalCSS}></style>
-        
-        <!-- CRÍTICO 3: View Transitions con control granular -->
+        <!-- CRÍTICO 2: View Transitions con control granular -->
         {!disableTransitions && <ClientRouter fallback="none" />}
 
         <!-- Prefetch de páginas críticas del funnel (solo si NO es página de conversión) -->
@@ -106,6 +103,10 @@ const t_footer = lang === "es" ? t_footer_es : t_footer_en;
     </head>
     
     <body class="font-sans bg-neutral-900 text-neutral-200 antialiased">
+        <script is:inline define:vars={{ GTM_ID }}>
+            window.__GTM_ID__ = GTM_ID;
+        </script>
+        <script src="../scripts/cookie-consent/gtag-stub.ts"></script>
         <AppHeader t={t_header} lang={lang} alternateUrl={alternateUrl} />
           <slot />
         <AppFooter t={t_footer} lang={lang} />
