@@ -17,6 +17,12 @@ import t_footer_es from "../i18n/es/componentes/footer.json" with {
 import t_footer_en from "../i18n/en/componentes/footer.json" with {
   type: "json",
 };
+import cookieConsent_es from "../i18n/es/legal/cookie-consent.json" with {
+  type: "json",
+};
+import cookieConsent_en from "../i18n/en/legal/cookie-consent.json" with {
+  type: "json",
+};
 import AppFooter from "../components/AppFooter.astro";
 
 type Props = {
@@ -46,6 +52,7 @@ const alternateLang = pathName.substring(1, 3) === "es" ? "en" : "es";
 
 const t_header = lang === "es" ? t_header_es : t_header_en;
 const t_footer = lang === "es" ? t_footer_es : t_footer_en;
+const cookieConsent = lang === "es" ? cookieConsent_es : cookieConsent_en;
 ---
 
 <!DOCTYPE html>
@@ -103,10 +110,12 @@ const t_footer = lang === "es" ? t_footer_es : t_footer_en;
     </head>
     
     <body class="font-sans bg-neutral-900 text-neutral-200 antialiased">
-        <script is:inline define:vars={{ GTM_ID }}>
+        <script is:inline define:vars={{ GTM_ID, cookieConsent, lang }}>
             window.__GTM_ID__ = GTM_ID;
+            window.__CONSENT_CONFIG__ = { lang, translations: cookieConsent };
         </script>
         <script src="../scripts/cookie-consent/gtag-stub.ts"></script>
+        <script src="../scripts/cookie-consent/init.ts"></script>
         <AppHeader t={t_header} lang={lang} alternateUrl={alternateUrl} />
           <slot />
         <AppFooter t={t_footer} lang={lang} />

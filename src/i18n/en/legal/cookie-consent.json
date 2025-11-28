@@ -1,0 +1,28 @@
+{
+  "consentModal": {
+    "title": "Privacy and Performance Control",
+    "description": "We use technical cookies essential for site security (<strong>Cloudflare Turnstile</strong>) and anonymous analytics (<strong>GA4</strong>) to measure business objectives. Transparency is the foundation of our collaboration.",
+    "acceptAllBtn": "Accept all",
+    "acceptNecessaryBtn": "Technical only",
+    "showPreferencesBtn": "Configure",
+    "footer": "<a href=\"//localhost:3000/en/cookies-policy\" target=\"_blank\" class=\"cc-link\">View Cookie Policy</a>"
+  },
+  "preferencesModal": {
+    "title": "Consent Management",
+    "acceptAllBtn": "Allow all",
+    "savePreferencesBtn": "Save preferences",
+    "closeIconLabel": "Close window",
+    "sections": [
+      {
+        "title": "Strictly Necessary (Security)",
+        "description": "Mandatory for system integrity. They include protection against automated attacks (<strong>Cloudflare</strong>) and storage of your privacy preferences. They cannot be disabled.",
+        "linkedCategory": "necessary"
+      },
+      {
+        "title": "Analytics and Improvement (Performance)",
+        "description": "They allow us to measure which sections generate interest and optimize the user experience. Data is processed in an aggregated and anonymous manner. Not used for external advertising purposes.",
+        "linkedCategory": "analytics"
+      }
+    ]
+  }
+}

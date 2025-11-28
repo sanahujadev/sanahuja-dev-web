@@ -302,3 +302,94 @@
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.2);
 }
+
+/* ================================================================
+  ESTILOS DE TERCEROS: Vanilla CookieConsent v3.1.0
+  FORCE DARK MODE - Estilo "Noche Eterna"
+  ================================================================ */
+
+#cc-main {
+  /* --- Tipografía y Estructura --- */
+  --cc-font-family: var(--font-sans);
+  --cc-modal-border-radius: var(--radius);
+  --cc-btn-border-radius: var(--radius);
+  --cc-modal-transition-duration: 0.25s;
+
+  /* --- COLORES BASE (Siempre Oscuros) --- */
+  /* Fondo principal: Usamos neutral-900 (igual que tus cards) */
+  --cc-bg: var(--neutral-900); 
+  
+  /* Textos */
+  --cc-primary-color: var(--neutral-50);    /* Títulos blancos */
+  --cc-secondary-color: var(--neutral-400); /* Textos grises */
+  --cc-link-color: var(--primary-500);      /* Enlaces naranjas */
+
+  /* --- BOTONES --- */
+  
+  /* Botón Primario (Aceptar) - Naranja Intenso */
+  --cc-btn-primary-bg: var(--primary-500);
+  /* ¡OJO! Texto oscuro sobre naranja para máximo contraste y legibilidad */
+  --cc-btn-primary-color: var(--neutral-950); 
+  --cc-btn-primary-border-color: var(--primary-500);
+  
+  /* Hover del Primario */
+  --cc-btn-primary-hover-bg: var(--primary-400); /* Se ilumina un poco */
+  --cc-btn-primary-hover-color: var(--neutral-950);
+  --cc-btn-primary-hover-border-color: var(--primary-400);
+
+  /* Botón Secundario (Preferencias/Rechazar) - Gris Oscuro */
+  --cc-btn-secondary-bg: var(--neutral-800);
+  --cc-btn-secondary-color: var(--neutral-300);
+  --cc-btn-secondary-border-color: var(--neutral-800);
+  
+  /* Hover del Secundario */
+  --cc-btn-secondary-hover-bg: var(--neutral-700);
+  --cc-btn-secondary-hover-color: var(--neutral-100);
+  --cc-btn-secondary-hover-border-color: var(--neutral-700);
+
+  /* --- ELEMENTOS DE UI --- */
+  
+  /* Toggles (Interruptores) */
+  --cc-toggle-bg-off: var(--neutral-700);
+  --cc-toggle-bg-on: var(--primary-500);
+  --cc-toggle-bg-readonly: var(--neutral-800);
+  --cc-toggle-knob-bg: var(--neutral-200); /* Bolita clara */
+  --cc-toggle-knob-icon-color: var(--primary-500);
+
+  /* Bloques de Categorías (Acordeones) */
+  --cc-cookie-category-block-bg: var(--neutral-950); /* Un poco más oscuro que el fondo */
+  --cc-cookie-category-block-bg-hover: var(--neutral-800);
+  
+  /* Separadores y Footer */
+  --cc-section-border: var(--neutral-800);
+  --cc-footer-bg: var(--neutral-950);
+  --cc-footer-color: var(--neutral-500);
+  --cc-footer-border-color: var(--neutral-800);
+}
+
+/* --- RETOQUES FINALES DE ESTILO --- */
+
+/* La ventana modal (cm) y la de preferencias (pm) */
+#cc-main .cm, 
+#cc-main .pm {
+    border: 1px solid var(--neutral-800); /* Borde sutil para separarlo del fondo de la web */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7); /* Sombra profunda */
+}
+
+/* Hacer que los botones se sientan "clicky" */
+#cc-main .cm__btn, 
+#cc-main .pm__btn {
+    transition: transform 0.1s ease, background-color 0.2s;
+    font-weight: 600;
+}
+
+#cc-main .cm__btn:active, 
+#cc-main .pm__btn:active {
+    transform: scale(0.97);
+}
+
+/* Eliminar el flash blanco si la librería carga estilos default antes */
+#cc-main .cm-wrapper,
+#cc-main .pm-wrapper {
+    color-scheme: dark;
+}

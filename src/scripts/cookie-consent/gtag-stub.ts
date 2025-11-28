@@ -45,7 +45,7 @@ function initGTM() {
     });
     
     window.__CONSENT_DEFAULT_SET__ = true;  // ← Nuevo flag
-    console.log('[GTM] Consent default configured: Denied by default');
+    // console.log('[GTM] Consent default configured: Denied by default');
   }
 
   window.__GTM_INITIALIZED__ = true;
@@ -65,7 +65,7 @@ function initGTM() {
     
     script.onload = () => {
       window.__GTM_LOADED__ = true;
-      console.log('[GTM] Script loaded');
+      // console.log('[GTM] Script loaded');
       // 🔥 NUEVO: Disparar evento custom para que ConsentManager sepa que GTM está listo
       window.dispatchEvent(new CustomEvent('gtm:loaded'));
     };

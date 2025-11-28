@@ -22,7 +22,7 @@ test.describe('A11Y: Gestión Reputación Online (/es/)', () => {
     await page.goto(URL);
     await page.waitForLoadState('domcontentloaded');
 
-    const heroText = page.locator('h1');
+    const heroText = page.locator('main h1');
     const heroBg = page.locator('section').first();
     
     // Verifica que el texto sea visible y tengo color

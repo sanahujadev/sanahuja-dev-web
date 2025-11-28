@@ -1,0 +1,28 @@
+{
+  "consentModal": {
+    "title": "Control de Privacidad y Rendimiento",
+    "description": "Utilizamos cookies técnicas indispensables para la seguridad del sitio (<strong>Cloudflare Turnstile</strong>) y analítica anónima (<strong>GA4</strong>) para medir objetivos de negocio. La transparencia es la base de nuestra colaboración.",
+    "acceptAllBtn": "Aceptar todas",
+    "acceptNecessaryBtn": "Solo técnicas",
+    "showPreferencesBtn": "Configurar",
+    "footer": "<a href=\" /es/politica-de-cookies\" target=\"_blank\" class=\"cc-link\">Ver Política de Cookies</a>"
+  },
+  "preferencesModal": {
+    "title": "Gestión de Consentimiento",
+    "acceptAllBtn": "Permitir todas",
+    "savePreferencesBtn": "Guardar preferencias",
+    "closeIconLabel": "Cerrar ventana",
+    "sections": [
+      {
+        "title": "Estrictamente Necesarias (Seguridad)",
+        "description": "Obligatorias para la integridad del sistema. Incluyen la protección contra ataques automatizados (<strong>Cloudflare</strong>) y el almacenamiento de tus preferencias de privacidad. No se pueden desactivar.",
+        "linkedCategory": "necessary"
+      },
+      {
+        "title": "Analítica y Mejora (Rendimiento)",
+        "description": "Nos permiten medir qué secciones generan interés y optimizar la experiencia de usuario. Los datos se procesan de forma agregada y anónima. No se utilizan para fines publicitarios externos.",
+        "linkedCategory": "analytics"
+      }
+    ]
+  }
+}

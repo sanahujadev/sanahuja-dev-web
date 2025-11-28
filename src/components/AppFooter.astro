@@ -303,4 +303,19 @@ const getSocialIcon = (name: string) => {
       </div>
     </div>
   </div>
+  <script is:inline>
+    document.addEventListener('astro:page-load', () => {
+      const cookieSettingsButton = document.getElementById('cookie-settings-button');
+      if (cookieSettingsButton) {
+        cookieSettingsButton.addEventListener('click', (event) => {
+          event.preventDefault();
+          if (window.__consentManagerInstance) {
+            window.__consentManagerInstance.showSettings();
+          } else {
+            console.warn('ConsentManager instance not found.');
+          }
+        });
+      }
+    });
+  </script>
 </footer>
