@@ -5,7 +5,6 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  // ¡Tu WPO 99 vive aquí!
   output: 'static', 
   
   // URL de producción (¡CRÍTICO para el sitemap y SEO!)

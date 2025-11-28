@@ -107,11 +107,11 @@ const services = t.sections.servicesGrid.cards.map((service, index) => {
             <p class="text-lg sm:text-xl leading-relaxed text-muted-foreground mb-10 text-pretty" set:html={t.hero.h1_lead}/>
                
             <Button 
-                href={t.sections.ctaFinal.url} 
+                href={t.hero.heroVisual.cta.url} 
                 variant="primary" 
                 class="shadow-lg shadow-primary-500/20 group"
             >
-               Empezar mi Proyecto
+              {t.hero.heroVisual.cta.text}
               <ArrowRight class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>

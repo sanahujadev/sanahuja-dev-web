@@ -15,7 +15,11 @@
         "subtitle": "360º Coverage",
         "type": "NetworkGraph",
         "nodes": ["Design", "Maintenance", "Reputation", "Support"],
-        "nodeCore": "YOUR WEB"
+        "nodeCore": "YOUR WEB",
+        "cta": {
+          "text": "Start my Project",
+          "url": "/en/contact"
+        }
       }
     },
     "sections": {

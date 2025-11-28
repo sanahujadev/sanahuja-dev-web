@@ -37,12 +37,12 @@
           }
         },
         "heroVisual": {
-          "title": "Digitalización en {{name}}",
+          "title": "Digitalización en {{seoData.zone}}",
           "subtitle": "Crecimiento Local",
           "stats": [
             {
               "label": "Zona",
-              "value": "{{seoData.zone}}"
+              "value": "{{name}}"
             },
             {
               "label": "C.P.",
@@ -94,7 +94,7 @@
           "url2": "/es/servicios/diseno-web-tenerife",
           "trustBadges": [
             {
-              "text": "WPO 99 Garantizado",
+              "text": "WPO 90+ Garantizado",
               "icon": "Check"
             },
             {
@@ -129,12 +129,12 @@
           }
         },
         "heroVisual": {
-          "title": "{{name}} Digitalization",
+          "title": "{{seoData.zone}} Digitalization",
           "subtitle": "Local Growth",
           "stats": [
             {
               "label": "Zone",
-              "value": "{{seoData.zone}}"
+              "value": "{{name}}"
             },
             {
               "label": "Zip",
@@ -186,7 +186,7 @@
           "url2": "/en/services/web-design-tenerife",
           "trustBadges": [
             {
-              "text": "WPO 99 Guaranteed",
+              "text": "WPO 90+ Guaranteed",
               "icon": "Check"
             },
             {
