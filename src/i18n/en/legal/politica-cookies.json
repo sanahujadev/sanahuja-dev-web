@@ -22,7 +22,7 @@
         "types": [
           {
             "name": "Technical Cookies (Necessary)",
-            "description": "These are essential for the website to function. In our case, we only use an internal cookie to remember your privacy preferences (whether you accepted or rejected the banner), so we don't have to ask you on every visit."
+            "description": "These are essential for the website to function. In our case, we only use an internal cookie to remember your privacy preferences (whether you accepted or rejected the banner), so we don't have to ask you on every visit. We also use a Cloudflare cookie to protect contact forms with Turnstile, ensuring security and preventing spam."
           },
           {
             "name": "Analytics Cookies (Optional)",

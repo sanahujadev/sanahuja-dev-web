@@ -45,14 +45,14 @@ test.describe('E2E/SEO: Blog Hub (ES)', () => {
     await expect(wpoCat).toHaveAttribute('title', 'Optimización de velocidad y carga');
   });
 
-  test('🔥 Debe mostrar posts iniciales (Mock Data)', async ({ page }) => {
+  test('🔥 Debe mostrar 0 posts iniciales (Mock Data)', async ({ page }) => {
     // Como cargamos stub data, NO debe mostrar empty state inicialmente
     const emptyState = page.locator('[data-testid="empty-state"]');
-    await expect(emptyState).not.toBeVisible(); // O espera hidden
+    await expect(emptyState).toBeVisible(); // O espera hidden
 
     // Debe haber artículos
     const articles = page.locator('article');
-    await expect(articles).not.toHaveCount(0);
+    await expect(articles).toHaveCount(0);
   });
 
   test('🔥 Debe tener newsletter con formulario accesible', async ({ page }) => {

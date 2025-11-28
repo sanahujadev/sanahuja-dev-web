@@ -22,7 +22,7 @@
         "types": [
           {
             "name": "Cookies Técnicas (Necesarias)",
-            "description": "Son esenciales para que la web funcione. En nuestro caso, solo usamos una cookie interna para recordar tus preferencias de privacidad (si has aceptado o rechazado el banner), para no tener que preguntarte en cada visita."
+            "description": "Son esenciales para que la web funcione. En nuestro caso, solo usamos una cookie interna para recordar tus preferencias de privacidad (si has aceptado o rechazado el banner), para no tener que preguntarte en cada visita. También usamos una cookie de Cloudflare para proteger los formularios de contacto con Turnstile, garantizando la seguridad y previniendo spam."
           },
           {
             "name": "Cookies de Analítica (Opcionales)",
