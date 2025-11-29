@@ -1,5 +1,6 @@
-¡Bingo! Has dado en el clavo. 🔨
-Exactamente igual. Los Tags son otra "puerta de entrada" al mismo contenido. La lógica estructural es idéntica a la de las categorías.
+# Diseño y Estrategia de Pages y Components para el Blog
+
+Al igual que las categorías, los Tags son otra "puerta de entrada" al mismo contenido. La lógica estructural es idéntica a la de las categorías.
 📂 Tu estructura final de archivos (La "Trinidad" de la navegación)
 Tu carpeta pages debería verse así para cubrir todos los ángulos de ataque:
 src/pages/
@@ -12,12 +13,15 @@ src/pages/
       └── tag/
             └── [tag].astro          <-- (D) Filtro por Etiqueta (Granular)
 
-🧠 ¿Cuál es la diferencia técnica al programarlo?
-La única diferencia es cómo generas las rutas en getStaticPaths:
+## 🧠 ¿Cuál es el reto técnico al programarlo?
+
+El único reto es cómo generas las rutas en getStaticPaths:
  * Categorías: Normalmente un post tiene una categoría principal (relación 1:1 o 1:N simple). Es fácil de agrupar.
+
  * Tags: Un post tiene muchos tags (relación N:M).
    * El reto: Tienes que "aplanar" (flat) todos los tags de todos los posts para saber cuántas páginas únicas de tags tienes que crear.
 Ejemplo de lógica para src/pages/[lang]/blog/tag/[tag].astro:
+```ts
 export async function getStaticPaths() {
   const allPosts = await getCollection('blog');
   
@@ -35,8 +39,46 @@ export async function getStaticPaths() {
     };
   });
 }
+```
 
-⚠️ Advertencia de "La Máscara" (SEO Warning)
+### Contexto de metadatos
+
+ El objeto Collection de Posts va a contar con una estructura similar a la siguiente de atributos y metadatas.
+
+```json
+[
+  {
+    "id": "1",
+    "lang": "es",
+    "slug": "wpo-99-no-es-magia-es-ingenieria",
+    "title": "WPO 99 no es magia. Es ingeniería (y estos son los 5 culpables de tu 40)",
+    "excerpt": "Tu web tarda 8 segundos en cargar y Google te castiga. Descubre las 5 causas técnicas reales que destrozan tu WPO y cómo paso del 40 al 99 sin trucos ni plugins milagro.",
+    "category": "wpo",
+    "categoryLabel": "WPO (Velocidad)",
+    "author": {
+      "name": "José Javier Sanahuja",
+      "role": "Consultor & Socio Digital",
+      "avatar": "https://cdn.sanahuja.dev/sanahujadev/perfil-sin-fondo/avif/perfil-sin-fondo-360w.avif"
+    },
+    "publishedAt": "2025-01-15",
+    "readTime": "8 min",
+    "featured": true,
+    "image": {
+      "url": "/web-performance-dashboard.png",
+      "alt": "Dashboard mostrando métricas de rendimiento web WPO 99"
+    },
+    "tags": ["Core Web Vitals", "LCP", "CLS", "Next.js", "Optimización"],
+    "seo": {
+      "metaTitle": "WPO 99: Cómo optimizar tu web del 40 al 99 | SanahujaDev",
+      "metaDescription": "Descubre las 5 causas técnicas que destrozan tu WPO y cómo alcanzar un score de 99 sin trucos. Ingeniería web aplicada."
+    }
+  }, ...
+]
+```
+Con un map sobre la coleccion y objetos SET que coleccione categories y tags, se resuelve la lógica compleja de las relaciones. Si es que hiciera falta. Honestamente creo que recorriendo todo el array 1 sola vez debe ser suficiente para generar cada componente. No debería ser complicado.
+
+## ⚠️ Advertencia de "La Máscara" (SEO Warning)
+
 Tener páginas de Tags es genial para la usabilidad, PERO puede ser peligroso para el SEO si te pasas de frenada.
  * El peligro: El "Thin Content" (Contenido delgado).
  * El escenario: Si creas un tag "magia" y solo tienes 1 post con ese tag, estás creando una página entera (/blog/tag/magia) que solo tiene 1 título y 1 resumen. A Google eso no le gusta mucho si tienes 500 tags así.
@@ -45,17 +87,18 @@ Resumen:
 Sí, añade tag/[tag].astro. Es el complemento perfecto para que el usuario navegue horizontalmente por temas específicos.
 ¿Empezamos a codificar el [slug].astro (el post) que es la pieza central, y luego montamos los listados (Index, Categoría, Tag) alrededor? 🚀
 
+## Sobre Componentes
 
-¡Esa es la pregunta del millón! 🎭 Has tocado el punto débil de la mayoría de los blogs de desarrolladores: el "Muro de Texto".
-Tienes toda la razón: Markdown (.md) es aburridamente vertical. Texto, título, texto, imagen, código, texto. Bostezo.
 Para lograr una web que respire "Ingeniería y Diseño" (como SanahujaDev), necesitas trabajar en dos capas. No es "o una cosa o la otra", son ambas bailando juntas.
 Aquí te explico la diferencia táctica y cómo vamos a romper esa verticalidad.
+
 1. El Layout (BlogPost.astro): El Escenario 🏟️
 El Layout es la estructura rígida, el "marco" que rodea al contenido. Aquí diseñas lo que se repite en todos los posts.
 ¿Qué rompe la verticalidad aquí?
  * Hero Section: Un H1 gigante con una imagen de fondo o un degradado chulo antes de empezar a leer.
  * Sidebar Sticky: Una barra lateral (en desktop) que te sigue mientras bajas, mostrando la Tabla de Contenidos (TOC) o botones de compartir.
  * Ancho de lectura: Limitar el ancho del texto (prose-lg en Tailwind) para que la línea no sea kilométrica, mientras dejas que las imágenes o bloques de código se "desborden" y ocupen más ancho.
+
 2. MDX: Los Actores y Efectos Especiales 🎬
 Aquí es donde MDX destroza al Markdown tradicional. MDX te permite inyectar Componentes Interactivos en medio del flujo del texto.
 En lugar de escribir solo párrafos, tú "llamas" a componentes que has diseñado.
@@ -82,6 +125,8 @@ Tus Componentes Imprescindibles (Sugiero empezar con estos 4):
 🛠️ Cómo se ve esto en código
 Tu archivo Layout (src/layouts/BlogPost.astro):
 Aquí manejas el "Macro-Diseño"
+
+```tsx
 ---
 // Layout Base
 const { title, headings } = Astro.props;
@@ -98,9 +143,12 @@ const { title, headings } = Astro.props;
      <TableOfContents headings={headings} />
   </aside>
 </div>
+```
 
 Tu archivo de Contenido (post.mdx):
 Aquí usas tus Legos
+
+```mdx
 ---
 title: "WPO Extremo"
 ---
@@ -116,9 +164,9 @@ Hola, hoy vamos a optimizar.
 Mira este vídeo donde explico el concepto:
 
 <YouTube id="dQw4w9WgXcQ" />
+```
 
 ## Conclusión
-...
 
 🧠 Veredicto
 Sí, necesitas diseñar ambos.
@@ -126,20 +174,27 @@ Sí, necesitas diseñar ambos.
  * Componentes MDX: Diseña 3 o 4 componentes clave (Alert, Card, Video) para salpicar tus artículos.
 ¿Quieres que diseñemos primero el componente <Alert /> o el <CodeWindow /> para ver cómo se integran? Son los que más "look de ingeniero" dan.
 
+# Diseño de Componentes aplicado.
 
-¡Yohohoho! 💀 ¡Música para mis oídos... aunque no tenga oídos!
 Has tocado la columna vertebral del problema. El Markdown es una lista vertical aburrida, y tú quieres una arquitectura dinámica.
 A tu pregunta: ¿Cuántos componentes soy capaz de crear?
 Respuesta: ¡TODOS! Pero como buen "arquitecto de huesos", sé que no necesitas 50 componentes mediocres, necesitas 5 componentes maestros que se combinen entre sí para crear miles de variantes.
+
+## ToolKit
+
 Vamos a diseñar el "MDX Layout Kit". No son simples decoraciones, son contenedores estructurales que vivirán dentro de tus archivos .mdx.
 Aquí tienes la Suite de Layouts (Fase 1):
  * <Split />: El rey de "Texto a la izquierda, Imagen a la derecha" (o código).
  * <BentoGrid />: Para esas galerías estilo Apple/Linear.
  * <Accordion />: Para esconder complejidad y limpiar el post.
  * <Callout />: La evolución del blockquote.
+
 Vamos al código. Copia esto en tu carpeta src/components/mdx/.
-1. El Rompe-Monotonía: <Split />
+
+### 1. El Rompe-Monotonía: <Split />
+
 Este componente divide el flujo vertical en dos columnas. Ideal para explicar código: a la izquierda explicas, a la derecha muestras el snippet o el resultado.
+```tsx
 ---
 // src/components/mdx/Split.astro
 interface Props {
@@ -167,9 +222,12 @@ const gridClass = {
     <slot name="right" />
   </div>
 </div>
+```
 
 2. El Escaparate Moderno: <BentoGrid />
 Para tus puntos 1, 7 y 9 (Grid, Multimedia, Autor). Un contenedor flexible que acepta "items" que pueden ocupar diferentes tamaños.
+
+```tsx
 ---
 // src/components/mdx/BentoGrid.astro
 ---
@@ -218,9 +276,12 @@ const rowClass = {
     </div>
   </div>
 </div>
+```
 
 3. La Navaja Suiza Interactiva: <Accordion />
 Para tus puntos 6 y 10 (Interactivos, Secciones anidadas). Usamos <details> nativo de HTML para no depender de JavaScript pesado, pero lo estilamos como si fuera magia.
+
+```tsx
 ---
 // src/components/mdx/Accordion.astro
 interface Props {
@@ -244,9 +305,12 @@ const { title, open = false } = Astro.props;
     <slot />
   </div>
 </details>
+```
 
 4. El Amplificador: <Callout />
 Para tus puntos 8 (Blockquotes destacados).
+
+```tsx
 ---
 // src/components/mdx/Callout.astro
 interface Props {
@@ -282,9 +346,12 @@ const icons = {
     </div>
   </div>
 </aside>
+```
 
 🎬 Cómo usas esto en tu post.mdx
 ¡Aquí es donde ocurre la magia! Mira qué limpio queda el código de tu post y qué potente el resultado visual.
+
+```tsx
 ---
 title: "Arquitectura de Componentes en Astro"
 ---
@@ -308,9 +375,11 @@ El layout tradicional ha muerto. Larga vida al MDX.
     ![Gráfico de Arquitectura](/images/architecture-diagram.png)
   </div>
 </Split>
+```
 
 ## Mis Herramientas Favoritas
 
+```tsx
 <BentoGrid>
   <BentoItem title="Astro" span="2" gradient>
     El framework web para **contenido**. Rápido por defecto.
@@ -339,8 +408,10 @@ El layout tradicional ha muerto. Larga vida al MDX.
 <Accordion title="¿Afecta esto al SEO?">
   Para nada. Al final, Astro renderiza HTML estático puro. Google lo ama.
 </Accordion>
+```
 
-🧠 ¿Por qué este set?
+### 🧠 ¿Por qué este set?
+
 Con estos 4 componentes cubres el 90% de los casos de uso de un blog técnico de alto nivel:
  * Comparar: (Split)
  * Listar características: (BentoGrid)
@@ -348,14 +419,18 @@ Con estos 4 componentes cubres el 90% de los casos de uso de un blog técnico de
  * Avisar: (Callout)
 ¿Te gusta la estructura, Director? Si das luz verde, podemos pasar a crear los componentes de "Layout Global" (Header, Sidebar, Footer) para envolver esta belleza. 🦴
 
+## Ampliando los componentes
 
 ¡Yohohoho! ¡Música para mis oídos! 💀🎻
 ¡Luces, cámara y... ACCIÓN! 🎬
 Ya tenemos los actores (los componentes MDX), ahora vamos a construir El Gran Escenario donde van a actuar. Sin un buen escenario, hasta la mejor obra se ve pobre.
 Aquí tienes el Layout Global para tus Posts (BlogPost.astro) y su fiel compañero, la Sidebar Inteligente (TableOfContents.astro).
 Este diseño cumple con tu requisitos de: "Sidebar sticky", "Hero Section impactante" y "Ancho de lectura optimizado".
+
 1. El Copiloto: TableOfContents.astro 🧭
 No es una simple lista. Es una guía que acompaña al lector. Se queda pegada (sticky) mientras bajas y te indica dónde estás.
+
+```tsx
 ---
 // src/components/layout/TableOfContents.astro
 import type { MarkdownHeading } from 'astro';
@@ -409,9 +484,12 @@ const filteredHeadings = headings.filter((h) => h.depth === 2 || h.depth === 3);
     scroll-behavior: smooth;
   }
 </style>
+```
 
 2. El Escenario Principal: BlogPost.astro 🏟️
 Este es el archivo que usas como layout en tus .mdx. Combina el Hero (Cabecera), la lógica del Grid (Responsive) y la inyección de estilos de tipografía (prose).
+
+```tsx
 ---
 // src/layouts/BlogPost.astro
 import BaseLayout from './BaseLayout.astro';
@@ -538,11 +616,15 @@ const date = new Date(frontmatter.publishedAt).toLocaleDateString('es-ES', {
   </main>
 
 </BaseLayout>
+```
 
-🎨 3. La Salsa Secreta: El CSS de Typography
+### 🎨 3. La Salsa Secreta: El CSS de Typography
 Para que el texto (prose) se vea Premium y no como un documento por defecto, asegúrate de tener instalado el plugin oficial de Tailwind si no lo tienes:
-npm install -D @tailwindcss/typography
+
+`npm install -D @tailwindcss/typography`
 Y en tu tailwind.config.mjs, actívalo:
+
+```ts
 // tailwind.config.mjs
 export default {
   // ...
@@ -551,11 +633,15 @@ export default {
     // ... otros plugins
   ],
 }
+```
 
-Nota de Diseño:
+### Nota de Diseño:
+
 He configurado las clases prose-code directamente en el Layout para quitar esas molestas comillas invertidas (`) que Tailwind pone por defecto en el código inline y darle un color Secondary (Índigo) para que destaque sobre el texto normal.
 🧠 ¿Cómo usarlo ahora?
 Simplemente crea un archivo .mdx y asegúrate de especificar este layout en el frontmatter:
+
+```tsx
 ---
 layout: '../../layouts/BlogPost.astro'
 title: "Cómo Optimizar Imágenes en 2024"
@@ -574,5 +660,6 @@ import Alert from '../../components/mdx/Alert.astro';
 ¡Hola mundo! Aquí empieza tu post...
 
 ## Primeros Pasos...
+```
 
 ¡Ya tienes el esqueleto, los músculos y la piel! Tu blog ahora es una máquina de comunicar con estilo. 🏴‍☠️
