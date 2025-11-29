@@ -3,6 +3,8 @@
 Al igual que las categorías, los Tags son otra "puerta de entrada" al mismo contenido. La lógica estructural es idéntica a la de las categorías.
 📂 Tu estructura final de archivos (La "Trinidad" de la navegación)
 Tu carpeta pages debería verse así para cubrir todos los ángulos de ataque:
+
+```bash
 src/pages/
   [lang]/
     blog/
@@ -12,6 +14,7 @@ src/pages/
       │     └── [category].astro     <-- (B) Filtro por Temática (Silos SEO)
       └── tag/
             └── [tag].astro          <-- (D) Filtro por Etiqueta (Granular)
+```
 
 ## 🧠 ¿Cuál es el reto técnico al programarlo?
 
