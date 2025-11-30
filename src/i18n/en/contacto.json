@@ -182,6 +182,12 @@
         "text_part2": " and the ",
         "terms_link_text": "Terms and Conditions"
       }
+    },
+    "tel": {
+      "number": "34642794960",
+      "display": "+34 642 794 960",
+      "label": "Available: M-F 10:00 - 18:00",
+      "whatsappHint": "(Or leave me a WhatsApp)"
     }
   }
 }

@@ -121,7 +121,7 @@ test.describe('E2E/SEO: Contacto (ES)', () => {
     await page.click('button[type="submit"]');
 
     // Espera redirección (AJAX + window.location)
-    await page.waitForURL(/\/es\/gracias-proyecto/);
+    await page.waitForURL(/\/es\/gracias-proyecto/, { waitUntil: 'commit' });
     await expect(page).toHaveURL(/\/es\/gracias-proyecto/);
   });
 });
