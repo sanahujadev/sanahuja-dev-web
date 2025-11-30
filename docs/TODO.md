@@ -8,23 +8,33 @@
 - [ ] ✅ **CERRADO**
 
 ### Analytics: Configuración de Conversiones (GA4 + GTM)
-- [ ] 🔴 **ROJO**: Test en GTM Preview mode: Verificar que al cargar `/es/gracias-proyecto` el contenedor GTM se dispara y el `dataLayer` está activo.
-- [ ] 🟢 **VERDE**: GTM > Variables: Crear Variable de URL (`url_query_lead_id`).
+- [X] 🔴 **ROJO**: Test en GTM Preview mode: Verificar que al cargar `/es/gracias-proyecto` el contenedor GTM se dispara y el `dataLayer` está activo.
+- [X] 🟢 **VERDE**: GTM > Variables: Crear Variable de URL (`url_query_lead_id`).
     - *Tipo:* URL.
     - *Tipo de componente:* Consulta.
     - *Clave de consulta:* `LEAD_ID`.
-- [ ] 🟢 **VERDE**: GTM > Activadores (Trigger): Crear "Lead - Success Page (No Bots)".
+    🔵 Verificación rápida
+    - [ ] Usa el Preview Mode de GTM.
+        - Navega a una URL de prueba con ?LEAD_ID=algo.
+        - En el panel de depuración, busca la variable url_query_lead_id.
+        - Debe mostrar el valor exacto que pusiste en la query.
+- [X] 🟢 **VERDE**: GTM > Activadores (Trigger): Crear "Lead - Success Page (No Bots)".
     - *Tipo:* Vista de una página.
     - *Condiciones:*
         1. `Page Path` coincide con la expresión regular `/(es/gracias-proyecto|en/thank-you-project)`
         2. `url_query_lead_id` **no contiene** `482` (El filtro anti-bot).
         3. `url_query_lead_id` **no es igual a** `undefined` (Evita visitas directas sin envío).
-- [ ] 🟢 **VERDE**: GTM > Etiquetas (Tags): Crear etiqueta "GA4 - Event - Generate Lead".
+- [X] 🟢 **VERDE**: GTM > Etiquetas (Tags): Crear etiqueta "GA4 - Event - Generate Lead".
     - *Configuración:* Google Analytics: Evento de GA4.
     - *ID de medición:* Tu ID `G-XXXXXXXX`.
     - *Nombre del evento:* `generate_lead`.
     - *Parámetros:* Añadir `lead_id` -> `{{url_query_lead_id}}` (para cruzar datos con AWS SES si hace falta).
     - *Activador:* Asignar el trigger creado en el paso anterior.
+    - [ ] 🔵 Verificación (cuando tengas acceso)
+        - En Preview Mode, navega a:
+        - /es/gracias-proyecto?LEAD_ID=aws-message-id-valido → el evento debe dispararse.
+        - /es/gracias-proyecto?LEAD_ID=482 → el evento no debe dispararse.
+        - En GA4, ve a DebugView y confirma que aparece el evento generate_lead con el parámetro lead_id.
 - [ ] 🎼 **COMPOSICIÓN**: GA4 > Admin > Visualización de datos > Eventos.
     - Esperar (o forzar) a que llegue el primer evento `generate_lead`.
     - Marcar el interruptor **"Marcar como conversión"** a ON.
