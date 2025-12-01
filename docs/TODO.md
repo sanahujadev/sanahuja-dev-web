@@ -62,16 +62,16 @@ Para cerrar el círculo y tener una analítica "Pro", añade esta **Fase de Cali
 ---
 
 ### Analytics: Fase 2 - Calibración y Gobernanza de Datos
-- [ ] ⚠️ **CRÍTICO**: GA4 > Admin > Recogida y modificación de datos > Retención de datos.
+- [X] ⚠️ **CRÍTICO**: GA4 > Admin > Recogida y modificación de datos > Retención de datos.
     - Cambiar de **"2 meses"** a **"14 meses"**.
     - *Por qué:* Si no haces esto, en un año no podrás comparar "Enero 2025 vs Enero 2026".
-- [ ] 🔗 **CONEXIÓN**: GA4 > Admin > Vinculaciones con otros productos > **Search Console**.
+- [X] 🔗 **CONEXIÓN**: GA4 > Admin > Vinculaciones con otros productos > **Search Console**.
     - Vincular tu propiedad de GSC.
     - *Beneficio:* Podrás ver en GA4 qué *queries* orgánicas traen usuarios que *luego* convierten.
 - [ ] 🛡️ **FILTRO IP**: GA4 > Admin > Recogida de datos > Filtros de datos.
     - Definir tu IP interna (casa/oficina) como "Internal Traffic".
     - Activar el filtro para que tus pruebas de formularios no inflen las estadísticas.
-- [ ] 🧪 **REFERRAL EXCLUSION**: GA4 > Admin > Flujos de datos > Configurar ajustes de etiquetas > **Crear lista de referencias no deseadas**.
+- [X] 🧪 **REFERRAL EXCLUSION**: GA4 > Admin > Flujos de datos > Configurar ajustes de etiquetas > **Crear lista de referencias no deseadas**.
     - Añadir `sanahuja.dev` (tu propio dominio).
     - Añadir pasarelas de pago si las tuvieras (Stripe, PayPal) para que no rompan la sesión.
     - *En tu caso:* Probablemente solo necesites asegurarte de que `sanahuja.dev` no cuente como referencia si hay redirecciones raras.
