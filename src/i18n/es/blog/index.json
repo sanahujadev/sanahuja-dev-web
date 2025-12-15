@@ -63,7 +63,14 @@
       "description": "Recibe notificaciones únicamente cuando publique contenido relevante para la optimización de tu negocio. Sin frecuencia innecesaria.",
       "placeholder": "tu@email.com",
       "button": "Suscribirse",
-      "disclaimer": "Privacidad garantizada. Date de baja cuando quieras."
+      "disclaimer": "Privacidad garantizada. Date de baja cuando quieras.",
+      "consentText": "Acepto la",
+      "privacyLinkText": "política de privacidad",
+      "consentEnd": "y recibir comunicaciones comerciales.",
+      "successTitle": "¡Gracias por suscribirte!",
+      "successMessage": "Revisa tu bandeja de entrada para confirmar tu suscripción.",
+      "genericErrorMessage": "Este campo es obligatorio o tiene un formato inválido.",
+      "serverErrorMessage": "Hubo un problema al procesar tu solicitud. Por favor, inténtalo de nuevo."
     },
     "ctaFinal": {
       "visualBackground": "MinimalTech",

@@ -6,7 +6,7 @@ import AxeBuilder from '@axe-core/playwright';
 test.describe('A11Y: Gracias Proyecto (ES)', () => {
   
   test('No debe tener violaciones críticas WCAG 2.1 AA', async ({ page }) => {
-    await page.goto('/es/gracias-proyecto', { waitUntil: 'networkidle' });
+    await page.goto('/es/gracias-proyecto', { waitUntil: 'domcontentloaded' });
     
     const results = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])

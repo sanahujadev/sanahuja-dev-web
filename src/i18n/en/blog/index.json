@@ -63,7 +63,14 @@
       "description": "Receive notifications only when I publish relevant content for your business optimization. No unnecessary frequency.",
       "placeholder": "your@email.com",
       "button": "Subscribe",
-      "disclaimer": "Privacy guaranteed. Unsubscribe whenever you want."
+      "disclaimer": "Privacy guaranteed. Unsubscribe whenever you want.",
+      "consentText": "I accept the",
+      "privacyLinkText": "privacy policy",
+      "consentEnd": "and receiving commercial communications.",
+      "successTitle": "Thanks for subscribing!",
+      "successMessage": "Check your inbox to confirm your subscription.",
+      "genericErrorMessage": "This field is required or has an invalid format.",
+      "serverErrorMessage": "There was a problem processing your request. Please try again."
     },
     "ctaFinal": {
       "visualBackground": "MinimalTech",

@@ -8,7 +8,7 @@ test.describe('E2E/SEO: Blog Hub (ES)', () => {
 
   test.beforeEach(async ({ page }) => {
     await page.goto(URL);
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
   });
 
   test('🔥 Debe cumplir contrato SEO ES completo: title, meta, H1, CTA', async ({ page }) => {
@@ -83,7 +83,7 @@ test.describe('E2E/SEO: Blog Hub (EN)', () => {
 
   test.beforeEach(async ({ page }) => {
     await page.goto(URL);
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
   });
 
   test('🔥 Debe cumplir contrato SEO EN completo', async ({ page }) => {

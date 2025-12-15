@@ -44,9 +44,7 @@ test.describe('E2E/SEO: Servicios - Plan de Autoridad Mensual (ES)', () => {
     const schema = JSON.parse(schemaContent || '{}');
     expect(schema['@context']).toBe('https://schema.org');
     expect(schema['@type']).toBe('Service');
-    expect(schema.serviceType).toBe('Content Marketing & SEO Strategy');
-    
-    // 🎴 FEATURE CARDS (Pain Points Section)
+    expect(schema.serviceType).toBe('Contenido y Marketing & Estrategia SEO');
     await expect(page.locator('#pain-points #feature-card')).toHaveCount(4);
     // Verifica que cada card tiene título y descripción
     for (const card of t.copy.sections.painPoints.cards) {

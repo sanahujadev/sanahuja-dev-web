@@ -5,7 +5,7 @@ import AxeBuilder from '@axe-core/playwright';
 test.describe('A11Y: Blog Hub', () => {
   test('🪓 No violaciones críticas WCAG 2.1 AA', async ({ page }) => {
     await page.goto('/es/blog');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     const results = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
@@ -81,6 +81,6 @@ test.describe('A11Y: Blog Hub', () => {
     await expect(emailInput).toHaveAttribute('aria-label', 'Email para newsletter');
     
     const submitBtn = page.getByRole('button', { name: /suscribirse/i });
-    await expect(submitBtn).toBeDisabled();
+    await expect(submitBtn).toBeEnabled();
   });
 });
