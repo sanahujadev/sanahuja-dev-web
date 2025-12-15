@@ -38,7 +38,7 @@ export class ConsentManager {
       const consentData = JSON.parse(cookieValue);
       
       if (consentData?.categories && Array.isArray(consentData.categories)) {
-        console.log('[ConsentManager] Cookie existente detectada:', consentData.categories);
+        // console.log('[ConsentManager] Cookie existente detectada:', consentData.categories);
 
         // Si gtag no existe, esperar al evento gtm:loaded
         if (typeof window.gtag !== 'function') {
@@ -130,7 +130,7 @@ export class ConsentManager {
       },
     });
     
-    console.log('[ConsentManager] Inicializado correctamente via NPM');
+    // console.log('[ConsentManager] Inicializado correctamente via NPM');
   }
 
   private updateGTMConsent(categories: string[]): void {
@@ -158,7 +158,7 @@ export class ConsentManager {
 
     try {
       window.gtag("consent", "update", consentUpdate);
-      console.log("[ConsentManager] GTM updated:", consentUpdate);
+      // console.log("[ConsentManager] GTM updated:", consentUpdate);
     } catch (error) {
       console.error("[ConsentManager] Error updating GTM:", error);
     }
