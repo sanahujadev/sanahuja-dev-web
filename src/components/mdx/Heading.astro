@@ -1,0 +1,57 @@
+---
+// src/components/mdx/Heading.astro
+import HeadingLine from "./HeadingLine.astro";
+
+interface Props {
+    as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+    size?: "xl" | "lg" | "md" | "sm" | "xs";
+    id?: string;
+    class?: string;
+    gradient?: boolean;
+    testid?: string;
+}
+
+const {
+    as: Tag,
+    size = "md",
+    id,
+    class: className,
+    gradient = false,
+    testid,
+} = Astro.props;
+
+const ariaLevel = Tag.replace("h", "");
+
+const sizeMap = {
+    xl: "text-4xl md:text-6xl",
+    lg: "text-3xl md:text-5xl",
+    md: "text-2xl md:text-4xl",
+    sm: "text-xl md:text-2xl",
+    xs: "text-lg md:text-xl",
+};
+
+const baseClasses = "font-bold text-white leading-tight scroll-mt-24";
+const sizeClasses = sizeMap[size as keyof typeof sizeMap];
+const gradientClasses = gradient
+    ? "bg-gradient-to-r from-white to-primary-400 bg-clip-text text-transparent"
+    : "";
+
+const combinedClasses = [
+    baseClasses,
+    sizeClasses,
+    gradientClasses,
+    className || "",
+]
+    .join(" ")
+    .trim();
+---
+
+<Tag
+    id={id}
+    aria-level={ariaLevel}
+    data-testid={testid || `heading-${Tag}-${size}`}
+    class={combinedClasses}
+>
+    <slot />
+    {gradient && <HeadingLine />}
+</Tag>

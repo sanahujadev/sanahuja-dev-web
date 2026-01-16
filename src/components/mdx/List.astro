@@ -1,0 +1,29 @@
+---
+// src/components/mdx/List.astro
+interface Props {
+    type?: "ordered" | "unordered";
+    class?: string;
+    testid?: string;
+}
+
+const { type = "unordered", class: className, testid } = Astro.props;
+
+const Tag = type === "ordered" ? "ol" : "ul";
+
+const baseClasses = "list-none my-6 space-y-2 group";
+const typeClasses =
+    type === "ordered"
+        ? "counter-reset-list" // Need to define this in global or inline
+        : "";
+
+const combinedClasses = [baseClasses, typeClasses, className].join(" ").trim();
+---
+
+<Tag
+    class={combinedClasses}
+    data-type={type}
+    data-testid={testid}
+    style={type === "ordered" ? "counter-reset: list-counter;" : ""}
+>
+    <slot />
+</Tag>

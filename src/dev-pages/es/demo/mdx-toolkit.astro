@@ -5,6 +5,9 @@ import BentoGrid from "../../../components/mdx/BentoGrid.astro";
 import BentoItem from "../../../components/mdx/BentoItem.astro";
 import Accordion from "../../../components/mdx/Accordion.astro";
 import Callout from "../../../components/mdx/Callout.astro";
+import Heading from "../../../components/mdx/Heading.astro";
+import List from "../../../components/mdx/List.astro";
+import ListItem from "../../../components/mdx/ListItem.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 
 const title = "Demo MDX ToolKit - SanahujaDev";
@@ -95,6 +98,81 @@ const description = "Zoo de componentes MDX para testear TDD";
             >
                 Si ejecutas este comando, **no hay vuelta atrás**.
             </Callout>
+        </section>
+
+        <!-- HEADING DEMO -->
+        <section class="mb-12">
+            <Heading as="h2" size="lg" gradient testid="heading-h2-demo-title"
+                >Heading Component Demo</Heading
+            >
+
+            <div class="space-y-8 mt-8">
+                <!-- H3 con ID -->
+                <Heading
+                    as="h3"
+                    size="md"
+                    id="mi-anclaje-personalizado"
+                    testid="heading-h3-anchor"
+                >
+                    H3 con ID para Anclaje
+                </Heading>
+
+                <!-- H3 con Custom Class -->
+                <Heading
+                    as="h3"
+                    size="sm"
+                    class="text-purple-500 my-8"
+                    testid="heading-h3-custom"
+                >
+                    H3 con clase custom
+                </Heading>
+
+                <!-- H3 XL (Simulando visualmente un H1 pero semánticamente H3) -->
+                <Heading as="h3" size="xl" testid="heading-h3-xl">
+                    Este es un H3 XL (Simulado)
+                </Heading>
+
+                <!-- H3 con Gradiente -->
+                <Heading
+                    as="h3"
+                    size="lg"
+                    gradient
+                    testid="heading-h2-gradient"
+                >
+                    H3 con Gradiente y Línea
+                </Heading>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <Heading as="h2" size="lg" gradient>List Component Demo</Heading>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <div>
+                    <Heading as="h3" size="sm" class="mb-4"
+                        >Ordered List</Heading
+                    >
+                    <List type="ordered" testid="list-ordered">
+                        <ListItem>Primer ítem con número</ListItem>
+                        <ListItem>Segundo ítem sigue la secuencia</ListItem>
+                        <ListItem>Tercer ítem automático</ListItem>
+                    </List>
+                </div>
+
+                <div>
+                    <Heading as="h3" size="sm" class="mb-4"
+                        >Unordered List</Heading
+                    >
+                    <List type="unordered" testid="list-unordered">
+                        <ListItem>Ítem con bullet custom</ListItem>
+                        <ListItem>Diseño consistente</ListItem>
+                        <ListItem>
+                            <span slot="icon">✅</span>
+                            Ítem con icono personalizado (slot)
+                        </ListItem>
+                    </List>
+                </div>
+            </div>
         </section>
     </main>
 </BaseLayout>

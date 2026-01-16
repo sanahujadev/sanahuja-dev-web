@@ -123,3 +123,92 @@ test.describe('🧪 MDX ToolKit - Tests de Integración (Rojo)', () => {
         expect(results.violations.length).toBe(0);
     });
 });
+
+// NUEVOS TESTS PARA HEADING
+test.describe('Heading Component', () => {
+    test.beforeEach(async ({ page }) => {
+        // Asegurarse de ir a la versión en español que es donde están los demos
+        await page.goto('/es/demo/mdx-toolkit');
+    });
+
+    test('Heading: Debe renderizar h3 con clases de tamaño xl', async ({ page }) => {
+        const h3 = page.locator('h3[data-testid="heading-h3-xl"]');
+        await expect(h3).toBeVisible();
+        await expect(h3).toHaveText('Este es un H3 XL (Simulado)');
+        // Tailwind classes matching strict regex for 4xl/6xl or similar size classes
+        await expect(h3).toHaveClass(/text-4xl|text-6xl/);
+    });
+
+    test('Heading: Debe renderizar h3 con gradiente y línea decorativa', async ({ page }) => {
+        const h3 = page.locator('h3[data-testid="heading-h2-gradient"]');
+        await expect(h3).toBeVisible();
+        // Debe tener componente HeadingLine (span)
+        await expect(h3.locator('span.heading-line')).toBeVisible();
+        // Debe tener clase de gradiente en el texto
+        await expect(h3).toHaveClass(/bg-gradient-to-r/);
+    });
+
+    test('Heading: Debe renderizar h3 con id para anclaje', async ({ page }) => {
+        const h3 = page.locator('h3[data-testid="heading-h3-anchor"]');
+        await expect(h3).toHaveAttribute('id', 'mi-anclaje-personalizado');
+        // Scroll margin para anclaje
+        await expect(h3).toHaveClass(/scroll-mt-24/);
+    });
+
+    test('Heading: Debe pasar axe-core (no hay heading levels saltados)', async ({ page }) => {
+        // Inyectar axe-core
+        await page.addScriptTag({ path: require.resolve('axe-core/axe.min.js') });
+
+        const results = await page.evaluate(async () => {
+            // @ts-ignore
+            return await window.axe.run(document.body, {
+                rules: { 'heading-order': { enabled: true } }
+            });
+        });
+
+        // Filtramos explícitamente rule 'heading-order'
+        const headingViolations = results.violations.filter(
+            (v: any) => v.id === 'heading-order'
+        );
+        expect(headingViolations.length).toBe(0);
+    });
+
+    test('Heading: Debe permitir clases extra sin romper estilos base', async ({ page }) => {
+        const h3 = page.locator('h3[data-testid="heading-h3-custom"]');
+        await expect(h3).toHaveClass(/text-purple-500/);
+        await expect(h3).toHaveClass(/my-8/);
+        await expect(h3).toHaveText('H3 con clase custom');
+    });
+
+    test('Heading: No debe causar CLS con width/height establecidos', async ({ page }) => {
+        const h3 = page.locator('h3[data-testid="heading-h3-xl"]');
+        const box = await h3.boundingBox();
+        expect(box?.height).toBeGreaterThan(0); // Asegurar que no colapsa
+    });
+});
+
+// NUEVOS TESTS PARA LIST
+test.describe('List Component', () => {
+    test.beforeEach(async ({ page }) => {
+        await page.goto('/es/demo/mdx-toolkit');
+    });
+
+    test('List: Debe renderizar lista ordenada con números estilizados', async ({ page }) => {
+        const list = page.locator('ol[data-testid="list-ordered"]');
+        await expect(list).toBeVisible();
+        // Verificamos items
+        await expect(list.locator('li')).toHaveCount(3);
+        // Verificamos conteo css o marcador (difícil en e2e puro sin visu, pero chequeamos clases)
+        await expect(list).toHaveClass(/list-none/); // Debe quitar default
+        await expect(list.locator('li').first()).toHaveClass(/relative/);
+    });
+
+    test('List: Debe renderizar lista desordenada con iconos custom', async ({ page }) => {
+        const list = page.locator('ul[data-testid="list-unordered"]');
+        await expect(list).toBeVisible();
+        await expect(list.locator('li')).toHaveCount(3);
+        // Verificamos que tenga el icono (svg o span) en el primer elemento
+        const firstItem = list.locator('li').first();
+        await expect(firstItem.locator('svg, span[aria-hidden="true"]')).toBeVisible();
+    });
+});

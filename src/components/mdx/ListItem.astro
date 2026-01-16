@@ -1,0 +1,62 @@
+---
+// src/components/mdx/ListItem.astro
+// src/components/mdx/ListItem.astro
+// import { Icon } from "astro-icon/components"; // Not used if not installed
+
+interface Props {
+    class?: string;
+}
+
+const { class: className } = Astro.props;
+
+// Detect parent type is hard in Astro slot.
+// We will rely on CSS :where(ol > li) vs :where(ul > li) if possible,
+// or just make ListItem generic and let the parent style it via CSS variables or specific selectors.
+// BUT, for TDD/VFD we want "controlled styles".
+
+// Strategy:
+// Ordered lists use CSS counters (parent styles).
+// Unordered lists use an icon slot or default bullet.
+
+const baseClasses = "relative pl-8 text-neutral-300";
+
+// For ordered lists, we need the ::before pseudo-element.
+// For unordered, we might want an SVG.
+---
+
+<li class:list={[baseClasses, className, "group"]}>
+    {/* CSS Pseudo-element replacement for Tailwind v3/v4 */}
+    {
+        /* We will rely on the `List` component injecting the style or class that handles the markers */
+    }
+
+    <slot name="icon">
+        <span
+            aria-hidden="true"
+            class="absolute left-0 top-1.5 h-2 w-2 rounded-full bg-primary-500 ring-4 ring-primary-500/20 group-data-[type=ordered]:hidden pointer-events-none"
+        ></span>
+    </slot>
+
+    <span class="block">
+        <slot />
+    </span>
+
+    <style>
+        /* LOCAL STYLE FOR COUNTERS as Tailwind arbitrary values for counters are verbose */
+        :global(ol) > li {
+            counter-increment: list-counter;
+        }
+        :global(ol) > li::before {
+            content: counter(list-counter) ".";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: 700; /* font-bold */
+            color: var(--color-primary-500); /* text-primary-500 */
+        }
+        /* Hide the default bullet if inside OL */
+        :global(ol) > li > span.rounded-full {
+            display: none;
+        }
+    </style>
+</li>
