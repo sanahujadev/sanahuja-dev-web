@@ -1,0 +1,43 @@
+---
+// src/pages/[lang]/blog/[slug].astro
+import { getCollection } from "astro:content";
+import BlogPostLayout from "../../../layouts/BlogPost.astro";
+
+export async function getStaticPaths() {
+    const posts = await getCollection("blog");
+
+    // Generaremos rutas para español e inglés
+    // Por ahora, asumimos que este post está disponible en ambos idioms o redirigiremos
+    // pero para el test TDD actual, simplemente lo servimos.
+
+    // Estrategia simple: por cada post en la colección, generamos rutas.
+    // Nota: Astro Content Collections v5 maneja i18n diferente, pero aquí lo haremos manual
+
+    const paths: any[] = [];
+
+    for (const post of posts) {
+        // Si el post tuviera idioma en el ID (ej: en/slug.mdx), lo usaríamos.
+        // Si es archivo único (slug.mdx), lo serviremos en /es/ y /en/ (duplicado por ahora, o fallback)
+
+        // Asumimos 'es' como default si no hay prefijo
+        const lang = "es";
+        const slug = post.slug;
+
+        paths.push({
+            params: { lang, slug },
+            props: { post },
+        });
+
+        // TODO: Generar versión EN si existe
+    }
+
+    return paths;
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<BlogPostLayout frontmatter={post.data}>
+    <Content />
+</BlogPostLayout>

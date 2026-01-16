@@ -1,0 +1,150 @@
+---
+// src/layouts/BlogPost.astro
+import BaseLayout from "./BaseLayout.astro";
+import type { CollectionEntry } from "astro:content";
+import { getLangFromUrl } from "../i18n/utils";
+import OptimizedImage from "../components/ui/OptimizedImage.astro";
+
+// Temporal type fix - we will use CollectionEntry directly later
+// but for now we need to match what we pass
+interface Props {
+    frontmatter: any; // CollectionEntry<'blog'>['data'];
+}
+
+const { frontmatter } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+
+// Formatear fecha
+const date = new Date(
+    frontmatter.publishedAt || frontmatter.pubDate,
+).toLocaleDateString(lang === "es" ? "es-ES" : "en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+});
+
+const authorImage = "https://cdn.sanahuja.dev/sanahujadev/"
+    + frontmatter.author.avatar 
+    + "/webp/"
+    + frontmatter.author.avatar 
+    + "-1280w.webp";
+    
+// Article Schema
+const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: frontmatter.seo?.metaTitle || frontmatter.title,
+    description: frontmatter.seo?.metaDescription || frontmatter.description,
+    image: authorImage,
+    author: {
+        "@type": "Person",
+        name: frontmatter.author?.name || "SanahujaDev",
+        jobTitle: frontmatter.author?.role || "Author",
+    },
+    datePublished: frontmatter.publishedAt || frontmatter.pubDate,
+    publisher: {
+        "@type": "Organization",
+        name: "SanahujaDev",
+    },
+};
+
+const alternateUrl = new URL(frontmatter.alternateUrl, Astro.site).href;
+---
+
+<BaseLayout lang={lang} isConversionPage={false} alternateUrl={alternateUrl}>
+    <Fragment slot="head">
+        <title>{frontmatter.seo?.metaTitle || frontmatter.title}</title>
+        <meta
+            name="description"
+            content={frontmatter.seo?.metaDescription ||
+                frontmatter.description}
+        />
+        <meta property="og:type" content="article" />
+        <meta
+            property="article:published_time"
+            content={frontmatter.publishedAt || frontmatter.pubDate}
+        />
+        {
+            frontmatter.image?.url && (
+                <meta property="og:image" content={frontmatter.image.url} />
+            )
+        }
+        <script
+            type="application/ld+json"
+            set:html={JSON.stringify(articleSchema)}
+        />
+    </Fragment>
+
+    <main>
+        <article
+            class="max-w-4xl mx-auto px-6 py-12 prose prose-invert prose-lg text-neutral-300"
+        >
+            <header class="mb-12 border-b border-neutral-800 pb-8">
+                <div class="mb-4">
+                    {
+                        frontmatter.category && (
+                            <span class="px-3 py-1 bg-primary-500/10 text-primary-400 rounded-full text-xs font-bold uppercase tracking-wide">
+                                {frontmatter.category}
+                            </span>
+                        )
+                    }
+                </div>
+                <h1
+                    class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight"
+                >
+                    {frontmatter.title}
+                </h1>
+                <div class="flex items-center gap-4 text-sm text-neutral-400">
+                    {
+                        frontmatter.author?.name && (
+                            <div class="w-12 h-12 rounded-full border border-neutral-800 overflow-hidden bg-neutral-800">
+                                <OptimizedImage
+                                    imageName={frontmatter.author.avatar}
+                                    basePath="sanahujadev"
+                                    alt={frontmatter.author.name}
+                                    width={48}
+                                    height={48}
+                                    sizes="48px"
+                                    class="w-full h-full object-cover"
+                                />
+                            </div>
+                        )
+                    }
+                    <div>
+                        <span class="block text-white font-medium"
+                            >{frontmatter.author?.name} - {
+                                frontmatter.author.role
+                            }</span
+                        >
+                        <time class="text-neutral-500">{date}</time>
+                    </div>
+                </div>
+            </header>
+
+            <div class="blog-content">
+                <slot />
+            </div>
+
+            {
+                frontmatter.tags && (
+                    <div
+                        data-testid="post-tags"
+                        class="mt-12 pt-8 border-t border-neutral-800"
+                    >
+                        <p class="text-sm text-neutral-500 mb-3">Etiquetas:</p>
+                        <div class="flex flex-wrap gap-2">
+                            {frontmatter.tags.map((tag: string) => (
+                                <a
+                                    href={`/${lang}/blog/tag/${tag.toLowerCase().replace(" ", "-")}`}
+                                    class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-lg text-sm text-neutral-400 hover:border-primary-500 hover:text-primary-400 transition-colors no-underline"
+                                >
+                                    #{tag}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                )
+            }
+        </article>
+    </main>
+</BaseLayout>

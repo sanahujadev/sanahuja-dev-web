@@ -73,3 +73,14 @@ export type ContactoCopy = typeof contactCopy;
 export type PlantillaCiudad = typeof plantillaCiudadesTemplate.es;
 export type LocalidadDB = (typeof localidadesDB)[0];
 export type BlogCopy = typeof blogCopy;
+
+/**
+ * Obtiene el idioma de una URL de Astro.
+ * @param url URL de Astro
+ * @returns 'es' | 'en'
+ */
+export function getLangFromUrl(url: URL): 'es' | 'en' {
+  const [, lang] = url.pathname.split('/');
+  if (lang === 'en') return 'en';
+  return 'es';
+}

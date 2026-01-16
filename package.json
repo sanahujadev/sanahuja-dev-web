@@ -13,7 +13,7 @@
     "test:e2e:all": "playwright test tests/e2e/",
     "test:a11y": "playwright test",
     "test:a11y:all": "playwright test tests/a11y/",
-    "test:debug": "playwright test tests/integration/mdx-toolkit.spec.ts",
+    "test:debug": "playwright test tests/integration/blog-post.spec.ts",
     "audit": "pnpm dlx unlighthouse --site http://localhost:4321/es/servicios/gestion-reputacion-online --no-cache",
     "test:unit": "vitest run",
     "format": "biome format --write ."
