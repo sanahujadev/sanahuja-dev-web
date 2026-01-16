@@ -1,0 +1,58 @@
+---
+import CategoryBlog from "../../../../components/pages/CategoryBlog.astro";
+import blog_es from "../../../../i18n/es/blog/index.json";
+import blog_en from "../../../../i18n/en/blog/index.json";
+
+export function getStaticPaths() {
+  const paths: any[] = [];
+  
+  // Español
+  blog_es.copy.categories.items.forEach(cat => {
+    if (cat.slug !== 'all') {
+      paths.push({
+        params: { lang: 'es', category: cat.slug },
+        props: { copy: blog_es, categoryLabel: cat.label }
+      });
+    }
+  });
+
+  // Inglés
+  blog_en.copy.categories.items.forEach(cat => {
+    if (cat.slug !== 'all') {
+      paths.push({
+        params: { lang: 'en', category: cat.slug },
+        props: { copy: blog_en, categoryLabel: cat.label }
+      });
+    }
+  });
+
+  return paths;
+}
+
+const { lang, category } = Astro.params;
+const { copy, categoryLabel } = Astro.props;
+
+// Schema override for category page
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": `${categoryLabel} - ${copy.metadata.title}`,
+  "description": `Artículos sobre ${categoryLabel}. ${copy.metadata.description}`,
+  "url": `https://sanahuja.dev/${lang}/blog/categoria/${category}`,
+  "isPartOf": {
+     "@type": "WebSite",
+     "url": "https://sanahuja.dev",
+     "name": "SanahujaDev"
+  }
+};
+
+const alternateUrl = new URL(`${lang === 'es' ? 'en' : 'es'}/blog/categoria/${category}`, Astro.site).href;
+---
+
+<CategoryBlog
+  copy={copy}
+  alternateUrl={alternateUrl}
+  schema={schema}
+  activeCategory={category}
+  categoryLabel={categoryLabel}
+/>

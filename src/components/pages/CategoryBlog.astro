@@ -1,0 +1,175 @@
+---
+// src/components/pages/CategoryBlog.astro
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import type { BlogCopy } from "../../i18n/utils";
+import Button from "../ui/Button.astro";
+import BlogCard from "../ui/cards/BlogCard.astro";
+import { getCollection } from "astro:content";
+import NewsletterSubscribeForm from "../features/NewsletterSubscribeForm.astro";
+
+// Iconos
+import BookOpen from "../ui/icons/BookOpen.astro";
+import Grid from "../ui/icons/Grid.astro";
+import Zap from "../ui/icons/Zap.astro";
+import MapPin from "../ui/icons/MapPin.astro";
+import TrendingUp from "../ui/icons/TrendingUp.astro";
+import ShieldCheck from "../ui/icons/ShieldCheck.astro";
+import ArrowRight from "../ui/icons/ArrowRight.astro";
+import LinkedIn from "../ui/icons/LinkedIn.astro";
+import ChevronDown from "../ui/icons/ChevronDown.astro";
+
+interface Props {
+  copy: BlogCopy;
+  alternateUrl: string;
+  schema: Record<string, any>;
+  activeCategory: string;
+  categoryLabel: string;
+}
+
+const { copy, alternateUrl, schema, activeCategory, categoryLabel } = Astro.props;
+const { copy: t, lang, metadata } = copy;
+
+// Obtener posts reales y filtrar por idioma Y categoría
+const allPosts = await getCollection("blog");
+const filteredPosts = allPosts
+  .filter((post) => {
+      const isLang = post.data.lang === lang;
+      const isCategory = post.data.category === activeCategory;
+      return isLang && isCategory;
+  })
+  .sort(
+    (a, b) =>
+      new Date(b.data.publishedAt || b.data.pubDate || 0).getTime() -
+      new Date(a.data.publishedAt || a.data.pubDate || 0).getTime(),
+  );
+
+// Mapeo de Iconos
+const iconMap: Record<string, any> = {
+  BookOpen,
+  Grid,
+  Zap,
+  MapPin,
+  TrendingUp,
+  LinkedIn,
+};
+
+console.log("DEBUGGING EN CATEGORYBLOG", alternateUrl);
+
+---
+
+<BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>
+  <Fragment slot="head">
+    <title>{`${categoryLabel} | ${metadata.title}`}</title>
+    <meta name="description" content={`Artículos sobre ${categoryLabel}. ${metadata.description}`} />
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  </Fragment>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} slot="json-ld" />
+
+  <main class="bg-neutral-950 min-h-screen">
+    
+    {/* --- HERO SECTION (Simplificado para categorías) --- */}
+    <section id="hero" class="relative pt-32 pb-16 px-4 overflow-hidden">
+        {/* Background gradient & Noise */}
+        <div class="absolute inset-0 bg-gradient-to-b from-neutral-900 to-neutral-950 pointer-events-none"></div>
+        <div class="absolute inset-0 opacity-20 mix-blend-soft-light pointer-events-none"
+          style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%221%22/%3E%3C/svg%3E');">
+        </div>
+
+        <div class="relative max-w-5xl mx-auto text-center z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-500/10 border border-primary-500/30 rounded-full mb-8">
+                <Grid class="w-4 h-4 text-primary-400" />
+                <span class="text-sm font-semibold text-primary-300 tracking-wide uppercase">Categoría</span>
+            </div>
+
+            <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight text-white">
+                {categoryLabel}
+            </h1>
+            
+            <p class="text-neutral-400 max-w-2xl mx-auto">
+                Explorando soluciones y estrategias sobre {categoryLabel}.
+            </p>
+        </div>
+    </section>
+
+    {/* --- CATEGORIES FILTER (Links) --- */}
+    <section id="categories" class="py-8 px-4 border-t border-neutral-800/50 bg-neutral-950/50 backdrop-blur-sm sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-wrap justify-center gap-2" role="navigation">
+                {t.categories.items.map((cat) => {
+                    const Icon = iconMap[cat.icon] || Grid;
+                    const isActive = activeCategory === cat.slug;
+                    // Construir URL: /es/blog para 'all', /es/blog/categoria/slug para otros
+                    const categoryUrl = cat.slug === 'all' 
+                        ? `/${lang}/blog` 
+                        : `/${lang}/blog/categoria/${cat.slug}`;
+                        
+                    return (
+                        <a
+                            href={categoryUrl}
+                            class={`
+                                relative flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300 border no-underline
+                                ${isActive 
+                                    ? "bg-primary-700 border-primary-600 text-white shadow-lg shadow-primary-900/20 pointer-events-none" 
+                                    : "bg-neutral-900 border-neutral-800 text-neutral-400 hover:bg-neutral-800 hover:text-neutral-200 hover:border-neutral-700"
+                                }
+                            `}
+                            title={cat.tooltip || cat.label}
+                        >
+                            <Icon class={`w-4 h-4 ${isActive ? 'text-white' : 'text-neutral-500'}`} />
+                            {cat.label}
+                        </a>
+                    );
+                })}
+            </div>
+        </div>
+    </section>
+
+    {/* --- BLOG POSTS GRID --- */}
+    <section id="latest-post" class="py-16 px-4 bg-neutral-950">
+        <div class="max-w-7xl mx-auto">
+            <div id="posts-grid" class={filteredPosts.length > 0 ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" : "hidden"}>
+                {filteredPosts.map((post) => (
+                    <BlogCard 
+                        post={post} 
+                        lang={lang as "es" | "en"} 
+                        data-category={post.data.category} 
+                    />
+                ))}
+            </div>
+
+            {/* EMPTY STATE */}
+            {filteredPosts.length === 0 && (
+                <div 
+                    id="empty-state" 
+                    role="region"
+                    aria-label="Sin resultados"
+                    class="text-center py-24 px-4 border border-dashed border-neutral-800 rounded-3xl bg-neutral-900/30"
+                >
+                    <div class="inline-flex items-center justify-center w-20 h-20 bg-neutral-800 rounded-full mb-6">
+                            <div class="text-4xl">👨‍🍳</div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">Categoría en Construcción</h3>
+                    <p class="text-neutral-400 mb-8 max-w-md mx-auto leading-relaxed">
+                        Aún no he publicado artículos específicos sobre {categoryLabel}, pero estoy cocinando contenido de alto valor.
+                    </p>
+                    <Button
+                        href={`/${lang}/blog`}
+                        variant="outline"
+                        class="border-secondary-500/30 text-secondary-400 hover:bg-secondary-500/10"
+                    >
+                        Ver todos los artículos
+                    </Button>
+                </div>
+            )}
+        </div>
+    </section>
+  
+    {/* --- NEWSLETTER SECTION --- */}
+    <section id="newsletter" class="py-24 px-4 bg-neutral-900 border-y border-neutral-800 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+        <NewsletterSubscribeForm copy={t.newsletter} lang={lang as "es" | "en"} />
+    </section>
+
+  </main>
+</BaseLayout>

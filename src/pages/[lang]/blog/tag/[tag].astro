@@ -1,0 +1,67 @@
+---
+import { getCollection } from "astro:content";
+import TagBlog from "../../../../components/pages/TagBlog.astro";
+import blog_es from "../../../../i18n/es/blog/index.json";
+import blog_en from "../../../../i18n/en/blog/index.json";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  const paths: any[] = [];
+
+  // Idiomas soportados
+  const languages = [
+    { code: 'es', copy: blog_es },
+    { code: 'en', copy: blog_en }
+  ];
+
+  for (const lang of languages) {
+    // 1. Filtrar posts por idioma
+    const langPosts = posts.filter(p => p.data.lang === lang.code);
+    
+    // 2. Extraer todos los tags únicos de este idioma y normalizarlos (slugify)
+    const uniqueTags = [...new Set(
+      langPosts.flatMap(p => p.data.tags || [])
+               .map(t => t.toLowerCase().replace(/\s+/g, '-'))
+    )];
+
+    // 3. Crear rutas
+    uniqueTags.forEach(tagSlug => {
+      paths.push({
+        params: { lang: lang.code, tag: tagSlug },
+        props: { 
+            copy: lang.copy,
+            // Guardamos el original para el schema si quisiéramos, 
+            // aunque TagBlog ya lo deduce
+        }
+      });
+    });
+  }
+
+  return paths;
+}
+
+const { lang, tag } = Astro.params;
+const { copy } = Astro.props;
+
+// Schema SEO para página de etiqueta
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": `Artículos sobre ${tag} - ${copy.metadata.title}`,
+  "url": `https://sanahuja.dev/${lang}/blog/tag/${tag}`,
+  "isPartOf": {
+     "@type": "WebSite",
+     "url": "https://sanahuja.dev",
+     "name": "SanahujaDev"
+  }
+};
+
+const alternateUrl = new URL(`${lang === 'es' ? 'en' : 'es'}/blog/tag/${tag}`, Astro.site).href;
+---
+
+<TagBlog
+  copy={copy}
+  alternateUrl={alternateUrl}
+  schema={schema}
+  activeTag={tag}
+/>

@@ -1,0 +1,99 @@
+---
+// src/components/pages/TagBlog.astro
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import type { BlogCopy } from "../../i18n/utils";
+import Button from "../ui/Button.astro";
+import BlogCard from "../ui/cards/BlogCard.astro";
+import { getCollection } from "astro:content";
+import NewsletterSubscribeForm from "../features/NewsletterSubscribeForm.astro";
+
+// Iconos
+import Grid from "../ui/icons/Grid.astro";
+import BookOpen from "../ui/icons/BookOpen.astro";
+
+interface Props {
+  copy: BlogCopy;
+  alternateUrl: string;
+  schema: Record<string, any>;
+  activeTag: string;
+}
+
+const { copy, alternateUrl, schema, activeTag } = Astro.props;
+const { copy: t, lang, metadata } = copy;
+
+// Obtener posts reales y filtrar por idioma Y tag
+const allPosts = await getCollection("blog");
+const filteredPosts = allPosts
+  .filter((post) => {
+      const isLang = post.data.lang === lang;
+      // Normalizamos el tag para la comparación (slugified)
+      const hasTag = post.data.tags?.some(tag => tag.toLowerCase().replace(/\s+/g, '-') === activeTag);
+      return isLang && hasTag;
+  })
+  .sort(
+    (a, b) =>
+      new Date(b.data.publishedAt || b.data.pubDate || 0).getTime() -
+      new Date(a.data.publishedAt || a.data.pubDate || 0).getTime(),
+  );
+
+// El nombre visual del tag (intentamos recuperarlo del primer post o capitalizarlo)
+const visualTagName = filteredPosts[0]?.data.tags?.find(
+    t => t.toLowerCase().replace(/\s+/g, '-') === activeTag
+) || activeTag;
+
+---
+
+<BaseLayout lang={lang as "es" | "en"} alternateUrl={alternateUrl}>
+  <Fragment slot="head">
+    <title>{`Posts sobre ${visualTagName} | ${metadata.title}`}</title>
+    <meta name="description" content={`Listado de artículos etiquetados con ${visualTagName}. ${metadata.description}`} />
+  </Fragment>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} slot="json-ld" />
+
+  <main class="bg-neutral-950 min-h-screen">
+    
+    <section id="hero" class="relative pt-32 pb-16 px-4 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-neutral-900 to-neutral-950 pointer-events-none"></div>
+        <div class="relative max-w-5xl mx-auto text-center z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-secondary-500/10 border border-secondary-500/30 rounded-full mb-8">
+                <BookOpen class="w-4 h-4 text-secondary-400" />
+                <span class="text-sm font-semibold text-secondary-300 tracking-wide uppercase">Etiqueta</span>
+            </div>
+
+            <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight text-white">
+                #{visualTagName}
+            </h1>
+            
+            <p class="text-neutral-400 max-w-2xl mx-auto">
+                Explorando contenido específico sobre {visualTagName}.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-16 px-4 bg-neutral-950">
+        <div class="max-w-7xl mx-auto">
+            <div id="posts-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {filteredPosts.map((post) => (
+                    <BlogCard 
+                        post={post} 
+                        lang={lang as "es" | "en"} 
+                    />
+                ))}
+            </div>
+
+            {filteredPosts.length === 0 && (
+                <div class="text-center py-24 px-4 border border-dashed border-neutral-800 rounded-3xl bg-neutral-900/30">
+                    <h3 class="text-2xl font-bold mb-3 text-white">Sin artículos</h3>
+                    <p class="text-neutral-400 mb-8">No se encontraron artículos con esta etiqueta.</p>
+                    <Button href={`/${lang}/blog`} variant="outline">Volver al Blog</Button>
+                </div>
+            )}
+        </div>
+    </section>
+  
+    <section id="newsletter" class="py-24 px-4 bg-neutral-900 border-y border-neutral-800">
+        <NewsletterSubscribeForm copy={t.newsletter} lang={lang as "es" | "en"} />
+    </section>
+
+  </main>
+</BaseLayout>

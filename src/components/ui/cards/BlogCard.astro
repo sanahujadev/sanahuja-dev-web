@@ -2,46 +2,21 @@
 // src/components/ui/cards/BlogCard.astro
 import Button from "../../ui/Button.astro";
 import ChevronRight from "../../ui/icons/ChevronRight.astro";
-
-// Definición de Tipos
-export interface BlogPost {
-  id: string;
-  slug: string;
-  title: string;
-  excerpt: string;
-  content?: string;
-  category: "wpo" | "seo-local" | "negocio";
-  categoryLabel: string;
-  author: {
-    name: string;
-    role: string;
-    avatar: string;
-  };
-  publishedAt: string;
-  readTime: string;
-  featured: boolean;
-  image: {
-    url: string;
-    alt: string;
-  };
-  tags: string[];
-  seo: {
-    metaTitle: string;
-    metaDescription: string;
-  };
-}
-
+import type { CollectionEntry } from "astro:content";
 import type { HTMLAttributes } from "astro/types";
+import OptimizedImage from "../../ui/OptimizedImage.astro";
 
 interface Props extends HTMLAttributes<"article"> {
-  post: BlogPost;
+  post: CollectionEntry<"blog">;
   lang: "es" | "en";
 }
 
 const { post, lang, class: className, ...props } = Astro.props;
+const { data } = post;
 
-const formatDate = (dateString: string, locale: string) => {
-    return new Date(dateString).toLocaleDateString(locale === "es" ? "es-ES" : "en-US", {
+const formatDate = (date: Date | undefined, locale: string) => {
+    if (!date) return "";
+    return new Date(date).toLocaleDateString(locale === "es" ? "es-ES" : "en-US", {
         year: "numeric",
         month: "long",
         day: "numeric",
@@ -50,41 +25,69 @@ const formatDate = (dateString: string, locale: string) => {
 
 // Función para determinar el color del badge según categoría
 const getCategoryColor = (cat: string) => {
-    switch (cat) {
-        case 'wpo': return 'bg-primary-700 text-white shadow-primary-500/20'; // Contrast fix (4.5:1+)
-        case 'seo-local': return 'bg-secondary-600 text-white shadow-secondary-500/20';
-        default: return 'bg-amber-700 text-white shadow-amber-500/20'; // Negocio/Otros (Contrast fix)
-    }
+    // Normalizamos para manejar strings libres del MDX
+    const normalized = cat?.toLowerCase() || "";
+    if (normalized.includes('wpo')) return 'bg-primary-700 text-white shadow-primary-500/20';
+    if (normalized.includes('seo')) return 'bg-secondary-600 text-white shadow-secondary-500/20';
+    return 'bg-amber-700 text-white shadow-amber-500/20'; // Negocio/Otros
 };
+
+const date = data.publishedAt || data.pubDate;
+
+const getBadge = (categoria: string, lang: "es" | "en") => {
+  if (lang === "es") {
+    if (categoria === "wpo") return "Velocidad";
+    if (categoria === "seo-local") return "Visibilidad";
+    return "Negocio";
+  }
+
+  if (lang === "en") {
+    if (categoria === "wpo") return "Speed";
+    if (categoria === "seo-local") return "Visibility";
+    return "Business";
+  }
+  
+  return ""
+}
 ---
 
-<article class:list={["group relative flex flex-col h-full bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden hover:border-primary-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10", className]} {...props}>
+<article class:list={["group relative flex flex-col h-full bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden hover:border-primary-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10", className]} {...props} data-category={data.category?.toLowerCase()}>
   
   {/* Imagen & Badges */}
   <div class="relative aspect-[16/9] overflow-hidden bg-neutral-800">
-    <img 
-        src={post.image.url || "/placeholder.svg"} 
-        alt={post.image.alt}
-        loading="lazy"
-        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-    />
+    {/* Usamos OptimizedImage si es nombre de archivo, o img normal si es URL completa */}
+    {data.image?.url && !data.image.url.startsWith('http') ? (
+        <OptimizedImage
+            imageName={data.image.url} 
+            basePath="sanahujadev" 
+            alt={data.image.alt || ""}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            width={400} 
+            height={225} 
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+    ) : (
+        <img 
+            src={data.image?.url || "/placeholder.svg"} 
+            alt={data.image?.alt || ""}
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+    )}
     
-    {/* Overlay Gradient (sutil para mejorar lectura de textos superpuestos si los hubiera) */}
+    {/* Overlay Gradient */}
     <div class="absolute inset-0 bg-gradient-to-t from-neutral-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-    {/* Featured Badge */}
-    {post.featured && (
-      <div class="absolute top-4 right-4 z-10 px-3 py-1 bg-primary-700 text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-lg">
-        Destacado
-      </div>
-    )}
-
+    {/* Featured Badge - No disponible en schema actual, omitimos o usamos lógica custom */}
+    
     {/* Category Badge */}
-    <div class="absolute top-4 left-4 z-10">
-      <span class={`px-3 py-1 text-xs font-semibold rounded-full shadow-lg backdrop-blur-sm ${getCategoryColor(post.category)}`}>
-        {post.categoryLabel}
-      </span>
-    </div>
+    {data.category && (
+        <div class="absolute top-4 left-4 z-10">
+        <span class={`px-3 py-1 text-xs font-semibold rounded-full shadow-lg backdrop-blur-sm ${getCategoryColor(data.category)}`}>
+            {getBadge(data.category, lang)}
+        </span>
+        </div>
+    )}
   </div>
 
   {/* Contenido */}
@@ -92,29 +95,28 @@ const getCategoryColor = (cat: string) => {
     
     {/* Meta Data */}
     <div class="flex items-center gap-3 text-sm text-neutral-400 mb-3">
-      <time datetime={post.publishedAt} class="flex items-center">
-        {formatDate(post.publishedAt, lang)}
+      <time datetime={date?.toISOString()} class="flex items-center">
+        {formatDate(date, lang)}
       </time>
-      <span class="w-1 h-1 rounded-full bg-neutral-600"></span>
-      <span>{post.readTime} lectura</span>
+      {/* ReadTime pendiente de implementar cálculo real */}
     </div>
 
     {/* Título */}
     <h3 class="text-xl font-bold mb-3 leading-tight text-neutral-100 group-hover:text-primary-400 transition-colors">
       <a href={`/${lang}/blog/${post.slug}`} class="focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md">
-        {post.title}
+        {data.title}
         <span class="absolute inset-0" aria-hidden="true"></span>
       </a>
     </h3>
 
-    {/* Extracto */}
+    {/* Extracto (usamos description) */}
     <p class="text-neutral-400 mb-6 text-sm leading-relaxed line-clamp-3 flex-1">
-        {post.excerpt}
+        {data.description}
     </p>
 
     {/* Tags (Pills) */}
     <div class="flex flex-wrap gap-2 mb-6 relative z-10">
-      {post.tags.slice(0, 3).map((tag) => (
+      {data.tags?.slice(0, 3).map((tag) => (
         <span class="px-2 py-1 bg-neutral-800 border border-neutral-700 text-neutral-400 text-xs rounded transition-colors hover:border-neutral-500">
           #{tag}
         </span>
@@ -124,14 +126,26 @@ const getCategoryColor = (cat: string) => {
     {/* Footer: Autor & Link Icon */}
     <div class="flex items-center justify-between pt-4 border-t border-neutral-800 mt-auto relative z-10">
       <div class="flex items-center gap-3">
-        <img 
-            src={post.author.avatar || "/placeholder.svg"} 
-            alt={post.author.name} 
-            class="w-9 h-9 rounded-full object-cover ring-2 ring-neutral-800"
-        />
+        {/* Avatar simplificado por ahora, idealmente usar OptimizedImage también */}
+        <div class="w-9 h-9 rounded-full overflow-hidden bg-neutral-800 ring-2 ring-neutral-800">
+             {data.author?.avatar && !data.author.avatar.startsWith('http') ? (
+                <OptimizedImage
+                    imageName={data.author.avatar}
+                    basePath="sanahujadev"
+                    alt={data.author.name || ""}
+                    sizes="(max-width: 400px) 100vw, (max-width: 600px) 50vw, 33vw"
+                    width={36}
+                    height={36}
+                    class="w-full h-full object-cover"
+                />
+             ) : (
+                <img src="/placeholder.svg" alt="" class="w-full h-full object-cover" />
+             )}
+        </div>
+        
         <div class="leading-none">
-          <p class="text-sm font-semibold text-neutral-200 mb-1">{post.author.name}</p>
-          <p class="text-[10px] uppercase tracking-wide text-neutral-400">{post.author.role}</p>
+          <p class="text-sm font-semibold text-neutral-200 mb-1">{data.author?.name}</p>
+          <p class="text-[10px] uppercase tracking-wide text-neutral-400">{data.author?.role}</p>
         </div>
       </div>
 

@@ -21,7 +21,7 @@ const blogCollection = defineCollection({
       url: z.string(), // Path a la imagen (usaremos string para OptimizedImage por ahora)
       alt: z.string(),
     }),
-    category: z.string(),
+    category: z.enum(["wpo", "seo-local", "negocio"]),
     tags: z.array(z.string()),
     seo: z.object({
       metaTitle: z.string(),
