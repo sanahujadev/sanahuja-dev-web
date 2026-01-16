@@ -1,19 +1,13 @@
-<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    .symbol-text {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 60px;
-    }
-    .slash { fill: #E0E0E0; } /* Color gris claro para la barra */
-    .arrow { fill: #FF6F00; } /* Color naranja para el > */
-  </style>
-
-  <!-- Fondo circular oscuro -->
-  <circle cx="50" cy="50" r="50" fill="#212121" />
-
-  <!-- Texto centrado con dos colores usando <tspan> -->
-  <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" class="symbol-text">
-    <tspan class="slash">/</tspan><tspan class="arrow">&gt;</tspan>
-  </text>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo Circular -->
+  <circle cx="256" cy="256" r="256" fill="#212121"/>
+  
+  <!-- Grupo de símbolos desplazados a la izquierda -->
+  <g transform="translate(-45, 0)">
+    <!-- Símbolo / (Slash) -->
+    <path d="M198 362 L268 150 H308 L238 362 H198 Z" fill="#E0E0E0"/>
+    
+    <!-- Símbolo > (Arrow) -->
+    <path d="M330 185 L430 256 L330 327 V285 L395 256 L330 227 V185 Z" fill="#FF6F00"/>
+  </g>
 </svg>
