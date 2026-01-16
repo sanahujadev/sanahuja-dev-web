@@ -100,6 +100,29 @@ test.describe('🧪 Blog Post: "Soluciones Digitales vs Páginas Web" (Rojo)', (
         await expect(tags.first()).toHaveAttribute('href', /\/es\/blog\/tag\/seo-local/);
     });
 
+    // Start i18n tests
+    test('i18n: Debe renderizar la versión en inglés y tener hreflang', async ({ page }) => {
+        // Navegar a la versión EN
+        await page.goto('/en/blog/digital-solutions-vs-web-pages');
+
+        // Verificar título
+        await expect(page).toHaveTitle(/Digital Solutions vs. Web Pages/);
+
+        // Verificar Hreflang hacia Español
+        const esLink = page.locator('link[rel="alternate"][hreflang="es"]');
+        await expect(esLink).toHaveAttribute('href', /.*\/es\/blog\/soluciones-digitales-vs-paginas-web/);
+
+        // Verificar Canonical EN
+        const canonical = page.locator('link[rel="canonical"]');
+        await expect(canonical).toHaveAttribute('href', /.*\/en\/blog\/digital-solutions-vs-web-pages/);
+    });
+
+    test('i18n: Versión español debe tener hreflang hacia inglés', async ({ page }) => {
+        await page.goto('/es/blog/soluciones-digitales-vs-paginas-web');
+        const enLink = page.locator('link[rel="alternate"][hreflang="en"]');
+        await expect(enLink).toHaveAttribute('href', /.*\/en\/blog\/digital-solutions-vs-web-pages/);
+    });
+
     // ==================== IMAGENES (OptimizedImage) ====================
     test('Imágenes: Deben ser responsivas (picture)', async ({ page }) => {
         // Verificamos imagenes específicas del post

@@ -23,12 +23,13 @@ const date = new Date(
     day: "numeric",
 });
 
-const authorImage = "https://cdn.sanahuja.dev/sanahujadev/"
-    + frontmatter.author.avatar 
-    + "/webp/"
-    + frontmatter.author.avatar 
-    + "-1280w.webp";
-    
+const authorImage =
+    "https://cdn.sanahuja.dev/sanahujadev/" +
+    frontmatter.author.avatar +
+    "/webp/" +
+    frontmatter.author.avatar +
+    "-1280w.webp";
+
 // Article Schema
 const articleSchema = {
     "@context": "https://schema.org",
@@ -48,7 +49,11 @@ const articleSchema = {
     },
 };
 
-const alternateUrl = new URL(frontmatter.alternateUrl, Astro.site).href;
+const alternateLang = lang === "es" ? "en" : "es";
+const alternateUrl = new URL(
+    `/${alternateLang}/blog/${frontmatter.alternateUrl}`,
+    Astro.site,
+).href;
 ---
 
 <BaseLayout lang={lang} isConversionPage={false} alternateUrl={alternateUrl}>
