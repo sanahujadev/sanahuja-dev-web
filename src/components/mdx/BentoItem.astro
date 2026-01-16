@@ -1,0 +1,43 @@
+---
+// src/components/mdx/BentoItem.astro
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"div"> {
+    span?: "1" | "2" | "3";
+    rowSpan?: "1" | "2";
+    title?: string;
+    gradient?: boolean;
+}
+const {
+    span = "1",
+    rowSpan = "1",
+    title,
+    gradient = false,
+    ...props
+} = Astro.props;
+const spanClass = {
+    "1": "md:col-span-1",
+    "2": "md:col-span-2",
+    "3": "md:col-span-3",
+}[span];
+const rowClass = rowSpan === "2" ? "row-span-2" : "";
+---
+
+<div
+    class={`relative group overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900 ${spanClass} ${rowClass} hover:border-primary-500/30 transition-colors`}
+    {...props}
+>
+    {
+        gradient && (
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+        )
+    }
+    <div class="relative p-6 h-full flex flex-col z-10">
+        {
+            title && (
+                <h3 class="text-lg font-bold text-neutral-100 mb-2">{title}</h3>
+            )
+        }
+        <div class="text-neutral-400 text-sm flex-1"><slot /></div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+---
+// src/components/mdx/Callout.astro
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"aside"> {
+    type?: "info" | "warning" | "danger" | "success";
+    title?: string;
+}
+const { type = "info", title, ...props } = Astro.props;
+const styles = {
+    info: "border-l-secondary-500 bg-secondary-500/5 text-secondary-200",
+    success: "border-l-accent-500 bg-accent-500/5 text-accent-200",
+    warning: "border-l-amber-500 bg-amber-500/5 text-amber-200",
+    danger: "border-l-red-500 bg-red-500/5 text-red-200",
+}[type];
+const icons = {
+    info: "ℹ️",
+    success: "✅",
+    warning: "⚠️",
+    danger: "🔥",
+}[type];
+const id = `callout-${Math.random().toString(36).substring(2, 9)}`;
+---
+
+<aside
+    role="note"
+    aria-labelledby={title ? id : undefined}
+    class={`my-6 p-4 border-l-4 rounded-r-lg ${styles}`}
+    {...props}
+>
+    <div class="flex gap-3">
+        <span aria-hidden="true" class="text-xl">{icons}</span>
+        <div>
+            {
+                title && (
+                    <strong id={id} class="block mb-1 text-white font-bold">
+                        {title}
+                    </strong>
+                )
+            }
+            <div class="text-sm opacity-90"><slot /></div>
+        </div>
+    </div>
+</aside>

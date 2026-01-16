@@ -54,6 +54,19 @@ export default defineConfig({
       },
     }),
     mdx(),
+    {
+      name: "dev-routes",
+      hooks: {
+        "astro:config:setup": ({ injectRoute, command }) => {
+          if (command === "dev") {
+            injectRoute({
+              pattern: "/es/demo/mdx-toolkit",
+              entrypoint: "./src/dev-pages/es/demo/mdx-toolkit.astro",
+            });
+          }
+        },
+      },
+    },
   ],
 
   // Alias de TS (para `~/components/Header.astro`)

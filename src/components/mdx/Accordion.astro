@@ -1,0 +1,46 @@
+---
+// src/components/mdx/Accordion.astro
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"details"> {
+    title: string;
+    open?: boolean;
+}
+const { title, open = false, ...props } = Astro.props;
+---
+
+<details
+    class="group my-4 border border-neutral-800 rounded-lg bg-neutral-900/50"
+    open={open}
+    {...props}
+>
+    <summary
+        class="flex items-center justify-between p-4 cursor-pointer list-none text-neutral-200 font-semibold"
+    >
+        <span>{title}</span>
+        <span class="transform group-open:rotate-180 transition-transform"
+            ><svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"></path></svg
+            ></span
+        >
+    </summary>
+    <div class="px-4 pb-4 pt-0 text-neutral-400"><slot /></div>
+</details>
+
+<script>
+    // Script para analytics o mejoras de UX
+    document.querySelectorAll("details").forEach((details) => {
+        // Escuchar toggle
+        details.addEventListener("toggle", () => {
+            console.log("Accordion toggled:", details.open);
+        });
+    });
+</script>

@@ -1,0 +1,20 @@
+---
+// src/components/mdx/Split.astro
+import type { HTMLAttributes } from "astro/types";
+import { getGridClass } from "./utils";
+
+interface Props extends HTMLAttributes<"div"> {
+    reverse?: boolean;
+    ratio?: "50-50" | "40-60" | "60-40";
+}
+const { reverse = false, ratio = "50-50", ...props } = Astro.props;
+const gridClass = getGridClass(ratio);
+---
+
+<div
+    class={`grid grid-cols-1 ${gridClass} gap-8 items-center my-12`}
+    {...props}
+>
+    <div class={reverse ? "lg:order-2" : ""}><slot name="left" /><slot /></div>
+    <div class={reverse ? "lg:order-1" : ""}><slot name="right" /></div>
+</div>

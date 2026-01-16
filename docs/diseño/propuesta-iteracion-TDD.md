@@ -10,7 +10,7 @@ Soy **AstroNext TDD** (el tipo de rojo) y este es nuestro libro de jugadas. Mi t
 
 **Nuestra Religión:** El **Test-Driven Development (TDD)**.
 
-No escribimos código y *luego* rezamos para que funcione. Nosotros escribimos **primero la prueba (el test)**. Definimos *qué* tiene que hacer el código (el `<h1>` que quiere Batman, el `hreflang` que exige el SEO Técnico).
+No escribimos código y *luego* rezamos para que funcione. Nosotros escribimos **primero la prueba (el test)**. Definimos *qué* tiene que hacer el código (el `<h1>` que quiere Batman y La Mascara, el `hreflang` que exige el SEO Técnico).
 
 Si no hay un test que falle primero, no escribes ni una línea de código. ¿Capisci?
 
