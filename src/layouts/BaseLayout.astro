@@ -62,10 +62,12 @@ const cookieConsent = lang === "es" ? cookieConsent_es : cookieConsent_en;
         <meta name="viewport" content="width=device-width" />
         
         <!-- Favicons: Google loves raster for SERP, SVG for sharpness -->
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="icon" type="image/svg+xml" href={new URL("/favicon.svg", Astro.site).href} />
+        <link rel="icon" type="image/png" sizes="32x32" href={new URL("/favicon-32.png", Astro.site).href} />
+        <link rel="icon" type="image/png" sizes="48x48" href={new URL("/favicon-48.png", Astro.site).href} />
+        <link rel="icon" type="image/png" sizes="192x192" href={new URL("/favicon-192.png", Astro.site).href} />
+        <link rel="apple-touch-icon" href={new URL("/apple-touch-icon.png", Astro.site).href} />
+        <link rel="icon" href={new URL("/favicon.ico", Astro.site).href} sizes="32x32" />
 
         <slot name="head" />
         <!-- Canonical y alternates -->
