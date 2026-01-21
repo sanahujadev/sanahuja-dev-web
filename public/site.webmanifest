@@ -1,0 +1,14 @@
+{
+    "name": "SanahujaDev",
+    "short_name": "Sanahuja",
+    "icons": [
+        {
+            "src": "/favicon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#FF6F00",
+    "background_color": "#0a0a0a",
+    "display": "standalone"
+}
