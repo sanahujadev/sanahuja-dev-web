@@ -1,13 +1,12 @@
 ---
 // src/components/mdx/ListItem.astro
-// src/components/mdx/ListItem.astro
-// import { Icon } from "astro-icon/components"; // Not used if not installed
 
 interface Props {
     class?: string;
+    title?: string;
 }
 
-const { class: className } = Astro.props;
+const { class: className, title } = Astro.props;
 
 // Detect parent type is hard in Astro slot.
 // We will rely on CSS :where(ol > li) vs :where(ul > li) if possible,
@@ -38,6 +37,7 @@ const baseClasses = "relative pl-8 text-neutral-300";
     </slot>
 
     <span class="block">
+        {title && <strong class="block text-white mb-1">{title}</strong>}
         <slot />
     </span>
 
